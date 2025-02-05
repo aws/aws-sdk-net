@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
@@ -64,50 +67,55 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 throw new AmazonIoTDeviceAdvisorException("Request object does not have required field SuiteDefinitionId set");
             request.AddPathResource("{suiteDefinitionId}", StringUtils.FromString(publicRequest.SuiteDefinitionId));
             request.ResourcePath = "/suiteDefinitions/{suiteDefinitionId}/suiteRuns";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSuiteDefinitionVersion())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetSuiteDefinitionVersion())
-                    {
-                        context.Writer.WritePropertyName("suiteDefinitionVersion");
-                        context.Writer.Write(publicRequest.SuiteDefinitionVersion);
-                    }
-
-                    if(publicRequest.IsSetSuiteRunConfiguration())
-                    {
-                        context.Writer.WritePropertyName("suiteRunConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SuiteRunConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SuiteRunConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("suiteDefinitionVersion");
+                context.Writer.WriteStringValue(publicRequest.SuiteDefinitionVersion);
             }
+
+            if(publicRequest.IsSetSuiteRunConfiguration())
+            {
+                context.Writer.WritePropertyName("suiteRunConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SuiteRunConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SuiteRunConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionId())
             {
                 context.Writer.WritePropertyName("executionId");
-                context.Writer.Write(requestObject.ExecutionId);
+                context.Writer.WriteStringValue(requestObject.ExecutionId);
             }
 
             if(requestObject.IsSetJobStepRestartMarker())
             {
                 context.Writer.WritePropertyName("jobStepRestartMarker");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobStepRestartMarkerMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobStepRestartMarker, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

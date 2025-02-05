@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndsWith())
             {
                 context.Writer.WritePropertyName("EndsWith");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndsWithListValue in requestObject.EndsWith)
                 {
-                        context.Writer.Write(requestObjectEndsWithListValue);
+                        context.Writer.WriteStringValue(requestObjectEndsWithListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEquals())
             {
                 context.Writer.WritePropertyName("Equals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqualsListValue in requestObject.Equals)
                 {
-                        context.Writer.Write(requestObjectEqualsListValue);
+                        context.Writer.WriteStringValue(requestObjectEqualsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetNotEndsWith())
             {
                 context.Writer.WritePropertyName("NotEndsWith");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotEndsWithListValue in requestObject.NotEndsWith)
                 {
-                        context.Writer.Write(requestObjectNotEndsWithListValue);
+                        context.Writer.WriteStringValue(requestObjectNotEndsWithListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("NotEquals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotEqualsListValue in requestObject.NotEquals)
                 {
-                        context.Writer.Write(requestObjectNotEqualsListValue);
+                        context.Writer.WriteStringValue(requestObjectNotEqualsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotStartsWith())
             {
                 context.Writer.WritePropertyName("NotStartsWith");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotStartsWithListValue in requestObject.NotStartsWith)
                 {
-                        context.Writer.Write(requestObjectNotStartsWithListValue);
+                        context.Writer.WriteStringValue(requestObjectNotStartsWithListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartsWith())
             {
                 context.Writer.WritePropertyName("StartsWith");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStartsWithListValue in requestObject.StartsWith)
                 {
-                        context.Writer.Write(requestObjectStartsWithListValue);
+                        context.Writer.WriteStringValue(requestObjectStartsWithListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

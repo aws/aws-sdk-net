@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetEventBusArn())
             {
                 context.Writer.WritePropertyName("EventBusArn");
-                context.Writer.Write(requestObject.EventBusArn);
+                context.Writer.WriteStringValue(requestObject.EventBusArn);
             }
 
             if(requestObject.IsSetKmsArn())
             {
                 context.Writer.WritePropertyName("KmsArn");
-                context.Writer.Write(requestObject.KmsArn);
+                context.Writer.WriteStringValue(requestObject.KmsArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

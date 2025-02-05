@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcmPcaArn())
             {
                 context.Writer.WritePropertyName("acmPcaArn");
-                context.Writer.Write(requestObject.AcmPcaArn);
+                context.Writer.WriteStringValue(requestObject.AcmPcaArn);
             }
 
             if(requestObject.IsSetX509CertificateData())
             {
                 context.Writer.WritePropertyName("x509CertificateData");
-                context.Writer.Write(requestObject.X509CertificateData);
+                context.Writer.WriteStringValue(requestObject.X509CertificateData);
             }
 
         }

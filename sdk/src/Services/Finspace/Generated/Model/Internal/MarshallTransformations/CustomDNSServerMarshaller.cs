@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomDNSServerIP())
             {
                 context.Writer.WritePropertyName("customDNSServerIP");
-                context.Writer.Write(requestObject.CustomDNSServerIP);
+                context.Writer.WriteStringValue(requestObject.CustomDNSServerIP);
             }
 
             if(requestObject.IsSetCustomDNSServerName())
             {
                 context.Writer.WritePropertyName("customDNSServerName");
-                context.Writer.Write(requestObject.CustomDNSServerName);
+                context.Writer.WriteStringValue(requestObject.CustomDNSServerName);
             }
 
         }

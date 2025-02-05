@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,99 +49,99 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetCopyTagsToVolumes())
             {
                 context.Writer.WritePropertyName("CopyTagsToVolumes");
-                context.Writer.Write(requestObject.CopyTagsToVolumes.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToVolumes.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("DeploymentType");
-                context.Writer.Write(requestObject.DeploymentType);
+                context.Writer.WriteStringValue(requestObject.DeploymentType);
             }
 
             if(requestObject.IsSetDiskIopsConfiguration())
             {
                 context.Writer.WritePropertyName("DiskIopsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DiskIopsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpointIpAddressRange())
             {
                 context.Writer.WritePropertyName("EndpointIpAddressRange");
-                context.Writer.Write(requestObject.EndpointIpAddressRange);
+                context.Writer.WriteStringValue(requestObject.EndpointIpAddressRange);
             }
 
             if(requestObject.IsSetPreferredSubnetId())
             {
                 context.Writer.WritePropertyName("PreferredSubnetId");
-                context.Writer.Write(requestObject.PreferredSubnetId);
+                context.Writer.WriteStringValue(requestObject.PreferredSubnetId);
             }
 
             if(requestObject.IsSetReadCacheConfiguration())
             {
                 context.Writer.WritePropertyName("ReadCacheConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenZFSReadCacheConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReadCacheConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRootVolumeConfiguration())
             {
                 context.Writer.WritePropertyName("RootVolumeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenZFSCreateRootVolumeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootVolumeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRouteTableIds())
             {
                 context.Writer.WritePropertyName("RouteTableIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRouteTableIdsListValue in requestObject.RouteTableIds)
                 {
-                        context.Writer.Write(requestObjectRouteTableIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectRouteTableIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

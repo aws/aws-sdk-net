@@ -29,149 +29,139 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Pipeline Object
     /// </summary>  
-    public class PipelineUnmarshaller : IUnmarshaller<Pipeline, XmlUnmarshallerContext>, IUnmarshaller<Pipeline, JsonUnmarshallerContext>
+    public class PipelineUnmarshaller : IJsonUnmarshaller<Pipeline, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Pipeline IUnmarshaller<Pipeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Pipeline Unmarshall(JsonUnmarshallerContext context)
+        public Pipeline Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Pipeline unmarshalledObject = new Pipeline();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BufferOptions", targetDepth))
                 {
                     var unmarshaller = BufferOptionsUnmarshaller.Instance;
-                    unmarshalledObject.BufferOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BufferOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Destinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PipelineDestination, PipelineDestinationUnmarshaller>(PipelineDestinationUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PipelineDestination, PipelineDestinationUnmarshaller>(PipelineDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
                 {
                     var unmarshaller = EncryptionAtRestOptionsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IngestEndpointUrls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.IngestEndpointUrls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IngestEndpointUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = LogPublishingOptionsUnmarshaller.Instance;
-                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PipelineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PipelineConfigurationBody", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineConfigurationBody = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineConfigurationBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PipelineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceVpcEndpoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServiceVpcEndpoint, ServiceVpcEndpointUnmarshaller>(ServiceVpcEndpointUnmarshaller.Instance);
-                    unmarshalledObject.ServiceVpcEndpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ServiceVpcEndpoint, ServiceVpcEndpointUnmarshaller>(ServiceVpcEndpointUnmarshaller.Instance);
+                    unmarshalledObject.ServiceVpcEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusReason", targetDepth))
                 {
                     var unmarshaller = PipelineStatusReasonUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcEndpoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VpcEndpoint, VpcEndpointUnmarshaller>(VpcEndpointUnmarshaller.Instance);
-                    unmarshalledObject.VpcEndpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VpcEndpoint, VpcEndpointUnmarshaller>(VpcEndpointUnmarshaller.Instance);
+                    unmarshalledObject.VpcEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcEndpointService", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

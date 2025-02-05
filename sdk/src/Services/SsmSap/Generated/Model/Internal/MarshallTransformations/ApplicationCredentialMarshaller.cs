@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredentialType())
             {
                 context.Writer.WritePropertyName("CredentialType");
-                context.Writer.Write(requestObject.CredentialType);
+                context.Writer.WriteStringValue(requestObject.CredentialType);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetSecretId())
             {
                 context.Writer.WritePropertyName("SecretId");
-                context.Writer.Write(requestObject.SecretId);
+                context.Writer.WriteStringValue(requestObject.SecretId);
             }
 
         }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HookProgressEvent Object
     /// </summary>  
-    public class HookProgressEventUnmarshaller : IUnmarshaller<HookProgressEvent, XmlUnmarshallerContext>, IUnmarshaller<HookProgressEvent, JsonUnmarshallerContext>
+    public class HookProgressEventUnmarshaller : IJsonUnmarshaller<HookProgressEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HookProgressEvent IUnmarshaller<HookProgressEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HookProgressEvent Unmarshall(JsonUnmarshallerContext context)
+        public HookProgressEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HookProgressEvent unmarshalledObject = new HookProgressEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FailureMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookEventTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.HookEventTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookEventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookTypeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookTypeArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookTypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookTypeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HookTypeVersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookTypeVersionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvocationPoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvocationPoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

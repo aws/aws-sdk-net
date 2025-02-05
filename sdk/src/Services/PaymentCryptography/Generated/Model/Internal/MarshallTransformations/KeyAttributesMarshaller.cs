@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.Write(requestObject.KeyAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyAlgorithm);
             }
 
             if(requestObject.IsSetKeyClass())
             {
                 context.Writer.WritePropertyName("KeyClass");
-                context.Writer.Write(requestObject.KeyClass);
+                context.Writer.WriteStringValue(requestObject.KeyClass);
             }
 
             if(requestObject.IsSetKeyModesOfUse())
             {
                 context.Writer.WritePropertyName("KeyModesOfUse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyModesOfUseMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyModesOfUse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyUsage())
             {
                 context.Writer.WritePropertyName("KeyUsage");
-                context.Writer.Write(requestObject.KeyUsage);
+                context.Writer.WriteStringValue(requestObject.KeyUsage);
             }
 
         }

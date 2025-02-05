@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
@@ -47,69 +47,69 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeAgreementResponse response = new DescribeAgreementResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acceptanceTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.AcceptanceTime = unmarshaller.Unmarshall(context);
+                    response.AcceptanceTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("acceptor", targetDepth))
                 {
                     var unmarshaller = AcceptorUnmarshaller.Instance;
-                    response.Acceptor = unmarshaller.Unmarshall(context);
+                    response.Acceptor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agreementId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AgreementId = unmarshaller.Unmarshall(context);
+                    response.AgreementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agreementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AgreementType = unmarshaller.Unmarshall(context);
+                    response.AgreementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.EndTime = unmarshaller.Unmarshall(context);
+                    response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedCharges", targetDepth))
                 {
                     var unmarshaller = EstimatedChargesUnmarshaller.Instance;
-                    response.EstimatedCharges = unmarshaller.Unmarshall(context);
+                    response.EstimatedCharges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("proposalSummary", targetDepth))
                 {
                     var unmarshaller = ProposalSummaryUnmarshaller.Instance;
-                    response.ProposalSummary = unmarshaller.Unmarshall(context);
+                    response.ProposalSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("proposer", targetDepth))
                 {
                     var unmarshaller = ProposerUnmarshaller.Instance;
-                    response.Proposer = unmarshaller.Unmarshall(context);
+                    response.Proposer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StartTime = unmarshaller.Unmarshall(context);
+                    response.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -126,34 +126,36 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonMarketplaceAgreementException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

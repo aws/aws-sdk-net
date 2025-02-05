@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsOrganizationsSource())
             {
                 context.Writer.WritePropertyName("AwsOrganizationsSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceDataSyncAwsOrganizationsSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsOrganizationsSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnableAllOpsDataSources())
             {
                 context.Writer.WritePropertyName("EnableAllOpsDataSources");
-                context.Writer.Write(requestObject.EnableAllOpsDataSources.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableAllOpsDataSources.Value);
             }
 
             if(requestObject.IsSetIncludeFutureRegions())
             {
                 context.Writer.WritePropertyName("IncludeFutureRegions");
-                context.Writer.Write(requestObject.IncludeFutureRegions.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeFutureRegions.Value);
             }
 
             if(requestObject.IsSetSourceRegions())
             {
                 context.Writer.WritePropertyName("SourceRegions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceRegionsListValue in requestObject.SourceRegions)
                 {
-                        context.Writer.Write(requestObjectSourceRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("SourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
         }

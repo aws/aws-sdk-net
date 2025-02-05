@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceGroups())
             {
                 context.Writer.WritePropertyName("InstanceGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceGroupsListValue in requestObject.InstanceGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InstanceGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetKeepAlivePeriodInSeconds())
             {
                 context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");
-                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.KeepAlivePeriodInSeconds.Value);
             }
 
             if(requestObject.IsSetTrainingPlanArn())
             {
                 context.Writer.WritePropertyName("TrainingPlanArn");
-                context.Writer.Write(requestObject.TrainingPlanArn);
+                context.Writer.WriteStringValue(requestObject.TrainingPlanArn);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
             }
 
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
             }
 
         }

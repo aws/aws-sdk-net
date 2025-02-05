@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Max");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max.Value);
+                    context.Writer.WriteNumberValue(requestObject.Max.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Min");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min.Value);
+                    context.Writer.WriteNumberValue(requestObject.Min.Value);
                 }
             }
 

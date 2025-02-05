@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendationRelatedAnomaly Object
     /// </summary>  
-    public class RecommendationRelatedAnomalyUnmarshaller : IUnmarshaller<RecommendationRelatedAnomaly, XmlUnmarshallerContext>, IUnmarshaller<RecommendationRelatedAnomaly, JsonUnmarshallerContext>
+    public class RecommendationRelatedAnomalyUnmarshaller : IJsonUnmarshaller<RecommendationRelatedAnomaly, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecommendationRelatedAnomaly IUnmarshaller<RecommendationRelatedAnomaly, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendationRelatedAnomaly Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationRelatedAnomaly Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecommendationRelatedAnomaly unmarshalledObject = new RecommendationRelatedAnomaly();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnomalyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnomalyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Resources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecommendationRelatedAnomalyResource, RecommendationRelatedAnomalyResourceUnmarshaller>(RecommendationRelatedAnomalyResourceUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedAnomalyResource, RecommendationRelatedAnomalyResourceUnmarshaller>(RecommendationRelatedAnomalyResourceUnmarshaller.Instance);
+                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceDetails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecommendationRelatedAnomalySourceDetail, RecommendationRelatedAnomalySourceDetailUnmarshaller>(RecommendationRelatedAnomalySourceDetailUnmarshaller.Instance);
-                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedAnomalySourceDetail, RecommendationRelatedAnomalySourceDetailUnmarshaller>(RecommendationRelatedAnomalySourceDetailUnmarshaller.Instance);
+                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

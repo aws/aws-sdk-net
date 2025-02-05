@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCmafGroupSettings())
             {
                 context.Writer.WritePropertyName("cmafGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CmafGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CmafGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDashIsoGroupSettings())
             {
                 context.Writer.WritePropertyName("dashIsoGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashIsoGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DashIsoGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileGroupSettings())
             {
                 context.Writer.WritePropertyName("fileGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsGroupSettings())
             {
                 context.Writer.WritePropertyName("hlsGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMsSmoothGroupSettings())
             {
                 context.Writer.WritePropertyName("msSmoothGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MsSmoothGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MsSmoothGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

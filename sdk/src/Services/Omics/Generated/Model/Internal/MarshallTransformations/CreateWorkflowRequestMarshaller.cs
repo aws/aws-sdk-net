@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -61,111 +64,116 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workflow";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccelerators())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccelerators())
-                    {
-                        context.Writer.WritePropertyName("accelerators");
-                        context.Writer.Write(publicRequest.Accelerators);
-                    }
-
-                    if(publicRequest.IsSetDefinitionUri())
-                    {
-                        context.Writer.WritePropertyName("definitionUri");
-                        context.Writer.Write(publicRequest.DefinitionUri);
-                    }
-
-                    if(publicRequest.IsSetDefinitionZip())
-                    {
-                        context.Writer.WritePropertyName("definitionZip");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.DefinitionZip));
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEngine())
-                    {
-                        context.Writer.WritePropertyName("engine");
-                        context.Writer.Write(publicRequest.Engine);
-                    }
-
-                    if(publicRequest.IsSetMain())
-                    {
-                        context.Writer.WritePropertyName("main");
-                        context.Writer.Write(publicRequest.Main);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetParameterTemplate())
-                    {
-                        context.Writer.WritePropertyName("parameterTemplate");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParameterTemplateKvp in publicRequest.ParameterTemplate)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParameterTemplateKvp.Key);
-                            var publicRequestParameterTemplateValue = publicRequestParameterTemplateKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WorkflowParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParameterTemplateValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRequestId())
-                    {
-                        context.Writer.WritePropertyName("requestId");
-                        context.Writer.Write(publicRequest.RequestId);
-                    }
-
-                    else if(!(publicRequest.IsSetRequestId()))
-                    {
-                        context.Writer.WritePropertyName("requestId");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetStorageCapacity())
-                    {
-                        context.Writer.WritePropertyName("storageCapacity");
-                        context.Writer.Write(publicRequest.StorageCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("accelerators");
+                context.Writer.WriteStringValue(publicRequest.Accelerators);
             }
+
+            if(publicRequest.IsSetDefinitionUri())
+            {
+                context.Writer.WritePropertyName("definitionUri");
+                context.Writer.WriteStringValue(publicRequest.DefinitionUri);
+            }
+
+            if(publicRequest.IsSetDefinitionZip())
+            {
+                context.Writer.WritePropertyName("definitionZip");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.DefinitionZip));
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEngine())
+            {
+                context.Writer.WritePropertyName("engine");
+                context.Writer.WriteStringValue(publicRequest.Engine);
+            }
+
+            if(publicRequest.IsSetMain())
+            {
+                context.Writer.WritePropertyName("main");
+                context.Writer.WriteStringValue(publicRequest.Main);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetParameterTemplate())
+            {
+                context.Writer.WritePropertyName("parameterTemplate");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParameterTemplateKvp in publicRequest.ParameterTemplate)
+                {
+                    context.Writer.WritePropertyName(publicRequestParameterTemplateKvp.Key);
+                    var publicRequestParameterTemplateValue = publicRequestParameterTemplateKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WorkflowParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParameterTemplateValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRequestId())
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(publicRequest.RequestId);
+            }
+
+            else if(!(publicRequest.IsSetRequestId()))
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetStorageCapacity())
+            {
+                context.Writer.WritePropertyName("storageCapacity");
+                context.Writer.WriteNumberValue(publicRequest.StorageCapacity.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"workflows-";

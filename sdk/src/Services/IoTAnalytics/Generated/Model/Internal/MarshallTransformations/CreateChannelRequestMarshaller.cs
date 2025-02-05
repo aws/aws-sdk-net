@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -61,63 +64,68 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/channels";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChannelName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChannelName())
-                    {
-                        context.Writer.WritePropertyName("channelName");
-                        context.Writer.Write(publicRequest.ChannelName);
-                    }
-
-                    if(publicRequest.IsSetChannelStorage())
-                    {
-                        context.Writer.WritePropertyName("channelStorage");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChannelStorageMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ChannelStorage, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRetentionPeriod())
-                    {
-                        context.Writer.WritePropertyName("retentionPeriod");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RetentionPeriodMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("channelName");
+                context.Writer.WriteStringValue(publicRequest.ChannelName);
             }
+
+            if(publicRequest.IsSetChannelStorage())
+            {
+                context.Writer.WritePropertyName("channelStorage");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChannelStorageMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ChannelStorage, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRetentionPeriod())
+            {
+                context.Writer.WritePropertyName("retentionPeriod");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetentionPeriodMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

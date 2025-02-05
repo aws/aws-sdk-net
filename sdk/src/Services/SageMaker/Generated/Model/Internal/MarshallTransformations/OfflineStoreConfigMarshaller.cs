@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataCatalogConfig())
             {
                 context.Writer.WritePropertyName("DataCatalogConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataCatalogConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataCatalogConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisableGlueTableCreation())
             {
                 context.Writer.WritePropertyName("DisableGlueTableCreation");
-                context.Writer.Write(requestObject.DisableGlueTableCreation.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableGlueTableCreation.Value);
             }
 
             if(requestObject.IsSetS3StorageConfig())
             {
                 context.Writer.WritePropertyName("S3StorageConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3StorageConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3StorageConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableFormat())
             {
                 context.Writer.WritePropertyName("TableFormat");
-                context.Writer.Write(requestObject.TableFormat);
+                context.Writer.WriteStringValue(requestObject.TableFormat);
             }
 
         }

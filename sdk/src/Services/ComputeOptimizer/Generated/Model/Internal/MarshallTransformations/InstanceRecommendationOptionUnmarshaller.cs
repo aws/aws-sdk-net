@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InstanceRecommendationOption Object
     /// </summary>  
-    public class InstanceRecommendationOptionUnmarshaller : IUnmarshaller<InstanceRecommendationOption, XmlUnmarshallerContext>, IUnmarshaller<InstanceRecommendationOption, JsonUnmarshallerContext>
+    public class InstanceRecommendationOptionUnmarshaller : IJsonUnmarshaller<InstanceRecommendationOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InstanceRecommendationOption IUnmarshaller<InstanceRecommendationOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceRecommendationOption Unmarshall(JsonUnmarshallerContext context)
+        public InstanceRecommendationOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InstanceRecommendationOption unmarshalledObject = new InstanceRecommendationOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("instanceGpuInfo", targetDepth))
                 {
                     var unmarshaller = GpuInfoUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("migrationEffort", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MigrationEffort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MigrationEffort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("performanceRisk", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("platformDifferences", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PlatformDifferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlatformDifferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("projectedUtilizationMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
+                    unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rank", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Rank = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("savingsOpportunity", targetDepth))
                 {
                     var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("savingsOpportunityAfterDiscounts", targetDepth))
                 {
                     var unmarshaller = InstanceSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

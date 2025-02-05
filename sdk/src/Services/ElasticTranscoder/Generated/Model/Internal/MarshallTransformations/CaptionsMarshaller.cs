@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptionFormats())
             {
                 context.Writer.WritePropertyName("CaptionFormats");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionFormatsListValue in requestObject.CaptionFormats)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionFormatMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionFormatsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionSources())
             {
                 context.Writer.WritePropertyName("CaptionSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionSourcesListValue in requestObject.CaptionSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionSourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMergePolicy())
             {
                 context.Writer.WritePropertyName("MergePolicy");
-                context.Writer.Write(requestObject.MergePolicy);
+                context.Writer.WriteStringValue(requestObject.MergePolicy);
             }
 
         }

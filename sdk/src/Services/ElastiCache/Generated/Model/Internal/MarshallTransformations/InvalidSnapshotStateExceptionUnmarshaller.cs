@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSnapshotStateException operation
     /// </summary>  
-    public class InvalidSnapshotStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSnapshotStateException, XmlUnmarshallerContext>
+    public class InvalidSnapshotStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSnapshotStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

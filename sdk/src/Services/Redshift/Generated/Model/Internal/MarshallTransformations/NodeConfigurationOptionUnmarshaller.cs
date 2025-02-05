@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NodeConfigurationOption Object
     /// </summary>  
-    public class NodeConfigurationOptionUnmarshaller : IUnmarshaller<NodeConfigurationOption, XmlUnmarshallerContext>, IUnmarshaller<NodeConfigurationOption, JsonUnmarshallerContext>
+    public class NodeConfigurationOptionUnmarshaller : IXmlUnmarshaller<NodeConfigurationOption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NodeConfigurationOption Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NodeConfigurationOptionUnmarshaller _instance = new NodeConfigurationOptionUnmarshaller();        
 

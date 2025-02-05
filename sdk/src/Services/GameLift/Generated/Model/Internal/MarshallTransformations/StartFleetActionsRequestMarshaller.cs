@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -63,42 +66,47 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Actions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionsListValue in publicRequest.Actions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActions())
-                    {
-                        context.Writer.WritePropertyName("Actions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
-                        {
-                                context.Writer.Write(publicRequestActionsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFleetId())
-                    {
-                        context.Writer.WritePropertyName("FleetId");
-                        context.Writer.Write(publicRequest.FleetId);
-                    }
-
-                    if(publicRequest.IsSetLocation())
-                    {
-                        context.Writer.WritePropertyName("Location");
-                        context.Writer.Write(publicRequest.Location);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestActionsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFleetId())
+            {
+                context.Writer.WritePropertyName("FleetId");
+                context.Writer.WriteStringValue(publicRequest.FleetId);
+            }
+
+            if(publicRequest.IsSetLocation())
+            {
+                context.Writer.WritePropertyName("Location");
+                context.Writer.WriteStringValue(publicRequest.Location);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

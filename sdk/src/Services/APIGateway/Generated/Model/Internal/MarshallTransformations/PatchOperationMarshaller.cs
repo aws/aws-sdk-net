@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");
-                context.Writer.Write(requestObject.From);
+                context.Writer.WriteStringValue(requestObject.From);
             }
 
             if(requestObject.IsSetOp())
             {
                 context.Writer.WritePropertyName("op");
-                context.Writer.Write(requestObject.Op);
+                context.Writer.WriteStringValue(requestObject.Op);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

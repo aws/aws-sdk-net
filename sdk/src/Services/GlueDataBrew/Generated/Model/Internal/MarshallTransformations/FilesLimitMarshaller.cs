@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxFiles())
             {
                 context.Writer.WritePropertyName("MaxFiles");
-                context.Writer.Write(requestObject.MaxFiles.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFiles.Value);
             }
 
             if(requestObject.IsSetOrder())
             {
                 context.Writer.WritePropertyName("Order");
-                context.Writer.Write(requestObject.Order);
+                context.Writer.WriteStringValue(requestObject.Order);
             }
 
             if(requestObject.IsSetOrderedBy())
             {
                 context.Writer.WritePropertyName("OrderedBy");
-                context.Writer.Write(requestObject.OrderedBy);
+                context.Writer.WriteStringValue(requestObject.OrderedBy);
             }
 
         }

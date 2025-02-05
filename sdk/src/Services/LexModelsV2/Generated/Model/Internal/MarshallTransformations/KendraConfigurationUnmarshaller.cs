@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KendraConfiguration Object
     /// </summary>  
-    public class KendraConfigurationUnmarshaller : IUnmarshaller<KendraConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KendraConfiguration, JsonUnmarshallerContext>
+    public class KendraConfigurationUnmarshaller : IJsonUnmarshaller<KendraConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KendraConfiguration IUnmarshaller<KendraConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KendraConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public KendraConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KendraConfiguration unmarshalledObject = new KendraConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("kendraIndex", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KendraIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KendraIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryFilterString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueryFilterString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryFilterString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryFilterStringEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.QueryFilterStringEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryFilterStringEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

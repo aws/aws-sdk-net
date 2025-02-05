@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OpenIDConnectProviderListEntry Object
     /// </summary>  
-    public class OpenIDConnectProviderListEntryUnmarshaller : IUnmarshaller<OpenIDConnectProviderListEntry, XmlUnmarshallerContext>, IUnmarshaller<OpenIDConnectProviderListEntry, JsonUnmarshallerContext>
+    public class OpenIDConnectProviderListEntryUnmarshaller : IXmlUnmarshaller<OpenIDConnectProviderListEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OpenIDConnectProviderListEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OpenIDConnectProviderListEntryUnmarshaller _instance = new OpenIDConnectProviderListEntryUnmarshaller();        
 

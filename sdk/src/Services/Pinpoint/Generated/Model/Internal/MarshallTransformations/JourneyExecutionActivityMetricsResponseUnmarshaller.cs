@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JourneyExecutionActivityMetricsResponse Object
     /// </summary>  
-    public class JourneyExecutionActivityMetricsResponseUnmarshaller : IUnmarshaller<JourneyExecutionActivityMetricsResponse, XmlUnmarshallerContext>, IUnmarshaller<JourneyExecutionActivityMetricsResponse, JsonUnmarshallerContext>
+    public class JourneyExecutionActivityMetricsResponseUnmarshaller : IJsonUnmarshaller<JourneyExecutionActivityMetricsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JourneyExecutionActivityMetricsResponse IUnmarshaller<JourneyExecutionActivityMetricsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JourneyExecutionActivityMetricsResponse Unmarshall(JsonUnmarshallerContext context)
+        public JourneyExecutionActivityMetricsResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JourneyExecutionActivityMetricsResponse unmarshalledObject = new JourneyExecutionActivityMetricsResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActivityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActivityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApplicationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JourneyActivityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JourneyActivityId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JourneyActivityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JourneyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JourneyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JourneyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastEvaluatedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastEvaluatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastEvaluatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Metrics", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("IdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.IdleTimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.IdleTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetLifecycleManagement())
             {
                 context.Writer.WritePropertyName("LifecycleManagement");
-                context.Writer.Write(requestObject.LifecycleManagement);
+                context.Writer.WriteStringValue(requestObject.LifecycleManagement);
             }
 
             if(requestObject.IsSetMaxIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("MaxIdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.MaxIdleTimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxIdleTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetMinIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("MinIdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.MinIdleTimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.MinIdleTimeoutInMinutes.Value);
             }
 
         }

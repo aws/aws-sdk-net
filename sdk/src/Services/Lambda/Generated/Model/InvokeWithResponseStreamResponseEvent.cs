@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
@@ -48,8 +49,20 @@ namespace Amazon.Lambda.Model
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
-            {"InvokeComplete", payload => new InvokeWithResponseStreamCompleteEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
-            {"PayloadChunk", payload => new InvokeResponseStreamUpdateUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"InvokeComplete", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new InvokeWithResponseStreamCompleteEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"PayloadChunk", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new InvokeResponseStreamUpdateUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception

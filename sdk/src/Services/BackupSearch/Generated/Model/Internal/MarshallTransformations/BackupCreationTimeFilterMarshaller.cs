@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedAfter.Value)));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedBefore.Value)));
             }
 
         }

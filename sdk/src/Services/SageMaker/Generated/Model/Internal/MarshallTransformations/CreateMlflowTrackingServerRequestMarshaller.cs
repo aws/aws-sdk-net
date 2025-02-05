@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,77 +66,82 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArtifactStoreUri())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArtifactStoreUri())
-                    {
-                        context.Writer.WritePropertyName("ArtifactStoreUri");
-                        context.Writer.Write(publicRequest.ArtifactStoreUri);
-                    }
-
-                    if(publicRequest.IsSetAutomaticModelRegistration())
-                    {
-                        context.Writer.WritePropertyName("AutomaticModelRegistration");
-                        context.Writer.Write(publicRequest.AutomaticModelRegistration.Value);
-                    }
-
-                    if(publicRequest.IsSetMlflowVersion())
-                    {
-                        context.Writer.WritePropertyName("MlflowVersion");
-                        context.Writer.Write(publicRequest.MlflowVersion);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTrackingServerName())
-                    {
-                        context.Writer.WritePropertyName("TrackingServerName");
-                        context.Writer.Write(publicRequest.TrackingServerName);
-                    }
-
-                    if(publicRequest.IsSetTrackingServerSize())
-                    {
-                        context.Writer.WritePropertyName("TrackingServerSize");
-                        context.Writer.Write(publicRequest.TrackingServerSize);
-                    }
-
-                    if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
-                    {
-                        context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
-                        context.Writer.Write(publicRequest.WeeklyMaintenanceWindowStart);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ArtifactStoreUri");
+                context.Writer.WriteStringValue(publicRequest.ArtifactStoreUri);
             }
+
+            if(publicRequest.IsSetAutomaticModelRegistration())
+            {
+                context.Writer.WritePropertyName("AutomaticModelRegistration");
+                context.Writer.WriteBooleanValue(publicRequest.AutomaticModelRegistration.Value);
+            }
+
+            if(publicRequest.IsSetMlflowVersion())
+            {
+                context.Writer.WritePropertyName("MlflowVersion");
+                context.Writer.WriteStringValue(publicRequest.MlflowVersion);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrackingServerName())
+            {
+                context.Writer.WritePropertyName("TrackingServerName");
+                context.Writer.WriteStringValue(publicRequest.TrackingServerName);
+            }
+
+            if(publicRequest.IsSetTrackingServerSize())
+            {
+                context.Writer.WritePropertyName("TrackingServerSize");
+                context.Writer.WriteStringValue(publicRequest.TrackingServerSize);
+            }
+
+            if(publicRequest.IsSetWeeklyMaintenanceWindowStart())
+            {
+                context.Writer.WritePropertyName("WeeklyMaintenanceWindowStart");
+                context.Writer.WriteStringValue(publicRequest.WeeklyMaintenanceWindowStart);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

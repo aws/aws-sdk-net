@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,20 +49,20 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrackingAssets())
             {
                 context.Writer.WritePropertyName("trackingAssets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTrackingAssetsKvp in requestObject.TrackingAssets)
                 {
                     context.Writer.WritePropertyName(requestObjectTrackingAssetsKvp.Key);
                     var requestObjectTrackingAssetsValue = requestObjectTrackingAssetsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectTrackingAssetsValueListValue in requestObjectTrackingAssetsValue)
                     {
-                            context.Writer.Write(requestObjectTrackingAssetsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectTrackingAssetsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

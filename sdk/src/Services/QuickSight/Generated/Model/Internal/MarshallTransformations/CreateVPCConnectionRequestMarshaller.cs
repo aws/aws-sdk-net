@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -64,86 +67,91 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/vpc-connections";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDnsResolvers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DnsResolvers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDnsResolversListValue in publicRequest.DnsResolvers)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDnsResolvers())
-                    {
-                        context.Writer.WritePropertyName("DnsResolvers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDnsResolversListValue in publicRequest.DnsResolvers)
-                        {
-                                context.Writer.Write(publicRequestDnsResolversListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("SecurityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("SubnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                        {
-                                context.Writer.Write(publicRequestSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVPCConnectionId())
-                    {
-                        context.Writer.WritePropertyName("VPCConnectionId");
-                        context.Writer.Write(publicRequest.VPCConnectionId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDnsResolversListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVPCConnectionId())
+            {
+                context.Writer.WritePropertyName("VPCConnectionId");
+                context.Writer.WriteStringValue(publicRequest.VPCConnectionId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

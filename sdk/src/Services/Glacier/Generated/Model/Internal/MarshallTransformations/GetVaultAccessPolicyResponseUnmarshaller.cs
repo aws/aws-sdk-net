@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -47,9 +47,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetVaultAccessPolicyResponse response = new GetVaultAccessPolicyResponse();
-
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             var unmarshaller = VaultAccessPolicyUnmarshaller.Instance;
-            response.Policy = unmarshaller.Unmarshall(context);
+            response.Policy = unmarshaller.Unmarshall(context, ref reader);
 
             return response;
         }
@@ -63,30 +63,32 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
-                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
                 {
-                    return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return MissingParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonGlacierException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

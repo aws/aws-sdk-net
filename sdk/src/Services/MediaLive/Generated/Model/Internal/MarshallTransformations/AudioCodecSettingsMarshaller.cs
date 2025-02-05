@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAacSettings())
             {
                 context.Writer.WritePropertyName("aacSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AacSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AacSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAc3Settings())
             {
                 context.Writer.WritePropertyName("ac3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ac3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ac3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEac3AtmosSettings())
             {
                 context.Writer.WritePropertyName("eac3AtmosSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Eac3AtmosSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Eac3AtmosSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEac3Settings())
             {
                 context.Writer.WritePropertyName("eac3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Eac3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Eac3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMp2Settings())
             {
                 context.Writer.WritePropertyName("mp2Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mp2SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mp2Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPassThroughSettings())
             {
                 context.Writer.WritePropertyName("passThroughSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PassThroughSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PassThroughSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWavSettings())
             {
                 context.Writer.WritePropertyName("wavSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WavSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WavSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

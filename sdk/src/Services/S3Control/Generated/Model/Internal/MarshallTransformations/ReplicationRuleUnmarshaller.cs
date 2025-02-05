@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationRule Object
     /// </summary>  
-    public class ReplicationRuleUnmarshaller : IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>, IUnmarshaller<ReplicationRule, JsonUnmarshallerContext>
+    public class ReplicationRuleUnmarshaller : IXmlUnmarshaller<ReplicationRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -124,17 +124,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ReplicationRuleUnmarshaller _instance = new ReplicationRuleUnmarshaller();        
 
         /// <summary>

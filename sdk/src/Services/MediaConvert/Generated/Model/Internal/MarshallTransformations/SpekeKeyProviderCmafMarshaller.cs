@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetDashSignaledSystemIds())
             {
                 context.Writer.WritePropertyName("dashSignaledSystemIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDashSignaledSystemIdsListValue in requestObject.DashSignaledSystemIds)
                 {
-                        context.Writer.Write(requestObjectDashSignaledSystemIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectDashSignaledSystemIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryptionContractConfiguration())
             {
                 context.Writer.WritePropertyName("encryptionContractConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionContractConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionContractConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsSignaledSystemIds())
             {
                 context.Writer.WritePropertyName("hlsSignaledSystemIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHlsSignaledSystemIdsListValue in requestObject.HlsSignaledSystemIds)
                 {
-                        context.Writer.Write(requestObjectHlsSignaledSystemIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectHlsSignaledSystemIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

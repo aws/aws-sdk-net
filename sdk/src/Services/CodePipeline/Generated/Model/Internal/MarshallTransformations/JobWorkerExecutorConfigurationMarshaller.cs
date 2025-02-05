@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPollingAccounts())
             {
                 context.Writer.WritePropertyName("pollingAccounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPollingAccountsListValue in requestObject.PollingAccounts)
                 {
-                        context.Writer.Write(requestObjectPollingAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectPollingAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPollingServicePrincipals())
             {
                 context.Writer.WritePropertyName("pollingServicePrincipals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPollingServicePrincipalsListValue in requestObject.PollingServicePrincipals)
                 {
-                        context.Writer.Write(requestObjectPollingServicePrincipalsListValue);
+                        context.Writer.WriteStringValue(requestObjectPollingServicePrincipalsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

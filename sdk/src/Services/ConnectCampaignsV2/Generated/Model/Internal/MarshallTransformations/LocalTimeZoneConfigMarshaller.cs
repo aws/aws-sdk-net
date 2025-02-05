@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultTimeZone())
             {
                 context.Writer.WritePropertyName("defaultTimeZone");
-                context.Writer.Write(requestObject.DefaultTimeZone);
+                context.Writer.WriteStringValue(requestObject.DefaultTimeZone);
             }
 
             if(requestObject.IsSetLocalTimeZoneDetection())
             {
                 context.Writer.WritePropertyName("localTimeZoneDetection");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLocalTimeZoneDetectionListValue in requestObject.LocalTimeZoneDetection)
                 {
-                        context.Writer.Write(requestObjectLocalTimeZoneDetectionListValue);
+                        context.Writer.WriteStringValue(requestObjectLocalTimeZoneDetectionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

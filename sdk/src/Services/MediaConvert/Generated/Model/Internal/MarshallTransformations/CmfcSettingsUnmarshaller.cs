@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CmfcSettings Object
     /// </summary>  
-    public class CmfcSettingsUnmarshaller : IUnmarshaller<CmfcSettings, XmlUnmarshallerContext>, IUnmarshaller<CmfcSettings, JsonUnmarshallerContext>
+    public class CmfcSettingsUnmarshaller : IJsonUnmarshaller<CmfcSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CmfcSettings IUnmarshaller<CmfcSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CmfcSettings Unmarshall(JsonUnmarshallerContext context)
+        public CmfcSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CmfcSettings unmarshalledObject = new CmfcSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioRenditionSets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioTrackType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("descriptiveVideoServiceFlag", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DescriptiveVideoServiceFlag = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DescriptiveVideoServiceFlag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iFrameOnlyManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IFrameOnlyManifest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IFrameOnlyManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("klvMetadata", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KlvMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KlvMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestMetadataSignaling", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestMetadataSignaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestMetadataSignaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35Esam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scte35Esam = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Esam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35Source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scte35Source = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadata", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataBoxVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataBoxVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadataBoxVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataSchemeIdUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataSchemeIdUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadataSchemeIdUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timedMetadataValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimedMetadataValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimedMetadataValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

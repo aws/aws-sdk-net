@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetMountPoints())
             {
                 context.Writer.WritePropertyName("MountPoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMountPointsListValue in requestObject.MountPoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsMountPointMarshaller.Instance;
                     marshaller.Marshall(requestObjectMountPointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("Privileged");
-                context.Writer.Write(requestObject.Privileged.Value);
+                context.Writer.WriteBooleanValue(requestObject.Privileged.Value);
             }
 
         }

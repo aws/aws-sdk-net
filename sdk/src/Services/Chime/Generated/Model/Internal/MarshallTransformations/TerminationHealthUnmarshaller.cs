@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TerminationHealth Object
     /// </summary>  
-    public class TerminationHealthUnmarshaller : IUnmarshaller<TerminationHealth, XmlUnmarshallerContext>, IUnmarshaller<TerminationHealth, JsonUnmarshallerContext>
+    public class TerminationHealthUnmarshaller : IJsonUnmarshaller<TerminationHealth, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TerminationHealth IUnmarshaller<TerminationHealth, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TerminationHealth Unmarshall(JsonUnmarshallerContext context)
+        public TerminationHealth Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TerminationHealth unmarshalledObject = new TerminationHealth();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

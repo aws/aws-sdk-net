@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpEndpoint())
             {
                 context.Writer.WritePropertyName("HttpEndpoint");
-                context.Writer.Write(requestObject.HttpEndpoint);
+                context.Writer.WriteStringValue(requestObject.HttpEndpoint);
             }
 
             if(requestObject.IsSetHttpProtocolIpv6())
             {
                 context.Writer.WritePropertyName("HttpProtocolIpv6");
-                context.Writer.Write(requestObject.HttpProtocolIpv6);
+                context.Writer.WriteStringValue(requestObject.HttpProtocolIpv6);
             }
 
             if(requestObject.IsSetHttpPutResponseHopLimit())
             {
                 context.Writer.WritePropertyName("HttpPutResponseHopLimit");
-                context.Writer.Write(requestObject.HttpPutResponseHopLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.HttpPutResponseHopLimit.Value);
             }
 
             if(requestObject.IsSetHttpTokens())
             {
                 context.Writer.WritePropertyName("HttpTokens");
-                context.Writer.Write(requestObject.HttpTokens);
+                context.Writer.WriteStringValue(requestObject.HttpTokens);
             }
 
             if(requestObject.IsSetInstanceMetadataTags())
             {
                 context.Writer.WritePropertyName("InstanceMetadataTags");
-                context.Writer.Write(requestObject.InstanceMetadataTags);
+                context.Writer.WriteStringValue(requestObject.InstanceMetadataTags);
             }
 
         }

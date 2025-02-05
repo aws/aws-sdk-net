@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RequiredActivatedType Object
     /// </summary>  
-    public class RequiredActivatedTypeUnmarshaller : IUnmarshaller<RequiredActivatedType, XmlUnmarshallerContext>, IUnmarshaller<RequiredActivatedType, JsonUnmarshallerContext>
+    public class RequiredActivatedTypeUnmarshaller : IXmlUnmarshaller<RequiredActivatedType, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,17 +93,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RequiredActivatedType Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RequiredActivatedTypeUnmarshaller _instance = new RequiredActivatedTypeUnmarshaller();        
 

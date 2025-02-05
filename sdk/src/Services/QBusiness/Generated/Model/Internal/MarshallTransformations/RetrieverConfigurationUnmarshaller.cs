@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RetrieverConfiguration Object
     /// </summary>  
-    public class RetrieverConfigurationUnmarshaller : IUnmarshaller<RetrieverConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RetrieverConfiguration, JsonUnmarshallerContext>
+    public class RetrieverConfigurationUnmarshaller : IJsonUnmarshaller<RetrieverConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RetrieverConfiguration IUnmarshaller<RetrieverConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrieverConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RetrieverConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RetrieverConfiguration unmarshalledObject = new RetrieverConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("kendraIndexConfiguration", targetDepth))
                 {
                     var unmarshaller = KendraIndexConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.KendraIndexConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KendraIndexConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nativeIndexConfiguration", targetDepth))
                 {
                     var unmarshaller = NativeIndexConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NativeIndexConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NativeIndexConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

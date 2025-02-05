@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.Write(requestObject.Category);
+                context.Writer.WriteStringValue(requestObject.Category);
             }
 
             if(requestObject.IsSetDetections())
             {
                 context.Writer.WritePropertyName("Detections");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDetectionsListValue in requestObject.Detections)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SensitiveDataDetectionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectDetectionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTotalCount())
             {
                 context.Writer.WritePropertyName("TotalCount");
-                context.Writer.Write(requestObject.TotalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.TotalCount.Value);
             }
 
         }

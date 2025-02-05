@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnsuccessfulItem Object
     /// </summary>  
-    public class UnsuccessfulItemUnmarshaller : IUnmarshaller<UnsuccessfulItem, XmlUnmarshallerContext>, IUnmarshaller<UnsuccessfulItem, JsonUnmarshallerContext>
+    public class UnsuccessfulItemUnmarshaller : IXmlUnmarshaller<UnsuccessfulItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public UnsuccessfulItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static UnsuccessfulItemUnmarshaller _instance = new UnsuccessfulItemUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioMonitoringSettings())
             {
                 context.Writer.WritePropertyName("audioMonitoringSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioMonitoringSettingsListValue in requestObject.AudioMonitoringSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioMonitoringSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioMonitoringSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContentQualityAnalysisState())
             {
                 context.Writer.WritePropertyName("contentQualityAnalysisState");
-                context.Writer.Write(requestObject.ContentQualityAnalysisState);
+                context.Writer.WriteStringValue(requestObject.ContentQualityAnalysisState);
             }
 
             if(requestObject.IsSetThumbnailState())
             {
                 context.Writer.WritePropertyName("thumbnailState");
-                context.Writer.Write(requestObject.ThumbnailState);
+                context.Writer.WriteStringValue(requestObject.ThumbnailState);
             }
 
             if(requestObject.IsSetVideoMonitoringSettings())
             {
                 context.Writer.WritePropertyName("videoMonitoringSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVideoMonitoringSettingsListValue in requestObject.VideoMonitoringSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VideoMonitoringSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectVideoMonitoringSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

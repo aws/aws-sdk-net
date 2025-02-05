@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultRoute())
             {
                 context.Writer.WritePropertyName("defaultRoute");
-                context.Writer.Write(requestObject.DefaultRoute);
+                context.Writer.WriteStringValue(requestObject.DefaultRoute);
             }
 
             if(requestObject.IsSetInterfaceMappings())
             {
                 context.Writer.WritePropertyName("interfaceMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInterfaceMappingsListValue in requestObject.InterfaceMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InterfaceMappingUpdateRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectInterfaceMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

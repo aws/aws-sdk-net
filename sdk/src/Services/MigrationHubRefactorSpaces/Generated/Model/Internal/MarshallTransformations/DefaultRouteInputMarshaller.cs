@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             if(requestObject.IsSetActivationState())
             {
                 context.Writer.WritePropertyName("ActivationState");
-                context.Writer.Write(requestObject.ActivationState);
+                context.Writer.WriteStringValue(requestObject.ActivationState);
             }
 
         }

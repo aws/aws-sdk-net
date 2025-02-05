@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
@@ -64,35 +67,40 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field SourceFileSystemId set");
             request.AddPathResource("{SourceFileSystemId}", StringUtils.FromString(publicRequest.SourceFileSystemId));
             request.ResourcePath = "/2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("Destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = DestinationToCreateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationsListValue, context);
+                    var marshaller = DestinationToCreateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

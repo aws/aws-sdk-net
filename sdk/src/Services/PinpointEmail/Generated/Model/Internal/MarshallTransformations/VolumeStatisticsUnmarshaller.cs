@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VolumeStatistics Object
     /// </summary>  
-    public class VolumeStatisticsUnmarshaller : IUnmarshaller<VolumeStatistics, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatistics, JsonUnmarshallerContext>
+    public class VolumeStatisticsUnmarshaller : IJsonUnmarshaller<VolumeStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VolumeStatistics IUnmarshaller<VolumeStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VolumeStatistics Unmarshall(JsonUnmarshallerContext context)
+        public VolumeStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VolumeStatistics unmarshalledObject = new VolumeStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("InboxRawCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.InboxRawCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InboxRawCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProjectedInbox", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ProjectedInbox = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProjectedInbox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProjectedSpam", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ProjectedSpam = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProjectedSpam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpamRawCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.SpamRawCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpamRawCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

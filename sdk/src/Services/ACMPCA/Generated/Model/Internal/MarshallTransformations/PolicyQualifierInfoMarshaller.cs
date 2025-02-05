@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolicyQualifierId())
             {
                 context.Writer.WritePropertyName("PolicyQualifierId");
-                context.Writer.Write(requestObject.PolicyQualifierId);
+                context.Writer.WriteStringValue(requestObject.PolicyQualifierId);
             }
 
             if(requestObject.IsSetQualifier())
             {
                 context.Writer.WritePropertyName("Qualifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QualifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Qualifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

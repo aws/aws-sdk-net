@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProtectionNames())
             {
                 context.Writer.WritePropertyName("ProtectionNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtectionNamesListValue in requestObject.ProtectionNames)
                 {
-                        context.Writer.Write(requestObjectProtectionNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectProtectionNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("ResourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceArnsListValue in requestObject.ResourceArns)
                 {
-                        context.Writer.Write(requestObjectResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

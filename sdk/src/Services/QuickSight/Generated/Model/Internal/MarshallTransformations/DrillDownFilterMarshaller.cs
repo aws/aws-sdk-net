@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryFilter())
             {
                 context.Writer.WritePropertyName("CategoryFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CategoryDrillDownFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.CategoryFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericEqualityFilter())
             {
                 context.Writer.WritePropertyName("NumericEqualityFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericEqualityDrillDownFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericEqualityFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeRangeFilter())
             {
                 context.Writer.WritePropertyName("TimeRangeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeRangeDrillDownFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeRangeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

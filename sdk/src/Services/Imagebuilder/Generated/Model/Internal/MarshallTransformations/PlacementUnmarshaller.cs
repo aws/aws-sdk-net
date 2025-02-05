@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Placement Object
     /// </summary>  
-    public class PlacementUnmarshaller : IUnmarshaller<Placement, XmlUnmarshallerContext>, IUnmarshaller<Placement, JsonUnmarshallerContext>
+    public class PlacementUnmarshaller : IJsonUnmarshaller<Placement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Placement IUnmarshaller<Placement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Placement Unmarshall(JsonUnmarshallerContext context)
+        public Placement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Placement unmarshalledObject = new Placement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("availabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hostId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hostResourceGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostResourceGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostResourceGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tenancy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

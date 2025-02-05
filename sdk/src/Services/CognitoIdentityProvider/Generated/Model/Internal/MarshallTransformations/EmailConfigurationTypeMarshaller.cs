@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationSet())
             {
                 context.Writer.WritePropertyName("ConfigurationSet");
-                context.Writer.Write(requestObject.ConfigurationSet);
+                context.Writer.WriteStringValue(requestObject.ConfigurationSet);
             }
 
             if(requestObject.IsSetEmailSendingAccount())
             {
                 context.Writer.WritePropertyName("EmailSendingAccount");
-                context.Writer.Write(requestObject.EmailSendingAccount);
+                context.Writer.WriteStringValue(requestObject.EmailSendingAccount);
             }
 
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("From");
-                context.Writer.Write(requestObject.From);
+                context.Writer.WriteStringValue(requestObject.From);
             }
 
             if(requestObject.IsSetReplyToEmailAddress())
             {
                 context.Writer.WritePropertyName("ReplyToEmailAddress");
-                context.Writer.Write(requestObject.ReplyToEmailAddress);
+                context.Writer.WriteStringValue(requestObject.ReplyToEmailAddress);
             }
 
             if(requestObject.IsSetSourceArn())
             {
                 context.Writer.WritePropertyName("SourceArn");
-                context.Writer.Write(requestObject.SourceArn);
+                context.Writer.WriteStringValue(requestObject.SourceArn);
             }
 
         }

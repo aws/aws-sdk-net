@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AgentAliasRoutingConfigurationListItem Object
     /// </summary>  
-    public class AgentAliasRoutingConfigurationListItemUnmarshaller : IUnmarshaller<AgentAliasRoutingConfigurationListItem, XmlUnmarshallerContext>, IUnmarshaller<AgentAliasRoutingConfigurationListItem, JsonUnmarshallerContext>
+    public class AgentAliasRoutingConfigurationListItemUnmarshaller : IJsonUnmarshaller<AgentAliasRoutingConfigurationListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AgentAliasRoutingConfigurationListItem IUnmarshaller<AgentAliasRoutingConfigurationListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentAliasRoutingConfigurationListItem Unmarshall(JsonUnmarshallerContext context)
+        public AgentAliasRoutingConfigurationListItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AgentAliasRoutingConfigurationListItem unmarshalledObject = new AgentAliasRoutingConfigurationListItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("agentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("provisionedThroughput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

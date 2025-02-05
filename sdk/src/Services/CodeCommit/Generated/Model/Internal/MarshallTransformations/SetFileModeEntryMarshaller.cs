@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileMode())
             {
                 context.Writer.WritePropertyName("fileMode");
-                context.Writer.Write(requestObject.FileMode);
+                context.Writer.WriteStringValue(requestObject.FileMode);
             }
 
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("filePath");
-                context.Writer.Write(requestObject.FilePath);
+                context.Writer.WriteStringValue(requestObject.FilePath);
             }
 
         }

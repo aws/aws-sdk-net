@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelName())
             {
                 context.Writer.WritePropertyName("ChannelName");
-                context.Writer.Write(requestObject.ChannelName);
+                context.Writer.WriteStringValue(requestObject.ChannelName);
             }
 
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
+                context.Writer.WriteStringValue(requestObject.CompressionType);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputMode())
             {
                 context.Writer.WritePropertyName("InputMode");
-                context.Writer.Write(requestObject.InputMode);
+                context.Writer.WriteStringValue(requestObject.InputMode);
             }
 
             if(requestObject.IsSetRecordWrapperType())
             {
                 context.Writer.WritePropertyName("RecordWrapperType");
-                context.Writer.Write(requestObject.RecordWrapperType);
+                context.Writer.WriteStringValue(requestObject.RecordWrapperType);
             }
 
             if(requestObject.IsSetShuffleConfig())
             {
                 context.Writer.WritePropertyName("ShuffleConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ShuffleConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ShuffleConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCalculatedFields())
             {
                 context.Writer.WritePropertyName("CalculatedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCalculatedFieldsListValue in requestObject.CalculatedFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicCalculatedFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectCalculatedFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColumns())
             {
                 context.Writer.WritePropertyName("Columns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnsListValue in requestObject.Columns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataAggregation())
             {
                 context.Writer.WritePropertyName("DataAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatasetArn())
             {
                 context.Writer.WritePropertyName("DatasetArn");
-                context.Writer.Write(requestObject.DatasetArn);
+                context.Writer.WriteStringValue(requestObject.DatasetArn);
             }
 
             if(requestObject.IsSetDatasetDescription())
             {
                 context.Writer.WritePropertyName("DatasetDescription");
-                context.Writer.Write(requestObject.DatasetDescription);
+                context.Writer.WriteStringValue(requestObject.DatasetDescription);
             }
 
             if(requestObject.IsSetDatasetName())
             {
                 context.Writer.WritePropertyName("DatasetName");
-                context.Writer.Write(requestObject.DatasetName);
+                context.Writer.WriteStringValue(requestObject.DatasetName);
             }
 
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNamedEntities())
             {
                 context.Writer.WritePropertyName("NamedEntities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNamedEntitiesListValue in requestObject.NamedEntities)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicNamedEntityMarshaller.Instance;
                     marshaller.Marshall(requestObjectNamedEntitiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

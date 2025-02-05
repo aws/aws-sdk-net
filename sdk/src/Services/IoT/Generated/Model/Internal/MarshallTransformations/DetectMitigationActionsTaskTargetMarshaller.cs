@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBehaviorName())
             {
                 context.Writer.WritePropertyName("behaviorName");
-                context.Writer.Write(requestObject.BehaviorName);
+                context.Writer.WriteStringValue(requestObject.BehaviorName);
             }
 
             if(requestObject.IsSetSecurityProfileName())
             {
                 context.Writer.WritePropertyName("securityProfileName");
-                context.Writer.Write(requestObject.SecurityProfileName);
+                context.Writer.WriteStringValue(requestObject.SecurityProfileName);
             }
 
             if(requestObject.IsSetViolationIds())
             {
                 context.Writer.WritePropertyName("violationIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectViolationIdsListValue in requestObject.ViolationIds)
                 {
-                        context.Writer.Write(requestObjectViolationIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectViolationIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

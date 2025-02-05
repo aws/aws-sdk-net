@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Resource Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class ResourceUnmarshaller : IJsonUnmarshaller<Resource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public Resource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Resource unmarshalledObject = new Resource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Catalog", targetDepth))
                 {
                     var unmarshaller = CatalogResourceUnmarshaller.Instance;
-                    unmarshalledObject.Catalog = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Database", targetDepth))
                 {
                     var unmarshaller = DatabaseResourceUnmarshaller.Instance;
-                    unmarshalledObject.Database = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Database = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataCellsFilter", targetDepth))
                 {
                     var unmarshaller = DataCellsFilterResourceUnmarshaller.Instance;
-                    unmarshalledObject.DataCellsFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataCellsFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataLocation", targetDepth))
                 {
                     var unmarshaller = DataLocationResourceUnmarshaller.Instance;
-                    unmarshalledObject.DataLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LFTag", targetDepth))
                 {
                     var unmarshaller = LFTagKeyResourceUnmarshaller.Instance;
-                    unmarshalledObject.LFTag = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LFTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LFTagExpression", targetDepth))
                 {
                     var unmarshaller = LFTagExpressionResourceUnmarshaller.Instance;
-                    unmarshalledObject.LFTagExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LFTagExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LFTagPolicy", targetDepth))
                 {
                     var unmarshaller = LFTagPolicyResourceUnmarshaller.Instance;
-                    unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = TableResourceUnmarshaller.Instance;
-                    unmarshalledObject.Table = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableWithColumns", targetDepth))
                 {
                     var unmarshaller = TableWithColumnsResourceUnmarshaller.Instance;
-                    unmarshalledObject.TableWithColumns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableWithColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

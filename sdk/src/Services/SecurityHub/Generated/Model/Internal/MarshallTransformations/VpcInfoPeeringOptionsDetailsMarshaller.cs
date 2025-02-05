@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowDnsResolutionFromRemoteVpc())
             {
                 context.Writer.WritePropertyName("AllowDnsResolutionFromRemoteVpc");
-                context.Writer.Write(requestObject.AllowDnsResolutionFromRemoteVpc.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowDnsResolutionFromRemoteVpc.Value);
             }
 
             if(requestObject.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
             {
                 context.Writer.WritePropertyName("AllowEgressFromLocalClassicLinkToRemoteVpc");
-                context.Writer.Write(requestObject.AllowEgressFromLocalClassicLinkToRemoteVpc.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowEgressFromLocalClassicLinkToRemoteVpc.Value);
             }
 
             if(requestObject.IsSetAllowEgressFromLocalVpcToRemoteClassicLink())
             {
                 context.Writer.WritePropertyName("AllowEgressFromLocalVpcToRemoteClassicLink");
-                context.Writer.Write(requestObject.AllowEgressFromLocalVpcToRemoteClassicLink.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowEgressFromLocalVpcToRemoteClassicLink.Value);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -64,53 +67,58 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/embed-url/registered-user";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedDomains())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AllowedDomains");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowedDomains())
-                    {
-                        context.Writer.WritePropertyName("AllowedDomains");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
-                        {
-                                context.Writer.Write(publicRequestAllowedDomainsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetExperienceConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ExperienceConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegisteredUserEmbeddingExperienceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSessionLifetimeInMinutes())
-                    {
-                        context.Writer.WritePropertyName("SessionLifetimeInMinutes");
-                        context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetUserArn())
-                    {
-                        context.Writer.WritePropertyName("UserArn");
-                        context.Writer.Write(publicRequest.UserArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAllowedDomainsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetExperienceConfiguration())
+            {
+                context.Writer.WritePropertyName("ExperienceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegisteredUserEmbeddingExperienceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSessionLifetimeInMinutes())
+            {
+                context.Writer.WritePropertyName("SessionLifetimeInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.SessionLifetimeInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetUserArn())
+            {
+                context.Writer.WritePropertyName("UserArn");
+                context.Writer.WriteStringValue(publicRequest.UserArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

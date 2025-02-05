@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -67,63 +70,68 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field StorageProfileId set");
             request.AddPathResource("{storageProfileId}", StringUtils.FromString(publicRequest.StorageProfileId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/storage-profiles/{storageProfileId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDisplayName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("displayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetFileSystemLocationsToAdd())
-                    {
-                        context.Writer.WritePropertyName("fileSystemLocationsToAdd");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFileSystemLocationsToAddListValue in publicRequest.FileSystemLocationsToAdd)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FileSystemLocationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFileSystemLocationsToAddListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFileSystemLocationsToRemove())
-                    {
-                        context.Writer.WritePropertyName("fileSystemLocationsToRemove");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFileSystemLocationsToRemoveListValue in publicRequest.FileSystemLocationsToRemove)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FileSystemLocationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFileSystemLocationsToRemoveListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOsFamily())
-                    {
-                        context.Writer.WritePropertyName("osFamily");
-                        context.Writer.Write(publicRequest.OsFamily);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
             }
+
+            if(publicRequest.IsSetFileSystemLocationsToAdd())
+            {
+                context.Writer.WritePropertyName("fileSystemLocationsToAdd");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFileSystemLocationsToAddListValue in publicRequest.FileSystemLocationsToAdd)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FileSystemLocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFileSystemLocationsToAddListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFileSystemLocationsToRemove())
+            {
+                context.Writer.WritePropertyName("fileSystemLocationsToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFileSystemLocationsToRemoveListValue in publicRequest.FileSystemLocationsToRemove)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FileSystemLocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFileSystemLocationsToRemoveListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOsFamily())
+            {
+                context.Writer.WritePropertyName("osFamily");
+                context.Writer.WriteStringValue(publicRequest.OsFamily);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

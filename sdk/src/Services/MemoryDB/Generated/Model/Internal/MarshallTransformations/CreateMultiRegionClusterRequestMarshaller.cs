@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
@@ -63,83 +66,88 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEngine())
-                    {
-                        context.Writer.WritePropertyName("Engine");
-                        context.Writer.Write(publicRequest.Engine);
-                    }
-
-                    if(publicRequest.IsSetEngineVersion())
-                    {
-                        context.Writer.WritePropertyName("EngineVersion");
-                        context.Writer.Write(publicRequest.EngineVersion);
-                    }
-
-                    if(publicRequest.IsSetMultiRegionClusterNameSuffix())
-                    {
-                        context.Writer.WritePropertyName("MultiRegionClusterNameSuffix");
-                        context.Writer.Write(publicRequest.MultiRegionClusterNameSuffix);
-                    }
-
-                    if(publicRequest.IsSetMultiRegionParameterGroupName())
-                    {
-                        context.Writer.WritePropertyName("MultiRegionParameterGroupName");
-                        context.Writer.Write(publicRequest.MultiRegionParameterGroupName);
-                    }
-
-                    if(publicRequest.IsSetNodeType())
-                    {
-                        context.Writer.WritePropertyName("NodeType");
-                        context.Writer.Write(publicRequest.NodeType);
-                    }
-
-                    if(publicRequest.IsSetNumShards())
-                    {
-                        context.Writer.WritePropertyName("NumShards");
-                        context.Writer.Write(publicRequest.NumShards.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTLSEnabled())
-                    {
-                        context.Writer.WritePropertyName("TLSEnabled");
-                        context.Writer.Write(publicRequest.TLSEnabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetEngine())
+            {
+                context.Writer.WritePropertyName("Engine");
+                context.Writer.WriteStringValue(publicRequest.Engine);
+            }
+
+            if(publicRequest.IsSetEngineVersion())
+            {
+                context.Writer.WritePropertyName("EngineVersion");
+                context.Writer.WriteStringValue(publicRequest.EngineVersion);
+            }
+
+            if(publicRequest.IsSetMultiRegionClusterNameSuffix())
+            {
+                context.Writer.WritePropertyName("MultiRegionClusterNameSuffix");
+                context.Writer.WriteStringValue(publicRequest.MultiRegionClusterNameSuffix);
+            }
+
+            if(publicRequest.IsSetMultiRegionParameterGroupName())
+            {
+                context.Writer.WritePropertyName("MultiRegionParameterGroupName");
+                context.Writer.WriteStringValue(publicRequest.MultiRegionParameterGroupName);
+            }
+
+            if(publicRequest.IsSetNodeType())
+            {
+                context.Writer.WritePropertyName("NodeType");
+                context.Writer.WriteStringValue(publicRequest.NodeType);
+            }
+
+            if(publicRequest.IsSetNumShards())
+            {
+                context.Writer.WritePropertyName("NumShards");
+                context.Writer.WriteNumberValue(publicRequest.NumShards.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTLSEnabled())
+            {
+                context.Writer.WritePropertyName("TLSEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.TLSEnabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("CertificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetSyncShadow())
             {
                 context.Writer.WritePropertyName("SyncShadow");
-                context.Writer.Write(requestObject.SyncShadow.Value);
+                context.Writer.WriteBooleanValue(requestObject.SyncShadow.Value);
             }
 
             if(requestObject.IsSetThingArn())
             {
                 context.Writer.WritePropertyName("ThingArn");
-                context.Writer.Write(requestObject.ThingArn);
+                context.Writer.WriteStringValue(requestObject.ThingArn);
             }
 
         }

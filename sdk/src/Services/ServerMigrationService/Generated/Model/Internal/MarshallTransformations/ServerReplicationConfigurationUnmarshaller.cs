@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServerReplicationConfiguration Object
     /// </summary>  
-    public class ServerReplicationConfigurationUnmarshaller : IUnmarshaller<ServerReplicationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServerReplicationConfiguration, JsonUnmarshallerContext>
+    public class ServerReplicationConfigurationUnmarshaller : IJsonUnmarshaller<ServerReplicationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServerReplicationConfiguration IUnmarshaller<ServerReplicationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServerReplicationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ServerReplicationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServerReplicationConfiguration unmarshalledObject = new ServerReplicationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("server", targetDepth))
                 {
                     var unmarshaller = ServerUnmarshaller.Instance;
-                    unmarshalledObject.Server = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Server = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serverReplicationParameters", targetDepth))
                 {
                     var unmarshaller = ServerReplicationParametersUnmarshaller.Instance;
-                    unmarshalledObject.ServerReplicationParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerReplicationParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

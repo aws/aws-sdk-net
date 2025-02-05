@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,106 +49,106 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage.Value);
+                context.Writer.WriteNumberValue(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetBackupRetentionPeriod())
             {
                 context.Writer.WritePropertyName("BackupRetentionPeriod");
-                context.Writer.Write(requestObject.BackupRetentionPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.BackupRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetCaCertificateIdentifier())
             {
                 context.Writer.WritePropertyName("CaCertificateIdentifier");
-                context.Writer.Write(requestObject.CaCertificateIdentifier);
+                context.Writer.WriteStringValue(requestObject.CaCertificateIdentifier);
             }
 
             if(requestObject.IsSetDbInstanceClass())
             {
                 context.Writer.WritePropertyName("DbInstanceClass");
-                context.Writer.Write(requestObject.DbInstanceClass);
+                context.Writer.WriteStringValue(requestObject.DbInstanceClass);
             }
 
             if(requestObject.IsSetDbInstanceIdentifier())
             {
                 context.Writer.WritePropertyName("DbInstanceIdentifier");
-                context.Writer.Write(requestObject.DbInstanceIdentifier);
+                context.Writer.WriteStringValue(requestObject.DbInstanceIdentifier);
             }
 
             if(requestObject.IsSetDbSubnetGroupName())
             {
                 context.Writer.WritePropertyName("DbSubnetGroupName");
-                context.Writer.Write(requestObject.DbSubnetGroupName);
+                context.Writer.WriteStringValue(requestObject.DbSubnetGroupName);
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.Write(requestObject.EngineVersion);
+                context.Writer.WriteStringValue(requestObject.EngineVersion);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetLicenseModel())
             {
                 context.Writer.WritePropertyName("LicenseModel");
-                context.Writer.Write(requestObject.LicenseModel);
+                context.Writer.WriteStringValue(requestObject.LicenseModel);
             }
 
             if(requestObject.IsSetMasterUserPassword())
             {
                 context.Writer.WritePropertyName("MasterUserPassword");
-                context.Writer.Write(requestObject.MasterUserPassword);
+                context.Writer.WriteStringValue(requestObject.MasterUserPassword);
             }
 
             if(requestObject.IsSetMultiAZ())
             {
                 context.Writer.WritePropertyName("MultiAZ");
-                context.Writer.Write(requestObject.MultiAZ.Value);
+                context.Writer.WriteBooleanValue(requestObject.MultiAZ.Value);
             }
 
             if(requestObject.IsSetPendingCloudWatchLogsExports())
             {
                 context.Writer.WritePropertyName("PendingCloudWatchLogsExports");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsRdsPendingCloudWatchLogsExportsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PendingCloudWatchLogsExports, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProcessorFeatures())
             {
                 context.Writer.WritePropertyName("ProcessorFeatures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProcessorFeaturesListValue in requestObject.ProcessorFeatures)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRdsDbProcessorFeatureMarshaller.Instance;
                     marshaller.Marshall(requestObjectProcessorFeaturesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("StorageType");
-                context.Writer.Write(requestObject.StorageType);
+                context.Writer.WriteStringValue(requestObject.StorageType);
             }
 
         }

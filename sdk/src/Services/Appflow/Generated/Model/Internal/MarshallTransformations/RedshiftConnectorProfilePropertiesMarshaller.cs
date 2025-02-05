@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetBucketPrefix())
             {
                 context.Writer.WritePropertyName("bucketPrefix");
-                context.Writer.Write(requestObject.BucketPrefix);
+                context.Writer.WriteStringValue(requestObject.BucketPrefix);
             }
 
             if(requestObject.IsSetClusterIdentifier())
             {
                 context.Writer.WritePropertyName("clusterIdentifier");
-                context.Writer.Write(requestObject.ClusterIdentifier);
+                context.Writer.WriteStringValue(requestObject.ClusterIdentifier);
             }
 
             if(requestObject.IsSetDataApiRoleArn())
             {
                 context.Writer.WritePropertyName("dataApiRoleArn");
-                context.Writer.Write(requestObject.DataApiRoleArn);
+                context.Writer.WriteStringValue(requestObject.DataApiRoleArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDatabaseUrl())
             {
                 context.Writer.WritePropertyName("databaseUrl");
-                context.Writer.Write(requestObject.DatabaseUrl);
+                context.Writer.WriteStringValue(requestObject.DatabaseUrl);
             }
 
             if(requestObject.IsSetIsRedshiftServerless())
             {
                 context.Writer.WritePropertyName("isRedshiftServerless");
-                context.Writer.Write(requestObject.IsRedshiftServerless.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsRedshiftServerless.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetWorkgroupName())
             {
                 context.Writer.WritePropertyName("workgroupName");
-                context.Writer.Write(requestObject.WorkgroupName);
+                context.Writer.WriteStringValue(requestObject.WorkgroupName);
             }
 
         }

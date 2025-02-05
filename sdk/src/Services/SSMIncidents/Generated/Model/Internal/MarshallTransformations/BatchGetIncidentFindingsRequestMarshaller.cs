@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -61,36 +64,41 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/batchGetIncidentFindings";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFindingIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("findingIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFindingIds())
-                    {
-                        context.Writer.WritePropertyName("findingIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
-                        {
-                                context.Writer.Write(publicRequestFindingIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIncidentRecordArn())
-                    {
-                        context.Writer.WritePropertyName("incidentRecordArn");
-                        context.Writer.Write(publicRequest.IncidentRecordArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestFindingIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetIncidentRecordArn())
+            {
+                context.Writer.WritePropertyName("incidentRecordArn");
+                context.Writer.WriteStringValue(publicRequest.IncidentRecordArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

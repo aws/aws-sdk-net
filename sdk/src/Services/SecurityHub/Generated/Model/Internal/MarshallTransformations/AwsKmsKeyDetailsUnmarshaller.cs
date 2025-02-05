@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsKmsKeyDetails Object
     /// </summary>  
-    public class AwsKmsKeyDetailsUnmarshaller : IUnmarshaller<AwsKmsKeyDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsKmsKeyDetails, JsonUnmarshallerContext>
+    public class AwsKmsKeyDetailsUnmarshaller : IJsonUnmarshaller<AwsKmsKeyDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsKmsKeyDetails IUnmarshaller<AwsKmsKeyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsKmsKeyDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsKmsKeyDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsKmsKeyDetails unmarshalledObject = new AwsKmsKeyDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AWSAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AWSAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AWSAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyManager", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyManager = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyManager = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyRotationStatus", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.KeyRotationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyRotationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Origin", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Origin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficPolicyAlreadyExistsException operation
     /// </summary>  
-    public class TrafficPolicyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<TrafficPolicyAlreadyExistsException, XmlUnmarshallerContext>
+    public class TrafficPolicyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TrafficPolicyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CancelCapacityReservationFleetError Object
     /// </summary>  
-    public class CancelCapacityReservationFleetErrorUnmarshaller : IUnmarshaller<CancelCapacityReservationFleetError, XmlUnmarshallerContext>, IUnmarshaller<CancelCapacityReservationFleetError, JsonUnmarshallerContext>
+    public class CancelCapacityReservationFleetErrorUnmarshaller : IXmlUnmarshaller<CancelCapacityReservationFleetError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CancelCapacityReservationFleetError Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CancelCapacityReservationFleetErrorUnmarshaller _instance = new CancelCapacityReservationFleetErrorUnmarshaller();        
 

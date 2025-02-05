@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentReaderConfig())
             {
                 context.Writer.WritePropertyName("DocumentReaderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentReaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentReaderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputFormat())
             {
                 context.Writer.WritePropertyName("InputFormat");
-                context.Writer.Write(requestObject.InputFormat);
+                context.Writer.WriteStringValue(requestObject.InputFormat);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
@@ -47,93 +47,93 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             StartSyncExecutionResponse response = new StartSyncExecutionResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("billingDetails", targetDepth))
                 {
                     var unmarshaller = BillingDetailsUnmarshaller.Instance;
-                    response.BillingDetails = unmarshaller.Unmarshall(context);
+                    response.BillingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cause", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Cause = unmarshaller.Unmarshall(context);
+                    response.Cause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("error", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Error = unmarshaller.Unmarshall(context);
+                    response.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExecutionArn = unmarshaller.Unmarshall(context);
+                    response.ExecutionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("input", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Input = unmarshaller.Unmarshall(context);
+                    response.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputDetails", targetDepth))
                 {
                     var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
-                    response.InputDetails = unmarshaller.Unmarshall(context);
+                    response.InputDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("output", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Output = unmarshaller.Unmarshall(context);
+                    response.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputDetails", targetDepth))
                 {
                     var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
-                    response.OutputDetails = unmarshaller.Unmarshall(context);
+                    response.OutputDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StartDate = unmarshaller.Unmarshall(context);
+                    response.StartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stateMachineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StateMachineArn = unmarshaller.Unmarshall(context);
+                    response.StateMachineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stopDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StopDate = unmarshaller.Unmarshall(context);
+                    response.StopDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("traceHeader", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TraceHeader = unmarshaller.Unmarshall(context);
+                    response.TraceHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -150,50 +150,52 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
                 {
-                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidExecutionInput"))
                 {
-                    return InvalidExecutionInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidExecutionInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidName"))
                 {
-                    return InvalidNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KmsAccessDeniedException"))
                 {
-                    return KmsAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return KmsAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KmsInvalidStateException"))
                 {
-                    return KmsInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return KmsInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KmsThrottlingException"))
                 {
-                    return KmsThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return KmsThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineDeleting"))
                 {
-                    return StateMachineDeletingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return StateMachineDeletingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineDoesNotExist"))
                 {
-                    return StateMachineDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return StateMachineDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("StateMachineTypeNotSupported"))
                 {
-                    return StateMachineTypeNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return StateMachineTypeNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonStepFunctionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

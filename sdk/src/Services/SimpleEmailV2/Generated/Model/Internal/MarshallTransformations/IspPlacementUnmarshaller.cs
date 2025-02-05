@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IspPlacement Object
     /// </summary>  
-    public class IspPlacementUnmarshaller : IUnmarshaller<IspPlacement, XmlUnmarshallerContext>, IUnmarshaller<IspPlacement, JsonUnmarshallerContext>
+    public class IspPlacementUnmarshaller : IJsonUnmarshaller<IspPlacement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IspPlacement IUnmarshaller<IspPlacement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IspPlacement Unmarshall(JsonUnmarshallerContext context)
+        public IspPlacement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IspPlacement unmarshalledObject = new IspPlacement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IspName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IspName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IspName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlacementStatistics", targetDepth))
                 {
                     var unmarshaller = PlacementStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.PlacementStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlacementStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

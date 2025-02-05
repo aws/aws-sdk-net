@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBusinessTitle())
             {
                 context.Writer.WritePropertyName("BusinessTitle");
-                context.Writer.Write(requestObject.BusinessTitle);
+                context.Writer.WriteStringValue(requestObject.BusinessTitle);
             }
 
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("Email");
-                context.Writer.Write(requestObject.Email);
+                context.Writer.WriteStringValue(requestObject.Email);
             }
 
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("FirstName");
-                context.Writer.Write(requestObject.FirstName);
+                context.Writer.WriteStringValue(requestObject.FirstName);
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("LastName");
-                context.Writer.Write(requestObject.LastName);
+                context.Writer.WriteStringValue(requestObject.LastName);
             }
 
         }

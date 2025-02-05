@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSetAlreadyCreatedException operation
     /// </summary>  
-    public class DelegationSetAlreadyCreatedExceptionUnmarshaller : IErrorResponseUnmarshaller<DelegationSetAlreadyCreatedException, XmlUnmarshallerContext>
+    public class DelegationSetAlreadyCreatedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DelegationSetAlreadyCreatedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

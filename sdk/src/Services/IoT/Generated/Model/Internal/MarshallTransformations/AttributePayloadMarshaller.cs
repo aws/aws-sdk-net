@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMerge())
             {
                 context.Writer.WritePropertyName("merge");
-                context.Writer.Write(requestObject.Merge.Value);
+                context.Writer.WriteBooleanValue(requestObject.Merge.Value);
             }
 
         }

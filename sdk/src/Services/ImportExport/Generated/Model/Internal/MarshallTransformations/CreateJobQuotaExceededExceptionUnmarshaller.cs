@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateJobQuotaExceededException operation
     /// </summary>  
-    public class CreateJobQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<CreateJobQuotaExceededException, XmlUnmarshallerContext>
+    public class CreateJobQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CreateJobQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

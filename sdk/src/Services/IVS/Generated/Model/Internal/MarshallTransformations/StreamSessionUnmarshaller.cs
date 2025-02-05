@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreamSession Object
     /// </summary>  
-    public class StreamSessionUnmarshaller : IUnmarshaller<StreamSession, XmlUnmarshallerContext>, IUnmarshaller<StreamSession, JsonUnmarshallerContext>
+    public class StreamSessionUnmarshaller : IJsonUnmarshaller<StreamSession, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StreamSession IUnmarshaller<StreamSession, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreamSession Unmarshall(JsonUnmarshallerContext context)
+        public StreamSession Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StreamSession unmarshalledObject = new StreamSession();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("channel", targetDepth))
                 {
                     var unmarshaller = ChannelUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ingestConfiguration", targetDepth))
                 {
                     var unmarshaller = IngestConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IngestConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngestConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ingestConfigurations", targetDepth))
                 {
                     var unmarshaller = IngestConfigurationsUnmarshaller.Instance;
-                    unmarshalledObject.IngestConfigurations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngestConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordingConfiguration", targetDepth))
                 {
                     var unmarshaller = RecordingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RecordingConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("truncatedEvents", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StreamEvent, StreamEventUnmarshaller>(StreamEventUnmarshaller.Instance);
-                    unmarshalledObject.TruncatedEvents = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StreamEvent, StreamEventUnmarshaller>(StreamEventUnmarshaller.Instance);
+                    unmarshalledObject.TruncatedEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

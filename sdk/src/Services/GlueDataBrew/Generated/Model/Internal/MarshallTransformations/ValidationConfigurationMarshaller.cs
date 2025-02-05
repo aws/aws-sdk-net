@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRulesetArn())
             {
                 context.Writer.WritePropertyName("RulesetArn");
-                context.Writer.Write(requestObject.RulesetArn);
+                context.Writer.WriteStringValue(requestObject.RulesetArn);
             }
 
             if(requestObject.IsSetValidationMode())
             {
                 context.Writer.WritePropertyName("ValidationMode");
-                context.Writer.Write(requestObject.ValidationMode);
+                context.Writer.WriteStringValue(requestObject.ValidationMode);
             }
 
         }

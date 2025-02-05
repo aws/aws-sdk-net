@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HookResultNotFoundException operation
     /// </summary>  
-    public class HookResultNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<HookResultNotFoundException, XmlUnmarshallerContext>
+    public class HookResultNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HookResultNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

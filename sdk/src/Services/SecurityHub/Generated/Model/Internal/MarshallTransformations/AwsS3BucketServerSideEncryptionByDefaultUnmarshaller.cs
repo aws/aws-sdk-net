@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsS3BucketServerSideEncryptionByDefault Object
     /// </summary>  
-    public class AwsS3BucketServerSideEncryptionByDefaultUnmarshaller : IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, JsonUnmarshallerContext>
+    public class AwsS3BucketServerSideEncryptionByDefaultUnmarshaller : IJsonUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsS3BucketServerSideEncryptionByDefault IUnmarshaller<AwsS3BucketServerSideEncryptionByDefault, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsS3BucketServerSideEncryptionByDefault Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketServerSideEncryptionByDefault Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsS3BucketServerSideEncryptionByDefault unmarshalledObject = new AwsS3BucketServerSideEncryptionByDefault();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KMSMasterKeyID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSMasterKeyID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KMSMasterKeyID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SSEAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SSEAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SSEAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MessageBody Object
     /// </summary>  
-    public class MessageBodyUnmarshaller : IUnmarshaller<MessageBody, XmlUnmarshallerContext>, IUnmarshaller<MessageBody, JsonUnmarshallerContext>
+    public class MessageBodyUnmarshaller : IJsonUnmarshaller<MessageBody, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MessageBody IUnmarshaller<MessageBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageBody Unmarshall(JsonUnmarshallerContext context)
+        public MessageBody Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MessageBody unmarshalledObject = new MessageBody();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Html", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Html = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Html = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageMalformed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MessageMalformed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageMalformed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

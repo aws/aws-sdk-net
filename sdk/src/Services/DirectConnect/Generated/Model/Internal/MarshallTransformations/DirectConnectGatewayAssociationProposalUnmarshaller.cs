@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DirectConnectGatewayAssociationProposal Object
     /// </summary>  
-    public class DirectConnectGatewayAssociationProposalUnmarshaller : IUnmarshaller<DirectConnectGatewayAssociationProposal, XmlUnmarshallerContext>, IUnmarshaller<DirectConnectGatewayAssociationProposal, JsonUnmarshallerContext>
+    public class DirectConnectGatewayAssociationProposalUnmarshaller : IJsonUnmarshaller<DirectConnectGatewayAssociationProposal, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DirectConnectGatewayAssociationProposal IUnmarshaller<DirectConnectGatewayAssociationProposal, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DirectConnectGatewayAssociationProposal Unmarshall(JsonUnmarshallerContext context)
+        public DirectConnectGatewayAssociationProposal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DirectConnectGatewayAssociationProposal unmarshalledObject = new DirectConnectGatewayAssociationProposal();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("associatedGateway", targetDepth))
                 {
                     var unmarshaller = AssociatedGatewayUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedGateway = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssociatedGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("directConnectGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("directConnectGatewayOwnerAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayOwnerAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectConnectGatewayOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("existingAllowedPrefixesToDirectConnectGateway", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
-                    unmarshalledObject.ExistingAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    unmarshalledObject.ExistingAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("proposalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProposalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProposalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("proposalState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProposalState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProposalState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("requestedAllowedPrefixesToDirectConnectGateway", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
-                    unmarshalledObject.RequestedAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    unmarshalledObject.RequestedAllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

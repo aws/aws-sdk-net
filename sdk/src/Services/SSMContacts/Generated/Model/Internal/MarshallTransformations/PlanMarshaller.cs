@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRotationIds())
             {
                 context.Writer.WritePropertyName("RotationIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRotationIdsListValue in requestObject.RotationIds)
                 {
-                        context.Writer.Write(requestObjectRotationIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectRotationIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStages())
             {
                 context.Writer.WritePropertyName("Stages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStagesListValue in requestObject.Stages)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StageMarshaller.Instance;
                     marshaller.Marshall(requestObjectStagesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

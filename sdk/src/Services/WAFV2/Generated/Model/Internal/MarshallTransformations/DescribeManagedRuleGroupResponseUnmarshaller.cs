@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -47,51 +47,51 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeManagedRuleGroupResponse response = new DescribeManagedRuleGroupResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailableLabels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
-                    response.AvailableLabels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    response.AvailableLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.Capacity = unmarshaller.Unmarshall(context);
+                    response.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConsumedLabels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
-                    response.ConsumedLabels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LabelSummary, LabelSummaryUnmarshaller>(LabelSummaryUnmarshaller.Instance);
+                    response.ConsumedLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelNamespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelNamespace = unmarshaller.Unmarshall(context);
+                    response.LabelNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RuleSummary, RuleSummaryUnmarshaller>(RuleSummaryUnmarshaller.Instance);
-                    response.Rules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RuleSummary, RuleSummaryUnmarshaller>(RuleSummaryUnmarshaller.Instance);
+                    response.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnsTopicArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SnsTopicArn = unmarshaller.Unmarshall(context);
+                    response.SnsTopicArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VersionName = unmarshaller.Unmarshall(context);
+                    response.VersionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -108,38 +108,40 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFExpiredManagedRuleGroupVersionException"))
                 {
-                    return WAFExpiredManagedRuleGroupVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFExpiredManagedRuleGroupVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
                 {
-                    return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
                 {
-                    return WAFInvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
                 {
-                    return WAFInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidResourceException"))
                 {
-                    return WAFInvalidResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInvalidResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
                 {
-                    return WAFNonexistentItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFNonexistentItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonWAFV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

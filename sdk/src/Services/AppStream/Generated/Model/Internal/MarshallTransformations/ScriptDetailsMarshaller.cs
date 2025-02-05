@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutableParameters())
             {
                 context.Writer.WritePropertyName("ExecutableParameters");
-                context.Writer.Write(requestObject.ExecutableParameters);
+                context.Writer.WriteStringValue(requestObject.ExecutableParameters);
             }
 
             if(requestObject.IsSetExecutablePath())
             {
                 context.Writer.WritePropertyName("ExecutablePath");
-                context.Writer.Write(requestObject.ExecutablePath);
+                context.Writer.WriteStringValue(requestObject.ExecutablePath);
             }
 
             if(requestObject.IsSetScriptS3Location())
             {
                 context.Writer.WritePropertyName("ScriptS3Location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScriptS3Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInSeconds.Value);
             }
 
         }

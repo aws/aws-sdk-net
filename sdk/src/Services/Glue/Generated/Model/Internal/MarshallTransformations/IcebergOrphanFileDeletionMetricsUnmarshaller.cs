@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IcebergOrphanFileDeletionMetrics Object
     /// </summary>  
-    public class IcebergOrphanFileDeletionMetricsUnmarshaller : IUnmarshaller<IcebergOrphanFileDeletionMetrics, XmlUnmarshallerContext>, IUnmarshaller<IcebergOrphanFileDeletionMetrics, JsonUnmarshallerContext>
+    public class IcebergOrphanFileDeletionMetricsUnmarshaller : IJsonUnmarshaller<IcebergOrphanFileDeletionMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IcebergOrphanFileDeletionMetrics IUnmarshaller<IcebergOrphanFileDeletionMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IcebergOrphanFileDeletionMetrics Unmarshall(JsonUnmarshallerContext context)
+        public IcebergOrphanFileDeletionMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IcebergOrphanFileDeletionMetrics unmarshalledObject = new IcebergOrphanFileDeletionMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("JobDurationInHour", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.JobDurationInHour = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobDurationInHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDpus", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDpus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfDpus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfOrphanFilesDeleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfOrphanFilesDeleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfOrphanFilesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

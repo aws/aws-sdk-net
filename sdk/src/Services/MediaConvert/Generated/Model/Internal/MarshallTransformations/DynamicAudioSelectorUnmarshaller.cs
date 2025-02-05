@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DynamicAudioSelector Object
     /// </summary>  
-    public class DynamicAudioSelectorUnmarshaller : IUnmarshaller<DynamicAudioSelector, XmlUnmarshallerContext>, IUnmarshaller<DynamicAudioSelector, JsonUnmarshallerContext>
+    public class DynamicAudioSelectorUnmarshaller : IJsonUnmarshaller<DynamicAudioSelector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DynamicAudioSelector IUnmarshaller<DynamicAudioSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DynamicAudioSelector Unmarshall(JsonUnmarshallerContext context)
+        public DynamicAudioSelector Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DynamicAudioSelector unmarshalledObject = new DynamicAudioSelector();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioDurationCorrection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioDurationCorrection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioDurationCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("externalAudioFileInput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalAudioFileInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalAudioFileInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("languageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("offset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Offset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("selectorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

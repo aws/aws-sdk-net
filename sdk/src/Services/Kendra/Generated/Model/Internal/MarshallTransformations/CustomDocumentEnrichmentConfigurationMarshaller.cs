@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInlineConfigurations())
             {
                 context.Writer.WritePropertyName("InlineConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInlineConfigurationsListValue in requestObject.InlineConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InlineCustomDocumentEnrichmentConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectInlineConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPostExtractionHookConfiguration())
             {
                 context.Writer.WritePropertyName("PostExtractionHookConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HookConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostExtractionHookConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPreExtractionHookConfiguration())
             {
                 context.Writer.WritePropertyName("PreExtractionHookConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HookConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PreExtractionHookConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

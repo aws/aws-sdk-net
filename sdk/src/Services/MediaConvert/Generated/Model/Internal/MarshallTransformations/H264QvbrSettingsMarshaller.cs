@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAverageBitrate())
             {
                 context.Writer.WritePropertyName("maxAverageBitrate");
-                context.Writer.Write(requestObject.MaxAverageBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAverageBitrate.Value);
             }
 
             if(requestObject.IsSetQvbrQualityLevel())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
-                context.Writer.Write(requestObject.QvbrQualityLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.QvbrQualityLevel.Value);
             }
 
             if(requestObject.IsSetQvbrQualityLevelFineTune())
@@ -65,11 +63,11 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("qvbrQualityLevelFineTune");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.QvbrQualityLevelFineTune.Value);
+                    context.Writer.WriteNumberValue(requestObject.QvbrQualityLevelFineTune.Value);
                 }
             }
 

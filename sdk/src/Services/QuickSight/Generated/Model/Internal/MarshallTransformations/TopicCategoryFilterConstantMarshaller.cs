@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectiveConstant())
             {
                 context.Writer.WritePropertyName("CollectiveConstant");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CollectiveConstantMarshaller.Instance;
                 marshaller.Marshall(requestObject.CollectiveConstant, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConstantType())
             {
                 context.Writer.WritePropertyName("ConstantType");
-                context.Writer.Write(requestObject.ConstantType);
+                context.Writer.WriteStringValue(requestObject.ConstantType);
             }
 
             if(requestObject.IsSetSingularConstant())
             {
                 context.Writer.WritePropertyName("SingularConstant");
-                context.Writer.Write(requestObject.SingularConstant);
+                context.Writer.WriteStringValue(requestObject.SingularConstant);
             }
 
         }

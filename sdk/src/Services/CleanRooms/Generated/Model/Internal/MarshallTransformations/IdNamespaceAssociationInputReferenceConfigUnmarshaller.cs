@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IdNamespaceAssociationInputReferenceConfig Object
     /// </summary>  
-    public class IdNamespaceAssociationInputReferenceConfigUnmarshaller : IUnmarshaller<IdNamespaceAssociationInputReferenceConfig, XmlUnmarshallerContext>, IUnmarshaller<IdNamespaceAssociationInputReferenceConfig, JsonUnmarshallerContext>
+    public class IdNamespaceAssociationInputReferenceConfigUnmarshaller : IJsonUnmarshaller<IdNamespaceAssociationInputReferenceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IdNamespaceAssociationInputReferenceConfig IUnmarshaller<IdNamespaceAssociationInputReferenceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdNamespaceAssociationInputReferenceConfig Unmarshall(JsonUnmarshallerContext context)
+        public IdNamespaceAssociationInputReferenceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IdNamespaceAssociationInputReferenceConfig unmarshalledObject = new IdNamespaceAssociationInputReferenceConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("inputReferenceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputReferenceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputReferenceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manageResourcePolicies", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ManageResourcePolicies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManageResourcePolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

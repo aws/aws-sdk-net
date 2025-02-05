@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAreas())
             {
                 context.Writer.WritePropertyName("Areas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAreasListValue in requestObject.Areas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WaypointOptimizationAvoidanceAreaMarshaller.Instance;
                     marshaller.Marshall(requestObjectAreasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCarShuttleTrains())
             {
                 context.Writer.WritePropertyName("CarShuttleTrains");
-                context.Writer.Write(requestObject.CarShuttleTrains.Value);
+                context.Writer.WriteBooleanValue(requestObject.CarShuttleTrains.Value);
             }
 
             if(requestObject.IsSetControlledAccessHighways())
             {
                 context.Writer.WritePropertyName("ControlledAccessHighways");
-                context.Writer.Write(requestObject.ControlledAccessHighways.Value);
+                context.Writer.WriteBooleanValue(requestObject.ControlledAccessHighways.Value);
             }
 
             if(requestObject.IsSetDirtRoads())
             {
                 context.Writer.WritePropertyName("DirtRoads");
-                context.Writer.Write(requestObject.DirtRoads.Value);
+                context.Writer.WriteBooleanValue(requestObject.DirtRoads.Value);
             }
 
             if(requestObject.IsSetFerries())
             {
                 context.Writer.WritePropertyName("Ferries");
-                context.Writer.Write(requestObject.Ferries.Value);
+                context.Writer.WriteBooleanValue(requestObject.Ferries.Value);
             }
 
             if(requestObject.IsSetTollRoads())
             {
                 context.Writer.WritePropertyName("TollRoads");
-                context.Writer.Write(requestObject.TollRoads.Value);
+                context.Writer.WriteBooleanValue(requestObject.TollRoads.Value);
             }
 
             if(requestObject.IsSetTunnels())
             {
                 context.Writer.WritePropertyName("Tunnels");
-                context.Writer.Write(requestObject.Tunnels.Value);
+                context.Writer.WriteBooleanValue(requestObject.Tunnels.Value);
             }
 
             if(requestObject.IsSetUTurns())
             {
                 context.Writer.WritePropertyName("UTurns");
-                context.Writer.Write(requestObject.UTurns.Value);
+                context.Writer.WriteBooleanValue(requestObject.UTurns.Value);
             }
 
         }

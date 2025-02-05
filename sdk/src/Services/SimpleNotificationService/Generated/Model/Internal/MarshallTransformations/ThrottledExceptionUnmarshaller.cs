@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for ThrottledException operation
     /// </summary>  
-    public class ThrottledExceptionUnmarshaller : IErrorResponseUnmarshaller<ThrottledException, XmlUnmarshallerContext>
+    public class ThrottledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ThrottledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

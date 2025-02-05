@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchitecture())
             {
                 context.Writer.WritePropertyName("Architecture");
-                context.Writer.Write(requestObject.Architecture);
+                context.Writer.WriteStringValue(requestObject.Architecture);
             }
 
             if(requestObject.IsSetImageDigest())
             {
                 context.Writer.WritePropertyName("ImageDigest");
-                context.Writer.Write(requestObject.ImageDigest);
+                context.Writer.WriteStringValue(requestObject.ImageDigest);
             }
 
             if(requestObject.IsSetImagePublishedAt())
             {
                 context.Writer.WritePropertyName("ImagePublishedAt");
-                context.Writer.Write(requestObject.ImagePublishedAt);
+                context.Writer.WriteStringValue(requestObject.ImagePublishedAt);
             }
 
             if(requestObject.IsSetImageTags())
             {
                 context.Writer.WritePropertyName("ImageTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectImageTagsListValue in requestObject.ImageTags)
                 {
-                        context.Writer.Write(requestObjectImageTagsListValue);
+                        context.Writer.WriteStringValue(requestObjectImageTagsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegistryId())
             {
                 context.Writer.WritePropertyName("RegistryId");
-                context.Writer.Write(requestObject.RegistryId);
+                context.Writer.WriteStringValue(requestObject.RegistryId);
             }
 
             if(requestObject.IsSetRepositoryName())
             {
                 context.Writer.WritePropertyName("RepositoryName");
-                context.Writer.Write(requestObject.RepositoryName);
+                context.Writer.WriteStringValue(requestObject.RepositoryName);
             }
 
         }

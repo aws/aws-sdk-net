@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllAwsRegions())
             {
                 context.Writer.WritePropertyName("AllAwsRegions");
-                context.Writer.Write(requestObject.AllAwsRegions.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllAwsRegions.Value);
             }
 
             if(requestObject.IsSetAwsRegions())
             {
                 context.Writer.WritePropertyName("AwsRegions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAwsRegionsListValue in requestObject.AwsRegions)
                 {
-                        context.Writer.Write(requestObjectAwsRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectAwsRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

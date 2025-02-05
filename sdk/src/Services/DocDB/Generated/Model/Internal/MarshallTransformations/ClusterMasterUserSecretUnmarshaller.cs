@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterMasterUserSecret Object
     /// </summary>  
-    public class ClusterMasterUserSecretUnmarshaller : IUnmarshaller<ClusterMasterUserSecret, XmlUnmarshallerContext>, IUnmarshaller<ClusterMasterUserSecret, JsonUnmarshallerContext>
+    public class ClusterMasterUserSecretUnmarshaller : IXmlUnmarshaller<ClusterMasterUserSecret, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterMasterUserSecret Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterMasterUserSecretUnmarshaller _instance = new ClusterMasterUserSecretUnmarshaller();        
 

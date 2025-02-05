@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrganizationalUnitArns())
             {
                 context.Writer.WritePropertyName("organizationalUnitArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrganizationalUnitArnsListValue in requestObject.OrganizationalUnitArns)
                 {
-                        context.Writer.Write(requestObjectOrganizationalUnitArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectOrganizationalUnitArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOrganizationArns())
             {
                 context.Writer.WritePropertyName("organizationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrganizationArnsListValue in requestObject.OrganizationArns)
                 {
-                        context.Writer.Write(requestObjectOrganizationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectOrganizationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserGroups())
             {
                 context.Writer.WritePropertyName("userGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserGroupsListValue in requestObject.UserGroups)
                 {
-                        context.Writer.Write(requestObjectUserGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectUserGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserIds())
             {
                 context.Writer.WritePropertyName("userIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserIdsListValue in requestObject.UserIds)
                 {
-                        context.Writer.Write(requestObjectUserIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectUserIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

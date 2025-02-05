@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Serializer Object
     /// </summary>  
-    public class SerializerUnmarshaller : IUnmarshaller<Serializer, XmlUnmarshallerContext>, IUnmarshaller<Serializer, JsonUnmarshallerContext>
+    public class SerializerUnmarshaller : IJsonUnmarshaller<Serializer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Serializer IUnmarshaller<Serializer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Serializer Unmarshall(JsonUnmarshallerContext context)
+        public Serializer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Serializer unmarshalledObject = new Serializer();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("OrcSerDe", targetDepth))
                 {
                     var unmarshaller = OrcSerDeUnmarshaller.Instance;
-                    unmarshalledObject.OrcSerDe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrcSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParquetSerDe", targetDepth))
                 {
                     var unmarshaller = ParquetSerDeUnmarshaller.Instance;
-                    unmarshalledObject.ParquetSerDe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParquetSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

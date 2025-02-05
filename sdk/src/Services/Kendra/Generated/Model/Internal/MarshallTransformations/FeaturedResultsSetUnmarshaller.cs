@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FeaturedResultsSet Object
     /// </summary>  
-    public class FeaturedResultsSetUnmarshaller : IUnmarshaller<FeaturedResultsSet, XmlUnmarshallerContext>, IUnmarshaller<FeaturedResultsSet, JsonUnmarshallerContext>
+    public class FeaturedResultsSetUnmarshaller : IJsonUnmarshaller<FeaturedResultsSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FeaturedResultsSet IUnmarshaller<FeaturedResultsSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FeaturedResultsSet Unmarshall(JsonUnmarshallerContext context)
+        public FeaturedResultsSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FeaturedResultsSet unmarshalledObject = new FeaturedResultsSet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeaturedDocuments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FeaturedDocument, FeaturedDocumentUnmarshaller>(FeaturedDocumentUnmarshaller.Instance);
-                    unmarshalledObject.FeaturedDocuments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FeaturedDocument, FeaturedDocumentUnmarshaller>(FeaturedDocumentUnmarshaller.Instance);
+                    unmarshalledObject.FeaturedDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeaturedResultsSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeaturedResultsSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeaturedResultsSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeaturedResultsSetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeaturedResultsSetName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeaturedResultsSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryTexts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.QueryTexts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.QueryTexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

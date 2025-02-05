@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCisRuleDetails())
             {
                 context.Writer.WritePropertyName("cisRuleDetails");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.CisRuleDetails));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.CisRuleDetails));
             }
 
             if(requestObject.IsSetRuleId())
             {
                 context.Writer.WritePropertyName("ruleId");
-                context.Writer.Write(requestObject.RuleId);
+                context.Writer.WriteStringValue(requestObject.RuleId);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

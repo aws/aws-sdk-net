@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
             if(requestObject.IsSetAlgorithmControl())
             {
                 context.Writer.WritePropertyName("algorithmControl");
-                context.Writer.Write(requestObject.AlgorithmControl);
+                context.Writer.WriteStringValue(requestObject.AlgorithmControl);
             }
 
             if(requestObject.IsSetTargetLkfs())
@@ -65,11 +63,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("targetLkfs");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetLkfs.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetLkfs.Value);
                 }
             }
 

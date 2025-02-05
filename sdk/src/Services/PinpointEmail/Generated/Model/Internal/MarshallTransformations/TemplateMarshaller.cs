@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTemplateArn())
             {
                 context.Writer.WritePropertyName("TemplateArn");
-                context.Writer.Write(requestObject.TemplateArn);
+                context.Writer.WriteStringValue(requestObject.TemplateArn);
             }
 
             if(requestObject.IsSetTemplateData())
             {
                 context.Writer.WritePropertyName("TemplateData");
-                context.Writer.Write(requestObject.TemplateData);
+                context.Writer.WriteStringValue(requestObject.TemplateData);
             }
 
         }

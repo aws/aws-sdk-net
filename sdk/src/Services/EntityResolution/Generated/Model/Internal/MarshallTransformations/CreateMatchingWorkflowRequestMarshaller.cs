@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -61,105 +64,110 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/matchingworkflows";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetIncrementalRunConfig())
-                    {
-                        context.Writer.WritePropertyName("incrementalRunConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IncrementalRunConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncrementalRunConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputSourceConfig())
-                    {
-                        context.Writer.WritePropertyName("inputSourceConfig");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputSourceConfigListValue in publicRequest.InputSourceConfig)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputSourceConfigListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputSourceConfig())
-                    {
-                        context.Writer.WritePropertyName("outputSourceConfig");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputSourceConfigListValue in publicRequest.OutputSourceConfig)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OutputSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputSourceConfigListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResolutionTechniques())
-                    {
-                        context.Writer.WritePropertyName("resolutionTechniques");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResolutionTechniquesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResolutionTechniques, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkflowName())
-                    {
-                        context.Writer.WritePropertyName("workflowName");
-                        context.Writer.Write(publicRequest.WorkflowName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetIncrementalRunConfig())
+            {
+                context.Writer.WritePropertyName("incrementalRunConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IncrementalRunConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncrementalRunConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInputSourceConfig())
+            {
+                context.Writer.WritePropertyName("inputSourceConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputSourceConfigListValue in publicRequest.InputSourceConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputSourceConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOutputSourceConfig())
+            {
+                context.Writer.WritePropertyName("outputSourceConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputSourceConfigListValue in publicRequest.OutputSourceConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OutputSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputSourceConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResolutionTechniques())
+            {
+                context.Writer.WritePropertyName("resolutionTechniques");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResolutionTechniquesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResolutionTechniques, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWorkflowName())
+            {
+                context.Writer.WritePropertyName("workflowName");
+                context.Writer.WriteStringValue(publicRequest.WorkflowName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

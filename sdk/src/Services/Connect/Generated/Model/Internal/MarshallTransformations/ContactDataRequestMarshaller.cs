@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCampaign())
             {
                 context.Writer.WritePropertyName("Campaign");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignMarshaller.Instance;
                 marshaller.Marshall(requestObject.Campaign, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomerEndpoint())
             {
                 context.Writer.WritePropertyName("CustomerEndpoint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndpointMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerEndpoint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueueId())
             {
                 context.Writer.WritePropertyName("QueueId");
-                context.Writer.Write(requestObject.QueueId);
+                context.Writer.WriteStringValue(requestObject.QueueId);
             }
 
             if(requestObject.IsSetRequestIdentifier())
             {
                 context.Writer.WritePropertyName("RequestIdentifier");
-                context.Writer.Write(requestObject.RequestIdentifier);
+                context.Writer.WriteStringValue(requestObject.RequestIdentifier);
             }
 
             if(requestObject.IsSetSystemEndpoint())
             {
                 context.Writer.WritePropertyName("SystemEndpoint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndpointMarshaller.Instance;
                 marshaller.Marshall(requestObject.SystemEndpoint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

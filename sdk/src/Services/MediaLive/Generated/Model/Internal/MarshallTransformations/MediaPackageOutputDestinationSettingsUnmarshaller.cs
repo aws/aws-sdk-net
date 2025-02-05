@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaPackageOutputDestinationSettings Object
     /// </summary>  
-    public class MediaPackageOutputDestinationSettingsUnmarshaller : IUnmarshaller<MediaPackageOutputDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageOutputDestinationSettings, JsonUnmarshallerContext>
+    public class MediaPackageOutputDestinationSettingsUnmarshaller : IJsonUnmarshaller<MediaPackageOutputDestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaPackageOutputDestinationSettings IUnmarshaller<MediaPackageOutputDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPackageOutputDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public MediaPackageOutputDestinationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaPackageOutputDestinationSettings unmarshalledObject = new MediaPackageOutputDestinationSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("channelGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

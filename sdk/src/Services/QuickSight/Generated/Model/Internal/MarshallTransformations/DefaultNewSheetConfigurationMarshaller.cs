@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInteractiveLayoutConfiguration())
             {
                 context.Writer.WritePropertyName("InteractiveLayoutConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultInteractiveLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InteractiveLayoutConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPaginatedLayoutConfiguration())
             {
                 context.Writer.WritePropertyName("PaginatedLayoutConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultPaginatedLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PaginatedLayoutConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSheetContentType())
             {
                 context.Writer.WritePropertyName("SheetContentType");
-                context.Writer.Write(requestObject.SheetContentType);
+                context.Writer.WriteStringValue(requestObject.SheetContentType);
             }
 
         }

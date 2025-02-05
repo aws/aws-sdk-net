@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,131 +49,131 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompute())
             {
                 context.Writer.WritePropertyName("compute");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComputeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Compute, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("dataSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSourcesListValue in requestObject.DataSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFailureBehavior())
             {
                 context.Writer.WritePropertyName("failureBehavior");
-                context.Writer.Write(requestObject.FailureBehavior);
+                context.Writer.WriteStringValue(requestObject.FailureBehavior);
             }
 
             if(requestObject.IsSetIamRole())
             {
                 context.Writer.WritePropertyName("iamRole");
-                context.Writer.Write(requestObject.IamRole);
+                context.Writer.WriteStringValue(requestObject.IamRole);
             }
 
             if(requestObject.IsSetLoggingConfig())
             {
                 context.Writer.WritePropertyName("loggingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoggingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoggingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("maxJobDurationInSeconds");
-                context.Writer.Write(requestObject.MaxJobDurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxJobDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("outputLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRobotApplications())
             {
                 context.Writer.WritePropertyName("robotApplications");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRobotApplicationsListValue in requestObject.RobotApplications)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RobotApplicationConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectRobotApplicationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSimulationApplications())
             {
                 context.Writer.WritePropertyName("simulationApplications");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSimulationApplicationsListValue in requestObject.SimulationApplications)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SimulationApplicationConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectSimulationApplicationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUseDefaultApplications())
             {
                 context.Writer.WritePropertyName("useDefaultApplications");
-                context.Writer.Write(requestObject.UseDefaultApplications.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseDefaultApplications.Value);
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("vpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VPCConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

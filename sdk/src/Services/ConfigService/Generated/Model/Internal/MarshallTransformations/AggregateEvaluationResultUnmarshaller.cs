@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AggregateEvaluationResult Object
     /// </summary>  
-    public class AggregateEvaluationResultUnmarshaller : IUnmarshaller<AggregateEvaluationResult, XmlUnmarshallerContext>, IUnmarshaller<AggregateEvaluationResult, JsonUnmarshallerContext>
+    public class AggregateEvaluationResultUnmarshaller : IJsonUnmarshaller<AggregateEvaluationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AggregateEvaluationResult IUnmarshaller<AggregateEvaluationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AggregateEvaluationResult Unmarshall(JsonUnmarshallerContext context)
+        public AggregateEvaluationResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AggregateEvaluationResult unmarshalledObject = new AggregateEvaluationResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Annotation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Annotation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Annotation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AwsRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ComplianceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigRuleInvokedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConfigRuleInvokedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigRuleInvokedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationResultIdentifier", targetDepth))
                 {
                     var unmarshaller = EvaluationResultIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationResultIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationResultIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultRecordedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ResultRecordedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultRecordedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

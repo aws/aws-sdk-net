@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MessageRejectedException operation
     /// </summary>  
-    public class MessageRejectedExceptionUnmarshaller : IErrorResponseUnmarshaller<MessageRejectedException, XmlUnmarshallerContext>
+    public class MessageRejectedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MessageRejectedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

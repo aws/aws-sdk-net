@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DuplicateTimestamps Object
     /// </summary>  
-    public class DuplicateTimestampsUnmarshaller : IUnmarshaller<DuplicateTimestamps, XmlUnmarshallerContext>, IUnmarshaller<DuplicateTimestamps, JsonUnmarshallerContext>
+    public class DuplicateTimestampsUnmarshaller : IJsonUnmarshaller<DuplicateTimestamps, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DuplicateTimestamps IUnmarshaller<DuplicateTimestamps, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DuplicateTimestamps Unmarshall(JsonUnmarshallerContext context)
+        public DuplicateTimestamps Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DuplicateTimestamps unmarshalledObject = new DuplicateTimestamps();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TotalNumberOfDuplicateTimestamps", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfDuplicateTimestamps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfDuplicateTimestamps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

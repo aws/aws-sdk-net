@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PartitionSpec Object
     /// </summary>  
-    public class PartitionSpecUnmarshaller : IUnmarshaller<PartitionSpec, XmlUnmarshallerContext>, IUnmarshaller<PartitionSpec, JsonUnmarshallerContext>
+    public class PartitionSpecUnmarshaller : IJsonUnmarshaller<PartitionSpec, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PartitionSpec IUnmarshaller<PartitionSpec, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PartitionSpec Unmarshall(JsonUnmarshallerContext context)
+        public PartitionSpec Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PartitionSpec unmarshalledObject = new PartitionSpec();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Identity", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PartitionField, PartitionFieldUnmarshaller>(PartitionFieldUnmarshaller.Instance);
-                    unmarshalledObject.Identity = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PartitionField, PartitionFieldUnmarshaller>(PartitionFieldUnmarshaller.Instance);
+                    unmarshalledObject.Identity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInsightsAnalysis Object
     /// </summary>  
-    public class NetworkInsightsAnalysisUnmarshaller : IUnmarshaller<NetworkInsightsAnalysis, XmlUnmarshallerContext>, IUnmarshaller<NetworkInsightsAnalysis, JsonUnmarshallerContext>
+    public class NetworkInsightsAnalysisUnmarshaller : IXmlUnmarshaller<NetworkInsightsAnalysis, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -200,17 +200,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInsightsAnalysis Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInsightsAnalysisUnmarshaller _instance = new NetworkInsightsAnalysisUnmarshaller();        
 

@@ -29,173 +29,163 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SavingsPlansPurchaseAnalysisDetails Object
     /// </summary>  
-    public class SavingsPlansPurchaseAnalysisDetailsUnmarshaller : IUnmarshaller<SavingsPlansPurchaseAnalysisDetails, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansPurchaseAnalysisDetails, JsonUnmarshallerContext>
+    public class SavingsPlansPurchaseAnalysisDetailsUnmarshaller : IJsonUnmarshaller<SavingsPlansPurchaseAnalysisDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SavingsPlansPurchaseAnalysisDetails IUnmarshaller<SavingsPlansPurchaseAnalysisDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SavingsPlansPurchaseAnalysisDetails Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansPurchaseAnalysisDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SavingsPlansPurchaseAnalysisDetails unmarshalledObject = new SavingsPlansPurchaseAnalysisDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalMetadata", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdditionalMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrencyCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentAverageCoverage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentAverageCoverage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentAverageCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentAverageHourlyOnDemandSpend", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentAverageHourlyOnDemandSpend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentAverageHourlyOnDemandSpend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentMaximumHourlyOnDemandSpend", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentMaximumHourlyOnDemandSpend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentMaximumHourlyOnDemandSpend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentMinimumHourlyOnDemandSpend", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentMinimumHourlyOnDemandSpend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentMinimumHourlyOnDemandSpend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentOnDemandSpend", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentOnDemandSpend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentOnDemandSpend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedAverageCoverage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedAverageCoverage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedAverageCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedAverageUtilization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedAverageUtilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedAverageUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedCommitmentCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedCommitmentCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedCommitmentCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedMonthlySavingsAmount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedMonthlySavingsAmount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedMonthlySavingsAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedOnDemandCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedOnDemandCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedOnDemandCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedOnDemandCostWithCurrentCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedOnDemandCostWithCurrentCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedROI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedROI = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedROI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedSavingsAmount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedSavingsAmount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedSavingsAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedSavingsPercentage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedSavingsPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedSavingsPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExistingHourlyCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExistingHourlyCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExistingHourlyCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HourlyCommitmentToPurchase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HourlyCommitmentToPurchase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HourlyCommitmentToPurchase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestUsageTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestUsageTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestUsageTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LookbackPeriodInHours", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LookbackPeriodInHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookbackPeriodInHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricsOverLookbackPeriod", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecommendationDetailHourlyMetrics, RecommendationDetailHourlyMetricsUnmarshaller>(RecommendationDetailHourlyMetricsUnmarshaller.Instance);
-                    unmarshalledObject.MetricsOverLookbackPeriod = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecommendationDetailHourlyMetrics, RecommendationDetailHourlyMetricsUnmarshaller>(RecommendationDetailHourlyMetricsUnmarshaller.Instance);
+                    unmarshalledObject.MetricsOverLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpfrontCost", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpfrontCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpfrontCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

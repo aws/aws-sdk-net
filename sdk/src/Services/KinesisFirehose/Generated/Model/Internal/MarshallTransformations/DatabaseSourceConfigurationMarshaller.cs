@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumns())
             {
                 context.Writer.WritePropertyName("Columns");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseColumnListMarshaller.Instance;
                 marshaller.Marshall(requestObject.Columns, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabases())
             {
                 context.Writer.WritePropertyName("Databases");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseListMarshaller.Instance;
                 marshaller.Marshall(requestObject.Databases, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseSourceAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("DatabaseSourceAuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseSourceAuthenticationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseSourceAuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseSourceVPCConfiguration())
             {
                 context.Writer.WritePropertyName("DatabaseSourceVPCConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseSourceVPCConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseSourceVPCConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("Endpoint");
-                context.Writer.Write(requestObject.Endpoint);
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSnapshotWatermarkTable())
             {
                 context.Writer.WritePropertyName("SnapshotWatermarkTable");
-                context.Writer.Write(requestObject.SnapshotWatermarkTable);
+                context.Writer.WriteStringValue(requestObject.SnapshotWatermarkTable);
             }
 
             if(requestObject.IsSetSSLMode())
             {
                 context.Writer.WritePropertyName("SSLMode");
-                context.Writer.Write(requestObject.SSLMode);
+                context.Writer.WriteStringValue(requestObject.SSLMode);
             }
 
             if(requestObject.IsSetSurrogateKeys())
             {
                 context.Writer.WritePropertyName("SurrogateKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSurrogateKeysListValue in requestObject.SurrogateKeys)
                 {
-                        context.Writer.Write(requestObjectSurrogateKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectSurrogateKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTables())
             {
                 context.Writer.WritePropertyName("Tables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseTableListMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tables, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

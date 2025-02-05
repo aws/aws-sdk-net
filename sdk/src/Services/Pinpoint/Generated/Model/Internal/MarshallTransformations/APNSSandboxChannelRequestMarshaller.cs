@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBundleId())
             {
                 context.Writer.WritePropertyName("BundleId");
-                context.Writer.Write(requestObject.BundleId);
+                context.Writer.WriteStringValue(requestObject.BundleId);
             }
 
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.Write(requestObject.Certificate);
+                context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
             if(requestObject.IsSetDefaultAuthenticationMethod())
             {
                 context.Writer.WritePropertyName("DefaultAuthenticationMethod");
-                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
+                context.Writer.WriteStringValue(requestObject.DefaultAuthenticationMethod);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetPrivateKey())
             {
                 context.Writer.WritePropertyName("PrivateKey");
-                context.Writer.Write(requestObject.PrivateKey);
+                context.Writer.WriteStringValue(requestObject.PrivateKey);
             }
 
             if(requestObject.IsSetTeamId())
             {
                 context.Writer.WritePropertyName("TeamId");
-                context.Writer.Write(requestObject.TeamId);
+                context.Writer.WriteStringValue(requestObject.TeamId);
             }
 
             if(requestObject.IsSetTokenKey())
             {
                 context.Writer.WritePropertyName("TokenKey");
-                context.Writer.Write(requestObject.TokenKey);
+                context.Writer.WriteStringValue(requestObject.TokenKey);
             }
 
             if(requestObject.IsSetTokenKeyId())
             {
                 context.Writer.WritePropertyName("TokenKeyId");
-                context.Writer.Write(requestObject.TokenKeyId);
+                context.Writer.WriteStringValue(requestObject.TokenKeyId);
             }
 
         }

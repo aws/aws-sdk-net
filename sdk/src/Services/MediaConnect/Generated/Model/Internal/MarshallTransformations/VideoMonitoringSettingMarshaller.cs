@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackFrames())
             {
                 context.Writer.WritePropertyName("blackFrames");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BlackFramesMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlackFrames, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrozenFrames())
             {
                 context.Writer.WritePropertyName("frozenFrames");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrozenFramesMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrozenFrames, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNodePropertyOverrides())
             {
                 context.Writer.WritePropertyName("nodePropertyOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNodePropertyOverridesListValue in requestObject.NodePropertyOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NodePropertyOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectNodePropertyOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNumNodes())
             {
                 context.Writer.WritePropertyName("numNodes");
-                context.Writer.Write(requestObject.NumNodes.Value);
+                context.Writer.WriteNumberValue(requestObject.NumNodes.Value);
             }
 
         }

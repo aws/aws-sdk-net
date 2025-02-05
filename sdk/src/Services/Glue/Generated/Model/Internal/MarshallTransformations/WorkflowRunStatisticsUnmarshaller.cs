@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkflowRunStatistics Object
     /// </summary>  
-    public class WorkflowRunStatisticsUnmarshaller : IUnmarshaller<WorkflowRunStatistics, XmlUnmarshallerContext>, IUnmarshaller<WorkflowRunStatistics, JsonUnmarshallerContext>
+    public class WorkflowRunStatisticsUnmarshaller : IJsonUnmarshaller<WorkflowRunStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkflowRunStatistics IUnmarshaller<WorkflowRunStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkflowRunStatistics Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowRunStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkflowRunStatistics unmarshalledObject = new WorkflowRunStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ErroredActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ErroredActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErroredActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailedActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FailedActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailedActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RunningActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RunningActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunningActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StoppedActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StoppedActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StoppedActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SucceededActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SucceededActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SucceededActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeoutActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WaitingActions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.WaitingActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WaitingActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

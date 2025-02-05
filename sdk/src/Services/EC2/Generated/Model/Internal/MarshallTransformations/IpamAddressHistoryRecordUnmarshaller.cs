@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamAddressHistoryRecord Object
     /// </summary>  
-    public class IpamAddressHistoryRecordUnmarshaller : IUnmarshaller<IpamAddressHistoryRecord, XmlUnmarshallerContext>, IUnmarshaller<IpamAddressHistoryRecord, JsonUnmarshallerContext>
+    public class IpamAddressHistoryRecordUnmarshaller : IXmlUnmarshaller<IpamAddressHistoryRecord, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -130,17 +130,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamAddressHistoryRecord Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamAddressHistoryRecordUnmarshaller _instance = new IpamAddressHistoryRecordUnmarshaller();        
 

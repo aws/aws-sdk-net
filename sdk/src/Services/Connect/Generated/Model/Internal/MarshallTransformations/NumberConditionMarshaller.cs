@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonType())
             {
                 context.Writer.WritePropertyName("ComparisonType");
-                context.Writer.Write(requestObject.ComparisonType);
+                context.Writer.WriteStringValue(requestObject.ComparisonType);
             }
 
             if(requestObject.IsSetFieldName())
             {
                 context.Writer.WritePropertyName("FieldName");
-                context.Writer.Write(requestObject.FieldName);
+                context.Writer.WriteStringValue(requestObject.FieldName);
             }
 
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("MaxValue");
-                context.Writer.Write(requestObject.MaxValue.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxValue.Value);
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("MinValue");
-                context.Writer.Write(requestObject.MinValue.Value);
+                context.Writer.WriteNumberValue(requestObject.MinValue.Value);
             }
 
         }

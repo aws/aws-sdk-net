@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceLimits Object
     /// </summary>  
-    public class ResourceLimitsUnmarshaller : IUnmarshaller<ResourceLimits, XmlUnmarshallerContext>, IUnmarshaller<ResourceLimits, JsonUnmarshallerContext>
+    public class ResourceLimitsUnmarshaller : IJsonUnmarshaller<ResourceLimits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceLimits IUnmarshaller<ResourceLimits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceLimits Unmarshall(JsonUnmarshallerContext context)
+        public ResourceLimits Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceLimits unmarshalledObject = new ResourceLimits();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaxNumberOfTrainingJobs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxNumberOfTrainingJobs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxNumberOfTrainingJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxParallelTrainingJobs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxParallelTrainingJobs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxParallelTrainingJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxRuntimeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SpliceInsertMessage Object
     /// </summary>  
-    public class SpliceInsertMessageUnmarshaller : IUnmarshaller<SpliceInsertMessage, XmlUnmarshallerContext>, IUnmarshaller<SpliceInsertMessage, JsonUnmarshallerContext>
+    public class SpliceInsertMessageUnmarshaller : IJsonUnmarshaller<SpliceInsertMessage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SpliceInsertMessage IUnmarshaller<SpliceInsertMessage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpliceInsertMessage Unmarshall(JsonUnmarshallerContext context)
+        public SpliceInsertMessage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SpliceInsertMessage unmarshalledObject = new SpliceInsertMessage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailNum", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailNum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailNum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailsExpected", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailsExpected = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailsExpected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpliceEventId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SpliceEventId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpliceEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UniqueProgramId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UniqueProgramId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UniqueProgramId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

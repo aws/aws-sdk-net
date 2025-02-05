@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeferMaintenanceEndTime())
             {
                 context.Writer.WritePropertyName("DeferMaintenanceEndTime");
-                context.Writer.Write(requestObject.DeferMaintenanceEndTime);
+                context.Writer.WriteStringValue(requestObject.DeferMaintenanceEndTime);
             }
 
             if(requestObject.IsSetDeferMaintenanceIdentifier())
             {
                 context.Writer.WritePropertyName("DeferMaintenanceIdentifier");
-                context.Writer.Write(requestObject.DeferMaintenanceIdentifier);
+                context.Writer.WriteStringValue(requestObject.DeferMaintenanceIdentifier);
             }
 
             if(requestObject.IsSetDeferMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("DeferMaintenanceStartTime");
-                context.Writer.Write(requestObject.DeferMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.DeferMaintenanceStartTime);
             }
 
         }

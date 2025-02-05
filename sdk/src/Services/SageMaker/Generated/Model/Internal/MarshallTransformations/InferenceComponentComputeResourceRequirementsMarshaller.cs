@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");
-                context.Writer.Write(requestObject.MaxMemoryRequiredInMb.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxMemoryRequiredInMb.Value);
             }
 
             if(requestObject.IsSetMinMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MinMemoryRequiredInMb");
-                context.Writer.Write(requestObject.MinMemoryRequiredInMb.Value);
+                context.Writer.WriteNumberValue(requestObject.MinMemoryRequiredInMb.Value);
             }
 
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
@@ -65,11 +63,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
                 if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.NumberOfAcceleratorDevicesRequired.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired.Value);
+                    context.Writer.WriteNumberValue(requestObject.NumberOfAcceleratorDevicesRequired.Value);
                 }
             }
 
@@ -78,11 +76,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
                 if(StringUtils.IsSpecialFloatValue(requestObject.NumberOfCpuCoresRequired.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.NumberOfCpuCoresRequired.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberOfCpuCoresRequired.Value);
+                    context.Writer.WriteNumberValue(requestObject.NumberOfCpuCoresRequired.Value);
                 }
             }
 

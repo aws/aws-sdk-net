@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BackupVaultListMember Object
     /// </summary>  
-    public class BackupVaultListMemberUnmarshaller : IUnmarshaller<BackupVaultListMember, XmlUnmarshallerContext>, IUnmarshaller<BackupVaultListMember, JsonUnmarshallerContext>
+    public class BackupVaultListMemberUnmarshaller : IJsonUnmarshaller<BackupVaultListMember, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BackupVaultListMember IUnmarshaller<BackupVaultListMember, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BackupVaultListMember Unmarshall(JsonUnmarshallerContext context)
+        public BackupVaultListMember Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BackupVaultListMember unmarshalledObject = new BackupVaultListMember();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BackupVaultArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupVaultName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatorRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LockDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LockDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LockDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Locked", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Locked = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Locked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxRetentionDays", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaxRetentionDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinRetentionDays", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MinRetentionDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfRecoveryPoints", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VaultState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VaultState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VaultState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VaultType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VaultType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VaultType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -64,67 +67,72 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/importJobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetExternalSourceConfiguration())
-                    {
-                        context.Writer.WritePropertyName("externalSourceConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExternalSourceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExternalSourceConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetImportJobType())
-                    {
-                        context.Writer.WritePropertyName("importJobType");
-                        context.Writer.Write(publicRequest.ImportJobType);
-                    }
-
-                    if(publicRequest.IsSetMetadata())
-                    {
-                        context.Writer.WritePropertyName("metadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
-                            var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
-
-                                context.Writer.Write(publicRequestMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUploadId())
-                    {
-                        context.Writer.WritePropertyName("uploadId");
-                        context.Writer.Write(publicRequest.UploadId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetExternalSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("externalSourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExternalSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExternalSourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetImportJobType())
+            {
+                context.Writer.WritePropertyName("importJobType");
+                context.Writer.WriteStringValue(publicRequest.ImportJobType);
+            }
+
+            if(publicRequest.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                    var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestMetadataValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUploadId())
+            {
+                context.Writer.WritePropertyName("uploadId");
+                context.Writer.WriteStringValue(publicRequest.UploadId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

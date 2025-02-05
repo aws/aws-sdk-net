@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedValues())
             {
                 context.Writer.WritePropertyName("allowedValues");
-                context.Writer.Write(requestObject.AllowedValues);
+                context.Writer.WriteStringValue(requestObject.AllowedValues);
             }
 
             if(requestObject.IsSetApplyMethod())
             {
                 context.Writer.WritePropertyName("applyMethod");
-                context.Writer.Write(requestObject.ApplyMethod);
+                context.Writer.WriteStringValue(requestObject.ApplyMethod);
             }
 
             if(requestObject.IsSetApplyType())
             {
                 context.Writer.WritePropertyName("applyType");
-                context.Writer.Write(requestObject.ApplyType);
+                context.Writer.WriteStringValue(requestObject.ApplyType);
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetIsModifiable())
             {
                 context.Writer.WritePropertyName("isModifiable");
-                context.Writer.Write(requestObject.IsModifiable.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsModifiable.Value);
             }
 
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("parameterName");
-                context.Writer.Write(requestObject.ParameterName);
+                context.Writer.WriteStringValue(requestObject.ParameterName);
             }
 
             if(requestObject.IsSetParameterValue())
             {
                 context.Writer.WritePropertyName("parameterValue");
-                context.Writer.Write(requestObject.ParameterValue);
+                context.Writer.WriteStringValue(requestObject.ParameterValue);
             }
 
         }

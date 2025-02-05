@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StepScalingPolicyConfiguration Object
     /// </summary>  
-    public class StepScalingPolicyConfigurationUnmarshaller : IUnmarshaller<StepScalingPolicyConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StepScalingPolicyConfiguration, JsonUnmarshallerContext>
+    public class StepScalingPolicyConfigurationUnmarshaller : IJsonUnmarshaller<StepScalingPolicyConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StepScalingPolicyConfiguration IUnmarshaller<StepScalingPolicyConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepScalingPolicyConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public StepScalingPolicyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StepScalingPolicyConfiguration unmarshalledObject = new StepScalingPolicyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdjustmentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdjustmentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdjustmentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Cooldown", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricAggregationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricAggregationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricAggregationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinAdjustmentMagnitude", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinAdjustmentMagnitude = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinAdjustmentMagnitude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StepAdjustments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StepAdjustment, StepAdjustmentUnmarshaller>(StepAdjustmentUnmarshaller.Instance);
-                    unmarshalledObject.StepAdjustments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StepAdjustment, StepAdjustmentUnmarshaller>(StepAdjustmentUnmarshaller.Instance);
+                    unmarshalledObject.StepAdjustments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

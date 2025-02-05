@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocument())
             {
                 context.Writer.WritePropertyName("document");
-                context.Writer.Write(requestObject.Document);
+                context.Writer.WriteStringValue(requestObject.Document);
             }
 
             if(requestObject.IsSetSignature())
             {
                 context.Writer.WritePropertyName("signature");
-                context.Writer.Write(requestObject.Signature);
+                context.Writer.WriteStringValue(requestObject.Signature);
             }
 
         }

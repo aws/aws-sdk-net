@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAuthTypes())
             {
                 context.Writer.WritePropertyName("additionalAuthTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalAuthTypesListValue in requestObject.AdditionalAuthTypes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BackendAPIAuthTypeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalAuthTypesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetApiName())
             {
                 context.Writer.WritePropertyName("apiName");
-                context.Writer.Write(requestObject.ApiName);
+                context.Writer.WriteStringValue(requestObject.ApiName);
             }
 
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("conflictResolution");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAPIConflictResolutionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConflictResolution, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultAuthType())
             {
                 context.Writer.WritePropertyName("defaultAuthType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAPIAuthTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultAuthType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetService())
             {
                 context.Writer.WritePropertyName("service");
-                context.Writer.Write(requestObject.Service);
+                context.Writer.WriteStringValue(requestObject.Service);
             }
 
             if(requestObject.IsSetTransformSchema())
             {
                 context.Writer.WritePropertyName("transformSchema");
-                context.Writer.Write(requestObject.TransformSchema);
+                context.Writer.WriteStringValue(requestObject.TransformSchema);
             }
 
         }

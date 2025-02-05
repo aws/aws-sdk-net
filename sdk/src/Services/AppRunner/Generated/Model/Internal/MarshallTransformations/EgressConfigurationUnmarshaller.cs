@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EgressConfiguration Object
     /// </summary>  
-    public class EgressConfigurationUnmarshaller : IUnmarshaller<EgressConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EgressConfiguration, JsonUnmarshallerContext>
+    public class EgressConfigurationUnmarshaller : IJsonUnmarshaller<EgressConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EgressConfiguration IUnmarshaller<EgressConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EgressConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public EgressConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EgressConfiguration unmarshalledObject = new EgressConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EgressType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EgressType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EgressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcConnectorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcConnectorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcConnectorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

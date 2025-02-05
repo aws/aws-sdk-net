@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlossaryTerms())
             {
                 context.Writer.WritePropertyName("glossaryTerms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlossaryTermsListValue in requestObject.GlossaryTerms)
                 {
-                        context.Writer.Write(requestObjectGlossaryTermsListValue);
+                        context.Writer.WriteStringValue(requestObjectGlossaryTermsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WriteStringValue(requestObject.Identifier);
             }
 
             if(requestObject.IsSetItemType())
             {
                 context.Writer.WritePropertyName("itemType");
-                context.Writer.Write(requestObject.ItemType);
+                context.Writer.WriteStringValue(requestObject.ItemType);
             }
 
             if(requestObject.IsSetRevision())
             {
                 context.Writer.WritePropertyName("revision");
-                context.Writer.Write(requestObject.Revision);
+                context.Writer.WriteStringValue(requestObject.Revision);
             }
 
         }

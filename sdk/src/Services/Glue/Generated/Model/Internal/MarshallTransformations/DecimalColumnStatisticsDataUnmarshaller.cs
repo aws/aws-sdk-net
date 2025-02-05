@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DecimalColumnStatisticsData Object
     /// </summary>  
-    public class DecimalColumnStatisticsDataUnmarshaller : IUnmarshaller<DecimalColumnStatisticsData, XmlUnmarshallerContext>, IUnmarshaller<DecimalColumnStatisticsData, JsonUnmarshallerContext>
+    public class DecimalColumnStatisticsDataUnmarshaller : IJsonUnmarshaller<DecimalColumnStatisticsData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DecimalColumnStatisticsData IUnmarshaller<DecimalColumnStatisticsData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DecimalColumnStatisticsData Unmarshall(JsonUnmarshallerContext context)
+        public DecimalColumnStatisticsData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DecimalColumnStatisticsData unmarshalledObject = new DecimalColumnStatisticsData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaximumValue", targetDepth))
                 {
                     var unmarshaller = DecimalNumberUnmarshaller.Instance;
-                    unmarshalledObject.MaximumValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinimumValue", targetDepth))
                 {
                     var unmarshaller = DecimalNumberUnmarshaller.Instance;
-                    unmarshalledObject.MinimumValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDistinctValues", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDistinctValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfDistinctValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfNulls", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfNulls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfNulls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

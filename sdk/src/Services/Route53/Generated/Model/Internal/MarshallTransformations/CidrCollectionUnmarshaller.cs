@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrCollection Object
     /// </summary>  
-    public class CidrCollectionUnmarshaller : IUnmarshaller<CidrCollection, XmlUnmarshallerContext>, IUnmarshaller<CidrCollection, JsonUnmarshallerContext>
+    public class CidrCollectionUnmarshaller : IXmlUnmarshaller<CidrCollection, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CidrCollection Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static CidrCollectionUnmarshaller _instance = new CidrCollectionUnmarshaller();        
 
         /// <summary>

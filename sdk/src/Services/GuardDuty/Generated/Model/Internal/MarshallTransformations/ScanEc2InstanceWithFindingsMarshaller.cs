@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsVolumes())
             {
                 context.Writer.WritePropertyName("ebsVolumes");
-                context.Writer.Write(requestObject.EbsVolumes.Value);
+                context.Writer.WriteBooleanValue(requestObject.EbsVolumes.Value);
             }
 
         }

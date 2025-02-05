@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CodeCoverage Object
     /// </summary>  
-    public class CodeCoverageUnmarshaller : IUnmarshaller<CodeCoverage, XmlUnmarshallerContext>, IUnmarshaller<CodeCoverage, JsonUnmarshallerContext>
+    public class CodeCoverageUnmarshaller : IJsonUnmarshaller<CodeCoverage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CodeCoverage IUnmarshaller<CodeCoverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CodeCoverage Unmarshall(JsonUnmarshallerContext context)
+        public CodeCoverage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CodeCoverage unmarshalledObject = new CodeCoverage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("branchCoveragePercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.BranchCoveragePercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BranchCoveragePercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("branchesCovered", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BranchesCovered = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BranchesCovered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("branchesMissed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BranchesMissed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BranchesMissed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("expired", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Expired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Expired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lineCoveragePercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LineCoveragePercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LineCoveragePercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("linesCovered", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.LinesCovered = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LinesCovered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("linesMissed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.LinesMissed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LinesMissed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("reportARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReportARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReportARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

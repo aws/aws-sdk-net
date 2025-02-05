@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomFields())
             {
                 context.Writer.WritePropertyName("customFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomFieldsListValue in requestObject.CustomFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeviceDefenderIndexingMode())
             {
                 context.Writer.WritePropertyName("deviceDefenderIndexingMode");
-                context.Writer.Write(requestObject.DeviceDefenderIndexingMode);
+                context.Writer.WriteStringValue(requestObject.DeviceDefenderIndexingMode);
             }
 
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IndexingFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Filter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManagedFields())
             {
                 context.Writer.WritePropertyName("managedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectManagedFieldsListValue in requestObject.ManagedFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectManagedFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNamedShadowIndexingMode())
             {
                 context.Writer.WritePropertyName("namedShadowIndexingMode");
-                context.Writer.Write(requestObject.NamedShadowIndexingMode);
+                context.Writer.WriteStringValue(requestObject.NamedShadowIndexingMode);
             }
 
             if(requestObject.IsSetThingConnectivityIndexingMode())
             {
                 context.Writer.WritePropertyName("thingConnectivityIndexingMode");
-                context.Writer.Write(requestObject.ThingConnectivityIndexingMode);
+                context.Writer.WriteStringValue(requestObject.ThingConnectivityIndexingMode);
             }
 
             if(requestObject.IsSetThingIndexingMode())
             {
                 context.Writer.WritePropertyName("thingIndexingMode");
-                context.Writer.Write(requestObject.ThingIndexingMode);
+                context.Writer.WriteStringValue(requestObject.ThingIndexingMode);
             }
 
         }

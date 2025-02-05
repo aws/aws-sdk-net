@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PlacementStatistics Object
     /// </summary>  
-    public class PlacementStatisticsUnmarshaller : IUnmarshaller<PlacementStatistics, XmlUnmarshallerContext>, IUnmarshaller<PlacementStatistics, JsonUnmarshallerContext>
+    public class PlacementStatisticsUnmarshaller : IJsonUnmarshaller<PlacementStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PlacementStatistics IUnmarshaller<PlacementStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PlacementStatistics Unmarshall(JsonUnmarshallerContext context)
+        public PlacementStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PlacementStatistics unmarshalledObject = new PlacementStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DkimPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DkimPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DkimPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InboxPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.InboxPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InboxPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MissingPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MissingPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MissingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpamPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.SpamPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpamPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpfPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.SpfPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpfPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

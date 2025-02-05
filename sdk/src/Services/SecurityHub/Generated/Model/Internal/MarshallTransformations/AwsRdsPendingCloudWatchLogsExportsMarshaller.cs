@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogTypesToDisable())
             {
                 context.Writer.WritePropertyName("LogTypesToDisable");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogTypesToDisableListValue in requestObject.LogTypesToDisable)
                 {
-                        context.Writer.Write(requestObjectLogTypesToDisableListValue);
+                        context.Writer.WriteStringValue(requestObjectLogTypesToDisableListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLogTypesToEnable())
             {
                 context.Writer.WritePropertyName("LogTypesToEnable");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogTypesToEnableListValue in requestObject.LogTypesToEnable)
                 {
-                        context.Writer.Write(requestObjectLogTypesToEnableListValue);
+                        context.Writer.WriteStringValue(requestObjectLogTypesToEnableListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

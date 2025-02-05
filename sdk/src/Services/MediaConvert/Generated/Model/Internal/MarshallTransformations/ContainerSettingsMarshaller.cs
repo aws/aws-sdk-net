@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCmfcSettings())
             {
                 context.Writer.WritePropertyName("cmfcSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CmfcSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CmfcSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("container");
-                context.Writer.Write(requestObject.Container);
+                context.Writer.WriteStringValue(requestObject.Container);
             }
 
             if(requestObject.IsSetF4vSettings())
             {
                 context.Writer.WritePropertyName("f4vSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = F4vSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.F4vSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetM2tsSettings())
             {
                 context.Writer.WritePropertyName("m2tsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M2tsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.M2tsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetM3u8Settings())
             {
                 context.Writer.WritePropertyName("m3u8Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M3u8SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.M3u8Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMovSettings())
             {
                 context.Writer.WritePropertyName("movSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MovSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MovSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMp4Settings())
             {
                 context.Writer.WritePropertyName("mp4Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mp4SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mp4Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMpdSettings())
             {
                 context.Writer.WritePropertyName("mpdSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MpdSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MpdSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMxfSettings())
             {
                 context.Writer.WritePropertyName("mxfSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MxfSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MxfSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

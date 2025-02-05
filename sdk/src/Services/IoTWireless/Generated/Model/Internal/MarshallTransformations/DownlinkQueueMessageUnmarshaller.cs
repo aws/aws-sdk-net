@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DownlinkQueueMessage Object
     /// </summary>  
-    public class DownlinkQueueMessageUnmarshaller : IUnmarshaller<DownlinkQueueMessage, XmlUnmarshallerContext>, IUnmarshaller<DownlinkQueueMessage, JsonUnmarshallerContext>
+    public class DownlinkQueueMessageUnmarshaller : IJsonUnmarshaller<DownlinkQueueMessage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DownlinkQueueMessage IUnmarshaller<DownlinkQueueMessage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DownlinkQueueMessage Unmarshall(JsonUnmarshallerContext context)
+        public DownlinkQueueMessage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DownlinkQueueMessage unmarshalledObject = new DownlinkQueueMessage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LoRaWAN", targetDepth))
                 {
                     var unmarshaller = LoRaWANSendDataToDeviceUnmarshaller.Instance;
-                    unmarshalledObject.LoRaWAN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoRaWAN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReceivedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReceivedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceivedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransmitMode", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TransmitMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransmitMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

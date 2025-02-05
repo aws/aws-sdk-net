@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientProperties())
             {
                 context.Writer.WritePropertyName("clientProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectClientPropertiesKvp in requestObject.ClientProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectClientPropertiesKvp.Key);
                     var requestObjectClientPropertiesValue = requestObjectClientPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectClientPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectClientPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestinationArn())
             {
                 context.Writer.WritePropertyName("destinationArn");
-                context.Writer.Write(requestObject.DestinationArn);
+                context.Writer.WriteStringValue(requestObject.DestinationArn);
             }
 
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("headers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeadersListValue in requestObject.Headers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KafkaActionHeaderMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeadersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetPartition())
             {
                 context.Writer.WritePropertyName("partition");
-                context.Writer.Write(requestObject.Partition);
+                context.Writer.WriteStringValue(requestObject.Partition);
             }
 
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("topic");
-                context.Writer.Write(requestObject.Topic);
+                context.Writer.WriteStringValue(requestObject.Topic);
             }
 
         }

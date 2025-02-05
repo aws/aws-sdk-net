@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetAddress())
             {
                 context.Writer.WritePropertyName("TargetAddress");
-                context.Writer.Write(requestObject.TargetAddress);
+                context.Writer.WriteStringValue(requestObject.TargetAddress);
             }
 
             if(requestObject.IsSetTargetType())
             {
                 context.Writer.WritePropertyName("TargetType");
-                context.Writer.Write(requestObject.TargetType);
+                context.Writer.WriteStringValue(requestObject.TargetType);
             }
 
         }

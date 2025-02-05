@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -47,123 +47,123 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeInputResponse response = new DescribeInputResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("attachedChannels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.AttachedChannels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.AttachedChannels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputDestination, InputDestinationUnmarshaller>(InputDestinationUnmarshaller.Instance);
-                    response.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputDestination, InputDestinationUnmarshaller>(InputDestinationUnmarshaller.Instance);
+                    response.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
+                    response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputClass = unmarshaller.Unmarshall(context);
+                    response.InputClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputDevices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputDeviceSettings, InputDeviceSettingsUnmarshaller>(InputDeviceSettingsUnmarshaller.Instance);
-                    response.InputDevices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputDeviceSettings, InputDeviceSettingsUnmarshaller>(InputDeviceSettingsUnmarshaller.Instance);
+                    response.InputDevices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputNetworkLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputNetworkLocation = unmarshaller.Unmarshall(context);
+                    response.InputNetworkLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputPartnerIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.InputPartnerIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.InputPartnerIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InputSourceType = unmarshaller.Unmarshall(context);
+                    response.InputSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaConnectFlows", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);
-                    response.MediaConnectFlows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);
+                    response.MediaConnectFlows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("multicastSettings", targetDepth))
                 {
                     var unmarshaller = MulticastSettingsUnmarshaller.Instance;
-                    response.MulticastSettings = unmarshaller.Unmarshall(context);
+                    response.MulticastSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("securityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputSource, InputSourceUnmarshaller>(InputSourceUnmarshaller.Instance);
-                    response.Sources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputSource, InputSourceUnmarshaller>(InputSourceUnmarshaller.Instance);
+                    response.Sources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("srtSettings", targetDepth))
                 {
                     var unmarshaller = SrtSettingsUnmarshaller.Instance;
-                    response.SrtSettings = unmarshaller.Unmarshall(context);
+                    response.SrtSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
+                    response.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context);
+                    response.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -180,42 +180,44 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadGatewayException"))
                 {
-                    return BadGatewayExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadGatewayExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
-                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GatewayTimeoutException"))
                 {
-                    return GatewayTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return GatewayTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
                 {
-                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
-                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonMediaLiveException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessToken())
-                    {
-                        context.Writer.WritePropertyName("AccessToken");
-                        context.Writer.Write(publicRequest.AccessToken);
-                    }
-
-                    if(publicRequest.IsSetClientMetadata())
-                    {
-                        context.Writer.WritePropertyName("ClientMetadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
-                            var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
-
-                                context.Writer.Write(publicRequestClientMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUserAttributes())
-                    {
-                        context.Writer.WritePropertyName("UserAttributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserAttributesListValue in publicRequest.UserAttributes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttributeTypeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserAttributesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessToken");
+                context.Writer.WriteStringValue(publicRequest.AccessToken);
             }
+
+            if(publicRequest.IsSetClientMetadata())
+            {
+                context.Writer.WritePropertyName("ClientMetadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestClientMetadataKvp in publicRequest.ClientMetadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestClientMetadataKvp.Key);
+                    var publicRequestClientMetadataValue = publicRequestClientMetadataKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestClientMetadataValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUserAttributes())
+            {
+                context.Writer.WritePropertyName("UserAttributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserAttributesListValue in publicRequest.UserAttributes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserAttributesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

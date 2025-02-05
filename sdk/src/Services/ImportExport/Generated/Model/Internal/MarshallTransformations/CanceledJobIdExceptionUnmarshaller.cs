@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CanceledJobIdException operation
     /// </summary>  
-    public class CanceledJobIdExceptionUnmarshaller : IErrorResponseUnmarshaller<CanceledJobIdException, XmlUnmarshallerContext>
+    public class CanceledJobIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CanceledJobIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

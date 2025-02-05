@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBranches())
             {
                 context.Writer.WritePropertyName("branches");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitBranchFilterCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.Branches, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEvents())
             {
                 context.Writer.WritePropertyName("events");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventsListValue in requestObject.Events)
                 {
-                        context.Writer.Write(requestObjectEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFilePaths())
             {
                 context.Writer.WritePropertyName("filePaths");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitFilePathFilterCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilePaths, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

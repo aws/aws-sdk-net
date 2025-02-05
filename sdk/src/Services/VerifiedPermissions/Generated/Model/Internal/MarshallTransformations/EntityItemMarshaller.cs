@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Identifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParents())
             {
                 context.Writer.WritePropertyName("parents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParentsListValue in requestObject.Parents)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EntityIdentifierMarshaller.Instance;
                     marshaller.Marshall(requestObjectParentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

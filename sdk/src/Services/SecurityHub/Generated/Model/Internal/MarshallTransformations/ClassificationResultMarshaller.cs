@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalOccurrences())
             {
                 context.Writer.WritePropertyName("AdditionalOccurrences");
-                context.Writer.Write(requestObject.AdditionalOccurrences.Value);
+                context.Writer.WriteBooleanValue(requestObject.AdditionalOccurrences.Value);
             }
 
             if(requestObject.IsSetCustomDataIdentifiers())
             {
                 context.Writer.WritePropertyName("CustomDataIdentifiers");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomDataIdentifiersResultMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomDataIdentifiers, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMimeType())
             {
                 context.Writer.WritePropertyName("MimeType");
-                context.Writer.Write(requestObject.MimeType);
+                context.Writer.WriteStringValue(requestObject.MimeType);
             }
 
             if(requestObject.IsSetSensitiveData())
             {
                 context.Writer.WritePropertyName("SensitiveData");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSensitiveDataListValue in requestObject.SensitiveData)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SensitiveDataResultMarshaller.Instance;
                     marshaller.Marshall(requestObjectSensitiveDataListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSizeClassified())
             {
                 context.Writer.WritePropertyName("SizeClassified");
-                context.Writer.Write(requestObject.SizeClassified.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeClassified.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClassificationStatusMarshaller.Instance;
                 marshaller.Marshall(requestObject.Status, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
@@ -63,53 +66,58 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddAllowedPrefixesToDirectConnectGateway())
-                    {
-                        context.Writer.WritePropertyName("addAllowedPrefixesToDirectConnectGateway");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue in publicRequest.AddAllowedPrefixesToDirectConnectGateway)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = RouteFilterPrefixMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
+                    var marshaller = RouteFilterPrefixMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddAllowedPrefixesToDirectConnectGatewayListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDirectConnectGatewayId())
-                    {
-                        context.Writer.WritePropertyName("directConnectGatewayId");
-                        context.Writer.Write(publicRequest.DirectConnectGatewayId);
-                    }
-
-                    if(publicRequest.IsSetGatewayId())
-                    {
-                        context.Writer.WritePropertyName("gatewayId");
-                        context.Writer.Write(publicRequest.GatewayId);
-                    }
-
-                    if(publicRequest.IsSetVirtualGatewayId())
-                    {
-                        context.Writer.WritePropertyName("virtualGatewayId");
-                        context.Writer.Write(publicRequest.VirtualGatewayId);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDirectConnectGatewayId())
+            {
+                context.Writer.WritePropertyName("directConnectGatewayId");
+                context.Writer.WriteStringValue(publicRequest.DirectConnectGatewayId);
+            }
+
+            if(publicRequest.IsSetGatewayId())
+            {
+                context.Writer.WritePropertyName("gatewayId");
+                context.Writer.WriteStringValue(publicRequest.GatewayId);
+            }
+
+            if(publicRequest.IsSetVirtualGatewayId())
+            {
+                context.Writer.WritePropertyName("virtualGatewayId");
+                context.Writer.WriteStringValue(publicRequest.VirtualGatewayId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

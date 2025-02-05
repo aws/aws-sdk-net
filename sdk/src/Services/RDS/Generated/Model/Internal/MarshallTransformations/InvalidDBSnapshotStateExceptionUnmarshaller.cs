@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBSnapshotStateException operation
     /// </summary>  
-    public class InvalidDBSnapshotStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBSnapshotStateException, XmlUnmarshallerContext>
+    public class InvalidDBSnapshotStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBSnapshotStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsApiCallAction Object
     /// </summary>  
-    public class AwsApiCallActionUnmarshaller : IUnmarshaller<AwsApiCallAction, XmlUnmarshallerContext>, IUnmarshaller<AwsApiCallAction, JsonUnmarshallerContext>
+    public class AwsApiCallActionUnmarshaller : IJsonUnmarshaller<AwsApiCallAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsApiCallAction IUnmarshaller<AwsApiCallAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsApiCallAction Unmarshall(JsonUnmarshallerContext context)
+        public AwsApiCallAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsApiCallAction unmarshalledObject = new AwsApiCallAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AffectedResources", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AffectedResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AffectedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Api", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Api = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Api = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CallerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CallerType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CallerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainDetails", targetDepth))
                 {
                     var unmarshaller = AwsApiCallActionDomainDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DomainDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirstSeen", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstSeen = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirstSeen = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSeen", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSeen = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSeen = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemoteIpDetails", targetDepth))
                 {
                     var unmarshaller = ActionRemoteIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

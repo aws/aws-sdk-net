@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbsoluteTimeRange())
             {
                 context.Writer.WritePropertyName("AbsoluteTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AbsoluteTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbsoluteTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNegate())
             {
                 context.Writer.WritePropertyName("Negate");
-                context.Writer.Write(requestObject.Negate.Value);
+                context.Writer.WriteBooleanValue(requestObject.Negate.Value);
             }
 
             if(requestObject.IsSetParticipantRole())
             {
                 context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.Write(requestObject.ParticipantRole);
+                context.Writer.WriteStringValue(requestObject.ParticipantRole);
             }
 
             if(requestObject.IsSetRelativeTimeRange())
             {
                 context.Writer.WritePropertyName("RelativeTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RelativeTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelativeTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold.Value);
+                context.Writer.WriteNumberValue(requestObject.Threshold.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegionList())
             {
                 context.Writer.WritePropertyName("regionList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionListListValue in requestObject.RegionList)
                 {
-                        context.Writer.Write(requestObjectRegionListListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReplicationStrategy())
             {
                 context.Writer.WritePropertyName("replicationStrategy");
-                context.Writer.Write(requestObject.ReplicationStrategy);
+                context.Writer.WriteStringValue(requestObject.ReplicationStrategy);
             }
 
         }

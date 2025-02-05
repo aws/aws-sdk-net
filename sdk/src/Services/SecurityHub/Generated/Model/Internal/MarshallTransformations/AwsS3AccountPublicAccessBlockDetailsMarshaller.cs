@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockPublicAcls())
             {
                 context.Writer.WritePropertyName("BlockPublicAcls");
-                context.Writer.Write(requestObject.BlockPublicAcls.Value);
+                context.Writer.WriteBooleanValue(requestObject.BlockPublicAcls.Value);
             }
 
             if(requestObject.IsSetBlockPublicPolicy())
             {
                 context.Writer.WritePropertyName("BlockPublicPolicy");
-                context.Writer.Write(requestObject.BlockPublicPolicy.Value);
+                context.Writer.WriteBooleanValue(requestObject.BlockPublicPolicy.Value);
             }
 
             if(requestObject.IsSetIgnorePublicAcls())
             {
                 context.Writer.WritePropertyName("IgnorePublicAcls");
-                context.Writer.Write(requestObject.IgnorePublicAcls.Value);
+                context.Writer.WriteBooleanValue(requestObject.IgnorePublicAcls.Value);
             }
 
             if(requestObject.IsSetRestrictPublicBuckets())
             {
                 context.Writer.WritePropertyName("RestrictPublicBuckets");
-                context.Writer.Write(requestObject.RestrictPublicBuckets.Value);
+                context.Writer.WriteBooleanValue(requestObject.RestrictPublicBuckets.Value);
             }
 
         }

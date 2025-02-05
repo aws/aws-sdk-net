@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayFormat())
             {
                 context.Writer.WritePropertyName("DisplayFormat");
-                context.Writer.Write(requestObject.DisplayFormat);
+                context.Writer.WriteStringValue(requestObject.DisplayFormat);
             }
 
             if(requestObject.IsSetDisplayFormatOptions())
             {
                 context.Writer.WritePropertyName("DisplayFormatOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DisplayFormatOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayFormatOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldName())
             {
                 context.Writer.WritePropertyName("FieldName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamedEntity())
             {
                 context.Writer.WritePropertyName("NamedEntity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NamedEntityRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.NamedEntity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSort())
             {
                 context.Writer.WritePropertyName("Sort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicSortClauseMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioGroupId())
             {
                 context.Writer.WritePropertyName("audioGroupId");
-                context.Writer.Write(requestObject.AudioGroupId);
+                context.Writer.WriteStringValue(requestObject.AudioGroupId);
             }
 
             if(requestObject.IsSetAudioOnlyContainer())
             {
                 context.Writer.WritePropertyName("audioOnlyContainer");
-                context.Writer.Write(requestObject.AudioOnlyContainer);
+                context.Writer.WriteStringValue(requestObject.AudioOnlyContainer);
             }
 
             if(requestObject.IsSetAudioRenditionSets())
             {
                 context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
+                context.Writer.WriteStringValue(requestObject.AudioRenditionSets);
             }
 
             if(requestObject.IsSetAudioTrackType())
             {
                 context.Writer.WritePropertyName("audioTrackType");
-                context.Writer.Write(requestObject.AudioTrackType);
+                context.Writer.WriteStringValue(requestObject.AudioTrackType);
             }
 
             if(requestObject.IsSetDescriptiveVideoServiceFlag())
             {
                 context.Writer.WritePropertyName("descriptiveVideoServiceFlag");
-                context.Writer.Write(requestObject.DescriptiveVideoServiceFlag);
+                context.Writer.WriteStringValue(requestObject.DescriptiveVideoServiceFlag);
             }
 
             if(requestObject.IsSetIFrameOnlyManifest())
             {
                 context.Writer.WritePropertyName("iFrameOnlyManifest");
-                context.Writer.Write(requestObject.IFrameOnlyManifest);
+                context.Writer.WriteStringValue(requestObject.IFrameOnlyManifest);
             }
 
             if(requestObject.IsSetSegmentModifier())
             {
                 context.Writer.WritePropertyName("segmentModifier");
-                context.Writer.Write(requestObject.SegmentModifier);
+                context.Writer.WriteStringValue(requestObject.SegmentModifier);
             }
 
         }

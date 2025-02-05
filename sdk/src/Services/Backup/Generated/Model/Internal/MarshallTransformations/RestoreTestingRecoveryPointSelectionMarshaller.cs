@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
             if(requestObject.IsSetExcludeVaults())
             {
                 context.Writer.WritePropertyName("ExcludeVaults");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeVaultsListValue in requestObject.ExcludeVaults)
                 {
-                        context.Writer.Write(requestObjectExcludeVaultsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeVaultsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeVaults())
             {
                 context.Writer.WritePropertyName("IncludeVaults");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeVaultsListValue in requestObject.IncludeVaults)
                 {
-                        context.Writer.Write(requestObjectIncludeVaultsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeVaultsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecoveryPointTypes())
             {
                 context.Writer.WritePropertyName("RecoveryPointTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecoveryPointTypesListValue in requestObject.RecoveryPointTypes)
                 {
-                        context.Writer.Write(requestObjectRecoveryPointTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectRecoveryPointTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelectionWindowDays())
             {
                 context.Writer.WritePropertyName("SelectionWindowDays");
-                context.Writer.Write(requestObject.SelectionWindowDays.Value);
+                context.Writer.WriteNumberValue(requestObject.SelectionWindowDays.Value);
             }
 
         }

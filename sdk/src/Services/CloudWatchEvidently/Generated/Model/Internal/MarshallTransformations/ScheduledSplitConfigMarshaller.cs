@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupWeights())
             {
                 context.Writer.WritePropertyName("groupWeights");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectGroupWeightsKvp in requestObject.GroupWeights)
                 {
                     context.Writer.WritePropertyName(requestObjectGroupWeightsKvp.Key);
                     var requestObjectGroupWeightsValue = requestObjectGroupWeightsKvp.Value;
 
-                        context.Writer.Write(requestObjectGroupWeightsValue);
+                        context.Writer.WriteNumberValue(requestObjectGroupWeightsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentOverrides())
             {
                 context.Writer.WritePropertyName("segmentOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSegmentOverridesListValue in requestObject.SegmentOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SegmentOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectSegmentOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTime.Value)));
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDestinationListValue in requestObject.Destination)
                 {
-                        context.Writer.Write(requestObjectDestinationListValue);
+                        context.Writer.WriteStringValue(requestObjectDestinationListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFromEmailAddress())
             {
                 context.Writer.WritePropertyName("FromEmailAddress");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFromEmailAddressListValue in requestObject.FromEmailAddress)
                 {
-                        context.Writer.Write(requestObjectFromEmailAddressListValue);
+                        context.Writer.WriteStringValue(requestObjectFromEmailAddressListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIsp())
             {
                 context.Writer.WritePropertyName("Isp");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIspListValue in requestObject.Isp)
                 {
-                        context.Writer.Write(requestObjectIspListValue);
+                        context.Writer.WriteStringValue(requestObjectIspListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLastDeliveryEvent())
             {
                 context.Writer.WritePropertyName("LastDeliveryEvent");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastDeliveryEventListValue in requestObject.LastDeliveryEvent)
                 {
-                        context.Writer.Write(requestObjectLastDeliveryEventListValue);
+                        context.Writer.WriteStringValue(requestObjectLastDeliveryEventListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLastEngagementEvent())
             {
                 context.Writer.WritePropertyName("LastEngagementEvent");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastEngagementEventListValue in requestObject.LastEngagementEvent)
                 {
-                        context.Writer.Write(requestObjectLastEngagementEventListValue);
+                        context.Writer.WriteStringValue(requestObjectLastEngagementEventListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubjectListValue in requestObject.Subject)
                 {
-                        context.Writer.Write(requestObjectSubjectListValue);
+                        context.Writer.WriteStringValue(requestObjectSubjectListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

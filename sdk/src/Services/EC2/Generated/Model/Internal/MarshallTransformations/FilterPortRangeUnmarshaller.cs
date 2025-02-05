@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FilterPortRange Object
     /// </summary>  
-    public class FilterPortRangeUnmarshaller : IUnmarshaller<FilterPortRange, XmlUnmarshallerContext>, IUnmarshaller<FilterPortRange, JsonUnmarshallerContext>
+    public class FilterPortRangeUnmarshaller : IXmlUnmarshaller<FilterPortRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FilterPortRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FilterPortRangeUnmarshaller _instance = new FilterPortRangeUnmarshaller();        
 

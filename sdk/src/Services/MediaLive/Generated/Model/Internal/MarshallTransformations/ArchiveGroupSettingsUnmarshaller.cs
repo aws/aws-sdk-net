@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ArchiveGroupSettings Object
     /// </summary>  
-    public class ArchiveGroupSettingsUnmarshaller : IUnmarshaller<ArchiveGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<ArchiveGroupSettings, JsonUnmarshallerContext>
+    public class ArchiveGroupSettingsUnmarshaller : IJsonUnmarshaller<ArchiveGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ArchiveGroupSettings IUnmarshaller<ArchiveGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ArchiveGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public ArchiveGroupSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ArchiveGroupSettings unmarshalledObject = new ArchiveGroupSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("archiveCdnSettings", targetDepth))
                 {
                     var unmarshaller = ArchiveCdnSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ArchiveCdnSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchiveCdnSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rolloverInterval", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RolloverInterval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RolloverInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

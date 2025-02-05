@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPercentageAdjust())
@@ -59,11 +57,11 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 context.Writer.WritePropertyName("percentageAdjust");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageAdjust.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageAdjust.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PercentageAdjust.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentageAdjust.Value);
+                    context.Writer.WriteNumberValue(requestObject.PercentageAdjust.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");
-                context.Writer.Write(requestObject.ShardCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ShardCount.Value);
             }
 
         }

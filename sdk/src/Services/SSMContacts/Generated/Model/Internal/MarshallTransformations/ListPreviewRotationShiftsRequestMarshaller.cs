@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,98 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("EndTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMembers())
-                    {
-                        context.Writer.WritePropertyName("Members");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMembersListValue in publicRequest.Members)
-                        {
-                                context.Writer.Write(publicRequestMembersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetOverrides())
-                    {
-                        context.Writer.WritePropertyName("Overrides");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOverridesListValue in publicRequest.Overrides)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PreviewOverrideMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOverridesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRecurrence())
-                    {
-                        context.Writer.WritePropertyName("Recurrence");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecurrenceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Recurrence, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRotationStartTime())
-                    {
-                        context.Writer.WritePropertyName("RotationStartTime");
-                        context.Writer.Write(publicRequest.RotationStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("StartTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetTimeZoneId())
-                    {
-                        context.Writer.WritePropertyName("TimeZoneId");
-                        context.Writer.Write(publicRequest.TimeZoneId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetMembers())
+            {
+                context.Writer.WritePropertyName("Members");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMembersListValue in publicRequest.Members)
+                {
+                        context.Writer.WriteStringValue(publicRequestMembersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetOverrides())
+            {
+                context.Writer.WritePropertyName("Overrides");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOverridesListValue in publicRequest.Overrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PreviewOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRecurrence())
+            {
+                context.Writer.WritePropertyName("Recurrence");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecurrenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Recurrence, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRotationStartTime())
+            {
+                context.Writer.WritePropertyName("RotationStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.RotationStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("StartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            if(publicRequest.IsSetTimeZoneId())
+            {
+                context.Writer.WritePropertyName("TimeZoneId");
+                context.Writer.WriteStringValue(publicRequest.TimeZoneId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

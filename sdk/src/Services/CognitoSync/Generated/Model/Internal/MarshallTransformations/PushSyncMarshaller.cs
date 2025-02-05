@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationArns())
             {
                 context.Writer.WritePropertyName("ApplicationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApplicationArnsListValue in requestObject.ApplicationArns)
                 {
-                        context.Writer.Write(requestObjectApplicationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectApplicationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

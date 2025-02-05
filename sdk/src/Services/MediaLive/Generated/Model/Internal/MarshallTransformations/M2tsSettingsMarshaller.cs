@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,160 +49,160 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbsentInputAudioBehavior())
             {
                 context.Writer.WritePropertyName("absentInputAudioBehavior");
-                context.Writer.Write(requestObject.AbsentInputAudioBehavior);
+                context.Writer.WriteStringValue(requestObject.AbsentInputAudioBehavior);
             }
 
             if(requestObject.IsSetArib())
             {
                 context.Writer.WritePropertyName("arib");
-                context.Writer.Write(requestObject.Arib);
+                context.Writer.WriteStringValue(requestObject.Arib);
             }
 
             if(requestObject.IsSetAribCaptionsPid())
             {
                 context.Writer.WritePropertyName("aribCaptionsPid");
-                context.Writer.Write(requestObject.AribCaptionsPid);
+                context.Writer.WriteStringValue(requestObject.AribCaptionsPid);
             }
 
             if(requestObject.IsSetAribCaptionsPidControl())
             {
                 context.Writer.WritePropertyName("aribCaptionsPidControl");
-                context.Writer.Write(requestObject.AribCaptionsPidControl);
+                context.Writer.WriteStringValue(requestObject.AribCaptionsPidControl);
             }
 
             if(requestObject.IsSetAudioBufferModel())
             {
                 context.Writer.WritePropertyName("audioBufferModel");
-                context.Writer.Write(requestObject.AudioBufferModel);
+                context.Writer.WriteStringValue(requestObject.AudioBufferModel);
             }
 
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioPids())
             {
                 context.Writer.WritePropertyName("audioPids");
-                context.Writer.Write(requestObject.AudioPids);
+                context.Writer.WriteStringValue(requestObject.AudioPids);
             }
 
             if(requestObject.IsSetAudioStreamType())
             {
                 context.Writer.WritePropertyName("audioStreamType");
-                context.Writer.Write(requestObject.AudioStreamType);
+                context.Writer.WriteStringValue(requestObject.AudioStreamType);
             }
 
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBufferModel())
             {
                 context.Writer.WritePropertyName("bufferModel");
-                context.Writer.Write(requestObject.BufferModel);
+                context.Writer.WriteStringValue(requestObject.BufferModel);
             }
 
             if(requestObject.IsSetCcDescriptor())
             {
                 context.Writer.WritePropertyName("ccDescriptor");
-                context.Writer.Write(requestObject.CcDescriptor);
+                context.Writer.WriteStringValue(requestObject.CcDescriptor);
             }
 
             if(requestObject.IsSetDvbNitSettings())
             {
                 context.Writer.WritePropertyName("dvbNitSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DvbNitSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DvbNitSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbSdtSettings())
             {
                 context.Writer.WritePropertyName("dvbSdtSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DvbSdtSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DvbSdtSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbSubPids())
             {
                 context.Writer.WritePropertyName("dvbSubPids");
-                context.Writer.Write(requestObject.DvbSubPids);
+                context.Writer.WriteStringValue(requestObject.DvbSubPids);
             }
 
             if(requestObject.IsSetDvbTdtSettings())
             {
                 context.Writer.WritePropertyName("dvbTdtSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DvbTdtSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DvbTdtSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbTeletextPid())
             {
                 context.Writer.WritePropertyName("dvbTeletextPid");
-                context.Writer.Write(requestObject.DvbTeletextPid);
+                context.Writer.WriteStringValue(requestObject.DvbTeletextPid);
             }
 
             if(requestObject.IsSetEbif())
             {
                 context.Writer.WritePropertyName("ebif");
-                context.Writer.Write(requestObject.Ebif);
+                context.Writer.WriteStringValue(requestObject.Ebif);
             }
 
             if(requestObject.IsSetEbpAudioInterval())
             {
                 context.Writer.WritePropertyName("ebpAudioInterval");
-                context.Writer.Write(requestObject.EbpAudioInterval);
+                context.Writer.WriteStringValue(requestObject.EbpAudioInterval);
             }
 
             if(requestObject.IsSetEbpLookaheadMs())
             {
                 context.Writer.WritePropertyName("ebpLookaheadMs");
-                context.Writer.Write(requestObject.EbpLookaheadMs.Value);
+                context.Writer.WriteNumberValue(requestObject.EbpLookaheadMs.Value);
             }
 
             if(requestObject.IsSetEbpPlacement())
             {
                 context.Writer.WritePropertyName("ebpPlacement");
-                context.Writer.Write(requestObject.EbpPlacement);
+                context.Writer.WriteStringValue(requestObject.EbpPlacement);
             }
 
             if(requestObject.IsSetEcmPid())
             {
                 context.Writer.WritePropertyName("ecmPid");
-                context.Writer.Write(requestObject.EcmPid);
+                context.Writer.WriteStringValue(requestObject.EcmPid);
             }
 
             if(requestObject.IsSetEsRateInPes())
             {
                 context.Writer.WritePropertyName("esRateInPes");
-                context.Writer.Write(requestObject.EsRateInPes);
+                context.Writer.WriteStringValue(requestObject.EsRateInPes);
             }
 
             if(requestObject.IsSetEtvPlatformPid())
             {
                 context.Writer.WritePropertyName("etvPlatformPid");
-                context.Writer.Write(requestObject.EtvPlatformPid);
+                context.Writer.WriteStringValue(requestObject.EtvPlatformPid);
             }
 
             if(requestObject.IsSetEtvSignalPid())
             {
                 context.Writer.WritePropertyName("etvSignalPid");
-                context.Writer.Write(requestObject.EtvSignalPid);
+                context.Writer.WriteStringValue(requestObject.EtvSignalPid);
             }
 
             if(requestObject.IsSetFragmentTime())
@@ -212,30 +210,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("fragmentTime");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.FragmentTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.FragmentTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FragmentTime.Value);
+                    context.Writer.WriteNumberValue(requestObject.FragmentTime.Value);
                 }
             }
 
             if(requestObject.IsSetKlv())
             {
                 context.Writer.WritePropertyName("klv");
-                context.Writer.Write(requestObject.Klv);
+                context.Writer.WriteStringValue(requestObject.Klv);
             }
 
             if(requestObject.IsSetKlvDataPids())
             {
                 context.Writer.WritePropertyName("klvDataPids");
-                context.Writer.Write(requestObject.KlvDataPids);
+                context.Writer.WriteStringValue(requestObject.KlvDataPids);
             }
 
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
+                context.Writer.WriteStringValue(requestObject.NielsenId3Behavior);
             }
 
             if(requestObject.IsSetNullPacketBitrate())
@@ -243,78 +241,78 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("nullPacketBitrate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.NullPacketBitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.NullPacketBitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NullPacketBitrate.Value);
+                    context.Writer.WriteNumberValue(requestObject.NullPacketBitrate.Value);
                 }
             }
 
             if(requestObject.IsSetPatInterval())
             {
                 context.Writer.WritePropertyName("patInterval");
-                context.Writer.Write(requestObject.PatInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.PatInterval.Value);
             }
 
             if(requestObject.IsSetPcrControl())
             {
                 context.Writer.WritePropertyName("pcrControl");
-                context.Writer.Write(requestObject.PcrControl);
+                context.Writer.WriteStringValue(requestObject.PcrControl);
             }
 
             if(requestObject.IsSetPcrPeriod())
             {
                 context.Writer.WritePropertyName("pcrPeriod");
-                context.Writer.Write(requestObject.PcrPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.PcrPeriod.Value);
             }
 
             if(requestObject.IsSetPcrPid())
             {
                 context.Writer.WritePropertyName("pcrPid");
-                context.Writer.Write(requestObject.PcrPid);
+                context.Writer.WriteStringValue(requestObject.PcrPid);
             }
 
             if(requestObject.IsSetPmtInterval())
             {
                 context.Writer.WritePropertyName("pmtInterval");
-                context.Writer.Write(requestObject.PmtInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.PmtInterval.Value);
             }
 
             if(requestObject.IsSetPmtPid())
             {
                 context.Writer.WritePropertyName("pmtPid");
-                context.Writer.Write(requestObject.PmtPid);
+                context.Writer.WriteStringValue(requestObject.PmtPid);
             }
 
             if(requestObject.IsSetProgramNum())
             {
                 context.Writer.WritePropertyName("programNum");
-                context.Writer.Write(requestObject.ProgramNum.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramNum.Value);
             }
 
             if(requestObject.IsSetRateMode())
             {
                 context.Writer.WritePropertyName("rateMode");
-                context.Writer.Write(requestObject.RateMode);
+                context.Writer.WriteStringValue(requestObject.RateMode);
             }
 
             if(requestObject.IsSetScte27Pids())
             {
                 context.Writer.WritePropertyName("scte27Pids");
-                context.Writer.Write(requestObject.Scte27Pids);
+                context.Writer.WriteStringValue(requestObject.Scte27Pids);
             }
 
             if(requestObject.IsSetScte35Control())
             {
                 context.Writer.WritePropertyName("scte35Control");
-                context.Writer.Write(requestObject.Scte35Control);
+                context.Writer.WriteStringValue(requestObject.Scte35Control);
             }
 
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid);
+                context.Writer.WriteStringValue(requestObject.Scte35Pid);
             }
 
             if(requestObject.IsSetScte35PrerollPullupMilliseconds())
@@ -322,24 +320,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds.Value);
+                    context.Writer.WriteNumberValue(requestObject.Scte35PrerollPullupMilliseconds.Value);
                 }
             }
 
             if(requestObject.IsSetSegmentationMarkers())
             {
                 context.Writer.WritePropertyName("segmentationMarkers");
-                context.Writer.Write(requestObject.SegmentationMarkers);
+                context.Writer.WriteStringValue(requestObject.SegmentationMarkers);
             }
 
             if(requestObject.IsSetSegmentationStyle())
             {
                 context.Writer.WritePropertyName("segmentationStyle");
-                context.Writer.Write(requestObject.SegmentationStyle);
+                context.Writer.WriteStringValue(requestObject.SegmentationStyle);
             }
 
             if(requestObject.IsSetSegmentationTime())
@@ -347,36 +345,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("segmentationTime");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SegmentationTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SegmentationTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SegmentationTime.Value);
+                    context.Writer.WriteNumberValue(requestObject.SegmentationTime.Value);
                 }
             }
 
             if(requestObject.IsSetTimedMetadataBehavior())
             {
                 context.Writer.WritePropertyName("timedMetadataBehavior");
-                context.Writer.Write(requestObject.TimedMetadataBehavior);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataBehavior);
             }
 
             if(requestObject.IsSetTimedMetadataPid())
             {
                 context.Writer.WritePropertyName("timedMetadataPid");
-                context.Writer.Write(requestObject.TimedMetadataPid);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataPid);
             }
 
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId.Value);
+                context.Writer.WriteNumberValue(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetVideoPid())
             {
                 context.Writer.WritePropertyName("videoPid");
-                context.Writer.Write(requestObject.VideoPid);
+                context.Writer.WriteStringValue(requestObject.VideoPid);
             }
 
         }

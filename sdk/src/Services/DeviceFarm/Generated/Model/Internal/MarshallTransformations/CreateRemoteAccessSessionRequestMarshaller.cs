@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
@@ -63,96 +66,101 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientId())
-                    {
-                        context.Writer.WritePropertyName("clientId");
-                        context.Writer.Write(publicRequest.ClientId);
-                    }
-
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateRemoteAccessSessionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeviceArn())
-                    {
-                        context.Writer.WritePropertyName("deviceArn");
-                        context.Writer.Write(publicRequest.DeviceArn);
-                    }
-
-                    if(publicRequest.IsSetInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("instanceArn");
-                        context.Writer.Write(publicRequest.InstanceArn);
-                    }
-
-                    if(publicRequest.IsSetInteractionMode())
-                    {
-                        context.Writer.WritePropertyName("interactionMode");
-                        context.Writer.Write(publicRequest.InteractionMode);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetProjectArn())
-                    {
-                        context.Writer.WritePropertyName("projectArn");
-                        context.Writer.Write(publicRequest.ProjectArn);
-                    }
-
-                    if(publicRequest.IsSetRemoteDebugEnabled())
-                    {
-                        context.Writer.WritePropertyName("remoteDebugEnabled");
-                        context.Writer.Write(publicRequest.RemoteDebugEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetRemoteRecordAppArn())
-                    {
-                        context.Writer.WritePropertyName("remoteRecordAppArn");
-                        context.Writer.Write(publicRequest.RemoteRecordAppArn);
-                    }
-
-                    if(publicRequest.IsSetRemoteRecordEnabled())
-                    {
-                        context.Writer.WritePropertyName("remoteRecordEnabled");
-                        context.Writer.Write(publicRequest.RemoteRecordEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetSkipAppResign())
-                    {
-                        context.Writer.WritePropertyName("skipAppResign");
-                        context.Writer.Write(publicRequest.SkipAppResign.Value);
-                    }
-
-                    if(publicRequest.IsSetSshPublicKey())
-                    {
-                        context.Writer.WritePropertyName("sshPublicKey");
-                        context.Writer.Write(publicRequest.SshPublicKey);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
             }
+
+            if(publicRequest.IsSetConfiguration())
+            {
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateRemoteAccessSessionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeviceArn())
+            {
+                context.Writer.WritePropertyName("deviceArn");
+                context.Writer.WriteStringValue(publicRequest.DeviceArn);
+            }
+
+            if(publicRequest.IsSetInstanceArn())
+            {
+                context.Writer.WritePropertyName("instanceArn");
+                context.Writer.WriteStringValue(publicRequest.InstanceArn);
+            }
+
+            if(publicRequest.IsSetInteractionMode())
+            {
+                context.Writer.WritePropertyName("interactionMode");
+                context.Writer.WriteStringValue(publicRequest.InteractionMode);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProjectArn())
+            {
+                context.Writer.WritePropertyName("projectArn");
+                context.Writer.WriteStringValue(publicRequest.ProjectArn);
+            }
+
+            if(publicRequest.IsSetRemoteDebugEnabled())
+            {
+                context.Writer.WritePropertyName("remoteDebugEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.RemoteDebugEnabled.Value);
+            }
+
+            if(publicRequest.IsSetRemoteRecordAppArn())
+            {
+                context.Writer.WritePropertyName("remoteRecordAppArn");
+                context.Writer.WriteStringValue(publicRequest.RemoteRecordAppArn);
+            }
+
+            if(publicRequest.IsSetRemoteRecordEnabled())
+            {
+                context.Writer.WritePropertyName("remoteRecordEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.RemoteRecordEnabled.Value);
+            }
+
+            if(publicRequest.IsSetSkipAppResign())
+            {
+                context.Writer.WritePropertyName("skipAppResign");
+                context.Writer.WriteBooleanValue(publicRequest.SkipAppResign.Value);
+            }
+
+            if(publicRequest.IsSetSshPublicKey())
+            {
+                context.Writer.WritePropertyName("sshPublicKey");
+                context.Writer.WriteStringValue(publicRequest.SshPublicKey);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

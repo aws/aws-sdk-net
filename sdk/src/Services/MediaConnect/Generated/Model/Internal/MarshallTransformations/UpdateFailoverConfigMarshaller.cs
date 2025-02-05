@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailoverMode())
             {
                 context.Writer.WritePropertyName("failoverMode");
-                context.Writer.Write(requestObject.FailoverMode);
+                context.Writer.WriteStringValue(requestObject.FailoverMode);
             }
 
             if(requestObject.IsSetRecoveryWindow())
             {
                 context.Writer.WritePropertyName("recoveryWindow");
-                context.Writer.Write(requestObject.RecoveryWindow.Value);
+                context.Writer.WriteNumberValue(requestObject.RecoveryWindow.Value);
             }
 
             if(requestObject.IsSetSourcePriority())
             {
                 context.Writer.WritePropertyName("sourcePriority");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourcePriorityMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourcePriority, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("state");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

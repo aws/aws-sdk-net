@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HumanLoopConfig Object
     /// </summary>  
-    public class HumanLoopConfigUnmarshaller : IUnmarshaller<HumanLoopConfig, XmlUnmarshallerContext>, IUnmarshaller<HumanLoopConfig, JsonUnmarshallerContext>
+    public class HumanLoopConfigUnmarshaller : IJsonUnmarshaller<HumanLoopConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HumanLoopConfig IUnmarshaller<HumanLoopConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HumanLoopConfig Unmarshall(JsonUnmarshallerContext context)
+        public HumanLoopConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HumanLoopConfig unmarshalledObject = new HumanLoopConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("HumanTaskUiArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HumanTaskUiArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HumanTaskUiArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PublicWorkforceTaskPrice", targetDepth))
                 {
                     var unmarshaller = PublicWorkforceTaskPriceUnmarshaller.Instance;
-                    unmarshalledObject.PublicWorkforceTaskPrice = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PublicWorkforceTaskPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskAvailabilityLifetimeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TaskAvailabilityLifetimeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskAvailabilityLifetimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TaskCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskKeywords", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TaskKeywords = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TaskKeywords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskTimeLimitInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TaskTimeLimitInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskTimeLimitInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskTitle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkteamArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkteamArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkteamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

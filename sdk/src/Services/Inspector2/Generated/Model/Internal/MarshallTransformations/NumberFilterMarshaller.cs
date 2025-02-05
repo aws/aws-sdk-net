@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("lowerInclusive");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LowerInclusive.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LowerInclusive.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LowerInclusive.Value);
+                    context.Writer.WriteNumberValue(requestObject.LowerInclusive.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("upperInclusive");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.UpperInclusive.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.UpperInclusive.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.UpperInclusive.Value);
+                    context.Writer.WriteNumberValue(requestObject.UpperInclusive.Value);
                 }
             }
 

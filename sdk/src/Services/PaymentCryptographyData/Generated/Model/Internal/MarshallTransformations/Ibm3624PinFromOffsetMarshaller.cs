@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecimalizationTable())
             {
                 context.Writer.WritePropertyName("DecimalizationTable");
-                context.Writer.Write(requestObject.DecimalizationTable);
+                context.Writer.WriteStringValue(requestObject.DecimalizationTable);
             }
 
             if(requestObject.IsSetPinOffset())
             {
                 context.Writer.WritePropertyName("PinOffset");
-                context.Writer.Write(requestObject.PinOffset);
+                context.Writer.WriteStringValue(requestObject.PinOffset);
             }
 
             if(requestObject.IsSetPinValidationData())
             {
                 context.Writer.WritePropertyName("PinValidationData");
-                context.Writer.Write(requestObject.PinValidationData);
+                context.Writer.WriteStringValue(requestObject.PinValidationData);
             }
 
             if(requestObject.IsSetPinValidationDataPadCharacter())
             {
                 context.Writer.WritePropertyName("PinValidationDataPadCharacter");
-                context.Writer.Write(requestObject.PinValidationDataPadCharacter);
+                context.Writer.WriteStringValue(requestObject.PinValidationDataPadCharacter);
             }
 
         }

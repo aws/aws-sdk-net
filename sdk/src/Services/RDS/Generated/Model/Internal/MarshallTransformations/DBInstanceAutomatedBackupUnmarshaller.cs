@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceAutomatedBackup Object
     /// </summary>  
-    public class DBInstanceAutomatedBackupUnmarshaller : IUnmarshaller<DBInstanceAutomatedBackup, XmlUnmarshallerContext>, IUnmarshaller<DBInstanceAutomatedBackup, JsonUnmarshallerContext>
+    public class DBInstanceAutomatedBackupUnmarshaller : IXmlUnmarshaller<DBInstanceAutomatedBackup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -255,17 +255,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBInstanceAutomatedBackup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBInstanceAutomatedBackupUnmarshaller _instance = new DBInstanceAutomatedBackupUnmarshaller();        
 

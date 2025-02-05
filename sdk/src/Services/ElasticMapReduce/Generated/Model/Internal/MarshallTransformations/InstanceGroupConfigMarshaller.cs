@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,81 +49,81 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingPolicy())
             {
                 context.Writer.WritePropertyName("AutoScalingPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoScalingPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBidPrice())
             {
                 context.Writer.WritePropertyName("BidPrice");
-                context.Writer.Write(requestObject.BidPrice);
+                context.Writer.WriteStringValue(requestObject.BidPrice);
             }
 
             if(requestObject.IsSetConfigurations())
             {
                 context.Writer.WritePropertyName("Configurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomAmiId())
             {
                 context.Writer.WritePropertyName("CustomAmiId");
-                context.Writer.Write(requestObject.CustomAmiId);
+                context.Writer.WriteStringValue(requestObject.CustomAmiId);
             }
 
             if(requestObject.IsSetEbsConfiguration())
             {
                 context.Writer.WritePropertyName("EbsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EbsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EbsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceRole())
             {
                 context.Writer.WritePropertyName("InstanceRole");
-                context.Writer.Write(requestObject.InstanceRole);
+                context.Writer.WriteStringValue(requestObject.InstanceRole);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetMarket())
             {
                 context.Writer.WritePropertyName("Market");
-                context.Writer.Write(requestObject.Market);
+                context.Writer.WriteStringValue(requestObject.Market);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

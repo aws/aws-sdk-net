@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentName())
             {
                 context.Writer.WritePropertyName("documentName");
-                context.Writer.Write(requestObject.DocumentName);
+                context.Writer.WriteStringValue(requestObject.DocumentName);
             }
 
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("documentVersion");
-                context.Writer.Write(requestObject.DocumentVersion);
+                context.Writer.WriteStringValue(requestObject.DocumentVersion);
             }
 
             if(requestObject.IsSetDynamicParameters())
             {
                 context.Writer.WritePropertyName("dynamicParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDynamicParametersKvp in requestObject.DynamicParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectDynamicParametersKvp.Key);
                     var requestObjectDynamicParametersValue = requestObjectDynamicParametersKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DynamicSsmParameterValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectDynamicParametersValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectParametersValueListValue in requestObjectParametersValue)
                     {
-                            context.Writer.Write(requestObjectParametersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectParametersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTargetAccount())
             {
                 context.Writer.WritePropertyName("targetAccount");
-                context.Writer.Write(requestObject.TargetAccount);
+                context.Writer.WriteStringValue(requestObject.TargetAccount);
             }
 
         }

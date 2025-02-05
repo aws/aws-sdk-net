@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UpsolverS3OutputFormatConfig Object
     /// </summary>  
-    public class UpsolverS3OutputFormatConfigUnmarshaller : IUnmarshaller<UpsolverS3OutputFormatConfig, XmlUnmarshallerContext>, IUnmarshaller<UpsolverS3OutputFormatConfig, JsonUnmarshallerContext>
+    public class UpsolverS3OutputFormatConfigUnmarshaller : IJsonUnmarshaller<UpsolverS3OutputFormatConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UpsolverS3OutputFormatConfig IUnmarshaller<UpsolverS3OutputFormatConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UpsolverS3OutputFormatConfig Unmarshall(JsonUnmarshallerContext context)
+        public UpsolverS3OutputFormatConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UpsolverS3OutputFormatConfig unmarshalledObject = new UpsolverS3OutputFormatConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregationConfig", targetDepth))
                 {
                     var unmarshaller = AggregationConfigUnmarshaller.Instance;
-                    unmarshalledObject.AggregationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("prefixConfig", targetDepth))
                 {
                     var unmarshaller = PrefixConfigUnmarshaller.Instance;
-                    unmarshalledObject.PrefixConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrefixConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

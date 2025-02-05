@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -64,64 +67,69 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field LayerName set");
             request.AddPathResource("{LayerName}", StringUtils.FromString(publicRequest.LayerName));
             request.ResourcePath = "/2018-10-31/layers/{LayerName}/versions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCompatibleArchitectures())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("CompatibleArchitectures");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCompatibleArchitecturesListValue in publicRequest.CompatibleArchitectures)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCompatibleArchitectures())
-                    {
-                        context.Writer.WritePropertyName("CompatibleArchitectures");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCompatibleArchitecturesListValue in publicRequest.CompatibleArchitectures)
-                        {
-                                context.Writer.Write(publicRequestCompatibleArchitecturesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCompatibleRuntimes())
-                    {
-                        context.Writer.WritePropertyName("CompatibleRuntimes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCompatibleRuntimesListValue in publicRequest.CompatibleRuntimes)
-                        {
-                                context.Writer.Write(publicRequestCompatibleRuntimesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetContent())
-                    {
-                        context.Writer.WritePropertyName("Content");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LayerVersionContentInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Content, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetLicenseInfo())
-                    {
-                        context.Writer.WritePropertyName("LicenseInfo");
-                        context.Writer.Write(publicRequest.LicenseInfo);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestCompatibleArchitecturesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCompatibleRuntimes())
+            {
+                context.Writer.WritePropertyName("CompatibleRuntimes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCompatibleRuntimesListValue in publicRequest.CompatibleRuntimes)
+                {
+                        context.Writer.WriteStringValue(publicRequestCompatibleRuntimesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetContent())
+            {
+                context.Writer.WritePropertyName("Content");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LayerVersionContentInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Content, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetLicenseInfo())
+            {
+                context.Writer.WritePropertyName("LicenseInfo");
+                context.Writer.WriteStringValue(publicRequest.LicenseInfo);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

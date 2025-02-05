@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WriteStringValue(requestObject.Identifier);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetMountOptions())
             {
                 context.Writer.WritePropertyName("mountOptions");
-                context.Writer.Write(requestObject.MountOptions);
+                context.Writer.WriteStringValue(requestObject.MountOptions);
             }
 
             if(requestObject.IsSetMountPoint())
             {
                 context.Writer.WritePropertyName("mountPoint");
-                context.Writer.Write(requestObject.MountPoint);
+                context.Writer.WriteStringValue(requestObject.MountPoint);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

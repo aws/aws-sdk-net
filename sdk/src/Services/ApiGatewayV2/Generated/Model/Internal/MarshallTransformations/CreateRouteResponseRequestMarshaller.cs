@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
@@ -67,64 +70,69 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field RouteId set");
             request.AddPathResource("{routeId}", StringUtils.FromString(publicRequest.RouteId));
             request.ResourcePath = "/v2/apis/{apiId}/routes/{routeId}/routeresponses";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetModelSelectionExpression())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetModelSelectionExpression())
-                    {
-                        context.Writer.WritePropertyName("modelSelectionExpression");
-                        context.Writer.Write(publicRequest.ModelSelectionExpression);
-                    }
-
-                    if(publicRequest.IsSetResponseModels())
-                    {
-                        context.Writer.WritePropertyName("responseModels");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResponseModelsKvp in publicRequest.ResponseModels)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResponseModelsKvp.Key);
-                            var publicRequestResponseModelsValue = publicRequestResponseModelsKvp.Value;
-
-                                context.Writer.Write(publicRequestResponseModelsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResponseParameters())
-                    {
-                        context.Writer.WritePropertyName("responseParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ParameterConstraintsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestResponseParametersValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRouteResponseKey())
-                    {
-                        context.Writer.WritePropertyName("routeResponseKey");
-                        context.Writer.Write(publicRequest.RouteResponseKey);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("modelSelectionExpression");
+                context.Writer.WriteStringValue(publicRequest.ModelSelectionExpression);
             }
+
+            if(publicRequest.IsSetResponseModels())
+            {
+                context.Writer.WritePropertyName("responseModels");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResponseModelsKvp in publicRequest.ResponseModels)
+                {
+                    context.Writer.WritePropertyName(publicRequestResponseModelsKvp.Key);
+                    var publicRequestResponseModelsValue = publicRequestResponseModelsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestResponseModelsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResponseParameters())
+            {
+                context.Writer.WritePropertyName("responseParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                    var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ParameterConstraintsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResponseParametersValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRouteResponseKey())
+            {
+                context.Writer.WritePropertyName("routeResponseKey");
+                context.Writer.WriteStringValue(publicRequest.RouteResponseKey);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

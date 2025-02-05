@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdditionalEmailRecipients Object
     /// </summary>  
-    public class AdditionalEmailRecipientsUnmarshaller : IUnmarshaller<AdditionalEmailRecipients, XmlUnmarshallerContext>, IUnmarshaller<AdditionalEmailRecipients, JsonUnmarshallerContext>
+    public class AdditionalEmailRecipientsUnmarshaller : IJsonUnmarshaller<AdditionalEmailRecipients, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AdditionalEmailRecipients IUnmarshaller<AdditionalEmailRecipients, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdditionalEmailRecipients Unmarshall(JsonUnmarshallerContext context)
+        public AdditionalEmailRecipients Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AdditionalEmailRecipients unmarshalledObject = new AdditionalEmailRecipients();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CcList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
-                    unmarshalledObject.CcList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
+                    unmarshalledObject.CcList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ToList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
-                    unmarshalledObject.ToList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
+                    unmarshalledObject.ToList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

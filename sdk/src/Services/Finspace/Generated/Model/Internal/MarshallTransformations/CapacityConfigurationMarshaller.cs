@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNodeCount())
             {
                 context.Writer.WritePropertyName("nodeCount");
-                context.Writer.Write(requestObject.NodeCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NodeCount.Value);
             }
 
             if(requestObject.IsSetNodeType())
             {
                 context.Writer.WritePropertyName("nodeType");
-                context.Writer.Write(requestObject.NodeType);
+                context.Writer.WriteStringValue(requestObject.NodeType);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate);
+                context.Writer.WriteStringValue(requestObject.EndDate);
             }
 
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.WriteStringValue(requestObject.Limit);
             }
 
             if(requestObject.IsSetMarker())
             {
                 context.Writer.WritePropertyName("Marker");
-                context.Writer.Write(requestObject.Marker);
+                context.Writer.WriteStringValue(requestObject.Marker);
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate);
+                context.Writer.WriteStringValue(requestObject.StartDate);
             }
 
         }

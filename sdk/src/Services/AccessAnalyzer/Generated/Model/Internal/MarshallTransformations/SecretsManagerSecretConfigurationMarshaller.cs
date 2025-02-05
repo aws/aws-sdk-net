@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetSecretPolicy())
             {
                 context.Writer.WritePropertyName("secretPolicy");
-                context.Writer.Write(requestObject.SecretPolicy);
+                context.Writer.WriteStringValue(requestObject.SecretPolicy);
             }
 
         }

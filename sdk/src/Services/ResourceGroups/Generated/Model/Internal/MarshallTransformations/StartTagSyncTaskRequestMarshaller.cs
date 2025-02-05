@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 {
@@ -61,43 +64,48 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/start-tag-sync-task";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGroup())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGroup())
-                    {
-                        context.Writer.WritePropertyName("Group");
-                        context.Writer.Write(publicRequest.Group);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTagKey())
-                    {
-                        context.Writer.WritePropertyName("TagKey");
-                        context.Writer.Write(publicRequest.TagKey);
-                    }
-
-                    if(publicRequest.IsSetTagValue())
-                    {
-                        context.Writer.WritePropertyName("TagValue");
-                        context.Writer.Write(publicRequest.TagValue);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Group");
+                context.Writer.WriteStringValue(publicRequest.Group);
             }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTagKey())
+            {
+                context.Writer.WritePropertyName("TagKey");
+                context.Writer.WriteStringValue(publicRequest.TagKey);
+            }
+
+            if(publicRequest.IsSetTagValue())
+            {
+                context.Writer.WritePropertyName("TagValue");
+                context.Writer.WriteStringValue(publicRequest.TagValue);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             if(requestObject.IsSetFragmentSelectorType())
             {
                 context.Writer.WritePropertyName("FragmentSelectorType");
-                context.Writer.Write(requestObject.FragmentSelectorType);
+                context.Writer.WriteStringValue(requestObject.FragmentSelectorType);
             }
 
             if(requestObject.IsSetTimestampRange())
             {
                 context.Writer.WritePropertyName("TimestampRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HLSTimestampRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimestampRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

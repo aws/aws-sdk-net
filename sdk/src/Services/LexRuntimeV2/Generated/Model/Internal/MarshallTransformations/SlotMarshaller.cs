@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShape())
             {
                 context.Writer.WritePropertyName("shape");
-                context.Writer.Write(requestObject.Shape);
+                context.Writer.WriteStringValue(requestObject.Shape);
             }
 
             if(requestObject.IsSetSubSlots())
             {
                 context.Writer.WritePropertyName("subSlots");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubSlotsKvp in requestObject.SubSlots)
                 {
                     context.Writer.WritePropertyName(requestObjectSubSlotsKvp.Key);
                     var requestObjectSubSlotsValue = requestObjectSubSlotsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SlotMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubSlotsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValues())
             {
                 context.Writer.WritePropertyName("values");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SlotMarshaller.Instance;
                     marshaller.Marshall(requestObjectValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

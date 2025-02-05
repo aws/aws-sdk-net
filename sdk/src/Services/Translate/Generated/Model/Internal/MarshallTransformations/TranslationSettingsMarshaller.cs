@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBrevity())
             {
                 context.Writer.WritePropertyName("Brevity");
-                context.Writer.Write(requestObject.Brevity);
+                context.Writer.WriteStringValue(requestObject.Brevity);
             }
 
             if(requestObject.IsSetFormality())
             {
                 context.Writer.WritePropertyName("Formality");
-                context.Writer.Write(requestObject.Formality);
+                context.Writer.WriteStringValue(requestObject.Formality);
             }
 
             if(requestObject.IsSetProfanity())
             {
                 context.Writer.WritePropertyName("Profanity");
-                context.Writer.Write(requestObject.Profanity);
+                context.Writer.WriteStringValue(requestObject.Profanity);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetFeedbackForwardingAddress())
             {
                 context.Writer.WritePropertyName("FeedbackForwardingAddress");
-                context.Writer.Write(requestObject.FeedbackForwardingAddress);
+                context.Writer.WriteStringValue(requestObject.FeedbackForwardingAddress);
             }
 
             if(requestObject.IsSetFromAddress())
             {
                 context.Writer.WritePropertyName("FromAddress");
-                context.Writer.Write(requestObject.FromAddress);
+                context.Writer.WriteStringValue(requestObject.FromAddress);
             }
 
             if(requestObject.IsSetRawEmail())
             {
                 context.Writer.WritePropertyName("RawEmail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RawEmailMarshaller.Instance;
                 marshaller.Marshall(requestObject.RawEmail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReplyToAddresses())
             {
                 context.Writer.WritePropertyName("ReplyToAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReplyToAddressesListValue in requestObject.ReplyToAddresses)
                 {
-                        context.Writer.Write(requestObjectReplyToAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectReplyToAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSimpleEmail())
             {
                 context.Writer.WritePropertyName("SimpleEmail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SimpleEmailMarshaller.Instance;
                 marshaller.Marshall(requestObject.SimpleEmail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubstitutions())
             {
                 context.Writer.WritePropertyName("Substitutions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
                     var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
                     {
-                            context.Writer.Write(requestObjectSubstitutionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

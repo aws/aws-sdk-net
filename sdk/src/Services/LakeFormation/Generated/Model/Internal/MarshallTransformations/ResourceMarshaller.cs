@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CatalogResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Catalog, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Database, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataCellsFilter())
             {
                 context.Writer.WritePropertyName("DataCellsFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataCellsFilterResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataCellsFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataLocation())
             {
                 context.Writer.WritePropertyName("DataLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataLocationResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLFTag())
             {
                 context.Writer.WritePropertyName("LFTag");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LFTagKeyResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.LFTag, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLFTagExpression())
             {
                 context.Writer.WritePropertyName("LFTagExpression");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LFTagExpressionResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.LFTagExpression, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLFTagPolicy())
             {
                 context.Writer.WritePropertyName("LFTagPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LFTagPolicyResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.LFTagPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Table, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableWithColumns())
             {
                 context.Writer.WritePropertyName("TableWithColumns");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableWithColumnsResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.TableWithColumns, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Leg Object
     /// </summary>  
-    public class LegUnmarshaller : IUnmarshaller<Leg, XmlUnmarshallerContext>, IUnmarshaller<Leg, JsonUnmarshallerContext>
+    public class LegUnmarshaller : IJsonUnmarshaller<Leg, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Leg IUnmarshaller<Leg, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Leg Unmarshall(JsonUnmarshallerContext context)
+        public Leg Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Leg unmarshalledObject = new Leg();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Distance", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DurationSeconds", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndPosition", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.EndPosition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.EndPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Geometry", targetDepth))
                 {
                     var unmarshaller = LegGeometryUnmarshaller.Instance;
-                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartPosition", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.StartPosition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.StartPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Steps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Step, StepUnmarshaller>(StepUnmarshaller.Instance);
-                    unmarshalledObject.Steps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Step, StepUnmarshaller>(StepUnmarshaller.Instance);
+                    unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

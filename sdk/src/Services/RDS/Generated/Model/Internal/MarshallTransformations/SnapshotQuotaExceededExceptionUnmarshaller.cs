@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotQuotaExceededException operation
     /// </summary>  
-    public class SnapshotQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotQuotaExceededException, XmlUnmarshallerContext>
+    public class SnapshotQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

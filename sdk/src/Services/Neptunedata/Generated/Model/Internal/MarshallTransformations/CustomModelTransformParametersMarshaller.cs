@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceS3DirectoryPath())
             {
                 context.Writer.WritePropertyName("sourceS3DirectoryPath");
-                context.Writer.Write(requestObject.SourceS3DirectoryPath);
+                context.Writer.WriteStringValue(requestObject.SourceS3DirectoryPath);
             }
 
             if(requestObject.IsSetTransformEntryPointScript())
             {
                 context.Writer.WritePropertyName("transformEntryPointScript");
-                context.Writer.Write(requestObject.TransformEntryPointScript);
+                context.Writer.WriteStringValue(requestObject.TransformEntryPointScript);
             }
 
         }

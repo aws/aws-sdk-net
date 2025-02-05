@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedResponse())
             {
                 context.Writer.WritePropertyName("fixedResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FixedResponseActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FixedResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetForward())
             {
                 context.Writer.WritePropertyName("forward");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ForwardActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Forward, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

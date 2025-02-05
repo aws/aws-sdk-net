@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterPendingModifiedValues Object
     /// </summary>  
-    public class ClusterPendingModifiedValuesUnmarshaller : IUnmarshaller<ClusterPendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<ClusterPendingModifiedValues, JsonUnmarshallerContext>
+    public class ClusterPendingModifiedValuesUnmarshaller : IXmlUnmarshaller<ClusterPendingModifiedValues, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -130,17 +130,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterPendingModifiedValuesUnmarshaller _instance = new ClusterPendingModifiedValuesUnmarshaller();        
 

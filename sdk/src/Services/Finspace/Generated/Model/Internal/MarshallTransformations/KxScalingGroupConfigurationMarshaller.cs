@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -53,36 +51,36 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("cpu");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Cpu.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Cpu.Value);
+                    context.Writer.WriteNumberValue(requestObject.Cpu.Value);
                 }
             }
 
             if(requestObject.IsSetMemoryLimit())
             {
                 context.Writer.WritePropertyName("memoryLimit");
-                context.Writer.Write(requestObject.MemoryLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.MemoryLimit.Value);
             }
 
             if(requestObject.IsSetMemoryReservation())
             {
                 context.Writer.WritePropertyName("memoryReservation");
-                context.Writer.Write(requestObject.MemoryReservation.Value);
+                context.Writer.WriteNumberValue(requestObject.MemoryReservation.Value);
             }
 
             if(requestObject.IsSetNodeCount())
             {
                 context.Writer.WritePropertyName("nodeCount");
-                context.Writer.Write(requestObject.NodeCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NodeCount.Value);
             }
 
             if(requestObject.IsSetScalingGroupName())
             {
                 context.Writer.WritePropertyName("scalingGroupName");
-                context.Writer.Write(requestObject.ScalingGroupName);
+                context.Writer.WriteStringValue(requestObject.ScalingGroupName);
             }
 
         }

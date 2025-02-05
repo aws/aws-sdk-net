@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetOverrideEnvironment())
             {
                 context.Writer.WritePropertyName("OverrideEnvironment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectOverrideEnvironmentKvp in requestObject.OverrideEnvironment)
                 {
                     context.Writer.WritePropertyName(requestObjectOverrideEnvironmentKvp.Key);
                     var requestObjectOverrideEnvironmentValue = requestObjectOverrideEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectOverrideEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectOverrideEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

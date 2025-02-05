@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelArn())
             {
                 context.Writer.WritePropertyName("channelArn");
-                context.Writer.Write(requestObject.ChannelArn);
+                context.Writer.WriteStringValue(requestObject.ChannelArn);
             }
 
             if(requestObject.IsSetEncoderConfigurationArn())
             {
                 context.Writer.WritePropertyName("encoderConfigurationArn");
-                context.Writer.Write(requestObject.EncoderConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.EncoderConfigurationArn);
             }
 
         }

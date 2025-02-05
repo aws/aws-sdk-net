@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileFormat())
             {
                 context.Writer.WritePropertyName("fileFormat");
-                context.Writer.Write(requestObject.FileFormat);
+                context.Writer.WriteStringValue(requestObject.FileFormat);
             }
 
             if(requestObject.IsSetInputFile())
             {
                 context.Writer.WritePropertyName("inputFile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputFileSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputFile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

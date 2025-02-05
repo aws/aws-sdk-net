@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionKey())
             {
                 context.Writer.WritePropertyName("EncryptionKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

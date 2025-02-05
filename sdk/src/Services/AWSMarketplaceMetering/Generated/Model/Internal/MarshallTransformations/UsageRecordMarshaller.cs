@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerIdentifier())
             {
                 context.Writer.WritePropertyName("CustomerIdentifier");
-                context.Writer.Write(requestObject.CustomerIdentifier);
+                context.Writer.WriteStringValue(requestObject.CustomerIdentifier);
             }
 
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
-                context.Writer.Write(requestObject.Dimension);
+                context.Writer.WriteStringValue(requestObject.Dimension);
             }
 
             if(requestObject.IsSetQuantity())
             {
                 context.Writer.WritePropertyName("Quantity");
-                context.Writer.Write(requestObject.Quantity.Value);
+                context.Writer.WriteNumberValue(requestObject.Quantity.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
             if(requestObject.IsSetUsageAllocations())
             {
                 context.Writer.WritePropertyName("UsageAllocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUsageAllocationsListValue in requestObject.UsageAllocations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UsageAllocationMarshaller.Instance;
                     marshaller.Marshall(requestObjectUsageAllocationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

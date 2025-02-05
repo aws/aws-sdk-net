@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlogFieldMappings())
             {
                 context.Writer.WritePropertyName("BlogFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBlogFieldMappingsListValue in requestObject.BlogFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfluenceBlogToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectBlogFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,44 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEncryptionKeyArn())
             {
                 context.Writer.WritePropertyName("encryptionKeyArn");
-                context.Writer.Write(requestObject.EncryptionKeyArn);
+                context.Writer.WriteStringValue(requestObject.EncryptionKeyArn);
             }
 
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("logGroupName");
-                context.Writer.Write(requestObject.LogGroupName);
+                context.Writer.WriteStringValue(requestObject.LogGroupName);
             }
 
             if(requestObject.IsSetLogStreamNamePrefix())
             {
                 context.Writer.WritePropertyName("logStreamNamePrefix");
-                context.Writer.Write(requestObject.LogStreamNamePrefix);
+                context.Writer.WriteStringValue(requestObject.LogStreamNamePrefix);
             }
 
             if(requestObject.IsSetLogTypes())
             {
                 context.Writer.WritePropertyName("logTypes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLogTypesKvp in requestObject.LogTypes)
                 {
                     context.Writer.WritePropertyName(requestObjectLogTypesKvp.Key);
                     var requestObjectLogTypesValue = requestObjectLogTypesKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectLogTypesValueListValue in requestObjectLogTypesValue)
                     {
-                            context.Writer.Write(requestObjectLogTypesValueListValue);
+                            context.Writer.WriteStringValue(requestObjectLogTypesValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

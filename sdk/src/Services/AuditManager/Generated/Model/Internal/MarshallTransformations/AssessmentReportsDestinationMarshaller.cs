@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetDestinationType())
             {
                 context.Writer.WritePropertyName("destinationType");
-                context.Writer.Write(requestObject.DestinationType);
+                context.Writer.WriteStringValue(requestObject.DestinationType);
             }
 
         }

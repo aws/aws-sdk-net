@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CannotDeleteException operation
     /// </summary>  
-    public class CannotDeleteExceptionUnmarshaller : IErrorResponseUnmarshaller<CannotDeleteException, XmlUnmarshallerContext>
+    public class CannotDeleteExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CannotDeleteException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

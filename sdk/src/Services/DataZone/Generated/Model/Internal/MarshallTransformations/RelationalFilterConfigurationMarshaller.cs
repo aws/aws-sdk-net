@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetFilterExpressions())
             {
                 context.Writer.WritePropertyName("filterExpressions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilterExpressionsListValue in requestObject.FilterExpressions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilterExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilterExpressionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSchemaName())
             {
                 context.Writer.WritePropertyName("schemaName");
-                context.Writer.Write(requestObject.SchemaName);
+                context.Writer.WriteStringValue(requestObject.SchemaName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotificationConfiguration())
             {
                 context.Writer.WritePropertyName("NotificationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountSettingsNotificationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotificationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetQueryTCU())
             {
                 context.Writer.WritePropertyName("TargetQueryTCU");
-                context.Writer.Write(requestObject.TargetQueryTCU.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetQueryTCU.Value);
             }
 
         }

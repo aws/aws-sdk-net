@@ -173,9 +173,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1, Max=2147483647)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 

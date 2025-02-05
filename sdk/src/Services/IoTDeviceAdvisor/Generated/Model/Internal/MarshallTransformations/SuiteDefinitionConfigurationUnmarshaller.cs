@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SuiteDefinitionConfiguration Object
     /// </summary>  
-    public class SuiteDefinitionConfigurationUnmarshaller : IUnmarshaller<SuiteDefinitionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SuiteDefinitionConfiguration, JsonUnmarshallerContext>
+    public class SuiteDefinitionConfigurationUnmarshaller : IJsonUnmarshaller<SuiteDefinitionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SuiteDefinitionConfiguration IUnmarshaller<SuiteDefinitionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuiteDefinitionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SuiteDefinitionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SuiteDefinitionConfiguration unmarshalledObject = new SuiteDefinitionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("devicePermissionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DevicePermissionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DevicePermissionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("devices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DeviceUnderTest, DeviceUnderTestUnmarshaller>(DeviceUnderTestUnmarshaller.Instance);
-                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DeviceUnderTest, DeviceUnderTestUnmarshaller>(DeviceUnderTestUnmarshaller.Instance);
+                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("intendedForQualification", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IntendedForQualification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntendedForQualification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isLongDurationTest", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsLongDurationTest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsLongDurationTest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rootGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RootGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RootGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("suiteDefinitionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SuiteDefinitionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuiteDefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

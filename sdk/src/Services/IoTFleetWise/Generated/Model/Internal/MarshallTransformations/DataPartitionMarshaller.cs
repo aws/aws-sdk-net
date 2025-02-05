@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetStorageOptions())
             {
                 context.Writer.WritePropertyName("storageOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPartitionStorageOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUploadOptions())
             {
                 context.Writer.WritePropertyName("uploadOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPartitionUploadOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UploadOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

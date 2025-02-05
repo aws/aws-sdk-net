@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessToken())
             {
                 context.Writer.WritePropertyName("AccessToken");
-                context.Writer.Write(requestObject.AccessToken);
+                context.Writer.WriteStringValue(requestObject.AccessToken);
             }
 
             if(requestObject.IsSetIdToken())
             {
                 context.Writer.WritePropertyName("IdToken");
-                context.Writer.Write(requestObject.IdToken);
+                context.Writer.WriteStringValue(requestObject.IdToken);
             }
 
             if(requestObject.IsSetRefreshToken())
             {
                 context.Writer.WritePropertyName("RefreshToken");
-                context.Writer.Write(requestObject.RefreshToken);
+                context.Writer.WriteStringValue(requestObject.RefreshToken);
             }
 
         }

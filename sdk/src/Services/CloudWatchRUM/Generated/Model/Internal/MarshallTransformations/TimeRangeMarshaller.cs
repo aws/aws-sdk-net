@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfter())
             {
                 context.Writer.WritePropertyName("After");
-                context.Writer.Write(requestObject.After.Value);
+                context.Writer.WriteNumberValue(requestObject.After.Value);
             }
 
             if(requestObject.IsSetBefore())
             {
                 context.Writer.WritePropertyName("Before");
-                context.Writer.Write(requestObject.Before.Value);
+                context.Writer.WriteNumberValue(requestObject.Before.Value);
             }
 
         }

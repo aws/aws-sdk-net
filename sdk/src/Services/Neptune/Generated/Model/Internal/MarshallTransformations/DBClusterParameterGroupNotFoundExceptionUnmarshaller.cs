@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterParameterGroupNotFoundException operation
     /// </summary>  
-    public class DBClusterParameterGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterParameterGroupNotFoundException, XmlUnmarshallerContext>
+    public class DBClusterParameterGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterParameterGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

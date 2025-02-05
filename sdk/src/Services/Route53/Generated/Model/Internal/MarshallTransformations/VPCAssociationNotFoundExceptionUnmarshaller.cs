@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VPCAssociationNotFoundException operation
     /// </summary>  
-    public class VPCAssociationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<VPCAssociationNotFoundException, XmlUnmarshallerContext>
+    public class VPCAssociationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<VPCAssociationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

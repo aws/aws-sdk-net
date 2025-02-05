@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotAliasId())
             {
                 context.Writer.WritePropertyName("botAliasId");
-                context.Writer.Write(requestObject.BotAliasId);
+                context.Writer.WriteStringValue(requestObject.BotAliasId);
             }
 
             if(requestObject.IsSetBotId())
             {
                 context.Writer.WritePropertyName("botId");
-                context.Writer.Write(requestObject.BotId);
+                context.Writer.WriteStringValue(requestObject.BotId);
             }
 
             if(requestObject.IsSetLocaleId())
             {
                 context.Writer.WritePropertyName("localeId");
-                context.Writer.Write(requestObject.LocaleId);
+                context.Writer.WriteStringValue(requestObject.LocaleId);
             }
 
         }

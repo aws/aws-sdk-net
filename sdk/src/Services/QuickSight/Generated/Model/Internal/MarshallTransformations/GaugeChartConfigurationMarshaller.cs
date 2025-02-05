@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorConfiguration())
             {
                 context.Writer.WritePropertyName("ColorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GaugeChartColorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataLabels())
             {
                 context.Writer.WritePropertyName("DataLabels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataLabels, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldWells())
             {
                 context.Writer.WritePropertyName("FieldWells");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GaugeChartFieldWellsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldWells, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGaugeChartOptions())
             {
                 context.Writer.WritePropertyName("GaugeChartOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GaugeChartOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GaugeChartOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInteractions())
             {
                 context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualInteractionOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Interactions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTooltipOptions())
             {
                 context.Writer.WritePropertyName("TooltipOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TooltipOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TooltipOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualPalette())
             {
                 context.Writer.WritePropertyName("VisualPalette");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualPaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualPalette, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

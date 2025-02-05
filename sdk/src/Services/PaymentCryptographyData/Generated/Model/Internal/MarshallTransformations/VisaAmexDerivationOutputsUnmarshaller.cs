@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VisaAmexDerivationOutputs Object
     /// </summary>  
-    public class VisaAmexDerivationOutputsUnmarshaller : IUnmarshaller<VisaAmexDerivationOutputs, XmlUnmarshallerContext>, IUnmarshaller<VisaAmexDerivationOutputs, JsonUnmarshallerContext>
+    public class VisaAmexDerivationOutputsUnmarshaller : IJsonUnmarshaller<VisaAmexDerivationOutputs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VisaAmexDerivationOutputs IUnmarshaller<VisaAmexDerivationOutputs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VisaAmexDerivationOutputs Unmarshall(JsonUnmarshallerContext context)
+        public VisaAmexDerivationOutputs Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VisaAmexDerivationOutputs unmarshalledObject = new VisaAmexDerivationOutputs();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthorizationRequestKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationRequestKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizationRequestKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AuthorizationRequestKeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationRequestKeyCheckValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizationRequestKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentPinPekArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPinPekArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentPinPekArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentPinPekKeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPinPekKeyCheckValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentPinPekKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoRaWANMulticastSession Object
     /// </summary>  
-    public class LoRaWANMulticastSessionUnmarshaller : IUnmarshaller<LoRaWANMulticastSession, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANMulticastSession, JsonUnmarshallerContext>
+    public class LoRaWANMulticastSessionUnmarshaller : IJsonUnmarshaller<LoRaWANMulticastSession, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoRaWANMulticastSession IUnmarshaller<LoRaWANMulticastSession, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANMulticastSession Unmarshall(JsonUnmarshallerContext context)
+        public LoRaWANMulticastSession Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoRaWANMulticastSession unmarshalledObject = new LoRaWANMulticastSession();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DlDr", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DlDr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlDr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DlFreq", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DlFreq = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlFreq = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PingSlotPeriod", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SessionStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SessionStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SessionTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SessionTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

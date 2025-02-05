@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetLogStreams())
             {
                 context.Writer.WritePropertyName("LogStreams");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogStreamsListValue in requestObject.LogStreams)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CloudWatchLogsLogStreamMarshaller.Instance;
                     marshaller.Marshall(requestObjectLogStreamsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

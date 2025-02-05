@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("certificate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VirtualGatewayClientTlsCertificateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Certificate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnforce())
             {
                 context.Writer.WritePropertyName("enforce");
-                context.Writer.Write(requestObject.Enforce.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enforce.Value);
             }
 
             if(requestObject.IsSetPorts())
             {
                 context.Writer.WritePropertyName("ports");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPortsListValue in requestObject.Ports)
                 {
-                        context.Writer.Write(requestObjectPortsListValue);
+                        context.Writer.WriteNumberValue(requestObjectPortsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetValidation())
             {
                 context.Writer.WritePropertyName("validation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VirtualGatewayTlsValidationContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.Validation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

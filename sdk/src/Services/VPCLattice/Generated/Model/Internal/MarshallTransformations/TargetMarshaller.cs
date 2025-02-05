@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
         }

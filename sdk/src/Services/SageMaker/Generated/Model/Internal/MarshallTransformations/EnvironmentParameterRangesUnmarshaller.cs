@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EnvironmentParameterRanges Object
     /// </summary>  
-    public class EnvironmentParameterRangesUnmarshaller : IUnmarshaller<EnvironmentParameterRanges, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentParameterRanges, JsonUnmarshallerContext>
+    public class EnvironmentParameterRangesUnmarshaller : IJsonUnmarshaller<EnvironmentParameterRanges, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EnvironmentParameterRanges IUnmarshaller<EnvironmentParameterRanges, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EnvironmentParameterRanges Unmarshall(JsonUnmarshallerContext context)
+        public EnvironmentParameterRanges Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EnvironmentParameterRanges unmarshalledObject = new EnvironmentParameterRanges();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoricalParameterRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CategoricalParameter, CategoricalParameterUnmarshaller>(CategoricalParameterUnmarshaller.Instance);
-                    unmarshalledObject.CategoricalParameterRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CategoricalParameter, CategoricalParameterUnmarshaller>(CategoricalParameterUnmarshaller.Instance);
+                    unmarshalledObject.CategoricalParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

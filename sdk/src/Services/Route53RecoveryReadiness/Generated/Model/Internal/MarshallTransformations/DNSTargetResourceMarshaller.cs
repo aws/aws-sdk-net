@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("domainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetHostedZoneArn())
             {
                 context.Writer.WritePropertyName("hostedZoneArn");
-                context.Writer.Write(requestObject.HostedZoneArn);
+                context.Writer.WriteStringValue(requestObject.HostedZoneArn);
             }
 
             if(requestObject.IsSetRecordSetId())
             {
                 context.Writer.WritePropertyName("recordSetId");
-                context.Writer.Write(requestObject.RecordSetId);
+                context.Writer.WriteStringValue(requestObject.RecordSetId);
             }
 
             if(requestObject.IsSetRecordType())
             {
                 context.Writer.WritePropertyName("recordType");
-                context.Writer.Write(requestObject.RecordType);
+                context.Writer.WriteStringValue(requestObject.RecordType);
             }
 
             if(requestObject.IsSetTargetResource())
             {
                 context.Writer.WritePropertyName("targetResource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TargetResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetResource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

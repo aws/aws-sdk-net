@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RelationalDatabaseBundle Object
     /// </summary>  
-    public class RelationalDatabaseBundleUnmarshaller : IUnmarshaller<RelationalDatabaseBundle, XmlUnmarshallerContext>, IUnmarshaller<RelationalDatabaseBundle, JsonUnmarshallerContext>
+    public class RelationalDatabaseBundleUnmarshaller : IJsonUnmarshaller<RelationalDatabaseBundle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RelationalDatabaseBundle IUnmarshaller<RelationalDatabaseBundle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RelationalDatabaseBundle Unmarshall(JsonUnmarshallerContext context)
+        public RelationalDatabaseBundle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RelationalDatabaseBundle unmarshalledObject = new RelationalDatabaseBundle();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bundleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BundleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BundleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cpuCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("diskSizeInGb", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DiskSizeInGb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskSizeInGb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isActive", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsActive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsActive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isEncrypted", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsEncrypted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsEncrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("price", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Price = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Price = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ramSizeInGb", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transferPerMonthInGb", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TransferPerMonthInGb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransferPerMonthInGb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

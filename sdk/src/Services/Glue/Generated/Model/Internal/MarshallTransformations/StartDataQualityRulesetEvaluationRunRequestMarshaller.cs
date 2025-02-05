@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,95 +66,100 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalDataSources())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdditionalDataSources");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAdditionalDataSourcesKvp in publicRequest.AdditionalDataSources)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalDataSources())
-                    {
-                        context.Writer.WritePropertyName("AdditionalDataSources");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAdditionalDataSourcesKvp in publicRequest.AdditionalDataSources)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAdditionalDataSourcesKvp.Key);
-                            var publicRequestAdditionalDataSourcesValue = publicRequestAdditionalDataSourcesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAdditionalDataSourcesKvp.Key);
+                    var publicRequestAdditionalDataSourcesValue = publicRequestAdditionalDataSourcesKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = DataSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAdditionalDataSourcesValue, context);
+                    var marshaller = DataSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAdditionalDataSourcesValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAdditionalRunOptions())
-                    {
-                        context.Writer.WritePropertyName("AdditionalRunOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataQualityEvaluationRunAdditionalRunOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AdditionalRunOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetDataSource())
-                    {
-                        context.Writer.WritePropertyName("DataSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNumberOfWorkers())
-                    {
-                        context.Writer.WritePropertyName("NumberOfWorkers");
-                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    if(publicRequest.IsSetRulesetNames())
-                    {
-                        context.Writer.WritePropertyName("RulesetNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRulesetNamesListValue in publicRequest.RulesetNames)
-                        {
-                                context.Writer.Write(publicRequestRulesetNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("Timeout");
-                        context.Writer.Write(publicRequest.Timeout.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAdditionalRunOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalRunOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataQualityEvaluationRunAdditionalRunOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdditionalRunOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetDataSource())
+            {
+                context.Writer.WritePropertyName("DataSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNumberOfWorkers())
+            {
+                context.Writer.WritePropertyName("NumberOfWorkers");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfWorkers.Value);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetRulesetNames())
+            {
+                context.Writer.WritePropertyName("RulesetNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRulesetNamesListValue in publicRequest.RulesetNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestRulesetNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("Timeout");
+                context.Writer.WriteNumberValue(publicRequest.Timeout.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

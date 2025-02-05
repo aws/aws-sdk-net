@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMajorVersion())
             {
                 context.Writer.WritePropertyName("majorVersion");
-                context.Writer.Write(requestObject.MajorVersion);
+                context.Writer.WriteStringValue(requestObject.MajorVersion);
             }
 
             if(requestObject.IsSetTemplateName())
             {
                 context.Writer.WritePropertyName("templateName");
-                context.Writer.Write(requestObject.TemplateName);
+                context.Writer.WriteStringValue(requestObject.TemplateName);
             }
 
         }

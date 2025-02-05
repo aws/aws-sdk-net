@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionPeriodUnit())
             {
                 context.Writer.WritePropertyName("RetentionPeriodUnit");
-                context.Writer.Write(requestObject.RetentionPeriodUnit);
+                context.Writer.WriteStringValue(requestObject.RetentionPeriodUnit);
             }
 
             if(requestObject.IsSetRetentionPeriodValue())
             {
                 context.Writer.WritePropertyName("RetentionPeriodValue");
-                context.Writer.Write(requestObject.RetentionPeriodValue.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionPeriodValue.Value);
             }
 
         }

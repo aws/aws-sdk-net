@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnd())
             {
                 context.Writer.WritePropertyName("and");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAndListValue in requestObject.And)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCostCategories())
             {
                 context.Writer.WritePropertyName("costCategories");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.CostCategories, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dimensions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNot())
             {
                 context.Writer.WritePropertyName("not");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Not, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOr())
             {
                 context.Writer.WritePropertyName("or");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrListValue in requestObject.Or)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

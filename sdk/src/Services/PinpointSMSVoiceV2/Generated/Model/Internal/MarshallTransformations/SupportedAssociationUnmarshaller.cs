@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SupportedAssociation Object
     /// </summary>  
-    public class SupportedAssociationUnmarshaller : IUnmarshaller<SupportedAssociation, XmlUnmarshallerContext>, IUnmarshaller<SupportedAssociation, JsonUnmarshallerContext>
+    public class SupportedAssociationUnmarshaller : IJsonUnmarshaller<SupportedAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SupportedAssociation IUnmarshaller<SupportedAssociation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SupportedAssociation Unmarshall(JsonUnmarshallerContext context)
+        public SupportedAssociation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SupportedAssociation unmarshalledObject = new SupportedAssociation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssociationBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssociationBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisassociationBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisassociationBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisassociationBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsoCountryCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IsoCountryCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsoCountryCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

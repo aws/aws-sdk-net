@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionId())
             {
                 context.Writer.WritePropertyName("actionId");
-                context.Writer.Write(requestObject.ActionId);
+                context.Writer.WriteStringValue(requestObject.ActionId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartAfter())
             {
                 context.Writer.WritePropertyName("startAfter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStartAfterListValue in requestObject.StartAfter)
                 {
-                        context.Writer.Write(requestObjectStartAfterListValue);
+                        context.Writer.WriteStringValue(requestObjectStartAfterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("targets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTargetsKvp in requestObject.Targets)
                 {
                     context.Writer.WritePropertyName(requestObjectTargetsKvp.Key);
                     var requestObjectTargetsValue = requestObjectTargetsKvp.Value;
 
-                        context.Writer.Write(requestObjectTargetsValue);
+                        context.Writer.WriteStringValue(requestObjectTargetsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

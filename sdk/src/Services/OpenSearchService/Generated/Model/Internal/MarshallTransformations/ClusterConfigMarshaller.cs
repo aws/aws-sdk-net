@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,99 +49,99 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColdStorageOptions())
             {
                 context.Writer.WritePropertyName("ColdStorageOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColdStorageOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColdStorageOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDedicatedMasterCount())
             {
                 context.Writer.WritePropertyName("DedicatedMasterCount");
-                context.Writer.Write(requestObject.DedicatedMasterCount.Value);
+                context.Writer.WriteNumberValue(requestObject.DedicatedMasterCount.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterEnabled())
             {
                 context.Writer.WritePropertyName("DedicatedMasterEnabled");
-                context.Writer.Write(requestObject.DedicatedMasterEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.DedicatedMasterEnabled.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterType())
             {
                 context.Writer.WritePropertyName("DedicatedMasterType");
-                context.Writer.Write(requestObject.DedicatedMasterType);
+                context.Writer.WriteStringValue(requestObject.DedicatedMasterType);
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetMultiAZWithStandbyEnabled())
             {
                 context.Writer.WritePropertyName("MultiAZWithStandbyEnabled");
-                context.Writer.Write(requestObject.MultiAZWithStandbyEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.MultiAZWithStandbyEnabled.Value);
             }
 
             if(requestObject.IsSetNodeOptions())
             {
                 context.Writer.WritePropertyName("NodeOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNodeOptionsListValue in requestObject.NodeOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NodeOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectNodeOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWarmCount())
             {
                 context.Writer.WritePropertyName("WarmCount");
-                context.Writer.Write(requestObject.WarmCount.Value);
+                context.Writer.WriteNumberValue(requestObject.WarmCount.Value);
             }
 
             if(requestObject.IsSetWarmEnabled())
             {
                 context.Writer.WritePropertyName("WarmEnabled");
-                context.Writer.Write(requestObject.WarmEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.WarmEnabled.Value);
             }
 
             if(requestObject.IsSetWarmType())
             {
                 context.Writer.WritePropertyName("WarmType");
-                context.Writer.Write(requestObject.WarmType);
+                context.Writer.WriteStringValue(requestObject.WarmType);
             }
 
             if(requestObject.IsSetZoneAwarenessConfig())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZoneAwarenessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ZoneAwarenessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZoneAwarenessEnabled())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessEnabled");
-                context.Writer.Write(requestObject.ZoneAwarenessEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ZoneAwarenessEnabled.Value);
             }
 
         }

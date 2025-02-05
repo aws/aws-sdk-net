@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetARN())
             {
                 context.Writer.WritePropertyName("ARN");
-                context.Writer.Write(requestObject.ARN);
+                context.Writer.WriteStringValue(requestObject.ARN);
             }
 
             if(requestObject.IsSetExcludedRules())
             {
                 context.Writer.WritePropertyName("ExcludedRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedRulesListValue in requestObject.ExcludedRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExcludedRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectExcludedRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRuleActionOverrides())
             {
                 context.Writer.WritePropertyName("RuleActionOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRuleActionOverridesListValue in requestObject.RuleActionOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuleActionOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuleActionOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

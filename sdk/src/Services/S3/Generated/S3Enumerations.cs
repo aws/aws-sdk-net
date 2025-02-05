@@ -222,15 +222,5 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region EUIsoeWest1 = new S3Region("eu-isoe-west-1");
 
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the us-isof-east-1 locality.
-        /// </summary>
-        public static readonly S3Region USIsofEast1 = new S3Region("us-isof-east-1");
-
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the us-isof-south-1 locality.
-        /// </summary>
-        public static readonly S3Region USIsofSouth1 = new S3Region("us-isof-south-1");
-
     }
 }

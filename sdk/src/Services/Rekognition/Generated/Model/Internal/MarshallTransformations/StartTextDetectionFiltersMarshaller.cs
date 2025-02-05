@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegionsOfInterest())
             {
                 context.Writer.WritePropertyName("RegionsOfInterest");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsOfInterestListValue in requestObject.RegionsOfInterest)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RegionOfInterestMarshaller.Instance;
                     marshaller.Marshall(requestObjectRegionsOfInterestListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWordFilter())
             {
                 context.Writer.WritePropertyName("WordFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DetectionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.WordFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

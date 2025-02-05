@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerManagedS3())
             {
                 context.Writer.WritePropertyName("customerManagedS3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerManagedChannelS3StorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerManagedS3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceManagedS3())
             {
                 context.Writer.WritePropertyName("serviceManagedS3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceManagedChannelS3StorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceManagedS3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

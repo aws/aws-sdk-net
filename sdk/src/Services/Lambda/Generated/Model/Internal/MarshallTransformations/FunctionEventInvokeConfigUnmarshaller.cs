@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FunctionEventInvokeConfig Object
     /// </summary>  
-    public class FunctionEventInvokeConfigUnmarshaller : IUnmarshaller<FunctionEventInvokeConfig, XmlUnmarshallerContext>, IUnmarshaller<FunctionEventInvokeConfig, JsonUnmarshallerContext>
+    public class FunctionEventInvokeConfigUnmarshaller : IJsonUnmarshaller<FunctionEventInvokeConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FunctionEventInvokeConfig IUnmarshaller<FunctionEventInvokeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionEventInvokeConfig Unmarshall(JsonUnmarshallerContext context)
+        public FunctionEventInvokeConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FunctionEventInvokeConfig unmarshalledObject = new FunctionEventInvokeConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DestinationConfig", targetDepth))
                 {
                     var unmarshaller = DestinationConfigUnmarshaller.Instance;
-                    unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumEventAgeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumEventAgeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumEventAgeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumRetryAttempts", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

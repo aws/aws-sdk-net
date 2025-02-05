@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RuleNotFoundException operation
     /// </summary>  
-    public class RuleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<RuleNotFoundException, XmlUnmarshallerContext>
+    public class RuleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RuleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDashboardOptions())
             {
                 context.Writer.WritePropertyName("DashboardOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashboardOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DashboardOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGuardianOptions())
             {
                 context.Writer.WritePropertyName("GuardianOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GuardianOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GuardianOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

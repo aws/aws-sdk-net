@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("HealthScoreThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.HealthScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.HealthScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.HealthScoreThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.HealthScoreThreshold.Value);
                 }
             }
 
@@ -66,18 +64,18 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinTrafficImpact");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinTrafficImpact.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinTrafficImpact.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinTrafficImpact.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinTrafficImpact.Value);
                 }
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InferenceRecommendation Object
     /// </summary>  
-    public class InferenceRecommendationUnmarshaller : IUnmarshaller<InferenceRecommendation, XmlUnmarshallerContext>, IUnmarshaller<InferenceRecommendation, JsonUnmarshallerContext>
+    public class InferenceRecommendationUnmarshaller : IJsonUnmarshaller<InferenceRecommendation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InferenceRecommendation IUnmarshaller<InferenceRecommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceRecommendation Unmarshall(JsonUnmarshallerContext context)
+        public InferenceRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InferenceRecommendation unmarshalledObject = new InferenceRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EndpointConfiguration", targetDepth))
                 {
                     var unmarshaller = EndpointOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvocationEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvocationEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvocationStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvocationStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Metrics", targetDepth))
                 {
                     var unmarshaller = RecommendationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelConfiguration", targetDepth))
                 {
                     var unmarshaller = ModelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ModelConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecommendationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

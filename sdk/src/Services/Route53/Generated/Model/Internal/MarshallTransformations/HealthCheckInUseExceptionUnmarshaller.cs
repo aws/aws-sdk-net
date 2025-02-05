@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HealthCheckInUseException operation
     /// </summary>  
-    public class HealthCheckInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<HealthCheckInUseException, XmlUnmarshallerContext>
+    public class HealthCheckInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HealthCheckInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceRefresh Object
     /// </summary>  
-    public class InstanceRefreshUnmarshaller : IUnmarshaller<InstanceRefresh, XmlUnmarshallerContext>, IUnmarshaller<InstanceRefresh, JsonUnmarshallerContext>
+    public class InstanceRefreshUnmarshaller : IXmlUnmarshaller<InstanceRefresh, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -136,17 +136,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceRefresh Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceRefreshUnmarshaller _instance = new InstanceRefreshUnmarshaller();        
 

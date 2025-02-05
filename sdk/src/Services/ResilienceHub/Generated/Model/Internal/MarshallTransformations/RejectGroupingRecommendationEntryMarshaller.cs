@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupingRecommendationId())
             {
                 context.Writer.WritePropertyName("groupingRecommendationId");
-                context.Writer.Write(requestObject.GroupingRecommendationId);
+                context.Writer.WriteStringValue(requestObject.GroupingRecommendationId);
             }
 
             if(requestObject.IsSetRejectionReason())
             {
                 context.Writer.WritePropertyName("rejectionReason");
-                context.Writer.Write(requestObject.RejectionReason);
+                context.Writer.WriteStringValue(requestObject.RejectionReason);
             }
 
         }

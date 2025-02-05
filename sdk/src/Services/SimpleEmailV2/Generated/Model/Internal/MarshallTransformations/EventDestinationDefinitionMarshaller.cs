@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchDestination())
             {
                 context.Writer.WritePropertyName("CloudWatchDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEventBridgeDestination())
             {
                 context.Writer.WritePropertyName("EventBridgeDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventBridgeDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridgeDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisFirehoseDestination())
             {
                 context.Writer.WritePropertyName("KinesisFirehoseDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisFirehoseDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisFirehoseDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMatchingEventTypes())
             {
                 context.Writer.WritePropertyName("MatchingEventTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchingEventTypesListValue in requestObject.MatchingEventTypes)
                 {
-                        context.Writer.Write(requestObjectMatchingEventTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectMatchingEventTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPinpointDestination())
             {
                 context.Writer.WritePropertyName("PinpointDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PinpointDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PinpointDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnsDestination())
             {
                 context.Writer.WritePropertyName("SnsDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnsDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnsDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

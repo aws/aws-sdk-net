@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EventConfig Object
     /// </summary>  
-    public class EventConfigUnmarshaller : IUnmarshaller<EventConfig, XmlUnmarshallerContext>, IUnmarshaller<EventConfig, JsonUnmarshallerContext>
+    public class EventConfigUnmarshaller : IJsonUnmarshaller<EventConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EventConfig IUnmarshaller<EventConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EventConfig Unmarshall(JsonUnmarshallerContext context)
+        public EventConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EventConfig unmarshalledObject = new EventConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authProviders", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AuthProvider, AuthProviderUnmarshaller>(AuthProviderUnmarshaller.Instance);
-                    unmarshalledObject.AuthProviders = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AuthProvider, AuthProviderUnmarshaller>(AuthProviderUnmarshaller.Instance);
+                    unmarshalledObject.AuthProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectionAuthModes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
-                    unmarshalledObject.ConnectionAuthModes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
+                    unmarshalledObject.ConnectionAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultPublishAuthModes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
-                    unmarshalledObject.DefaultPublishAuthModes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
+                    unmarshalledObject.DefaultPublishAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultSubscribeAuthModes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
-                    unmarshalledObject.DefaultSubscribeAuthModes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
+                    unmarshalledObject.DefaultSubscribeAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logConfig", targetDepth))
                 {
                     var unmarshaller = EventLogConfigUnmarshaller.Instance;
-                    unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

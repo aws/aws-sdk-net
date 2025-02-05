@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NoDatabaseMigrationPreference Object
     /// </summary>  
-    public class NoDatabaseMigrationPreferenceUnmarshaller : IUnmarshaller<NoDatabaseMigrationPreference, XmlUnmarshallerContext>, IUnmarshaller<NoDatabaseMigrationPreference, JsonUnmarshallerContext>
+    public class NoDatabaseMigrationPreferenceUnmarshaller : IJsonUnmarshaller<NoDatabaseMigrationPreference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NoDatabaseMigrationPreference IUnmarshaller<NoDatabaseMigrationPreference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NoDatabaseMigrationPreference Unmarshall(JsonUnmarshallerContext context)
+        public NoDatabaseMigrationPreference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NoDatabaseMigrationPreference unmarshalledObject = new NoDatabaseMigrationPreference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("targetDatabaseEngine", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TargetDatabaseEngine = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TargetDatabaseEngine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

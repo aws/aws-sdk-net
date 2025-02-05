@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceQuotas Object
     /// </summary>  
-    public class ResourceQuotasUnmarshaller : IUnmarshaller<ResourceQuotas, XmlUnmarshallerContext>, IUnmarshaller<ResourceQuotas, JsonUnmarshallerContext>
+    public class ResourceQuotasUnmarshaller : IXmlUnmarshaller<ResourceQuotas, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResourceQuotas Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResourceQuotasUnmarshaller _instance = new ResourceQuotasUnmarshaller();        
 

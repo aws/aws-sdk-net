@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandMathConfig())
             {
                 context.Writer.WritePropertyName("BandMathConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BandMathConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.BandMathConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudMaskingConfig())
             {
                 context.Writer.WritePropertyName("CloudMaskingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudMaskingConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudMaskingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudRemovalConfig())
             {
                 context.Writer.WritePropertyName("CloudRemovalConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudRemovalConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudRemovalConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeoMosaicConfig())
             {
                 context.Writer.WritePropertyName("GeoMosaicConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeoMosaicConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeoMosaicConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLandCoverSegmentationConfig())
             {
                 context.Writer.WritePropertyName("LandCoverSegmentationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LandCoverSegmentationConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.LandCoverSegmentationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResamplingConfig())
             {
                 context.Writer.WritePropertyName("ResamplingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResamplingConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResamplingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStackConfig())
             {
                 context.Writer.WritePropertyName("StackConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StackConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.StackConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemporalStatisticsConfig())
             {
                 context.Writer.WritePropertyName("TemporalStatisticsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemporalStatisticsConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemporalStatisticsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZonalStatisticsConfig())
             {
                 context.Writer.WritePropertyName("ZonalStatisticsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZonalStatisticsConfigInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ZonalStatisticsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

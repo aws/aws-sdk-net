@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("encryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLakeFormationConfiguration())
             {
                 context.Writer.WritePropertyName("lakeFormationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LakeFormationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LakeFormationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

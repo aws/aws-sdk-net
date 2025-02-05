@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEfs())
             {
                 context.Writer.WritePropertyName("efs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EfsStorageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Efs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFsx())
             {
                 context.Writer.WritePropertyName("fsx");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FsxStorageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Fsx, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

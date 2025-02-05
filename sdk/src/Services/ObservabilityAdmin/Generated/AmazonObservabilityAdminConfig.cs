@@ -34,16 +34,10 @@ namespace Amazon.ObservabilityAdmin
     public partial class AmazonObservabilityAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ObservabilityAdmin", "4.0.0.0");
 
         private static readonly AmazonObservabilityAdminEndpointResolver EndpointResolver =
             new AmazonObservabilityAdminEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("ObservabilityAdmin", "3.7.400.12");
-=======
-            InternalSDKUtils.BuildUserAgentString("ObservabilityAdmin", "3.7.400.30");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

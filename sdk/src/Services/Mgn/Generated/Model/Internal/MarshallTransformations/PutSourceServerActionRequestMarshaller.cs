@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -61,134 +64,139 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PutSourceServerAction";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountID())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountID())
-                    {
-                        context.Writer.WritePropertyName("accountID");
-                        context.Writer.Write(publicRequest.AccountID);
-                    }
-
-                    if(publicRequest.IsSetActionID())
-                    {
-                        context.Writer.WritePropertyName("actionID");
-                        context.Writer.Write(publicRequest.ActionID);
-                    }
-
-                    if(publicRequest.IsSetActionName())
-                    {
-                        context.Writer.WritePropertyName("actionName");
-                        context.Writer.Write(publicRequest.ActionName);
-                    }
-
-                    if(publicRequest.IsSetActive())
-                    {
-                        context.Writer.WritePropertyName("active");
-                        context.Writer.Write(publicRequest.Active.Value);
-                    }
-
-                    if(publicRequest.IsSetCategory())
-                    {
-                        context.Writer.WritePropertyName("category");
-                        context.Writer.Write(publicRequest.Category);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDocumentIdentifier())
-                    {
-                        context.Writer.WritePropertyName("documentIdentifier");
-                        context.Writer.Write(publicRequest.DocumentIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDocumentVersion())
-                    {
-                        context.Writer.WritePropertyName("documentVersion");
-                        context.Writer.Write(publicRequest.DocumentVersion);
-                    }
-
-                    if(publicRequest.IsSetExternalParameters())
-                    {
-                        context.Writer.WritePropertyName("externalParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestExternalParametersKvp in publicRequest.ExternalParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestExternalParametersKvp.Key);
-                            var publicRequestExternalParametersValue = publicRequestExternalParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SsmExternalParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestExternalParametersValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMustSucceedForCutover())
-                    {
-                        context.Writer.WritePropertyName("mustSucceedForCutover");
-                        context.Writer.Write(publicRequest.MustSucceedForCutover.Value);
-                    }
-
-                    if(publicRequest.IsSetOrder())
-                    {
-                        context.Writer.WritePropertyName("order");
-                        context.Writer.Write(publicRequest.Order.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
-                            {
-                                context.Writer.WriteObjectStart();
-
-                                var marshaller = SsmParameterStoreParameterMarshaller.Instance;
-                                marshaller.Marshall(publicRequestParametersValueListValue, context);
-
-                                context.Writer.WriteObjectEnd();
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceServerID())
-                    {
-                        context.Writer.WritePropertyName("sourceServerID");
-                        context.Writer.Write(publicRequest.SourceServerID);
-                    }
-
-                    if(publicRequest.IsSetTimeoutSeconds())
-                    {
-                        context.Writer.WritePropertyName("timeoutSeconds");
-                        context.Writer.Write(publicRequest.TimeoutSeconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("accountID");
+                context.Writer.WriteStringValue(publicRequest.AccountID);
             }
+
+            if(publicRequest.IsSetActionID())
+            {
+                context.Writer.WritePropertyName("actionID");
+                context.Writer.WriteStringValue(publicRequest.ActionID);
+            }
+
+            if(publicRequest.IsSetActionName())
+            {
+                context.Writer.WritePropertyName("actionName");
+                context.Writer.WriteStringValue(publicRequest.ActionName);
+            }
+
+            if(publicRequest.IsSetActive())
+            {
+                context.Writer.WritePropertyName("active");
+                context.Writer.WriteBooleanValue(publicRequest.Active.Value);
+            }
+
+            if(publicRequest.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("category");
+                context.Writer.WriteStringValue(publicRequest.Category);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDocumentIdentifier())
+            {
+                context.Writer.WritePropertyName("documentIdentifier");
+                context.Writer.WriteStringValue(publicRequest.DocumentIdentifier);
+            }
+
+            if(publicRequest.IsSetDocumentVersion())
+            {
+                context.Writer.WritePropertyName("documentVersion");
+                context.Writer.WriteStringValue(publicRequest.DocumentVersion);
+            }
+
+            if(publicRequest.IsSetExternalParameters())
+            {
+                context.Writer.WritePropertyName("externalParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestExternalParametersKvp in publicRequest.ExternalParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestExternalParametersKvp.Key);
+                    var publicRequestExternalParametersValue = publicRequestExternalParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SsmExternalParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExternalParametersValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMustSucceedForCutover())
+            {
+                context.Writer.WritePropertyName("mustSucceedForCutover");
+                context.Writer.WriteBooleanValue(publicRequest.MustSucceedForCutover.Value);
+            }
+
+            if(publicRequest.IsSetOrder())
+            {
+                context.Writer.WritePropertyName("order");
+                context.Writer.WriteNumberValue(publicRequest.Order.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                    {
+                        context.Writer.WriteStartObject();
+
+                        var marshaller = SsmParameterStoreParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParametersValueListValue, context);
+
+                        context.Writer.WriteEndObject();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceServerID())
+            {
+                context.Writer.WritePropertyName("sourceServerID");
+                context.Writer.WriteStringValue(publicRequest.SourceServerID);
+            }
+
+            if(publicRequest.IsSetTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("timeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutSeconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

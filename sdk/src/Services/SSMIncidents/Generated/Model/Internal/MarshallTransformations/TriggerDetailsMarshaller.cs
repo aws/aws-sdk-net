@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRawData())
             {
                 context.Writer.WritePropertyName("rawData");
-                context.Writer.Write(requestObject.RawData);
+                context.Writer.WriteStringValue(requestObject.RawData);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
             if(requestObject.IsSetTriggerArn())
             {
                 context.Writer.WritePropertyName("triggerArn");
-                context.Writer.Write(requestObject.TriggerArn);
+                context.Writer.WriteStringValue(requestObject.TriggerArn);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LabelingJobDataSource Object
     /// </summary>  
-    public class LabelingJobDataSourceUnmarshaller : IUnmarshaller<LabelingJobDataSource, XmlUnmarshallerContext>, IUnmarshaller<LabelingJobDataSource, JsonUnmarshallerContext>
+    public class LabelingJobDataSourceUnmarshaller : IJsonUnmarshaller<LabelingJobDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LabelingJobDataSource IUnmarshaller<LabelingJobDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LabelingJobDataSource Unmarshall(JsonUnmarshallerContext context)
+        public LabelingJobDataSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LabelingJobDataSource unmarshalledObject = new LabelingJobDataSource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3DataSource", targetDepth))
                 {
                     var unmarshaller = LabelingJobS3DataSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnsDataSource", targetDepth))
                 {
                     var unmarshaller = LabelingJobSnsDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.SnsDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnsDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

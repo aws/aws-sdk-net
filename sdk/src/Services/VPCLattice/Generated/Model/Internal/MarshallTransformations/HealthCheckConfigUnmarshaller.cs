@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HealthCheckConfig Object
     /// </summary>  
-    public class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>, IUnmarshaller<HealthCheckConfig, JsonUnmarshallerContext>
+    public class HealthCheckConfigUnmarshaller : IJsonUnmarshaller<HealthCheckConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HealthCheckConfig IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HealthCheckConfig Unmarshall(JsonUnmarshallerContext context)
+        public HealthCheckConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HealthCheckConfig unmarshalledObject = new HealthCheckConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthCheckIntervalSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthCheckTimeoutSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthCheckTimeoutSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthCheckTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthyThresholdCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthyThresholdCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthyThresholdCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("matcher", targetDepth))
                 {
                     var unmarshaller = MatcherUnmarshaller.Instance;
-                    unmarshalledObject.Matcher = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Matcher = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocolVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtocolVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProtocolVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unhealthyThresholdCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnhealthyThresholdCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnhealthyThresholdCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,81 +49,81 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckIdFilters())
             {
                 context.Writer.WritePropertyName("checkIdFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCheckIdFiltersListValue in requestObject.CheckIdFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CisStringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectCheckIdFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingArnFilters())
             {
                 context.Writer.WritePropertyName("findingArnFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingArnFiltersListValue in requestObject.FindingArnFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CisStringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFindingArnFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingStatusFilters())
             {
                 context.Writer.WritePropertyName("findingStatusFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingStatusFiltersListValue in requestObject.FindingStatusFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CisFindingStatusFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFindingStatusFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityLevelFilters())
             {
                 context.Writer.WritePropertyName("securityLevelFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityLevelFiltersListValue in requestObject.SecurityLevelFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CisSecurityLevelFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecurityLevelFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitleFilters())
             {
                 context.Writer.WritePropertyName("titleFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTitleFiltersListValue in requestObject.TitleFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CisStringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTitleFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

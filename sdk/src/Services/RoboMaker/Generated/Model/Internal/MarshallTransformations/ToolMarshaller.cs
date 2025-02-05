@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.Write(requestObject.Command);
+                context.Writer.WriteStringValue(requestObject.Command);
             }
 
             if(requestObject.IsSetExitBehavior())
             {
                 context.Writer.WritePropertyName("exitBehavior");
-                context.Writer.Write(requestObject.ExitBehavior);
+                context.Writer.WriteStringValue(requestObject.ExitBehavior);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetStreamOutputToCloudWatch())
             {
                 context.Writer.WritePropertyName("streamOutputToCloudWatch");
-                context.Writer.Write(requestObject.StreamOutputToCloudWatch.Value);
+                context.Writer.WriteBooleanValue(requestObject.StreamOutputToCloudWatch.Value);
             }
 
             if(requestObject.IsSetStreamUI())
             {
                 context.Writer.WritePropertyName("streamUI");
-                context.Writer.Write(requestObject.StreamUI.Value);
+                context.Writer.WriteBooleanValue(requestObject.StreamUI.Value);
             }
 
         }

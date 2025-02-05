@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("Comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

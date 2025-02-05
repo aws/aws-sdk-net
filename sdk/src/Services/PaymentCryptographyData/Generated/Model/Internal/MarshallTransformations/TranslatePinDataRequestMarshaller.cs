@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -61,103 +64,108 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pindata/translate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEncryptedPinBlock())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEncryptedPinBlock())
-                    {
-                        context.Writer.WritePropertyName("EncryptedPinBlock");
-                        context.Writer.Write(publicRequest.EncryptedPinBlock);
-                    }
-
-                    if(publicRequest.IsSetIncomingDukptAttributes())
-                    {
-                        context.Writer.WritePropertyName("IncomingDukptAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DukptDerivationAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncomingDukptAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIncomingKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("IncomingKeyIdentifier");
-                        context.Writer.Write(publicRequest.IncomingKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetIncomingTranslationAttributes())
-                    {
-                        context.Writer.WritePropertyName("IncomingTranslationAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TranslationIsoFormatsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncomingTranslationAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIncomingWrappedKey())
-                    {
-                        context.Writer.WritePropertyName("IncomingWrappedKey");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WrappedKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncomingWrappedKey, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutgoingDukptAttributes())
-                    {
-                        context.Writer.WritePropertyName("OutgoingDukptAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DukptDerivationAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutgoingDukptAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutgoingKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("OutgoingKeyIdentifier");
-                        context.Writer.Write(publicRequest.OutgoingKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetOutgoingTranslationAttributes())
-                    {
-                        context.Writer.WritePropertyName("OutgoingTranslationAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TranslationIsoFormatsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutgoingTranslationAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutgoingWrappedKey())
-                    {
-                        context.Writer.WritePropertyName("OutgoingWrappedKey");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WrappedKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutgoingWrappedKey, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EncryptedPinBlock");
+                context.Writer.WriteStringValue(publicRequest.EncryptedPinBlock);
             }
+
+            if(publicRequest.IsSetIncomingDukptAttributes())
+            {
+                context.Writer.WritePropertyName("IncomingDukptAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DukptDerivationAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncomingDukptAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIncomingKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("IncomingKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.IncomingKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetIncomingTranslationAttributes())
+            {
+                context.Writer.WritePropertyName("IncomingTranslationAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TranslationIsoFormatsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncomingTranslationAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIncomingWrappedKey())
+            {
+                context.Writer.WritePropertyName("IncomingWrappedKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WrappedKeyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncomingWrappedKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutgoingDukptAttributes())
+            {
+                context.Writer.WritePropertyName("OutgoingDukptAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DukptDerivationAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutgoingDukptAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutgoingKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("OutgoingKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.OutgoingKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetOutgoingTranslationAttributes())
+            {
+                context.Writer.WritePropertyName("OutgoingTranslationAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TranslationIsoFormatsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutgoingTranslationAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutgoingWrappedKey())
+            {
+                context.Writer.WritePropertyName("OutgoingWrappedKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WrappedKeyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutgoingWrappedKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

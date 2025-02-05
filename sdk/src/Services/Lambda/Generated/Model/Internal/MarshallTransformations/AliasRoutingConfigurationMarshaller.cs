@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,15 +49,15 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalVersionWeights())
             {
                 context.Writer.WritePropertyName("AdditionalVersionWeights");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalVersionWeightsKvp in requestObject.AdditionalVersionWeights)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalVersionWeightsKvp.Key);
                     var requestObjectAdditionalVersionWeightsValue = requestObjectAdditionalVersionWeightsKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalVersionWeightsValue);
+                        context.Writer.WriteNumberValue(requestObjectAdditionalVersionWeightsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataLakeResource Object
     /// </summary>  
-    public class DataLakeResourceUnmarshaller : IUnmarshaller<DataLakeResource, XmlUnmarshallerContext>, IUnmarshaller<DataLakeResource, JsonUnmarshallerContext>
+    public class DataLakeResourceUnmarshaller : IJsonUnmarshaller<DataLakeResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataLakeResource IUnmarshaller<DataLakeResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataLakeResource Unmarshall(JsonUnmarshallerContext context)
+        public DataLakeResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataLakeResource unmarshalledObject = new DataLakeResource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("createStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreateStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreateStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataLakeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataLakeArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataLakeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = DataLakeEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lifecycleConfiguration", targetDepth))
                 {
                     var unmarshaller = DataLakeLifecycleConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LifecycleConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LifecycleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicationConfiguration", targetDepth))
                 {
                     var unmarshaller = DataLakeReplicationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3BucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateStatus", targetDepth))
                 {
                     var unmarshaller = DataLakeUpdateStatusUnmarshaller.Instance;
-                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

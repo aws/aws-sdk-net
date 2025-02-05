@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("resourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("secretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

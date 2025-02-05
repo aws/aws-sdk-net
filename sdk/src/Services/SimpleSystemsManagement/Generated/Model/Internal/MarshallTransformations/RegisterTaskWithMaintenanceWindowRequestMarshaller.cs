@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,158 +66,163 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarmConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarmConfiguration())
-                    {
-                        context.Writer.WritePropertyName("AlarmConfiguration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AlarmConfiguration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlarmConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmConfiguration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCutoffBehavior())
-                    {
-                        context.Writer.WritePropertyName("CutoffBehavior");
-                        context.Writer.Write(publicRequest.CutoffBehavior);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetLoggingInfo())
-                    {
-                        context.Writer.WritePropertyName("LoggingInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LoggingInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LoggingInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxConcurrency())
-                    {
-                        context.Writer.WritePropertyName("MaxConcurrency");
-                        context.Writer.Write(publicRequest.MaxConcurrency);
-                    }
-
-                    if(publicRequest.IsSetMaxErrors())
-                    {
-                        context.Writer.WritePropertyName("MaxErrors");
-                        context.Writer.Write(publicRequest.MaxErrors);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("Priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetServiceRoleArn())
-                    {
-                        context.Writer.WritePropertyName("ServiceRoleArn");
-                        context.Writer.Write(publicRequest.ServiceRoleArn);
-                    }
-
-                    if(publicRequest.IsSetTargets())
-                    {
-                        context.Writer.WritePropertyName("Targets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TargetMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskArn())
-                    {
-                        context.Writer.WritePropertyName("TaskArn");
-                        context.Writer.Write(publicRequest.TaskArn);
-                    }
-
-                    if(publicRequest.IsSetTaskInvocationParameters())
-                    {
-                        context.Writer.WritePropertyName("TaskInvocationParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MaintenanceWindowTaskInvocationParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TaskInvocationParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskParameters())
-                    {
-                        context.Writer.WritePropertyName("TaskParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTaskParametersKvp in publicRequest.TaskParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTaskParametersKvp.Key);
-                            var publicRequestTaskParametersValue = publicRequestTaskParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MaintenanceWindowTaskParameterValueExpressionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTaskParametersValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskType())
-                    {
-                        context.Writer.WritePropertyName("TaskType");
-                        context.Writer.Write(publicRequest.TaskType);
-                    }
-
-                    if(publicRequest.IsSetWindowId())
-                    {
-                        context.Writer.WritePropertyName("WindowId");
-                        context.Writer.Write(publicRequest.WindowId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCutoffBehavior())
+            {
+                context.Writer.WritePropertyName("CutoffBehavior");
+                context.Writer.WriteStringValue(publicRequest.CutoffBehavior);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetLoggingInfo())
+            {
+                context.Writer.WritePropertyName("LoggingInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LoggingInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxConcurrency())
+            {
+                context.Writer.WritePropertyName("MaxConcurrency");
+                context.Writer.WriteStringValue(publicRequest.MaxConcurrency);
+            }
+
+            if(publicRequest.IsSetMaxErrors())
+            {
+                context.Writer.WritePropertyName("MaxErrors");
+                context.Writer.WriteStringValue(publicRequest.MaxErrors);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetServiceRoleArn())
+            {
+                context.Writer.WritePropertyName("ServiceRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceRoleArn);
+            }
+
+            if(publicRequest.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("Targets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTaskArn())
+            {
+                context.Writer.WritePropertyName("TaskArn");
+                context.Writer.WriteStringValue(publicRequest.TaskArn);
+            }
+
+            if(publicRequest.IsSetTaskInvocationParameters())
+            {
+                context.Writer.WritePropertyName("TaskInvocationParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MaintenanceWindowTaskInvocationParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TaskInvocationParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaskParameters())
+            {
+                context.Writer.WritePropertyName("TaskParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTaskParametersKvp in publicRequest.TaskParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestTaskParametersKvp.Key);
+                    var publicRequestTaskParametersValue = publicRequestTaskParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MaintenanceWindowTaskParameterValueExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTaskParametersValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaskType())
+            {
+                context.Writer.WritePropertyName("TaskType");
+                context.Writer.WriteStringValue(publicRequest.TaskType);
+            }
+
+            if(publicRequest.IsSetWindowId())
+            {
+                context.Writer.WritePropertyName("WindowId");
+                context.Writer.WriteStringValue(publicRequest.WindowId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerLogs())
             {
                 context.Writer.WritePropertyName("containerLogs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerLogsListValue in requestObject.ContainerLogs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LogsConfigurationPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainerLogsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerMetrics())
             {
                 context.Writer.WritePropertyName("containerMetrics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricsConfigurationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerMetrics, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

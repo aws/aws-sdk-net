@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for StaleTagException operation
     /// </summary>  
-    public class StaleTagExceptionUnmarshaller : IErrorResponseUnmarshaller<StaleTagException, XmlUnmarshallerContext>
+    public class StaleTagExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StaleTagException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SavingsPlansAmortizedCommitment Object
     /// </summary>  
-    public class SavingsPlansAmortizedCommitmentUnmarshaller : IUnmarshaller<SavingsPlansAmortizedCommitment, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansAmortizedCommitment, JsonUnmarshallerContext>
+    public class SavingsPlansAmortizedCommitmentUnmarshaller : IJsonUnmarshaller<SavingsPlansAmortizedCommitment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SavingsPlansAmortizedCommitment IUnmarshaller<SavingsPlansAmortizedCommitment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SavingsPlansAmortizedCommitment Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansAmortizedCommitment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SavingsPlansAmortizedCommitment unmarshalledObject = new SavingsPlansAmortizedCommitment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AmortizedRecurringCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmortizedRecurringCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmortizedRecurringCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AmortizedUpfrontCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmortizedUpfrontCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmortizedUpfrontCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalAmortizedCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalAmortizedCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalAmortizedCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSetNotAvailableException operation
     /// </summary>  
-    public class DelegationSetNotAvailableExceptionUnmarshaller : IErrorResponseUnmarshaller<DelegationSetNotAvailableException, XmlUnmarshallerContext>
+    public class DelegationSetNotAvailableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DelegationSetNotAvailableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

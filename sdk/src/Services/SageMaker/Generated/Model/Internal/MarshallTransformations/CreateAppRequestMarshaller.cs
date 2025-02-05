@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,76 +66,81 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppName())
-                    {
-                        context.Writer.WritePropertyName("AppName");
-                        context.Writer.Write(publicRequest.AppName);
-                    }
-
-                    if(publicRequest.IsSetAppType())
-                    {
-                        context.Writer.WritePropertyName("AppType");
-                        context.Writer.Write(publicRequest.AppType);
-                    }
-
-                    if(publicRequest.IsSetDomainId())
-                    {
-                        context.Writer.WritePropertyName("DomainId");
-                        context.Writer.Write(publicRequest.DomainId);
-                    }
-
-                    if(publicRequest.IsSetResourceSpec())
-                    {
-                        context.Writer.WritePropertyName("ResourceSpec");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceSpecMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResourceSpec, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSpaceName())
-                    {
-                        context.Writer.WritePropertyName("SpaceName");
-                        context.Writer.Write(publicRequest.SpaceName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserProfileName())
-                    {
-                        context.Writer.WritePropertyName("UserProfileName");
-                        context.Writer.Write(publicRequest.UserProfileName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AppName");
+                context.Writer.WriteStringValue(publicRequest.AppName);
             }
+
+            if(publicRequest.IsSetAppType())
+            {
+                context.Writer.WritePropertyName("AppType");
+                context.Writer.WriteStringValue(publicRequest.AppType);
+            }
+
+            if(publicRequest.IsSetDomainId())
+            {
+                context.Writer.WritePropertyName("DomainId");
+                context.Writer.WriteStringValue(publicRequest.DomainId);
+            }
+
+            if(publicRequest.IsSetResourceSpec())
+            {
+                context.Writer.WritePropertyName("ResourceSpec");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceSpecMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceSpec, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSpaceName())
+            {
+                context.Writer.WritePropertyName("SpaceName");
+                context.Writer.WriteStringValue(publicRequest.SpaceName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserProfileName())
+            {
+                context.Writer.WritePropertyName("UserProfileName");
+                context.Writer.WriteStringValue(publicRequest.UserProfileName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

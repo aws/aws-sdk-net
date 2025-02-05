@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceDataSyncSourceWithState Object
     /// </summary>  
-    public class ResourceDataSyncSourceWithStateUnmarshaller : IUnmarshaller<ResourceDataSyncSourceWithState, XmlUnmarshallerContext>, IUnmarshaller<ResourceDataSyncSourceWithState, JsonUnmarshallerContext>
+    public class ResourceDataSyncSourceWithStateUnmarshaller : IJsonUnmarshaller<ResourceDataSyncSourceWithState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceDataSyncSourceWithState IUnmarshaller<ResourceDataSyncSourceWithState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceDataSyncSourceWithState Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDataSyncSourceWithState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceDataSyncSourceWithState unmarshalledObject = new ResourceDataSyncSourceWithState();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AwsOrganizationsSource", targetDepth))
                 {
                     var unmarshaller = ResourceDataSyncAwsOrganizationsSourceUnmarshaller.Instance;
-                    unmarshalledObject.AwsOrganizationsSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsOrganizationsSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableAllOpsDataSources", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableAllOpsDataSources = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableAllOpsDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeFutureRegions", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeFutureRegions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeFutureRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceRegions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SourceRegions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SourceRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

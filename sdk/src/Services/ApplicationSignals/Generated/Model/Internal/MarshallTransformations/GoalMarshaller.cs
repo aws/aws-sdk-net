@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -53,23 +51,23 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AttainmentGoal");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.AttainmentGoal.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AttainmentGoal.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.AttainmentGoal.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AttainmentGoal.Value);
+                    context.Writer.WriteNumberValue(requestObject.AttainmentGoal.Value);
                 }
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.Interval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWarningThreshold())
@@ -77,11 +75,11 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("WarningThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.WarningThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.WarningThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.WarningThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.WarningThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.WarningThreshold.Value);
                 }
             }
 

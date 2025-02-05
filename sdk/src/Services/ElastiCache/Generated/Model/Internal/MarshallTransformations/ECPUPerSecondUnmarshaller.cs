@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ECPUPerSecond Object
     /// </summary>  
-    public class ECPUPerSecondUnmarshaller : IUnmarshaller<ECPUPerSecond, XmlUnmarshallerContext>, IUnmarshaller<ECPUPerSecond, JsonUnmarshallerContext>
+    public class ECPUPerSecondUnmarshaller : IXmlUnmarshaller<ECPUPerSecond, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ECPUPerSecond Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ECPUPerSecondUnmarshaller _instance = new ECPUPerSecondUnmarshaller();        
 

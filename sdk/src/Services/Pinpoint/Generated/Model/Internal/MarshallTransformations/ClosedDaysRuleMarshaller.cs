@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDateTime())
             {
                 context.Writer.WritePropertyName("EndDateTime");
-                context.Writer.Write(requestObject.EndDateTime);
+                context.Writer.WriteStringValue(requestObject.EndDateTime);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetStartDateTime())
             {
                 context.Writer.WritePropertyName("StartDateTime");
-                context.Writer.Write(requestObject.StartDateTime);
+                context.Writer.WriteStringValue(requestObject.StartDateTime);
             }
 
         }

@@ -142,9 +142,9 @@ namespace Amazon.Notifications.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EventCount
+        public int? EventCount
         {
-            get { return this._eventCount.GetValueOrDefault(); }
+            get { return this._eventCount; }
             set { this._eventCount = value; }
         }
 

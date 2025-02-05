@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RealtimeContactAnalysisSegment Object
     /// </summary>  
-    public class RealtimeContactAnalysisSegmentUnmarshaller : IUnmarshaller<RealtimeContactAnalysisSegment, XmlUnmarshallerContext>, IUnmarshaller<RealtimeContactAnalysisSegment, JsonUnmarshallerContext>
+    public class RealtimeContactAnalysisSegmentUnmarshaller : IJsonUnmarshaller<RealtimeContactAnalysisSegment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RealtimeContactAnalysisSegment IUnmarshaller<RealtimeContactAnalysisSegment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RealtimeContactAnalysisSegment Unmarshall(JsonUnmarshallerContext context)
+        public RealtimeContactAnalysisSegment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RealtimeContactAnalysisSegment unmarshalledObject = new RealtimeContactAnalysisSegment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Attachments", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentAttachmentsUnmarshaller.Instance;
-                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Categories", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentCategoriesUnmarshaller.Instance;
-                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Event", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentEventUnmarshaller.Instance;
-                    unmarshalledObject.Event = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Issues", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentIssuesUnmarshaller.Instance;
-                    unmarshalledObject.Issues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Issues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostContactSummary", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentPostContactSummaryUnmarshaller.Instance;
-                    unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Transcript", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentTranscriptUnmarshaller.Instance;
-                    unmarshalledObject.Transcript = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

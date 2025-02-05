@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateSSHPublicKeyException operation
     /// </summary>  
-    public class DuplicateSSHPublicKeyExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateSSHPublicKeyException, XmlUnmarshallerContext>
+    public class DuplicateSSHPublicKeyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateSSHPublicKeyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

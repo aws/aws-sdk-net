@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeToLiveInSeconds())
             {
                 context.Writer.WritePropertyName("timeToLiveInSeconds");
-                context.Writer.Write(requestObject.TimeToLiveInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeToLiveInSeconds.Value);
             }
 
             if(requestObject.IsSetTurnsToLive())
             {
                 context.Writer.WritePropertyName("turnsToLive");
-                context.Writer.Write(requestObject.TurnsToLive.Value);
+                context.Writer.WriteNumberValue(requestObject.TurnsToLive.Value);
             }
 
         }

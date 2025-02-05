@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,295 +66,300 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlgorithmSpecification())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlgorithmSpecification())
-                    {
-                        context.Writer.WritePropertyName("AlgorithmSpecification");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AlgorithmSpecification");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlgorithmSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlgorithmSpecification, context);
+                var marshaller = AlgorithmSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlgorithmSpecification, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCheckpointConfig())
-                    {
-                        context.Writer.WritePropertyName("CheckpointConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CheckpointConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CheckpointConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDebugHookConfig())
-                    {
-                        context.Writer.WritePropertyName("DebugHookConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DebugHookConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DebugHookConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDebugRuleConfigurations())
-                    {
-                        context.Writer.WritePropertyName("DebugRuleConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDebugRuleConfigurationsListValue in publicRequest.DebugRuleConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DebugRuleConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDebugRuleConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableInterContainerTrafficEncryption())
-                    {
-                        context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
-                        context.Writer.Write(publicRequest.EnableInterContainerTrafficEncryption.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableManagedSpotTraining())
-                    {
-                        context.Writer.WritePropertyName("EnableManagedSpotTraining");
-                        context.Writer.Write(publicRequest.EnableManagedSpotTraining.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableNetworkIsolation())
-                    {
-                        context.Writer.WritePropertyName("EnableNetworkIsolation");
-                        context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
-                    }
-
-                    if(publicRequest.IsSetEnvironment())
-                    {
-                        context.Writer.WritePropertyName("Environment");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
-                        {
-                            context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
-                            var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
-
-                                context.Writer.Write(publicRequestEnvironmentValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExperimentConfig())
-                    {
-                        context.Writer.WritePropertyName("ExperimentConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExperimentConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExperimentConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHyperParameters())
-                    {
-                        context.Writer.WritePropertyName("HyperParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestHyperParametersKvp in publicRequest.HyperParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestHyperParametersKvp.Key);
-                            var publicRequestHyperParametersValue = publicRequestHyperParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestHyperParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInfraCheckConfig())
-                    {
-                        context.Writer.WritePropertyName("InfraCheckConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InfraCheckConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InfraCheckConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("InputDataConfig");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputDataConfigListValue in publicRequest.InputDataConfig)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ChannelMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputDataConfigListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProfilerConfig())
-                    {
-                        context.Writer.WritePropertyName("ProfilerConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProfilerConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ProfilerConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProfilerRuleConfigurations())
-                    {
-                        context.Writer.WritePropertyName("ProfilerRuleConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoteDebugConfig())
-                    {
-                        context.Writer.WritePropertyName("RemoteDebugConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RemoteDebugConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RemoteDebugConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceConfig())
-                    {
-                        context.Writer.WritePropertyName("ResourceConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRetryStrategy())
-                    {
-                        context.Writer.WritePropertyName("RetryStrategy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RetryStrategyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RetryStrategy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSessionChainingConfig())
-                    {
-                        context.Writer.WritePropertyName("SessionChainingConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SessionChainingConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SessionChainingConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStoppingCondition())
-                    {
-                        context.Writer.WritePropertyName("StoppingCondition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StoppingConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StoppingCondition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTensorBoardOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("TensorBoardOutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TensorBoardOutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TensorBoardOutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTrainingJobName())
-                    {
-                        context.Writer.WritePropertyName("TrainingJobName");
-                        context.Writer.Write(publicRequest.TrainingJobName);
-                    }
-
-                    if(publicRequest.IsSetVpcConfig())
-                    {
-                        context.Writer.WritePropertyName("VpcConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VpcConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCheckpointConfig())
+            {
+                context.Writer.WritePropertyName("CheckpointConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CheckpointConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CheckpointConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDebugHookConfig())
+            {
+                context.Writer.WritePropertyName("DebugHookConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DebugHookConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DebugHookConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDebugRuleConfigurations())
+            {
+                context.Writer.WritePropertyName("DebugRuleConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDebugRuleConfigurationsListValue in publicRequest.DebugRuleConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DebugRuleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDebugRuleConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEnableInterContainerTrafficEncryption())
+            {
+                context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
+                context.Writer.WriteBooleanValue(publicRequest.EnableInterContainerTrafficEncryption.Value);
+            }
+
+            if(publicRequest.IsSetEnableManagedSpotTraining())
+            {
+                context.Writer.WritePropertyName("EnableManagedSpotTraining");
+                context.Writer.WriteBooleanValue(publicRequest.EnableManagedSpotTraining.Value);
+            }
+
+            if(publicRequest.IsSetEnableNetworkIsolation())
+            {
+                context.Writer.WritePropertyName("EnableNetworkIsolation");
+                context.Writer.WriteBooleanValue(publicRequest.EnableNetworkIsolation.Value);
+            }
+
+            if(publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("Environment");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                {
+                    context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
+                    var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestEnvironmentValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExperimentConfig())
+            {
+                context.Writer.WritePropertyName("ExperimentConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExperimentConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperimentConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHyperParameters())
+            {
+                context.Writer.WritePropertyName("HyperParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestHyperParametersKvp in publicRequest.HyperParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestHyperParametersKvp.Key);
+                    var publicRequestHyperParametersValue = publicRequestHyperParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestHyperParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInfraCheckConfig())
+            {
+                context.Writer.WritePropertyName("InfraCheckConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InfraCheckConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InfraCheckConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInputDataConfig())
+            {
+                context.Writer.WritePropertyName("InputDataConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputDataConfigListValue in publicRequest.InputDataConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputDataConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOutputDataConfig())
+            {
+                context.Writer.WritePropertyName("OutputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProfilerConfig())
+            {
+                context.Writer.WritePropertyName("ProfilerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProfilerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProfilerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProfilerRuleConfigurations())
+            {
+                context.Writer.WritePropertyName("ProfilerRuleConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRemoteDebugConfig())
+            {
+                context.Writer.WritePropertyName("RemoteDebugConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RemoteDebugConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RemoteDebugConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceConfig())
+            {
+                context.Writer.WritePropertyName("ResourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRetryStrategy())
+            {
+                context.Writer.WritePropertyName("RetryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetryStrategyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSessionChainingConfig())
+            {
+                context.Writer.WritePropertyName("SessionChainingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionChainingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SessionChainingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStoppingCondition())
+            {
+                context.Writer.WritePropertyName("StoppingCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StoppingConditionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StoppingCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTensorBoardOutputConfig())
+            {
+                context.Writer.WritePropertyName("TensorBoardOutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TensorBoardOutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TensorBoardOutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrainingJobName())
+            {
+                context.Writer.WritePropertyName("TrainingJobName");
+                context.Writer.WriteStringValue(publicRequest.TrainingJobName);
+            }
+
+            if(publicRequest.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("VpcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

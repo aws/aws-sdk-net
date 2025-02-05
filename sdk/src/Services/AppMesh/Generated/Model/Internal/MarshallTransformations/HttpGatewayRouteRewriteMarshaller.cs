@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("hostname");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GatewayRouteHostnameRewriteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hostname, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpGatewayRoutePathRewriteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Path, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpGatewayRoutePrefixRewriteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Prefix, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

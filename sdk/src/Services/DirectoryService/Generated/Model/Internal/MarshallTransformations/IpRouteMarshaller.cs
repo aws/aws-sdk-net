@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrIp())
             {
                 context.Writer.WritePropertyName("CidrIp");
-                context.Writer.Write(requestObject.CidrIp);
+                context.Writer.WriteStringValue(requestObject.CidrIp);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
         }

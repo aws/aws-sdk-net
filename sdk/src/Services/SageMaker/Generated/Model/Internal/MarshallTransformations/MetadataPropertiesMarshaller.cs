@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommitId())
             {
                 context.Writer.WritePropertyName("CommitId");
-                context.Writer.Write(requestObject.CommitId);
+                context.Writer.WriteStringValue(requestObject.CommitId);
             }
 
             if(requestObject.IsSetGeneratedBy())
             {
                 context.Writer.WritePropertyName("GeneratedBy");
-                context.Writer.Write(requestObject.GeneratedBy);
+                context.Writer.WriteStringValue(requestObject.GeneratedBy);
             }
 
             if(requestObject.IsSetProjectId())
             {
                 context.Writer.WritePropertyName("ProjectId");
-                context.Writer.Write(requestObject.ProjectId);
+                context.Writer.WriteStringValue(requestObject.ProjectId);
             }
 
             if(requestObject.IsSetRepository())
             {
                 context.Writer.WritePropertyName("Repository");
-                context.Writer.Write(requestObject.Repository);
+                context.Writer.WriteStringValue(requestObject.Repository);
             }
 
         }

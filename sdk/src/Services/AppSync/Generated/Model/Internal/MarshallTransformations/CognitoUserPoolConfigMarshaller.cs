@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppIdClientRegex())
             {
                 context.Writer.WritePropertyName("appIdClientRegex");
-                context.Writer.Write(requestObject.AppIdClientRegex);
+                context.Writer.WriteStringValue(requestObject.AppIdClientRegex);
             }
 
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("awsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetUserPoolId())
             {
                 context.Writer.WritePropertyName("userPoolId");
-                context.Writer.Write(requestObject.UserPoolId);
+                context.Writer.WriteStringValue(requestObject.UserPoolId);
             }
 
         }

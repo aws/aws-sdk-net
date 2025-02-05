@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
+                context.Writer.WriteStringValue(requestObject.FieldId);
             }
 
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("Scope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PivotTableConditionalFormattingScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScopes())
             {
                 context.Writer.WritePropertyName("Scopes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectScopesListValue in requestObject.Scopes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PivotTableConditionalFormattingScopeMarshaller.Instance;
                     marshaller.Marshall(requestObjectScopesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTextFormat())
             {
                 context.Writer.WritePropertyName("TextFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextConditionalFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EBS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChangedBlock Object
     /// </summary>  
-    public class ChangedBlockUnmarshaller : IUnmarshaller<ChangedBlock, XmlUnmarshallerContext>, IUnmarshaller<ChangedBlock, JsonUnmarshallerContext>
+    public class ChangedBlockUnmarshaller : IJsonUnmarshaller<ChangedBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChangedBlock IUnmarshaller<ChangedBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChangedBlock Unmarshall(JsonUnmarshallerContext context)
+        public ChangedBlock Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChangedBlock unmarshalledObject = new ChangedBlock();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlockIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BlockIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirstBlockToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstBlockToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirstBlockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecondBlockToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecondBlockToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecondBlockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

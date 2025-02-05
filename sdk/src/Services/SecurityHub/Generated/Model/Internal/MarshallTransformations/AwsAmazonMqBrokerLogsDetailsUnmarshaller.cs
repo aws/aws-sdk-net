@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsAmazonMqBrokerLogsDetails Object
     /// </summary>  
-    public class AwsAmazonMqBrokerLogsDetailsUnmarshaller : IUnmarshaller<AwsAmazonMqBrokerLogsDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsAmazonMqBrokerLogsDetails, JsonUnmarshallerContext>
+    public class AwsAmazonMqBrokerLogsDetailsUnmarshaller : IJsonUnmarshaller<AwsAmazonMqBrokerLogsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsAmazonMqBrokerLogsDetails IUnmarshaller<AwsAmazonMqBrokerLogsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsAmazonMqBrokerLogsDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsAmazonMqBrokerLogsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsAmazonMqBrokerLogsDetails unmarshalledObject = new AwsAmazonMqBrokerLogsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Audit", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Audit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Audit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AuditLogGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuditLogGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuditLogGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("General", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.General = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.General = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GeneralLogGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GeneralLogGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GeneralLogGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Pending", targetDepth))
                 {
                     var unmarshaller = AwsAmazonMqBrokerLogsPendingDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

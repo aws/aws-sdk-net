@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSuppressedReasons())
             {
                 context.Writer.WritePropertyName("SuppressedReasons");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSuppressedReasonsListValue in requestObject.SuppressedReasons)
                 {
-                        context.Writer.Write(requestObjectSuppressedReasonsListValue);
+                        context.Writer.WriteStringValue(requestObjectSuppressedReasonsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

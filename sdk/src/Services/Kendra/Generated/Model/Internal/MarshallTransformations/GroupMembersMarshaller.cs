@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,44 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemberGroups())
             {
                 context.Writer.WritePropertyName("MemberGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMemberGroupsListValue in requestObject.MemberGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MemberGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectMemberGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMemberUsers())
             {
                 context.Writer.WritePropertyName("MemberUsers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMemberUsersListValue in requestObject.MemberUsers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MemberUserMarshaller.Instance;
                     marshaller.Marshall(requestObjectMemberUsersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetS3PathforGroupMembers())
             {
                 context.Writer.WritePropertyName("S3PathforGroupMembers");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3PathMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3PathforGroupMembers, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

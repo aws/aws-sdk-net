@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBuildCommand())
             {
                 context.Writer.WritePropertyName("BuildCommand");
-                context.Writer.Write(requestObject.BuildCommand);
+                context.Writer.WriteStringValue(requestObject.BuildCommand);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WriteStringValue(requestObject.Port);
             }
 
             if(requestObject.IsSetRuntime())
             {
                 context.Writer.WritePropertyName("Runtime");
-                context.Writer.Write(requestObject.Runtime);
+                context.Writer.WriteStringValue(requestObject.Runtime);
             }
 
             if(requestObject.IsSetRuntimeEnvironmentSecrets())
             {
                 context.Writer.WritePropertyName("RuntimeEnvironmentSecrets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRuntimeEnvironmentSecretsKvp in requestObject.RuntimeEnvironmentSecrets)
                 {
                     context.Writer.WritePropertyName(requestObjectRuntimeEnvironmentSecretsKvp.Key);
                     var requestObjectRuntimeEnvironmentSecretsValue = requestObjectRuntimeEnvironmentSecretsKvp.Value;
 
-                        context.Writer.Write(requestObjectRuntimeEnvironmentSecretsValue);
+                        context.Writer.WriteStringValue(requestObjectRuntimeEnvironmentSecretsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuntimeEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("RuntimeEnvironmentVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRuntimeEnvironmentVariablesKvp in requestObject.RuntimeEnvironmentVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectRuntimeEnvironmentVariablesKvp.Key);
                     var requestObjectRuntimeEnvironmentVariablesValue = requestObjectRuntimeEnvironmentVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectRuntimeEnvironmentVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectRuntimeEnvironmentVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartCommand())
             {
                 context.Writer.WritePropertyName("StartCommand");
-                context.Writer.Write(requestObject.StartCommand);
+                context.Writer.WriteStringValue(requestObject.StartCommand);
             }
 
         }

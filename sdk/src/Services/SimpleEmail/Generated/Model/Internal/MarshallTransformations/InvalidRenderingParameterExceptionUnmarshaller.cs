@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidRenderingParameterException operation
     /// </summary>  
-    public class InvalidRenderingParameterExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRenderingParameterException, XmlUnmarshallerContext>
+    public class InvalidRenderingParameterExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidRenderingParameterException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bandwidthAllocation");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BandwidthAllocation.Value);
+                    context.Writer.WriteNumberValue(requestObject.BandwidthAllocation.Value);
                 }
             }
 

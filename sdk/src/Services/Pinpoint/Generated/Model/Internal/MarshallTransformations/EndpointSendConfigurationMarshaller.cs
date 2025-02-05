@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBodyOverride())
             {
                 context.Writer.WritePropertyName("BodyOverride");
-                context.Writer.Write(requestObject.BodyOverride);
+                context.Writer.WriteStringValue(requestObject.BodyOverride);
             }
 
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContextKvp in requestObject.Context)
                 {
                     context.Writer.WritePropertyName(requestObjectContextKvp.Key);
                     var requestObjectContextValue = requestObjectContextKvp.Value;
 
-                        context.Writer.Write(requestObjectContextValue);
+                        context.Writer.WriteStringValue(requestObjectContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.Write(requestObject.RawContent);
+                context.Writer.WriteStringValue(requestObject.RawContent);
             }
 
             if(requestObject.IsSetSubstitutions())
             {
                 context.Writer.WritePropertyName("Substitutions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
                     var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
                     {
-                            context.Writer.Write(requestObjectSubstitutionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTitleOverride())
             {
                 context.Writer.WritePropertyName("TitleOverride");
-                context.Writer.Write(requestObject.TitleOverride);
+                context.Writer.WriteStringValue(requestObject.TitleOverride);
             }
 
         }

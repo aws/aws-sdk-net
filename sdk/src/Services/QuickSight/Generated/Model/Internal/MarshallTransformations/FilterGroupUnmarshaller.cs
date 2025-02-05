@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FilterGroup Object
     /// </summary>  
-    public class FilterGroupUnmarshaller : IUnmarshaller<FilterGroup, XmlUnmarshallerContext>, IUnmarshaller<FilterGroup, JsonUnmarshallerContext>
+    public class FilterGroupUnmarshaller : IJsonUnmarshaller<FilterGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FilterGroup IUnmarshaller<FilterGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FilterGroup Unmarshall(JsonUnmarshallerContext context)
+        public FilterGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FilterGroup unmarshalledObject = new FilterGroup();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CrossDataset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrossDataset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrossDataset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Filters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Filter, FilterUnmarshaller>(FilterUnmarshaller.Instance);
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Filter, FilterUnmarshaller>(FilterUnmarshaller.Instance);
+                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScopeConfiguration", targetDepth))
                 {
                     var unmarshaller = FilterScopeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ScopeConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScopeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationSetInformation Object
     /// </summary>  
-    public class ConfigurationSetInformationUnmarshaller : IUnmarshaller<ConfigurationSetInformation, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationSetInformation, JsonUnmarshallerContext>
+    public class ConfigurationSetInformationUnmarshaller : IJsonUnmarshaller<ConfigurationSetInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigurationSetInformation IUnmarshaller<ConfigurationSetInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationSetInformation Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationSetInformation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigurationSetInformation unmarshalledObject = new ConfigurationSetInformation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConfigurationSetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationSetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigurationSetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSetName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultMessageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultMessageType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultMessageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultSenderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultSenderId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultSenderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventDestinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
-                    unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
+                    unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProtectConfigurationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtectConfigurationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProtectConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

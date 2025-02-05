@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputationId())
             {
                 context.Writer.WritePropertyName("ComputationId");
-                context.Writer.Write(requestObject.ComputationId);
+                context.Writer.WriteStringValue(requestObject.ComputationId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPeriodSize())
             {
                 context.Writer.WritePropertyName("PeriodSize");
-                context.Writer.Write(requestObject.PeriodSize.Value);
+                context.Writer.WriteNumberValue(requestObject.PeriodSize.Value);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.Time, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

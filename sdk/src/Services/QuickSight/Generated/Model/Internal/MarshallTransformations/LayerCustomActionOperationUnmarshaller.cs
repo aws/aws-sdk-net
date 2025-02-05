@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LayerCustomActionOperation Object
     /// </summary>  
-    public class LayerCustomActionOperationUnmarshaller : IUnmarshaller<LayerCustomActionOperation, XmlUnmarshallerContext>, IUnmarshaller<LayerCustomActionOperation, JsonUnmarshallerContext>
+    public class LayerCustomActionOperationUnmarshaller : IJsonUnmarshaller<LayerCustomActionOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LayerCustomActionOperation IUnmarshaller<LayerCustomActionOperation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LayerCustomActionOperation Unmarshall(JsonUnmarshallerContext context)
+        public LayerCustomActionOperation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LayerCustomActionOperation unmarshalledObject = new LayerCustomActionOperation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FilterOperation", targetDepth))
                 {
                     var unmarshaller = CustomActionFilterOperationUnmarshaller.Instance;
-                    unmarshalledObject.FilterOperation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NavigationOperation", targetDepth))
                 {
                     var unmarshaller = CustomActionNavigationOperationUnmarshaller.Instance;
-                    unmarshalledObject.NavigationOperation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NavigationOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SetParametersOperation", targetDepth))
                 {
                     var unmarshaller = CustomActionSetParametersOperationUnmarshaller.Instance;
-                    unmarshalledObject.SetParametersOperation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SetParametersOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("URLOperation", targetDepth))
                 {
                     var unmarshaller = CustomActionURLOperationUnmarshaller.Instance;
-                    unmarshalledObject.URLOperation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.URLOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

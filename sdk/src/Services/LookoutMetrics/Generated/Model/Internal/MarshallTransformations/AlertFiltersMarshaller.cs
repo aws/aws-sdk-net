@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionFilterList())
             {
                 context.Writer.WritePropertyName("DimensionFilterList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionFilterListListValue in requestObject.DimensionFilterList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionFilterListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetricList())
             {
                 context.Writer.WritePropertyName("MetricList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricListListValue in requestObject.MetricList)
                 {
-                        context.Writer.Write(requestObjectMetricListListValue);
+                        context.Writer.WriteStringValue(requestObjectMetricListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

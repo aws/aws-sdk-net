@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiVersion())
             {
                 context.Writer.WritePropertyName("apiVersion");
-                context.Writer.Write(requestObject.ApiVersion);
+                context.Writer.WriteStringValue(requestObject.ApiVersion);
             }
 
             if(requestObject.IsSetConnectorProfileName())
             {
                 context.Writer.WritePropertyName("connectorProfileName");
-                context.Writer.Write(requestObject.ConnectorProfileName);
+                context.Writer.WriteStringValue(requestObject.ConnectorProfileName);
             }
 
             if(requestObject.IsSetConnectorType())
             {
                 context.Writer.WritePropertyName("connectorType");
-                context.Writer.Write(requestObject.ConnectorType);
+                context.Writer.WriteStringValue(requestObject.ConnectorType);
             }
 
             if(requestObject.IsSetDestinationConnectorProperties())
             {
                 context.Writer.WritePropertyName("destinationConnectorProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationConnectorPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationConnectorProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

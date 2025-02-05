@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionConfigurations())
             {
                 context.Writer.WritePropertyName("DimensionConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionConfigurationsListValue in requestObject.DimensionConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BodySectionRepeatDimensionConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNonRepeatingVisuals())
             {
                 context.Writer.WritePropertyName("NonRepeatingVisuals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNonRepeatingVisualsListValue in requestObject.NonRepeatingVisuals)
                 {
-                        context.Writer.Write(requestObjectNonRepeatingVisualsListValue);
+                        context.Writer.WriteStringValue(requestObjectNonRepeatingVisualsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPageBreakConfiguration())
             {
                 context.Writer.WritePropertyName("PageBreakConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BodySectionRepeatPageBreakConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PageBreakConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

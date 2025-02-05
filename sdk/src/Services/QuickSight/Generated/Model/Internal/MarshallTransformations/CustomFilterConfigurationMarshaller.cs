@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryValue())
             {
                 context.Writer.WritePropertyName("CategoryValue");
-                context.Writer.Write(requestObject.CategoryValue);
+                context.Writer.WriteStringValue(requestObject.CategoryValue);
             }
 
             if(requestObject.IsSetMatchOperator())
             {
                 context.Writer.WritePropertyName("MatchOperator");
-                context.Writer.Write(requestObject.MatchOperator);
+                context.Writer.WriteStringValue(requestObject.MatchOperator);
             }
 
             if(requestObject.IsSetNullOption())
             {
                 context.Writer.WritePropertyName("NullOption");
-                context.Writer.Write(requestObject.NullOption);
+                context.Writer.WriteStringValue(requestObject.NullOption);
             }
 
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("ParameterName");
-                context.Writer.Write(requestObject.ParameterName);
+                context.Writer.WriteStringValue(requestObject.ParameterName);
             }
 
             if(requestObject.IsSetSelectAllOptions())
             {
                 context.Writer.WritePropertyName("SelectAllOptions");
-                context.Writer.Write(requestObject.SelectAllOptions);
+                context.Writer.WriteStringValue(requestObject.SelectAllOptions);
             }
 
         }

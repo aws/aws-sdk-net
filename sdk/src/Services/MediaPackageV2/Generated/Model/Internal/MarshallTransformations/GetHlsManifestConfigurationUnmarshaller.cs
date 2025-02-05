@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetHlsManifestConfiguration Object
     /// </summary>  
-    public class GetHlsManifestConfigurationUnmarshaller : IUnmarshaller<GetHlsManifestConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GetHlsManifestConfiguration, JsonUnmarshallerContext>
+    public class GetHlsManifestConfigurationUnmarshaller : IJsonUnmarshaller<GetHlsManifestConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GetHlsManifestConfiguration IUnmarshaller<GetHlsManifestConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GetHlsManifestConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public GetHlsManifestConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GetHlsManifestConfiguration unmarshalledObject = new GetHlsManifestConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChildManifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChildManifestName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChildManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterConfiguration", targetDepth))
                 {
                     var unmarshaller = FilterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgramDateTimeIntervalSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScteHls", targetDepth))
                 {
                     var unmarshaller = ScteHlsUnmarshaller.Instance;
-                    unmarshalledObject.ScteHls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScteHls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTag", targetDepth))
                 {
                     var unmarshaller = StartTagUnmarshaller.Instance;
-                    unmarshalledObject.StartTag = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

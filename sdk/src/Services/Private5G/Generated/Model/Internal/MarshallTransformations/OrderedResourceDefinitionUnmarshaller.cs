@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OrderedResourceDefinition Object
     /// </summary>  
-    public class OrderedResourceDefinitionUnmarshaller : IUnmarshaller<OrderedResourceDefinition, XmlUnmarshallerContext>, IUnmarshaller<OrderedResourceDefinition, JsonUnmarshallerContext>
+    public class OrderedResourceDefinitionUnmarshaller : IJsonUnmarshaller<OrderedResourceDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OrderedResourceDefinition IUnmarshaller<OrderedResourceDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrderedResourceDefinition Unmarshall(JsonUnmarshallerContext context)
+        public OrderedResourceDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OrderedResourceDefinition unmarshalledObject = new OrderedResourceDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("commitmentConfiguration", targetDepth))
                 {
                     var unmarshaller = CommitmentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CommitmentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CommitmentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("count", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

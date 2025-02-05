@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioChannelTaggingSettings())
             {
                 context.Writer.WritePropertyName("audioChannelTaggingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioChannelTaggingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioChannelTaggingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioNormalizationSettings())
             {
                 context.Writer.WritePropertyName("audioNormalizationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioNormalizationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioNormalizationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioSourceName())
             {
                 context.Writer.WritePropertyName("audioSourceName");
-                context.Writer.Write(requestObject.AudioSourceName);
+                context.Writer.WriteStringValue(requestObject.AudioSourceName);
             }
 
             if(requestObject.IsSetAudioType())
             {
                 context.Writer.WritePropertyName("audioType");
-                context.Writer.Write(requestObject.AudioType.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioType.Value);
             }
 
             if(requestObject.IsSetAudioTypeControl())
             {
                 context.Writer.WritePropertyName("audioTypeControl");
-                context.Writer.Write(requestObject.AudioTypeControl);
+                context.Writer.WriteStringValue(requestObject.AudioTypeControl);
             }
 
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioCodecSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodecSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomLanguageCode())
             {
                 context.Writer.WritePropertyName("customLanguageCode");
-                context.Writer.Write(requestObject.CustomLanguageCode);
+                context.Writer.WriteStringValue(requestObject.CustomLanguageCode);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageCodeControl())
             {
                 context.Writer.WritePropertyName("languageCodeControl");
-                context.Writer.Write(requestObject.LanguageCodeControl);
+                context.Writer.WriteStringValue(requestObject.LanguageCodeControl);
             }
 
             if(requestObject.IsSetRemixSettings())
             {
                 context.Writer.WritePropertyName("remixSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RemixSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemixSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WriteStringValue(requestObject.StreamName);
             }
 
         }

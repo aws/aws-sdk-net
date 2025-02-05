@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClassifies())
             {
                 context.Writer.WritePropertyName("classifies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClassifiesListValue in requestObject.Classifies)
                 {
-                        context.Writer.Write(requestObjectClassifiesListValue);
+                        context.Writer.WriteStringValue(requestObjectClassifiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIsA())
             {
                 context.Writer.WritePropertyName("isA");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIsAListValue in requestObject.IsA)
                 {
-                        context.Writer.Write(requestObjectIsAListValue);
+                        context.Writer.WriteStringValue(requestObjectIsAListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Value Object
     /// </summary>  
-    public class ValueUnmarshaller : IUnmarshaller<Value, XmlUnmarshallerContext>, IUnmarshaller<Value, JsonUnmarshallerContext>
+    public class ValueUnmarshaller : IJsonUnmarshaller<Value, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Value IUnmarshaller<Value, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Value Unmarshall(JsonUnmarshallerContext context)
+        public Value Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Value unmarshalledObject = new Value();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arrayValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Value, ValueUnmarshaller>(ValueUnmarshaller.Instance);
-                    unmarshalledObject.ArrayValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Value, ValueUnmarshaller>(ValueUnmarshaller.Instance);
+                    unmarshalledObject.ArrayValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bigIntValue", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BigIntValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BigIntValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bitValue", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.BitValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BitValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blobValue", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.BlobValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlobValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("intValue", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IntValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isNull", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNull = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsNull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("realValue", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.RealValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RealValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stringValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("structValue", targetDepth))
                 {
                     var unmarshaller = StructValueUnmarshaller.Instance;
-                    unmarshalledObject.StructValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StructValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

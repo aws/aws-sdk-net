@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -47,93 +47,93 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeMetricSetResponse response = new DescribeMetricSetResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnomalyDetectorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AnomalyDetectorArn = unmarshaller.Unmarshall(context);
+                    response.AnomalyDetectorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionFilterList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricSetDimensionFilter, MetricSetDimensionFilterUnmarshaller>(MetricSetDimensionFilterUnmarshaller.Instance);
-                    response.DimensionFilterList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MetricSetDimensionFilter, MetricSetDimensionFilterUnmarshaller>(MetricSetDimensionFilterUnmarshaller.Instance);
+                    response.DimensionFilterList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.DimensionList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DimensionList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastModificationTime = unmarshaller.Unmarshall(context);
+                    response.LastModificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Metric, MetricUnmarshaller>(MetricUnmarshaller.Instance);
-                    response.MetricList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Metric, MetricUnmarshaller>(MetricUnmarshaller.Instance);
+                    response.MetricList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricSetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MetricSetArn = unmarshaller.Unmarshall(context);
+                    response.MetricSetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricSetDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MetricSetDescription = unmarshaller.Unmarshall(context);
+                    response.MetricSetDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricSetFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MetricSetFrequency = unmarshaller.Unmarshall(context);
+                    response.MetricSetFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricSetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MetricSetName = unmarshaller.Unmarshall(context);
+                    response.MetricSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricSource", targetDepth))
                 {
                     var unmarshaller = MetricSourceUnmarshaller.Instance;
-                    response.MetricSource = unmarshaller.Unmarshall(context);
+                    response.MetricSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Offset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Offset = unmarshaller.Unmarshall(context);
+                    response.Offset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimestampColumn", targetDepth))
                 {
                     var unmarshaller = TimestampColumnUnmarshaller.Instance;
-                    response.TimestampColumn = unmarshaller.Unmarshall(context);
+                    response.TimestampColumn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Timezone = unmarshaller.Unmarshall(context);
+                    response.Timezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -150,34 +150,36 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
-                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonLookoutMetricsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

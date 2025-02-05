@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScheduledSplit Object
     /// </summary>  
-    public class ScheduledSplitUnmarshaller : IUnmarshaller<ScheduledSplit, XmlUnmarshallerContext>, IUnmarshaller<ScheduledSplit, JsonUnmarshallerContext>
+    public class ScheduledSplitUnmarshaller : IJsonUnmarshaller<ScheduledSplit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScheduledSplit IUnmarshaller<ScheduledSplit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduledSplit Unmarshall(JsonUnmarshallerContext context)
+        public ScheduledSplit Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScheduledSplit unmarshalledObject = new ScheduledSplit();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("groupWeights", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
-                    unmarshalledObject.GroupWeights = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
+                    unmarshalledObject.GroupWeights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentOverrides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SegmentOverride, SegmentOverrideUnmarshaller>(SegmentOverrideUnmarshaller.Instance);
-                    unmarshalledObject.SegmentOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SegmentOverride, SegmentOverrideUnmarshaller>(SegmentOverrideUnmarshaller.Instance);
+                    unmarshalledObject.SegmentOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

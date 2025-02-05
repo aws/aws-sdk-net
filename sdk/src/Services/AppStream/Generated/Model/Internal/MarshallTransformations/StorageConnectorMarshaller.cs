@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectorType())
             {
                 context.Writer.WritePropertyName("ConnectorType");
-                context.Writer.Write(requestObject.ConnectorType);
+                context.Writer.WriteStringValue(requestObject.ConnectorType);
             }
 
             if(requestObject.IsSetDomains())
             {
                 context.Writer.WritePropertyName("Domains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainsListValue in requestObject.Domains)
                 {
-                        context.Writer.Write(requestObjectDomainsListValue);
+                        context.Writer.WriteStringValue(requestObjectDomainsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDomainsRequireAdminConsent())
             {
                 context.Writer.WritePropertyName("DomainsRequireAdminConsent");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainsRequireAdminConsentListValue in requestObject.DomainsRequireAdminConsent)
                 {
-                        context.Writer.Write(requestObjectDomainsRequireAdminConsentListValue);
+                        context.Writer.WriteStringValue(requestObjectDomainsRequireAdminConsentListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceIdentifier())
             {
                 context.Writer.WritePropertyName("ResourceIdentifier");
-                context.Writer.Write(requestObject.ResourceIdentifier);
+                context.Writer.WriteStringValue(requestObject.ResourceIdentifier);
             }
 
         }

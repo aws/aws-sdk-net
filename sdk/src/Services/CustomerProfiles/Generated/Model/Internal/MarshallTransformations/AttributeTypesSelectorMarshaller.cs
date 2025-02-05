@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddressListValue in requestObject.Address)
                 {
-                        context.Writer.Write(requestObjectAddressListValue);
+                        context.Writer.WriteStringValue(requestObjectAddressListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributeMatchingModel())
             {
                 context.Writer.WritePropertyName("AttributeMatchingModel");
-                context.Writer.Write(requestObject.AttributeMatchingModel);
+                context.Writer.WriteStringValue(requestObject.AttributeMatchingModel);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEmailAddressListValue in requestObject.EmailAddress)
                 {
-                        context.Writer.Write(requestObjectEmailAddressListValue);
+                        context.Writer.WriteStringValue(requestObjectEmailAddressListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhoneNumberListValue in requestObject.PhoneNumber)
                 {
-                        context.Writer.Write(requestObjectPhoneNumberListValue);
+                        context.Writer.WriteStringValue(requestObjectPhoneNumberListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

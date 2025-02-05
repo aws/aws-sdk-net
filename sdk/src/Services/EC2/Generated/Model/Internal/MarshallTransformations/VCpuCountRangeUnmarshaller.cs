@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VCpuCountRange Object
     /// </summary>  
-    public class VCpuCountRangeUnmarshaller : IUnmarshaller<VCpuCountRange, XmlUnmarshallerContext>, IUnmarshaller<VCpuCountRange, JsonUnmarshallerContext>
+    public class VCpuCountRangeUnmarshaller : IXmlUnmarshaller<VCpuCountRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VCpuCountRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VCpuCountRangeUnmarshaller _instance = new VCpuCountRangeUnmarshaller();        
 

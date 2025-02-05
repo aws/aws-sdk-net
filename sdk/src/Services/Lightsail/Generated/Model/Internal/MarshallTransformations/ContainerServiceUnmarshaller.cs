@@ -29,155 +29,145 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContainerService Object
     /// </summary>  
-    public class ContainerServiceUnmarshaller : IUnmarshaller<ContainerService, XmlUnmarshallerContext>, IUnmarshaller<ContainerService, JsonUnmarshallerContext>
+    public class ContainerServiceUnmarshaller : IJsonUnmarshaller<ContainerService, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ContainerService IUnmarshaller<ContainerService, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerService Unmarshall(JsonUnmarshallerContext context)
+        public ContainerService Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ContainerService unmarshalledObject = new ContainerService();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("containerServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentDeployment", targetDepth))
                 {
                     var unmarshaller = ContainerServiceDeploymentUnmarshaller.Instance;
-                    unmarshalledObject.CurrentDeployment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentDeployment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isDisabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDisabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = ResourceLocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nextDeployment", targetDepth))
                 {
                     var unmarshaller = ContainerServiceDeploymentUnmarshaller.Instance;
-                    unmarshalledObject.NextDeployment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextDeployment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("power", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Power = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Power = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("powerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PowerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("principalArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("privateDomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivateDomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateDomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("privateRegistryAccess", targetDepth))
                 {
                     var unmarshaller = PrivateRegistryAccessUnmarshaller.Instance;
-                    unmarshalledObject.PrivateRegistryAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateRegistryAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("publicDomainNames", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.PublicDomainNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.PublicDomainNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scale", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stateDetail", targetDepth))
                 {
                     var unmarshaller = ContainerServiceStateDetailUnmarshaller.Instance;
-                    unmarshalledObject.StateDetail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

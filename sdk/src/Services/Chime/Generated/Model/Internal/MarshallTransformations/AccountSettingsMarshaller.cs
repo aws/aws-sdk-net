@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableRemoteControl())
             {
                 context.Writer.WritePropertyName("DisableRemoteControl");
-                context.Writer.Write(requestObject.DisableRemoteControl.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableRemoteControl.Value);
             }
 
             if(requestObject.IsSetEnableDialOut())
             {
                 context.Writer.WritePropertyName("EnableDialOut");
-                context.Writer.Write(requestObject.EnableDialOut.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableDialOut.Value);
             }
 
         }

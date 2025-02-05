@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AvailabilityZoneNotSupportedException operation
     /// </summary>  
-    public class AvailabilityZoneNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<AvailabilityZoneNotSupportedException, XmlUnmarshallerContext>
+    public class AvailabilityZoneNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AvailabilityZoneNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

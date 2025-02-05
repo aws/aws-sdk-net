@@ -46,9 +46,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ThroughputHintInMBs
+        public int? ThroughputHintInMBs
         {
-            get { return this._throughputHintInMBs.GetValueOrDefault(); }
+            get { return this._throughputHintInMBs; }
             set { this._throughputHintInMBs = value; }
         }
 

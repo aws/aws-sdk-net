@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisk())
             {
                 context.Writer.WritePropertyName("disk");
-                context.Writer.Write(requestObject.Disk.Value);
+                context.Writer.WriteNumberValue(requestObject.Disk.Value);
             }
 
             if(requestObject.IsSetMachineType())
             {
                 context.Writer.WritePropertyName("machineType");
-                context.Writer.Write(requestObject.MachineType);
+                context.Writer.WriteStringValue(requestObject.MachineType);
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory.Value);
+                context.Writer.WriteNumberValue(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetVCpu())
             {
                 context.Writer.WritePropertyName("vCpu");
-                context.Writer.Write(requestObject.VCpu.Value);
+                context.Writer.WriteNumberValue(requestObject.VCpu.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdrBucket())
             {
                 context.Writer.WritePropertyName("CdrBucket");
-                context.Writer.Write(requestObject.CdrBucket);
+                context.Writer.WriteStringValue(requestObject.CdrBucket);
             }
 
         }

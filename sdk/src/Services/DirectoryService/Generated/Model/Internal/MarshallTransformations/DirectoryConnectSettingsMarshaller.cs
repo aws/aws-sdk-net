@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerDnsIps())
             {
                 context.Writer.WritePropertyName("CustomerDnsIps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomerDnsIpsListValue in requestObject.CustomerDnsIps)
                 {
-                        context.Writer.Write(requestObjectCustomerDnsIpsListValue);
+                        context.Writer.WriteStringValue(requestObjectCustomerDnsIpsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomerUserName())
             {
                 context.Writer.WritePropertyName("CustomerUserName");
-                context.Writer.Write(requestObject.CustomerUserName);
+                context.Writer.WriteStringValue(requestObject.CustomerUserName);
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

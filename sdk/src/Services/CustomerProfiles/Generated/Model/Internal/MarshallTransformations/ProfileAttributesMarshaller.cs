@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,240 +49,240 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountNumber())
             {
                 context.Writer.WritePropertyName("AccountNumber");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccountNumber, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAdditionalInformation())
             {
                 context.Writer.WritePropertyName("AdditionalInformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExtraLengthValueProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalInformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Address, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeDimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBillingAddress())
             {
                 context.Writer.WritePropertyName("BillingAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BillingAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBirthDate())
             {
                 context.Writer.WritePropertyName("BirthDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BirthDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBusinessEmailAddress())
             {
                 context.Writer.WritePropertyName("BusinessEmailAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BusinessEmailAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBusinessName())
             {
                 context.Writer.WritePropertyName("BusinessName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BusinessName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBusinessPhoneNumber())
             {
                 context.Writer.WritePropertyName("BusinessPhoneNumber");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BusinessPhoneNumber, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmailAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("FirstName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FirstName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGenderString())
             {
                 context.Writer.WritePropertyName("GenderString");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenderString, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHomePhoneNumber())
             {
                 context.Writer.WritePropertyName("HomePhoneNumber");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.HomePhoneNumber, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("LastName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMailingAddress())
             {
                 context.Writer.WritePropertyName("MailingAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MailingAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMiddleName())
             {
                 context.Writer.WritePropertyName("MiddleName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MiddleName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMobilePhoneNumber())
             {
                 context.Writer.WritePropertyName("MobilePhoneNumber");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MobilePhoneNumber, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPartyTypeString())
             {
                 context.Writer.WritePropertyName("PartyTypeString");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PartyTypeString, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPersonalEmailAddress())
             {
                 context.Writer.WritePropertyName("PersonalEmailAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PersonalEmailAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PhoneNumber, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetShippingAddress())
             {
                 context.Writer.WritePropertyName("ShippingAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ShippingAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

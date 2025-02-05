@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,120 +49,120 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcquisitionPointId())
             {
                 context.Writer.WritePropertyName("acquisitionPointId");
-                context.Writer.Write(requestObject.AcquisitionPointId);
+                context.Writer.WriteStringValue(requestObject.AcquisitionPointId);
             }
 
             if(requestObject.IsSetAudioOnlyTimecodeControl())
             {
                 context.Writer.WritePropertyName("audioOnlyTimecodeControl");
-                context.Writer.Write(requestObject.AudioOnlyTimecodeControl);
+                context.Writer.WriteStringValue(requestObject.AudioOnlyTimecodeControl);
             }
 
             if(requestObject.IsSetCertificateMode())
             {
                 context.Writer.WritePropertyName("certificateMode");
-                context.Writer.Write(requestObject.CertificateMode);
+                context.Writer.WriteStringValue(requestObject.CertificateMode);
             }
 
             if(requestObject.IsSetConnectionRetryInterval())
             {
                 context.Writer.WritePropertyName("connectionRetryInterval");
-                context.Writer.Write(requestObject.ConnectionRetryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.ConnectionRetryInterval.Value);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventId())
             {
                 context.Writer.WritePropertyName("eventId");
-                context.Writer.Write(requestObject.EventId);
+                context.Writer.WriteStringValue(requestObject.EventId);
             }
 
             if(requestObject.IsSetEventIdMode())
             {
                 context.Writer.WritePropertyName("eventIdMode");
-                context.Writer.Write(requestObject.EventIdMode);
+                context.Writer.WriteStringValue(requestObject.EventIdMode);
             }
 
             if(requestObject.IsSetEventStopBehavior())
             {
                 context.Writer.WritePropertyName("eventStopBehavior");
-                context.Writer.Write(requestObject.EventStopBehavior);
+                context.Writer.WriteStringValue(requestObject.EventStopBehavior);
             }
 
             if(requestObject.IsSetFilecacheDuration())
             {
                 context.Writer.WritePropertyName("filecacheDuration");
-                context.Writer.Write(requestObject.FilecacheDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.FilecacheDuration.Value);
             }
 
             if(requestObject.IsSetFragmentLength())
             {
                 context.Writer.WritePropertyName("fragmentLength");
-                context.Writer.Write(requestObject.FragmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.FragmentLength.Value);
             }
 
             if(requestObject.IsSetInputLossAction())
             {
                 context.Writer.WritePropertyName("inputLossAction");
-                context.Writer.Write(requestObject.InputLossAction);
+                context.Writer.WriteStringValue(requestObject.InputLossAction);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("numRetries");
-                context.Writer.Write(requestObject.NumRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");
-                context.Writer.Write(requestObject.RestartDelay.Value);
+                context.Writer.WriteNumberValue(requestObject.RestartDelay.Value);
             }
 
             if(requestObject.IsSetSegmentationMode())
             {
                 context.Writer.WritePropertyName("segmentationMode");
-                context.Writer.Write(requestObject.SegmentationMode);
+                context.Writer.WriteStringValue(requestObject.SegmentationMode);
             }
 
             if(requestObject.IsSetSendDelayMs())
             {
                 context.Writer.WritePropertyName("sendDelayMs");
-                context.Writer.Write(requestObject.SendDelayMs.Value);
+                context.Writer.WriteNumberValue(requestObject.SendDelayMs.Value);
             }
 
             if(requestObject.IsSetSparseTrackType())
             {
                 context.Writer.WritePropertyName("sparseTrackType");
-                context.Writer.Write(requestObject.SparseTrackType);
+                context.Writer.WriteStringValue(requestObject.SparseTrackType);
             }
 
             if(requestObject.IsSetStreamManifestBehavior())
             {
                 context.Writer.WritePropertyName("streamManifestBehavior");
-                context.Writer.Write(requestObject.StreamManifestBehavior);
+                context.Writer.WriteStringValue(requestObject.StreamManifestBehavior);
             }
 
             if(requestObject.IsSetTimestampOffset())
             {
                 context.Writer.WritePropertyName("timestampOffset");
-                context.Writer.Write(requestObject.TimestampOffset);
+                context.Writer.WriteStringValue(requestObject.TimestampOffset);
             }
 
             if(requestObject.IsSetTimestampOffsetMode())
             {
                 context.Writer.WritePropertyName("timestampOffsetMode");
-                context.Writer.Write(requestObject.TimestampOffsetMode);
+                context.Writer.WriteStringValue(requestObject.TimestampOffsetMode);
             }
 
         }

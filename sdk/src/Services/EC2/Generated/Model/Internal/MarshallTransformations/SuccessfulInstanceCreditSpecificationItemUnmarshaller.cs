@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SuccessfulInstanceCreditSpecificationItem Object
     /// </summary>  
-    public class SuccessfulInstanceCreditSpecificationItemUnmarshaller : IUnmarshaller<SuccessfulInstanceCreditSpecificationItem, XmlUnmarshallerContext>, IUnmarshaller<SuccessfulInstanceCreditSpecificationItem, JsonUnmarshallerContext>
+    public class SuccessfulInstanceCreditSpecificationItemUnmarshaller : IXmlUnmarshaller<SuccessfulInstanceCreditSpecificationItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SuccessfulInstanceCreditSpecificationItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SuccessfulInstanceCreditSpecificationItemUnmarshaller _instance = new SuccessfulInstanceCreditSpecificationItemUnmarshaller();        
 

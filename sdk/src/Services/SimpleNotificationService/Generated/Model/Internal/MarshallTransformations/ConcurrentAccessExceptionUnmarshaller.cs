@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for ConcurrentAccessException operation
     /// </summary>  
-    public class ConcurrentAccessExceptionUnmarshaller : IErrorResponseUnmarshaller<ConcurrentAccessException, XmlUnmarshallerContext>
+    public class ConcurrentAccessExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConcurrentAccessException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

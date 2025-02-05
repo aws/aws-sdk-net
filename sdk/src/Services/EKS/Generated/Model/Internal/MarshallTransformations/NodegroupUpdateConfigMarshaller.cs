@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxUnavailable())
             {
                 context.Writer.WritePropertyName("maxUnavailable");
-                context.Writer.Write(requestObject.MaxUnavailable.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxUnavailable.Value);
             }
 
             if(requestObject.IsSetMaxUnavailablePercentage())
             {
                 context.Writer.WritePropertyName("maxUnavailablePercentage");
-                context.Writer.Write(requestObject.MaxUnavailablePercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxUnavailablePercentage.Value);
             }
 
             if(requestObject.IsSetUpdateStrategy())
             {
                 context.Writer.WritePropertyName("updateStrategy");
-                context.Writer.Write(requestObject.UpdateStrategy);
+                context.Writer.WriteStringValue(requestObject.UpdateStrategy);
             }
 
         }

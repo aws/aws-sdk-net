@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsAccount())
             {
                 context.Writer.WritePropertyName("awsAccount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAccountMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsAccount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("awsRegion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsRegion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigurationParameters())
             {
                 context.Writer.WritePropertyName("configurationParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnvironmentConfigurationParametersDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigurationParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeploymentMode())
             {
                 context.Writer.WritePropertyName("deploymentMode");
-                context.Writer.Write(requestObject.DeploymentMode);
+                context.Writer.WriteStringValue(requestObject.DeploymentMode);
             }
 
             if(requestObject.IsSetDeploymentOrder())
             {
                 context.Writer.WritePropertyName("deploymentOrder");
-                context.Writer.Write(requestObject.DeploymentOrder.Value);
+                context.Writer.WriteNumberValue(requestObject.DeploymentOrder.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEnvironmentBlueprintId())
             {
                 context.Writer.WritePropertyName("environmentBlueprintId");
-                context.Writer.Write(requestObject.EnvironmentBlueprintId);
+                context.Writer.WriteStringValue(requestObject.EnvironmentBlueprintId);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionGroup Object
     /// </summary>  
-    public class OptionGroupUnmarshaller : IUnmarshaller<OptionGroup, XmlUnmarshallerContext>, IUnmarshaller<OptionGroup, JsonUnmarshallerContext>
+    public class OptionGroupUnmarshaller : IXmlUnmarshaller<OptionGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -135,17 +135,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OptionGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OptionGroupUnmarshaller _instance = new OptionGroupUnmarshaller();        
 

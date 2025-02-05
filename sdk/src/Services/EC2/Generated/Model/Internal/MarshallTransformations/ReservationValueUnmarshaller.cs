@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservationValue Object
     /// </summary>  
-    public class ReservationValueUnmarshaller : IUnmarshaller<ReservationValue, XmlUnmarshallerContext>, IUnmarshaller<ReservationValue, JsonUnmarshallerContext>
+    public class ReservationValueUnmarshaller : IXmlUnmarshaller<ReservationValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReservationValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReservationValueUnmarshaller _instance = new ReservationValueUnmarshaller();        
 

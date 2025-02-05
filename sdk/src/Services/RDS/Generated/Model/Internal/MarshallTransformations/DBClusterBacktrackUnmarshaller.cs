@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterBacktrack Object
     /// </summary>  
-    public class DBClusterBacktrackUnmarshaller : IUnmarshaller<DBClusterBacktrack, XmlUnmarshallerContext>, IUnmarshaller<DBClusterBacktrack, JsonUnmarshallerContext>
+    public class DBClusterBacktrackUnmarshaller : IXmlUnmarshaller<DBClusterBacktrack, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBClusterBacktrack Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBClusterBacktrackUnmarshaller _instance = new DBClusterBacktrackUnmarshaller();        
 

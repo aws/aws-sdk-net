@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkBandwidthGbpsRequest Object
     /// </summary>  
-    public class NetworkBandwidthGbpsRequestUnmarshaller : IUnmarshaller<NetworkBandwidthGbpsRequest, XmlUnmarshallerContext>, IUnmarshaller<NetworkBandwidthGbpsRequest, JsonUnmarshallerContext>
+    public class NetworkBandwidthGbpsRequestUnmarshaller : IXmlUnmarshaller<NetworkBandwidthGbpsRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkBandwidthGbpsRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkBandwidthGbpsRequestUnmarshaller _instance = new NetworkBandwidthGbpsRequestUnmarshaller();        
 

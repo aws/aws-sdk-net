@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetComparisonValue())
             {
                 context.Writer.WritePropertyName("ComparisonValue");
-                context.Writer.Write(requestObject.ComparisonValue);
+                context.Writer.WriteStringValue(requestObject.ComparisonValue);
             }
 
         }

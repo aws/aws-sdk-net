@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDevicePermissionRoleArn())
             {
                 context.Writer.WritePropertyName("devicePermissionRoleArn");
-                context.Writer.Write(requestObject.DevicePermissionRoleArn);
+                context.Writer.WriteStringValue(requestObject.DevicePermissionRoleArn);
             }
 
             if(requestObject.IsSetDevices())
             {
                 context.Writer.WritePropertyName("devices");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDevicesListValue in requestObject.Devices)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DeviceUnderTestMarshaller.Instance;
                     marshaller.Marshall(requestObjectDevicesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIntendedForQualification())
             {
                 context.Writer.WritePropertyName("intendedForQualification");
-                context.Writer.Write(requestObject.IntendedForQualification.Value);
+                context.Writer.WriteBooleanValue(requestObject.IntendedForQualification.Value);
             }
 
             if(requestObject.IsSetIsLongDurationTest())
             {
                 context.Writer.WritePropertyName("isLongDurationTest");
-                context.Writer.Write(requestObject.IsLongDurationTest.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsLongDurationTest.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetRootGroup())
             {
                 context.Writer.WritePropertyName("rootGroup");
-                context.Writer.Write(requestObject.RootGroup);
+                context.Writer.WriteStringValue(requestObject.RootGroup);
             }
 
             if(requestObject.IsSetSuiteDefinitionName())
             {
                 context.Writer.WritePropertyName("suiteDefinitionName");
-                context.Writer.Write(requestObject.SuiteDefinitionName);
+                context.Writer.WriteStringValue(requestObject.SuiteDefinitionName);
             }
 
         }

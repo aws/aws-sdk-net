@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -63,83 +66,88 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdminPasswordSecretKmsKeyId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdminPasswordSecretKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("adminPasswordSecretKmsKeyId");
-                        context.Writer.Write(publicRequest.AdminPasswordSecretKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetAdminUsername())
-                    {
-                        context.Writer.WritePropertyName("adminUsername");
-                        context.Writer.Write(publicRequest.AdminUsername);
-                    }
-
-                    if(publicRequest.IsSetAdminUserPassword())
-                    {
-                        context.Writer.WritePropertyName("adminUserPassword");
-                        context.Writer.Write(publicRequest.AdminUserPassword);
-                    }
-
-                    if(publicRequest.IsSetDefaultIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("defaultIamRoleArn");
-                        context.Writer.Write(publicRequest.DefaultIamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetIamRoles())
-                    {
-                        context.Writer.WritePropertyName("iamRoles");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIamRolesListValue in publicRequest.IamRoles)
-                        {
-                                context.Writer.Write(publicRequestIamRolesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("kmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetLogExports())
-                    {
-                        context.Writer.WritePropertyName("logExports");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogExportsListValue in publicRequest.LogExports)
-                        {
-                                context.Writer.Write(publicRequestLogExportsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetManageAdminPassword())
-                    {
-                        context.Writer.WritePropertyName("manageAdminPassword");
-                        context.Writer.Write(publicRequest.ManageAdminPassword.Value);
-                    }
-
-                    if(publicRequest.IsSetNamespaceName())
-                    {
-                        context.Writer.WritePropertyName("namespaceName");
-                        context.Writer.Write(publicRequest.NamespaceName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("adminPasswordSecretKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.AdminPasswordSecretKmsKeyId);
             }
+
+            if(publicRequest.IsSetAdminUsername())
+            {
+                context.Writer.WritePropertyName("adminUsername");
+                context.Writer.WriteStringValue(publicRequest.AdminUsername);
+            }
+
+            if(publicRequest.IsSetAdminUserPassword())
+            {
+                context.Writer.WritePropertyName("adminUserPassword");
+                context.Writer.WriteStringValue(publicRequest.AdminUserPassword);
+            }
+
+            if(publicRequest.IsSetDefaultIamRoleArn())
+            {
+                context.Writer.WritePropertyName("defaultIamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.DefaultIamRoleArn);
+            }
+
+            if(publicRequest.IsSetIamRoles())
+            {
+                context.Writer.WritePropertyName("iamRoles");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIamRolesListValue in publicRequest.IamRoles)
+                {
+                        context.Writer.WriteStringValue(publicRequestIamRolesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("kmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetLogExports())
+            {
+                context.Writer.WritePropertyName("logExports");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogExportsListValue in publicRequest.LogExports)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogExportsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManageAdminPassword())
+            {
+                context.Writer.WritePropertyName("manageAdminPassword");
+                context.Writer.WriteBooleanValue(publicRequest.ManageAdminPassword.Value);
+            }
+
+            if(publicRequest.IsSetNamespaceName())
+            {
+                context.Writer.WritePropertyName("namespaceName");
+                context.Writer.WriteStringValue(publicRequest.NamespaceName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

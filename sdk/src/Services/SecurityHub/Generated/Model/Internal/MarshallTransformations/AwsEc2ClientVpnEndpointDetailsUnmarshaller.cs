@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2ClientVpnEndpointDetails Object
     /// </summary>  
-    public class AwsEc2ClientVpnEndpointDetailsUnmarshaller : IUnmarshaller<AwsEc2ClientVpnEndpointDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2ClientVpnEndpointDetails, JsonUnmarshallerContext>
+    public class AwsEc2ClientVpnEndpointDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2ClientVpnEndpointDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2ClientVpnEndpointDetails IUnmarshaller<AwsEc2ClientVpnEndpointDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2ClientVpnEndpointDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2ClientVpnEndpointDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2ClientVpnEndpointDetails unmarshalledObject = new AwsEc2ClientVpnEndpointDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthenticationOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails, AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller>(AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller.Instance);
-                    unmarshalledObject.AuthenticationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails, AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller>(AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.AuthenticationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientCidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientCidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientCidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientConnectOptions", targetDepth))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointClientConnectOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ClientConnectOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientConnectOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientLoginBannerOptions", targetDepth))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ClientLoginBannerOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientLoginBannerOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientVpnEndpointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientVpnEndpointId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientVpnEndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionLogOptions", targetDepth))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointConnectionLogOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionLogOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionLogOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsServer", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsServer = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecurityGroupIdSet", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroupIdSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIdSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelfServicePortalUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelfServicePortalUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelfServicePortalUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerCertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerCertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerCertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SessionTimeoutHours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SessionTimeoutHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionTimeoutHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SplitTunnel", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SplitTunnel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SplitTunnel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransportProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpnPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VpnPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpnPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

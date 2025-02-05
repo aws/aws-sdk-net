@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAll())
             {
                 context.Writer.WritePropertyName("All");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AllMarshaller.Instance;
                 marshaller.Marshall(requestObject.All, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludedPaths())
             {
                 context.Writer.WritePropertyName("IncludedPaths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludedPathsListValue in requestObject.IncludedPaths)
                 {
-                        context.Writer.Write(requestObjectIncludedPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludedPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveContexts())
             {
                 context.Writer.WritePropertyName("activeContexts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActiveContextsListValue in requestObject.ActiveContexts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActiveContextMarshaller.Instance;
                     marshaller.Marshall(requestObjectActiveContextsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDialogAction())
             {
                 context.Writer.WritePropertyName("dialogAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DialogAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIntent())
             {
                 context.Writer.WritePropertyName("intent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Intent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOriginatingRequestId())
             {
                 context.Writer.WritePropertyName("originatingRequestId");
-                context.Writer.Write(requestObject.OriginatingRequestId);
+                context.Writer.WriteStringValue(requestObject.OriginatingRequestId);
             }
 
             if(requestObject.IsSetRuntimeHints())
             {
                 context.Writer.WritePropertyName("runtimeHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuntimeHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuntimeHints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSessionAttributes())
             {
                 context.Writer.WritePropertyName("sessionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSessionAttributesKvp in requestObject.SessionAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectSessionAttributesKvp.Key);
                     var requestObjectSessionAttributesValue = requestObjectSessionAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectSessionAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectSessionAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

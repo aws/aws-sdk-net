@@ -29,197 +29,187 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceViolation Object
     /// </summary>  
-    public class ResourceViolationUnmarshaller : IUnmarshaller<ResourceViolation, XmlUnmarshallerContext>, IUnmarshaller<ResourceViolation, JsonUnmarshallerContext>
+    public class ResourceViolationUnmarshaller : IJsonUnmarshaller<ResourceViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceViolation IUnmarshaller<ResourceViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceViolation Unmarshall(JsonUnmarshallerContext context)
+        public ResourceViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceViolation unmarshalledObject = new ResourceViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AwsEc2InstanceViolation", targetDepth))
                 {
                     var unmarshaller = AwsEc2InstanceViolationUnmarshaller.Instance;
-                    unmarshalledObject.AwsEc2InstanceViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsEc2InstanceViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AwsEc2NetworkInterfaceViolation", targetDepth))
                 {
                     var unmarshaller = AwsEc2NetworkInterfaceViolationUnmarshaller.Instance;
-                    unmarshalledObject.AwsEc2NetworkInterfaceViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsEc2NetworkInterfaceViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AwsVPCSecurityGroupViolation", targetDepth))
                 {
                     var unmarshaller = AwsVPCSecurityGroupViolationUnmarshaller.Instance;
-                    unmarshalledObject.AwsVPCSecurityGroupViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsVPCSecurityGroupViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsDuplicateRuleGroupViolation", targetDepth))
                 {
                     var unmarshaller = DnsDuplicateRuleGroupViolationUnmarshaller.Instance;
-                    unmarshalledObject.DnsDuplicateRuleGroupViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsDuplicateRuleGroupViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsRuleGroupLimitExceededViolation", targetDepth))
                 {
                     var unmarshaller = DnsRuleGroupLimitExceededViolationUnmarshaller.Instance;
-                    unmarshalledObject.DnsRuleGroupLimitExceededViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsRuleGroupLimitExceededViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsRuleGroupPriorityConflictViolation", targetDepth))
                 {
                     var unmarshaller = DnsRuleGroupPriorityConflictViolationUnmarshaller.Instance;
-                    unmarshalledObject.DnsRuleGroupPriorityConflictViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsRuleGroupPriorityConflictViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirewallSubnetIsOutOfScopeViolation", targetDepth))
                 {
                     var unmarshaller = FirewallSubnetIsOutOfScopeViolationUnmarshaller.Instance;
-                    unmarshalledObject.FirewallSubnetIsOutOfScopeViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirewallSubnetIsOutOfScopeViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirewallSubnetMissingVPCEndpointViolation", targetDepth))
                 {
                     var unmarshaller = FirewallSubnetMissingVPCEndpointViolationUnmarshaller.Instance;
-                    unmarshalledObject.FirewallSubnetMissingVPCEndpointViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirewallSubnetMissingVPCEndpointViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvalidNetworkAclEntriesViolation", targetDepth))
                 {
                     var unmarshaller = InvalidNetworkAclEntriesViolationUnmarshaller.Instance;
-                    unmarshalledObject.InvalidNetworkAclEntriesViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvalidNetworkAclEntriesViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallBlackHoleRouteDetectedViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallBlackHoleRouteDetectedViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallBlackHoleRouteDetectedViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallInternetTrafficNotInspectedViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallInternetTrafficNotInspectedViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallInternetTrafficNotInspectedViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallInternetTrafficNotInspectedViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallInvalidRouteConfigurationViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallInvalidRouteConfigurationViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallInvalidRouteConfigurationViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallInvalidRouteConfigurationViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallMissingExpectedRoutesViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingExpectedRoutesViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallMissingExpectedRoutesViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallMissingExpectedRoutesViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingExpectedRTViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallMissingExpectedRTViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallMissingExpectedRTViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallMissingFirewallViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingFirewallViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallMissingSubnetViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallMissingSubnetViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallPolicyModifiedViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallPolicyModifiedViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicyModifiedViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallPolicyModifiedViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallUnexpectedFirewallRoutesViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallUnexpectedFirewallRoutesViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallUnexpectedFirewallRoutesViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallUnexpectedFirewallRoutesViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkFirewallUnexpectedGatewayRoutesViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallUnexpectedGatewayRoutesViolationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallUnexpectedGatewayRoutesViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkFirewallUnexpectedGatewayRoutesViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PossibleRemediationActions", targetDepth))
                 {
                     var unmarshaller = PossibleRemediationActionsUnmarshaller.Instance;
-                    unmarshalledObject.PossibleRemediationActions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PossibleRemediationActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RouteHasOutOfScopeEndpointViolation", targetDepth))
                 {
                     var unmarshaller = RouteHasOutOfScopeEndpointViolationUnmarshaller.Instance;
-                    unmarshalledObject.RouteHasOutOfScopeEndpointViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RouteHasOutOfScopeEndpointViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThirdPartyFirewallMissingExpectedRouteTableViolation", targetDepth))
                 {
                     var unmarshaller = ThirdPartyFirewallMissingExpectedRouteTableViolationUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallMissingExpectedRouteTableViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThirdPartyFirewallMissingExpectedRouteTableViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThirdPartyFirewallMissingFirewallViolation", targetDepth))
                 {
                     var unmarshaller = ThirdPartyFirewallMissingFirewallViolationUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThirdPartyFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThirdPartyFirewallMissingSubnetViolation", targetDepth))
                 {
                     var unmarshaller = ThirdPartyFirewallMissingSubnetViolationUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThirdPartyFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebACLHasIncompatibleConfigurationViolation", targetDepth))
                 {
                     var unmarshaller = WebACLHasIncompatibleConfigurationViolationUnmarshaller.Instance;
-                    unmarshalledObject.WebACLHasIncompatibleConfigurationViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebACLHasIncompatibleConfigurationViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebACLHasOutOfScopeResourcesViolation", targetDepth))
                 {
                     var unmarshaller = WebACLHasOutOfScopeResourcesViolationUnmarshaller.Instance;
-                    unmarshalledObject.WebACLHasOutOfScopeResourcesViolation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebACLHasOutOfScopeResourcesViolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

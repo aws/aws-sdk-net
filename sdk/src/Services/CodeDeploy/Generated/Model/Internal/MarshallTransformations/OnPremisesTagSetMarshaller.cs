@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,22 +49,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnPremisesTagSetList())
             {
                 context.Writer.WritePropertyName("onPremisesTagSetList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOnPremisesTagSetListListValue in requestObject.OnPremisesTagSetList)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectOnPremisesTagSetListListValueListValue in requestObjectOnPremisesTagSetListListValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = TagFilterMarshaller.Instance;
                         marshaller.Marshall(requestObjectOnPremisesTagSetListListValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

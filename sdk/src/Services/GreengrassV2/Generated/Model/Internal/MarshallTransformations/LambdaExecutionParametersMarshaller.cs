@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentVariablesKvp in requestObject.EnvironmentVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentVariablesKvp.Key);
                     var requestObjectEnvironmentVariablesValue = requestObjectEnvironmentVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventSources())
             {
                 context.Writer.WritePropertyName("eventSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventSourcesListValue in requestObject.EventSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LambdaEventSourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExecArgs())
             {
                 context.Writer.WritePropertyName("execArgs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExecArgsListValue in requestObject.ExecArgs)
                 {
-                        context.Writer.Write(requestObjectExecArgsListValue);
+                        context.Writer.WriteStringValue(requestObjectExecArgsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputPayloadEncodingType())
             {
                 context.Writer.WritePropertyName("inputPayloadEncodingType");
-                context.Writer.Write(requestObject.InputPayloadEncodingType);
+                context.Writer.WriteStringValue(requestObject.InputPayloadEncodingType);
             }
 
             if(requestObject.IsSetLinuxProcessParams())
             {
                 context.Writer.WritePropertyName("linuxProcessParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaLinuxProcessParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LinuxProcessParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("maxIdleTimeInSeconds");
-                context.Writer.Write(requestObject.MaxIdleTimeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxIdleTimeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaxInstancesCount())
             {
                 context.Writer.WritePropertyName("maxInstancesCount");
-                context.Writer.Write(requestObject.MaxInstancesCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxInstancesCount.Value);
             }
 
             if(requestObject.IsSetMaxQueueSize())
             {
                 context.Writer.WritePropertyName("maxQueueSize");
-                context.Writer.Write(requestObject.MaxQueueSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxQueueSize.Value);
             }
 
             if(requestObject.IsSetPinned())
             {
                 context.Writer.WritePropertyName("pinned");
-                context.Writer.Write(requestObject.Pinned.Value);
+                context.Writer.WriteBooleanValue(requestObject.Pinned.Value);
             }
 
             if(requestObject.IsSetStatusTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("statusTimeoutInSeconds");
-                context.Writer.Write(requestObject.StatusTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.StatusTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("timeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInSeconds.Value);
             }
 
         }

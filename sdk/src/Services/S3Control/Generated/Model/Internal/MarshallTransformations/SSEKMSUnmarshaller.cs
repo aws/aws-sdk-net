@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SSEKMS Object
     /// </summary>  
-    public class SSEKMSUnmarshaller : IUnmarshaller<SSEKMS, XmlUnmarshallerContext>, IUnmarshaller<SSEKMS, JsonUnmarshallerContext>
+    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SSEKMS Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static SSEKMSUnmarshaller _instance = new SSEKMSUnmarshaller();        
 
         /// <summary>

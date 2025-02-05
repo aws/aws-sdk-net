@@ -88,9 +88,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// with scaling policies. 
         /// </para>
         /// </summary>
-        public double EstimatedInstanceHourReductionPercentage
+        public double? EstimatedInstanceHourReductionPercentage
         {
-            get { return this._estimatedInstanceHourReductionPercentage.GetValueOrDefault(); }
+            get { return this._estimatedInstanceHourReductionPercentage; }
             set { this._estimatedInstanceHourReductionPercentage = value; }
         }
 

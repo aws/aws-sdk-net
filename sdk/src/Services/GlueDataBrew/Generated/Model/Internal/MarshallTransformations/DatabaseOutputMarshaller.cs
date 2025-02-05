@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseOptions())
             {
                 context.Writer.WritePropertyName("DatabaseOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseTableOutputOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseOutputMode())
             {
                 context.Writer.WritePropertyName("DatabaseOutputMode");
-                context.Writer.Write(requestObject.DatabaseOutputMode);
+                context.Writer.WriteStringValue(requestObject.DatabaseOutputMode);
             }
 
             if(requestObject.IsSetGlueConnectionName())
             {
                 context.Writer.WritePropertyName("GlueConnectionName");
-                context.Writer.Write(requestObject.GlueConnectionName);
+                context.Writer.WriteStringValue(requestObject.GlueConnectionName);
             }
 
         }

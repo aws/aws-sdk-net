@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Action Object
     /// </summary>  
-    public class S3ActionUnmarshaller : IUnmarshaller<S3Action, XmlUnmarshallerContext>, IUnmarshaller<S3Action, JsonUnmarshallerContext>
+    public class S3ActionUnmarshaller : IXmlUnmarshaller<S3Action, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3Action Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static S3ActionUnmarshaller _instance = new S3ActionUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntentName())
             {
                 context.Writer.WritePropertyName("intentName");
-                context.Writer.Write(requestObject.IntentName);
+                context.Writer.WriteStringValue(requestObject.IntentName);
             }
 
             if(requestObject.IsSetIntentVersion())
             {
                 context.Writer.WritePropertyName("intentVersion");
-                context.Writer.Write(requestObject.IntentVersion);
+                context.Writer.WriteStringValue(requestObject.IntentVersion);
             }
 
         }

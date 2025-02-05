@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaselineIdentifiers())
             {
                 context.Writer.WritePropertyName("baselineIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBaselineIdentifiersListValue in requestObject.BaselineIdentifiers)
                 {
-                        context.Writer.Write(requestObjectBaselineIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectBaselineIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParentIdentifiers())
             {
                 context.Writer.WritePropertyName("parentIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParentIdentifiersListValue in requestObject.ParentIdentifiers)
                 {
-                        context.Writer.Write(requestObjectParentIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectParentIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetIdentifiers())
             {
                 context.Writer.WritePropertyName("targetIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetIdentifiersListValue in requestObject.TargetIdentifiers)
                 {
-                        context.Writer.Write(requestObjectTargetIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

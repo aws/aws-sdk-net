@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIamActionDefinition())
             {
                 context.Writer.WritePropertyName("IamActionDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IamActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IamActionDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScpActionDefinition())
             {
                 context.Writer.WritePropertyName("ScpActionDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScpActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScpActionDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSsmActionDefinition())
             {
                 context.Writer.WritePropertyName("SsmActionDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SsmActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SsmActionDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

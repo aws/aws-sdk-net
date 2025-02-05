@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FieldsForThemeGeneration Object
     /// </summary>  
-    public class FieldsForThemeGenerationUnmarshaller : IUnmarshaller<FieldsForThemeGeneration, XmlUnmarshallerContext>, IUnmarshaller<FieldsForThemeGeneration, JsonUnmarshallerContext>
+    public class FieldsForThemeGenerationUnmarshaller : IJsonUnmarshaller<FieldsForThemeGeneration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FieldsForThemeGeneration IUnmarshaller<FieldsForThemeGeneration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldsForThemeGeneration Unmarshall(JsonUnmarshallerContext context)
+        public FieldsForThemeGeneration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FieldsForThemeGeneration unmarshalledObject = new FieldsForThemeGeneration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("itemName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,143 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Mpeg2Settings Object
     /// </summary>  
-    public class Mpeg2SettingsUnmarshaller : IUnmarshaller<Mpeg2Settings, XmlUnmarshallerContext>, IUnmarshaller<Mpeg2Settings, JsonUnmarshallerContext>
+    public class Mpeg2SettingsUnmarshaller : IJsonUnmarshaller<Mpeg2Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Mpeg2Settings IUnmarshaller<Mpeg2Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Mpeg2Settings Unmarshall(JsonUnmarshallerContext context)
+        public Mpeg2Settings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Mpeg2Settings unmarshalledObject = new Mpeg2Settings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("adaptiveQuantization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdaptiveQuantization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("afdSignaling", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AfdSignaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AfdSignaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("colorMetadata", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("colorSpace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("displayAspectRatio", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayAspectRatio = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayAspectRatio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filterSettings", targetDepth))
                 {
                     var unmarshaller = Mpeg2FilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fixedAfd", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FixedAfd = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FixedAfd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateDenominator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateNumerator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopClosedCadence", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopNumBFrames", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GopNumBFrames = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopNumBFrames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopSize", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.GopSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopSizeUnits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GopSizeUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopSizeUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("subgopLength", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubgopLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubgopLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeBurninSettings", targetDepth))
                 {
                     var unmarshaller = TimecodeBurninSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeBurninSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeBurninSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeInsertion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeInsertion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

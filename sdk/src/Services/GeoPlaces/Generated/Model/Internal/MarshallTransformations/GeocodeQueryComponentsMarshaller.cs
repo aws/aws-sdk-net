@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddressNumber())
             {
                 context.Writer.WritePropertyName("AddressNumber");
-                context.Writer.Write(requestObject.AddressNumber);
+                context.Writer.WriteStringValue(requestObject.AddressNumber);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetDistrict())
             {
                 context.Writer.WritePropertyName("District");
-                context.Writer.Write(requestObject.District);
+                context.Writer.WriteStringValue(requestObject.District);
             }
 
             if(requestObject.IsSetLocality())
             {
                 context.Writer.WritePropertyName("Locality");
-                context.Writer.Write(requestObject.Locality);
+                context.Writer.WriteStringValue(requestObject.Locality);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetStreet())
             {
                 context.Writer.WritePropertyName("Street");
-                context.Writer.Write(requestObject.Street);
+                context.Writer.WriteStringValue(requestObject.Street);
             }
 
             if(requestObject.IsSetSubRegion())
             {
                 context.Writer.WritePropertyName("SubRegion");
-                context.Writer.Write(requestObject.SubRegion);
+                context.Writer.WriteStringValue(requestObject.SubRegion);
             }
 
         }

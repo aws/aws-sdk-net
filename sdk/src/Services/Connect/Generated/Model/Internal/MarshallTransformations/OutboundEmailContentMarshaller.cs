@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessageSourceType())
             {
                 context.Writer.WritePropertyName("MessageSourceType");
-                context.Writer.Write(requestObject.MessageSourceType);
+                context.Writer.WriteStringValue(requestObject.MessageSourceType);
             }
 
             if(requestObject.IsSetRawMessage())
             {
                 context.Writer.WritePropertyName("RawMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutboundRawMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.RawMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplatedMessageConfig())
             {
                 context.Writer.WritePropertyName("TemplatedMessageConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplatedMessageConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplatedMessageConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

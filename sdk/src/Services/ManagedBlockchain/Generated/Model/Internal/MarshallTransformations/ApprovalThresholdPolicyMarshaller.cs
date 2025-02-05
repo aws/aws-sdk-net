@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProposalDurationInHours())
             {
                 context.Writer.WritePropertyName("ProposalDurationInHours");
-                context.Writer.Write(requestObject.ProposalDurationInHours.Value);
+                context.Writer.WriteNumberValue(requestObject.ProposalDurationInHours.Value);
             }
 
             if(requestObject.IsSetThresholdComparator())
             {
                 context.Writer.WritePropertyName("ThresholdComparator");
-                context.Writer.Write(requestObject.ThresholdComparator);
+                context.Writer.WriteStringValue(requestObject.ThresholdComparator);
             }
 
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("ThresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.ThresholdPercentage.Value);
             }
 
         }

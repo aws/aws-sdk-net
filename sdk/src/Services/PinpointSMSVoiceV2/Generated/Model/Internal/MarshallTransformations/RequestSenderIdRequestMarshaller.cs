@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,80 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDeletionProtectionEnabled())
-                    {
-                        context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                        context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetIsoCountryCode())
-                    {
-                        context.Writer.WritePropertyName("IsoCountryCode");
-                        context.Writer.Write(publicRequest.IsoCountryCode);
-                    }
-
-                    if(publicRequest.IsSetMessageTypes())
-                    {
-                        context.Writer.WritePropertyName("MessageTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMessageTypesListValue in publicRequest.MessageTypes)
-                        {
-                                context.Writer.Write(publicRequestMessageTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSenderId())
-                    {
-                        context.Writer.WritePropertyName("SenderId");
-                        context.Writer.Write(publicRequest.SenderId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDeletionProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
+            }
+
+            if(publicRequest.IsSetIsoCountryCode())
+            {
+                context.Writer.WritePropertyName("IsoCountryCode");
+                context.Writer.WriteStringValue(publicRequest.IsoCountryCode);
+            }
+
+            if(publicRequest.IsSetMessageTypes())
+            {
+                context.Writer.WritePropertyName("MessageTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMessageTypesListValue in publicRequest.MessageTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestMessageTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSenderId())
+            {
+                context.Writer.WritePropertyName("SenderId");
+                context.Writer.WriteStringValue(publicRequest.SenderId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

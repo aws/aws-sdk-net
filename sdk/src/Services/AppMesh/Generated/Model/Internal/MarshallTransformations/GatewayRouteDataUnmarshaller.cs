@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GatewayRouteData Object
     /// </summary>  
-    public class GatewayRouteDataUnmarshaller : IUnmarshaller<GatewayRouteData, XmlUnmarshallerContext>, IUnmarshaller<GatewayRouteData, JsonUnmarshallerContext>
+    public class GatewayRouteDataUnmarshaller : IJsonUnmarshaller<GatewayRouteData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GatewayRouteData IUnmarshaller<GatewayRouteData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GatewayRouteData Unmarshall(JsonUnmarshallerContext context)
+        public GatewayRouteData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GatewayRouteData unmarshalledObject = new GatewayRouteData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("gatewayRouteName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayRouteName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayRouteName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("meshName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeshName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeshName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadata", targetDepth))
                 {
                     var unmarshaller = ResourceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("spec", targetDepth))
                 {
                     var unmarshaller = GatewayRouteSpecUnmarshaller.Instance;
-                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = GatewayRouteStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualGatewayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualGatewayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VirtualGatewayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConnectPeerBgpConfiguration Object
     /// </summary>  
-    public class ConnectPeerBgpConfigurationUnmarshaller : IUnmarshaller<ConnectPeerBgpConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ConnectPeerBgpConfiguration, JsonUnmarshallerContext>
+    public class ConnectPeerBgpConfigurationUnmarshaller : IJsonUnmarshaller<ConnectPeerBgpConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConnectPeerBgpConfiguration IUnmarshaller<ConnectPeerBgpConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectPeerBgpConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ConnectPeerBgpConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConnectPeerBgpConfiguration unmarshalledObject = new ConnectPeerBgpConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CoreNetworkAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CoreNetworkAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoreNetworkAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CoreNetworkAsn", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CoreNetworkAsn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoreNetworkAsn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeerAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PeerAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeerAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeerAsn", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PeerAsn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeerAsn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

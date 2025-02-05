@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageConfiguration())
             {
                 context.Writer.WritePropertyName("ImageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageIdentifier())
             {
                 context.Writer.WritePropertyName("ImageIdentifier");
-                context.Writer.Write(requestObject.ImageIdentifier);
+                context.Writer.WriteStringValue(requestObject.ImageIdentifier);
             }
 
             if(requestObject.IsSetImageRepositoryType())
             {
                 context.Writer.WritePropertyName("ImageRepositoryType");
-                context.Writer.Write(requestObject.ImageRepositoryType);
+                context.Writer.WriteStringValue(requestObject.ImageRepositoryType);
             }
 
         }

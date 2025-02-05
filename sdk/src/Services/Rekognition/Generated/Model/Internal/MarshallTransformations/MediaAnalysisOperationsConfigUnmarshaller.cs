@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaAnalysisOperationsConfig Object
     /// </summary>  
-    public class MediaAnalysisOperationsConfigUnmarshaller : IUnmarshaller<MediaAnalysisOperationsConfig, XmlUnmarshallerContext>, IUnmarshaller<MediaAnalysisOperationsConfig, JsonUnmarshallerContext>
+    public class MediaAnalysisOperationsConfigUnmarshaller : IJsonUnmarshaller<MediaAnalysisOperationsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaAnalysisOperationsConfig IUnmarshaller<MediaAnalysisOperationsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaAnalysisOperationsConfig Unmarshall(JsonUnmarshallerContext context)
+        public MediaAnalysisOperationsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaAnalysisOperationsConfig unmarshalledObject = new MediaAnalysisOperationsConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DetectModerationLabels", targetDepth))
                 {
                     var unmarshaller = MediaAnalysisDetectModerationLabelsConfigUnmarshaller.Instance;
-                    unmarshalledObject.DetectModerationLabels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetectModerationLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

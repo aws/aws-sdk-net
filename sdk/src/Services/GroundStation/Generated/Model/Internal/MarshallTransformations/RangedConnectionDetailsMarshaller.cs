@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMtu())
             {
                 context.Writer.WritePropertyName("mtu");
-                context.Writer.Write(requestObject.Mtu.Value);
+                context.Writer.WriteNumberValue(requestObject.Mtu.Value);
             }
 
             if(requestObject.IsSetSocketAddress())
             {
                 context.Writer.WritePropertyName("socketAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangedSocketAddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.SocketAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

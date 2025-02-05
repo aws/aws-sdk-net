@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,149 +49,149 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationStrategy())
             {
                 context.Writer.WritePropertyName("AuthenticationStrategy");
-                context.Writer.Write(requestObject.AuthenticationStrategy);
+                context.Writer.WriteStringValue(requestObject.AuthenticationStrategy);
             }
 
             if(requestObject.IsSetAutoMinorVersionUpgrade())
             {
                 context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                context.Writer.Write(requestObject.AutoMinorVersionUpgrade.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoMinorVersionUpgrade.Value);
             }
 
             if(requestObject.IsSetBrokerArn())
             {
                 context.Writer.WritePropertyName("BrokerArn");
-                context.Writer.Write(requestObject.BrokerArn);
+                context.Writer.WriteStringValue(requestObject.BrokerArn);
             }
 
             if(requestObject.IsSetBrokerId())
             {
                 context.Writer.WritePropertyName("BrokerId");
-                context.Writer.Write(requestObject.BrokerId);
+                context.Writer.WriteStringValue(requestObject.BrokerId);
             }
 
             if(requestObject.IsSetBrokerName())
             {
                 context.Writer.WritePropertyName("BrokerName");
-                context.Writer.Write(requestObject.BrokerName);
+                context.Writer.WriteStringValue(requestObject.BrokerName);
             }
 
             if(requestObject.IsSetDeploymentMode())
             {
                 context.Writer.WritePropertyName("DeploymentMode");
-                context.Writer.Write(requestObject.DeploymentMode);
+                context.Writer.WriteStringValue(requestObject.DeploymentMode);
             }
 
             if(requestObject.IsSetEncryptionOptions())
             {
                 context.Writer.WritePropertyName("EncryptionOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAmazonMqBrokerEncryptionOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEngineType())
             {
                 context.Writer.WritePropertyName("EngineType");
-                context.Writer.Write(requestObject.EngineType);
+                context.Writer.WriteStringValue(requestObject.EngineType);
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.Write(requestObject.EngineVersion);
+                context.Writer.WriteStringValue(requestObject.EngineVersion);
             }
 
             if(requestObject.IsSetHostInstanceType())
             {
                 context.Writer.WritePropertyName("HostInstanceType");
-                context.Writer.Write(requestObject.HostInstanceType);
+                context.Writer.WriteStringValue(requestObject.HostInstanceType);
             }
 
             if(requestObject.IsSetLdapServerMetadata())
             {
                 context.Writer.WritePropertyName("LdapServerMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAmazonMqBrokerLdapServerMetadataDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LdapServerMetadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogs())
             {
                 context.Writer.WritePropertyName("Logs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAmazonMqBrokerLogsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Logs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaintenanceWindowStartTime())
             {
                 context.Writer.WritePropertyName("MaintenanceWindowStartTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaintenanceWindowStartTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible.Value);
+                context.Writer.WriteBooleanValue(requestObject.PubliclyAccessible.Value);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("StorageType");
-                context.Writer.Write(requestObject.StorageType);
+                context.Writer.WriteStringValue(requestObject.StorageType);
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUsers())
             {
                 context.Writer.WritePropertyName("Users");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUsersListValue in requestObject.Users)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsAmazonMqBrokerUsersDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectUsersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

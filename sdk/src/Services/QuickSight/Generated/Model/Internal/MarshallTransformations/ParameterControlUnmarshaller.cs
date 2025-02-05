@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ParameterControl Object
     /// </summary>  
-    public class ParameterControlUnmarshaller : IUnmarshaller<ParameterControl, XmlUnmarshallerContext>, IUnmarshaller<ParameterControl, JsonUnmarshallerContext>
+    public class ParameterControlUnmarshaller : IJsonUnmarshaller<ParameterControl, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ParameterControl IUnmarshaller<ParameterControl, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ParameterControl Unmarshall(JsonUnmarshallerContext context)
+        public ParameterControl Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ParameterControl unmarshalledObject = new ParameterControl();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DateTimePicker", targetDepth))
                 {
                     var unmarshaller = ParameterDateTimePickerControlUnmarshaller.Instance;
-                    unmarshalledObject.DateTimePicker = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateTimePicker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dropdown", targetDepth))
                 {
                     var unmarshaller = ParameterDropDownControlUnmarshaller.Instance;
-                    unmarshalledObject.Dropdown = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dropdown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("List", targetDepth))
                 {
                     var unmarshaller = ParameterListControlUnmarshaller.Instance;
-                    unmarshalledObject.List = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Slider", targetDepth))
                 {
                     var unmarshaller = ParameterSliderControlUnmarshaller.Instance;
-                    unmarshalledObject.Slider = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Slider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextArea", targetDepth))
                 {
                     var unmarshaller = ParameterTextAreaControlUnmarshaller.Instance;
-                    unmarshalledObject.TextArea = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextArea = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextField", targetDepth))
                 {
                     var unmarshaller = ParameterTextFieldControlUnmarshaller.Instance;
-                    unmarshalledObject.TextField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

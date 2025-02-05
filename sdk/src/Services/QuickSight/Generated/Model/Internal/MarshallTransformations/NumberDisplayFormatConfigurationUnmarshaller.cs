@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NumberDisplayFormatConfiguration Object
     /// </summary>  
-    public class NumberDisplayFormatConfigurationUnmarshaller : IUnmarshaller<NumberDisplayFormatConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NumberDisplayFormatConfiguration, JsonUnmarshallerContext>
+    public class NumberDisplayFormatConfigurationUnmarshaller : IJsonUnmarshaller<NumberDisplayFormatConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NumberDisplayFormatConfiguration IUnmarshaller<NumberDisplayFormatConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NumberDisplayFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public NumberDisplayFormatConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NumberDisplayFormatConfiguration unmarshalledObject = new NumberDisplayFormatConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DecimalPlacesConfiguration", targetDepth))
                 {
                     var unmarshaller = DecimalPlacesConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DecimalPlacesConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DecimalPlacesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NegativeValueConfiguration", targetDepth))
                 {
                     var unmarshaller = NegativeValueConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NegativeValueConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NegativeValueConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullValueFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = NullValueFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NullValueFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullValueFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberScale", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NumberScale = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SeparatorConfiguration", targetDepth))
                 {
                     var unmarshaller = NumericSeparatorConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SeparatorConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SeparatorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Suffix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

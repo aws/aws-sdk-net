@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticInputFailoverSettings())
             {
                 context.Writer.WritePropertyName("automaticInputFailoverSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutomaticInputFailoverSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutomaticInputFailoverSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputAttachmentName())
             {
                 context.Writer.WritePropertyName("inputAttachmentName");
-                context.Writer.Write(requestObject.InputAttachmentName);
+                context.Writer.WriteStringValue(requestObject.InputAttachmentName);
             }
 
             if(requestObject.IsSetInputId())
             {
                 context.Writer.WritePropertyName("inputId");
-                context.Writer.Write(requestObject.InputId);
+                context.Writer.WriteStringValue(requestObject.InputId);
             }
 
             if(requestObject.IsSetInputSettings())
             {
                 context.Writer.WritePropertyName("inputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogicalInterfaceNames())
             {
                 context.Writer.WritePropertyName("logicalInterfaceNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogicalInterfaceNamesListValue in requestObject.LogicalInterfaceNames)
                 {
-                        context.Writer.Write(requestObjectLogicalInterfaceNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectLogicalInterfaceNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

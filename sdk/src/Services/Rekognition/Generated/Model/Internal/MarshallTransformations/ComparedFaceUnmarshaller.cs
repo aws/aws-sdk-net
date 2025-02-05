@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComparedFace Object
     /// </summary>  
-    public class ComparedFaceUnmarshaller : IUnmarshaller<ComparedFace, XmlUnmarshallerContext>, IUnmarshaller<ComparedFace, JsonUnmarshallerContext>
+    public class ComparedFaceUnmarshaller : IJsonUnmarshaller<ComparedFace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComparedFace IUnmarshaller<ComparedFace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComparedFace Unmarshall(JsonUnmarshallerContext context)
+        public ComparedFace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComparedFace unmarshalledObject = new ComparedFace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BoundingBox", targetDepth))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Emotions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Emotion, EmotionUnmarshaller>(EmotionUnmarshaller.Instance);
-                    unmarshalledObject.Emotions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Emotion, EmotionUnmarshaller>(EmotionUnmarshaller.Instance);
+                    unmarshalledObject.Emotions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Landmarks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
-                    unmarshalledObject.Landmarks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
+                    unmarshalledObject.Landmarks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Pose", targetDepth))
                 {
                     var unmarshaller = PoseUnmarshaller.Instance;
-                    unmarshalledObject.Pose = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Quality", targetDepth))
                 {
                     var unmarshaller = ImageQualityUnmarshaller.Instance;
-                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Smile", targetDepth))
                 {
                     var unmarshaller = SmileUnmarshaller.Instance;
-                    unmarshalledObject.Smile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Smile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

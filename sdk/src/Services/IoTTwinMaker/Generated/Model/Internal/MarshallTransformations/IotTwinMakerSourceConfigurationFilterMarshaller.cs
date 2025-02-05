@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterByComponentType())
             {
                 context.Writer.WritePropertyName("filterByComponentType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterByComponentTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterByComponentType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterByEntity())
             {
                 context.Writer.WritePropertyName("filterByEntity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterByEntityMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterByEntity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AggregationSummary Object
     /// </summary>  
-    public class AggregationSummaryUnmarshaller : IUnmarshaller<AggregationSummary, XmlUnmarshallerContext>, IUnmarshaller<AggregationSummary, JsonUnmarshallerContext>
+    public class AggregationSummaryUnmarshaller : IJsonUnmarshaller<AggregationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AggregationSummary IUnmarshaller<AggregationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AggregationSummary Unmarshall(JsonUnmarshallerContext context)
+        public AggregationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AggregationSummary unmarshalledObject = new AggregationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalSummarizationDimensions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SummarizationDimensionOverview, SummarizationDimensionOverviewUnmarshaller>(SummarizationDimensionOverviewUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalSummarizationDimensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SummarizationDimensionOverview, SummarizationDimensionOverviewUnmarshaller>(SummarizationDimensionOverviewUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalSummarizationDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregatedAccounts", targetDepth))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
-                    unmarshalledObject.AggregatedAccounts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregatedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregatedBy", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregationKey, AggregationKeyUnmarshaller>(AggregationKeyUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedBy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AggregationKey, AggregationKeyUnmarshaller>(AggregationKeyUnmarshaller.Instance);
+                    unmarshalledObject.AggregatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregatedOrganizationalUnits", targetDepth))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
-                    unmarshalledObject.AggregatedOrganizationalUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregatedOrganizationalUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregatedRegions", targetDepth))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
-                    unmarshalledObject.AggregatedRegions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregatedRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.EventCount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.EventCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EventPredictionSummary Object
     /// </summary>  
-    public class EventPredictionSummaryUnmarshaller : IUnmarshaller<EventPredictionSummary, XmlUnmarshallerContext>, IUnmarshaller<EventPredictionSummary, JsonUnmarshallerContext>
+    public class EventPredictionSummaryUnmarshaller : IJsonUnmarshaller<EventPredictionSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EventPredictionSummary IUnmarshaller<EventPredictionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EventPredictionSummary Unmarshall(JsonUnmarshallerContext context)
+        public EventPredictionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EventPredictionSummary unmarshalledObject = new EventPredictionSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("detectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("detectorVersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DetectorVersionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetectorVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventTypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("predictionTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PredictionTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("outputLocation");
-                context.Writer.Write(requestObject.OutputLocation);
+                context.Writer.WriteStringValue(requestObject.OutputLocation);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetWorkGroup())
             {
                 context.Writer.WritePropertyName("workGroup");
-                context.Writer.Write(requestObject.WorkGroup);
+                context.Writer.WriteStringValue(requestObject.WorkGroup);
             }
 
         }

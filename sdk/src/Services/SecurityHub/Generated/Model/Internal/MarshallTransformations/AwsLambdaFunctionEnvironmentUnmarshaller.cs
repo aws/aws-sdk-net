@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsLambdaFunctionEnvironment Object
     /// </summary>  
-    public class AwsLambdaFunctionEnvironmentUnmarshaller : IUnmarshaller<AwsLambdaFunctionEnvironment, XmlUnmarshallerContext>, IUnmarshaller<AwsLambdaFunctionEnvironment, JsonUnmarshallerContext>
+    public class AwsLambdaFunctionEnvironmentUnmarshaller : IJsonUnmarshaller<AwsLambdaFunctionEnvironment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsLambdaFunctionEnvironment IUnmarshaller<AwsLambdaFunctionEnvironment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsLambdaFunctionEnvironment Unmarshall(JsonUnmarshallerContext context)
+        public AwsLambdaFunctionEnvironment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsLambdaFunctionEnvironment unmarshalledObject = new AwsLambdaFunctionEnvironment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Error", targetDepth))
                 {
                     var unmarshaller = AwsLambdaFunctionEnvironmentErrorUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Variables", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

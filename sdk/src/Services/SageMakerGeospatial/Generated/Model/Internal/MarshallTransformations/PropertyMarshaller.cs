@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEoCloudCover())
             {
                 context.Writer.WritePropertyName("EoCloudCover");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EoCloudCoverInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.EoCloudCover, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLandsatCloudCoverLand())
             {
                 context.Writer.WritePropertyName("LandsatCloudCoverLand");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LandsatCloudCoverLandInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.LandsatCloudCoverLand, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlatform())
             {
                 context.Writer.WritePropertyName("Platform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlatformInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Platform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetViewOffNadir())
             {
                 context.Writer.WritePropertyName("ViewOffNadir");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ViewOffNadirInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ViewOffNadir, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetViewSunAzimuth())
             {
                 context.Writer.WritePropertyName("ViewSunAzimuth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ViewSunAzimuthInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ViewSunAzimuth, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetViewSunElevation())
             {
                 context.Writer.WritePropertyName("ViewSunElevation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ViewSunElevationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ViewSunElevation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

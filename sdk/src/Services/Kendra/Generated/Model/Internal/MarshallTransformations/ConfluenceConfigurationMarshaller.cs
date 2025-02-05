@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,113 +49,113 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentConfiguration())
             {
                 context.Writer.WritePropertyName("AttachmentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluenceAttachmentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttachmentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetBlogConfiguration())
             {
                 context.Writer.WritePropertyName("BlogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluenceBlogConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPageConfiguration())
             {
                 context.Writer.WritePropertyName("PageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluencePageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProxyConfiguration())
             {
                 context.Writer.WritePropertyName("ProxyConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProxyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProxyConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetServerUrl())
             {
                 context.Writer.WritePropertyName("ServerUrl");
-                context.Writer.Write(requestObject.ServerUrl);
+                context.Writer.WriteStringValue(requestObject.ServerUrl);
             }
 
             if(requestObject.IsSetSpaceConfiguration())
             {
                 context.Writer.WritePropertyName("SpaceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluenceSpaceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpaceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

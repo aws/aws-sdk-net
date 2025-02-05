@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonopensearchserviceBufferingHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BufferingHints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClusterEndpoint())
             {
                 context.Writer.WritePropertyName("ClusterEndpoint");
-                context.Writer.Write(requestObject.ClusterEndpoint);
+                context.Writer.WriteStringValue(requestObject.ClusterEndpoint);
             }
 
             if(requestObject.IsSetDocumentIdOptions())
             {
                 context.Writer.WritePropertyName("DocumentIdOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentIdOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentIdOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainARN())
             {
                 context.Writer.WritePropertyName("DomainARN");
-                context.Writer.Write(requestObject.DomainARN);
+                context.Writer.WriteStringValue(requestObject.DomainARN);
             }
 
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WriteStringValue(requestObject.IndexName);
             }
 
             if(requestObject.IsSetIndexRotationPeriod())
             {
                 context.Writer.WritePropertyName("IndexRotationPeriod");
-                context.Writer.Write(requestObject.IndexRotationPeriod);
+                context.Writer.WriteStringValue(requestObject.IndexRotationPeriod);
             }
 
             if(requestObject.IsSetProcessingConfiguration())
             {
                 context.Writer.WritePropertyName("ProcessingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonopensearchserviceRetryOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
             }
 
             if(requestObject.IsSetS3Update())
             {
                 context.Writer.WritePropertyName("S3Update");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Update, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTypeName())
             {
                 context.Writer.WritePropertyName("TypeName");
-                context.Writer.Write(requestObject.TypeName);
+                context.Writer.WriteStringValue(requestObject.TypeName);
             }
 
         }

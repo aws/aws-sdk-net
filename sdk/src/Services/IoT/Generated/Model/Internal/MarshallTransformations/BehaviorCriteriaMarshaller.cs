@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("comparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetConsecutiveDatapointsToAlarm())
             {
                 context.Writer.WritePropertyName("consecutiveDatapointsToAlarm");
-                context.Writer.Write(requestObject.ConsecutiveDatapointsToAlarm.Value);
+                context.Writer.WriteNumberValue(requestObject.ConsecutiveDatapointsToAlarm.Value);
             }
 
             if(requestObject.IsSetConsecutiveDatapointsToClear())
             {
                 context.Writer.WritePropertyName("consecutiveDatapointsToClear");
-                context.Writer.Write(requestObject.ConsecutiveDatapointsToClear.Value);
+                context.Writer.WriteNumberValue(requestObject.ConsecutiveDatapointsToClear.Value);
             }
 
             if(requestObject.IsSetDurationSeconds())
             {
                 context.Writer.WritePropertyName("durationSeconds");
-                context.Writer.Write(requestObject.DurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationSeconds.Value);
             }
 
             if(requestObject.IsSetMlDetectionConfig())
             {
                 context.Writer.WritePropertyName("mlDetectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MachineLearningDetectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.MlDetectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatisticalThreshold())
             {
                 context.Writer.WritePropertyName("statisticalThreshold");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatisticalThresholdMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatisticalThreshold, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

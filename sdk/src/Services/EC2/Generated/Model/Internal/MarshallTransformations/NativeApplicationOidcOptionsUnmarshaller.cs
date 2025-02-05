@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NativeApplicationOidcOptions Object
     /// </summary>  
-    public class NativeApplicationOidcOptionsUnmarshaller : IUnmarshaller<NativeApplicationOidcOptions, XmlUnmarshallerContext>, IUnmarshaller<NativeApplicationOidcOptions, JsonUnmarshallerContext>
+    public class NativeApplicationOidcOptionsUnmarshaller : IXmlUnmarshaller<NativeApplicationOidcOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NativeApplicationOidcOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NativeApplicationOidcOptionsUnmarshaller _instance = new NativeApplicationOidcOptionsUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIcebergCompaction())
             {
                 context.Writer.WritePropertyName("icebergCompaction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IcebergCompactionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.IcebergCompaction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIcebergSnapshotManagement())
             {
                 context.Writer.WritePropertyName("icebergSnapshotManagement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IcebergSnapshotManagementSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.IcebergSnapshotManagement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

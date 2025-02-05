@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DonutOptions Object
     /// </summary>  
-    public class DonutOptionsUnmarshaller : IUnmarshaller<DonutOptions, XmlUnmarshallerContext>, IUnmarshaller<DonutOptions, JsonUnmarshallerContext>
+    public class DonutOptionsUnmarshaller : IJsonUnmarshaller<DonutOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DonutOptions IUnmarshaller<DonutOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DonutOptions Unmarshall(JsonUnmarshallerContext context)
+        public DonutOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DonutOptions unmarshalledObject = new DonutOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ArcOptions", targetDepth))
                 {
                     var unmarshaller = ArcOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ArcOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArcOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DonutCenterOptions", targetDepth))
                 {
                     var unmarshaller = DonutCenterOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DonutCenterOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DonutCenterOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

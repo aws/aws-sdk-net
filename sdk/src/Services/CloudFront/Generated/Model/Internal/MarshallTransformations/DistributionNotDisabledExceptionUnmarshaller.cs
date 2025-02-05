@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionNotDisabledException operation
     /// </summary>  
-    public class DistributionNotDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<DistributionNotDisabledException, XmlUnmarshallerContext>
+    public class DistributionNotDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DistributionNotDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

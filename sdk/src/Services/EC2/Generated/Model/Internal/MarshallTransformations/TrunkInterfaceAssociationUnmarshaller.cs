@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrunkInterfaceAssociation Object
     /// </summary>  
-    public class TrunkInterfaceAssociationUnmarshaller : IUnmarshaller<TrunkInterfaceAssociation, XmlUnmarshallerContext>, IUnmarshaller<TrunkInterfaceAssociation, JsonUnmarshallerContext>
+    public class TrunkInterfaceAssociationUnmarshaller : IXmlUnmarshaller<TrunkInterfaceAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,17 +111,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrunkInterfaceAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrunkInterfaceAssociationUnmarshaller _instance = new TrunkInterfaceAssociationUnmarshaller();        
 

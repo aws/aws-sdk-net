@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableCodeHookInvocation())
             {
                 context.Writer.WritePropertyName("enableCodeHookInvocation");
-                context.Writer.Write(requestObject.EnableCodeHookInvocation.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableCodeHookInvocation.Value);
             }
 
             if(requestObject.IsSetInvocationLabel())
             {
                 context.Writer.WritePropertyName("invocationLabel");
-                context.Writer.Write(requestObject.InvocationLabel);
+                context.Writer.WriteStringValue(requestObject.InvocationLabel);
             }
 
         }

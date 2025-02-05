@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetNotificationState())
             {
                 context.Writer.WritePropertyName("NotificationState");
-                context.Writer.Write(requestObject.NotificationState);
+                context.Writer.WriteStringValue(requestObject.NotificationState);
             }
 
             if(requestObject.IsSetNotificationType())
             {
                 context.Writer.WritePropertyName("NotificationType");
-                context.Writer.Write(requestObject.NotificationType);
+                context.Writer.WriteStringValue(requestObject.NotificationType);
             }
 
             if(requestObject.IsSetThreshold())
@@ -71,18 +69,18 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Threshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.Threshold.Value);
                 }
             }
 
             if(requestObject.IsSetThresholdType())
             {
                 context.Writer.WritePropertyName("ThresholdType");
-                context.Writer.Write(requestObject.ThresholdType);
+                context.Writer.WriteStringValue(requestObject.ThresholdType);
             }
 
         }

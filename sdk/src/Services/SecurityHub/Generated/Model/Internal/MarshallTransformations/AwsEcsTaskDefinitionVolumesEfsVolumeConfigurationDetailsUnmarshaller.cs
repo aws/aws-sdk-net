@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails Object
     /// </summary>  
-    public class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsUnmarshaller : IUnmarshaller<AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails, JsonUnmarshallerContext>
+    public class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsUnmarshaller : IJsonUnmarshaller<AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails IUnmarshaller<AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails unmarshalledObject = new AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthorizationConfig", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilesystemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilesystemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilesystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RootDirectory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransitEncryption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitEncryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransitEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransitEncryptionPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TransitEncryptionPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransitEncryptionPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

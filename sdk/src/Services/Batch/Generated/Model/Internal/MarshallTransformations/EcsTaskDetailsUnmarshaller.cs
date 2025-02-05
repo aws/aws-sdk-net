@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EcsTaskDetails Object
     /// </summary>  
-    public class EcsTaskDetailsUnmarshaller : IUnmarshaller<EcsTaskDetails, XmlUnmarshallerContext>, IUnmarshaller<EcsTaskDetails, JsonUnmarshallerContext>
+    public class EcsTaskDetailsUnmarshaller : IJsonUnmarshaller<EcsTaskDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EcsTaskDetails IUnmarshaller<EcsTaskDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EcsTaskDetails Unmarshall(JsonUnmarshallerContext context)
+        public EcsTaskDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EcsTaskDetails unmarshalledObject = new EcsTaskDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("containerInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("containers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TaskContainerDetails, TaskContainerDetailsUnmarshaller>(TaskContainerDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TaskContainerDetails, TaskContainerDetailsUnmarshaller>(TaskContainerDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ephemeralStorage", targetDepth))
                 {
                     var unmarshaller = EphemeralStorageUnmarshaller.Instance;
-                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ipcMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpcMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpcMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkConfiguration", targetDepth))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pidMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PidMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PidMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("platformVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("runtimePlatform", targetDepth))
                 {
                     var unmarshaller = RuntimePlatformUnmarshaller.Instance;
-                    unmarshalledObject.RuntimePlatform = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuntimePlatform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
-                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
+                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

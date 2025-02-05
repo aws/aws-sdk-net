@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OriginEndpointListConfiguration Object
     /// </summary>  
-    public class OriginEndpointListConfigurationUnmarshaller : IUnmarshaller<OriginEndpointListConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OriginEndpointListConfiguration, JsonUnmarshallerContext>
+    public class OriginEndpointListConfigurationUnmarshaller : IJsonUnmarshaller<OriginEndpointListConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OriginEndpointListConfiguration IUnmarshaller<OriginEndpointListConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OriginEndpointListConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OriginEndpointListConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OriginEndpointListConfiguration unmarshalledObject = new OriginEndpointListConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChannelGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChannelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContainerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DashManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ListDashManifestConfiguration, ListDashManifestConfigurationUnmarshaller>(ListDashManifestConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ListDashManifestConfiguration, ListDashManifestConfigurationUnmarshaller>(ListDashManifestConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
                 {
                     var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HlsManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ListHlsManifestConfiguration, ListHlsManifestConfigurationUnmarshaller>(ListHlsManifestConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ListHlsManifestConfiguration, ListHlsManifestConfigurationUnmarshaller>(ListHlsManifestConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LowLatencyHlsManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ListLowLatencyHlsManifestConfiguration, ListLowLatencyHlsManifestConfigurationUnmarshaller>(ListLowLatencyHlsManifestConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.LowLatencyHlsManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ListLowLatencyHlsManifestConfiguration, ListLowLatencyHlsManifestConfigurationUnmarshaller>(ListLowLatencyHlsManifestConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.LowLatencyHlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModifiedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginEndpointName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OriginEndpointName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginEndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

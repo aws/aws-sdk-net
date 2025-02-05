@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChatbotSns())
             {
                 context.Writer.WritePropertyName("chatbotSns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChatbotSnsListValue in requestObject.ChatbotSns)
                 {
-                        context.Writer.Write(requestObjectChatbotSnsListValue);
+                        context.Writer.WriteStringValue(requestObjectChatbotSnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEmpty())
             {
                 context.Writer.WritePropertyName("empty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmptyChatChannelMarshaller.Instance;
                 marshaller.Marshall(requestObject.Empty, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

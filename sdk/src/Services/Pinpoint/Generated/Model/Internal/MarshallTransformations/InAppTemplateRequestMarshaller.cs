@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContentListValue in requestObject.Content)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InAppMessageContentMarshaller.Instance;
                     marshaller.Marshall(requestObjectContentListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomConfig())
             {
                 context.Writer.WritePropertyName("CustomConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCustomConfigKvp in requestObject.CustomConfig)
                 {
                     context.Writer.WritePropertyName(requestObjectCustomConfigKvp.Key);
                     var requestObjectCustomConfigValue = requestObjectCustomConfigKvp.Value;
 
-                        context.Writer.Write(requestObjectCustomConfigValue);
+                        context.Writer.WriteStringValue(requestObjectCustomConfigValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLayout())
             {
                 context.Writer.WritePropertyName("Layout");
-                context.Writer.Write(requestObject.Layout);
+                context.Writer.WriteStringValue(requestObject.Layout);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateDescription())
             {
                 context.Writer.WritePropertyName("TemplateDescription");
-                context.Writer.Write(requestObject.TemplateDescription);
+                context.Writer.WriteStringValue(requestObject.TemplateDescription);
             }
 
         }

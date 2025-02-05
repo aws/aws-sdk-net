@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -61,66 +64,71 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/macemvpinchange/generate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDerivationMethodAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDerivationMethodAttributes())
-                    {
-                        context.Writer.WritePropertyName("DerivationMethodAttributes");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DerivationMethodAttributes");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = DerivationMethodAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DerivationMethodAttributes, context);
+                var marshaller = DerivationMethodAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DerivationMethodAttributes, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMessageData())
-                    {
-                        context.Writer.WritePropertyName("MessageData");
-                        context.Writer.Write(publicRequest.MessageData);
-                    }
-
-                    if(publicRequest.IsSetNewEncryptedPinBlock())
-                    {
-                        context.Writer.WritePropertyName("NewEncryptedPinBlock");
-                        context.Writer.Write(publicRequest.NewEncryptedPinBlock);
-                    }
-
-                    if(publicRequest.IsSetNewPinPekIdentifier())
-                    {
-                        context.Writer.WritePropertyName("NewPinPekIdentifier");
-                        context.Writer.Write(publicRequest.NewPinPekIdentifier);
-                    }
-
-                    if(publicRequest.IsSetPinBlockFormat())
-                    {
-                        context.Writer.WritePropertyName("PinBlockFormat");
-                        context.Writer.Write(publicRequest.PinBlockFormat);
-                    }
-
-                    if(publicRequest.IsSetSecureMessagingConfidentialityKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("SecureMessagingConfidentialityKeyIdentifier");
-                        context.Writer.Write(publicRequest.SecureMessagingConfidentialityKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetSecureMessagingIntegrityKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("SecureMessagingIntegrityKeyIdentifier");
-                        context.Writer.Write(publicRequest.SecureMessagingIntegrityKeyIdentifier);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMessageData())
+            {
+                context.Writer.WritePropertyName("MessageData");
+                context.Writer.WriteStringValue(publicRequest.MessageData);
+            }
+
+            if(publicRequest.IsSetNewEncryptedPinBlock())
+            {
+                context.Writer.WritePropertyName("NewEncryptedPinBlock");
+                context.Writer.WriteStringValue(publicRequest.NewEncryptedPinBlock);
+            }
+
+            if(publicRequest.IsSetNewPinPekIdentifier())
+            {
+                context.Writer.WritePropertyName("NewPinPekIdentifier");
+                context.Writer.WriteStringValue(publicRequest.NewPinPekIdentifier);
+            }
+
+            if(publicRequest.IsSetPinBlockFormat())
+            {
+                context.Writer.WritePropertyName("PinBlockFormat");
+                context.Writer.WriteStringValue(publicRequest.PinBlockFormat);
+            }
+
+            if(publicRequest.IsSetSecureMessagingConfidentialityKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("SecureMessagingConfidentialityKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.SecureMessagingConfidentialityKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetSecureMessagingIntegrityKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("SecureMessagingIntegrityKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.SecureMessagingIntegrityKeyIdentifier);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetGeneratedFrom())
             {
                 context.Writer.WritePropertyName("generatedFrom");
-                context.Writer.Write(requestObject.GeneratedFrom);
+                context.Writer.WriteStringValue(requestObject.GeneratedFrom);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetReferenceArn())
             {
                 context.Writer.WritePropertyName("referenceArn");
-                context.Writer.Write(requestObject.ReferenceArn);
+                context.Writer.WriteStringValue(requestObject.ReferenceArn);
             }
 
             if(requestObject.IsSetSampleId())
             {
                 context.Writer.WritePropertyName("sampleId");
-                context.Writer.Write(requestObject.SampleId);
+                context.Writer.WriteStringValue(requestObject.SampleId);
             }
 
             if(requestObject.IsSetSourceFiles())
             {
                 context.Writer.WritePropertyName("sourceFiles");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceFilesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceFiles, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceFileType())
             {
                 context.Writer.WritePropertyName("sourceFileType");
-                context.Writer.Write(requestObject.SourceFileType);
+                context.Writer.WriteStringValue(requestObject.SourceFileType);
             }
 
             if(requestObject.IsSetSubjectId())
             {
                 context.Writer.WritePropertyName("subjectId");
-                context.Writer.Write(requestObject.SubjectId);
+                context.Writer.WriteStringValue(requestObject.SubjectId);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

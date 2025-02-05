@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -63,63 +66,68 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDryRun())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDryRun())
-                    {
-                        context.Writer.WritePropertyName("dryRun");
-                        context.Writer.Write(publicRequest.DryRun.Value);
-                    }
-
-                    if(publicRequest.IsSetExistingImageName())
-                    {
-                        context.Writer.WritePropertyName("existingImageName");
-                        context.Writer.Write(publicRequest.ExistingImageName);
-                    }
-
-                    if(publicRequest.IsSetNewImageDescription())
-                    {
-                        context.Writer.WritePropertyName("newImageDescription");
-                        context.Writer.Write(publicRequest.NewImageDescription);
-                    }
-
-                    if(publicRequest.IsSetNewImageDisplayName())
-                    {
-                        context.Writer.WritePropertyName("newImageDisplayName");
-                        context.Writer.Write(publicRequest.NewImageDisplayName);
-                    }
-
-                    if(publicRequest.IsSetNewImageName())
-                    {
-                        context.Writer.WritePropertyName("newImageName");
-                        context.Writer.Write(publicRequest.NewImageName);
-                    }
-
-                    if(publicRequest.IsSetNewImageTags())
-                    {
-                        context.Writer.WritePropertyName("newImageTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestNewImageTagsKvp.Key);
-                            var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestNewImageTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
             }
+
+            if(publicRequest.IsSetExistingImageName())
+            {
+                context.Writer.WritePropertyName("existingImageName");
+                context.Writer.WriteStringValue(publicRequest.ExistingImageName);
+            }
+
+            if(publicRequest.IsSetNewImageDescription())
+            {
+                context.Writer.WritePropertyName("newImageDescription");
+                context.Writer.WriteStringValue(publicRequest.NewImageDescription);
+            }
+
+            if(publicRequest.IsSetNewImageDisplayName())
+            {
+                context.Writer.WritePropertyName("newImageDisplayName");
+                context.Writer.WriteStringValue(publicRequest.NewImageDisplayName);
+            }
+
+            if(publicRequest.IsSetNewImageName())
+            {
+                context.Writer.WritePropertyName("newImageName");
+                context.Writer.WriteStringValue(publicRequest.NewImageName);
+            }
+
+            if(publicRequest.IsSetNewImageTags())
+            {
+                context.Writer.WritePropertyName("newImageTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestNewImageTagsKvp.Key);
+                    var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestNewImageTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

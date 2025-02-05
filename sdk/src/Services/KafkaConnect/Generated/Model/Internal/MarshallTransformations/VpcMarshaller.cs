@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnets())
             {
                 context.Writer.WritePropertyName("subnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                        context.Writer.Write(requestObjectSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

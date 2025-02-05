@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,98 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuditDestinationARN())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuditDestinationARN())
-                    {
-                        context.Writer.WritePropertyName("AuditDestinationARN");
-                        context.Writer.Write(publicRequest.AuditDestinationARN);
-                    }
-
-                    if(publicRequest.IsSetCacheAttributes())
-                    {
-                        context.Writer.WritePropertyName("CacheAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CacheAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CacheAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetEndpointNetworkConfiguration())
-                    {
-                        context.Writer.WritePropertyName("EndpointNetworkConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EndpointNetworkConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EndpointNetworkConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGatewayARN())
-                    {
-                        context.Writer.WritePropertyName("GatewayARN");
-                        context.Writer.Write(publicRequest.GatewayARN);
-                    }
-
-                    if(publicRequest.IsSetLocationARN())
-                    {
-                        context.Writer.WritePropertyName("LocationARN");
-                        context.Writer.Write(publicRequest.LocationARN);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("Password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserName())
-                    {
-                        context.Writer.WritePropertyName("UserName");
-                        context.Writer.Write(publicRequest.UserName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AuditDestinationARN");
+                context.Writer.WriteStringValue(publicRequest.AuditDestinationARN);
             }
+
+            if(publicRequest.IsSetCacheAttributes())
+            {
+                context.Writer.WritePropertyName("CacheAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CacheAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CacheAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetEndpointNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("EndpointNetworkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndpointNetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EndpointNetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGatewayARN())
+            {
+                context.Writer.WritePropertyName("GatewayARN");
+                context.Writer.WriteStringValue(publicRequest.GatewayARN);
+            }
+
+            if(publicRequest.IsSetLocationARN())
+            {
+                context.Writer.WritePropertyName("LocationARN");
+                context.Writer.WriteStringValue(publicRequest.LocationARN);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("Password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserName())
+            {
+                context.Writer.WritePropertyName("UserName");
+                context.Writer.WriteStringValue(publicRequest.UserName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

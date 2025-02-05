@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LogoConfiguration Object
     /// </summary>  
-    public class LogoConfigurationUnmarshaller : IUnmarshaller<LogoConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LogoConfiguration, JsonUnmarshallerContext>
+    public class LogoConfigurationUnmarshaller : IJsonUnmarshaller<LogoConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LogoConfiguration IUnmarshaller<LogoConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogoConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LogoConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LogoConfiguration unmarshalledObject = new LogoConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AltText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AltText = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AltText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogoSet", targetDepth))
                 {
                     var unmarshaller = LogoSetConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogoSet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogoSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

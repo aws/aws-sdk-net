@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCallInstructionsMessage())
             {
                 context.Writer.WritePropertyName("CallInstructionsMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CallInstructionsMessageTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CallInstructionsMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlainTextMessage())
             {
                 context.Writer.WritePropertyName("PlainTextMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlainTextMessageTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PlainTextMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSSMLMessage())
             {
                 context.Writer.WritePropertyName("SSMLMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SSMLMessageTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.SSMLMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

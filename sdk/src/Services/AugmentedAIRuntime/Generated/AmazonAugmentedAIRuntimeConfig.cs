@@ -34,16 +34,10 @@ namespace Amazon.AugmentedAIRuntime
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SageMaker A2I Runtime", "4.0.0.0");
 
         private static readonly AmazonAugmentedAIRuntimeEndpointResolver EndpointResolver =
             new AmazonAugmentedAIRuntimeEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("SageMaker A2I Runtime", "3.7.400.70");
-=======
-            InternalSDKUtils.BuildUserAgentString("SageMaker A2I Runtime", "3.7.400.88");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

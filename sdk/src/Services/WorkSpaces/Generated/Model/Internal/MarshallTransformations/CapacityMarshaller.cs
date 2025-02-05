@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredUserSessions())
             {
                 context.Writer.WritePropertyName("DesiredUserSessions");
-                context.Writer.Write(requestObject.DesiredUserSessions.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredUserSessions.Value);
             }
 
         }

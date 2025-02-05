@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrBlock())
             {
                 context.Writer.WritePropertyName("cidrBlock");
-                context.Writer.Write(requestObject.CidrBlock);
+                context.Writer.WriteStringValue(requestObject.CidrBlock);
             }
 
             if(requestObject.IsSetIcmpTypeCode())
             {
                 context.Writer.WritePropertyName("icmpTypeCode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IcmpTypeCodeMarshaller.Instance;
                 marshaller.Marshall(requestObject.IcmpTypeCode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPortRange())
             {
                 context.Writer.WritePropertyName("portRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PortRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PortRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetRuleAction())
             {
                 context.Writer.WritePropertyName("ruleAction");
-                context.Writer.Write(requestObject.RuleAction);
+                context.Writer.WriteStringValue(requestObject.RuleAction);
             }
 
             if(requestObject.IsSetRuleNumber())
             {
                 context.Writer.WritePropertyName("ruleNumber");
-                context.Writer.Write(requestObject.RuleNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.RuleNumber.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.Payload, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueueUrl())
             {
                 context.Writer.WritePropertyName("queueUrl");
-                context.Writer.Write(requestObject.QueueUrl);
+                context.Writer.WriteStringValue(requestObject.QueueUrl);
             }
 
             if(requestObject.IsSetUseBase64())
             {
                 context.Writer.WritePropertyName("useBase64");
-                context.Writer.Write(requestObject.UseBase64.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseBase64.Value);
             }
 
         }

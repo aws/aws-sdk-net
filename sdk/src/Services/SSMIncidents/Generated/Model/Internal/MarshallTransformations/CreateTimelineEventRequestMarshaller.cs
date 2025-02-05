@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -61,70 +64,75 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createTimelineEvent";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetEventData())
-                    {
-                        context.Writer.WritePropertyName("eventData");
-                        context.Writer.Write(publicRequest.EventData);
-                    }
-
-                    if(publicRequest.IsSetEventReferences())
-                    {
-                        context.Writer.WritePropertyName("eventReferences");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EventReferenceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEventReferencesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEventTime())
-                    {
-                        context.Writer.WritePropertyName("eventTime");
-                        context.Writer.Write(publicRequest.EventTime.Value);
-                    }
-
-                    if(publicRequest.IsSetEventType())
-                    {
-                        context.Writer.WritePropertyName("eventType");
-                        context.Writer.Write(publicRequest.EventType);
-                    }
-
-                    if(publicRequest.IsSetIncidentRecordArn())
-                    {
-                        context.Writer.WritePropertyName("incidentRecordArn");
-                        context.Writer.Write(publicRequest.IncidentRecordArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetEventData())
+            {
+                context.Writer.WritePropertyName("eventData");
+                context.Writer.WriteStringValue(publicRequest.EventData);
+            }
+
+            if(publicRequest.IsSetEventReferences())
+            {
+                context.Writer.WritePropertyName("eventReferences");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EventReferenceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEventReferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEventTime())
+            {
+                context.Writer.WritePropertyName("eventTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventTime.Value)));
+            }
+
+            if(publicRequest.IsSetEventType())
+            {
+                context.Writer.WritePropertyName("eventType");
+                context.Writer.WriteStringValue(publicRequest.EventType);
+            }
+
+            if(publicRequest.IsSetIncidentRecordArn())
+            {
+                context.Writer.WritePropertyName("incidentRecordArn");
+                context.Writer.WriteStringValue(publicRequest.IncidentRecordArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

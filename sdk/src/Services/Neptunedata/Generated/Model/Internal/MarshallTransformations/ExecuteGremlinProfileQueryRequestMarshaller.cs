@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 {
@@ -61,49 +64,54 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/gremlin/profile";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChop())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChop())
-                    {
-                        context.Writer.WritePropertyName("profile.chop");
-                        context.Writer.Write(publicRequest.Chop.Value);
-                    }
-
-                    if(publicRequest.IsSetGremlinQuery())
-                    {
-                        context.Writer.WritePropertyName("gremlin");
-                        context.Writer.Write(publicRequest.GremlinQuery);
-                    }
-
-                    if(publicRequest.IsSetIndexOps())
-                    {
-                        context.Writer.WritePropertyName("profile.indexOps");
-                        context.Writer.Write(publicRequest.IndexOps.Value);
-                    }
-
-                    if(publicRequest.IsSetResults())
-                    {
-                        context.Writer.WritePropertyName("profile.results");
-                        context.Writer.Write(publicRequest.Results.Value);
-                    }
-
-                    if(publicRequest.IsSetSerializer())
-                    {
-                        context.Writer.WritePropertyName("profile.serializer");
-                        context.Writer.Write(publicRequest.Serializer);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("profile.chop");
+                context.Writer.WriteNumberValue(publicRequest.Chop.Value);
             }
+
+            if(publicRequest.IsSetGremlinQuery())
+            {
+                context.Writer.WritePropertyName("gremlin");
+                context.Writer.WriteStringValue(publicRequest.GremlinQuery);
+            }
+
+            if(publicRequest.IsSetIndexOps())
+            {
+                context.Writer.WritePropertyName("profile.indexOps");
+                context.Writer.WriteBooleanValue(publicRequest.IndexOps.Value);
+            }
+
+            if(publicRequest.IsSetResults())
+            {
+                context.Writer.WritePropertyName("profile.results");
+                context.Writer.WriteBooleanValue(publicRequest.Results.Value);
+            }
+
+            if(publicRequest.IsSetSerializer())
+            {
+                context.Writer.WritePropertyName("profile.serializer");
+                context.Writer.WriteStringValue(publicRequest.Serializer);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchDeleteClusterNodesError Object
     /// </summary>  
-    public class BatchDeleteClusterNodesErrorUnmarshaller : IUnmarshaller<BatchDeleteClusterNodesError, XmlUnmarshallerContext>, IUnmarshaller<BatchDeleteClusterNodesError, JsonUnmarshallerContext>
+    public class BatchDeleteClusterNodesErrorUnmarshaller : IJsonUnmarshaller<BatchDeleteClusterNodesError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchDeleteClusterNodesError IUnmarshaller<BatchDeleteClusterNodesError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchDeleteClusterNodesError Unmarshall(JsonUnmarshallerContext context)
+        public BatchDeleteClusterNodesError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchDeleteClusterNodesError unmarshalledObject = new BatchDeleteClusterNodesError();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

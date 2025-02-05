@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRedactionPlaceHolderText())
             {
                 context.Writer.WritePropertyName("redactionPlaceHolderText");
-                context.Writer.Write(requestObject.RedactionPlaceHolderText);
+                context.Writer.WriteStringValue(requestObject.RedactionPlaceHolderText);
             }
 
             if(requestObject.IsSetRedactionPlaceHolderType())
             {
                 context.Writer.WritePropertyName("redactionPlaceHolderType");
-                context.Writer.Write(requestObject.RedactionPlaceHolderType);
+                context.Writer.WriteStringValue(requestObject.RedactionPlaceHolderType);
             }
 
         }

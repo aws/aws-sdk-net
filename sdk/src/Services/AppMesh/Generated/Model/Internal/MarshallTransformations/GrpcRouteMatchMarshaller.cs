@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetadataListValue in requestObject.Metadata)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GrpcRouteMetadataMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetadataListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMethodName())
             {
                 context.Writer.WritePropertyName("methodName");
-                context.Writer.Write(requestObject.MethodName);
+                context.Writer.WriteStringValue(requestObject.MethodName);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("serviceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WriteStringValue(requestObject.ServiceName);
             }
 
         }

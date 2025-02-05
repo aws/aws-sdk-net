@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIdp())
             {
                 context.Writer.WritePropertyName("Idp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAMLIdpMarshaller.Instance;
                 marshaller.Marshall(requestObject.Idp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMasterBackendRole())
             {
                 context.Writer.WritePropertyName("MasterBackendRole");
-                context.Writer.Write(requestObject.MasterBackendRole);
+                context.Writer.WriteStringValue(requestObject.MasterBackendRole);
             }
 
             if(requestObject.IsSetMasterUserName())
             {
                 context.Writer.WritePropertyName("MasterUserName");
-                context.Writer.Write(requestObject.MasterUserName);
+                context.Writer.WriteStringValue(requestObject.MasterUserName);
             }
 
             if(requestObject.IsSetRolesKey())
             {
                 context.Writer.WritePropertyName("RolesKey");
-                context.Writer.Write(requestObject.RolesKey);
+                context.Writer.WriteStringValue(requestObject.RolesKey);
             }
 
             if(requestObject.IsSetSessionTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("SessionTimeoutMinutes");
-                context.Writer.Write(requestObject.SessionTimeoutMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.SessionTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetSubjectKey())
             {
                 context.Writer.WritePropertyName("SubjectKey");
-                context.Writer.Write(requestObject.SubjectKey);
+                context.Writer.WriteStringValue(requestObject.SubjectKey);
             }
 
         }

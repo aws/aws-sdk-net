@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldName())
             {
                 context.Writer.WritePropertyName("fieldName");
-                context.Writer.Write(requestObject.FieldName);
+                context.Writer.WriteStringValue(requestObject.FieldName);
             }
 
             if(requestObject.IsSetGroupName())
             {
                 context.Writer.WritePropertyName("groupName");
-                context.Writer.Write(requestObject.GroupName);
+                context.Writer.WriteStringValue(requestObject.GroupName);
             }
 
             if(requestObject.IsSetHashed())
             {
                 context.Writer.WritePropertyName("hashed");
-                context.Writer.Write(requestObject.Hashed.Value);
+                context.Writer.WriteBooleanValue(requestObject.Hashed.Value);
             }
 
             if(requestObject.IsSetMatchKey())
             {
                 context.Writer.WritePropertyName("matchKey");
-                context.Writer.Write(requestObject.MatchKey);
+                context.Writer.WriteStringValue(requestObject.MatchKey);
             }
 
             if(requestObject.IsSetSubType())
             {
                 context.Writer.WritePropertyName("subType");
-                context.Writer.Write(requestObject.SubType);
+                context.Writer.WriteStringValue(requestObject.SubType);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

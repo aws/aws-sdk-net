@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for AuthorizationErrorException operation
     /// </summary>  
-    public class AuthorizationErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<AuthorizationErrorException, XmlUnmarshallerContext>
+    public class AuthorizationErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AuthorizationErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

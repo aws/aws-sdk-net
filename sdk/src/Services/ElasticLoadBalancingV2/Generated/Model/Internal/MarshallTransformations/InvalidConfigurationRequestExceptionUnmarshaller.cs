@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidConfigurationRequestException operation
     /// </summary>  
-    public class InvalidConfigurationRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidConfigurationRequestException, XmlUnmarshallerContext>
+    public class InvalidConfigurationRequestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidConfigurationRequestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

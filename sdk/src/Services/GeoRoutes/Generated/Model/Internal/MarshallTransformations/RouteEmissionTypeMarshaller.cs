@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCo2EmissionClass())
             {
                 context.Writer.WritePropertyName("Co2EmissionClass");
-                context.Writer.Write(requestObject.Co2EmissionClass);
+                context.Writer.WriteStringValue(requestObject.Co2EmissionClass);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

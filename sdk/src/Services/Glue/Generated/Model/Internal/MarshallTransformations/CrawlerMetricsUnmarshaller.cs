@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CrawlerMetrics Object
     /// </summary>  
-    public class CrawlerMetricsUnmarshaller : IUnmarshaller<CrawlerMetrics, XmlUnmarshallerContext>, IUnmarshaller<CrawlerMetrics, JsonUnmarshallerContext>
+    public class CrawlerMetricsUnmarshaller : IJsonUnmarshaller<CrawlerMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CrawlerMetrics IUnmarshaller<CrawlerMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CrawlerMetrics Unmarshall(JsonUnmarshallerContext context)
+        public CrawlerMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CrawlerMetrics unmarshalledObject = new CrawlerMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CrawlerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastRuntimeSeconds", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LastRuntimeSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastRuntimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MedianRuntimeSeconds", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MedianRuntimeSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MedianRuntimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StillEstimating", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.StillEstimating = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StillEstimating = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TablesCreated", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TablesCreated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TablesCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TablesDeleted", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TablesDeleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TablesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TablesUpdated", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TablesUpdated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TablesUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeLeftSeconds", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TimeLeftSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeLeftSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

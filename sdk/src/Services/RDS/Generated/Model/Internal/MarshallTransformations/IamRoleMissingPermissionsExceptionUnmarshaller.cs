@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IamRoleMissingPermissionsException operation
     /// </summary>  
-    public class IamRoleMissingPermissionsExceptionUnmarshaller : IErrorResponseUnmarshaller<IamRoleMissingPermissionsException, XmlUnmarshallerContext>
+    public class IamRoleMissingPermissionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IamRoleMissingPermissionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

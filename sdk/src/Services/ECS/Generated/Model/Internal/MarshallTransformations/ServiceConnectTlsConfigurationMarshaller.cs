@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIssuerCertificateAuthority())
             {
                 context.Writer.WritePropertyName("issuerCertificateAuthority");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceConnectTlsCertificateAuthorityMarshaller.Instance;
                 marshaller.Marshall(requestObject.IssuerCertificateAuthority, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKmsKey())
             {
                 context.Writer.WritePropertyName("kmsKey");
-                context.Writer.Write(requestObject.KmsKey);
+                context.Writer.WriteStringValue(requestObject.KmsKey);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

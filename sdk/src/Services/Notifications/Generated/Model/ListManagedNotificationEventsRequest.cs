@@ -51,9 +51,9 @@ namespace Amazon.Notifications.Model
         /// Latest time of events to return from this call.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Notifications.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.Notifications.Model
         /// The earliest time of events to return from this call.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

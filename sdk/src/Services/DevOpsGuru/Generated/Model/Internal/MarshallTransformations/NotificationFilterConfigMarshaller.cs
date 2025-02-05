@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessageTypes())
             {
                 context.Writer.WritePropertyName("MessageTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMessageTypesListValue in requestObject.MessageTypes)
                 {
-                        context.Writer.Write(requestObjectMessageTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectMessageTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSeverities())
             {
                 context.Writer.WritePropertyName("Severities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSeveritiesListValue in requestObject.Severities)
                 {
-                        context.Writer.Write(requestObjectSeveritiesListValue);
+                        context.Writer.WriteStringValue(requestObjectSeveritiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

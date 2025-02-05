@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationStrategy())
             {
                 context.Writer.WritePropertyName("AuthorizationStrategy");
-                context.Writer.Write(requestObject.AuthorizationStrategy);
+                context.Writer.WriteStringValue(requestObject.AuthorizationStrategy);
             }
 
             if(requestObject.IsSetFineGrainedAuthorizationEnabled())
             {
                 context.Writer.WritePropertyName("FineGrainedAuthorizationEnabled");
-                context.Writer.Write(requestObject.FineGrainedAuthorizationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.FineGrainedAuthorizationEnabled.Value);
             }
 
             if(requestObject.IsSetIdpLambdaArn())
             {
                 context.Writer.WritePropertyName("IdpLambdaArn");
-                context.Writer.Write(requestObject.IdpLambdaArn);
+                context.Writer.WriteStringValue(requestObject.IdpLambdaArn);
             }
 
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("Metadata");
-                context.Writer.Write(requestObject.Metadata);
+                context.Writer.WriteStringValue(requestObject.Metadata);
             }
 
         }

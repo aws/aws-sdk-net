@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReportExportConfig Object
     /// </summary>  
-    public class ReportExportConfigUnmarshaller : IUnmarshaller<ReportExportConfig, XmlUnmarshallerContext>, IUnmarshaller<ReportExportConfig, JsonUnmarshallerContext>
+    public class ReportExportConfigUnmarshaller : IJsonUnmarshaller<ReportExportConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReportExportConfig IUnmarshaller<ReportExportConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReportExportConfig Unmarshall(JsonUnmarshallerContext context)
+        public ReportExportConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReportExportConfig unmarshalledObject = new ReportExportConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("exportConfigType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportConfigType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportConfigType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Destination", targetDepth))
                 {
                     var unmarshaller = S3ReportExportConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

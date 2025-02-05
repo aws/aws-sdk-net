@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -67,60 +70,65 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FleetId set");
             request.AddPathResource("{fleetId}", StringUtils.FromString(publicRequest.FleetId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/fleets/{fleetId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("configuration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = FleetConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
+                var marshaller = FleetConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("displayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetMaxWorkerCount())
-                    {
-                        context.Writer.WritePropertyName("maxWorkerCount");
-                        context.Writer.Write(publicRequest.MaxWorkerCount.Value);
-                    }
-
-                    if(publicRequest.IsSetMinWorkerCount())
-                    {
-                        context.Writer.WritePropertyName("minWorkerCount");
-                        context.Writer.Write(publicRequest.MinWorkerCount.Value);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetMaxWorkerCount())
+            {
+                context.Writer.WritePropertyName("maxWorkerCount");
+                context.Writer.WriteNumberValue(publicRequest.MaxWorkerCount.Value);
+            }
+
+            if(publicRequest.IsSetMinWorkerCount())
+            {
+                context.Writer.WritePropertyName("minWorkerCount");
+                context.Writer.WriteNumberValue(publicRequest.MinWorkerCount.Value);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

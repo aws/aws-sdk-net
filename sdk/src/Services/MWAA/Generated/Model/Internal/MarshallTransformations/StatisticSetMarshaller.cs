@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Maximum");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Maximum.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Maximum.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Maximum.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Maximum.Value);
+                    context.Writer.WriteNumberValue(requestObject.Maximum.Value);
                 }
             }
 
@@ -66,18 +64,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Minimum");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Minimum.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Minimum.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Minimum.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Minimum.Value);
+                    context.Writer.WriteNumberValue(requestObject.Minimum.Value);
                 }
             }
 
             if(requestObject.IsSetSampleCount())
             {
                 context.Writer.WritePropertyName("SampleCount");
-                context.Writer.Write(requestObject.SampleCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleCount.Value);
             }
 
             if(requestObject.IsSetSum())
@@ -85,11 +83,11 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Sum");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Sum.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sum.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Sum.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Sum.Value);
+                    context.Writer.WriteNumberValue(requestObject.Sum.Value);
                 }
             }
 

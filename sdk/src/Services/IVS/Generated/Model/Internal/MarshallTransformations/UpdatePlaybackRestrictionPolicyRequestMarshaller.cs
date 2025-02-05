@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdatePlaybackRestrictionPolicy";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedCountries())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("allowedCountries");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedCountriesListValue in publicRequest.AllowedCountries)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowedCountries())
-                    {
-                        context.Writer.WritePropertyName("allowedCountries");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedCountriesListValue in publicRequest.AllowedCountries)
-                        {
-                                context.Writer.Write(publicRequestAllowedCountriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAllowedOrigins())
-                    {
-                        context.Writer.WritePropertyName("allowedOrigins");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedOriginsListValue in publicRequest.AllowedOrigins)
-                        {
-                                context.Writer.Write(publicRequestAllowedOriginsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetArn())
-                    {
-                        context.Writer.WritePropertyName("arn");
-                        context.Writer.Write(publicRequest.Arn);
-                    }
-
-                    if(publicRequest.IsSetEnableStrictOriginEnforcement())
-                    {
-                        context.Writer.WritePropertyName("enableStrictOriginEnforcement");
-                        context.Writer.Write(publicRequest.EnableStrictOriginEnforcement.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAllowedCountriesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAllowedOrigins())
+            {
+                context.Writer.WritePropertyName("allowedOrigins");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedOriginsListValue in publicRequest.AllowedOrigins)
+                {
+                        context.Writer.WriteStringValue(publicRequestAllowedOriginsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetArn())
+            {
+                context.Writer.WritePropertyName("arn");
+                context.Writer.WriteStringValue(publicRequest.Arn);
+            }
+
+            if(publicRequest.IsSetEnableStrictOriginEnforcement())
+            {
+                context.Writer.WritePropertyName("enableStrictOriginEnforcement");
+                context.Writer.WriteBooleanValue(publicRequest.EnableStrictOriginEnforcement.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

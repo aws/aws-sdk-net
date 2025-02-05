@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetLocalMountPath())
             {
                 context.Writer.WritePropertyName("LocalMountPath");
-                context.Writer.Write(requestObject.LocalMountPath);
+                context.Writer.WriteStringValue(requestObject.LocalMountPath);
             }
 
         }

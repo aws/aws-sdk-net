@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthResources())
             {
                 context.Writer.WritePropertyName("authResources");
-                context.Writer.Write(requestObject.AuthResources);
+                context.Writer.WriteStringValue(requestObject.AuthResources);
             }
 
             if(requestObject.IsSetIdentityPoolConfigs())
             {
                 context.Writer.WritePropertyName("identityPoolConfigs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateBackendAuthIdentityPoolConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.IdentityPoolConfigs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetService())
             {
                 context.Writer.WritePropertyName("service");
-                context.Writer.Write(requestObject.Service);
+                context.Writer.WriteStringValue(requestObject.Service);
             }
 
             if(requestObject.IsSetUserPoolConfigs())
             {
                 context.Writer.WritePropertyName("userPoolConfigs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateBackendAuthUserPoolConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserPoolConfigs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

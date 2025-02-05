@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UnfilteredPartition Object
     /// </summary>  
-    public class UnfilteredPartitionUnmarshaller : IUnmarshaller<UnfilteredPartition, XmlUnmarshallerContext>, IUnmarshaller<UnfilteredPartition, JsonUnmarshallerContext>
+    public class UnfilteredPartitionUnmarshaller : IJsonUnmarshaller<UnfilteredPartition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UnfilteredPartition IUnmarshaller<UnfilteredPartition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UnfilteredPartition Unmarshall(JsonUnmarshallerContext context)
+        public UnfilteredPartition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UnfilteredPartition unmarshalledObject = new UnfilteredPartition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthorizedColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AuthorizedColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AuthorizedColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Partition", targetDepth))
                 {
                     var unmarshaller = PartitionUnmarshaller.Instance;
-                    unmarshalledObject.Partition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Partition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

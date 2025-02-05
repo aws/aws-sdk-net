@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentSeparator())
             {
                 context.Writer.WritePropertyName("componentSeparator");
-                context.Writer.Write(requestObject.ComponentSeparator);
+                context.Writer.WriteStringValue(requestObject.ComponentSeparator);
             }
 
             if(requestObject.IsSetDataElementSeparator())
             {
                 context.Writer.WritePropertyName("dataElementSeparator");
-                context.Writer.Write(requestObject.DataElementSeparator);
+                context.Writer.WriteStringValue(requestObject.DataElementSeparator);
             }
 
             if(requestObject.IsSetSegmentTerminator())
             {
                 context.Writer.WritePropertyName("segmentTerminator");
-                context.Writer.Write(requestObject.SegmentTerminator);
+                context.Writer.WriteStringValue(requestObject.SegmentTerminator);
             }
 
         }

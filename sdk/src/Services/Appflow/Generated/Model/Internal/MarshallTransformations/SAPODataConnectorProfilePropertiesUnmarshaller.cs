@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SAPODataConnectorProfileProperties Object
     /// </summary>  
-    public class SAPODataConnectorProfilePropertiesUnmarshaller : IUnmarshaller<SAPODataConnectorProfileProperties, XmlUnmarshallerContext>, IUnmarshaller<SAPODataConnectorProfileProperties, JsonUnmarshallerContext>
+    public class SAPODataConnectorProfilePropertiesUnmarshaller : IJsonUnmarshaller<SAPODataConnectorProfileProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SAPODataConnectorProfileProperties IUnmarshaller<SAPODataConnectorProfileProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SAPODataConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
+        public SAPODataConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SAPODataConnectorProfileProperties unmarshalledObject = new SAPODataConnectorProfileProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("applicationHostUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationHostUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationHostUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("applicationServicePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationServicePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationServicePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clientNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("disableSSO", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableSSO = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisableSSO = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logonLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogonLanguage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogonLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("oAuthProperties", targetDepth))
                 {
                     var unmarshaller = OAuthPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.OAuthProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OAuthProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portNumber", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PortNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("privateLinkServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivateLinkServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateLinkServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

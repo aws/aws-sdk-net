@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceRoleNotFoundException operation
     /// </summary>  
-    public class DBInstanceRoleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceRoleNotFoundException, XmlUnmarshallerContext>
+    public class DBInstanceRoleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceRoleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

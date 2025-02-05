@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,254 +49,254 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudwatchAlarm())
             {
                 context.Writer.WritePropertyName("cloudwatchAlarm");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudwatchAlarmActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudwatchAlarm, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudwatchLogs())
             {
                 context.Writer.WritePropertyName("cloudwatchLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudwatchLogsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudwatchLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudwatchMetric())
             {
                 context.Writer.WritePropertyName("cloudwatchMetric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudwatchMetricActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudwatchMetric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamoDB())
             {
                 context.Writer.WritePropertyName("dynamoDB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamoDBActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamoDBv2())
             {
                 context.Writer.WritePropertyName("dynamoDBv2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamoDBv2ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDBv2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetElasticsearch())
             {
                 context.Writer.WritePropertyName("elasticsearch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ElasticsearchActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Elasticsearch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirehose())
             {
                 context.Writer.WritePropertyName("firehose");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirehoseActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Firehose, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttp())
             {
                 context.Writer.WritePropertyName("http");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Http, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotAnalytics())
             {
                 context.Writer.WritePropertyName("iotAnalytics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotAnalyticsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotAnalytics, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotEvents())
             {
                 context.Writer.WritePropertyName("iotEvents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotEventsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotEvents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotSiteWise())
             {
                 context.Writer.WritePropertyName("iotSiteWise");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotSiteWiseActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotSiteWise, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKafka())
             {
                 context.Writer.WritePropertyName("kafka");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KafkaActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Kafka, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesis())
             {
                 context.Writer.WritePropertyName("kinesis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Kinesis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lambda, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocationActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpenSearch())
             {
                 context.Writer.WritePropertyName("openSearch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenSearchActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenSearch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepublish())
             {
                 context.Writer.WritePropertyName("republish");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RepublishActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Republish, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("s3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("salesforce");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSns())
             {
                 context.Writer.WritePropertyName("sns");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sns, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqs())
             {
                 context.Writer.WritePropertyName("sqs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sqs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStepFunctions())
             {
                 context.Writer.WritePropertyName("stepFunctions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StepFunctionsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StepFunctions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestream())
             {
                 context.Writer.WritePropertyName("timestream");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestreamActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Timestream, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

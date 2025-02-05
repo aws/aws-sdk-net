@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientAuthentication())
             {
                 context.Writer.WritePropertyName("clientAuthentication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServerlessClientAuthenticationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientAuthentication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfigs())
             {
                 context.Writer.WritePropertyName("vpcConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpcConfigsListValue in requestObject.VpcConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VpcConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectVpcConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

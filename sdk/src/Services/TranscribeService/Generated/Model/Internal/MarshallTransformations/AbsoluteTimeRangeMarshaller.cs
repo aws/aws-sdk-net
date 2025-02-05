@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(requestObject.EndTime.Value);
+                context.Writer.WriteNumberValue(requestObject.EndTime.Value);
             }
 
             if(requestObject.IsSetFirst())
             {
                 context.Writer.WritePropertyName("First");
-                context.Writer.Write(requestObject.First.Value);
+                context.Writer.WriteNumberValue(requestObject.First.Value);
             }
 
             if(requestObject.IsSetLast())
             {
                 context.Writer.WritePropertyName("Last");
-                context.Writer.Write(requestObject.Last.Value);
+                context.Writer.WriteNumberValue(requestObject.Last.Value);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime.Value);
+                context.Writer.WriteNumberValue(requestObject.StartTime.Value);
             }
 
         }

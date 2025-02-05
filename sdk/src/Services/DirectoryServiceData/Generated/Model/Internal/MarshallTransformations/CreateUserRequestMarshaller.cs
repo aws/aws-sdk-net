@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
 {
@@ -64,73 +67,78 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDirectoryId())
                 request.Parameters.Add("DirectoryId", StringUtils.FromString(publicRequest.DirectoryId));
             request.ResourcePath = "/Users/CreateUser";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("EmailAddress");
-                        context.Writer.Write(publicRequest.EmailAddress);
-                    }
-
-                    if(publicRequest.IsSetGivenName())
-                    {
-                        context.Writer.WritePropertyName("GivenName");
-                        context.Writer.Write(publicRequest.GivenName);
-                    }
-
-                    if(publicRequest.IsSetOtherAttributes())
-                    {
-                        context.Writer.WritePropertyName("OtherAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestOtherAttributesKvp in publicRequest.OtherAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestOtherAttributesKvp.Key);
-                            var publicRequestOtherAttributesValue = publicRequestOtherAttributesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttributeValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOtherAttributesValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSAMAccountName())
-                    {
-                        context.Writer.WritePropertyName("SAMAccountName");
-                        context.Writer.Write(publicRequest.SAMAccountName);
-                    }
-
-                    if(publicRequest.IsSetSurname())
-                    {
-                        context.Writer.WritePropertyName("Surname");
-                        context.Writer.Write(publicRequest.Surname);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetEmailAddress())
+            {
+                context.Writer.WritePropertyName("EmailAddress");
+                context.Writer.WriteStringValue(publicRequest.EmailAddress);
+            }
+
+            if(publicRequest.IsSetGivenName())
+            {
+                context.Writer.WritePropertyName("GivenName");
+                context.Writer.WriteStringValue(publicRequest.GivenName);
+            }
+
+            if(publicRequest.IsSetOtherAttributes())
+            {
+                context.Writer.WritePropertyName("OtherAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestOtherAttributesKvp in publicRequest.OtherAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestOtherAttributesKvp.Key);
+                    var publicRequestOtherAttributesValue = publicRequestOtherAttributesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOtherAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSAMAccountName())
+            {
+                context.Writer.WritePropertyName("SAMAccountName");
+                context.Writer.WriteStringValue(publicRequest.SAMAccountName);
+            }
+
+            if(publicRequest.IsSetSurname())
+            {
+                context.Writer.WritePropertyName("Surname");
+                context.Writer.WriteStringValue(publicRequest.Surname);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

@@ -84,7 +84,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("DkimAttributes/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityDkimAttributesUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityDkimAttributes, StringUnmarshaller, IdentityDkimAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityDkimAttributesUnmarshaller.Instance);
                         if (response.DkimAttributes == null)
                         {
                             response.DkimAttributes = new Dictionary<string, IdentityDkimAttributes>();
@@ -109,7 +109,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

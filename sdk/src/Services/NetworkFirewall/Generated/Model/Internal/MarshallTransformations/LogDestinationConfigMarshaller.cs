@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogDestination())
             {
                 context.Writer.WritePropertyName("LogDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLogDestinationKvp in requestObject.LogDestination)
                 {
                     context.Writer.WritePropertyName(requestObjectLogDestinationKvp.Key);
                     var requestObjectLogDestinationValue = requestObjectLogDestinationKvp.Value;
 
-                        context.Writer.Write(requestObjectLogDestinationValue);
+                        context.Writer.WriteStringValue(requestObjectLogDestinationValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogDestinationType())
             {
                 context.Writer.WritePropertyName("LogDestinationType");
-                context.Writer.Write(requestObject.LogDestinationType);
+                context.Writer.WriteStringValue(requestObject.LogDestinationType);
             }
 
             if(requestObject.IsSetLogType())
             {
                 context.Writer.WritePropertyName("LogType");
-                context.Writer.Write(requestObject.LogType);
+                context.Writer.WriteStringValue(requestObject.LogType);
             }
 
         }

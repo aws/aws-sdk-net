@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Polly.Model.Internal.MarshallTransformations
 {
@@ -61,101 +64,106 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/synthesisTasks";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEngine())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEngine())
-                    {
-                        context.Writer.WritePropertyName("Engine");
-                        context.Writer.Write(publicRequest.Engine);
-                    }
-
-                    if(publicRequest.IsSetLanguageCode())
-                    {
-                        context.Writer.WritePropertyName("LanguageCode");
-                        context.Writer.Write(publicRequest.LanguageCode);
-                    }
-
-                    if(publicRequest.IsSetLexiconNames())
-                    {
-                        context.Writer.WritePropertyName("LexiconNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLexiconNamesListValue in publicRequest.LexiconNames)
-                        {
-                                context.Writer.Write(publicRequestLexiconNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputFormat())
-                    {
-                        context.Writer.WritePropertyName("OutputFormat");
-                        context.Writer.Write(publicRequest.OutputFormat);
-                    }
-
-                    if(publicRequest.IsSetOutputS3BucketName())
-                    {
-                        context.Writer.WritePropertyName("OutputS3BucketName");
-                        context.Writer.Write(publicRequest.OutputS3BucketName);
-                    }
-
-                    if(publicRequest.IsSetOutputS3KeyPrefix())
-                    {
-                        context.Writer.WritePropertyName("OutputS3KeyPrefix");
-                        context.Writer.Write(publicRequest.OutputS3KeyPrefix);
-                    }
-
-                    if(publicRequest.IsSetSampleRate())
-                    {
-                        context.Writer.WritePropertyName("SampleRate");
-                        context.Writer.Write(publicRequest.SampleRate);
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArn())
-                    {
-                        context.Writer.WritePropertyName("SnsTopicArn");
-                        context.Writer.Write(publicRequest.SnsTopicArn);
-                    }
-
-                    if(publicRequest.IsSetSpeechMarkTypes())
-                    {
-                        context.Writer.WritePropertyName("SpeechMarkTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSpeechMarkTypesListValue in publicRequest.SpeechMarkTypes)
-                        {
-                                context.Writer.Write(publicRequestSpeechMarkTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetText())
-                    {
-                        context.Writer.WritePropertyName("Text");
-                        context.Writer.Write(publicRequest.Text);
-                    }
-
-                    if(publicRequest.IsSetTextType())
-                    {
-                        context.Writer.WritePropertyName("TextType");
-                        context.Writer.Write(publicRequest.TextType);
-                    }
-
-                    if(publicRequest.IsSetVoiceId())
-                    {
-                        context.Writer.WritePropertyName("VoiceId");
-                        context.Writer.Write(publicRequest.VoiceId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Engine");
+                context.Writer.WriteStringValue(publicRequest.Engine);
             }
+
+            if(publicRequest.IsSetLanguageCode())
+            {
+                context.Writer.WritePropertyName("LanguageCode");
+                context.Writer.WriteStringValue(publicRequest.LanguageCode);
+            }
+
+            if(publicRequest.IsSetLexiconNames())
+            {
+                context.Writer.WritePropertyName("LexiconNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLexiconNamesListValue in publicRequest.LexiconNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestLexiconNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOutputFormat())
+            {
+                context.Writer.WritePropertyName("OutputFormat");
+                context.Writer.WriteStringValue(publicRequest.OutputFormat);
+            }
+
+            if(publicRequest.IsSetOutputS3BucketName())
+            {
+                context.Writer.WritePropertyName("OutputS3BucketName");
+                context.Writer.WriteStringValue(publicRequest.OutputS3BucketName);
+            }
+
+            if(publicRequest.IsSetOutputS3KeyPrefix())
+            {
+                context.Writer.WritePropertyName("OutputS3KeyPrefix");
+                context.Writer.WriteStringValue(publicRequest.OutputS3KeyPrefix);
+            }
+
+            if(publicRequest.IsSetSampleRate())
+            {
+                context.Writer.WritePropertyName("SampleRate");
+                context.Writer.WriteStringValue(publicRequest.SampleRate);
+            }
+
+            if(publicRequest.IsSetSnsTopicArn())
+            {
+                context.Writer.WritePropertyName("SnsTopicArn");
+                context.Writer.WriteStringValue(publicRequest.SnsTopicArn);
+            }
+
+            if(publicRequest.IsSetSpeechMarkTypes())
+            {
+                context.Writer.WritePropertyName("SpeechMarkTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSpeechMarkTypesListValue in publicRequest.SpeechMarkTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestSpeechMarkTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetText())
+            {
+                context.Writer.WritePropertyName("Text");
+                context.Writer.WriteStringValue(publicRequest.Text);
+            }
+
+            if(publicRequest.IsSetTextType())
+            {
+                context.Writer.WritePropertyName("TextType");
+                context.Writer.WriteStringValue(publicRequest.TextType);
+            }
+
+            if(publicRequest.IsSetVoiceId())
+            {
+                context.Writer.WritePropertyName("VoiceId");
+                context.Writer.WriteStringValue(publicRequest.VoiceId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

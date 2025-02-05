@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CandidateGenerationConfig Object
     /// </summary>  
-    public class CandidateGenerationConfigUnmarshaller : IUnmarshaller<CandidateGenerationConfig, XmlUnmarshallerContext>, IUnmarshaller<CandidateGenerationConfig, JsonUnmarshallerContext>
+    public class CandidateGenerationConfigUnmarshaller : IJsonUnmarshaller<CandidateGenerationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CandidateGenerationConfig IUnmarshaller<CandidateGenerationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CandidateGenerationConfig Unmarshall(JsonUnmarshallerContext context)
+        public CandidateGenerationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CandidateGenerationConfig unmarshalledObject = new CandidateGenerationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AlgorithmsConfig", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoMLAlgorithmConfig, AutoMLAlgorithmConfigUnmarshaller>(AutoMLAlgorithmConfigUnmarshaller.Instance);
-                    unmarshalledObject.AlgorithmsConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AutoMLAlgorithmConfig, AutoMLAlgorithmConfigUnmarshaller>(AutoMLAlgorithmConfigUnmarshaller.Instance);
+                    unmarshalledObject.AlgorithmsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

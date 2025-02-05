@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InvalidContactFlowException Object
     /// </summary>  
-    public class InvalidContactFlowExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidContactFlowException, JsonUnmarshallerContext>
+    public class InvalidContactFlowExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<InvalidContactFlowException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public InvalidContactFlowException Unmarshall(JsonUnmarshallerContext context)
+        public InvalidContactFlowException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,22 +55,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public InvalidContactFlowException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public InvalidContactFlowException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             InvalidContactFlowException unmarshalledObject = new InvalidContactFlowException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("problems", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = new ListUnmarshaller<ProblemDetail, ProblemDetailUnmarshaller>(ProblemDetailUnmarshaller.Instance);
-                    unmarshalledObject.Problems = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("problems", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<ProblemDetail, ProblemDetailUnmarshaller>(ProblemDetailUnmarshaller.Instance);
+                        unmarshalledObject.Problems = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerImage())
             {
                 context.Writer.WritePropertyName("containerImage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerImageMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerImage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScriptModeConfig())
             {
                 context.Writer.WritePropertyName("scriptModeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScriptModeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScriptModeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

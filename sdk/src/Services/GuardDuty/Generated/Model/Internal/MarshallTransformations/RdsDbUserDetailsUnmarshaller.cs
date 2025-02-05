@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RdsDbUserDetails Object
     /// </summary>  
-    public class RdsDbUserDetailsUnmarshaller : IUnmarshaller<RdsDbUserDetails, XmlUnmarshallerContext>, IUnmarshaller<RdsDbUserDetails, JsonUnmarshallerContext>
+    public class RdsDbUserDetailsUnmarshaller : IJsonUnmarshaller<RdsDbUserDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RdsDbUserDetails IUnmarshaller<RdsDbUserDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RdsDbUserDetails Unmarshall(JsonUnmarshallerContext context)
+        public RdsDbUserDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RdsDbUserDetails unmarshalledObject = new RdsDbUserDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("application", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Application = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Application = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("authMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("database", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Database = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Database = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ssl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ssl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ssl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("user", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

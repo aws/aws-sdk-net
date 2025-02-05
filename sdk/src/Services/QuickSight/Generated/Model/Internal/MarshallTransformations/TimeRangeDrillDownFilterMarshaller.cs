@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRangeMaximum())
             {
                 context.Writer.WritePropertyName("RangeMaximum");
-                context.Writer.Write(requestObject.RangeMaximum.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.RangeMaximum.Value)));
             }
 
             if(requestObject.IsSetRangeMinimum())
             {
                 context.Writer.WritePropertyName("RangeMinimum");
-                context.Writer.Write(requestObject.RangeMinimum.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.RangeMinimum.Value)));
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("headers");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MqttHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Headers, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQos())
             {
                 context.Writer.WritePropertyName("qos");
-                context.Writer.Write(requestObject.Qos.Value);
+                context.Writer.WriteNumberValue(requestObject.Qos.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("topic");
-                context.Writer.Write(requestObject.Topic);
+                context.Writer.WriteStringValue(requestObject.Topic);
             }
 
         }

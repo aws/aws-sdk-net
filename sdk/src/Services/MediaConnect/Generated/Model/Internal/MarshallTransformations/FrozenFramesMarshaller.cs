@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("state");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetThresholdSeconds())
             {
                 context.Writer.WritePropertyName("thresholdSeconds");
-                context.Writer.Write(requestObject.ThresholdSeconds);
+                context.Writer.WriteNumberValue(requestObject.ThresholdSeconds.Value);
             }
 
         }

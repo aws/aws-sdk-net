@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailedFilesDirectory())
             {
                 context.Writer.WritePropertyName("FailedFilesDirectory");
-                context.Writer.Write(requestObject.FailedFilesDirectory);
+                context.Writer.WriteStringValue(requestObject.FailedFilesDirectory);
             }
 
             if(requestObject.IsSetMdnFilesDirectory())
             {
                 context.Writer.WritePropertyName("MdnFilesDirectory");
-                context.Writer.Write(requestObject.MdnFilesDirectory);
+                context.Writer.WriteStringValue(requestObject.MdnFilesDirectory);
             }
 
             if(requestObject.IsSetPayloadFilesDirectory())
             {
                 context.Writer.WritePropertyName("PayloadFilesDirectory");
-                context.Writer.Write(requestObject.PayloadFilesDirectory);
+                context.Writer.WriteStringValue(requestObject.PayloadFilesDirectory);
             }
 
             if(requestObject.IsSetStatusFilesDirectory())
             {
                 context.Writer.WritePropertyName("StatusFilesDirectory");
-                context.Writer.Write(requestObject.StatusFilesDirectory);
+                context.Writer.WriteStringValue(requestObject.StatusFilesDirectory);
             }
 
             if(requestObject.IsSetTemporaryFilesDirectory())
             {
                 context.Writer.WritePropertyName("TemporaryFilesDirectory");
-                context.Writer.Write(requestObject.TemporaryFilesDirectory);
+                context.Writer.WriteStringValue(requestObject.TemporaryFilesDirectory);
             }
 
         }

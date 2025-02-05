@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeTypesSelector())
             {
                 context.Writer.WritePropertyName("AttributeTypesSelector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeTypesSelectorMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeTypesSelector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("ConflictResolution");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConflictResolutionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConflictResolution, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExportingConfig())
             {
                 context.Writer.WritePropertyName("ExportingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMatchingRules())
             {
                 context.Writer.WritePropertyName("MatchingRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchingRulesListValue in requestObject.MatchingRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MatchingRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectMatchingRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxAllowedRuleLevelForMatching())
             {
                 context.Writer.WritePropertyName("MaxAllowedRuleLevelForMatching");
-                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMatching.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAllowedRuleLevelForMatching.Value);
             }
 
             if(requestObject.IsSetMaxAllowedRuleLevelForMerging())
             {
                 context.Writer.WritePropertyName("MaxAllowedRuleLevelForMerging");
-                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMerging.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAllowedRuleLevelForMerging.Value);
             }
 
         }

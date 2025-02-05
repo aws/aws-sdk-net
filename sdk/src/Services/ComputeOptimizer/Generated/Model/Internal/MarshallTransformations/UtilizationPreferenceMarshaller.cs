@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetMetricParameters())
             {
                 context.Writer.WritePropertyName("metricParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomizableMetricParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

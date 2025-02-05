@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayMulticastRegisteredGroupMembers Object
     /// </summary>  
-    public class TransitGatewayMulticastRegisteredGroupMembersUnmarshaller : IUnmarshaller<TransitGatewayMulticastRegisteredGroupMembers, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayMulticastRegisteredGroupMembers, JsonUnmarshallerContext>
+    public class TransitGatewayMulticastRegisteredGroupMembersUnmarshaller : IXmlUnmarshaller<TransitGatewayMulticastRegisteredGroupMembers, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayMulticastRegisteredGroupMembers Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayMulticastRegisteredGroupMembersUnmarshaller _instance = new TransitGatewayMulticastRegisteredGroupMembersUnmarshaller();        
 

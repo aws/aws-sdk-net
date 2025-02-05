@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicationConfig Object
     /// </summary>  
-    public class ReplicationConfigUnmarshaller : IUnmarshaller<ReplicationConfig, XmlUnmarshallerContext>, IUnmarshaller<ReplicationConfig, JsonUnmarshallerContext>
+    public class ReplicationConfigUnmarshaller : IJsonUnmarshaller<ReplicationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReplicationConfig IUnmarshaller<ReplicationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicationConfig Unmarshall(JsonUnmarshallerContext context)
+        public ReplicationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReplicationConfig unmarshalledObject = new ReplicationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComputeConfig", targetDepth))
                 {
                     var unmarshaller = ComputeConfigUnmarshaller.Instance;
-                    unmarshalledObject.ComputeConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigCreateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigCreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigUpdateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigUpdateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationSettings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupplementalSettings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SupplementalSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupplementalSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableMappings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableMappings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetEndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GlueOAuth2Credentials Object
     /// </summary>  
-    public class GlueOAuth2CredentialsUnmarshaller : IUnmarshaller<GlueOAuth2Credentials, XmlUnmarshallerContext>, IUnmarshaller<GlueOAuth2Credentials, JsonUnmarshallerContext>
+    public class GlueOAuth2CredentialsUnmarshaller : IJsonUnmarshaller<GlueOAuth2Credentials, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GlueOAuth2Credentials IUnmarshaller<GlueOAuth2Credentials, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GlueOAuth2Credentials Unmarshall(JsonUnmarshallerContext context)
+        public GlueOAuth2Credentials Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GlueOAuth2Credentials unmarshalledObject = new GlueOAuth2Credentials();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accessToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jwtToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JwtToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JwtToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("refreshToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("userManagedClientApplicationClientSecret", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserManagedClientApplicationClientSecret = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserManagedClientApplicationClientSecret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

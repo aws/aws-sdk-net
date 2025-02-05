@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,82 +66,87 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCompilationJobName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCompilationJobName())
-                    {
-                        context.Writer.WritePropertyName("CompilationJobName");
-                        context.Writer.Write(publicRequest.CompilationJobName);
-                    }
-
-                    if(publicRequest.IsSetEdgePackagingJobName())
-                    {
-                        context.Writer.WritePropertyName("EdgePackagingJobName");
-                        context.Writer.Write(publicRequest.EdgePackagingJobName);
-                    }
-
-                    if(publicRequest.IsSetModelName())
-                    {
-                        context.Writer.WritePropertyName("ModelName");
-                        context.Writer.Write(publicRequest.ModelName);
-                    }
-
-                    if(publicRequest.IsSetModelVersion())
-                    {
-                        context.Writer.WritePropertyName("ModelVersion");
-                        context.Writer.Write(publicRequest.ModelVersion);
-                    }
-
-                    if(publicRequest.IsSetOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EdgeOutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceKey())
-                    {
-                        context.Writer.WritePropertyName("ResourceKey");
-                        context.Writer.Write(publicRequest.ResourceKey);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CompilationJobName");
+                context.Writer.WriteStringValue(publicRequest.CompilationJobName);
             }
+
+            if(publicRequest.IsSetEdgePackagingJobName())
+            {
+                context.Writer.WritePropertyName("EdgePackagingJobName");
+                context.Writer.WriteStringValue(publicRequest.EdgePackagingJobName);
+            }
+
+            if(publicRequest.IsSetModelName())
+            {
+                context.Writer.WritePropertyName("ModelName");
+                context.Writer.WriteStringValue(publicRequest.ModelName);
+            }
+
+            if(publicRequest.IsSetModelVersion())
+            {
+                context.Writer.WritePropertyName("ModelVersion");
+                context.Writer.WriteStringValue(publicRequest.ModelVersion);
+            }
+
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("OutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EdgeOutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceKey())
+            {
+                context.Writer.WritePropertyName("ResourceKey");
+                context.Writer.WriteStringValue(publicRequest.ResourceKey);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

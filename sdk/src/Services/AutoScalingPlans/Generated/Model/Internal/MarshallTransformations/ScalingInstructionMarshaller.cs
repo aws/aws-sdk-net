@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
@@ -51,105 +49,105 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomizedLoadMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedLoadMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomizedLoadMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomizedLoadMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisableDynamicScaling())
             {
                 context.Writer.WritePropertyName("DisableDynamicScaling");
-                context.Writer.Write(requestObject.DisableDynamicScaling.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableDynamicScaling.Value);
             }
 
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetMinCapacity())
             {
                 context.Writer.WritePropertyName("MinCapacity");
-                context.Writer.Write(requestObject.MinCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.MinCapacity.Value);
             }
 
             if(requestObject.IsSetPredefinedLoadMetricSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedLoadMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredefinedLoadMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredefinedLoadMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPredictiveScalingMaxCapacityBehavior())
             {
                 context.Writer.WritePropertyName("PredictiveScalingMaxCapacityBehavior");
-                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBehavior);
+                context.Writer.WriteStringValue(requestObject.PredictiveScalingMaxCapacityBehavior);
             }
 
             if(requestObject.IsSetPredictiveScalingMaxCapacityBuffer())
             {
                 context.Writer.WritePropertyName("PredictiveScalingMaxCapacityBuffer");
-                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBuffer.Value);
+                context.Writer.WriteNumberValue(requestObject.PredictiveScalingMaxCapacityBuffer.Value);
             }
 
             if(requestObject.IsSetPredictiveScalingMode())
             {
                 context.Writer.WritePropertyName("PredictiveScalingMode");
-                context.Writer.Write(requestObject.PredictiveScalingMode);
+                context.Writer.WriteStringValue(requestObject.PredictiveScalingMode);
             }
 
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
             if(requestObject.IsSetScalableDimension())
             {
                 context.Writer.WritePropertyName("ScalableDimension");
-                context.Writer.Write(requestObject.ScalableDimension);
+                context.Writer.WriteStringValue(requestObject.ScalableDimension);
             }
 
             if(requestObject.IsSetScalingPolicyUpdateBehavior())
             {
                 context.Writer.WritePropertyName("ScalingPolicyUpdateBehavior");
-                context.Writer.Write(requestObject.ScalingPolicyUpdateBehavior);
+                context.Writer.WriteStringValue(requestObject.ScalingPolicyUpdateBehavior);
             }
 
             if(requestObject.IsSetScheduledActionBufferTime())
             {
                 context.Writer.WritePropertyName("ScheduledActionBufferTime");
-                context.Writer.Write(requestObject.ScheduledActionBufferTime.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduledActionBufferTime.Value);
             }
 
             if(requestObject.IsSetServiceNamespace())
             {
                 context.Writer.WritePropertyName("ServiceNamespace");
-                context.Writer.Write(requestObject.ServiceNamespace);
+                context.Writer.WriteStringValue(requestObject.ServiceNamespace);
             }
 
             if(requestObject.IsSetTargetTrackingConfigurations())
             {
                 context.Writer.WritePropertyName("TargetTrackingConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetTrackingConfigurationsListValue in requestObject.TargetTrackingConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetTrackingConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetTrackingConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

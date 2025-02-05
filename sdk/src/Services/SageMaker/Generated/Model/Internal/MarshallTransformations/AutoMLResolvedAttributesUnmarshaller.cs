@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoMLResolvedAttributes Object
     /// </summary>  
-    public class AutoMLResolvedAttributesUnmarshaller : IUnmarshaller<AutoMLResolvedAttributes, XmlUnmarshallerContext>, IUnmarshaller<AutoMLResolvedAttributes, JsonUnmarshallerContext>
+    public class AutoMLResolvedAttributesUnmarshaller : IJsonUnmarshaller<AutoMLResolvedAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoMLResolvedAttributes IUnmarshaller<AutoMLResolvedAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoMLResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLResolvedAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoMLResolvedAttributes unmarshalledObject = new AutoMLResolvedAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoMLJobObjective", targetDepth))
                 {
                     var unmarshaller = AutoMLJobObjectiveUnmarshaller.Instance;
-                    unmarshalledObject.AutoMLJobObjective = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMLJobObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoMLProblemTypeResolvedAttributes", targetDepth))
                 {
                     var unmarshaller = AutoMLProblemTypeResolvedAttributesUnmarshaller.Instance;
-                    unmarshalledObject.AutoMLProblemTypeResolvedAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMLProblemTypeResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

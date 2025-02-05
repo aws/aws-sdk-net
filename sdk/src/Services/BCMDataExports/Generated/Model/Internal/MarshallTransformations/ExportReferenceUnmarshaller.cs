@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExportReference Object
     /// </summary>  
-    public class ExportReferenceUnmarshaller : IUnmarshaller<ExportReference, XmlUnmarshallerContext>, IUnmarshaller<ExportReference, JsonUnmarshallerContext>
+    public class ExportReferenceUnmarshaller : IJsonUnmarshaller<ExportReference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExportReference IUnmarshaller<ExportReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExportReference Unmarshall(JsonUnmarshallerContext context)
+        public ExportReference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExportReference unmarshalledObject = new ExportReference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExportArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportStatus", targetDepth))
                 {
                     var unmarshaller = ExportStatusUnmarshaller.Instance;
-                    unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

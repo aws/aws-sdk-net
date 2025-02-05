@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SAMLPrivateKey Object
     /// </summary>  
-    public class SAMLPrivateKeyUnmarshaller : IUnmarshaller<SAMLPrivateKey, XmlUnmarshallerContext>, IUnmarshaller<SAMLPrivateKey, JsonUnmarshallerContext>
+    public class SAMLPrivateKeyUnmarshaller : IXmlUnmarshaller<SAMLPrivateKey, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,7 +63,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -76,17 +76,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SAMLPrivateKey Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SAMLPrivateKeyUnmarshaller _instance = new SAMLPrivateKeyUnmarshaller();        
 

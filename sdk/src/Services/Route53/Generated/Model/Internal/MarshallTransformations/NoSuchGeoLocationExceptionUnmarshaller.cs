@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchGeoLocationException operation
     /// </summary>  
-    public class NoSuchGeoLocationExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchGeoLocationException, XmlUnmarshallerContext>
+    public class NoSuchGeoLocationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchGeoLocationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

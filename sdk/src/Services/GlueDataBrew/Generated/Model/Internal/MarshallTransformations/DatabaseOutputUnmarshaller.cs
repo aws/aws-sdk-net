@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatabaseOutput Object
     /// </summary>  
-    public class DatabaseOutputUnmarshaller : IUnmarshaller<DatabaseOutput, XmlUnmarshallerContext>, IUnmarshaller<DatabaseOutput, JsonUnmarshallerContext>
+    public class DatabaseOutputUnmarshaller : IJsonUnmarshaller<DatabaseOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatabaseOutput IUnmarshaller<DatabaseOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatabaseOutput Unmarshall(JsonUnmarshallerContext context)
+        public DatabaseOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatabaseOutput unmarshalledObject = new DatabaseOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DatabaseOptions", targetDepth))
                 {
                     var unmarshaller = DatabaseTableOutputOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseOutputMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseOutputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseOutputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GlueConnectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

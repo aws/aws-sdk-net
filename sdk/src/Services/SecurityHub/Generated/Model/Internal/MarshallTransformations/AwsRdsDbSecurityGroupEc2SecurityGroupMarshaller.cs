@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEc2SecurityGroupId())
             {
                 context.Writer.WritePropertyName("Ec2SecurityGroupId");
-                context.Writer.Write(requestObject.Ec2SecurityGroupId);
+                context.Writer.WriteStringValue(requestObject.Ec2SecurityGroupId);
             }
 
             if(requestObject.IsSetEc2SecurityGroupName())
             {
                 context.Writer.WritePropertyName("Ec2SecurityGroupName");
-                context.Writer.Write(requestObject.Ec2SecurityGroupName);
+                context.Writer.WriteStringValue(requestObject.Ec2SecurityGroupName);
             }
 
             if(requestObject.IsSetEc2SecurityGroupOwnerId())
             {
                 context.Writer.WritePropertyName("Ec2SecurityGroupOwnerId");
-                context.Writer.Write(requestObject.Ec2SecurityGroupOwnerId);
+                context.Writer.WriteStringValue(requestObject.Ec2SecurityGroupOwnerId);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PatchBaselineIdentity Object
     /// </summary>  
-    public class PatchBaselineIdentityUnmarshaller : IUnmarshaller<PatchBaselineIdentity, XmlUnmarshallerContext>, IUnmarshaller<PatchBaselineIdentity, JsonUnmarshallerContext>
+    public class PatchBaselineIdentityUnmarshaller : IJsonUnmarshaller<PatchBaselineIdentity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PatchBaselineIdentity IUnmarshaller<PatchBaselineIdentity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PatchBaselineIdentity Unmarshall(JsonUnmarshallerContext context)
+        public PatchBaselineIdentity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PatchBaselineIdentity unmarshalledObject = new PatchBaselineIdentity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaselineDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaselineDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaselineDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaselineId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaselineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaselineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaselineName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaselineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultBaseline", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DefaultBaseline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultBaseline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OperatingSystem", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

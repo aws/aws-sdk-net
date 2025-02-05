@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectCampaignArn())
             {
                 context.Writer.WritePropertyName("ConnectCampaignArn");
-                context.Writer.Write(requestObject.ConnectCampaignArn);
+                context.Writer.WriteStringValue(requestObject.ConnectCampaignArn);
             }
 
             if(requestObject.IsSetConnectCampaignExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("ConnectCampaignExecutionRoleArn");
-                context.Writer.Write(requestObject.ConnectCampaignExecutionRoleArn);
+                context.Writer.WriteStringValue(requestObject.ConnectCampaignExecutionRoleArn);
             }
 
         }

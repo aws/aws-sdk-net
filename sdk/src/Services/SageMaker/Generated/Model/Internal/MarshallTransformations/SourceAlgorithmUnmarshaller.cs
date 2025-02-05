@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SourceAlgorithm Object
     /// </summary>  
-    public class SourceAlgorithmUnmarshaller : IUnmarshaller<SourceAlgorithm, XmlUnmarshallerContext>, IUnmarshaller<SourceAlgorithm, JsonUnmarshallerContext>
+    public class SourceAlgorithmUnmarshaller : IJsonUnmarshaller<SourceAlgorithm, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SourceAlgorithm IUnmarshaller<SourceAlgorithm, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceAlgorithm Unmarshall(JsonUnmarshallerContext context)
+        public SourceAlgorithm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SourceAlgorithm unmarshalledObject = new SourceAlgorithm();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AlgorithmName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDataETag", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelDataETag = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelDataETag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDataSource", targetDepth))
                 {
                     var unmarshaller = ModelDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDataUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

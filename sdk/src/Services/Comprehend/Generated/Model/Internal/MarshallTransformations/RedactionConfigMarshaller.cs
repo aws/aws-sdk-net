@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaskCharacter())
             {
                 context.Writer.WritePropertyName("MaskCharacter");
-                context.Writer.Write(requestObject.MaskCharacter);
+                context.Writer.WriteStringValue(requestObject.MaskCharacter);
             }
 
             if(requestObject.IsSetMaskMode())
             {
                 context.Writer.WritePropertyName("MaskMode");
-                context.Writer.Write(requestObject.MaskMode);
+                context.Writer.WriteStringValue(requestObject.MaskMode);
             }
 
             if(requestObject.IsSetPiiEntityTypes())
             {
                 context.Writer.WritePropertyName("PiiEntityTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPiiEntityTypesListValue in requestObject.PiiEntityTypes)
                 {
-                        context.Writer.Write(requestObjectPiiEntityTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectPiiEntityTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

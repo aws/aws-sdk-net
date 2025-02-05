@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RealTimeContactAnalysisSegmentCategories Object
     /// </summary>  
-    public class RealTimeContactAnalysisSegmentCategoriesUnmarshaller : IUnmarshaller<RealTimeContactAnalysisSegmentCategories, XmlUnmarshallerContext>, IUnmarshaller<RealTimeContactAnalysisSegmentCategories, JsonUnmarshallerContext>
+    public class RealTimeContactAnalysisSegmentCategoriesUnmarshaller : IJsonUnmarshaller<RealTimeContactAnalysisSegmentCategories, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RealTimeContactAnalysisSegmentCategories IUnmarshaller<RealTimeContactAnalysisSegmentCategories, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RealTimeContactAnalysisSegmentCategories Unmarshall(JsonUnmarshallerContext context)
+        public RealTimeContactAnalysisSegmentCategories Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RealTimeContactAnalysisSegmentCategories unmarshalledObject = new RealTimeContactAnalysisSegmentCategories();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MatchedDetails", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, RealTimeContactAnalysisCategoryDetails, StringUnmarshaller, RealTimeContactAnalysisCategoryDetailsUnmarshaller>(StringUnmarshaller.Instance, RealTimeContactAnalysisCategoryDetailsUnmarshaller.Instance);
-                    unmarshalledObject.MatchedDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, RealTimeContactAnalysisCategoryDetails, StringUnmarshaller, RealTimeContactAnalysisCategoryDetailsUnmarshaller>(StringUnmarshaller.Instance, RealTimeContactAnalysisCategoryDetailsUnmarshaller.Instance);
+                    unmarshalledObject.MatchedDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCalculatedAttributes())
             {
                 context.Writer.WritePropertyName("CalculatedAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCalculatedAttributesKvp in requestObject.CalculatedAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectCalculatedAttributesKvp.Key);
                     var requestObjectCalculatedAttributesValue = requestObjectCalculatedAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CalculatedAttributeDimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectCalculatedAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProfileAttributes())
             {
                 context.Writer.WritePropertyName("ProfileAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProfileAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProfileAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

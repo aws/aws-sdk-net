@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
         }

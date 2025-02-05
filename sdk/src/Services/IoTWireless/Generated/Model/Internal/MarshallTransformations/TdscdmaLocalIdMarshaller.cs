@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellParams())
             {
                 context.Writer.WritePropertyName("CellParams");
-                context.Writer.Write(requestObject.CellParams.Value);
+                context.Writer.WriteNumberValue(requestObject.CellParams.Value);
             }
 
             if(requestObject.IsSetUarfcn())
             {
                 context.Writer.WritePropertyName("Uarfcn");
-                context.Writer.Write(requestObject.Uarfcn.Value);
+                context.Writer.WriteNumberValue(requestObject.Uarfcn.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionImageInsertionFramerateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Framerate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetInsertionMode())
             {
                 context.Writer.WritePropertyName("insertionMode");
-                context.Writer.Write(requestObject.InsertionMode);
+                context.Writer.WriteStringValue(requestObject.InsertionMode);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionImageInsertionOffsetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Offset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlayback())
             {
                 context.Writer.WritePropertyName("playback");
-                context.Writer.Write(requestObject.Playback);
+                context.Writer.WriteStringValue(requestObject.Playback);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteStringValue(requestObject.StartTime);
             }
 
         }

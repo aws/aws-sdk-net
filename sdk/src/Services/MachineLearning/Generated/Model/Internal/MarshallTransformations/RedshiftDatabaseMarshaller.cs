@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterIdentifier())
             {
                 context.Writer.WritePropertyName("ClusterIdentifier");
-                context.Writer.Write(requestObject.ClusterIdentifier);
+                context.Writer.WriteStringValue(requestObject.ClusterIdentifier);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
         }

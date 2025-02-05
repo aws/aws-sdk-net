@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidNumberPredicatesException operation
     /// </summary>  
-    public class InvalidNumberPredicatesExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidNumberPredicatesException, XmlUnmarshallerContext>
+    public class InvalidNumberPredicatesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidNumberPredicatesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

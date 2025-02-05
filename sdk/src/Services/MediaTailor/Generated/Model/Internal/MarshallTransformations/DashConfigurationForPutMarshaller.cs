@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMpdLocation())
             {
                 context.Writer.WritePropertyName("MpdLocation");
-                context.Writer.Write(requestObject.MpdLocation);
+                context.Writer.WriteStringValue(requestObject.MpdLocation);
             }
 
             if(requestObject.IsSetOriginManifestType())
             {
                 context.Writer.WritePropertyName("OriginManifestType");
-                context.Writer.Write(requestObject.OriginManifestType);
+                context.Writer.WriteStringValue(requestObject.OriginManifestType);
             }
 
         }

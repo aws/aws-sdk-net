@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UpgradeStepItem Object
     /// </summary>  
-    public class UpgradeStepItemUnmarshaller : IUnmarshaller<UpgradeStepItem, XmlUnmarshallerContext>, IUnmarshaller<UpgradeStepItem, JsonUnmarshallerContext>
+    public class UpgradeStepItemUnmarshaller : IJsonUnmarshaller<UpgradeStepItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UpgradeStepItem IUnmarshaller<UpgradeStepItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UpgradeStepItem Unmarshall(JsonUnmarshallerContext context)
+        public UpgradeStepItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UpgradeStepItem unmarshalledObject = new UpgradeStepItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Issues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Issues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Issues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpgradeStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpgradeStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpgradeStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpgradeStepStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpgradeStepStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpgradeStepStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

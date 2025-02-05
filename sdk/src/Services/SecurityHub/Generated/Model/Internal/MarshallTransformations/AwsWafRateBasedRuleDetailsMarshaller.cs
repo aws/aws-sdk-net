@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMatchPredicates())
             {
                 context.Writer.WritePropertyName("MatchPredicates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchPredicatesListValue in requestObject.MatchPredicates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsWafRateBasedRuleMatchPredicateMarshaller.Instance;
                     marshaller.Marshall(requestObjectMatchPredicatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRateKey())
             {
                 context.Writer.WritePropertyName("RateKey");
-                context.Writer.Write(requestObject.RateKey);
+                context.Writer.WriteStringValue(requestObject.RateKey);
             }
 
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("RateLimit");
-                context.Writer.Write(requestObject.RateLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.RateLimit.Value);
             }
 
             if(requestObject.IsSetRuleId())
             {
                 context.Writer.WritePropertyName("RuleId");
-                context.Writer.Write(requestObject.RuleId);
+                context.Writer.WriteStringValue(requestObject.RuleId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEdgeFilter())
             {
                 context.Writer.WritePropertyName("edgeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEdgeFilterKvp in requestObject.EdgeFilter)
                 {
                     context.Writer.WritePropertyName(requestObjectEdgeFilterKvp.Key);
                     var requestObjectEdgeFilterValue = requestObjectEdgeFilterKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExportFilterElementMarshaller.Instance;
                     marshaller.Marshall(requestObjectEdgeFilterValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVertexFilter())
             {
                 context.Writer.WritePropertyName("vertexFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVertexFilterKvp in requestObject.VertexFilter)
                 {
                     context.Writer.WritePropertyName(requestObjectVertexFilterKvp.Key);
                     var requestObjectVertexFilterValue = requestObjectVertexFilterKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExportFilterElementMarshaller.Instance;
                     marshaller.Marshall(requestObjectVertexFilterValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

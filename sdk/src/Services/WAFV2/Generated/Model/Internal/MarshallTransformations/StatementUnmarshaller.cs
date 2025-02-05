@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Statement Object
     /// </summary>  
-    public class StatementUnmarshaller : IUnmarshaller<Statement, XmlUnmarshallerContext>, IUnmarshaller<Statement, JsonUnmarshallerContext>
+    public class StatementUnmarshaller : IJsonUnmarshaller<Statement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Statement IUnmarshaller<Statement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Statement Unmarshall(JsonUnmarshallerContext context)
+        public Statement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Statement unmarshalledObject = new Statement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AndStatement", targetDepth))
                 {
                     var unmarshaller = AndStatementUnmarshaller.Instance;
-                    unmarshalledObject.AndStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AndStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ByteMatchStatement", targetDepth))
                 {
                     var unmarshaller = ByteMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.ByteMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ByteMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GeoMatchStatement", targetDepth))
                 {
                     var unmarshaller = GeoMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.GeoMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GeoMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IPSetReferenceStatement", targetDepth))
                 {
                     var unmarshaller = IPSetReferenceStatementUnmarshaller.Instance;
-                    unmarshalledObject.IPSetReferenceStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IPSetReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelMatchStatement", targetDepth))
                 {
                     var unmarshaller = LabelMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.LabelMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManagedRuleGroupStatement", targetDepth))
                 {
                     var unmarshaller = ManagedRuleGroupStatementUnmarshaller.Instance;
-                    unmarshalledObject.ManagedRuleGroupStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManagedRuleGroupStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NotStatement", targetDepth))
                 {
                     var unmarshaller = NotStatementUnmarshaller.Instance;
-                    unmarshalledObject.NotStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrStatement", targetDepth))
                 {
                     var unmarshaller = OrStatementUnmarshaller.Instance;
-                    unmarshalledObject.OrStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RateBasedStatement", targetDepth))
                 {
                     var unmarshaller = RateBasedStatementUnmarshaller.Instance;
-                    unmarshalledObject.RateBasedStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RateBasedStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegexMatchStatement", targetDepth))
                 {
                     var unmarshaller = RegexMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.RegexMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegexMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegexPatternSetReferenceStatement", targetDepth))
                 {
                     var unmarshaller = RegexPatternSetReferenceStatementUnmarshaller.Instance;
-                    unmarshalledObject.RegexPatternSetReferenceStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegexPatternSetReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleGroupReferenceStatement", targetDepth))
                 {
                     var unmarshaller = RuleGroupReferenceStatementUnmarshaller.Instance;
-                    unmarshalledObject.RuleGroupReferenceStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleGroupReferenceStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SizeConstraintStatement", targetDepth))
                 {
                     var unmarshaller = SizeConstraintStatementUnmarshaller.Instance;
-                    unmarshalledObject.SizeConstraintStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SizeConstraintStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SqliMatchStatement", targetDepth))
                 {
                     var unmarshaller = SqliMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.SqliMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SqliMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("XssMatchStatement", targetDepth))
                 {
                     var unmarshaller = XssMatchStatementUnmarshaller.Instance;
-                    unmarshalledObject.XssMatchStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XssMatchStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

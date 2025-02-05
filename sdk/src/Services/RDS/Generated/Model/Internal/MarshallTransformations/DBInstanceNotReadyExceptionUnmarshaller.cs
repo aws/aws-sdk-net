@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceNotReadyException operation
     /// </summary>  
-    public class DBInstanceNotReadyExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceNotReadyException, XmlUnmarshallerContext>
+    public class DBInstanceNotReadyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceNotReadyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

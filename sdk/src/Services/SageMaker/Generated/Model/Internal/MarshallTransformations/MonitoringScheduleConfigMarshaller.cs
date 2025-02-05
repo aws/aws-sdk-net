@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMonitoringJobDefinition())
             {
                 context.Writer.WritePropertyName("MonitoringJobDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MonitoringJobDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MonitoringJobDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonitoringJobDefinitionName())
             {
                 context.Writer.WritePropertyName("MonitoringJobDefinitionName");
-                context.Writer.Write(requestObject.MonitoringJobDefinitionName);
+                context.Writer.WriteStringValue(requestObject.MonitoringJobDefinitionName);
             }
 
             if(requestObject.IsSetMonitoringType())
             {
                 context.Writer.WritePropertyName("MonitoringType");
-                context.Writer.Write(requestObject.MonitoringType);
+                context.Writer.WriteStringValue(requestObject.MonitoringType);
             }
 
             if(requestObject.IsSetScheduleConfig())
             {
                 context.Writer.WritePropertyName("ScheduleConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RoleDetail Object
     /// </summary>  
-    public class RoleDetailUnmarshaller : IUnmarshaller<RoleDetail, XmlUnmarshallerContext>, IUnmarshaller<RoleDetail, JsonUnmarshallerContext>
+    public class RoleDetailUnmarshaller : IXmlUnmarshaller<RoleDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -156,17 +156,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RoleDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RoleDetailUnmarshaller _instance = new RoleDetailUnmarshaller();        
 

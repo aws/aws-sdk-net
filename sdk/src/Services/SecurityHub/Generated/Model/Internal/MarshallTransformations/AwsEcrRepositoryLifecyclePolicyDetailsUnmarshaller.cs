@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcrRepositoryLifecyclePolicyDetails Object
     /// </summary>  
-    public class AwsEcrRepositoryLifecyclePolicyDetailsUnmarshaller : IUnmarshaller<AwsEcrRepositoryLifecyclePolicyDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcrRepositoryLifecyclePolicyDetails, JsonUnmarshallerContext>
+    public class AwsEcrRepositoryLifecyclePolicyDetailsUnmarshaller : IJsonUnmarshaller<AwsEcrRepositoryLifecyclePolicyDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcrRepositoryLifecyclePolicyDetails IUnmarshaller<AwsEcrRepositoryLifecyclePolicyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcrRepositoryLifecyclePolicyDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcrRepositoryLifecyclePolicyDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcrRepositoryLifecyclePolicyDetails unmarshalledObject = new AwsEcrRepositoryLifecyclePolicyDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LifecyclePolicyText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LifecyclePolicyText = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LifecyclePolicyText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

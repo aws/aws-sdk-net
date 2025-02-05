@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SystemInfo Object
     /// </summary>  
-    public class SystemInfoUnmarshaller : IUnmarshaller<SystemInfo, XmlUnmarshallerContext>, IUnmarshaller<SystemInfo, JsonUnmarshallerContext>
+    public class SystemInfoUnmarshaller : IJsonUnmarshaller<SystemInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SystemInfo IUnmarshaller<SystemInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SystemInfo Unmarshall(JsonUnmarshallerContext context)
+        public SystemInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SystemInfo unmarshalledObject = new SystemInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cpuArchitecture", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CpuArchitecture = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuArchitecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileSystemType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileSystemType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileSystemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkInfo, NetworkInfoUnmarshaller>(NetworkInfoUnmarshaller.Instance);
-                    unmarshalledObject.NetworkInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkInfo, NetworkInfoUnmarshaller>(NetworkInfoUnmarshaller.Instance);
+                    unmarshalledObject.NetworkInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("osInfo", targetDepth))
                 {
                     var unmarshaller = OSInfoUnmarshaller.Instance;
-                    unmarshalledObject.OsInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OsInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

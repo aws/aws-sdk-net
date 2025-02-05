@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidKMSArnException operation
     /// </summary>  
-    public class InvalidKMSArnExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidKMSArnException, XmlUnmarshallerContext>
+    public class InvalidKMSArnExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidKMSArnException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

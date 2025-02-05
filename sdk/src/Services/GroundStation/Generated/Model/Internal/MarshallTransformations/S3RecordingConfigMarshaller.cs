@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketArn())
             {
                 context.Writer.WritePropertyName("bucketArn");
-                context.Writer.Write(requestObject.BucketArn);
+                context.Writer.WriteStringValue(requestObject.BucketArn);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

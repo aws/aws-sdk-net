@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GraphDataSummary Object
     /// </summary>  
-    public class GraphDataSummaryUnmarshaller : IUnmarshaller<GraphDataSummary, XmlUnmarshallerContext>, IUnmarshaller<GraphDataSummary, JsonUnmarshallerContext>
+    public class GraphDataSummaryUnmarshaller : IJsonUnmarshaller<GraphDataSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GraphDataSummary IUnmarshaller<GraphDataSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GraphDataSummary Unmarshall(JsonUnmarshallerContext context)
+        public GraphDataSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GraphDataSummary unmarshalledObject = new GraphDataSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("edgeLabels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EdgeLabels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EdgeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("edgeProperties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, long>, DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
-                    unmarshalledObject.EdgeProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Dictionary<string, long>, JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
+                    unmarshalledObject.EdgeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("edgeStructures", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EdgeStructure, EdgeStructureUnmarshaller>(EdgeStructureUnmarshaller.Instance);
-                    unmarshalledObject.EdgeStructures = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EdgeStructure, EdgeStructureUnmarshaller>(EdgeStructureUnmarshaller.Instance);
+                    unmarshalledObject.EdgeStructures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeLabels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NodeLabels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NodeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeProperties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, long>, DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
-                    unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Dictionary<string, long>, JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
+                    unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeStructures", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NodeStructure, NodeStructureUnmarshaller>(NodeStructureUnmarshaller.Instance);
-                    unmarshalledObject.NodeStructures = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NodeStructure, NodeStructureUnmarshaller>(NodeStructureUnmarshaller.Instance);
+                    unmarshalledObject.NodeStructures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numEdgeLabels", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumEdgeLabels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumEdgeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numEdgeProperties", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumEdgeProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumEdgeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numEdges", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumEdges = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumEdges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numNodeLabels", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumNodeLabels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumNodeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numNodeProperties", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumNodeProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumNodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numNodes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalEdgePropertyValues", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalEdgePropertyValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalEdgePropertyValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalNodePropertyValues", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNodePropertyValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNodePropertyValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RefreshScheduleFrequencyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Frequency, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTimeOfDay())
             {
                 context.Writer.WritePropertyName("TimeOfDay");
-                context.Writer.Write(requestObject.TimeOfDay);
+                context.Writer.WriteStringValue(requestObject.TimeOfDay);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecimalPlacesConfiguration())
             {
                 context.Writer.WritePropertyName("DecimalPlacesConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalPlacesConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecimalPlacesConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNegativeValueConfiguration())
             {
                 context.Writer.WritePropertyName("NegativeValueConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NegativeValueConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegativeValueConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNullValueFormatConfiguration())
             {
                 context.Writer.WritePropertyName("NullValueFormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NullValueFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NullValueFormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumberScale())
             {
                 context.Writer.WritePropertyName("NumberScale");
-                context.Writer.Write(requestObject.NumberScale);
+                context.Writer.WriteStringValue(requestObject.NumberScale);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetSeparatorConfiguration())
             {
                 context.Writer.WritePropertyName("SeparatorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericSeparatorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SeparatorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSuffix())
             {
                 context.Writer.WritePropertyName("Suffix");
-                context.Writer.Write(requestObject.Suffix);
+                context.Writer.WriteStringValue(requestObject.Suffix);
             }
 
         }

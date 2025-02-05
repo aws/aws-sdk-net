@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DestinationFieldProperties Object
     /// </summary>  
-    public class DestinationFieldPropertiesUnmarshaller : IUnmarshaller<DestinationFieldProperties, XmlUnmarshallerContext>, IUnmarshaller<DestinationFieldProperties, JsonUnmarshallerContext>
+    public class DestinationFieldPropertiesUnmarshaller : IJsonUnmarshaller<DestinationFieldProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DestinationFieldProperties IUnmarshaller<DestinationFieldProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DestinationFieldProperties Unmarshall(JsonUnmarshallerContext context)
+        public DestinationFieldProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DestinationFieldProperties unmarshalledObject = new DestinationFieldProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("isCreatable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsCreatable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsCreatable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isDefaultedOnCreate", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefaultedOnCreate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsDefaultedOnCreate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isNullable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNullable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsNullable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isUpdatable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsUpdatable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsUpdatable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isUpsertable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsUpsertable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsUpsertable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedWriteOperations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

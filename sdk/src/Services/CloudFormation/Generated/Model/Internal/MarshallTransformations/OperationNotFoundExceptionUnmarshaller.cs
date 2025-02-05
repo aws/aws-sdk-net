@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OperationNotFoundException operation
     /// </summary>  
-    public class OperationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<OperationNotFoundException, XmlUnmarshallerContext>
+    public class OperationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OperationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

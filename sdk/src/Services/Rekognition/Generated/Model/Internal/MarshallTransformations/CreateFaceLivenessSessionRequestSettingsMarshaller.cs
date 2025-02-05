@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditImagesLimit())
             {
                 context.Writer.WritePropertyName("AuditImagesLimit");
-                context.Writer.Write(requestObject.AuditImagesLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.AuditImagesLimit.Value);
             }
 
             if(requestObject.IsSetOutputConfig())
             {
                 context.Writer.WritePropertyName("OutputConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LivenessOutputConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

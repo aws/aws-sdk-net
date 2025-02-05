@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFleetIds())
             {
                 context.Writer.WritePropertyName("fleetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFleetIdsListValue in requestObject.FleetIds)
                 {
-                        context.Writer.Write(requestObjectFleetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectFleetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueueIds())
             {
                 context.Writer.WritePropertyName("queueIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueueIdsListValue in requestObject.QueueIds)
                 {
-                        context.Writer.Write(requestObjectQueueIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectQueueIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

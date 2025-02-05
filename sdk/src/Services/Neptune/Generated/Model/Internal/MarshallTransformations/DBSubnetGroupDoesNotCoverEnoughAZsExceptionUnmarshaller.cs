@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSubnetGroupDoesNotCoverEnoughAZsException operation
     /// </summary>  
-    public class DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSubnetGroupDoesNotCoverEnoughAZsException, XmlUnmarshallerContext>
+    public class DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSubnetGroupDoesNotCoverEnoughAZsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

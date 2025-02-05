@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DashManifest Object
     /// </summary>  
-    public class DashManifestUnmarshaller : IUnmarshaller<DashManifest, XmlUnmarshallerContext>, IUnmarshaller<DashManifest, JsonUnmarshallerContext>
+    public class DashManifestUnmarshaller : IJsonUnmarshaller<DashManifest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DashManifest IUnmarshaller<DashManifest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DashManifest Unmarshall(JsonUnmarshallerContext context)
+        public DashManifest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DashManifest unmarshalledObject = new DashManifest();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("manifestLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minBufferTimeSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scteMarkersSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScteMarkersSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScteMarkersSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamSelection", targetDepth))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;
-                    unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

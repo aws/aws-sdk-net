@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustStoreAssociation Object
     /// </summary>  
-    public class TrustStoreAssociationUnmarshaller : IUnmarshaller<TrustStoreAssociation, XmlUnmarshallerContext>, IUnmarshaller<TrustStoreAssociation, JsonUnmarshallerContext>
+    public class TrustStoreAssociationUnmarshaller : IXmlUnmarshaller<TrustStoreAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrustStoreAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrustStoreAssociationUnmarshaller _instance = new TrustStoreAssociationUnmarshaller();        
 

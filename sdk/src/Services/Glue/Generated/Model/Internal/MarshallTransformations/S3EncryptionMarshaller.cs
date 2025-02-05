@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("KmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetS3EncryptionMode())
             {
                 context.Writer.WritePropertyName("S3EncryptionMode");
-                context.Writer.Write(requestObject.S3EncryptionMode);
+                context.Writer.WriteStringValue(requestObject.S3EncryptionMode);
             }
 
         }

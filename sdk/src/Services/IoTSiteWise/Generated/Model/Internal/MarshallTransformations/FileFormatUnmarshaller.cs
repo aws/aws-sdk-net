@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FileFormat Object
     /// </summary>  
-    public class FileFormatUnmarshaller : IUnmarshaller<FileFormat, XmlUnmarshallerContext>, IUnmarshaller<FileFormat, JsonUnmarshallerContext>
+    public class FileFormatUnmarshaller : IJsonUnmarshaller<FileFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FileFormat IUnmarshaller<FileFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FileFormat Unmarshall(JsonUnmarshallerContext context)
+        public FileFormat Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FileFormat unmarshalledObject = new FileFormat();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("csv", targetDepth))
                 {
                     var unmarshaller = CsvUnmarshaller.Instance;
-                    unmarshalledObject.Csv = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parquet", targetDepth))
                 {
                     var unmarshaller = ParquetUnmarshaller.Instance;
-                    unmarshalledObject.Parquet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Parquet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

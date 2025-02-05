@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExportTaskNotFoundException operation
     /// </summary>  
-    public class ExportTaskNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ExportTaskNotFoundException, XmlUnmarshallerContext>
+    public class ExportTaskNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ExportTaskNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

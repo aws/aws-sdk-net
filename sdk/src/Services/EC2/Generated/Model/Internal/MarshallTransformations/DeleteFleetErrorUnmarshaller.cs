@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteFleetError Object
     /// </summary>  
-    public class DeleteFleetErrorUnmarshaller : IUnmarshaller<DeleteFleetError, XmlUnmarshallerContext>, IUnmarshaller<DeleteFleetError, JsonUnmarshallerContext>
+    public class DeleteFleetErrorUnmarshaller : IXmlUnmarshaller<DeleteFleetError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeleteFleetError Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DeleteFleetErrorUnmarshaller _instance = new DeleteFleetErrorUnmarshaller();        
 

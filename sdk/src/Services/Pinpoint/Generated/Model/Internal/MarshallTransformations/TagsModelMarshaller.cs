@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,15 +49,15 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

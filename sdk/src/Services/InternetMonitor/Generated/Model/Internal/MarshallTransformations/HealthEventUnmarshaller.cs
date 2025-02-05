@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HealthEvent Object
     /// </summary>  
-    public class HealthEventUnmarshaller : IUnmarshaller<HealthEvent, XmlUnmarshallerContext>, IUnmarshaller<HealthEvent, JsonUnmarshallerContext>
+    public class HealthEventUnmarshaller : IJsonUnmarshaller<HealthEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HealthEvent IUnmarshaller<HealthEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HealthEvent Unmarshall(JsonUnmarshallerContext context)
+        public HealthEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HealthEvent unmarshalledObject = new HealthEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HealthScoreThreshold", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.HealthScoreThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthScoreThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImpactedLocations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ImpactedLocation, ImpactedLocationUnmarshaller>(ImpactedLocationUnmarshaller.Instance);
-                    unmarshalledObject.ImpactedLocations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ImpactedLocation, ImpactedLocationUnmarshaller>(ImpactedLocationUnmarshaller.Instance);
+                    unmarshalledObject.ImpactedLocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImpactType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImpactType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImpactType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PercentOfTotalTrafficImpacted", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PercentOfTotalTrafficImpacted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PercentOfTotalTrafficImpacted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

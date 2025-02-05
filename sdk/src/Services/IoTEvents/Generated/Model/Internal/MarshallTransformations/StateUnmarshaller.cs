@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for State Object
     /// </summary>  
-    public class StateUnmarshaller : IUnmarshaller<State, XmlUnmarshallerContext>, IUnmarshaller<State, JsonUnmarshallerContext>
+    public class StateUnmarshaller : IJsonUnmarshaller<State, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        State IUnmarshaller<State, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public State Unmarshall(JsonUnmarshallerContext context)
+        public State Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             State unmarshalledObject = new State();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("onEnter", targetDepth))
                 {
                     var unmarshaller = OnEnterLifecycleUnmarshaller.Instance;
-                    unmarshalledObject.OnEnter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnEnter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("onExit", targetDepth))
                 {
                     var unmarshaller = OnExitLifecycleUnmarshaller.Instance;
-                    unmarshalledObject.OnExit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnExit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("onInput", targetDepth))
                 {
                     var unmarshaller = OnInputLifecycleUnmarshaller.Instance;
-                    unmarshalledObject.OnInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

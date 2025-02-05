@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WriteStringValue(requestObject.Database);
             }
 
             if(requestObject.IsSetDataPreviewOptions())
             {
                 context.Writer.WritePropertyName("DataPreviewOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StreamingDataPreviewOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPreviewOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetectSchema())
             {
                 context.Writer.WritePropertyName("DetectSchema");
-                context.Writer.Write(requestObject.DetectSchema.Value);
+                context.Writer.WriteBooleanValue(requestObject.DetectSchema.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetStreamingOptions())
             {
                 context.Writer.WritePropertyName("StreamingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisStreamingSourceOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");
-                context.Writer.Write(requestObject.Table);
+                context.Writer.WriteStringValue(requestObject.Table);
             }
 
             if(requestObject.IsSetWindowSize())
             {
                 context.Writer.WritePropertyName("WindowSize");
-                context.Writer.Write(requestObject.WindowSize.Value);
+                context.Writer.WriteNumberValue(requestObject.WindowSize.Value);
             }
 
         }

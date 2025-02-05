@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TapeRecoveryPointInfo Object
     /// </summary>  
-    public class TapeRecoveryPointInfoUnmarshaller : IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<TapeRecoveryPointInfo, JsonUnmarshallerContext>
+    public class TapeRecoveryPointInfoUnmarshaller : IJsonUnmarshaller<TapeRecoveryPointInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TapeRecoveryPointInfo IUnmarshaller<TapeRecoveryPointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TapeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
+        public TapeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TapeRecoveryPointInfo unmarshalledObject = new TapeRecoveryPointInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TapeARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TapeARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TapeRecoveryPointTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TapeRecoveryPointTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeRecoveryPointTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TapeSizeInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TapeStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

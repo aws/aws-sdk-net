@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -61,123 +64,128 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/collaborations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAnalyticsEngine())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAnalyticsEngine())
-                    {
-                        context.Writer.WritePropertyName("analyticsEngine");
-                        context.Writer.Write(publicRequest.AnalyticsEngine);
-                    }
-
-                    if(publicRequest.IsSetCreatorDisplayName())
-                    {
-                        context.Writer.WritePropertyName("creatorDisplayName");
-                        context.Writer.Write(publicRequest.CreatorDisplayName);
-                    }
-
-                    if(publicRequest.IsSetCreatorMemberAbilities())
-                    {
-                        context.Writer.WritePropertyName("creatorMemberAbilities");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCreatorMemberAbilitiesListValue in publicRequest.CreatorMemberAbilities)
-                        {
-                                context.Writer.Write(publicRequestCreatorMemberAbilitiesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCreatorMLMemberAbilities())
-                    {
-                        context.Writer.WritePropertyName("creatorMLMemberAbilities");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MLMemberAbilitiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCreatorPaymentConfiguration())
-                    {
-                        context.Writer.WritePropertyName("creatorPaymentConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PaymentConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CreatorPaymentConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataEncryptionMetadata())
-                    {
-                        context.Writer.WritePropertyName("dataEncryptionMetadata");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataEncryptionMetadataMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataEncryptionMetadata, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetMembers())
-                    {
-                        context.Writer.WritePropertyName("members");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMembersListValue in publicRequest.Members)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MemberSpecificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMembersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetQueryLogStatus())
-                    {
-                        context.Writer.WritePropertyName("queryLogStatus");
-                        context.Writer.Write(publicRequest.QueryLogStatus);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("analyticsEngine");
+                context.Writer.WriteStringValue(publicRequest.AnalyticsEngine);
             }
+
+            if(publicRequest.IsSetCreatorDisplayName())
+            {
+                context.Writer.WritePropertyName("creatorDisplayName");
+                context.Writer.WriteStringValue(publicRequest.CreatorDisplayName);
+            }
+
+            if(publicRequest.IsSetCreatorMemberAbilities())
+            {
+                context.Writer.WritePropertyName("creatorMemberAbilities");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCreatorMemberAbilitiesListValue in publicRequest.CreatorMemberAbilities)
+                {
+                        context.Writer.WriteStringValue(publicRequestCreatorMemberAbilitiesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCreatorMLMemberAbilities())
+            {
+                context.Writer.WritePropertyName("creatorMLMemberAbilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCreatorPaymentConfiguration())
+            {
+                context.Writer.WritePropertyName("creatorPaymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PaymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreatorPaymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataEncryptionMetadata())
+            {
+                context.Writer.WritePropertyName("dataEncryptionMetadata");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataEncryptionMetadataMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataEncryptionMetadata, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetMembers())
+            {
+                context.Writer.WritePropertyName("members");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMembersListValue in publicRequest.Members)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MemberSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMembersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetQueryLogStatus())
+            {
+                context.Writer.WritePropertyName("queryLogStatus");
+                context.Writer.WriteStringValue(publicRequest.QueryLogStatus);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

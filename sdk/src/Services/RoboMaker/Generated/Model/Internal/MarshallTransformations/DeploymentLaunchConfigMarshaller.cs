@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentVariablesKvp in requestObject.EnvironmentVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentVariablesKvp.Key);
                     var requestObjectEnvironmentVariablesValue = requestObjectEnvironmentVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLaunchFile())
             {
                 context.Writer.WritePropertyName("launchFile");
-                context.Writer.Write(requestObject.LaunchFile);
+                context.Writer.WriteStringValue(requestObject.LaunchFile);
             }
 
             if(requestObject.IsSetPackageName())
             {
                 context.Writer.WritePropertyName("packageName");
-                context.Writer.Write(requestObject.PackageName);
+                context.Writer.WriteStringValue(requestObject.PackageName);
             }
 
             if(requestObject.IsSetPostLaunchFile())
             {
                 context.Writer.WritePropertyName("postLaunchFile");
-                context.Writer.Write(requestObject.PostLaunchFile);
+                context.Writer.WriteStringValue(requestObject.PostLaunchFile);
             }
 
             if(requestObject.IsSetPreLaunchFile())
             {
                 context.Writer.WritePropertyName("preLaunchFile");
-                context.Writer.Write(requestObject.PreLaunchFile);
+                context.Writer.WriteStringValue(requestObject.PreLaunchFile);
             }
 
         }

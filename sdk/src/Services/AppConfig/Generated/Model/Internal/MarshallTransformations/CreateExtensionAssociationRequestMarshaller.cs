@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
@@ -61,65 +64,70 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/extensionassociations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExtensionIdentifier())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExtensionIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ExtensionIdentifier");
-                        context.Writer.Write(publicRequest.ExtensionIdentifier);
-                    }
-
-                    if(publicRequest.IsSetExtensionVersionNumber())
-                    {
-                        context.Writer.WritePropertyName("ExtensionVersionNumber");
-                        context.Writer.Write(publicRequest.ExtensionVersionNumber.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("Parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ResourceIdentifier");
-                        context.Writer.Write(publicRequest.ResourceIdentifier);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExtensionIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ExtensionIdentifier);
             }
+
+            if(publicRequest.IsSetExtensionVersionNumber())
+            {
+                context.Writer.WritePropertyName("ExtensionVersionNumber");
+                context.Writer.WriteNumberValue(publicRequest.ExtensionVersionNumber.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceIdentifier())
+            {
+                context.Writer.WritePropertyName("ResourceIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ResourceIdentifier);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

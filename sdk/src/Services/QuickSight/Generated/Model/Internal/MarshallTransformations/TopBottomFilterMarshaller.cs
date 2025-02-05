@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationSortConfigurations())
             {
                 context.Writer.WritePropertyName("AggregationSortConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregationSortConfigurationsListValue in requestObject.AggregationSortConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AggregationSortConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggregationSortConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultFilterControlConfiguration())
             {
                 context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");
-                context.Writer.Write(requestObject.FilterId);
+                context.Writer.WriteStringValue(requestObject.FilterId);
             }
 
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit.Value);
+                context.Writer.WriteNumberValue(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("ParameterName");
-                context.Writer.Write(requestObject.ParameterName);
+                context.Writer.WriteStringValue(requestObject.ParameterName);
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
         }

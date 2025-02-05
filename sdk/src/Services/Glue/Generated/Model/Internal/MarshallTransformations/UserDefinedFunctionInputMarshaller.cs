@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClassName())
             {
                 context.Writer.WritePropertyName("ClassName");
-                context.Writer.Write(requestObject.ClassName);
+                context.Writer.WriteStringValue(requestObject.ClassName);
             }
 
             if(requestObject.IsSetFunctionName())
             {
                 context.Writer.WritePropertyName("FunctionName");
-                context.Writer.Write(requestObject.FunctionName);
+                context.Writer.WriteStringValue(requestObject.FunctionName);
             }
 
             if(requestObject.IsSetOwnerName())
             {
                 context.Writer.WritePropertyName("OwnerName");
-                context.Writer.Write(requestObject.OwnerName);
+                context.Writer.WriteStringValue(requestObject.OwnerName);
             }
 
             if(requestObject.IsSetOwnerType())
             {
                 context.Writer.WritePropertyName("OwnerType");
-                context.Writer.Write(requestObject.OwnerType);
+                context.Writer.WriteStringValue(requestObject.OwnerType);
             }
 
             if(requestObject.IsSetResourceUris())
             {
                 context.Writer.WritePropertyName("ResourceUris");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceUrisListValue in requestObject.ResourceUris)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ResourceUriMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceUrisListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

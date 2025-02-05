@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterRoleQuotaExceededException operation
     /// </summary>  
-    public class DBClusterRoleQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterRoleQuotaExceededException, XmlUnmarshallerContext>
+    public class DBClusterRoleQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterRoleQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

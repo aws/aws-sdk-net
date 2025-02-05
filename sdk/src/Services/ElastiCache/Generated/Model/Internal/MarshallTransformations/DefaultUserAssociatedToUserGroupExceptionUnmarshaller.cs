@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DefaultUserAssociatedToUserGroupException operation
     /// </summary>  
-    public class DefaultUserAssociatedToUserGroupExceptionUnmarshaller : IErrorResponseUnmarshaller<DefaultUserAssociatedToUserGroupException, XmlUnmarshallerContext>
+    public class DefaultUserAssociatedToUserGroupExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DefaultUserAssociatedToUserGroupException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

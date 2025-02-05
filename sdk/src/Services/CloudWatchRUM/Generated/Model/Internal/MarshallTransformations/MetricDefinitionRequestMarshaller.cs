@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionKeys())
             {
                 context.Writer.WritePropertyName("DimensionKeys");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDimensionKeysKvp in requestObject.DimensionKeys)
                 {
                     context.Writer.WritePropertyName(requestObjectDimensionKeysKvp.Key);
                     var requestObjectDimensionKeysValue = requestObjectDimensionKeysKvp.Value;
 
-                        context.Writer.Write(requestObjectDimensionKeysValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionKeysValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventPattern())
             {
                 context.Writer.WritePropertyName("EventPattern");
-                context.Writer.Write(requestObject.EventPattern);
+                context.Writer.WriteStringValue(requestObject.EventPattern);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetUnitLabel())
             {
                 context.Writer.WritePropertyName("UnitLabel");
-                context.Writer.Write(requestObject.UnitLabel);
+                context.Writer.WriteStringValue(requestObject.UnitLabel);
             }
 
             if(requestObject.IsSetValueKey())
             {
                 context.Writer.WritePropertyName("ValueKey");
-                context.Writer.Write(requestObject.ValueKey);
+                context.Writer.WriteStringValue(requestObject.ValueKey);
             }
 
         }

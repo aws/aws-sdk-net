@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InternetMeasurementsLogDelivery Object
     /// </summary>  
-    public class InternetMeasurementsLogDeliveryUnmarshaller : IUnmarshaller<InternetMeasurementsLogDelivery, XmlUnmarshallerContext>, IUnmarshaller<InternetMeasurementsLogDelivery, JsonUnmarshallerContext>
+    public class InternetMeasurementsLogDeliveryUnmarshaller : IJsonUnmarshaller<InternetMeasurementsLogDelivery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InternetMeasurementsLogDelivery IUnmarshaller<InternetMeasurementsLogDelivery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InternetMeasurementsLogDelivery Unmarshall(JsonUnmarshallerContext context)
+        public InternetMeasurementsLogDelivery Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InternetMeasurementsLogDelivery unmarshalledObject = new InternetMeasurementsLogDelivery();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3Config", targetDepth))
                 {
                     var unmarshaller = S3ConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3Config = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Config = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdditionalInfoResponse Object
     /// </summary>  
-    public class AdditionalInfoResponseUnmarshaller : IUnmarshaller<AdditionalInfoResponse, XmlUnmarshallerContext>, IUnmarshaller<AdditionalInfoResponse, JsonUnmarshallerContext>
+    public class AdditionalInfoResponseUnmarshaller : IJsonUnmarshaller<AdditionalInfoResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AdditionalInfoResponse IUnmarshaller<AdditionalInfoResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdditionalInfoResponse Unmarshall(JsonUnmarshallerContext context)
+        public AdditionalInfoResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AdditionalInfoResponse unmarshalledObject = new AdditionalInfoResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("brazilAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = BrazilAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.BrazilAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrazilAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("canadaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = CanadaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.CanadaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanadaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estoniaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = EstoniaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.EstoniaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstoniaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("georgiaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = GeorgiaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.GeorgiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GeorgiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("indiaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = IndiaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.IndiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("israelAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = IsraelAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.IsraelAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsraelAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("italyAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = ItalyAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.ItalyAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItalyAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kenyaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = KenyaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.KenyaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KenyaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("malaysiaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = MalaysiaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.MalaysiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MalaysiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("polandAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = PolandAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.PolandAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolandAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("romaniaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = RomaniaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.RomaniaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RomaniaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("saudiArabiaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = SaudiArabiaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.SaudiArabiaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SaudiArabiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("southKoreaAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = SouthKoreaAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.SouthKoreaAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SouthKoreaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("spainAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = SpainAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.SpainAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpainAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("turkeyAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = TurkeyAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.TurkeyAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurkeyAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ukraineAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = UkraineAdditionalInfoUnmarshaller.Instance;
-                    unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UkraineAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

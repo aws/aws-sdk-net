@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2SecurityGroupIpPermission Object
     /// </summary>  
-    public class AwsEc2SecurityGroupIpPermissionUnmarshaller : IUnmarshaller<AwsEc2SecurityGroupIpPermission, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2SecurityGroupIpPermission, JsonUnmarshallerContext>
+    public class AwsEc2SecurityGroupIpPermissionUnmarshaller : IJsonUnmarshaller<AwsEc2SecurityGroupIpPermission, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2SecurityGroupIpPermission IUnmarshaller<AwsEc2SecurityGroupIpPermission, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2SecurityGroupIpPermission Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2SecurityGroupIpPermission Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2SecurityGroupIpPermission unmarshalledObject = new AwsEc2SecurityGroupIpPermission();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FromPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FromPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IpProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IpRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2SecurityGroupIpRange, AwsEc2SecurityGroupIpRangeUnmarshaller>(AwsEc2SecurityGroupIpRangeUnmarshaller.Instance);
-                    unmarshalledObject.IpRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupIpRange, AwsEc2SecurityGroupIpRangeUnmarshaller>(AwsEc2SecurityGroupIpRangeUnmarshaller.Instance);
+                    unmarshalledObject.IpRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ipv6Ranges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2SecurityGroupIpv6Range, AwsEc2SecurityGroupIpv6RangeUnmarshaller>(AwsEc2SecurityGroupIpv6RangeUnmarshaller.Instance);
-                    unmarshalledObject.Ipv6Ranges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupIpv6Range, AwsEc2SecurityGroupIpv6RangeUnmarshaller>(AwsEc2SecurityGroupIpv6RangeUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6Ranges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrefixListIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2SecurityGroupPrefixListId, AwsEc2SecurityGroupPrefixListIdUnmarshaller>(AwsEc2SecurityGroupPrefixListIdUnmarshaller.Instance);
-                    unmarshalledObject.PrefixListIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupPrefixListId, AwsEc2SecurityGroupPrefixListIdUnmarshaller>(AwsEc2SecurityGroupPrefixListIdUnmarshaller.Instance);
+                    unmarshalledObject.PrefixListIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ToPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ToPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserIdGroupPairs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2SecurityGroupUserIdGroupPair, AwsEc2SecurityGroupUserIdGroupPairUnmarshaller>(AwsEc2SecurityGroupUserIdGroupPairUnmarshaller.Instance);
-                    unmarshalledObject.UserIdGroupPairs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupUserIdGroupPair, AwsEc2SecurityGroupUserIdGroupPairUnmarshaller>(AwsEc2SecurityGroupUserIdGroupPairUnmarshaller.Instance);
+                    unmarshalledObject.UserIdGroupPairs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

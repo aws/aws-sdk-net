@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeviceType Object
     /// </summary>  
-    public class DeviceTypeUnmarshaller : IUnmarshaller<DeviceType, XmlUnmarshallerContext>, IUnmarshaller<DeviceType, JsonUnmarshallerContext>
+    public class DeviceTypeUnmarshaller : IJsonUnmarshaller<DeviceType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeviceType IUnmarshaller<DeviceType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeviceType Unmarshall(JsonUnmarshallerContext context)
+        public DeviceType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeviceType unmarshalledObject = new DeviceType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeviceAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttributeType, AttributeTypeUnmarshaller>(AttributeTypeUnmarshaller.Instance);
-                    unmarshalledObject.DeviceAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AttributeType, AttributeTypeUnmarshaller>(AttributeTypeUnmarshaller.Instance);
+                    unmarshalledObject.DeviceAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceCreateDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeviceCreateDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceCreateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceLastAuthenticatedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeviceLastAuthenticatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceLastAuthenticatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceLastModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeviceLastModifiedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceLastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

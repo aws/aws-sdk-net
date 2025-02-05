@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarketo())
             {
                 context.Writer.WritePropertyName("Marketo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MarketoSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3SourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("Salesforce");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceNow, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZendesk())
             {
                 context.Writer.WritePropertyName("Zendesk");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZendeskSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Zendesk, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

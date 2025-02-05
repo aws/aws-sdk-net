@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecipeActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Action, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConditionExpressions())
             {
                 context.Writer.WritePropertyName("ConditionExpressions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConditionExpressionsListValue in requestObject.ConditionExpressions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConditionExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectConditionExpressionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

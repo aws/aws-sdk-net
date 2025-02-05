@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBelow())
             {
                 context.Writer.WritePropertyName("below");
-                context.Writer.Write(requestObject.Below);
+                context.Writer.WriteStringValue(requestObject.Below);
             }
 
             if(requestObject.IsSetFixed())
             {
                 context.Writer.WritePropertyName("fixed");
-                context.Writer.Write(requestObject.Fixed);
+                context.Writer.WriteStringValue(requestObject.Fixed);
             }
 
             if(requestObject.IsSetRightOf())
             {
                 context.Writer.WritePropertyName("rightOf");
-                context.Writer.Write(requestObject.RightOf);
+                context.Writer.WriteStringValue(requestObject.RightOf);
             }
 
         }

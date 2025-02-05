@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetKeyArn())
             {
                 context.Writer.WritePropertyName("keyArn");
-                context.Writer.Write(requestObject.KeyArn);
+                context.Writer.WriteStringValue(requestObject.KeyArn);
             }
 
         }

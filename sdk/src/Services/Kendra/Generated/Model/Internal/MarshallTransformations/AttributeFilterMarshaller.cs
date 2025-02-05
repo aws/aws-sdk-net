@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,121 +49,121 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAndAllFilters())
             {
                 context.Writer.WritePropertyName("AndAllFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAndAllFiltersListValue in requestObject.AndAllFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndAllFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainsAll())
             {
                 context.Writer.WritePropertyName("ContainsAll");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainsAll, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainsAny())
             {
                 context.Writer.WritePropertyName("ContainsAny");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainsAny, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEqualsTo())
             {
                 context.Writer.WritePropertyName("EqualsTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.EqualsTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("GreaterThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThanOrEquals())
             {
                 context.Writer.WritePropertyName("GreaterThanOrEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThanOrEquals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("LessThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThanOrEquals())
             {
                 context.Writer.WritePropertyName("LessThanOrEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThanOrEquals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotFilter())
             {
                 context.Writer.WritePropertyName("NotFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrAllFilters())
             {
                 context.Writer.WritePropertyName("OrAllFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrAllFiltersListValue in requestObject.OrAllFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrAllFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

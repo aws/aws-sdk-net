@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordingMode())
             {
                 context.Writer.WritePropertyName("recordingMode");
-                context.Writer.Write(requestObject.RecordingMode);
+                context.Writer.WriteStringValue(requestObject.RecordingMode);
             }
 
             if(requestObject.IsSetResolution())
             {
                 context.Writer.WritePropertyName("resolution");
-                context.Writer.Write(requestObject.Resolution);
+                context.Writer.WriteStringValue(requestObject.Resolution);
             }
 
             if(requestObject.IsSetStorage())
             {
                 context.Writer.WritePropertyName("storage");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStorageListValue in requestObject.Storage)
                 {
-                        context.Writer.Write(requestObjectStorageListValue);
+                        context.Writer.WriteStringValue(requestObjectStorageListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetIntervalSeconds())
             {
                 context.Writer.WritePropertyName("targetIntervalSeconds");
-                context.Writer.Write(requestObject.TargetIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetIntervalSeconds.Value);
             }
 
         }

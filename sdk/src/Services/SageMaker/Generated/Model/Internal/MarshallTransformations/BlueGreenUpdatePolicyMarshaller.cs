@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumExecutionTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumExecutionTimeoutInSeconds");
-                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumExecutionTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetTerminationWaitInSeconds())
             {
                 context.Writer.WritePropertyName("TerminationWaitInSeconds");
-                context.Writer.Write(requestObject.TerminationWaitInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TerminationWaitInSeconds.Value);
             }
 
             if(requestObject.IsSetTrafficRoutingConfiguration())
             {
                 context.Writer.WritePropertyName("TrafficRoutingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrafficRoutingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrafficRoutingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

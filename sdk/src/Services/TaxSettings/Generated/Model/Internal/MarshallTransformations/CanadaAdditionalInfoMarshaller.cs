@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanadaQuebecSalesTaxNumber())
             {
                 context.Writer.WritePropertyName("canadaQuebecSalesTaxNumber");
-                context.Writer.Write(requestObject.CanadaQuebecSalesTaxNumber);
+                context.Writer.WriteStringValue(requestObject.CanadaQuebecSalesTaxNumber);
             }
 
             if(requestObject.IsSetCanadaRetailSalesTaxNumber())
             {
                 context.Writer.WritePropertyName("canadaRetailSalesTaxNumber");
-                context.Writer.Write(requestObject.CanadaRetailSalesTaxNumber);
+                context.Writer.WriteStringValue(requestObject.CanadaRetailSalesTaxNumber);
             }
 
             if(requestObject.IsSetIsResellerAccount())
             {
                 context.Writer.WritePropertyName("isResellerAccount");
-                context.Writer.Write(requestObject.IsResellerAccount.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsResellerAccount.Value);
             }
 
             if(requestObject.IsSetProvincialSalesTaxId())
             {
                 context.Writer.WritePropertyName("provincialSalesTaxId");
-                context.Writer.Write(requestObject.ProvincialSalesTaxId);
+                context.Writer.WriteStringValue(requestObject.ProvincialSalesTaxId);
             }
 
         }

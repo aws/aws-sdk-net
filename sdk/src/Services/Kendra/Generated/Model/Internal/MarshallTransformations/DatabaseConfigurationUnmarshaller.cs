@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatabaseConfiguration Object
     /// </summary>  
-    public class DatabaseConfigurationUnmarshaller : IUnmarshaller<DatabaseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DatabaseConfiguration, JsonUnmarshallerContext>
+    public class DatabaseConfigurationUnmarshaller : IJsonUnmarshaller<DatabaseConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatabaseConfiguration IUnmarshaller<DatabaseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatabaseConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DatabaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatabaseConfiguration unmarshalledObject = new DatabaseConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AclConfiguration", targetDepth))
                 {
                     var unmarshaller = AclConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AclConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AclConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnConfiguration", targetDepth))
                 {
                     var unmarshaller = ColumnConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ColumnConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionConfiguration", targetDepth))
                 {
                     var unmarshaller = ConnectionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseEngineType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseEngineType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseEngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SqlConfiguration", targetDepth))
                 {
                     var unmarshaller = SqlConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SqlConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SqlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcConfiguration", targetDepth))
                 {
                     var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LocationAction Object
     /// </summary>  
-    public class LocationActionUnmarshaller : IUnmarshaller<LocationAction, XmlUnmarshallerContext>, IUnmarshaller<LocationAction, JsonUnmarshallerContext>
+    public class LocationActionUnmarshaller : IJsonUnmarshaller<LocationAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LocationAction IUnmarshaller<LocationAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LocationAction Unmarshall(JsonUnmarshallerContext context)
+        public LocationAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LocationAction unmarshalledObject = new LocationAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("deviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("latitude", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Latitude = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Latitude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("longitude", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Longitude = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Longitude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
                     var unmarshaller = LocationTimestampUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trackerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrackerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrackerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

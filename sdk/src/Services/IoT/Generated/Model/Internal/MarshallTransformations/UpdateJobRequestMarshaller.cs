@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -67,80 +70,85 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNamespaceId())
                 request.Parameters.Add("namespaceId", StringUtils.FromString(publicRequest.NamespaceId));
             request.ResourcePath = "/jobs/{jobId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAbortConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAbortConfig())
-                    {
-                        context.Writer.WritePropertyName("abortConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("abortConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AbortConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AbortConfig, context);
+                var marshaller = AbortConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AbortConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetJobExecutionsRetryConfig())
-                    {
-                        context.Writer.WritePropertyName("jobExecutionsRetryConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobExecutionsRolloutConfig())
-                    {
-                        context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobExecutionsRolloutConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPresignedUrlConfig())
-                    {
-                        context.Writer.WritePropertyName("presignedUrlConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PresignedUrlConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PresignedUrlConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeoutConfig())
-                    {
-                        context.Writer.WritePropertyName("timeoutConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeoutConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TimeoutConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetJobExecutionsRetryConfig())
+            {
+                context.Writer.WritePropertyName("jobExecutionsRetryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobExecutionsRolloutConfig())
+            {
+                context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobExecutionsRolloutConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPresignedUrlConfig())
+            {
+                context.Writer.WritePropertyName("presignedUrlConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PresignedUrlConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PresignedUrlConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTimeoutConfig())
+            {
+                context.Writer.WritePropertyName("timeoutConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeoutConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TimeoutConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

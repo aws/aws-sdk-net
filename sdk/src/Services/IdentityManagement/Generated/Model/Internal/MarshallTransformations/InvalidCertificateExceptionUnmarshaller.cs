@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCertificateException operation
     /// </summary>  
-    public class InvalidCertificateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCertificateException, XmlUnmarshallerContext>
+    public class InvalidCertificateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCertificateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachePolicyQueryStringsConfig Object
     /// </summary>  
-    public class CachePolicyQueryStringsConfigUnmarshaller : IUnmarshaller<CachePolicyQueryStringsConfig, XmlUnmarshallerContext>, IUnmarshaller<CachePolicyQueryStringsConfig, JsonUnmarshallerContext>
+    public class CachePolicyQueryStringsConfigUnmarshaller : IXmlUnmarshaller<CachePolicyQueryStringsConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CachePolicyQueryStringsConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static CachePolicyQueryStringsConfigUnmarshaller _instance = new CachePolicyQueryStringsConfigUnmarshaller();        
 
         /// <summary>

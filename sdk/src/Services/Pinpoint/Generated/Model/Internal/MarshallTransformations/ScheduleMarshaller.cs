@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.WriteStringValue(requestObject.EndTime);
             }
 
             if(requestObject.IsSetEventFilter())
             {
                 context.Writer.WritePropertyName("EventFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignEventFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");
-                context.Writer.Write(requestObject.Frequency);
+                context.Writer.WriteStringValue(requestObject.Frequency);
             }
 
             if(requestObject.IsSetIsLocalTime())
             {
                 context.Writer.WritePropertyName("IsLocalTime");
-                context.Writer.Write(requestObject.IsLocalTime.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsLocalTime.Value);
             }
 
             if(requestObject.IsSetQuietTime())
             {
                 context.Writer.WritePropertyName("QuietTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QuietTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuietTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteStringValue(requestObject.StartTime);
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionBased())
             {
                 context.Writer.WritePropertyName("conditionBased");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionBasedSignalFetchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConditionBased, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeBased())
             {
                 context.Writer.WritePropertyName("timeBased");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeBasedSignalFetchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeBased, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

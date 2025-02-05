@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetSnapshotId())
             {
                 context.Writer.WritePropertyName("SnapshotId");
-                context.Writer.Write(requestObject.SnapshotId);
+                context.Writer.WriteStringValue(requestObject.SnapshotId);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("Throughput");
-                context.Writer.Write(requestObject.Throughput.Value);
+                context.Writer.WriteNumberValue(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");
-                context.Writer.Write(requestObject.VolumeSize.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSize.Value);
             }
 
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
-                context.Writer.Write(requestObject.VolumeType);
+                context.Writer.WriteStringValue(requestObject.VolumeType);
             }
 
         }

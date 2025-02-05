@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelIdentification())
             {
                 context.Writer.WritePropertyName("ChannelIdentification");
-                context.Writer.Write(requestObject.ChannelIdentification.Value);
+                context.Writer.WriteBooleanValue(requestObject.ChannelIdentification.Value);
             }
 
             if(requestObject.IsSetMaxAlternatives())
             {
                 context.Writer.WritePropertyName("MaxAlternatives");
-                context.Writer.Write(requestObject.MaxAlternatives.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAlternatives.Value);
             }
 
             if(requestObject.IsSetMaxSpeakerLabels())
             {
                 context.Writer.WritePropertyName("MaxSpeakerLabels");
-                context.Writer.Write(requestObject.MaxSpeakerLabels.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSpeakerLabels.Value);
             }
 
             if(requestObject.IsSetShowAlternatives())
             {
                 context.Writer.WritePropertyName("ShowAlternatives");
-                context.Writer.Write(requestObject.ShowAlternatives.Value);
+                context.Writer.WriteBooleanValue(requestObject.ShowAlternatives.Value);
             }
 
             if(requestObject.IsSetShowSpeakerLabels())
             {
                 context.Writer.WritePropertyName("ShowSpeakerLabels");
-                context.Writer.Write(requestObject.ShowSpeakerLabels.Value);
+                context.Writer.WriteBooleanValue(requestObject.ShowSpeakerLabels.Value);
             }
 
             if(requestObject.IsSetVocabularyFilterMethod())
             {
                 context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.Write(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
             }
 
             if(requestObject.IsSetVocabularyFilterName())
             {
                 context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.Write(requestObject.VocabularyFilterName);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
         }

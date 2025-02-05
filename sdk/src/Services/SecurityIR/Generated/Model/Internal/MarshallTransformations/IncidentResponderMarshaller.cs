@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("email");
-                context.Writer.Write(requestObject.Email);
+                context.Writer.WriteStringValue(requestObject.Email);
             }
 
             if(requestObject.IsSetJobTitle())
             {
                 context.Writer.WritePropertyName("jobTitle");
-                context.Writer.Write(requestObject.JobTitle);
+                context.Writer.WriteStringValue(requestObject.JobTitle);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

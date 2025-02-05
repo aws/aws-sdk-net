@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExponentialRate())
             {
                 context.Writer.WritePropertyName("exponentialRate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsJobExponentialRolloutRateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExponentialRate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumPerMinute())
             {
                 context.Writer.WritePropertyName("maximumPerMinute");
-                context.Writer.Write(requestObject.MaximumPerMinute.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumPerMinute.Value);
             }
 
         }

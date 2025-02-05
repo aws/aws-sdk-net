@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActiveInstanceRefreshNotFoundException operation
     /// </summary>  
-    public class ActiveInstanceRefreshNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ActiveInstanceRefreshNotFoundException, XmlUnmarshallerContext>
+    public class ActiveInstanceRefreshNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ActiveInstanceRefreshNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

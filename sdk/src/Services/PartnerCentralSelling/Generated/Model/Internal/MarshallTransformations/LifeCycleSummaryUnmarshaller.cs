@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LifeCycleSummary Object
     /// </summary>  
-    public class LifeCycleSummaryUnmarshaller : IUnmarshaller<LifeCycleSummary, XmlUnmarshallerContext>, IUnmarshaller<LifeCycleSummary, JsonUnmarshallerContext>
+    public class LifeCycleSummaryUnmarshaller : IJsonUnmarshaller<LifeCycleSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LifeCycleSummary IUnmarshaller<LifeCycleSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LifeCycleSummary Unmarshall(JsonUnmarshallerContext context)
+        public LifeCycleSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LifeCycleSummary unmarshalledObject = new LifeCycleSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClosedLostReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClosedLostReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClosedLostReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NextSteps", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextSteps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReviewComments", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReviewComments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReviewComments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReviewStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReviewStatusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReviewStatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReviewStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Stage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetCloseDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetCloseDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetCloseDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

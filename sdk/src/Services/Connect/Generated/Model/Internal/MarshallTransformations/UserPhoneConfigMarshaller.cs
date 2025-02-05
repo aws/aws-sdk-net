@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterContactWorkTimeLimit())
             {
                 context.Writer.WritePropertyName("AfterContactWorkTimeLimit");
-                context.Writer.Write(requestObject.AfterContactWorkTimeLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.AfterContactWorkTimeLimit.Value);
             }
 
             if(requestObject.IsSetAutoAccept())
             {
                 context.Writer.WritePropertyName("AutoAccept");
-                context.Writer.Write(requestObject.AutoAccept.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoAccept.Value);
             }
 
             if(requestObject.IsSetDeskPhoneNumber())
             {
                 context.Writer.WritePropertyName("DeskPhoneNumber");
-                context.Writer.Write(requestObject.DeskPhoneNumber);
+                context.Writer.WriteStringValue(requestObject.DeskPhoneNumber);
             }
 
             if(requestObject.IsSetPhoneType())
             {
                 context.Writer.WritePropertyName("PhoneType");
-                context.Writer.Write(requestObject.PhoneType);
+                context.Writer.WriteStringValue(requestObject.PhoneType);
             }
 
         }

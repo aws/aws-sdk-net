@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBranches())
             {
                 context.Writer.WritePropertyName("branches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBranchesListValue in requestObject.Branches)
                 {
-                        context.Writer.Write(requestObjectBranchesListValue);
+                        context.Writer.WriteStringValue(requestObjectBranchesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomData())
             {
                 context.Writer.WritePropertyName("customData");
-                context.Writer.Write(requestObject.CustomData);
+                context.Writer.WriteStringValue(requestObject.CustomData);
             }
 
             if(requestObject.IsSetDestinationArn())
             {
                 context.Writer.WritePropertyName("destinationArn");
-                context.Writer.Write(requestObject.DestinationArn);
+                context.Writer.WriteStringValue(requestObject.DestinationArn);
             }
 
             if(requestObject.IsSetEvents())
             {
                 context.Writer.WritePropertyName("events");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventsListValue in requestObject.Events)
                 {
-                        context.Writer.Write(requestObjectEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

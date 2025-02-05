@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetH265PackagingType())
             {
                 context.Writer.WritePropertyName("h265PackagingType");
-                context.Writer.Write(requestObject.H265PackagingType);
+                context.Writer.WriteStringValue(requestObject.H265PackagingType);
             }
 
             if(requestObject.IsSetNameModifier())
             {
                 context.Writer.WritePropertyName("nameModifier");
-                context.Writer.Write(requestObject.NameModifier);
+                context.Writer.WriteStringValue(requestObject.NameModifier);
             }
 
         }

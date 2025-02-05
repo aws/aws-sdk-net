@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetOnExitCode())
             {
                 context.Writer.WritePropertyName("onExitCode");
-                context.Writer.Write(requestObject.OnExitCode);
+                context.Writer.WriteStringValue(requestObject.OnExitCode);
             }
 
             if(requestObject.IsSetOnReason())
             {
                 context.Writer.WritePropertyName("onReason");
-                context.Writer.Write(requestObject.OnReason);
+                context.Writer.WriteStringValue(requestObject.OnReason);
             }
 
             if(requestObject.IsSetOnStatusReason())
             {
                 context.Writer.WritePropertyName("onStatusReason");
-                context.Writer.Write(requestObject.OnStatusReason);
+                context.Writer.WriteStringValue(requestObject.OnStatusReason);
             }
 
         }

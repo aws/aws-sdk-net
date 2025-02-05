@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LineageSqlQueryRunDetails Object
     /// </summary>  
-    public class LineageSqlQueryRunDetailsUnmarshaller : IUnmarshaller<LineageSqlQueryRunDetails, XmlUnmarshallerContext>, IUnmarshaller<LineageSqlQueryRunDetails, JsonUnmarshallerContext>
+    public class LineageSqlQueryRunDetailsUnmarshaller : IJsonUnmarshaller<LineageSqlQueryRunDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LineageSqlQueryRunDetails IUnmarshaller<LineageSqlQueryRunDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LineageSqlQueryRunDetails Unmarshall(JsonUnmarshallerContext context)
+        public LineageSqlQueryRunDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LineageSqlQueryRunDetails unmarshalledObject = new LineageSqlQueryRunDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("errorMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ErrorMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ErrorMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numQueriesFailed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumQueriesFailed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumQueriesFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.QueryEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.QueryStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalQueriesProcessed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalQueriesProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalQueriesProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

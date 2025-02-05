@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvokedBy())
             {
                 context.Writer.WritePropertyName("InvokedBy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InvokedByMarshaller.Instance;
                 marshaller.Marshall(requestObject.InvokedBy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLexBotAliasArn())
             {
                 context.Writer.WritePropertyName("LexBotAliasArn");
-                context.Writer.Write(requestObject.LexBotAliasArn);
+                context.Writer.WriteStringValue(requestObject.LexBotAliasArn);
             }
 
             if(requestObject.IsSetLocaleId())
             {
                 context.Writer.WritePropertyName("LocaleId");
-                context.Writer.Write(requestObject.LocaleId);
+                context.Writer.WriteStringValue(requestObject.LocaleId);
             }
 
             if(requestObject.IsSetRespondsTo())
             {
                 context.Writer.WritePropertyName("RespondsTo");
-                context.Writer.Write(requestObject.RespondsTo);
+                context.Writer.WriteStringValue(requestObject.RespondsTo);
             }
 
             if(requestObject.IsSetWelcomeIntent())
             {
                 context.Writer.WritePropertyName("WelcomeIntent");
-                context.Writer.Write(requestObject.WelcomeIntent);
+                context.Writer.WriteStringValue(requestObject.WelcomeIntent);
             }
 
         }

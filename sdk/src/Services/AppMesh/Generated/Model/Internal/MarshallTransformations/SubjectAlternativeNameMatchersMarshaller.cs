@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExact())
             {
                 context.Writer.WritePropertyName("exact");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExactListValue in requestObject.Exact)
                 {
-                        context.Writer.Write(requestObjectExactListValue);
+                        context.Writer.WriteStringValue(requestObjectExactListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

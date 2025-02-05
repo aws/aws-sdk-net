@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileSystemLocationName())
             {
                 context.Writer.WritePropertyName("fileSystemLocationName");
-                context.Writer.Write(requestObject.FileSystemLocationName);
+                context.Writer.WriteStringValue(requestObject.FileSystemLocationName);
             }
 
             if(requestObject.IsSetInputManifestHash())
             {
                 context.Writer.WritePropertyName("inputManifestHash");
-                context.Writer.Write(requestObject.InputManifestHash);
+                context.Writer.WriteStringValue(requestObject.InputManifestHash);
             }
 
             if(requestObject.IsSetInputManifestPath())
             {
                 context.Writer.WritePropertyName("inputManifestPath");
-                context.Writer.Write(requestObject.InputManifestPath);
+                context.Writer.WriteStringValue(requestObject.InputManifestPath);
             }
 
             if(requestObject.IsSetOutputRelativeDirectories())
             {
                 context.Writer.WritePropertyName("outputRelativeDirectories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputRelativeDirectoriesListValue in requestObject.OutputRelativeDirectories)
                 {
-                        context.Writer.Write(requestObjectOutputRelativeDirectoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectOutputRelativeDirectoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRootPath())
             {
                 context.Writer.WritePropertyName("rootPath");
-                context.Writer.Write(requestObject.RootPath);
+                context.Writer.WriteStringValue(requestObject.RootPath);
             }
 
             if(requestObject.IsSetRootPathFormat())
             {
                 context.Writer.WritePropertyName("rootPathFormat");
-                context.Writer.Write(requestObject.RootPathFormat);
+                context.Writer.WriteStringValue(requestObject.RootPathFormat);
             }
 
         }

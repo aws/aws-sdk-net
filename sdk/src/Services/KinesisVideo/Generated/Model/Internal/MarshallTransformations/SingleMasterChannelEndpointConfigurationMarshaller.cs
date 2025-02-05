@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProtocols())
             {
                 context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                        context.Writer.Write(requestObjectProtocolsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtocolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
         }

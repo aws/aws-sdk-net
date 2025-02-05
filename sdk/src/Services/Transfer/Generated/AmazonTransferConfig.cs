@@ -34,16 +34,10 @@ namespace Amazon.Transfer
     public partial class AmazonTransferConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Transfer", "4.0.0.0");
 
         private static readonly AmazonTransferEndpointResolver EndpointResolver =
             new AmazonTransferEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Transfer", "3.7.403.4");
-=======
-            InternalSDKUtils.BuildUserAgentString("Transfer", "3.7.404.4");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

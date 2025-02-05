@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClientAuthentication Object
     /// </summary>  
-    public class ClientAuthenticationUnmarshaller : IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>, IUnmarshaller<ClientAuthentication, JsonUnmarshallerContext>
+    public class ClientAuthenticationUnmarshaller : IJsonUnmarshaller<ClientAuthentication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClientAuthentication IUnmarshaller<ClientAuthentication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClientAuthentication Unmarshall(JsonUnmarshallerContext context)
+        public ClientAuthentication Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClientAuthentication unmarshalledObject = new ClientAuthentication();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("sasl", targetDepth))
                 {
                     var unmarshaller = SaslUnmarshaller.Instance;
-                    unmarshalledObject.Sasl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sasl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tls", targetDepth))
                 {
                     var unmarshaller = TlsUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unauthenticated", targetDepth))
                 {
                     var unmarshaller = UnauthenticatedUnmarshaller.Instance;
-                    unmarshalledObject.Unauthenticated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Unauthenticated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

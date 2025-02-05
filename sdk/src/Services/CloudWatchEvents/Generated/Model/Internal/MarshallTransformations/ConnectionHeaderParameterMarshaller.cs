@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsValueSecret())
             {
                 context.Writer.WritePropertyName("IsValueSecret");
-                context.Writer.Write(requestObject.IsValueSecret.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsValueSecret.Value);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

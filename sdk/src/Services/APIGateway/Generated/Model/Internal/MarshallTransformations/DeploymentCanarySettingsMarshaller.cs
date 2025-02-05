@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -53,32 +51,32 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("percentTraffic");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentTraffic.Value);
+                    context.Writer.WriteNumberValue(requestObject.PercentTraffic.Value);
                 }
             }
 
             if(requestObject.IsSetStageVariableOverrides())
             {
                 context.Writer.WritePropertyName("stageVariableOverrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectStageVariableOverridesKvp in requestObject.StageVariableOverrides)
                 {
                     context.Writer.WritePropertyName(requestObjectStageVariableOverridesKvp.Key);
                     var requestObjectStageVariableOverridesValue = requestObjectStageVariableOverridesKvp.Value;
 
-                        context.Writer.Write(requestObjectStageVariableOverridesValue);
+                        context.Writer.WriteStringValue(requestObjectStageVariableOverridesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUseStageCache())
             {
                 context.Writer.WritePropertyName("useStageCache");
-                context.Writer.Write(requestObject.UseStageCache.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseStageCache.Value);
             }
 
         }

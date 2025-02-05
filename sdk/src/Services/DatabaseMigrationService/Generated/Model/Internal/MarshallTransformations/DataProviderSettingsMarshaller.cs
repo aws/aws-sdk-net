@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocDbSettings())
             {
                 context.Writer.WritePropertyName("DocDbSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocDbDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocDbSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMariaDbSettings())
             {
                 context.Writer.WritePropertyName("MariaDbSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MariaDbDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MariaDbSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMicrosoftSqlServerSettings())
             {
                 context.Writer.WritePropertyName("MicrosoftSqlServerSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MicrosoftSqlServerDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MicrosoftSqlServerSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMongoDbSettings())
             {
                 context.Writer.WritePropertyName("MongoDbSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MongoDbDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MongoDbSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMySqlSettings())
             {
                 context.Writer.WritePropertyName("MySqlSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MySqlDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MySqlSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOracleSettings())
             {
                 context.Writer.WritePropertyName("OracleSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OracleDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OracleSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPostgreSqlSettings())
             {
                 context.Writer.WritePropertyName("PostgreSqlSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PostgreSqlDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostgreSqlSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftSettings())
             {
                 context.Writer.WritePropertyName("RedshiftSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDataProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

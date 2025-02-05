@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FederatedAuthentication Object
     /// </summary>  
-    public class FederatedAuthenticationUnmarshaller : IUnmarshaller<FederatedAuthentication, XmlUnmarshallerContext>, IUnmarshaller<FederatedAuthentication, JsonUnmarshallerContext>
+    public class FederatedAuthenticationUnmarshaller : IXmlUnmarshaller<FederatedAuthentication, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FederatedAuthentication Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FederatedAuthenticationUnmarshaller _instance = new FederatedAuthenticationUnmarshaller();        
 

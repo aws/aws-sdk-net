@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCalendarInterval())
             {
                 context.Writer.WritePropertyName("CalendarInterval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CalendarIntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.CalendarInterval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRollingInterval())
             {
                 context.Writer.WritePropertyName("RollingInterval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RollingIntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.RollingInterval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

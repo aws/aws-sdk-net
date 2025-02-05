@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMfaTypes())
             {
                 context.Writer.WritePropertyName("mfaTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMfaTypesListValue in requestObject.MfaTypes)
                 {
-                        context.Writer.Write(requestObjectMfaTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectMfaTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSmsMessage())
             {
                 context.Writer.WritePropertyName("smsMessage");
-                context.Writer.Write(requestObject.SmsMessage);
+                context.Writer.WriteStringValue(requestObject.SmsMessage);
             }
 
         }

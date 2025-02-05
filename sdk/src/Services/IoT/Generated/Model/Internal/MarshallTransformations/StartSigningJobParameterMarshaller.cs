@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSigningProfileName())
             {
                 context.Writer.WritePropertyName("signingProfileName");
-                context.Writer.Write(requestObject.SigningProfileName);
+                context.Writer.WriteStringValue(requestObject.SigningProfileName);
             }
 
             if(requestObject.IsSetSigningProfileParameter())
             {
                 context.Writer.WritePropertyName("signingProfileParameter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SigningProfileParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SigningProfileParameter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCancel())
             {
                 context.Writer.WritePropertyName("cancel");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormButtonMarshaller.Instance;
                 marshaller.Marshall(requestObject.Cancel, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClear())
             {
                 context.Writer.WritePropertyName("clear");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormButtonMarshaller.Instance;
                 marshaller.Marshall(requestObject.Clear, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");
-                context.Writer.Write(requestObject.Position);
+                context.Writer.WriteStringValue(requestObject.Position);
             }
 
             if(requestObject.IsSetSubmit())
             {
                 context.Writer.WritePropertyName("submit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormButtonMarshaller.Instance;
                 marshaller.Marshall(requestObject.Submit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

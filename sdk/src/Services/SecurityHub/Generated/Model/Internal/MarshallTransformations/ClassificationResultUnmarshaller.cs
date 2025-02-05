@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClassificationResult Object
     /// </summary>  
-    public class ClassificationResultUnmarshaller : IUnmarshaller<ClassificationResult, XmlUnmarshallerContext>, IUnmarshaller<ClassificationResult, JsonUnmarshallerContext>
+    public class ClassificationResultUnmarshaller : IJsonUnmarshaller<ClassificationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClassificationResult IUnmarshaller<ClassificationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClassificationResult Unmarshall(JsonUnmarshallerContext context)
+        public ClassificationResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClassificationResult unmarshalledObject = new ClassificationResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalOccurrences", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalOccurrences = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdditionalOccurrences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomDataIdentifiers", targetDepth))
                 {
                     var unmarshaller = CustomDataIdentifiersResultUnmarshaller.Instance;
-                    unmarshalledObject.CustomDataIdentifiers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomDataIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MimeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MimeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MimeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SensitiveData", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SensitiveDataResult, SensitiveDataResultUnmarshaller>(SensitiveDataResultUnmarshaller.Instance);
-                    unmarshalledObject.SensitiveData = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SensitiveDataResult, SensitiveDataResultUnmarshaller>(SensitiveDataResultUnmarshaller.Instance);
+                    unmarshalledObject.SensitiveData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SizeClassified", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.SizeClassified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SizeClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = ClassificationStatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

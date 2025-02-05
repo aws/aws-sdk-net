@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("logGroupName");
-                context.Writer.Write(requestObject.LogGroupName);
+                context.Writer.WriteStringValue(requestObject.LogGroupName);
             }
 
             if(requestObject.IsSetLogStreamNamePrefix())
             {
                 context.Writer.WritePropertyName("logStreamNamePrefix");
-                context.Writer.Write(requestObject.LogStreamNamePrefix);
+                context.Writer.WriteStringValue(requestObject.LogStreamNamePrefix);
             }
 
         }

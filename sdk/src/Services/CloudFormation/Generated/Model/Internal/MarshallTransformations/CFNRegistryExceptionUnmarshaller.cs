@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CFNRegistryException operation
     /// </summary>  
-    public class CFNRegistryExceptionUnmarshaller : IErrorResponseUnmarshaller<CFNRegistryException, XmlUnmarshallerContext>
+    public class CFNRegistryExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CFNRegistryException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

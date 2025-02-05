@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessHours())
             {
                 context.Writer.WritePropertyName("AccessHours");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaypointOptimizationAccessHoursMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessHours, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAppointmentTime())
             {
                 context.Writer.WritePropertyName("AppointmentTime");
-                context.Writer.Write(requestObject.AppointmentTime);
+                context.Writer.WriteStringValue(requestObject.AppointmentTime);
             }
 
             if(requestObject.IsSetHeading())
@@ -70,35 +68,35 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Heading");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading.Value);
+                    context.Writer.WriteNumberValue(requestObject.Heading.Value);
                 }
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetServiceDuration())
             {
                 context.Writer.WritePropertyName("ServiceDuration");
-                context.Writer.Write(requestObject.ServiceDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.ServiceDuration.Value);
             }
 
             if(requestObject.IsSetSideOfStreet())
             {
                 context.Writer.WritePropertyName("SideOfStreet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaypointOptimizationSideOfStreetOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SideOfStreet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

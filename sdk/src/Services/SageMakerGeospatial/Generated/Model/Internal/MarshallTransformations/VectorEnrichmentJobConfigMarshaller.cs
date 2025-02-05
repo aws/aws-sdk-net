@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMapMatchingConfig())
             {
                 context.Writer.WritePropertyName("MapMatchingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MapMatchingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.MapMatchingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReverseGeocodingConfig())
             {
                 context.Writer.WritePropertyName("ReverseGeocodingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReverseGeocodingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReverseGeocodingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

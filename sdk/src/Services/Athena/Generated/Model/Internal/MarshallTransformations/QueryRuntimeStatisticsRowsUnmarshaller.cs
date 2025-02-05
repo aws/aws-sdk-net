@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryRuntimeStatisticsRows Object
     /// </summary>  
-    public class QueryRuntimeStatisticsRowsUnmarshaller : IUnmarshaller<QueryRuntimeStatisticsRows, XmlUnmarshallerContext>, IUnmarshaller<QueryRuntimeStatisticsRows, JsonUnmarshallerContext>
+    public class QueryRuntimeStatisticsRowsUnmarshaller : IJsonUnmarshaller<QueryRuntimeStatisticsRows, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryRuntimeStatisticsRows IUnmarshaller<QueryRuntimeStatisticsRows, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryRuntimeStatisticsRows Unmarshall(JsonUnmarshallerContext context)
+        public QueryRuntimeStatisticsRows Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryRuntimeStatisticsRows unmarshalledObject = new QueryRuntimeStatisticsRows();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("InputBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.InputBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InputRows", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.InputRows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputRows", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

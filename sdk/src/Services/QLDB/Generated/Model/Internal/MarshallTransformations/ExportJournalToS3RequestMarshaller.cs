@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
@@ -64,54 +67,59 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 throw new AmazonQLDBException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/ledgers/{name}/journal-s3-exports";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExclusiveEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExclusiveEndTime())
-                    {
-                        context.Writer.WritePropertyName("ExclusiveEndTime");
-                        context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetInclusiveStartTime())
-                    {
-                        context.Writer.WritePropertyName("InclusiveStartTime");
-                        context.Writer.Write(publicRequest.InclusiveStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetOutputFormat())
-                    {
-                        context.Writer.WritePropertyName("OutputFormat");
-                        context.Writer.Write(publicRequest.OutputFormat);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetS3ExportConfiguration())
-                    {
-                        context.Writer.WritePropertyName("S3ExportConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3ExportConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3ExportConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExclusiveEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExclusiveEndTime.Value)));
             }
+
+            if(publicRequest.IsSetInclusiveStartTime())
+            {
+                context.Writer.WritePropertyName("InclusiveStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.InclusiveStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetOutputFormat())
+            {
+                context.Writer.WritePropertyName("OutputFormat");
+                context.Writer.WriteStringValue(publicRequest.OutputFormat);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetS3ExportConfiguration())
+            {
+                context.Writer.WritePropertyName("S3ExportConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3ExportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3ExportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnableToUpdateJobIdException operation
     /// </summary>  
-    public class UnableToUpdateJobIdExceptionUnmarshaller : IErrorResponseUnmarshaller<UnableToUpdateJobIdException, XmlUnmarshallerContext>
+    public class UnableToUpdateJobIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnableToUpdateJobIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

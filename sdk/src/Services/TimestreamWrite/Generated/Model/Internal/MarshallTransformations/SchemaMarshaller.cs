@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompositePartitionKey())
             {
                 context.Writer.WritePropertyName("CompositePartitionKey");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCompositePartitionKeyListValue in requestObject.CompositePartitionKey)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PartitionKeyMarshaller.Instance;
                     marshaller.Marshall(requestObjectCompositePartitionKeyListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

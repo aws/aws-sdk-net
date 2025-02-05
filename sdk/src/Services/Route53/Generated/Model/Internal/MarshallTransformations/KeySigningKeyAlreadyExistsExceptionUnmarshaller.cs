@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeySigningKeyAlreadyExistsException operation
     /// </summary>  
-    public class KeySigningKeyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<KeySigningKeyAlreadyExistsException, XmlUnmarshallerContext>
+    public class KeySigningKeyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KeySigningKeyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

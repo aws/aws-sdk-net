@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoordinates())
             {
                 context.Writer.WritePropertyName("Coordinates");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GPSCoordinatesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Coordinates, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRangeInKilometers())
@@ -64,11 +62,11 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("RangeInKilometers");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.RangeInKilometers.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RangeInKilometers.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.RangeInKilometers.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.RangeInKilometers.Value);
+                    context.Writer.WriteNumberValue(requestObject.RangeInKilometers.Value);
                 }
             }
 

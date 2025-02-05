@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TextGenerationJobConfig Object
     /// </summary>  
-    public class TextGenerationJobConfigUnmarshaller : IUnmarshaller<TextGenerationJobConfig, XmlUnmarshallerContext>, IUnmarshaller<TextGenerationJobConfig, JsonUnmarshallerContext>
+    public class TextGenerationJobConfigUnmarshaller : IJsonUnmarshaller<TextGenerationJobConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TextGenerationJobConfig IUnmarshaller<TextGenerationJobConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TextGenerationJobConfig Unmarshall(JsonUnmarshallerContext context)
+        public TextGenerationJobConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TextGenerationJobConfig unmarshalledObject = new TextGenerationJobConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaseModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseModelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelAccessConfig", targetDepth))
                 {
                     var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextGenerationHyperParameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.TextGenerationHyperParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.TextGenerationHyperParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

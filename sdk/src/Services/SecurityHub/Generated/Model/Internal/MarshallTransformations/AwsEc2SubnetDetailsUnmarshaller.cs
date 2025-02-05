@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2SubnetDetails Object
     /// </summary>  
-    public class AwsEc2SubnetDetailsUnmarshaller : IUnmarshaller<AwsEc2SubnetDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2SubnetDetails, JsonUnmarshallerContext>
+    public class AwsEc2SubnetDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2SubnetDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2SubnetDetails IUnmarshaller<AwsEc2SubnetDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2SubnetDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2SubnetDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2SubnetDetails unmarshalledObject = new AwsEc2SubnetDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssignIpv6AddressOnCreation", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AssignIpv6AddressOnCreation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssignIpv6AddressOnCreation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityZoneId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailableIpAddressCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailableIpAddressCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailableIpAddressCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultForAz", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DefaultForAz = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultForAz = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ipv6CidrBlockAssociationSet", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Ipv6CidrBlockAssociation, Ipv6CidrBlockAssociationUnmarshaller>(Ipv6CidrBlockAssociationUnmarshaller.Instance);
-                    unmarshalledObject.Ipv6CidrBlockAssociationSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Ipv6CidrBlockAssociation, Ipv6CidrBlockAssociationUnmarshaller>(Ipv6CidrBlockAssociationUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6CidrBlockAssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MapPublicIpOnLaunch", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MapPublicIpOnLaunch = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MapPublicIpOnLaunch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OwnerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldName())
             {
                 context.Writer.WritePropertyName("FieldName");
-                context.Writer.Write(requestObject.FieldName);
+                context.Writer.WriteStringValue(requestObject.FieldName);
             }
 
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("Metric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NamedEntityDefinitionMetricMarshaller.Instance;
                 marshaller.Marshall(requestObject.Metric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPropertyName())
             {
                 context.Writer.WritePropertyName("PropertyName");
-                context.Writer.Write(requestObject.PropertyName);
+                context.Writer.WriteStringValue(requestObject.PropertyName);
             }
 
             if(requestObject.IsSetPropertyRole())
             {
                 context.Writer.WritePropertyName("PropertyRole");
-                context.Writer.Write(requestObject.PropertyRole);
+                context.Writer.WriteStringValue(requestObject.PropertyRole);
             }
 
             if(requestObject.IsSetPropertyUsage())
             {
                 context.Writer.WritePropertyName("PropertyUsage");
-                context.Writer.Write(requestObject.PropertyUsage);
+                context.Writer.WriteStringValue(requestObject.PropertyUsage);
             }
 
         }

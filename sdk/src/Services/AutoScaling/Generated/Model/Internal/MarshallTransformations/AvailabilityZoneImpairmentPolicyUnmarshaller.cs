@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AvailabilityZoneImpairmentPolicy Object
     /// </summary>  
-    public class AvailabilityZoneImpairmentPolicyUnmarshaller : IUnmarshaller<AvailabilityZoneImpairmentPolicy, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZoneImpairmentPolicy, JsonUnmarshallerContext>
+    public class AvailabilityZoneImpairmentPolicyUnmarshaller : IXmlUnmarshaller<AvailabilityZoneImpairmentPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AvailabilityZoneImpairmentPolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AvailabilityZoneImpairmentPolicyUnmarshaller _instance = new AvailabilityZoneImpairmentPolicyUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSetInUseException operation
     /// </summary>  
-    public class DelegationSetInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<DelegationSetInUseException, XmlUnmarshallerContext>
+    public class DelegationSetInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DelegationSetInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

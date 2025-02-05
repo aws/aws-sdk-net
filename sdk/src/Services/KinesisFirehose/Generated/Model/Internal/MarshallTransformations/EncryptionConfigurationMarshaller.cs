@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKMSEncryptionConfig())
             {
                 context.Writer.WritePropertyName("KMSEncryptionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KMSEncryptionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KMSEncryptionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoEncryptionConfig())
             {
                 context.Writer.WritePropertyName("NoEncryptionConfig");
-                context.Writer.Write(requestObject.NoEncryptionConfig);
+                context.Writer.WriteStringValue(requestObject.NoEncryptionConfig);
             }
 
         }

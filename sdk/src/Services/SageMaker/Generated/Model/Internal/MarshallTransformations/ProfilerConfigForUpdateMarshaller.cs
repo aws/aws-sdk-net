@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableProfiler())
             {
                 context.Writer.WritePropertyName("DisableProfiler");
-                context.Writer.Write(requestObject.DisableProfiler.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableProfiler.Value);
             }
 
             if(requestObject.IsSetProfilingIntervalInMilliseconds())
             {
                 context.Writer.WritePropertyName("ProfilingIntervalInMilliseconds");
-                context.Writer.Write(requestObject.ProfilingIntervalInMilliseconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ProfilingIntervalInMilliseconds.Value);
             }
 
             if(requestObject.IsSetProfilingParameters())
             {
                 context.Writer.WritePropertyName("ProfilingParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectProfilingParametersKvp in requestObject.ProfilingParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectProfilingParametersKvp.Key);
                     var requestObjectProfilingParametersValue = requestObjectProfilingParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectProfilingParametersValue);
+                        context.Writer.WriteStringValue(requestObjectProfilingParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WriteStringValue(requestObject.S3OutputPath);
             }
 
         }

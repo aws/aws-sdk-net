@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AggregatorFilterResourceTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServicePrincipal())
             {
                 context.Writer.WritePropertyName("ServicePrincipal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AggregatorFilterServicePrincipalMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServicePrincipal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

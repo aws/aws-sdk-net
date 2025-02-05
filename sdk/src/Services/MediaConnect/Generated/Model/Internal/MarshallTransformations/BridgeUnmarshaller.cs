@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Bridge Object
     /// </summary>  
-    public class BridgeUnmarshaller : IUnmarshaller<Bridge, XmlUnmarshallerContext>, IUnmarshaller<Bridge, JsonUnmarshallerContext>
+    public class BridgeUnmarshaller : IJsonUnmarshaller<Bridge, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Bridge IUnmarshaller<Bridge, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Bridge Unmarshall(JsonUnmarshallerContext context)
+        public Bridge Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Bridge unmarshalledObject = new Bridge();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bridgeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BridgeArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BridgeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bridgeMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MessageDetail, MessageDetailUnmarshaller>(MessageDetailUnmarshaller.Instance);
-                    unmarshalledObject.BridgeMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MessageDetail, MessageDetailUnmarshaller>(MessageDetailUnmarshaller.Instance);
+                    unmarshalledObject.BridgeMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bridgeState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BridgeState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BridgeState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("egressGatewayBridge", targetDepth))
                 {
                     var unmarshaller = EgressGatewayBridgeUnmarshaller.Instance;
-                    unmarshalledObject.EgressGatewayBridge = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EgressGatewayBridge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ingressGatewayBridge", targetDepth))
                 {
                     var unmarshaller = IngressGatewayBridgeUnmarshaller.Instance;
-                    unmarshalledObject.IngressGatewayBridge = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngressGatewayBridge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BridgeOutput, BridgeOutputUnmarshaller>(BridgeOutputUnmarshaller.Instance);
-                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BridgeOutput, BridgeOutputUnmarshaller>(BridgeOutputUnmarshaller.Instance);
+                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("placementArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlacementArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlacementArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceFailoverConfig", targetDepth))
                 {
                     var unmarshaller = FailoverConfigUnmarshaller.Instance;
-                    unmarshalledObject.SourceFailoverConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceFailoverConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BridgeSource, BridgeSourceUnmarshaller>(BridgeSourceUnmarshaller.Instance);
-                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BridgeSource, BridgeSourceUnmarshaller>(BridgeSourceUnmarshaller.Instance);
+                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

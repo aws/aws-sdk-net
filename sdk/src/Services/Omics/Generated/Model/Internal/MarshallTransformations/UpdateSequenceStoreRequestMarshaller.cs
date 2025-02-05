@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -64,70 +67,75 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/sequencestore/{id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFallbackLocation())
-                    {
-                        context.Writer.WritePropertyName("fallbackLocation");
-                        context.Writer.Write(publicRequest.FallbackLocation);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPropagatedSetLevelTags())
-                    {
-                        context.Writer.WritePropertyName("propagatedSetLevelTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
-                        {
-                                context.Writer.Write(publicRequestPropagatedSetLevelTagsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetS3AccessConfig())
-                    {
-                        context.Writer.WritePropertyName("s3AccessConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3AccessConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3AccessConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFallbackLocation())
+            {
+                context.Writer.WritePropertyName("fallbackLocation");
+                context.Writer.WriteStringValue(publicRequest.FallbackLocation);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPropagatedSetLevelTags())
+            {
+                context.Writer.WritePropertyName("propagatedSetLevelTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPropagatedSetLevelTagsListValue in publicRequest.PropagatedSetLevelTags)
+                {
+                        context.Writer.WriteStringValue(publicRequestPropagatedSetLevelTagsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetS3AccessConfig())
+            {
+                context.Writer.WritePropertyName("s3AccessConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3AccessConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3AccessConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"control-storage-";

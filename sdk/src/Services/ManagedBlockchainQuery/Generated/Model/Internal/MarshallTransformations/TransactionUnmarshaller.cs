@@ -29,161 +29,151 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Transaction Object
     /// </summary>  
-    public class TransactionUnmarshaller : IUnmarshaller<Transaction, XmlUnmarshallerContext>, IUnmarshaller<Transaction, JsonUnmarshallerContext>
+    public class TransactionUnmarshaller : IJsonUnmarshaller<Transaction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Transaction IUnmarshaller<Transaction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Transaction Unmarshall(JsonUnmarshallerContext context)
+        public Transaction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Transaction unmarshalledObject = new Transaction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("blockHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlockHash = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blockNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlockNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confirmationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfirmationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("contractAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContractAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContractAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cumulativeGasUsed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CumulativeGasUsed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CumulativeGasUsed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("effectiveGasPrice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveGasPrice = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveGasPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("from", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.From = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.From = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gasUsed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GasUsed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GasUsed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("network", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Network = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Network = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfTransactions", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfTransactions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfTransactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signatureR", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignatureR = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignatureR = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signatureS", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignatureS = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignatureS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signatureV", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SignatureV = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignatureV = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("to", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.To = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.To = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionFee", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransactionFee = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionFee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionHash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransactionHash = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionIndex", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TransactionIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TransactionTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

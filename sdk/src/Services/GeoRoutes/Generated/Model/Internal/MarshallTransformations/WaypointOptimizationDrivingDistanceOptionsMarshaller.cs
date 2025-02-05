@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDrivingDistance())
             {
                 context.Writer.WritePropertyName("DrivingDistance");
-                context.Writer.Write(requestObject.DrivingDistance);
+                context.Writer.WriteNumberValue(requestObject.DrivingDistance.Value);
             }
 
         }

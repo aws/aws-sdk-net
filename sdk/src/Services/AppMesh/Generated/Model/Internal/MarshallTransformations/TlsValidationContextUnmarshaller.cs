@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TlsValidationContext Object
     /// </summary>  
-    public class TlsValidationContextUnmarshaller : IUnmarshaller<TlsValidationContext, XmlUnmarshallerContext>, IUnmarshaller<TlsValidationContext, JsonUnmarshallerContext>
+    public class TlsValidationContextUnmarshaller : IJsonUnmarshaller<TlsValidationContext, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TlsValidationContext IUnmarshaller<TlsValidationContext, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TlsValidationContext Unmarshall(JsonUnmarshallerContext context)
+        public TlsValidationContext Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TlsValidationContext unmarshalledObject = new TlsValidationContext();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("subjectAlternativeNames", targetDepth))
                 {
                     var unmarshaller = SubjectAlternativeNamesUnmarshaller.Instance;
-                    unmarshalledObject.SubjectAlternativeNames = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubjectAlternativeNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trust", targetDepth))
                 {
                     var unmarshaller = TlsValidationContextTrustUnmarshaller.Instance;
-                    unmarshalledObject.Trust = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Trust = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

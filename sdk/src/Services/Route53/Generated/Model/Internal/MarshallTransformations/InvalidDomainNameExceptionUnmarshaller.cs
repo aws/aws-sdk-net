@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDomainNameException operation
     /// </summary>  
-    public class InvalidDomainNameExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDomainNameException, XmlUnmarshallerContext>
+    public class InvalidDomainNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDomainNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

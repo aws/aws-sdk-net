@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("accountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetBuckets())
             {
                 context.Writer.WritePropertyName("buckets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBucketsListValue in requestObject.Buckets)
                 {
-                        context.Writer.Write(requestObjectBucketsListValue);
+                        context.Writer.WriteStringValue(requestObjectBucketsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

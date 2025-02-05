@@ -51,9 +51,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=16384)]
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 

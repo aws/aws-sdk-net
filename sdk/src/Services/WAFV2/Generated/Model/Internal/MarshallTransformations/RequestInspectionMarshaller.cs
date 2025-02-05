@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPasswordField())
             {
                 context.Writer.WritePropertyName("PasswordField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PasswordFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.PasswordField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPayloadType())
             {
                 context.Writer.WritePropertyName("PayloadType");
-                context.Writer.Write(requestObject.PayloadType);
+                context.Writer.WriteStringValue(requestObject.PayloadType);
             }
 
             if(requestObject.IsSetUsernameField())
             {
                 context.Writer.WritePropertyName("UsernameField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsernameFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.UsernameField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

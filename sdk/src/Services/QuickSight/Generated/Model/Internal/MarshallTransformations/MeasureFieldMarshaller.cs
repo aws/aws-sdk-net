@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCalculatedMeasureField())
             {
                 context.Writer.WritePropertyName("CalculatedMeasureField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CalculatedMeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.CalculatedMeasureField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCategoricalMeasureField())
             {
                 context.Writer.WritePropertyName("CategoricalMeasureField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CategoricalMeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.CategoricalMeasureField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDateMeasureField())
             {
                 context.Writer.WritePropertyName("DateMeasureField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateMeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateMeasureField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericalMeasureField())
             {
                 context.Writer.WritePropertyName("NumericalMeasureField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericalMeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericalMeasureField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

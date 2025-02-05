@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestLayout())
             {
                 context.Writer.WritePropertyName("manifestLayout");
-                context.Writer.Write(requestObject.ManifestLayout);
+                context.Writer.WriteStringValue(requestObject.ManifestLayout);
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("manifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("minBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetScteMarkersSource())
             {
                 context.Writer.WritePropertyName("scteMarkersSource");
-                context.Writer.Write(requestObject.ScteMarkersSource);
+                context.Writer.WriteStringValue(requestObject.ScteMarkersSource);
             }
 
             if(requestObject.IsSetStreamSelection())
             {
                 context.Writer.WritePropertyName("streamSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StreamSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

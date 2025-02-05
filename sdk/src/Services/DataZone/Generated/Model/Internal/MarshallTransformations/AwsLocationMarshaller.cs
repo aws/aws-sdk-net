@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessRole())
             {
                 context.Writer.WritePropertyName("accessRole");
-                context.Writer.Write(requestObject.AccessRole);
+                context.Writer.WriteStringValue(requestObject.AccessRole);
             }
 
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("awsAccountId");
-                context.Writer.Write(requestObject.AwsAccountId);
+                context.Writer.WriteStringValue(requestObject.AwsAccountId);
             }
 
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("awsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetIamConnectionId())
             {
                 context.Writer.WritePropertyName("iamConnectionId");
-                context.Writer.Write(requestObject.IamConnectionId);
+                context.Writer.WriteStringValue(requestObject.IamConnectionId);
             }
 
         }

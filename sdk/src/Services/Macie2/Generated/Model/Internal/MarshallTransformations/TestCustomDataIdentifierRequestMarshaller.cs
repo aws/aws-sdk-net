@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/custom-data-identifiers/test";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIgnoreWords())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ignoreWords");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIgnoreWords())
-                    {
-                        context.Writer.WritePropertyName("ignoreWords");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIgnoreWordsListValue in publicRequest.IgnoreWords)
-                        {
-                                context.Writer.Write(publicRequestIgnoreWordsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKeywords())
-                    {
-                        context.Writer.WritePropertyName("keywords");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
-                        {
-                                context.Writer.Write(publicRequestKeywordsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaximumMatchDistance())
-                    {
-                        context.Writer.WritePropertyName("maximumMatchDistance");
-                        context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
-                    }
-
-                    if(publicRequest.IsSetRegex())
-                    {
-                        context.Writer.WritePropertyName("regex");
-                        context.Writer.Write(publicRequest.Regex);
-                    }
-
-                    if(publicRequest.IsSetSampleText())
-                    {
-                        context.Writer.WritePropertyName("sampleText");
-                        context.Writer.Write(publicRequest.SampleText);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestIgnoreWordsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetKeywords())
+            {
+                context.Writer.WritePropertyName("keywords");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestKeywordsListValue in publicRequest.Keywords)
+                {
+                        context.Writer.WriteStringValue(publicRequestKeywordsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaximumMatchDistance())
+            {
+                context.Writer.WritePropertyName("maximumMatchDistance");
+                context.Writer.WriteNumberValue(publicRequest.MaximumMatchDistance.Value);
+            }
+
+            if(publicRequest.IsSetRegex())
+            {
+                context.Writer.WritePropertyName("regex");
+                context.Writer.WriteStringValue(publicRequest.Regex);
+            }
+
+            if(publicRequest.IsSetSampleText())
+            {
+                context.Writer.WritePropertyName("sampleText");
+                context.Writer.WriteStringValue(publicRequest.SampleText);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

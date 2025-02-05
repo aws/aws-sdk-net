@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,90 +49,90 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessControlConfigurationId())
             {
                 context.Writer.WritePropertyName("AccessControlConfigurationId");
-                context.Writer.Write(requestObject.AccessControlConfigurationId);
+                context.Writer.WriteStringValue(requestObject.AccessControlConfigurationId);
             }
 
             if(requestObject.IsSetAccessControlList())
             {
                 context.Writer.WritePropertyName("AccessControlList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccessControlListListValue in requestObject.AccessControlList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectAccessControlListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributesListValue in requestObject.Attributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DocumentAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBlob())
             {
                 context.Writer.WritePropertyName("Blob");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Blob));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Blob));
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetHierarchicalAccessControlList())
             {
                 context.Writer.WritePropertyName("HierarchicalAccessControlList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHierarchicalAccessControlListListValue in requestObject.HierarchicalAccessControlList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HierarchicalPrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectHierarchicalAccessControlListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetS3Path())
             {
                 context.Writer.WritePropertyName("S3Path");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3PathMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Path, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

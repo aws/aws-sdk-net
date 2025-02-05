@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("filePath");
-                context.Writer.Write(requestObject.FilePath);
+                context.Writer.WriteStringValue(requestObject.FilePath);
             }
 
             if(requestObject.IsSetFilePosition())
             {
                 context.Writer.WritePropertyName("filePosition");
-                context.Writer.Write(requestObject.FilePosition.Value);
+                context.Writer.WriteNumberValue(requestObject.FilePosition.Value);
             }
 
             if(requestObject.IsSetRelativeFileVersion())
             {
                 context.Writer.WritePropertyName("relativeFileVersion");
-                context.Writer.Write(requestObject.RelativeFileVersion);
+                context.Writer.WriteStringValue(requestObject.RelativeFileVersion);
             }
 
         }

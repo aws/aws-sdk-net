@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRuleGroupId())
             {
                 context.Writer.WritePropertyName("RuleGroupId");
-                context.Writer.Write(requestObject.RuleGroupId);
+                context.Writer.WriteStringValue(requestObject.RuleGroupId);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsWafRegionalRuleGroupRulesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

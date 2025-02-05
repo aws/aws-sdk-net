@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanaryInterval())
             {
                 context.Writer.WritePropertyName("canaryInterval");
-                context.Writer.Write(requestObject.CanaryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.CanaryInterval.Value);
             }
 
             if(requestObject.IsSetCanaryPercentage())
             {
                 context.Writer.WritePropertyName("canaryPercentage");
-                context.Writer.Write(requestObject.CanaryPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.CanaryPercentage.Value);
             }
 
         }

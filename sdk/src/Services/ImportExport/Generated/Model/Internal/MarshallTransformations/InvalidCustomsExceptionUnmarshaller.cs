@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCustomsException operation
     /// </summary>  
-    public class InvalidCustomsExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCustomsException, XmlUnmarshallerContext>
+    public class InvalidCustomsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCustomsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

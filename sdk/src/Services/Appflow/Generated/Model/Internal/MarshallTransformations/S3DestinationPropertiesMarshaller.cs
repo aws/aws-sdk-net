@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetBucketPrefix())
             {
                 context.Writer.WritePropertyName("bucketPrefix");
-                context.Writer.Write(requestObject.BucketPrefix);
+                context.Writer.WriteStringValue(requestObject.BucketPrefix);
             }
 
             if(requestObject.IsSetS3OutputFormatConfig())
             {
                 context.Writer.WritePropertyName("s3OutputFormatConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3OutputFormatConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OutputFormatConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

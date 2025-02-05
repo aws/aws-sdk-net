@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -61,60 +64,65 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/account/details";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalContactEmailAddresses())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdditionalContactEmailAddresses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalContactEmailAddressesListValue in publicRequest.AdditionalContactEmailAddresses)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalContactEmailAddresses())
-                    {
-                        context.Writer.WritePropertyName("AdditionalContactEmailAddresses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalContactEmailAddressesListValue in publicRequest.AdditionalContactEmailAddresses)
-                        {
-                                context.Writer.Write(publicRequestAdditionalContactEmailAddressesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetContactLanguage())
-                    {
-                        context.Writer.WritePropertyName("ContactLanguage");
-                        context.Writer.Write(publicRequest.ContactLanguage);
-                    }
-
-                    if(publicRequest.IsSetMailType())
-                    {
-                        context.Writer.WritePropertyName("MailType");
-                        context.Writer.Write(publicRequest.MailType);
-                    }
-
-                    if(publicRequest.IsSetProductionAccessEnabled())
-                    {
-                        context.Writer.WritePropertyName("ProductionAccessEnabled");
-                        context.Writer.Write(publicRequest.ProductionAccessEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetUseCaseDescription())
-                    {
-                        context.Writer.WritePropertyName("UseCaseDescription");
-                        context.Writer.Write(publicRequest.UseCaseDescription);
-                    }
-
-                    if(publicRequest.IsSetWebsiteURL())
-                    {
-                        context.Writer.WritePropertyName("WebsiteURL");
-                        context.Writer.Write(publicRequest.WebsiteURL);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAdditionalContactEmailAddressesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetContactLanguage())
+            {
+                context.Writer.WritePropertyName("ContactLanguage");
+                context.Writer.WriteStringValue(publicRequest.ContactLanguage);
+            }
+
+            if(publicRequest.IsSetMailType())
+            {
+                context.Writer.WritePropertyName("MailType");
+                context.Writer.WriteStringValue(publicRequest.MailType);
+            }
+
+            if(publicRequest.IsSetProductionAccessEnabled())
+            {
+                context.Writer.WritePropertyName("ProductionAccessEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.ProductionAccessEnabled.Value);
+            }
+
+            if(publicRequest.IsSetUseCaseDescription())
+            {
+                context.Writer.WritePropertyName("UseCaseDescription");
+                context.Writer.WriteStringValue(publicRequest.UseCaseDescription);
+            }
+
+            if(publicRequest.IsSetWebsiteURL())
+            {
+                context.Writer.WritePropertyName("WebsiteURL");
+                context.Writer.WriteStringValue(publicRequest.WebsiteURL);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

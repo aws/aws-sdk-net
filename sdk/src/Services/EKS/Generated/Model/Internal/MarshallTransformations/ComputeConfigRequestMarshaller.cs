@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetNodePools())
             {
                 context.Writer.WritePropertyName("nodePools");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNodePoolsListValue in requestObject.NodePools)
                 {
-                        context.Writer.Write(requestObjectNodePoolsListValue);
+                        context.Writer.WriteStringValue(requestObjectNodePoolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNodeRoleArn())
             {
                 context.Writer.WritePropertyName("nodeRoleArn");
-                context.Writer.Write(requestObject.NodeRoleArn);
+                context.Writer.WriteStringValue(requestObject.NodeRoleArn);
             }
 
         }

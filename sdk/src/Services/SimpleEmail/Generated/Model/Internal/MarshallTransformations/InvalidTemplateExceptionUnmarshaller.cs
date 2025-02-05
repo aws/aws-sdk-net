@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTemplateException operation
     /// </summary>  
-    public class InvalidTemplateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTemplateException, XmlUnmarshallerContext>
+    public class InvalidTemplateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTemplateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("IpAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetTransitGatewayAttachmentArn())
             {
                 context.Writer.WritePropertyName("TransitGatewayAttachmentArn");
-                context.Writer.Write(requestObject.TransitGatewayAttachmentArn);
+                context.Writer.WriteStringValue(requestObject.TransitGatewayAttachmentArn);
             }
 
         }

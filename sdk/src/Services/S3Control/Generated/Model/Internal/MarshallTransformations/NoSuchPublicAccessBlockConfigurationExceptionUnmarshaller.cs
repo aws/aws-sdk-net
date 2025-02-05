@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchPublicAccessBlockConfigurationException operation
     /// </summary>  
-    public class NoSuchPublicAccessBlockConfigurationExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchPublicAccessBlockConfigurationException, XmlUnmarshallerContext>
+    public class NoSuchPublicAccessBlockConfigurationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchPublicAccessBlockConfigurationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

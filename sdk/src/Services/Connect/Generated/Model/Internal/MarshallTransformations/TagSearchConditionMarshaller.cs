@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("tagKey");
-                context.Writer.Write(requestObject.TagKey);
+                context.Writer.WriteStringValue(requestObject.TagKey);
             }
 
             if(requestObject.IsSetTagKeyComparisonType())
             {
                 context.Writer.WritePropertyName("tagKeyComparisonType");
-                context.Writer.Write(requestObject.TagKeyComparisonType);
+                context.Writer.WriteStringValue(requestObject.TagKeyComparisonType);
             }
 
             if(requestObject.IsSetTagValue())
             {
                 context.Writer.WritePropertyName("tagValue");
-                context.Writer.Write(requestObject.TagValue);
+                context.Writer.WriteStringValue(requestObject.TagValue);
             }
 
             if(requestObject.IsSetTagValueComparisonType())
             {
                 context.Writer.WritePropertyName("tagValueComparisonType");
-                context.Writer.Write(requestObject.TagValueComparisonType);
+                context.Writer.WriteStringValue(requestObject.TagValueComparisonType);
             }
 
         }

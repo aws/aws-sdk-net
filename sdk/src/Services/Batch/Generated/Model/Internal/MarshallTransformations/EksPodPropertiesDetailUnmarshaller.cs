@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EksPodPropertiesDetail Object
     /// </summary>  
-    public class EksPodPropertiesDetailUnmarshaller : IUnmarshaller<EksPodPropertiesDetail, XmlUnmarshallerContext>, IUnmarshaller<EksPodPropertiesDetail, JsonUnmarshallerContext>
+    public class EksPodPropertiesDetailUnmarshaller : IJsonUnmarshaller<EksPodPropertiesDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EksPodPropertiesDetail IUnmarshaller<EksPodPropertiesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EksPodPropertiesDetail Unmarshall(JsonUnmarshallerContext context)
+        public EksPodPropertiesDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EksPodPropertiesDetail unmarshalledObject = new EksPodPropertiesDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("containers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
-                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
+                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dnsPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hostNetwork", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imagePullSecrets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ImagePullSecret, ImagePullSecretUnmarshaller>(ImagePullSecretUnmarshaller.Instance);
-                    unmarshalledObject.ImagePullSecrets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ImagePullSecret, ImagePullSecretUnmarshaller>(ImagePullSecretUnmarshaller.Instance);
+                    unmarshalledObject.ImagePullSecrets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("initContainers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
-                    unmarshalledObject.InitContainers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
+                    unmarshalledObject.InitContainers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadata", targetDepth))
                 {
                     var unmarshaller = EksMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("podName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PodName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PodName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceAccountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccountName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceAccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shareProcessNamespace", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ShareProcessNamespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShareProcessNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EksVolume, EksVolumeUnmarshaller>(EksVolumeUnmarshaller.Instance);
-                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EksVolume, EksVolumeUnmarshaller>(EksVolumeUnmarshaller.Instance);
+                    unmarshalledObject.Volumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

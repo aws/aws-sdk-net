@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrListAliases())
             {
                 context.Writer.WritePropertyName("cidrListAliases");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrListAliasesListValue in requestObject.CidrListAliases)
                 {
-                        context.Writer.Write(requestObjectCidrListAliasesListValue);
+                        context.Writer.WriteStringValue(requestObjectCidrListAliasesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCidrs())
             {
                 context.Writer.WritePropertyName("cidrs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrsListValue in requestObject.Cidrs)
                 {
-                        context.Writer.Write(requestObjectCidrsListValue);
+                        context.Writer.WriteStringValue(requestObjectCidrsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("fromPort");
-                context.Writer.Write(requestObject.FromPort.Value);
+                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetIpv6Cidrs())
             {
                 context.Writer.WritePropertyName("ipv6Cidrs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpv6CidrsListValue in requestObject.Ipv6Cidrs)
                 {
-                        context.Writer.Write(requestObjectIpv6CidrsListValue);
+                        context.Writer.WriteStringValue(requestObjectIpv6CidrsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("toPort");
-                context.Writer.Write(requestObject.ToPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
             }
 
         }

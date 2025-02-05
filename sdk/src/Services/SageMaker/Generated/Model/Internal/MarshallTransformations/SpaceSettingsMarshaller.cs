@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppType())
             {
                 context.Writer.WritePropertyName("AppType");
-                context.Writer.Write(requestObject.AppType);
+                context.Writer.WriteStringValue(requestObject.AppType);
             }
 
             if(requestObject.IsSetCodeEditorAppSettings())
             {
                 context.Writer.WritePropertyName("CodeEditorAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpaceCodeEditorAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeEditorAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomFileSystems())
             {
                 context.Writer.WritePropertyName("CustomFileSystems");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomFileSystemsListValue in requestObject.CustomFileSystems)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomFileSystemMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomFileSystemsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJupyterLabAppSettings())
             {
                 context.Writer.WritePropertyName("JupyterLabAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpaceJupyterLabAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JupyterLabAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJupyterServerAppSettings())
             {
                 context.Writer.WritePropertyName("JupyterServerAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JupyterServerAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JupyterServerAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKernelGatewayAppSettings())
             {
                 context.Writer.WritePropertyName("KernelGatewayAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KernelGatewayAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KernelGatewayAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSpaceStorageSettings())
             {
                 context.Writer.WritePropertyName("SpaceStorageSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpaceStorageSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpaceStorageSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

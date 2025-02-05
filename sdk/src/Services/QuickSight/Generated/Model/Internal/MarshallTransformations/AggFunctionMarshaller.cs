@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("Aggregation");
-                context.Writer.Write(requestObject.Aggregation);
+                context.Writer.WriteStringValue(requestObject.Aggregation);
             }
 
             if(requestObject.IsSetAggregationFunctionParameters())
             {
                 context.Writer.WritePropertyName("AggregationFunctionParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAggregationFunctionParametersKvp in requestObject.AggregationFunctionParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectAggregationFunctionParametersKvp.Key);
                     var requestObjectAggregationFunctionParametersValue = requestObjectAggregationFunctionParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectAggregationFunctionParametersValue);
+                        context.Writer.WriteStringValue(requestObjectAggregationFunctionParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.WriteStringValue(requestObject.Period);
             }
 
             if(requestObject.IsSetPeriodField())
             {
                 context.Writer.WritePropertyName("PeriodField");
-                context.Writer.Write(requestObject.PeriodField);
+                context.Writer.WriteStringValue(requestObject.PeriodField);
             }
 
         }

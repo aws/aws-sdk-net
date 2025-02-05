@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BrokerNodeInfo Object
     /// </summary>  
-    public class BrokerNodeInfoUnmarshaller : IUnmarshaller<BrokerNodeInfo, XmlUnmarshallerContext>, IUnmarshaller<BrokerNodeInfo, JsonUnmarshallerContext>
+    public class BrokerNodeInfoUnmarshaller : IJsonUnmarshaller<BrokerNodeInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BrokerNodeInfo IUnmarshaller<BrokerNodeInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BrokerNodeInfo Unmarshall(JsonUnmarshallerContext context)
+        public BrokerNodeInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BrokerNodeInfo unmarshalledObject = new BrokerNodeInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("attachedENIId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachedENIId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachedENIId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerId", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.BrokerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrokerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clientSubnet", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientSubnet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientSubnet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clientVpcIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientVpcIpAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientVpcIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentBrokerSoftwareInfo", targetDepth))
                 {
                     var unmarshaller = BrokerSoftwareInfoUnmarshaller.Instance;
-                    unmarshalledObject.CurrentBrokerSoftwareInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentBrokerSoftwareInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endpoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

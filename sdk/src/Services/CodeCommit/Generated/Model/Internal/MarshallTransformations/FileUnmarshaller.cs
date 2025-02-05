@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for File Object
     /// </summary>  
-    public class FileUnmarshaller : IUnmarshaller<File, XmlUnmarshallerContext>, IUnmarshaller<File, JsonUnmarshallerContext>
+    public class FileUnmarshaller : IJsonUnmarshaller<File, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        File IUnmarshaller<File, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public File Unmarshall(JsonUnmarshallerContext context)
+        public File Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             File unmarshalledObject = new File();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("absolutePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AbsolutePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AbsolutePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relativePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RelativePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelativePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

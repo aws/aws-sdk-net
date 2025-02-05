@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipeSourceDynamoDBStreamParameters Object
     /// </summary>  
-    public class PipeSourceDynamoDBStreamParametersUnmarshaller : IUnmarshaller<PipeSourceDynamoDBStreamParameters, XmlUnmarshallerContext>, IUnmarshaller<PipeSourceDynamoDBStreamParameters, JsonUnmarshallerContext>
+    public class PipeSourceDynamoDBStreamParametersUnmarshaller : IJsonUnmarshaller<PipeSourceDynamoDBStreamParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipeSourceDynamoDBStreamParameters IUnmarshaller<PipeSourceDynamoDBStreamParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipeSourceDynamoDBStreamParameters Unmarshall(JsonUnmarshallerContext context)
+        public PipeSourceDynamoDBStreamParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipeSourceDynamoDBStreamParameters unmarshalledObject = new PipeSourceDynamoDBStreamParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeadLetterConfig", targetDepth))
                 {
                     var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
-                    unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumRecordAgeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumRecordAgeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumRecordAgeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumRetryAttempts", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OnPartialBatchItemFailure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnPartialBatchItemFailure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnPartialBatchItemFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParallelizationFactor", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ParallelizationFactor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParallelizationFactor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartingPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

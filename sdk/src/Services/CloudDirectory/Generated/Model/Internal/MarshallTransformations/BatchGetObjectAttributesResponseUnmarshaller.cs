@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchGetObjectAttributesResponse Object
     /// </summary>  
-    public class BatchGetObjectAttributesResponseUnmarshaller : IUnmarshaller<BatchGetObjectAttributesResponse, XmlUnmarshallerContext>, IUnmarshaller<BatchGetObjectAttributesResponse, JsonUnmarshallerContext>
+    public class BatchGetObjectAttributesResponseUnmarshaller : IJsonUnmarshaller<BatchGetObjectAttributesResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchGetObjectAttributesResponse IUnmarshaller<BatchGetObjectAttributesResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchGetObjectAttributesResponse Unmarshall(JsonUnmarshallerContext context)
+        public BatchGetObjectAttributesResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchGetObjectAttributesResponse unmarshalledObject = new BatchGetObjectAttributesResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Attributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttributeKeyAndValue, AttributeKeyAndValueUnmarshaller>(AttributeKeyAndValueUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AttributeKeyAndValue, AttributeKeyAndValueUnmarshaller>(AttributeKeyAndValueUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

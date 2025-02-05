@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputPathsMap())
             {
                 context.Writer.WritePropertyName("InputPathsMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectInputPathsMapKvp in requestObject.InputPathsMap)
                 {
                     context.Writer.WritePropertyName(requestObjectInputPathsMapKvp.Key);
                     var requestObjectInputPathsMapValue = requestObjectInputPathsMapKvp.Value;
 
-                        context.Writer.Write(requestObjectInputPathsMapValue);
+                        context.Writer.WriteStringValue(requestObjectInputPathsMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputTemplate())
             {
                 context.Writer.WritePropertyName("InputTemplate");
-                context.Writer.Write(requestObject.InputTemplate);
+                context.Writer.WriteStringValue(requestObject.InputTemplate);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");
-                context.Writer.Write(requestObject.From);
+                context.Writer.WriteStringValue(requestObject.From);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetTo())
             {
                 context.Writer.WritePropertyName("to");
-                context.Writer.Write(requestObject.To);
+                context.Writer.WriteStringValue(requestObject.To);
             }
 
         }

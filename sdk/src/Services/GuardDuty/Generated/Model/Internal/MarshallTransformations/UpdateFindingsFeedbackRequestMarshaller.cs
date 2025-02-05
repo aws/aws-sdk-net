@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -64,42 +67,47 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}/findings/feedback";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComments())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComments())
-                    {
-                        context.Writer.WritePropertyName("comments");
-                        context.Writer.Write(publicRequest.Comments);
-                    }
-
-                    if(publicRequest.IsSetFeedback())
-                    {
-                        context.Writer.WritePropertyName("feedback");
-                        context.Writer.Write(publicRequest.Feedback);
-                    }
-
-                    if(publicRequest.IsSetFindingIds())
-                    {
-                        context.Writer.WritePropertyName("findingIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
-                        {
-                                context.Writer.Write(publicRequestFindingIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("comments");
+                context.Writer.WriteStringValue(publicRequest.Comments);
             }
+
+            if(publicRequest.IsSetFeedback())
+            {
+                context.Writer.WritePropertyName("feedback");
+                context.Writer.WriteStringValue(publicRequest.Feedback);
+            }
+
+            if(publicRequest.IsSetFindingIds())
+            {
+                context.Writer.WritePropertyName("findingIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFindingIdsListValue in publicRequest.FindingIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestFindingIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

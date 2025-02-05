@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCodeSigning())
             {
                 context.Writer.WritePropertyName("codeSigning");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodeSigningMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeSigning, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileLocation())
             {
                 context.Writer.WritePropertyName("fileLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("fileName");
-                context.Writer.Write(requestObject.FileName);
+                context.Writer.WriteStringValue(requestObject.FileName);
             }
 
             if(requestObject.IsSetFileType())
             {
                 context.Writer.WritePropertyName("fileType");
-                context.Writer.Write(requestObject.FileType.Value);
+                context.Writer.WriteNumberValue(requestObject.FileType.Value);
             }
 
             if(requestObject.IsSetFileVersion())
             {
                 context.Writer.WritePropertyName("fileVersion");
-                context.Writer.Write(requestObject.FileVersion);
+                context.Writer.WriteStringValue(requestObject.FileVersion);
             }
 
         }

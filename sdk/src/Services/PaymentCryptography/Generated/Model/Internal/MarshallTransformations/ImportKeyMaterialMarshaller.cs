@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyCryptogram())
             {
                 context.Writer.WritePropertyName("KeyCryptogram");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportKeyCryptogramMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyCryptogram, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRootCertificatePublicKey())
             {
                 context.Writer.WritePropertyName("RootCertificatePublicKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RootCertificatePublicKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootCertificatePublicKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTr31KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr31KeyBlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportTr31KeyBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tr31KeyBlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTr34KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr34KeyBlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportTr34KeyBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tr34KeyBlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrustedCertificatePublicKey())
             {
                 context.Writer.WritePropertyName("TrustedCertificatePublicKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrustedCertificatePublicKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrustedCertificatePublicKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

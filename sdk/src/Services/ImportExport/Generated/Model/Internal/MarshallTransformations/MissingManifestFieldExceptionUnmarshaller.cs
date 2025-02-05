@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingManifestFieldException operation
     /// </summary>  
-    public class MissingManifestFieldExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingManifestFieldException, XmlUnmarshallerContext>
+    public class MissingManifestFieldExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingManifestFieldException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

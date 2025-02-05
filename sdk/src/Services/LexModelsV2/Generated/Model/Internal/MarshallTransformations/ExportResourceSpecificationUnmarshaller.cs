@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExportResourceSpecification Object
     /// </summary>  
-    public class ExportResourceSpecificationUnmarshaller : IUnmarshaller<ExportResourceSpecification, XmlUnmarshallerContext>, IUnmarshaller<ExportResourceSpecification, JsonUnmarshallerContext>
+    public class ExportResourceSpecificationUnmarshaller : IJsonUnmarshaller<ExportResourceSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExportResourceSpecification IUnmarshaller<ExportResourceSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExportResourceSpecification Unmarshall(JsonUnmarshallerContext context)
+        public ExportResourceSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExportResourceSpecification unmarshalledObject = new ExportResourceSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("botExportSpecification", targetDepth))
                 {
                     var unmarshaller = BotExportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.BotExportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botLocaleExportSpecification", targetDepth))
                 {
                     var unmarshaller = BotLocaleExportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.BotLocaleExportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotLocaleExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customVocabularyExportSpecification", targetDepth))
                 {
                     var unmarshaller = CustomVocabularyExportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomVocabularyExportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomVocabularyExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("testSetExportSpecification", targetDepth))
                 {
                     var unmarshaller = TestSetExportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TestSetExportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TestSetExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

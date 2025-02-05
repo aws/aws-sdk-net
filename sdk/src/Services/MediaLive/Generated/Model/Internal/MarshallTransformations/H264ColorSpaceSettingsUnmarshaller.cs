@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for H264ColorSpaceSettings Object
     /// </summary>  
-    public class H264ColorSpaceSettingsUnmarshaller : IUnmarshaller<H264ColorSpaceSettings, XmlUnmarshallerContext>, IUnmarshaller<H264ColorSpaceSettings, JsonUnmarshallerContext>
+    public class H264ColorSpaceSettingsUnmarshaller : IJsonUnmarshaller<H264ColorSpaceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        H264ColorSpaceSettings IUnmarshaller<H264ColorSpaceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public H264ColorSpaceSettings Unmarshall(JsonUnmarshallerContext context)
+        public H264ColorSpaceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             H264ColorSpaceSettings unmarshalledObject = new H264ColorSpaceSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("colorSpacePassthroughSettings", targetDepth))
                 {
                     var unmarshaller = ColorSpacePassthroughSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ColorSpacePassthroughSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorSpacePassthroughSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rec601Settings", targetDepth))
                 {
                     var unmarshaller = Rec601SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Rec601Settings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Rec601Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rec709Settings", targetDepth))
                 {
                     var unmarshaller = Rec709SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Rec709Settings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Rec709Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

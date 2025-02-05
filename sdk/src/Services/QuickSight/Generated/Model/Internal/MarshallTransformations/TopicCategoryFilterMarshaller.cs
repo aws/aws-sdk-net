@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryFilterFunction())
             {
                 context.Writer.WritePropertyName("CategoryFilterFunction");
-                context.Writer.Write(requestObject.CategoryFilterFunction);
+                context.Writer.WriteStringValue(requestObject.CategoryFilterFunction);
             }
 
             if(requestObject.IsSetCategoryFilterType())
             {
                 context.Writer.WritePropertyName("CategoryFilterType");
-                context.Writer.Write(requestObject.CategoryFilterType);
+                context.Writer.WriteStringValue(requestObject.CategoryFilterType);
             }
 
             if(requestObject.IsSetConstant())
             {
                 context.Writer.WritePropertyName("Constant");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicCategoryFilterConstantMarshaller.Instance;
                 marshaller.Marshall(requestObject.Constant, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInverse())
             {
                 context.Writer.WritePropertyName("Inverse");
-                context.Writer.Write(requestObject.Inverse.Value);
+                context.Writer.WriteBooleanValue(requestObject.Inverse.Value);
             }
 
         }

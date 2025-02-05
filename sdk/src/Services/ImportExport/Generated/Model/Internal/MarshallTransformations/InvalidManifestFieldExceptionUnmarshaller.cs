@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidManifestFieldException operation
     /// </summary>  
-    public class InvalidManifestFieldExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidManifestFieldException, XmlUnmarshallerContext>
+    public class InvalidManifestFieldExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidManifestFieldException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

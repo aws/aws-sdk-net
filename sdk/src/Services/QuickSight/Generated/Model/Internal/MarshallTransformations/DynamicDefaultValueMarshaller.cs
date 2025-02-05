@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValueColumn())
             {
                 context.Writer.WritePropertyName("DefaultValueColumn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultValueColumn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGroupNameColumn())
             {
                 context.Writer.WritePropertyName("GroupNameColumn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupNameColumn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserNameColumn())
             {
                 context.Writer.WritePropertyName("UserNameColumn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserNameColumn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

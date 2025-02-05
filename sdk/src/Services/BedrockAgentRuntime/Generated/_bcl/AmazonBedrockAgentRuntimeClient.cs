@@ -582,11 +582,7 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
-        /// </para>
-        ///  </note> 
+        /// <note> </note> 
         /// <para>
         /// Sends a prompt for the agent to process and respond to. Note the following fields
         /// for the request:
@@ -633,7 +629,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+        /// The response contains both <b>chunk</b> and <b>trace</b> attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The final response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+        /// The <c>InvokeAgent</c> returns one chunk for the entire interaction.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -707,11 +708,7 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
-        /// </para>
-        ///  </note> 
+        /// <note> </note> 
         /// <para>
         /// Sends a prompt for the agent to process and respond to. Note the following fields
         /// for the request:
@@ -758,7 +755,12 @@ namespace Amazon.BedrockAgentRuntime
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+        /// The response contains both <b>chunk</b> and <b>trace</b> attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The final response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+        /// The <c>InvokeAgent</c> returns one chunk for the entire interaction.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -992,11 +994,7 @@ namespace Amazon.BedrockAgentRuntime
         /// The agent instructions will not be honored if your agent has only one knowledge base,
         /// uses default prompts, has no action group, and user input is disabled.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeInlineAgent</c>.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul> <note> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeInlineAgent service method.</param>
         /// 
@@ -1074,11 +1072,7 @@ namespace Amazon.BedrockAgentRuntime
         /// The agent instructions will not be honored if your agent has only one knowledge base,
         /// uses default prompts, has no action group, and user input is disabled.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeInlineAgent</c>.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul> <note> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeInlineAgent service method.</param>
         /// <param name="cancellationToken">
@@ -1540,7 +1534,10 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permission for the <c> bedrock:RetrieveAndGenerate</c> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerateStream service method.</param>
         /// 
@@ -1595,7 +1592,10 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permission for the <c> bedrock:RetrieveAndGenerate</c> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerateStream service method.</param>
         /// <param name="cancellationToken">

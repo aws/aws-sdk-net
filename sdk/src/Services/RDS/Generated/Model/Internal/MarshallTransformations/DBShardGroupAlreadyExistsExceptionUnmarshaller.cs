@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBShardGroupAlreadyExistsException operation
     /// </summary>  
-    public class DBShardGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBShardGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBShardGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBShardGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

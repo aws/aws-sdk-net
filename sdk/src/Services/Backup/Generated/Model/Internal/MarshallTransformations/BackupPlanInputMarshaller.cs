@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdvancedBackupSettings())
             {
                 context.Writer.WritePropertyName("AdvancedBackupSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdvancedBackupSettingsListValue in requestObject.AdvancedBackupSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AdvancedBackupSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdvancedBackupSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBackupPlanName())
             {
                 context.Writer.WritePropertyName("BackupPlanName");
-                context.Writer.Write(requestObject.BackupPlanName);
+                context.Writer.WriteStringValue(requestObject.BackupPlanName);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BackupRuleInputMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

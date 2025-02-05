@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeConfiguration())
             {
                 context.Writer.WritePropertyName("computeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComputeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComputeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqlParameters())
             {
                 context.Writer.WritePropertyName("sqlParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProtectedQuerySQLParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

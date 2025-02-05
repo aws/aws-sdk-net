@@ -29,173 +29,163 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InputTemplate Object
     /// </summary>  
-    public class InputTemplateUnmarshaller : IUnmarshaller<InputTemplate, XmlUnmarshallerContext>, IUnmarshaller<InputTemplate, JsonUnmarshallerContext>
+    public class InputTemplateUnmarshaller : IJsonUnmarshaller<InputTemplate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InputTemplate IUnmarshaller<InputTemplate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputTemplate Unmarshall(JsonUnmarshallerContext context)
+        public InputTemplate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InputTemplate unmarshalledObject = new InputTemplate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("advancedInputFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedInputFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdvancedInputFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("advancedInputFilterSettings", targetDepth))
                 {
                     var unmarshaller = AdvancedInputFilterSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedInputFilterSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdvancedInputFilterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioSelectorGroups", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AudioSelectorGroup, StringUnmarshaller, AudioSelectorGroupUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorGroupUnmarshaller.Instance);
-                    unmarshalledObject.AudioSelectorGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AudioSelectorGroup, StringUnmarshaller, AudioSelectorGroupUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorGroupUnmarshaller.Instance);
+                    unmarshalledObject.AudioSelectorGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioSelectors", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AudioSelector, StringUnmarshaller, AudioSelectorUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorUnmarshaller.Instance);
-                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AudioSelector, StringUnmarshaller, AudioSelectorUnmarshaller>(StringUnmarshaller.Instance, AudioSelectorUnmarshaller.Instance);
+                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("captionSelectors", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, CaptionSelector, StringUnmarshaller, CaptionSelectorUnmarshaller>(StringUnmarshaller.Instance, CaptionSelectorUnmarshaller.Instance);
-                    unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, CaptionSelector, StringUnmarshaller, CaptionSelectorUnmarshaller>(StringUnmarshaller.Instance, CaptionSelectorUnmarshaller.Instance);
+                    unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("crop", targetDepth))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;
-                    unmarshalledObject.Crop = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Crop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deblockFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("denoiseFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dolbyVisionMetadataXml", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DolbyVisionMetadataXml = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DolbyVisionMetadataXml = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dynamicAudioSelectors", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DynamicAudioSelector, StringUnmarshaller, DynamicAudioSelectorUnmarshaller>(StringUnmarshaller.Instance, DynamicAudioSelectorUnmarshaller.Instance);
-                    unmarshalledObject.DynamicAudioSelectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, DynamicAudioSelector, StringUnmarshaller, DynamicAudioSelectorUnmarshaller>(StringUnmarshaller.Instance, DynamicAudioSelectorUnmarshaller.Instance);
+                    unmarshalledObject.DynamicAudioSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filterEnable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterEnable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterEnable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filterStrength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageInserter", targetDepth))
                 {
                     var unmarshaller = ImageInserterUnmarshaller.Instance;
-                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputClippings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputClipping, InputClippingUnmarshaller>(InputClippingUnmarshaller.Instance);
-                    unmarshalledObject.InputClippings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputClipping, InputClippingUnmarshaller>(InputClippingUnmarshaller.Instance);
+                    unmarshalledObject.InputClippings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputScanType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputScanType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputScanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("position", targetDepth))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("programNumber", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("psiControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PsiControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PsiControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeStart", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeStart = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeStart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoOverlays", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VideoOverlay, VideoOverlayUnmarshaller>(VideoOverlayUnmarshaller.Instance);
-                    unmarshalledObject.VideoOverlays = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VideoOverlay, VideoOverlayUnmarshaller>(VideoOverlayUnmarshaller.Instance);
+                    unmarshalledObject.VideoOverlays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoSelector", targetDepth))
                 {
                     var unmarshaller = VideoSelectorUnmarshaller.Instance;
-                    unmarshalledObject.VideoSelector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSelector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

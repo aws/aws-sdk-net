@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetGroupStickinessConfig Object
     /// </summary>  
-    public class TargetGroupStickinessConfigUnmarshaller : IUnmarshaller<TargetGroupStickinessConfig, XmlUnmarshallerContext>, IUnmarshaller<TargetGroupStickinessConfig, JsonUnmarshallerContext>
+    public class TargetGroupStickinessConfigUnmarshaller : IXmlUnmarshaller<TargetGroupStickinessConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetGroupStickinessConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetGroupStickinessConfigUnmarshaller _instance = new TargetGroupStickinessConfigUnmarshaller();        
 

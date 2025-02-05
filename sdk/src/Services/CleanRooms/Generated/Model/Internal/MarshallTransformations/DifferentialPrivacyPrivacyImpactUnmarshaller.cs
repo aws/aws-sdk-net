@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DifferentialPrivacyPrivacyImpact Object
     /// </summary>  
-    public class DifferentialPrivacyPrivacyImpactUnmarshaller : IUnmarshaller<DifferentialPrivacyPrivacyImpact, XmlUnmarshallerContext>, IUnmarshaller<DifferentialPrivacyPrivacyImpact, JsonUnmarshallerContext>
+    public class DifferentialPrivacyPrivacyImpactUnmarshaller : IJsonUnmarshaller<DifferentialPrivacyPrivacyImpact, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DifferentialPrivacyPrivacyImpact IUnmarshaller<DifferentialPrivacyPrivacyImpact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DifferentialPrivacyPrivacyImpact Unmarshall(JsonUnmarshallerContext context)
+        public DifferentialPrivacyPrivacyImpact Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DifferentialPrivacyPrivacyImpact unmarshalledObject = new DifferentialPrivacyPrivacyImpact();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DifferentialPrivacyPreviewAggregation, DifferentialPrivacyPreviewAggregationUnmarshaller>(DifferentialPrivacyPreviewAggregationUnmarshaller.Instance);
-                    unmarshalledObject.Aggregations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DifferentialPrivacyPreviewAggregation, DifferentialPrivacyPreviewAggregationUnmarshaller>(DifferentialPrivacyPreviewAggregationUnmarshaller.Instance);
+                    unmarshalledObject.Aggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

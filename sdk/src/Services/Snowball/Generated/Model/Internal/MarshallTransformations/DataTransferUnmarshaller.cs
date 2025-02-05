@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataTransfer Object
     /// </summary>  
-    public class DataTransferUnmarshaller : IUnmarshaller<DataTransfer, XmlUnmarshallerContext>, IUnmarshaller<DataTransfer, JsonUnmarshallerContext>
+    public class DataTransferUnmarshaller : IJsonUnmarshaller<DataTransfer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataTransfer IUnmarshaller<DataTransfer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataTransfer Unmarshall(JsonUnmarshallerContext context)
+        public DataTransfer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataTransfer unmarshalledObject = new DataTransfer();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BytesTransferred", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesTransferred = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BytesTransferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ObjectsTransferred", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ObjectsTransferred = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectsTransferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalObjects", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalObjects = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalObjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

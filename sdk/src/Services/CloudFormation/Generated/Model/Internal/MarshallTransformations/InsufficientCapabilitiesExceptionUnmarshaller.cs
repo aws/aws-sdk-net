@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientCapabilitiesException operation
     /// </summary>  
-    public class InsufficientCapabilitiesExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientCapabilitiesException, XmlUnmarshallerContext>
+    public class InsufficientCapabilitiesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientCapabilitiesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

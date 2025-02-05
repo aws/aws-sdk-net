@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,132 +49,132 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDpdTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("DpdTimeoutSeconds");
-                context.Writer.Write(requestObject.DpdTimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DpdTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetIkeVersions())
             {
                 context.Writer.WritePropertyName("IkeVersions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIkeVersionsListValue in requestObject.IkeVersions)
                 {
-                        context.Writer.Write(requestObjectIkeVersionsListValue);
+                        context.Writer.WriteStringValue(requestObjectIkeVersionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutsideIpAddress())
             {
                 context.Writer.WritePropertyName("OutsideIpAddress");
-                context.Writer.Write(requestObject.OutsideIpAddress);
+                context.Writer.WriteStringValue(requestObject.OutsideIpAddress);
             }
 
             if(requestObject.IsSetPhase1DhGroupNumbers())
             {
                 context.Writer.WritePropertyName("Phase1DhGroupNumbers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase1DhGroupNumbersListValue in requestObject.Phase1DhGroupNumbers)
                 {
-                        context.Writer.Write(requestObjectPhase1DhGroupNumbersListValue);
+                        context.Writer.WriteNumberValue(requestObjectPhase1DhGroupNumbersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase1EncryptionAlgorithms())
             {
                 context.Writer.WritePropertyName("Phase1EncryptionAlgorithms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase1EncryptionAlgorithmsListValue in requestObject.Phase1EncryptionAlgorithms)
                 {
-                        context.Writer.Write(requestObjectPhase1EncryptionAlgorithmsListValue);
+                        context.Writer.WriteStringValue(requestObjectPhase1EncryptionAlgorithmsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase1IntegrityAlgorithms())
             {
                 context.Writer.WritePropertyName("Phase1IntegrityAlgorithms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase1IntegrityAlgorithmsListValue in requestObject.Phase1IntegrityAlgorithms)
                 {
-                        context.Writer.Write(requestObjectPhase1IntegrityAlgorithmsListValue);
+                        context.Writer.WriteStringValue(requestObjectPhase1IntegrityAlgorithmsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase1LifetimeSeconds())
             {
                 context.Writer.WritePropertyName("Phase1LifetimeSeconds");
-                context.Writer.Write(requestObject.Phase1LifetimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.Phase1LifetimeSeconds.Value);
             }
 
             if(requestObject.IsSetPhase2DhGroupNumbers())
             {
                 context.Writer.WritePropertyName("Phase2DhGroupNumbers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase2DhGroupNumbersListValue in requestObject.Phase2DhGroupNumbers)
                 {
-                        context.Writer.Write(requestObjectPhase2DhGroupNumbersListValue);
+                        context.Writer.WriteNumberValue(requestObjectPhase2DhGroupNumbersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase2EncryptionAlgorithms())
             {
                 context.Writer.WritePropertyName("Phase2EncryptionAlgorithms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase2EncryptionAlgorithmsListValue in requestObject.Phase2EncryptionAlgorithms)
                 {
-                        context.Writer.Write(requestObjectPhase2EncryptionAlgorithmsListValue);
+                        context.Writer.WriteStringValue(requestObjectPhase2EncryptionAlgorithmsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase2IntegrityAlgorithms())
             {
                 context.Writer.WritePropertyName("Phase2IntegrityAlgorithms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhase2IntegrityAlgorithmsListValue in requestObject.Phase2IntegrityAlgorithms)
                 {
-                        context.Writer.Write(requestObjectPhase2IntegrityAlgorithmsListValue);
+                        context.Writer.WriteStringValue(requestObjectPhase2IntegrityAlgorithmsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPhase2LifetimeSeconds())
             {
                 context.Writer.WritePropertyName("Phase2LifetimeSeconds");
-                context.Writer.Write(requestObject.Phase2LifetimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.Phase2LifetimeSeconds.Value);
             }
 
             if(requestObject.IsSetPreSharedKey())
             {
                 context.Writer.WritePropertyName("PreSharedKey");
-                context.Writer.Write(requestObject.PreSharedKey);
+                context.Writer.WriteStringValue(requestObject.PreSharedKey);
             }
 
             if(requestObject.IsSetRekeyFuzzPercentage())
             {
                 context.Writer.WritePropertyName("RekeyFuzzPercentage");
-                context.Writer.Write(requestObject.RekeyFuzzPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.RekeyFuzzPercentage.Value);
             }
 
             if(requestObject.IsSetRekeyMarginTimeSeconds())
             {
                 context.Writer.WritePropertyName("RekeyMarginTimeSeconds");
-                context.Writer.Write(requestObject.RekeyMarginTimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.RekeyMarginTimeSeconds.Value);
             }
 
             if(requestObject.IsSetReplayWindowSize())
             {
                 context.Writer.WritePropertyName("ReplayWindowSize");
-                context.Writer.Write(requestObject.ReplayWindowSize.Value);
+                context.Writer.WriteNumberValue(requestObject.ReplayWindowSize.Value);
             }
 
             if(requestObject.IsSetTunnelInsideCidr())
             {
                 context.Writer.WritePropertyName("TunnelInsideCidr");
-                context.Writer.Write(requestObject.TunnelInsideCidr);
+                context.Writer.WriteStringValue(requestObject.TunnelInsideCidr);
             }
 
         }

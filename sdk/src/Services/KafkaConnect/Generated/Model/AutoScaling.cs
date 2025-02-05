@@ -46,16 +46,8 @@ namespace Amazon.KafkaConnect.Model
         /// The maximum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public int? MaxWorkerCount
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public int MaxWorkerCount
-=======
         [AWSProperty(Required=true)]
-        public int MaxWorkerCount
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+        public int? MaxWorkerCount
         {
             get { return this._maxWorkerCount; }
             set { this._maxWorkerCount = value; }
@@ -93,16 +85,8 @@ namespace Amazon.KafkaConnect.Model
         /// The minimum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public int? MinWorkerCount
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public int MinWorkerCount
-=======
         [AWSProperty(Required=true)]
-        public int MinWorkerCount
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+        public int? MinWorkerCount
         {
             get { return this._minWorkerCount; }
             set { this._minWorkerCount = value; }

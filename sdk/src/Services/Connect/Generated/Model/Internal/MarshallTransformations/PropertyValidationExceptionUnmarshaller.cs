@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PropertyValidationException Object
     /// </summary>  
-    public class PropertyValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<PropertyValidationException, JsonUnmarshallerContext>
+    public class PropertyValidationExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<PropertyValidationException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public PropertyValidationException Unmarshall(JsonUnmarshallerContext context)
+        public PropertyValidationException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,22 +55,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public PropertyValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public PropertyValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             PropertyValidationException unmarshalledObject = new PropertyValidationException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("PropertyList", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = new ListUnmarshaller<PropertyValidationExceptionProperty, PropertyValidationExceptionPropertyUnmarshaller>(PropertyValidationExceptionPropertyUnmarshaller.Instance);
-                    unmarshalledObject.PropertyList = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("PropertyList", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<PropertyValidationExceptionProperty, PropertyValidationExceptionPropertyUnmarshaller>(PropertyValidationExceptionPropertyUnmarshaller.Instance);
+                        unmarshalledObject.PropertyList = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

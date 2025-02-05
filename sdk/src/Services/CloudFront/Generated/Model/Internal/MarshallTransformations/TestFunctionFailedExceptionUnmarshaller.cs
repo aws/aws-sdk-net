@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestFunctionFailedException operation
     /// </summary>  
-    public class TestFunctionFailedExceptionUnmarshaller : IErrorResponseUnmarshaller<TestFunctionFailedException, XmlUnmarshallerContext>
+    public class TestFunctionFailedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TestFunctionFailedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

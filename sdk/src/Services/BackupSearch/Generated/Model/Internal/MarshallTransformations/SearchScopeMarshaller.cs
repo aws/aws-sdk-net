@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackupResourceArns())
             {
                 context.Writer.WritePropertyName("BackupResourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBackupResourceArnsListValue in requestObject.BackupResourceArns)
                 {
-                        context.Writer.Write(requestObjectBackupResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectBackupResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBackupResourceCreationTime())
             {
                 context.Writer.WritePropertyName("BackupResourceCreationTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackupCreationTimeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.BackupResourceCreationTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBackupResourceTags())
             {
                 context.Writer.WritePropertyName("BackupResourceTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBackupResourceTagsKvp in requestObject.BackupResourceTags)
                 {
                     context.Writer.WritePropertyName(requestObjectBackupResourceTagsKvp.Key);
                     var requestObjectBackupResourceTagsValue = requestObjectBackupResourceTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectBackupResourceTagsValue);
+                        context.Writer.WriteStringValue(requestObjectBackupResourceTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBackupResourceTypes())
             {
                 context.Writer.WritePropertyName("BackupResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBackupResourceTypesListValue in requestObject.BackupResourceTypes)
                 {
-                        context.Writer.Write(requestObjectBackupResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectBackupResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceResourceArns())
             {
                 context.Writer.WritePropertyName("SourceResourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceResourceArnsListValue in requestObject.SourceResourceArns)
                 {
-                        context.Writer.Write(requestObjectSourceResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

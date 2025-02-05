@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultVersionNumber())
             {
                 context.Writer.WritePropertyName("DefaultVersionNumber");
-                context.Writer.Write(requestObject.DefaultVersionNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.DefaultVersionNumber.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLatestVersionNumber())
             {
                 context.Writer.WritePropertyName("LatestVersionNumber");
-                context.Writer.Write(requestObject.LatestVersionNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.LatestVersionNumber.Value);
             }
 
             if(requestObject.IsSetLaunchTemplateData())
             {
                 context.Writer.WritePropertyName("LaunchTemplateData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchTemplateData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLaunchTemplateName())
             {
                 context.Writer.WritePropertyName("LaunchTemplateName");
-                context.Writer.Write(requestObject.LaunchTemplateName);
+                context.Writer.WriteStringValue(requestObject.LaunchTemplateName);
             }
 
         }

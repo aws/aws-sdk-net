@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FailedDeleteRemediationExceptionsBatch Object
     /// </summary>  
-    public class FailedDeleteRemediationExceptionsBatchUnmarshaller : IUnmarshaller<FailedDeleteRemediationExceptionsBatch, XmlUnmarshallerContext>, IUnmarshaller<FailedDeleteRemediationExceptionsBatch, JsonUnmarshallerContext>
+    public class FailedDeleteRemediationExceptionsBatchUnmarshaller : IJsonUnmarshaller<FailedDeleteRemediationExceptionsBatch, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FailedDeleteRemediationExceptionsBatch IUnmarshaller<FailedDeleteRemediationExceptionsBatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FailedDeleteRemediationExceptionsBatch Unmarshall(JsonUnmarshallerContext context)
+        public FailedDeleteRemediationExceptionsBatch Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FailedDeleteRemediationExceptionsBatch unmarshalledObject = new FailedDeleteRemediationExceptionsBatch();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FailedItems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RemediationExceptionResourceKey, RemediationExceptionResourceKeyUnmarshaller>(RemediationExceptionResourceKeyUnmarshaller.Instance);
-                    unmarshalledObject.FailedItems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RemediationExceptionResourceKey, RemediationExceptionResourceKeyUnmarshaller>(RemediationExceptionResourceKeyUnmarshaller.Instance);
+                    unmarshalledObject.FailedItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

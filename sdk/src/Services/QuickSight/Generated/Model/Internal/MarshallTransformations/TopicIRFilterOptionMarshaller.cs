@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,167 +49,167 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggMetrics())
             {
                 context.Writer.WritePropertyName("AggMetrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggMetricsListValue in requestObject.AggMetrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilterAggMetricsMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("Aggregation");
-                context.Writer.Write(requestObject.Aggregation);
+                context.Writer.WriteStringValue(requestObject.Aggregation);
             }
 
             if(requestObject.IsSetAggregationFunctionParameters())
             {
                 context.Writer.WritePropertyName("AggregationFunctionParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAggregationFunctionParametersKvp in requestObject.AggregationFunctionParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectAggregationFunctionParametersKvp.Key);
                     var requestObjectAggregationFunctionParametersValue = requestObjectAggregationFunctionParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectAggregationFunctionParametersValue);
+                        context.Writer.WriteStringValue(requestObjectAggregationFunctionParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAggregationPartitionBy())
             {
                 context.Writer.WritePropertyName("AggregationPartitionBy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregationPartitionByListValue in requestObject.AggregationPartitionBy)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AggregationPartitionByMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggregationPartitionByListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAnchor())
             {
                 context.Writer.WritePropertyName("Anchor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnchorMarshaller.Instance;
                 marshaller.Marshall(requestObject.Anchor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConstant())
             {
                 context.Writer.WritePropertyName("Constant");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicConstantValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Constant, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterClass())
             {
                 context.Writer.WritePropertyName("FilterClass");
-                context.Writer.Write(requestObject.FilterClass);
+                context.Writer.WriteStringValue(requestObject.FilterClass);
             }
 
             if(requestObject.IsSetFilterType())
             {
                 context.Writer.WritePropertyName("FilterType");
-                context.Writer.Write(requestObject.FilterType);
+                context.Writer.WriteStringValue(requestObject.FilterType);
             }
 
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("Function");
-                context.Writer.Write(requestObject.Function);
+                context.Writer.WriteStringValue(requestObject.Function);
             }
 
             if(requestObject.IsSetInclusive())
             {
                 context.Writer.WritePropertyName("Inclusive");
-                context.Writer.Write(requestObject.Inclusive.Value);
+                context.Writer.WriteBooleanValue(requestObject.Inclusive.Value);
             }
 
             if(requestObject.IsSetInverse())
             {
                 context.Writer.WritePropertyName("Inverse");
-                context.Writer.Write(requestObject.Inverse.Value);
+                context.Writer.WriteBooleanValue(requestObject.Inverse.Value);
             }
 
             if(requestObject.IsSetLastNextOffset())
             {
                 context.Writer.WritePropertyName("LastNextOffset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicConstantValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastNextOffset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNullFilter())
             {
                 context.Writer.WritePropertyName("NullFilter");
-                context.Writer.Write(requestObject.NullFilter);
+                context.Writer.WriteStringValue(requestObject.NullFilter);
             }
 
             if(requestObject.IsSetOperandField())
             {
                 context.Writer.WritePropertyName("OperandField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.OperandField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRange())
             {
                 context.Writer.WritePropertyName("Range");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicConstantValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Range, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSortDirection())
             {
                 context.Writer.WritePropertyName("SortDirection");
-                context.Writer.Write(requestObject.SortDirection);
+                context.Writer.WriteStringValue(requestObject.SortDirection);
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
             if(requestObject.IsSetTopBottomLimit())
             {
                 context.Writer.WritePropertyName("TopBottomLimit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicConstantValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopBottomLimit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

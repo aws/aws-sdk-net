@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryStringKeyValuePair Object
     /// </summary>  
-    public class QueryStringKeyValuePairUnmarshaller : IUnmarshaller<QueryStringKeyValuePair, XmlUnmarshallerContext>, IUnmarshaller<QueryStringKeyValuePair, JsonUnmarshallerContext>
+    public class QueryStringKeyValuePairUnmarshaller : IXmlUnmarshaller<QueryStringKeyValuePair, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public QueryStringKeyValuePair Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static QueryStringKeyValuePairUnmarshaller _instance = new QueryStringKeyValuePairUnmarshaller();        
 

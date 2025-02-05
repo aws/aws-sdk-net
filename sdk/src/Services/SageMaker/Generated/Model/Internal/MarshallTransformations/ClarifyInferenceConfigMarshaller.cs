@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,82 +49,82 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentTemplate())
             {
                 context.Writer.WritePropertyName("ContentTemplate");
-                context.Writer.Write(requestObject.ContentTemplate);
+                context.Writer.WriteStringValue(requestObject.ContentTemplate);
             }
 
             if(requestObject.IsSetFeatureHeaders())
             {
                 context.Writer.WritePropertyName("FeatureHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeatureHeadersListValue in requestObject.FeatureHeaders)
                 {
-                        context.Writer.Write(requestObjectFeatureHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectFeatureHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFeaturesAttribute())
             {
                 context.Writer.WritePropertyName("FeaturesAttribute");
-                context.Writer.Write(requestObject.FeaturesAttribute);
+                context.Writer.WriteStringValue(requestObject.FeaturesAttribute);
             }
 
             if(requestObject.IsSetFeatureTypes())
             {
                 context.Writer.WritePropertyName("FeatureTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeatureTypesListValue in requestObject.FeatureTypes)
                 {
-                        context.Writer.Write(requestObjectFeatureTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectFeatureTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelAttribute())
             {
                 context.Writer.WritePropertyName("LabelAttribute");
-                context.Writer.Write(requestObject.LabelAttribute);
+                context.Writer.WriteStringValue(requestObject.LabelAttribute);
             }
 
             if(requestObject.IsSetLabelHeaders())
             {
                 context.Writer.WritePropertyName("LabelHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelHeadersListValue in requestObject.LabelHeaders)
                 {
-                        context.Writer.Write(requestObjectLabelHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelIndex())
             {
                 context.Writer.WritePropertyName("LabelIndex");
-                context.Writer.Write(requestObject.LabelIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.LabelIndex.Value);
             }
 
             if(requestObject.IsSetMaxPayloadInMB())
             {
                 context.Writer.WritePropertyName("MaxPayloadInMB");
-                context.Writer.Write(requestObject.MaxPayloadInMB.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPayloadInMB.Value);
             }
 
             if(requestObject.IsSetMaxRecordCount())
             {
                 context.Writer.WritePropertyName("MaxRecordCount");
-                context.Writer.Write(requestObject.MaxRecordCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRecordCount.Value);
             }
 
             if(requestObject.IsSetProbabilityAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityAttribute");
-                context.Writer.Write(requestObject.ProbabilityAttribute);
+                context.Writer.WriteStringValue(requestObject.ProbabilityAttribute);
             }
 
             if(requestObject.IsSetProbabilityIndex())
             {
                 context.Writer.WritePropertyName("ProbabilityIndex");
-                context.Writer.Write(requestObject.ProbabilityIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.ProbabilityIndex.Value);
             }
 
         }

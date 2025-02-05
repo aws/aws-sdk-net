@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RedshiftProvisionedConfiguration Object
     /// </summary>  
-    public class RedshiftProvisionedConfigurationUnmarshaller : IUnmarshaller<RedshiftProvisionedConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RedshiftProvisionedConfiguration, JsonUnmarshallerContext>
+    public class RedshiftProvisionedConfigurationUnmarshaller : IJsonUnmarshaller<RedshiftProvisionedConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RedshiftProvisionedConfiguration IUnmarshaller<RedshiftProvisionedConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RedshiftProvisionedConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RedshiftProvisionedConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RedshiftProvisionedConfiguration unmarshalledObject = new RedshiftProvisionedConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authConfiguration", targetDepth))
                 {
                     var unmarshaller = RedshiftProvisionedAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

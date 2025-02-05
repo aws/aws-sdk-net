@@ -82,9 +82,9 @@ namespace Amazon.CloudTrail.Model
         /// 
         /// </para>
         /// </summary>
-        public float Relevance
+        public float? Relevance
         {
-            get { return this._relevance.GetValueOrDefault(); }
+            get { return this._relevance; }
             set { this._relevance = value; }
         }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamicValue())
             {
                 context.Writer.WritePropertyName("DynamicValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamicDefaultValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRollingDate())
             {
                 context.Writer.WritePropertyName("RollingDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RollingDateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RollingDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticValues())
             {
                 context.Writer.WritePropertyName("StaticValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStaticValuesListValue in requestObject.StaticValues)
                 {
-                        context.Writer.Write(requestObjectStaticValuesListValue);
+                        context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObjectStaticValuesListValue)));
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

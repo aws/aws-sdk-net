@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachments())
             {
                 context.Writer.WritePropertyName("Attachments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttachmentsListValue in requestObject.Attachments)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2VolumeAttachmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttachmentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreateTime())
             {
                 context.Writer.WritePropertyName("CreateTime");
-                context.Writer.Write(requestObject.CreateTime);
+                context.Writer.WriteStringValue(requestObject.CreateTime);
             }
 
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("DeviceName");
-                context.Writer.Write(requestObject.DeviceName);
+                context.Writer.WriteStringValue(requestObject.DeviceName);
             }
 
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size.Value);
+                context.Writer.WriteNumberValue(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetSnapshotId())
             {
                 context.Writer.WritePropertyName("SnapshotId");
-                context.Writer.Write(requestObject.SnapshotId);
+                context.Writer.WriteStringValue(requestObject.SnapshotId);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetVolumeId())
             {
                 context.Writer.WritePropertyName("VolumeId");
-                context.Writer.Write(requestObject.VolumeId);
+                context.Writer.WriteStringValue(requestObject.VolumeId);
             }
 
             if(requestObject.IsSetVolumeScanStatus())
             {
                 context.Writer.WritePropertyName("VolumeScanStatus");
-                context.Writer.Write(requestObject.VolumeScanStatus);
+                context.Writer.WriteStringValue(requestObject.VolumeScanStatus);
             }
 
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
-                context.Writer.Write(requestObject.VolumeType);
+                context.Writer.WriteStringValue(requestObject.VolumeType);
             }
 
         }

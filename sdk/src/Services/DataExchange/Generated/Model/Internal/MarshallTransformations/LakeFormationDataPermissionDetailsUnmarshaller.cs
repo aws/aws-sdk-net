@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LakeFormationDataPermissionDetails Object
     /// </summary>  
-    public class LakeFormationDataPermissionDetailsUnmarshaller : IUnmarshaller<LakeFormationDataPermissionDetails, XmlUnmarshallerContext>, IUnmarshaller<LakeFormationDataPermissionDetails, JsonUnmarshallerContext>
+    public class LakeFormationDataPermissionDetailsUnmarshaller : IJsonUnmarshaller<LakeFormationDataPermissionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LakeFormationDataPermissionDetails IUnmarshaller<LakeFormationDataPermissionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LakeFormationDataPermissionDetails Unmarshall(JsonUnmarshallerContext context)
+        public LakeFormationDataPermissionDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LakeFormationDataPermissionDetails unmarshalledObject = new LakeFormationDataPermissionDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LFTagPolicy", targetDepth))
                 {
                     var unmarshaller = LFTagPolicyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

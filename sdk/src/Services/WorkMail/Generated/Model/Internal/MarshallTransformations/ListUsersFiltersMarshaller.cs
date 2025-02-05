@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayNamePrefix())
             {
                 context.Writer.WritePropertyName("DisplayNamePrefix");
-                context.Writer.Write(requestObject.DisplayNamePrefix);
+                context.Writer.WriteStringValue(requestObject.DisplayNamePrefix);
             }
 
             if(requestObject.IsSetIdentityProviderUserIdPrefix())
             {
                 context.Writer.WritePropertyName("IdentityProviderUserIdPrefix");
-                context.Writer.Write(requestObject.IdentityProviderUserIdPrefix);
+                context.Writer.WriteStringValue(requestObject.IdentityProviderUserIdPrefix);
             }
 
             if(requestObject.IsSetPrimaryEmailPrefix())
             {
                 context.Writer.WritePropertyName("PrimaryEmailPrefix");
-                context.Writer.Write(requestObject.PrimaryEmailPrefix);
+                context.Writer.WriteStringValue(requestObject.PrimaryEmailPrefix);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetUsernamePrefix())
             {
                 context.Writer.WritePropertyName("UsernamePrefix");
-                context.Writer.Write(requestObject.UsernamePrefix);
+                context.Writer.WriteStringValue(requestObject.UsernamePrefix);
             }
 
         }

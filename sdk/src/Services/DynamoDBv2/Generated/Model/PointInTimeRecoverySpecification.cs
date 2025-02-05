@@ -67,9 +67,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=35)]
-        public int RecoveryPeriodInDays
+        public int? RecoveryPeriodInDays
         {
-            get { return this._recoveryPeriodInDays.GetValueOrDefault(); }
+            get { return this._recoveryPeriodInDays; }
             set { this._recoveryPeriodInDays = value; }
         }
 

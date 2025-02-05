@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails IUnmarshaller<AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails unmarshalledObject = new AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CapacityReservationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CapacityReservationResourceGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CapacityReservationResourceGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CapacityReservationResourceGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

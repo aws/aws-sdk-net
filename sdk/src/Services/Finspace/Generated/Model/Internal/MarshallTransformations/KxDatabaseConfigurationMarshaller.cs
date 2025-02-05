@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheConfigurations())
             {
                 context.Writer.WritePropertyName("cacheConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCacheConfigurationsListValue in requestObject.CacheConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KxDatabaseCacheConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCacheConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetChangesetId())
             {
                 context.Writer.WritePropertyName("changesetId");
-                context.Writer.Write(requestObject.ChangesetId);
+                context.Writer.WriteStringValue(requestObject.ChangesetId);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDataviewConfiguration())
             {
                 context.Writer.WritePropertyName("dataviewConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KxDataviewConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataviewConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataviewName())
             {
                 context.Writer.WritePropertyName("dataviewName");
-                context.Writer.Write(requestObject.DataviewName);
+                context.Writer.WriteStringValue(requestObject.DataviewName);
             }
 
         }

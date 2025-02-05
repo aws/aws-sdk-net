@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileMetadata())
             {
                 context.Writer.WritePropertyName("fileMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileMetadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceLocation())
             {
                 context.Writer.WritePropertyName("sourceLocation");
-                context.Writer.Write(requestObject.SourceLocation);
+                context.Writer.WriteStringValue(requestObject.SourceLocation);
             }
 
             if(requestObject.IsSetTargetLocation())
             {
                 context.Writer.WritePropertyName("targetLocation");
-                context.Writer.Write(requestObject.TargetLocation);
+                context.Writer.WriteStringValue(requestObject.TargetLocation);
             }
 
         }

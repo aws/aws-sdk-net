@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStackNames())
             {
                 context.Writer.WritePropertyName("StackNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStackNamesListValue in requestObject.StackNames)
                 {
-                        context.Writer.Write(requestObjectStackNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectStackNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

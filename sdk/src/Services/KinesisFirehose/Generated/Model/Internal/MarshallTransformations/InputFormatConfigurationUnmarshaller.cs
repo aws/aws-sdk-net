@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InputFormatConfiguration Object
     /// </summary>  
-    public class InputFormatConfigurationUnmarshaller : IUnmarshaller<InputFormatConfiguration, XmlUnmarshallerContext>, IUnmarshaller<InputFormatConfiguration, JsonUnmarshallerContext>
+    public class InputFormatConfigurationUnmarshaller : IJsonUnmarshaller<InputFormatConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InputFormatConfiguration IUnmarshaller<InputFormatConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputFormatConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public InputFormatConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InputFormatConfiguration unmarshalledObject = new InputFormatConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Deserializer", targetDepth))
                 {
                     var unmarshaller = DeserializerUnmarshaller.Instance;
-                    unmarshalledObject.Deserializer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Deserializer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

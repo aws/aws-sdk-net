@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityUnitsLimitExceededException operation
     /// </summary>  
-    public class CapacityUnitsLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<CapacityUnitsLimitExceededException, XmlUnmarshallerContext>
+    public class CapacityUnitsLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CapacityUnitsLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

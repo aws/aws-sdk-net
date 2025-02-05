@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTagsToSnapshots())
             {
                 context.Writer.WritePropertyName("CopyTagsToSnapshots");
-                context.Writer.Write(requestObject.CopyTagsToSnapshots.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToSnapshots.Value);
             }
 
             if(requestObject.IsSetDataCompressionType())
             {
                 context.Writer.WritePropertyName("DataCompressionType");
-                context.Writer.Write(requestObject.DataCompressionType);
+                context.Writer.WriteStringValue(requestObject.DataCompressionType);
             }
 
             if(requestObject.IsSetNfsExports())
             {
                 context.Writer.WritePropertyName("NfsExports");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNfsExportsListValue in requestObject.NfsExports)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OpenZFSNfsExportMarshaller.Instance;
                     marshaller.Marshall(requestObjectNfsExportsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("ReadOnly");
-                context.Writer.Write(requestObject.ReadOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRecordSizeKiB())
             {
                 context.Writer.WritePropertyName("RecordSizeKiB");
-                context.Writer.Write(requestObject.RecordSizeKiB.Value);
+                context.Writer.WriteNumberValue(requestObject.RecordSizeKiB.Value);
             }
 
             if(requestObject.IsSetUserAndGroupQuotas())
             {
                 context.Writer.WritePropertyName("UserAndGroupQuotas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserAndGroupQuotasListValue in requestObject.UserAndGroupQuotas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OpenZFSUserOrGroupQuotaMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserAndGroupQuotasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

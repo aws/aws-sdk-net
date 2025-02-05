@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NumberValidateResponse Object
     /// </summary>  
-    public class NumberValidateResponseUnmarshaller : IUnmarshaller<NumberValidateResponse, XmlUnmarshallerContext>, IUnmarshaller<NumberValidateResponse, JsonUnmarshallerContext>
+    public class NumberValidateResponseUnmarshaller : IJsonUnmarshaller<NumberValidateResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NumberValidateResponse IUnmarshaller<NumberValidateResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NumberValidateResponse Unmarshall(JsonUnmarshallerContext context)
+        public NumberValidateResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NumberValidateResponse unmarshalledObject = new NumberValidateResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Carrier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Carrier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Carrier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("City", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.City = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CleansedPhoneNumberE164", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CleansedPhoneNumberE164 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CleansedPhoneNumberE164 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CleansedPhoneNumberNational", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CleansedPhoneNumberNational = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CleansedPhoneNumberNational = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Country", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CountryCodeIso2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CountryCodeIso2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CountryCodeIso2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CountryCodeNumeric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CountryCodeNumeric = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CountryCodeNumeric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("County", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.County = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.County = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginalCountryCodeIso2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OriginalCountryCodeIso2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginalCountryCodeIso2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginalPhoneNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OriginalPhoneNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginalPhoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PhoneType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhoneType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PhoneTypeCode", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PhoneTypeCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhoneTypeCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZipCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ZipCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZipCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

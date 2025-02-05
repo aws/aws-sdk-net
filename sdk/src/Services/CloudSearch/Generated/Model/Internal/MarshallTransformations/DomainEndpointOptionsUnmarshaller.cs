@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DomainEndpointOptions Object
     /// </summary>  
-    public class DomainEndpointOptionsUnmarshaller : IUnmarshaller<DomainEndpointOptions, XmlUnmarshallerContext>, IUnmarshaller<DomainEndpointOptions, JsonUnmarshallerContext>
+    public class DomainEndpointOptionsUnmarshaller : IXmlUnmarshaller<DomainEndpointOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DomainEndpointOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DomainEndpointOptionsUnmarshaller _instance = new DomainEndpointOptionsUnmarshaller();        
 

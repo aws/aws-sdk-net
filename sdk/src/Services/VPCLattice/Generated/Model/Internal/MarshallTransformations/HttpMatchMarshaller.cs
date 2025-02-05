@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaderMatches())
             {
                 context.Writer.WritePropertyName("headerMatches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeaderMatchesListValue in requestObject.HeaderMatches)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HeaderMatchMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeaderMatchesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMethod())
             {
                 context.Writer.WritePropertyName("method");
-                context.Writer.Write(requestObject.Method);
+                context.Writer.WriteStringValue(requestObject.Method);
             }
 
             if(requestObject.IsSetPathMatch())
             {
                 context.Writer.WritePropertyName("pathMatch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PathMatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.PathMatch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

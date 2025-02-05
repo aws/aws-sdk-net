@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,153 +66,158 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActualEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActualEndTime())
-                    {
-                        context.Writer.WritePropertyName("ActualEndTime");
-                        context.Writer.Write(publicRequest.ActualEndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetActualStartTime())
-                    {
-                        context.Writer.WritePropertyName("ActualStartTime");
-                        context.Writer.Write(publicRequest.ActualStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetCategory())
-                    {
-                        context.Writer.WritePropertyName("Category");
-                        context.Writer.Write(publicRequest.Category);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetNotifications())
-                    {
-                        context.Writer.WritePropertyName("Notifications");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNotificationsListValue in publicRequest.Notifications)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OpsItemNotificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestNotificationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOperationalData())
-                    {
-                        context.Writer.WritePropertyName("OperationalData");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestOperationalDataKvp in publicRequest.OperationalData)
-                        {
-                            context.Writer.WritePropertyName(publicRequestOperationalDataKvp.Key);
-                            var publicRequestOperationalDataValue = publicRequestOperationalDataKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OpsItemDataValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOperationalDataValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOperationalDataToDelete())
-                    {
-                        context.Writer.WritePropertyName("OperationalDataToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOperationalDataToDeleteListValue in publicRequest.OperationalDataToDelete)
-                        {
-                                context.Writer.Write(publicRequestOperationalDataToDeleteListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOpsItemArn())
-                    {
-                        context.Writer.WritePropertyName("OpsItemArn");
-                        context.Writer.Write(publicRequest.OpsItemArn);
-                    }
-
-                    if(publicRequest.IsSetOpsItemId())
-                    {
-                        context.Writer.WritePropertyName("OpsItemId");
-                        context.Writer.Write(publicRequest.OpsItemId);
-                    }
-
-                    if(publicRequest.IsSetPlannedEndTime())
-                    {
-                        context.Writer.WritePropertyName("PlannedEndTime");
-                        context.Writer.Write(publicRequest.PlannedEndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetPlannedStartTime())
-                    {
-                        context.Writer.WritePropertyName("PlannedStartTime");
-                        context.Writer.Write(publicRequest.PlannedStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("Priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetRelatedOpsItems())
-                    {
-                        context.Writer.WritePropertyName("RelatedOpsItems");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRelatedOpsItemsListValue in publicRequest.RelatedOpsItems)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RelatedOpsItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRelatedOpsItemsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSeverity())
-                    {
-                        context.Writer.WritePropertyName("Severity");
-                        context.Writer.Write(publicRequest.Severity);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetTitle())
-                    {
-                        context.Writer.WritePropertyName("Title");
-                        context.Writer.Write(publicRequest.Title);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ActualEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActualEndTime.Value)));
             }
+
+            if(publicRequest.IsSetActualStartTime())
+            {
+                context.Writer.WritePropertyName("ActualStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActualStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("Category");
+                context.Writer.WriteStringValue(publicRequest.Category);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetNotifications())
+            {
+                context.Writer.WritePropertyName("Notifications");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNotificationsListValue in publicRequest.Notifications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OpsItemNotificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNotificationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOperationalData())
+            {
+                context.Writer.WritePropertyName("OperationalData");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestOperationalDataKvp in publicRequest.OperationalData)
+                {
+                    context.Writer.WritePropertyName(publicRequestOperationalDataKvp.Key);
+                    var publicRequestOperationalDataValue = publicRequestOperationalDataKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OpsItemDataValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOperationalDataValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOperationalDataToDelete())
+            {
+                context.Writer.WritePropertyName("OperationalDataToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOperationalDataToDeleteListValue in publicRequest.OperationalDataToDelete)
+                {
+                        context.Writer.WriteStringValue(publicRequestOperationalDataToDeleteListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOpsItemArn())
+            {
+                context.Writer.WritePropertyName("OpsItemArn");
+                context.Writer.WriteStringValue(publicRequest.OpsItemArn);
+            }
+
+            if(publicRequest.IsSetOpsItemId())
+            {
+                context.Writer.WritePropertyName("OpsItemId");
+                context.Writer.WriteStringValue(publicRequest.OpsItemId);
+            }
+
+            if(publicRequest.IsSetPlannedEndTime())
+            {
+                context.Writer.WritePropertyName("PlannedEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.PlannedEndTime.Value)));
+            }
+
+            if(publicRequest.IsSetPlannedStartTime())
+            {
+                context.Writer.WritePropertyName("PlannedStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.PlannedStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetRelatedOpsItems())
+            {
+                context.Writer.WritePropertyName("RelatedOpsItems");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRelatedOpsItemsListValue in publicRequest.RelatedOpsItems)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RelatedOpsItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRelatedOpsItemsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSeverity())
+            {
+                context.Writer.WritePropertyName("Severity");
+                context.Writer.WriteStringValue(publicRequest.Severity);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetTitle())
+            {
+                context.Writer.WritePropertyName("Title");
+                context.Writer.WriteStringValue(publicRequest.Title);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

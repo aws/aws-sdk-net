@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolicyId())
             {
                 context.Writer.WritePropertyName("PolicyId");
-                context.Writer.Write(requestObject.PolicyId);
+                context.Writer.WriteStringValue(requestObject.PolicyId);
             }
 
             if(requestObject.IsSetTargetIds())
             {
                 context.Writer.WritePropertyName("TargetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetIdsListValue in requestObject.TargetIds)
                 {
-                        context.Writer.Write(requestObjectTargetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

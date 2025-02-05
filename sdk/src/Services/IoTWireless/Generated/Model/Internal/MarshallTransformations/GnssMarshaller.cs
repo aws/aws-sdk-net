@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -53,23 +51,23 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AssistAltitude");
                 if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AssistAltitude.Value);
+                    context.Writer.WriteNumberValue(requestObject.AssistAltitude.Value);
                 }
             }
 
             if(requestObject.IsSetAssistPosition())
             {
                 context.Writer.WritePropertyName("AssistPosition");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssistPositionListValue in requestObject.AssistPosition)
                 {
-                        context.Writer.Write(requestObjectAssistPositionListValue);
+                        context.Writer.WriteNumberValue(requestObjectAssistPositionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptureTime())
@@ -77,11 +75,11 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CaptureTime");
                 if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTime.Value);
+                    context.Writer.WriteNumberValue(requestObject.CaptureTime.Value);
                 }
             }
 
@@ -90,24 +88,24 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
                 if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
+                    context.Writer.WriteNumberValue(requestObject.CaptureTimeAccuracy.Value);
                 }
             }
 
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("Payload");
-                context.Writer.Write(requestObject.Payload);
+                context.Writer.WriteStringValue(requestObject.Payload);
             }
 
             if(requestObject.IsSetUse2DSolver())
             {
                 context.Writer.WritePropertyName("Use2DSolver");
-                context.Writer.Write(requestObject.Use2DSolver.Value);
+                context.Writer.WriteBooleanValue(requestObject.Use2DSolver.Value);
             }
 
         }

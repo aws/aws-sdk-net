@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Problem Object
     /// </summary>  
-    public class ProblemUnmarshaller : IUnmarshaller<Problem, XmlUnmarshallerContext>, IUnmarshaller<Problem, JsonUnmarshallerContext>
+    public class ProblemUnmarshaller : IJsonUnmarshaller<Problem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Problem IUnmarshaller<Problem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Problem Unmarshall(JsonUnmarshallerContext context)
+        public Problem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Problem unmarshalledObject = new Problem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("device", targetDepth))
                 {
                     var unmarshaller = DeviceUnmarshaller.Instance;
-                    unmarshalledObject.Device = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Device = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("job", targetDepth))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
-                    unmarshalledObject.Job = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Job = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Result = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("run", targetDepth))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
-                    unmarshalledObject.Run = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Run = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("suite", targetDepth))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
-                    unmarshalledObject.Suite = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Suite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("test", targetDepth))
                 {
                     var unmarshaller = ProblemDetailUnmarshaller.Instance;
-                    unmarshalledObject.Test = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Test = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

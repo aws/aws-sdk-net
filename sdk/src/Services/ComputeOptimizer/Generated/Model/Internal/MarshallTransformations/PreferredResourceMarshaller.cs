@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeList())
             {
                 context.Writer.WritePropertyName("excludeList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeListListValue in requestObject.ExcludeList)
                 {
-                        context.Writer.Write(requestObjectExcludeListListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeList())
             {
                 context.Writer.WritePropertyName("includeList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeListListValue in requestObject.IncludeList)
                 {
-                        context.Writer.Write(requestObjectIncludeListListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

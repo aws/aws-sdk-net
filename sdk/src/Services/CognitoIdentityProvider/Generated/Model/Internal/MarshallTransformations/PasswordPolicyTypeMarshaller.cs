@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("MinimumLength");
-                context.Writer.Write(requestObject.MinimumLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumLength.Value);
             }
 
             if(requestObject.IsSetPasswordHistorySize())
             {
                 context.Writer.WritePropertyName("PasswordHistorySize");
-                context.Writer.Write(requestObject.PasswordHistorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.PasswordHistorySize.Value);
             }
 
             if(requestObject.IsSetRequireLowercase())
             {
                 context.Writer.WritePropertyName("RequireLowercase");
-                context.Writer.Write(requestObject.RequireLowercase.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireLowercase.Value);
             }
 
             if(requestObject.IsSetRequireNumbers())
             {
                 context.Writer.WritePropertyName("RequireNumbers");
-                context.Writer.Write(requestObject.RequireNumbers.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireNumbers.Value);
             }
 
             if(requestObject.IsSetRequireSymbols())
             {
                 context.Writer.WritePropertyName("RequireSymbols");
-                context.Writer.Write(requestObject.RequireSymbols.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireSymbols.Value);
             }
 
             if(requestObject.IsSetRequireUppercase())
             {
                 context.Writer.WritePropertyName("RequireUppercase");
-                context.Writer.Write(requestObject.RequireUppercase.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireUppercase.Value);
             }
 
             if(requestObject.IsSetTemporaryPasswordValidityDays())
             {
                 context.Writer.WritePropertyName("TemporaryPasswordValidityDays");
-                context.Writer.Write(requestObject.TemporaryPasswordValidityDays.Value);
+                context.Writer.WriteNumberValue(requestObject.TemporaryPasswordValidityDays.Value);
             }
 
         }

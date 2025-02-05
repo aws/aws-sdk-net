@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BuildtimeSettings Object
     /// </summary>  
-    public class BuildtimeSettingsUnmarshaller : IUnmarshaller<BuildtimeSettings, XmlUnmarshallerContext>, IUnmarshaller<BuildtimeSettings, JsonUnmarshallerContext>
+    public class BuildtimeSettingsUnmarshaller : IJsonUnmarshaller<BuildtimeSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BuildtimeSettings IUnmarshaller<BuildtimeSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BuildtimeSettings Unmarshall(JsonUnmarshallerContext context)
+        public BuildtimeSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BuildtimeSettings unmarshalledObject = new BuildtimeSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("descriptiveBotBuilder", targetDepth))
                 {
                     var unmarshaller = DescriptiveBotBuilderSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.DescriptiveBotBuilder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DescriptiveBotBuilder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sampleUtteranceGeneration", targetDepth))
                 {
                     var unmarshaller = SampleUtteranceGenerationSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.SampleUtteranceGeneration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SampleUtteranceGeneration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

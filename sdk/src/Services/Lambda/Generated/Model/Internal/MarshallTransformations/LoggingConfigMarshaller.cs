@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationLogLevel())
             {
                 context.Writer.WritePropertyName("ApplicationLogLevel");
-                context.Writer.Write(requestObject.ApplicationLogLevel);
+                context.Writer.WriteStringValue(requestObject.ApplicationLogLevel);
             }
 
             if(requestObject.IsSetLogFormat())
             {
                 context.Writer.WritePropertyName("LogFormat");
-                context.Writer.Write(requestObject.LogFormat);
+                context.Writer.WriteStringValue(requestObject.LogFormat);
             }
 
             if(requestObject.IsSetLogGroup())
             {
                 context.Writer.WritePropertyName("LogGroup");
-                context.Writer.Write(requestObject.LogGroup);
+                context.Writer.WriteStringValue(requestObject.LogGroup);
             }
 
             if(requestObject.IsSetSystemLogLevel())
             {
                 context.Writer.WritePropertyName("SystemLogLevel");
-                context.Writer.Write(requestObject.SystemLogLevel);
+                context.Writer.WriteStringValue(requestObject.SystemLogLevel);
             }
 
         }

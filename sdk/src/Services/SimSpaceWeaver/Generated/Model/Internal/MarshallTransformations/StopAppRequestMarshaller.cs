@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
 {
@@ -61,37 +64,42 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/stopapp";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApp())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApp())
-                    {
-                        context.Writer.WritePropertyName("App");
-                        context.Writer.Write(publicRequest.App);
-                    }
-
-                    if(publicRequest.IsSetDomain())
-                    {
-                        context.Writer.WritePropertyName("Domain");
-                        context.Writer.Write(publicRequest.Domain);
-                    }
-
-                    if(publicRequest.IsSetSimulation())
-                    {
-                        context.Writer.WritePropertyName("Simulation");
-                        context.Writer.Write(publicRequest.Simulation);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("App");
+                context.Writer.WriteStringValue(publicRequest.App);
             }
+
+            if(publicRequest.IsSetDomain())
+            {
+                context.Writer.WritePropertyName("Domain");
+                context.Writer.WriteStringValue(publicRequest.Domain);
+            }
+
+            if(publicRequest.IsSetSimulation())
+            {
+                context.Writer.WritePropertyName("Simulation");
+                context.Writer.WriteStringValue(publicRequest.Simulation);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

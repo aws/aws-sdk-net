@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -61,91 +64,96 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateSimulationApplication";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplication())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplication())
-                    {
-                        context.Writer.WritePropertyName("application");
-                        context.Writer.Write(publicRequest.Application);
-                    }
-
-                    if(publicRequest.IsSetCurrentRevisionId())
-                    {
-                        context.Writer.WritePropertyName("currentRevisionId");
-                        context.Writer.Write(publicRequest.CurrentRevisionId);
-                    }
-
-                    if(publicRequest.IsSetEnvironment())
-                    {
-                        context.Writer.WritePropertyName("environment");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnvironmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Environment, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRenderingEngine())
-                    {
-                        context.Writer.WritePropertyName("renderingEngine");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RenderingEngineMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RenderingEngine, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRobotSoftwareSuite())
-                    {
-                        context.Writer.WritePropertyName("robotSoftwareSuite");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RobotSoftwareSuiteMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RobotSoftwareSuite, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSimulationSoftwareSuite())
-                    {
-                        context.Writer.WritePropertyName("simulationSoftwareSuite");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SimulationSoftwareSuiteMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SimulationSoftwareSuite, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSources())
-                    {
-                        context.Writer.WritePropertyName("sources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SourceConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("application");
+                context.Writer.WriteStringValue(publicRequest.Application);
             }
+
+            if(publicRequest.IsSetCurrentRevisionId())
+            {
+                context.Writer.WritePropertyName("currentRevisionId");
+                context.Writer.WriteStringValue(publicRequest.CurrentRevisionId);
+            }
+
+            if(publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("environment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EnvironmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Environment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRenderingEngine())
+            {
+                context.Writer.WritePropertyName("renderingEngine");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RenderingEngineMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RenderingEngine, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRobotSoftwareSuite())
+            {
+                context.Writer.WritePropertyName("robotSoftwareSuite");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RobotSoftwareSuiteMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RobotSoftwareSuite, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSimulationSoftwareSuite())
+            {
+                context.Writer.WritePropertyName("simulationSoftwareSuite");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SimulationSoftwareSuiteMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SimulationSoftwareSuite, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSources())
+            {
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

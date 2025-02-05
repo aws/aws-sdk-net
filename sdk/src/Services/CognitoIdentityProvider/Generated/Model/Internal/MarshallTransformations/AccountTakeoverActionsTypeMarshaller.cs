@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHighAction())
             {
                 context.Writer.WritePropertyName("HighAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountTakeoverActionTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.HighAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLowAction())
             {
                 context.Writer.WritePropertyName("LowAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountTakeoverActionTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LowAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMediumAction())
             {
                 context.Writer.WritePropertyName("MediumAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountTakeoverActionTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MediumAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

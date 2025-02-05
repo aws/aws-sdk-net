@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccount())
             {
                 context.Writer.WritePropertyName("Account");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UserAccountMarshaller.Instance;
                 marshaller.Marshall(requestObject.Account, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCredentialUid())
             {
                 context.Writer.WritePropertyName("CredentialUid");
-                context.Writer.Write(requestObject.CredentialUid);
+                context.Writer.WriteStringValue(requestObject.CredentialUid);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetUid())
             {
                 context.Writer.WritePropertyName("Uid");
-                context.Writer.Write(requestObject.Uid);
+                context.Writer.WriteStringValue(requestObject.Uid);
             }
 
         }

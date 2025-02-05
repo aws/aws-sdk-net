@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRedshiftClusterDeferredMaintenanceWindow Object
     /// </summary>  
-    public class AwsRedshiftClusterDeferredMaintenanceWindowUnmarshaller : IUnmarshaller<AwsRedshiftClusterDeferredMaintenanceWindow, XmlUnmarshallerContext>, IUnmarshaller<AwsRedshiftClusterDeferredMaintenanceWindow, JsonUnmarshallerContext>
+    public class AwsRedshiftClusterDeferredMaintenanceWindowUnmarshaller : IJsonUnmarshaller<AwsRedshiftClusterDeferredMaintenanceWindow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRedshiftClusterDeferredMaintenanceWindow IUnmarshaller<AwsRedshiftClusterDeferredMaintenanceWindow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRedshiftClusterDeferredMaintenanceWindow Unmarshall(JsonUnmarshallerContext context)
+        public AwsRedshiftClusterDeferredMaintenanceWindow Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRedshiftClusterDeferredMaintenanceWindow unmarshalledObject = new AwsRedshiftClusterDeferredMaintenanceWindow();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeferMaintenanceEndTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeferMaintenanceEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeferMaintenanceEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeferMaintenanceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeferMaintenanceIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeferMaintenanceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeferMaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeferMaintenanceStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeferMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

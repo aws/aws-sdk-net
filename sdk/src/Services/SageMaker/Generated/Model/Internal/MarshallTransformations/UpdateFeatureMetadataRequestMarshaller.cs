@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFeatureGroupName())
-                    {
-                        context.Writer.WritePropertyName("FeatureGroupName");
-                        context.Writer.Write(publicRequest.FeatureGroupName);
-                    }
-
-                    if(publicRequest.IsSetFeatureName())
-                    {
-                        context.Writer.WritePropertyName("FeatureName");
-                        context.Writer.Write(publicRequest.FeatureName);
-                    }
-
-                    if(publicRequest.IsSetParameterAdditions())
-                    {
-                        context.Writer.WritePropertyName("ParameterAdditions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParameterAdditionsListValue in publicRequest.ParameterAdditions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FeatureParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParameterAdditionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetParameterRemovals())
-                    {
-                        context.Writer.WritePropertyName("ParameterRemovals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParameterRemovalsListValue in publicRequest.ParameterRemovals)
-                        {
-                                context.Writer.Write(publicRequestParameterRemovalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetFeatureGroupName())
+            {
+                context.Writer.WritePropertyName("FeatureGroupName");
+                context.Writer.WriteStringValue(publicRequest.FeatureGroupName);
+            }
+
+            if(publicRequest.IsSetFeatureName())
+            {
+                context.Writer.WritePropertyName("FeatureName");
+                context.Writer.WriteStringValue(publicRequest.FeatureName);
+            }
+
+            if(publicRequest.IsSetParameterAdditions())
+            {
+                context.Writer.WritePropertyName("ParameterAdditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParameterAdditionsListValue in publicRequest.ParameterAdditions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FeatureParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParameterAdditionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetParameterRemovals())
+            {
+                context.Writer.WritePropertyName("ParameterRemovals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParameterRemovalsListValue in publicRequest.ParameterRemovals)
+                {
+                        context.Writer.WriteStringValue(publicRequestParameterRemovalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SignalDecoder Object
     /// </summary>  
-    public class SignalDecoderUnmarshaller : IUnmarshaller<SignalDecoder, XmlUnmarshallerContext>, IUnmarshaller<SignalDecoder, JsonUnmarshallerContext>
+    public class SignalDecoderUnmarshaller : IJsonUnmarshaller<SignalDecoder, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SignalDecoder IUnmarshaller<SignalDecoder, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SignalDecoder Unmarshall(JsonUnmarshallerContext context)
+        public SignalDecoder Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SignalDecoder unmarshalledObject = new SignalDecoder();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("canSignal", targetDepth))
                 {
                     var unmarshaller = CanSignalUnmarshaller.Instance;
-                    unmarshalledObject.CanSignal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customDecodingSignal", targetDepth))
                 {
                     var unmarshaller = CustomDecodingSignalUnmarshaller.Instance;
-                    unmarshalledObject.CustomDecodingSignal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomDecodingSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fullyQualifiedName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("interfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InterfaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("messageSignal", targetDepth))
                 {
                     var unmarshaller = MessageSignalUnmarshaller.Instance;
-                    unmarshalledObject.MessageSignal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("obdSignal", targetDepth))
                 {
                     var unmarshaller = ObdSignalUnmarshaller.Instance;
-                    unmarshalledObject.ObdSignal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObdSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

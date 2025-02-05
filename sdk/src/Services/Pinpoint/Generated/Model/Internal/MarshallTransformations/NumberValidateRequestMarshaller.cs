@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsoCountryCode())
             {
                 context.Writer.WritePropertyName("IsoCountryCode");
-                context.Writer.Write(requestObject.IsoCountryCode);
+                context.Writer.WriteStringValue(requestObject.IsoCountryCode);
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.Write(requestObject.PhoneNumber);
+                context.Writer.WriteStringValue(requestObject.PhoneNumber);
             }
 
         }

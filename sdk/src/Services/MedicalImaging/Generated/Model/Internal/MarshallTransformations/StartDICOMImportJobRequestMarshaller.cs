@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
@@ -64,60 +67,65 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 throw new AmazonMedicalImagingException("Request object does not have required field DatastoreId set");
             request.AddPathResource("{datastoreId}", StringUtils.FromString(publicRequest.DatastoreId));
             request.ResourcePath = "/startDICOMImportJob/datastore/{datastoreId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("dataAccessRoleArn");
-                        context.Writer.Write(publicRequest.DataAccessRoleArn);
-                    }
-
-                    if(publicRequest.IsSetInputOwnerAccountId())
-                    {
-                        context.Writer.WritePropertyName("inputOwnerAccountId");
-                        context.Writer.Write(publicRequest.InputOwnerAccountId);
-                    }
-
-                    if(publicRequest.IsSetInputS3Uri())
-                    {
-                        context.Writer.WritePropertyName("inputS3Uri");
-                        context.Writer.Write(publicRequest.InputS3Uri);
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("jobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetOutputS3Uri())
-                    {
-                        context.Writer.WritePropertyName("outputS3Uri");
-                        context.Writer.Write(publicRequest.OutputS3Uri);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("dataAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetInputOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("inputOwnerAccountId");
+                context.Writer.WriteStringValue(publicRequest.InputOwnerAccountId);
+            }
+
+            if(publicRequest.IsSetInputS3Uri())
+            {
+                context.Writer.WritePropertyName("inputS3Uri");
+                context.Writer.WriteStringValue(publicRequest.InputS3Uri);
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("jobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetOutputS3Uri())
+            {
+                context.Writer.WritePropertyName("outputS3Uri");
+                context.Writer.WriteStringValue(publicRequest.OutputS3Uri);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

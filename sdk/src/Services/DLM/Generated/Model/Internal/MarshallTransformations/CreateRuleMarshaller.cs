@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCronExpression())
             {
                 context.Writer.WritePropertyName("CronExpression");
-                context.Writer.Write(requestObject.CronExpression);
+                context.Writer.WriteStringValue(requestObject.CronExpression);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval.Value);
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetIntervalUnit())
             {
                 context.Writer.WritePropertyName("IntervalUnit");
-                context.Writer.Write(requestObject.IntervalUnit);
+                context.Writer.WriteStringValue(requestObject.IntervalUnit);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetScripts())
             {
                 context.Writer.WritePropertyName("Scripts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectScriptsListValue in requestObject.Scripts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ScriptMarshaller.Instance;
                     marshaller.Marshall(requestObjectScriptsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimes())
             {
                 context.Writer.WritePropertyName("Times");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTimesListValue in requestObject.Times)
                 {
-                        context.Writer.Write(requestObjectTimesListValue);
+                        context.Writer.WriteStringValue(requestObjectTimesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

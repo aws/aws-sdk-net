@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -64,56 +67,61 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 throw new AmazonAccessAnalyzerException("Request object does not have required field AccessPreviewId set");
             request.AddPathResource("{accessPreviewId}", StringUtils.FromString(publicRequest.AccessPreviewId));
             request.ResourcePath = "/access-preview/{accessPreviewId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAnalyzerArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAnalyzerArn())
-                    {
-                        context.Writer.WritePropertyName("analyzerArn");
-                        context.Writer.Write(publicRequest.AnalyzerArn);
-                    }
-
-                    if(publicRequest.IsSetFilter())
-                    {
-                        context.Writer.WritePropertyName("filter");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFilterKvp in publicRequest.Filter)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                            var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CriterionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFilterValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("analyzerArn");
+                context.Writer.WriteStringValue(publicRequest.AnalyzerArn);
             }
+
+            if(publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                {
+                    context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                    var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CriterionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilterValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

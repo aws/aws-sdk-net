@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

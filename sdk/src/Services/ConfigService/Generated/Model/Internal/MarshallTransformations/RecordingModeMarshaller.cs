@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordingFrequency())
             {
                 context.Writer.WritePropertyName("recordingFrequency");
-                context.Writer.Write(requestObject.RecordingFrequency);
+                context.Writer.WriteStringValue(requestObject.RecordingFrequency);
             }
 
             if(requestObject.IsSetRecordingModeOverrides())
             {
                 context.Writer.WritePropertyName("recordingModeOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecordingModeOverridesListValue in requestObject.RecordingModeOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RecordingModeOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecordingModeOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HyperParameterRanges Object
     /// </summary>  
-    public class HyperParameterRangesUnmarshaller : IUnmarshaller<HyperParameterRanges, XmlUnmarshallerContext>, IUnmarshaller<HyperParameterRanges, JsonUnmarshallerContext>
+    public class HyperParameterRangesUnmarshaller : IJsonUnmarshaller<HyperParameterRanges, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HyperParameterRanges IUnmarshaller<HyperParameterRanges, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HyperParameterRanges Unmarshall(JsonUnmarshallerContext context)
+        public HyperParameterRanges Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HyperParameterRanges unmarshalledObject = new HyperParameterRanges();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("categoricalHyperParameterRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CategoricalHyperParameterRange, CategoricalHyperParameterRangeUnmarshaller>(CategoricalHyperParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.CategoricalHyperParameterRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CategoricalHyperParameterRange, CategoricalHyperParameterRangeUnmarshaller>(CategoricalHyperParameterRangeUnmarshaller.Instance);
+                    unmarshalledObject.CategoricalHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("continuousHyperParameterRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContinuousHyperParameterRange, ContinuousHyperParameterRangeUnmarshaller>(ContinuousHyperParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.ContinuousHyperParameterRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContinuousHyperParameterRange, ContinuousHyperParameterRangeUnmarshaller>(ContinuousHyperParameterRangeUnmarshaller.Instance);
+                    unmarshalledObject.ContinuousHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("integerHyperParameterRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<IntegerHyperParameterRange, IntegerHyperParameterRangeUnmarshaller>(IntegerHyperParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.IntegerHyperParameterRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<IntegerHyperParameterRange, IntegerHyperParameterRangeUnmarshaller>(IntegerHyperParameterRangeUnmarshaller.Instance);
+                    unmarshalledObject.IntegerHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

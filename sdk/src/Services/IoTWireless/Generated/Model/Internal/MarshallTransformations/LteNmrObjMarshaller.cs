@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEarfcn())
             {
                 context.Writer.WritePropertyName("Earfcn");
-                context.Writer.Write(requestObject.Earfcn.Value);
+                context.Writer.WriteNumberValue(requestObject.Earfcn.Value);
             }
 
             if(requestObject.IsSetEutranCid())
             {
                 context.Writer.WritePropertyName("EutranCid");
-                context.Writer.Write(requestObject.EutranCid.Value);
+                context.Writer.WriteNumberValue(requestObject.EutranCid.Value);
             }
 
             if(requestObject.IsSetPci())
             {
                 context.Writer.WritePropertyName("Pci");
-                context.Writer.Write(requestObject.Pci.Value);
+                context.Writer.WriteNumberValue(requestObject.Pci.Value);
             }
 
             if(requestObject.IsSetRsrp())
             {
                 context.Writer.WritePropertyName("Rsrp");
-                context.Writer.Write(requestObject.Rsrp.Value);
+                context.Writer.WriteNumberValue(requestObject.Rsrp.Value);
             }
 
             if(requestObject.IsSetRsrq())
@@ -77,11 +75,11 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Rsrq");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Rsrq.Value);
+                    context.Writer.WriteNumberValue(requestObject.Rsrq.Value);
                 }
             }
 

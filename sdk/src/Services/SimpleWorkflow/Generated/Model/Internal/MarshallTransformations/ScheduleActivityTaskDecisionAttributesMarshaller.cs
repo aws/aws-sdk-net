@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActivityId())
             {
                 context.Writer.WritePropertyName("activityId");
-                context.Writer.Write(requestObject.ActivityId);
+                context.Writer.WriteStringValue(requestObject.ActivityId);
             }
 
             if(requestObject.IsSetActivityType())
             {
                 context.Writer.WritePropertyName("activityType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActivityTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActivityType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetControl())
             {
                 context.Writer.WritePropertyName("control");
-                context.Writer.Write(requestObject.Control);
+                context.Writer.WriteStringValue(requestObject.Control);
             }
 
             if(requestObject.IsSetHeartbeatTimeout())
             {
                 context.Writer.WritePropertyName("heartbeatTimeout");
-                context.Writer.Write(requestObject.HeartbeatTimeout);
+                context.Writer.WriteStringValue(requestObject.HeartbeatTimeout);
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetScheduleToCloseTimeout())
             {
                 context.Writer.WritePropertyName("scheduleToCloseTimeout");
-                context.Writer.Write(requestObject.ScheduleToCloseTimeout);
+                context.Writer.WriteStringValue(requestObject.ScheduleToCloseTimeout);
             }
 
             if(requestObject.IsSetScheduleToStartTimeout())
             {
                 context.Writer.WritePropertyName("scheduleToStartTimeout");
-                context.Writer.Write(requestObject.ScheduleToStartTimeout);
+                context.Writer.WriteStringValue(requestObject.ScheduleToStartTimeout);
             }
 
             if(requestObject.IsSetStartToCloseTimeout())
             {
                 context.Writer.WritePropertyName("startToCloseTimeout");
-                context.Writer.Write(requestObject.StartToCloseTimeout);
+                context.Writer.WriteStringValue(requestObject.StartToCloseTimeout);
             }
 
             if(requestObject.IsSetTaskList())
             {
                 context.Writer.WritePropertyName("taskList");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TaskListMarshaller.Instance;
                 marshaller.Marshall(requestObject.TaskList, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskPriority())
             {
                 context.Writer.WritePropertyName("taskPriority");
-                context.Writer.Write(requestObject.TaskPriority);
+                context.Writer.WriteStringValue(requestObject.TaskPriority);
             }
 
         }

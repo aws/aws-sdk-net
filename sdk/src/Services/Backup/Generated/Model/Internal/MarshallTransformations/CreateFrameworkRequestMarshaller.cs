@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -61,72 +64,77 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audit/frameworks";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFrameworkControls())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("FrameworkControls");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFrameworkControlsListValue in publicRequest.FrameworkControls)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFrameworkControls())
-                    {
-                        context.Writer.WritePropertyName("FrameworkControls");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFrameworkControlsListValue in publicRequest.FrameworkControls)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = FrameworkControlMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFrameworkControlsListValue, context);
+                    var marshaller = FrameworkControlMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFrameworkControlsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFrameworkDescription())
-                    {
-                        context.Writer.WritePropertyName("FrameworkDescription");
-                        context.Writer.Write(publicRequest.FrameworkDescription);
-                    }
-
-                    if(publicRequest.IsSetFrameworkName())
-                    {
-                        context.Writer.WritePropertyName("FrameworkName");
-                        context.Writer.Write(publicRequest.FrameworkName);
-                    }
-
-                    if(publicRequest.IsSetFrameworkTags())
-                    {
-                        context.Writer.WritePropertyName("FrameworkTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFrameworkTagsKvp in publicRequest.FrameworkTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFrameworkTagsKvp.Key);
-                            var publicRequestFrameworkTagsValue = publicRequestFrameworkTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestFrameworkTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    else if(!(publicRequest.IsSetIdempotencyToken()))
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFrameworkDescription())
+            {
+                context.Writer.WritePropertyName("FrameworkDescription");
+                context.Writer.WriteStringValue(publicRequest.FrameworkDescription);
+            }
+
+            if(publicRequest.IsSetFrameworkName())
+            {
+                context.Writer.WritePropertyName("FrameworkName");
+                context.Writer.WriteStringValue(publicRequest.FrameworkName);
+            }
+
+            if(publicRequest.IsSetFrameworkTags())
+            {
+                context.Writer.WritePropertyName("FrameworkTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFrameworkTagsKvp in publicRequest.FrameworkTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestFrameworkTagsKvp.Key);
+                    var publicRequestFrameworkTagsValue = publicRequestFrameworkTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFrameworkTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+
+            else if(!(publicRequest.IsSetIdempotencyToken()))
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

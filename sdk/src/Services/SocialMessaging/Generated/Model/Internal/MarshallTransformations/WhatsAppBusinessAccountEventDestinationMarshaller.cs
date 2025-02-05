@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventDestinationArn())
             {
                 context.Writer.WritePropertyName("eventDestinationArn");
-                context.Writer.Write(requestObject.EventDestinationArn);
+                context.Writer.WriteStringValue(requestObject.EventDestinationArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetSources())
             {
                 context.Writer.WritePropertyName("sources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourcesListValue in requestObject.Sources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsLogSourceResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

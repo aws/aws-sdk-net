@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecryption())
             {
                 context.Writer.WritePropertyName("decryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SrtCallerDecryptionRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.Decryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinimumLatency())
             {
                 context.Writer.WritePropertyName("minimumLatency");
-                context.Writer.Write(requestObject.MinimumLatency.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumLatency.Value);
             }
 
             if(requestObject.IsSetSrtListenerAddress())
             {
                 context.Writer.WritePropertyName("srtListenerAddress");
-                context.Writer.Write(requestObject.SrtListenerAddress);
+                context.Writer.WriteStringValue(requestObject.SrtListenerAddress);
             }
 
             if(requestObject.IsSetSrtListenerPort())
             {
                 context.Writer.WritePropertyName("srtListenerPort");
-                context.Writer.Write(requestObject.SrtListenerPort);
+                context.Writer.WriteStringValue(requestObject.SrtListenerPort);
             }
 
             if(requestObject.IsSetStreamId())
             {
                 context.Writer.WritePropertyName("streamId");
-                context.Writer.Write(requestObject.StreamId);
+                context.Writer.WriteStringValue(requestObject.StreamId);
             }
 
         }

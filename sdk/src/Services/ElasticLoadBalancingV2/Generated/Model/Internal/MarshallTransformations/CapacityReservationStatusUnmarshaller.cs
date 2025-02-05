@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityReservationStatus Object
     /// </summary>  
-    public class CapacityReservationStatusUnmarshaller : IUnmarshaller<CapacityReservationStatus, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationStatus, JsonUnmarshallerContext>
+    public class CapacityReservationStatusUnmarshaller : IXmlUnmarshaller<CapacityReservationStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityReservationStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityReservationStatusUnmarshaller _instance = new CapacityReservationStatusUnmarshaller();        
 

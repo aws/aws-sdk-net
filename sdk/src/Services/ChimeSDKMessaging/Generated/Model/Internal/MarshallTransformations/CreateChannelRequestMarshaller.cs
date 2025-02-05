@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
@@ -61,126 +64,131 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/channels";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppInstanceArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("AppInstanceArn");
-                        context.Writer.Write(publicRequest.AppInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetChannelId())
-                    {
-                        context.Writer.WritePropertyName("ChannelId");
-                        context.Writer.Write(publicRequest.ChannelId);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetElasticChannelConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ElasticChannelConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ElasticChannelConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ElasticChannelConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExpirationSettings())
-                    {
-                        context.Writer.WritePropertyName("ExpirationSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExpirationSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExpirationSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMemberArns())
-                    {
-                        context.Writer.WritePropertyName("MemberArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMemberArnsListValue in publicRequest.MemberArns)
-                        {
-                                context.Writer.Write(publicRequestMemberArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMetadata())
-                    {
-                        context.Writer.WritePropertyName("Metadata");
-                        context.Writer.Write(publicRequest.Metadata);
-                    }
-
-                    if(publicRequest.IsSetMode())
-                    {
-                        context.Writer.WritePropertyName("Mode");
-                        context.Writer.Write(publicRequest.Mode);
-                    }
-
-                    if(publicRequest.IsSetModeratorArns())
-                    {
-                        context.Writer.WritePropertyName("ModeratorArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestModeratorArnsListValue in publicRequest.ModeratorArns)
-                        {
-                                context.Writer.Write(publicRequestModeratorArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPrivacy())
-                    {
-                        context.Writer.WritePropertyName("Privacy");
-                        context.Writer.Write(publicRequest.Privacy);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AppInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.AppInstanceArn);
             }
+
+            if(publicRequest.IsSetChannelId())
+            {
+                context.Writer.WritePropertyName("ChannelId");
+                context.Writer.WriteStringValue(publicRequest.ChannelId);
+            }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetElasticChannelConfiguration())
+            {
+                context.Writer.WritePropertyName("ElasticChannelConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ElasticChannelConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ElasticChannelConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExpirationSettings())
+            {
+                context.Writer.WritePropertyName("ExpirationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpirationSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExpirationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMemberArns())
+            {
+                context.Writer.WritePropertyName("MemberArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMemberArnsListValue in publicRequest.MemberArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestMemberArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("Metadata");
+                context.Writer.WriteStringValue(publicRequest.Metadata);
+            }
+
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
+            if(publicRequest.IsSetModeratorArns())
+            {
+                context.Writer.WritePropertyName("ModeratorArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestModeratorArnsListValue in publicRequest.ModeratorArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestModeratorArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPrivacy())
+            {
+                context.Writer.WritePropertyName("Privacy");
+                context.Writer.WriteStringValue(publicRequest.Privacy);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetChimeBearer()) 

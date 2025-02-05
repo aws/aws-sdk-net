@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNodeRole())
             {
                 context.Writer.WritePropertyName("NodeRole");
-                context.Writer.Write(requestObject.NodeRole);
+                context.Writer.WriteStringValue(requestObject.NodeRole);
             }
 
             if(requestObject.IsSetPrivateIpAddress())
             {
                 context.Writer.WritePropertyName("PrivateIpAddress");
-                context.Writer.Write(requestObject.PrivateIpAddress);
+                context.Writer.WriteStringValue(requestObject.PrivateIpAddress);
             }
 
             if(requestObject.IsSetPublicIpAddress())
             {
                 context.Writer.WritePropertyName("PublicIpAddress");
-                context.Writer.Write(requestObject.PublicIpAddress);
+                context.Writer.WriteStringValue(requestObject.PublicIpAddress);
             }
 
         }

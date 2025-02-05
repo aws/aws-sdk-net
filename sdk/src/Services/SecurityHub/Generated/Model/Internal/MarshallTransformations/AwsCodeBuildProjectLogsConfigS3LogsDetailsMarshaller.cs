@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("EncryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EncryptionDisabled.Value);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

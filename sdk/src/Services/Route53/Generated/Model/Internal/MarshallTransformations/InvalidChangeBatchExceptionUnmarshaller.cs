@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidChangeBatchException operation
     /// </summary>  
-    public class InvalidChangeBatchExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidChangeBatchException, XmlUnmarshallerContext>
+    public class InvalidChangeBatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidChangeBatchException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

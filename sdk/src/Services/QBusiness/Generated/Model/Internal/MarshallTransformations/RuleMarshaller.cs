@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludedUsersAndGroups())
             {
                 context.Writer.WritePropertyName("excludedUsersAndGroups");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsersAndGroupsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExcludedUsersAndGroups, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludedUsersAndGroups())
             {
                 context.Writer.WritePropertyName("includedUsersAndGroups");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsersAndGroupsMarshaller.Instance;
                 marshaller.Marshall(requestObject.IncludedUsersAndGroups, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleConfiguration())
             {
                 context.Writer.WritePropertyName("ruleConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleType())
             {
                 context.Writer.WritePropertyName("ruleType");
-                context.Writer.Write(requestObject.RuleType);
+                context.Writer.WriteStringValue(requestObject.RuleType);
             }
 
         }

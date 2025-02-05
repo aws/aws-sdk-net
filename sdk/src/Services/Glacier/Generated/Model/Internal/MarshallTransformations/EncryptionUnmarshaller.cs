@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Encryption Object
     /// </summary>  
-    public class EncryptionUnmarshaller : IUnmarshaller<Encryption, XmlUnmarshallerContext>, IUnmarshaller<Encryption, JsonUnmarshallerContext>
+    public class EncryptionUnmarshaller : IJsonUnmarshaller<Encryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Encryption IUnmarshaller<Encryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Encryption Unmarshall(JsonUnmarshallerContext context)
+        public Encryption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Encryption unmarshalledObject = new Encryption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EncryptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KMSContext", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSContext = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KMSContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KMSKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KMSKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KMSKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

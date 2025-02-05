@@ -65,9 +65,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long ContactFlowVersion
+        public long? ContactFlowVersion
         {
-            get { return this._contactFlowVersion.GetValueOrDefault(); }
+            get { return this._contactFlowVersion; }
             set { this._contactFlowVersion = value; }
         }
 

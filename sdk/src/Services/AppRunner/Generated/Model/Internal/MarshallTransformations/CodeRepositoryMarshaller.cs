@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCodeConfiguration())
             {
                 context.Writer.WritePropertyName("CodeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepositoryUrl())
             {
                 context.Writer.WritePropertyName("RepositoryUrl");
-                context.Writer.Write(requestObject.RepositoryUrl);
+                context.Writer.WriteStringValue(requestObject.RepositoryUrl);
             }
 
             if(requestObject.IsSetSourceCodeVersion())
             {
                 context.Writer.WritePropertyName("SourceCodeVersion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceCodeVersionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceCodeVersion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceDirectory())
             {
                 context.Writer.WritePropertyName("SourceDirectory");
-                context.Writer.Write(requestObject.SourceDirectory);
+                context.Writer.WriteStringValue(requestObject.SourceDirectory);
             }
 
         }

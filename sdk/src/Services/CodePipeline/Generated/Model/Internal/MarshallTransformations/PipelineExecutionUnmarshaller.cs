@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipelineExecution Object
     /// </summary>  
-    public class PipelineExecutionUnmarshaller : IUnmarshaller<PipelineExecution, XmlUnmarshallerContext>, IUnmarshaller<PipelineExecution, JsonUnmarshallerContext>
+    public class PipelineExecutionUnmarshaller : IJsonUnmarshaller<PipelineExecution, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipelineExecution IUnmarshaller<PipelineExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineExecution Unmarshall(JsonUnmarshallerContext context)
+        public PipelineExecution Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipelineExecution unmarshalledObject = new PipelineExecution();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("artifactRevisions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ArtifactRevision, ArtifactRevisionUnmarshaller>(ArtifactRevisionUnmarshaller.Instance);
-                    unmarshalledObject.ArtifactRevisions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ArtifactRevision, ArtifactRevisionUnmarshaller>(ArtifactRevisionUnmarshaller.Instance);
+                    unmarshalledObject.ArtifactRevisions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineVersion", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PipelineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rollbackMetadata", targetDepth))
                 {
                     var unmarshaller = PipelineRollbackMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RollbackMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("statusSummary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trigger", targetDepth))
                 {
                     var unmarshaller = ExecutionTriggerUnmarshaller.Instance;
-                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("variables", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResolvedPipelineVariable, ResolvedPipelineVariableUnmarshaller>(ResolvedPipelineVariableUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResolvedPipelineVariable, ResolvedPipelineVariableUnmarshaller>(ResolvedPipelineVariableUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

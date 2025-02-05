@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreetComponents Object
     /// </summary>  
-    public class StreetComponentsUnmarshaller : IUnmarshaller<StreetComponents, XmlUnmarshallerContext>, IUnmarshaller<StreetComponents, JsonUnmarshallerContext>
+    public class StreetComponentsUnmarshaller : IJsonUnmarshaller<StreetComponents, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StreetComponents IUnmarshaller<StreetComponents, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreetComponents Unmarshall(JsonUnmarshallerContext context)
+        public StreetComponents Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StreetComponents unmarshalledObject = new StreetComponents();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Direction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Direction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Direction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Language", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Language = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Suffix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TypePlacement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TypePlacement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TypePlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TypeSeparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TypeSeparator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TypeSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseCredentials())
             {
                 context.Writer.WritePropertyName("DatabaseCredentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDatabaseCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseCredentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseInformation())
             {
                 context.Writer.WritePropertyName("DatabaseInformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDatabaseMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseInformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataRearrangement())
             {
                 context.Writer.WritePropertyName("DataRearrangement");
-                context.Writer.Write(requestObject.DataRearrangement);
+                context.Writer.WriteStringValue(requestObject.DataRearrangement);
             }
 
             if(requestObject.IsSetDataSchema())
             {
                 context.Writer.WritePropertyName("DataSchema");
-                context.Writer.Write(requestObject.DataSchema);
+                context.Writer.WriteStringValue(requestObject.DataSchema);
             }
 
             if(requestObject.IsSetDataSchemaUri())
             {
                 context.Writer.WritePropertyName("DataSchemaUri");
-                context.Writer.Write(requestObject.DataSchemaUri);
+                context.Writer.WriteStringValue(requestObject.DataSchemaUri);
             }
 
             if(requestObject.IsSetS3StagingLocation())
             {
                 context.Writer.WritePropertyName("S3StagingLocation");
-                context.Writer.Write(requestObject.S3StagingLocation);
+                context.Writer.WriteStringValue(requestObject.S3StagingLocation);
             }
 
             if(requestObject.IsSetSelectSqlQuery())
             {
                 context.Writer.WritePropertyName("SelectSqlQuery");
-                context.Writer.Write(requestObject.SelectSqlQuery);
+                context.Writer.WriteStringValue(requestObject.SelectSqlQuery);
             }
 
         }

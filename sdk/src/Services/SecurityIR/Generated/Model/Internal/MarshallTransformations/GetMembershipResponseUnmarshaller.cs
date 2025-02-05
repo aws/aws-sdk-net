@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
 {
@@ -47,81 +47,81 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetMembershipResponse response = new GetMembershipResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccountId = unmarshaller.Unmarshall(context);
+                    response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CustomerType = unmarshaller.Unmarshall(context);
+                    response.CustomerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("incidentResponseTeam", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<IncidentResponder, IncidentResponderUnmarshaller>(IncidentResponderUnmarshaller.Instance);
-                    response.IncidentResponseTeam = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<IncidentResponder, IncidentResponderUnmarshaller>(IncidentResponderUnmarshaller.Instance);
+                    response.IncidentResponseTeam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipActivationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.MembershipActivationTimestamp = unmarshaller.Unmarshall(context);
+                    response.MembershipActivationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MembershipArn = unmarshaller.Unmarshall(context);
+                    response.MembershipArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipDeactivationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.MembershipDeactivationTimestamp = unmarshaller.Unmarshall(context);
+                    response.MembershipDeactivationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MembershipId = unmarshaller.Unmarshall(context);
+                    response.MembershipId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MembershipName = unmarshaller.Unmarshall(context);
+                    response.MembershipName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("membershipStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MembershipStatus = unmarshaller.Unmarshall(context);
+                    response.MembershipStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfAccountsCovered", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.NumberOfAccountsCovered = unmarshaller.Unmarshall(context);
+                    response.NumberOfAccountsCovered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("optInFeatures", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OptInFeature, OptInFeatureUnmarshaller>(OptInFeatureUnmarshaller.Instance);
-                    response.OptInFeatures = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OptInFeature, OptInFeatureUnmarshaller>(OptInFeatureUnmarshaller.Instance);
+                    response.OptInFeatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
+                    response.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -138,50 +138,52 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTokenException"))
                 {
-                    return InvalidTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SecurityIncidentResponseNotActiveException"))
                 {
-                    return SecurityIncidentResponseNotActiveExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return SecurityIncidentResponseNotActiveExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSecurityIRException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

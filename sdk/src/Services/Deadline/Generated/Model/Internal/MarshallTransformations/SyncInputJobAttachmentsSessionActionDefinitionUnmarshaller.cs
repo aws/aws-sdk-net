@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SyncInputJobAttachmentsSessionActionDefinition Object
     /// </summary>  
-    public class SyncInputJobAttachmentsSessionActionDefinitionUnmarshaller : IUnmarshaller<SyncInputJobAttachmentsSessionActionDefinition, XmlUnmarshallerContext>, IUnmarshaller<SyncInputJobAttachmentsSessionActionDefinition, JsonUnmarshallerContext>
+    public class SyncInputJobAttachmentsSessionActionDefinitionUnmarshaller : IJsonUnmarshaller<SyncInputJobAttachmentsSessionActionDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SyncInputJobAttachmentsSessionActionDefinition IUnmarshaller<SyncInputJobAttachmentsSessionActionDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SyncInputJobAttachmentsSessionActionDefinition Unmarshall(JsonUnmarshallerContext context)
+        public SyncInputJobAttachmentsSessionActionDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SyncInputJobAttachmentsSessionActionDefinition unmarshalledObject = new SyncInputJobAttachmentsSessionActionDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("stepId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StepId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

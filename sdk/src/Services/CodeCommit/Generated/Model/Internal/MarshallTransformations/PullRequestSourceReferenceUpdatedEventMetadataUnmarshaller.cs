@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PullRequestSourceReferenceUpdatedEventMetadata Object
     /// </summary>  
-    public class PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller : IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, XmlUnmarshallerContext>, IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, JsonUnmarshallerContext>
+    public class PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller : IJsonUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PullRequestSourceReferenceUpdatedEventMetadata IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PullRequestSourceReferenceUpdatedEventMetadata Unmarshall(JsonUnmarshallerContext context)
+        public PullRequestSourceReferenceUpdatedEventMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PullRequestSourceReferenceUpdatedEventMetadata unmarshalledObject = new PullRequestSourceReferenceUpdatedEventMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("afterCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("beforeCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mergeBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergeBase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

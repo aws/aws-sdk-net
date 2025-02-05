@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
@@ -65,46 +68,51 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKMeetingsException("Request object does not have required field MeetingId set");
             request.AddPathResource("{MeetingId}", StringUtils.FromString(publicRequest.MeetingId));
             request.ResourcePath = "/meetings/{MeetingId}/attendees/capabilities";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapabilities())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCapabilities())
-                    {
-                        context.Writer.WritePropertyName("Capabilities");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Capabilities");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AttendeeCapabilitiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Capabilities, context);
+                var marshaller = AttendeeCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Capabilities, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExcludedAttendeeIds())
-                    {
-                        context.Writer.WritePropertyName("ExcludedAttendeeIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExcludedAttendeeIdsListValue in publicRequest.ExcludedAttendeeIds)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttendeeIdItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestExcludedAttendeeIdsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetExcludedAttendeeIds())
+            {
+                context.Writer.WritePropertyName("ExcludedAttendeeIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExcludedAttendeeIdsListValue in publicRequest.ExcludedAttendeeIds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttendeeIdItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExcludedAttendeeIdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

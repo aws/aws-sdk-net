@@ -3199,7 +3199,12 @@ namespace Amazon.EC2
         /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
         /// duration.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
+        /// Blocks for ML</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
         /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
@@ -3245,7 +3250,12 @@ namespace Amazon.EC2
         /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
         /// duration.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
+        /// Blocks for ML</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
         /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
@@ -14623,6 +14633,22 @@ namespace Amazon.EC2
         /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
         /// Region that you're currently using. With Capacity Blocks, you purchase a specific
         /// instance type for a period of time.
+        /// 
+        ///  
+        /// <para>
+        /// To search for an available Capacity Block offering, you specify a reservation duration
+        /// and instance count. You must select one of the following options.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For reservation durations<b> 1-day increments up 14 days and 7-day increments up to
+        /// 182 days total</b> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
         /// 
@@ -14642,6 +14668,22 @@ namespace Amazon.EC2
         /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
         /// Region that you're currently using. With Capacity Blocks, you purchase a specific
         /// instance type for a period of time.
+        /// 
+        ///  
+        /// <para>
+        /// To search for an available Capacity Block offering, you specify a reservation duration
+        /// and instance count. You must select one of the following options.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For reservation durations<b> 1-day increments up 14 days and 7-day increments up to
+        /// 182 days total</b> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance count<b> 1, 2, 4, 8, 16, 32, or 64 instances</b> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -17732,7 +17774,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
+        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
+        /// | <c>trn2u.48xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -17793,7 +17836,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
+        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> | <c>trn2.48xlarge</c>
+        /// | <c>trn2u.48xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>

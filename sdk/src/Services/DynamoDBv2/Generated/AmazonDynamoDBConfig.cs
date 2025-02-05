@@ -34,16 +34,10 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DynamoDB", "4.0.0.0");
 
         private static readonly AmazonDynamoDBEndpointResolver EndpointResolver =
             new AmazonDynamoDBEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("DynamoDB", "3.7.404.11");
-=======
-            InternalSDKUtils.BuildUserAgentString("DynamoDB", "3.7.405.15");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

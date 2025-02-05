@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecryptionMode())
             {
                 context.Writer.WritePropertyName("decryptionMode");
-                context.Writer.Write(requestObject.DecryptionMode);
+                context.Writer.WriteStringValue(requestObject.DecryptionMode);
             }
 
             if(requestObject.IsSetEncryptedDecryptionKey())
             {
                 context.Writer.WritePropertyName("encryptedDecryptionKey");
-                context.Writer.Write(requestObject.EncryptedDecryptionKey);
+                context.Writer.WriteStringValue(requestObject.EncryptedDecryptionKey);
             }
 
             if(requestObject.IsSetInitializationVector())
             {
                 context.Writer.WritePropertyName("initializationVector");
-                context.Writer.Write(requestObject.InitializationVector);
+                context.Writer.WriteStringValue(requestObject.InitializationVector);
             }
 
             if(requestObject.IsSetKmsKeyRegion())
             {
                 context.Writer.WritePropertyName("kmsKeyRegion");
-                context.Writer.Write(requestObject.KmsKeyRegion);
+                context.Writer.WriteStringValue(requestObject.KmsKeyRegion);
             }
 
         }

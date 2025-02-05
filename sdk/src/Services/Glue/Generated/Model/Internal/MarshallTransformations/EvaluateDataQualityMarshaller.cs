@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutput())
             {
                 context.Writer.WritePropertyName("Output");
-                context.Writer.Write(requestObject.Output);
+                context.Writer.WriteStringValue(requestObject.Output);
             }
 
             if(requestObject.IsSetPublishingOptions())
             {
                 context.Writer.WritePropertyName("PublishingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DQResultsPublishingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublishingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleset())
             {
                 context.Writer.WritePropertyName("Ruleset");
-                context.Writer.Write(requestObject.Ruleset);
+                context.Writer.WriteStringValue(requestObject.Ruleset);
             }
 
             if(requestObject.IsSetStopJobOnFailureOptions())
             {
                 context.Writer.WritePropertyName("StopJobOnFailureOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DQStopJobOnFailureOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StopJobOnFailureOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

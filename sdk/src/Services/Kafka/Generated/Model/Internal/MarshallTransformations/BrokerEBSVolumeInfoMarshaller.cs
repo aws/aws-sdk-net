@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKafkaBrokerNodeId())
             {
                 context.Writer.WritePropertyName("kafkaBrokerNodeId");
-                context.Writer.Write(requestObject.KafkaBrokerNodeId);
+                context.Writer.WriteStringValue(requestObject.KafkaBrokerNodeId);
             }
 
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("provisionedThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProvisionedThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVolumeSizeGB())
             {
                 context.Writer.WritePropertyName("volumeSizeGB");
-                context.Writer.Write(requestObject.VolumeSizeGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeGB.Value);
             }
 
         }

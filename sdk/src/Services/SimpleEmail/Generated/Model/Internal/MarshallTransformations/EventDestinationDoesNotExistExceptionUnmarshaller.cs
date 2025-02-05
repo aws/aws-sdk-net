@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EventDestinationDoesNotExistException operation
     /// </summary>  
-    public class EventDestinationDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<EventDestinationDoesNotExistException, XmlUnmarshallerContext>
+    public class EventDestinationDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EventDestinationDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

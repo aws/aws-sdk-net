@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParticipantDetails())
             {
                 context.Writer.WritePropertyName("ParticipantDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParticipantDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParticipantDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStreamingConfiguration())
             {
                 context.Writer.WritePropertyName("StreamingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChatStreamingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSupportedMessagingContentTypes())
             {
                 context.Writer.WritePropertyName("SupportedMessagingContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedMessagingContentTypesListValue in requestObject.SupportedMessagingContentTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedMessagingContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedMessagingContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

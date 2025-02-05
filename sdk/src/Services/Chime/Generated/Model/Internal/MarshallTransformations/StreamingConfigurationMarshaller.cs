@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRetentionInHours())
             {
                 context.Writer.WritePropertyName("DataRetentionInHours");
-                context.Writer.Write(requestObject.DataRetentionInHours.Value);
+                context.Writer.WriteNumberValue(requestObject.DataRetentionInHours.Value);
             }
 
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Disabled.Value);
             }
 
             if(requestObject.IsSetStreamingNotificationTargets())
             {
                 context.Writer.WritePropertyName("StreamingNotificationTargets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStreamingNotificationTargetsListValue in requestObject.StreamingNotificationTargets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StreamingNotificationTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectStreamingNotificationTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

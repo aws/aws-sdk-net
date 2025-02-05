@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequireCommonName())
             {
                 context.Writer.WritePropertyName("RequireCommonName");
-                context.Writer.Write(requestObject.RequireCommonName.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireCommonName.Value);
             }
 
             if(requestObject.IsSetRequireDirectoryPath())
             {
                 context.Writer.WritePropertyName("RequireDirectoryPath");
-                context.Writer.Write(requestObject.RequireDirectoryPath.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireDirectoryPath.Value);
             }
 
             if(requestObject.IsSetRequireDnsAsCn())
             {
                 context.Writer.WritePropertyName("RequireDnsAsCn");
-                context.Writer.Write(requestObject.RequireDnsAsCn.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireDnsAsCn.Value);
             }
 
             if(requestObject.IsSetRequireEmail())
             {
                 context.Writer.WritePropertyName("RequireEmail");
-                context.Writer.Write(requestObject.RequireEmail.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireEmail.Value);
             }
 
             if(requestObject.IsSetSanRequireDirectoryGuid())
             {
                 context.Writer.WritePropertyName("SanRequireDirectoryGuid");
-                context.Writer.Write(requestObject.SanRequireDirectoryGuid.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireDirectoryGuid.Value);
             }
 
             if(requestObject.IsSetSanRequireDns())
             {
                 context.Writer.WritePropertyName("SanRequireDns");
-                context.Writer.Write(requestObject.SanRequireDns.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireDns.Value);
             }
 
             if(requestObject.IsSetSanRequireDomainDns())
             {
                 context.Writer.WritePropertyName("SanRequireDomainDns");
-                context.Writer.Write(requestObject.SanRequireDomainDns.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireDomainDns.Value);
             }
 
             if(requestObject.IsSetSanRequireEmail())
             {
                 context.Writer.WritePropertyName("SanRequireEmail");
-                context.Writer.Write(requestObject.SanRequireEmail.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireEmail.Value);
             }
 
             if(requestObject.IsSetSanRequireSpn())
             {
                 context.Writer.WritePropertyName("SanRequireSpn");
-                context.Writer.Write(requestObject.SanRequireSpn.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireSpn.Value);
             }
 
             if(requestObject.IsSetSanRequireUpn())
             {
                 context.Writer.WritePropertyName("SanRequireUpn");
-                context.Writer.Write(requestObject.SanRequireUpn.Value);
+                context.Writer.WriteBooleanValue(requestObject.SanRequireUpn.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDagProcessingLogs())
             {
                 context.Writer.WritePropertyName("DagProcessingLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModuleLoggingConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.DagProcessingLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchedulerLogs())
             {
                 context.Writer.WritePropertyName("SchedulerLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModuleLoggingConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SchedulerLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskLogs())
             {
                 context.Writer.WritePropertyName("TaskLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModuleLoggingConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TaskLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebserverLogs())
             {
                 context.Writer.WritePropertyName("WebserverLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModuleLoggingConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.WebserverLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkerLogs())
             {
                 context.Writer.WritePropertyName("WorkerLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModuleLoggingConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.WorkerLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

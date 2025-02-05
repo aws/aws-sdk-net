@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobProgressSummary Object
     /// </summary>  
-    public class JobProgressSummaryUnmarshaller : IUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>, IUnmarshaller<JobProgressSummary, JsonUnmarshallerContext>
+    public class JobProgressSummaryUnmarshaller : IXmlUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public JobProgressSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static JobProgressSummaryUnmarshaller _instance = new JobProgressSummaryUnmarshaller();        
 
         /// <summary>

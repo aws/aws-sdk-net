@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EntryViolation Object
     /// </summary>  
-    public class EntryViolationUnmarshaller : IUnmarshaller<EntryViolation, XmlUnmarshallerContext>, IUnmarshaller<EntryViolation, JsonUnmarshallerContext>
+    public class EntryViolationUnmarshaller : IJsonUnmarshaller<EntryViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EntryViolation IUnmarshaller<EntryViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EntryViolation Unmarshall(JsonUnmarshallerContext context)
+        public EntryViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EntryViolation unmarshalledObject = new EntryViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActualEvaluationOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActualEvaluationOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntriesWithConflicts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.EntriesWithConflicts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.EntriesWithConflicts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntryAtExpectedEvaluationOrder", targetDepth))
                 {
                     var unmarshaller = EntryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.EntryAtExpectedEvaluationOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryAtExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntryViolationReasons", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EntryViolationReasons = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EntryViolationReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExpectedEntry", targetDepth))
                 {
                     var unmarshaller = EntryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedEntry = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpectedEntry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExpectedEvaluationOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedEvaluationOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

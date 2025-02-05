@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StackInstanceNotFoundException operation
     /// </summary>  
-    public class StackInstanceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<StackInstanceNotFoundException, XmlUnmarshallerContext>
+    public class StackInstanceNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StackInstanceNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

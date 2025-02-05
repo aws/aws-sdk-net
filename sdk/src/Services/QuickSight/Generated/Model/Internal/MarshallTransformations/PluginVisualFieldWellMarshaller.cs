@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAxisName())
             {
                 context.Writer.WritePropertyName("AxisName");
-                context.Writer.Write(requestObject.AxisName);
+                context.Writer.WriteStringValue(requestObject.AxisName);
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMeasures())
             {
                 context.Writer.WritePropertyName("Measures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMeasuresListValue in requestObject.Measures)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MeasureFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectMeasuresListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUnaggregated())
             {
                 context.Writer.WritePropertyName("Unaggregated");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUnaggregatedListValue in requestObject.Unaggregated)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UnaggregatedFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectUnaggregatedListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

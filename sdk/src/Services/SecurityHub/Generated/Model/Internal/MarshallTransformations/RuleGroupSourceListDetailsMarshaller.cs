@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeneratedRulesType())
             {
                 context.Writer.WritePropertyName("GeneratedRulesType");
-                context.Writer.Write(requestObject.GeneratedRulesType);
+                context.Writer.WriteStringValue(requestObject.GeneratedRulesType);
             }
 
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                        context.Writer.Write(requestObjectTargetsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetTypes())
             {
                 context.Writer.WritePropertyName("TargetTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetTypesListValue in requestObject.TargetTypes)
                 {
-                        context.Writer.Write(requestObjectTargetTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

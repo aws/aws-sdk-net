@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDescriptionAudioChannel())
             {
                 context.Writer.WritePropertyName("audioDescriptionAudioChannel");
-                context.Writer.Write(requestObject.AudioDescriptionAudioChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioDescriptionAudioChannel.Value);
             }
 
             if(requestObject.IsSetAudioDescriptionDataChannel())
             {
                 context.Writer.WritePropertyName("audioDescriptionDataChannel");
-                context.Writer.Write(requestObject.AudioDescriptionDataChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioDescriptionDataChannel.Value);
             }
 
             if(requestObject.IsSetChannelMapping())
             {
                 context.Writer.WritePropertyName("channelMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChannelMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChannelMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChannelsIn())
             {
                 context.Writer.WritePropertyName("channelsIn");
-                context.Writer.Write(requestObject.ChannelsIn.Value);
+                context.Writer.WriteNumberValue(requestObject.ChannelsIn.Value);
             }
 
             if(requestObject.IsSetChannelsOut())
             {
                 context.Writer.WritePropertyName("channelsOut");
-                context.Writer.Write(requestObject.ChannelsOut.Value);
+                context.Writer.WriteNumberValue(requestObject.ChannelsOut.Value);
             }
 
         }

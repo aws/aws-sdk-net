@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntervalPeriod())
             {
                 context.Writer.WritePropertyName("IntervalPeriod");
-                context.Writer.Write(requestObject.IntervalPeriod);
+                context.Writer.WriteStringValue(requestObject.IntervalPeriod);
             }
 
             if(requestObject.IsSetTimeZone())
             {
                 context.Writer.WritePropertyName("TimeZone");
-                context.Writer.Write(requestObject.TimeZone);
+                context.Writer.WriteStringValue(requestObject.TimeZone);
             }
 
         }

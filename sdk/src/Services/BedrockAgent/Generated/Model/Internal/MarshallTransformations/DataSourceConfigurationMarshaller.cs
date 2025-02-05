@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfluenceConfiguration())
             {
                 context.Writer.WritePropertyName("confluenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluenceDataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfluenceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("s3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforceConfiguration())
             {
                 context.Writer.WritePropertyName("salesforceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceDataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SalesforceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSharePointConfiguration())
             {
                 context.Writer.WritePropertyName("sharePointConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SharePointDataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SharePointConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetWebConfiguration())
             {
                 context.Writer.WritePropertyName("webConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WebDataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.WebConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

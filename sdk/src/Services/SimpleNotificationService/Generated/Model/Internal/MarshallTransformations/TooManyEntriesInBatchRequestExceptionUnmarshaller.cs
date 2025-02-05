@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for TooManyEntriesInBatchRequestException operation
     /// </summary>  
-    public class TooManyEntriesInBatchRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyEntriesInBatchRequestException, XmlUnmarshallerContext>
+    public class TooManyEntriesInBatchRequestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyEntriesInBatchRequestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

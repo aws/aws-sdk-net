@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioLanguageSelection Object
     /// </summary>  
-    public class AudioLanguageSelectionUnmarshaller : IUnmarshaller<AudioLanguageSelection, XmlUnmarshallerContext>, IUnmarshaller<AudioLanguageSelection, JsonUnmarshallerContext>
+    public class AudioLanguageSelectionUnmarshaller : IJsonUnmarshaller<AudioLanguageSelection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioLanguageSelection IUnmarshaller<AudioLanguageSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioLanguageSelection Unmarshall(JsonUnmarshallerContext context)
+        public AudioLanguageSelection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioLanguageSelection unmarshalledObject = new AudioLanguageSelection();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("languageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("languageSelectionPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageSelectionPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageSelectionPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

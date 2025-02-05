@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -47,33 +47,33 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteFileResponse response = new DeleteFileResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("blobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BlobId = unmarshaller.Unmarshall(context);
+                    response.BlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("commitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CommitId = unmarshaller.Unmarshall(context);
+                    response.CommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FilePath = unmarshaller.Unmarshall(context);
+                    response.FilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("treeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TreeId = unmarshaller.Unmarshall(context);
+                    response.TreeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -90,102 +90,104 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BranchDoesNotExistException"))
                 {
-                    return BranchDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BranchDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BranchNameIsTagNameException"))
                 {
-                    return BranchNameIsTagNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BranchNameIsTagNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BranchNameRequiredException"))
                 {
-                    return BranchNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BranchNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CommitMessageLengthExceededException"))
                 {
-                    return CommitMessageLengthExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CommitMessageLengthExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionIntegrityChecksFailedException"))
                 {
-                    return EncryptionIntegrityChecksFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return EncryptionIntegrityChecksFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyAccessDeniedException"))
                 {
-                    return EncryptionKeyAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return EncryptionKeyAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyDisabledException"))
                 {
-                    return EncryptionKeyDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return EncryptionKeyDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyNotFoundException"))
                 {
-                    return EncryptionKeyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return EncryptionKeyNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionKeyUnavailableException"))
                 {
-                    return EncryptionKeyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return EncryptionKeyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("FileDoesNotExistException"))
                 {
-                    return FileDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return FileDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidBranchNameException"))
                 {
-                    return InvalidBranchNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidBranchNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEmailException"))
                 {
-                    return InvalidEmailExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidEmailExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParentCommitIdException"))
                 {
-                    return InvalidParentCommitIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidParentCommitIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPathException"))
                 {
-                    return InvalidPathExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidPathExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRepositoryNameException"))
                 {
-                    return InvalidRepositoryNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidRepositoryNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NameLengthExceededException"))
                 {
-                    return NameLengthExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NameLengthExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitDoesNotExistException"))
                 {
-                    return ParentCommitDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ParentCommitDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitIdOutdatedException"))
                 {
-                    return ParentCommitIdOutdatedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ParentCommitIdOutdatedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitIdRequiredException"))
                 {
-                    return ParentCommitIdRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ParentCommitIdRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PathRequiredException"))
                 {
-                    return PathRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return PathRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryDoesNotExistException"))
                 {
-                    return RepositoryDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return RepositoryDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNameRequiredException"))
                 {
-                    return RepositoryNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return RepositoryNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCodeCommitException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

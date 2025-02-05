@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityPublicKeyIdentifier);
             }
 
             if(requestObject.IsSetExportToken())
             {
                 context.Writer.WritePropertyName("ExportToken");
-                context.Writer.Write(requestObject.ExportToken);
+                context.Writer.WriteStringValue(requestObject.ExportToken);
             }
 
             if(requestObject.IsSetKeyBlockFormat())
             {
                 context.Writer.WritePropertyName("KeyBlockFormat");
-                context.Writer.Write(requestObject.KeyBlockFormat);
+                context.Writer.WriteStringValue(requestObject.KeyBlockFormat);
             }
 
             if(requestObject.IsSetKeyBlockHeaders())
             {
                 context.Writer.WritePropertyName("KeyBlockHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyBlockHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyBlockHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRandomNonce())
             {
                 context.Writer.WritePropertyName("RandomNonce");
-                context.Writer.Write(requestObject.RandomNonce);
+                context.Writer.WriteStringValue(requestObject.RandomNonce);
             }
 
             if(requestObject.IsSetWrappingKeyCertificate())
             {
                 context.Writer.WritePropertyName("WrappingKeyCertificate");
-                context.Writer.Write(requestObject.WrappingKeyCertificate);
+                context.Writer.WriteStringValue(requestObject.WrappingKeyCertificate);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEgressType())
             {
                 context.Writer.WritePropertyName("EgressType");
-                context.Writer.Write(requestObject.EgressType);
+                context.Writer.WriteStringValue(requestObject.EgressType);
             }
 
             if(requestObject.IsSetVpcConnectorArn())
             {
                 context.Writer.WritePropertyName("VpcConnectorArn");
-                context.Writer.Write(requestObject.VpcConnectorArn);
+                context.Writer.WriteStringValue(requestObject.VpcConnectorArn);
             }
 
         }

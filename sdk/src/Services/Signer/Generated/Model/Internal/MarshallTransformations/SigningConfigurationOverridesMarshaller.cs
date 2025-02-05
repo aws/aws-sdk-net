@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionAlgorithm())
             {
                 context.Writer.WritePropertyName("encryptionAlgorithm");
-                context.Writer.Write(requestObject.EncryptionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.EncryptionAlgorithm);
             }
 
             if(requestObject.IsSetHashAlgorithm())
             {
                 context.Writer.WritePropertyName("hashAlgorithm");
-                context.Writer.Write(requestObject.HashAlgorithm);
+                context.Writer.WriteStringValue(requestObject.HashAlgorithm);
             }
 
         }

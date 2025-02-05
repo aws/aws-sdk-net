@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCurrency())
             {
                 context.Writer.WritePropertyName("Currency");
-                context.Writer.Write(requestObject.Currency);
+                context.Writer.WriteStringValue(requestObject.Currency);
             }
 
             if(requestObject.IsSetMaxPrice())
@@ -59,11 +57,11 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaxPrice");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MaxPrice.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxPrice.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxPrice.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxPrice.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxPrice.Value);
                 }
             }
 

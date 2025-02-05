@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("KnowledgeBaseId");
-                context.Writer.Write(requestObject.KnowledgeBaseId);
+                context.Writer.WriteStringValue(requestObject.KnowledgeBaseId);
             }
 
             if(requestObject.IsSetMessageTemplateId())
             {
                 context.Writer.WritePropertyName("MessageTemplateId");
-                context.Writer.Write(requestObject.MessageTemplateId);
+                context.Writer.WriteStringValue(requestObject.MessageTemplateId);
             }
 
             if(requestObject.IsSetTemplateAttributes())
             {
                 context.Writer.WritePropertyName("TemplateAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

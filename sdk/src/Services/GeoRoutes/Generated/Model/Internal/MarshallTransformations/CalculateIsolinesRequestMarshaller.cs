@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -64,171 +67,176 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/isolines";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllow())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllow())
-                    {
-                        context.Writer.WritePropertyName("Allow");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Allow");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = IsolineAllowOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Allow, context);
+                var marshaller = IsolineAllowOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Allow, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetArrivalTime())
-                    {
-                        context.Writer.WritePropertyName("ArrivalTime");
-                        context.Writer.Write(publicRequest.ArrivalTime);
-                    }
-
-                    if(publicRequest.IsSetAvoid())
-                    {
-                        context.Writer.WritePropertyName("Avoid");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineAvoidanceOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Avoid, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDepartNow())
-                    {
-                        context.Writer.WritePropertyName("DepartNow");
-                        context.Writer.Write(publicRequest.DepartNow.Value);
-                    }
-
-                    if(publicRequest.IsSetDepartureTime())
-                    {
-                        context.Writer.WritePropertyName("DepartureTime");
-                        context.Writer.Write(publicRequest.DepartureTime);
-                    }
-
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("Destination");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationListValue in publicRequest.Destination)
-                        {
-                                context.Writer.Write(publicRequestDestinationListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationOptions())
-                    {
-                        context.Writer.WritePropertyName("DestinationOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineDestinationOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIsolineGeometryFormat())
-                    {
-                        context.Writer.WritePropertyName("IsolineGeometryFormat");
-                        context.Writer.Write(publicRequest.IsolineGeometryFormat);
-                    }
-
-                    if(publicRequest.IsSetIsolineGranularity())
-                    {
-                        context.Writer.WritePropertyName("IsolineGranularity");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineGranularityOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IsolineGranularity, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOptimizeIsolineFor())
-                    {
-                        context.Writer.WritePropertyName("OptimizeIsolineFor");
-                        context.Writer.Write(publicRequest.OptimizeIsolineFor);
-                    }
-
-                    if(publicRequest.IsSetOptimizeRoutingFor())
-                    {
-                        context.Writer.WritePropertyName("OptimizeRoutingFor");
-                        context.Writer.Write(publicRequest.OptimizeRoutingFor);
-                    }
-
-                    if(publicRequest.IsSetOrigin())
-                    {
-                        context.Writer.WritePropertyName("Origin");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOriginListValue in publicRequest.Origin)
-                        {
-                                context.Writer.Write(publicRequestOriginListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOriginOptions())
-                    {
-                        context.Writer.WritePropertyName("OriginOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineOriginOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OriginOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetThresholds())
-                    {
-                        context.Writer.WritePropertyName("Thresholds");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineThresholdsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Thresholds, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTraffic())
-                    {
-                        context.Writer.WritePropertyName("Traffic");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineTrafficOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Traffic, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTravelMode())
-                    {
-                        context.Writer.WritePropertyName("TravelMode");
-                        context.Writer.Write(publicRequest.TravelMode);
-                    }
-
-                    if(publicRequest.IsSetTravelModeOptions())
-                    {
-                        context.Writer.WritePropertyName("TravelModeOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IsolineTravelModeOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TravelModeOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetArrivalTime())
+            {
+                context.Writer.WritePropertyName("ArrivalTime");
+                context.Writer.WriteStringValue(publicRequest.ArrivalTime);
+            }
+
+            if(publicRequest.IsSetAvoid())
+            {
+                context.Writer.WritePropertyName("Avoid");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineAvoidanceOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Avoid, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDepartNow())
+            {
+                context.Writer.WritePropertyName("DepartNow");
+                context.Writer.WriteBooleanValue(publicRequest.DepartNow.Value);
+            }
+
+            if(publicRequest.IsSetDepartureTime())
+            {
+                context.Writer.WritePropertyName("DepartureTime");
+                context.Writer.WriteStringValue(publicRequest.DepartureTime);
+            }
+
+            if(publicRequest.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("Destination");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationListValue in publicRequest.Destination)
+                {
+                        context.Writer.WriteNumberValue(publicRequestDestinationListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDestinationOptions())
+            {
+                context.Writer.WritePropertyName("DestinationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineDestinationOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIsolineGeometryFormat())
+            {
+                context.Writer.WritePropertyName("IsolineGeometryFormat");
+                context.Writer.WriteStringValue(publicRequest.IsolineGeometryFormat);
+            }
+
+            if(publicRequest.IsSetIsolineGranularity())
+            {
+                context.Writer.WritePropertyName("IsolineGranularity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineGranularityOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IsolineGranularity, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOptimizeIsolineFor())
+            {
+                context.Writer.WritePropertyName("OptimizeIsolineFor");
+                context.Writer.WriteStringValue(publicRequest.OptimizeIsolineFor);
+            }
+
+            if(publicRequest.IsSetOptimizeRoutingFor())
+            {
+                context.Writer.WritePropertyName("OptimizeRoutingFor");
+                context.Writer.WriteStringValue(publicRequest.OptimizeRoutingFor);
+            }
+
+            if(publicRequest.IsSetOrigin())
+            {
+                context.Writer.WritePropertyName("Origin");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOriginListValue in publicRequest.Origin)
+                {
+                        context.Writer.WriteNumberValue(publicRequestOriginListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOriginOptions())
+            {
+                context.Writer.WritePropertyName("OriginOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineOriginOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OriginOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetThresholds())
+            {
+                context.Writer.WritePropertyName("Thresholds");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineThresholdsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Thresholds, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTraffic())
+            {
+                context.Writer.WritePropertyName("Traffic");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineTrafficOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Traffic, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTravelMode())
+            {
+                context.Writer.WritePropertyName("TravelMode");
+                context.Writer.WriteStringValue(publicRequest.TravelMode);
+            }
+
+            if(publicRequest.IsSetTravelModeOptions())
+            {
+                context.Writer.WritePropertyName("TravelModeOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IsolineTravelModeOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TravelModeOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
             if(requestObject.IsSetUsers())
             {
                 context.Writer.WritePropertyName("users");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUsersListValue in requestObject.Users)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UserMarshaller.Instance;
                     marshaller.Marshall(requestObjectUsersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

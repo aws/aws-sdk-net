@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProvisionData Object
     /// </summary>  
-    public class ProvisionDataUnmarshaller : IUnmarshaller<ProvisionData, XmlUnmarshallerContext>, IUnmarshaller<ProvisionData, JsonUnmarshallerContext>
+    public class ProvisionDataUnmarshaller : IJsonUnmarshaller<ProvisionData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProvisionData IUnmarshaller<ProvisionData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProvisionData Unmarshall(JsonUnmarshallerContext context)
+        public ProvisionData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProvisionData unmarshalledObject = new ProvisionData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DateNewProvisioningDataAvailable", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DateNewProvisioningDataAvailable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateNewProvisioningDataAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DateProvisioned", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DateProvisioned = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateProvisioned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsNewProvisioningAvailable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNewProvisioningAvailable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsNewProvisioningAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedCapacityUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReasonForNewProvisioningData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReasonForNewProvisioningData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReasonForNewProvisioningData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PerformanceInsightsMetricQuery Object
     /// </summary>  
-    public class PerformanceInsightsMetricQueryUnmarshaller : IUnmarshaller<PerformanceInsightsMetricQuery, XmlUnmarshallerContext>, IUnmarshaller<PerformanceInsightsMetricQuery, JsonUnmarshallerContext>
+    public class PerformanceInsightsMetricQueryUnmarshaller : IXmlUnmarshaller<PerformanceInsightsMetricQuery, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PerformanceInsightsMetricQuery Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PerformanceInsightsMetricQueryUnmarshaller _instance = new PerformanceInsightsMetricQueryUnmarshaller();        
 

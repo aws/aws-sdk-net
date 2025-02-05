@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExperienceEntitiesSummary Object
     /// </summary>  
-    public class ExperienceEntitiesSummaryUnmarshaller : IUnmarshaller<ExperienceEntitiesSummary, XmlUnmarshallerContext>, IUnmarshaller<ExperienceEntitiesSummary, JsonUnmarshallerContext>
+    public class ExperienceEntitiesSummaryUnmarshaller : IJsonUnmarshaller<ExperienceEntitiesSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExperienceEntitiesSummary IUnmarshaller<ExperienceEntitiesSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExperienceEntitiesSummary Unmarshall(JsonUnmarshallerContext context)
+        public ExperienceEntitiesSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExperienceEntitiesSummary unmarshalledObject = new ExperienceEntitiesSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DisplayData", targetDepth))
                 {
                     var unmarshaller = EntityDisplayDataUnmarshaller.Instance;
-                    unmarshalledObject.DisplayData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

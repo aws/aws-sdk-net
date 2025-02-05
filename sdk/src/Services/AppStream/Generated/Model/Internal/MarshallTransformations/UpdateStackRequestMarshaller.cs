@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -63,147 +66,152 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessEndpoints())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AccessEndpoints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessEndpoints())
-                    {
-                        context.Writer.WritePropertyName("AccessEndpoints");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AccessEndpointMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
+                    var marshaller = AccessEndpointMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetApplicationSettings())
-                    {
-                        context.Writer.WritePropertyName("ApplicationSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ApplicationSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ApplicationSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAttributesToDelete())
-                    {
-                        context.Writer.WritePropertyName("AttributesToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttributesToDeleteListValue in publicRequest.AttributesToDelete)
-                        {
-                                context.Writer.Write(publicRequestAttributesToDeleteListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDeleteStorageConnectors())
-                    {
-                        context.Writer.WritePropertyName("DeleteStorageConnectors");
-                        context.Writer.Write(publicRequest.DeleteStorageConnectors.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("DisplayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetEmbedHostDomains())
-                    {
-                        context.Writer.WritePropertyName("EmbedHostDomains");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEmbedHostDomainsListValue in publicRequest.EmbedHostDomains)
-                        {
-                                context.Writer.Write(publicRequestEmbedHostDomainsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFeedbackURL())
-                    {
-                        context.Writer.WritePropertyName("FeedbackURL");
-                        context.Writer.Write(publicRequest.FeedbackURL);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRedirectURL())
-                    {
-                        context.Writer.WritePropertyName("RedirectURL");
-                        context.Writer.Write(publicRequest.RedirectURL);
-                    }
-
-                    if(publicRequest.IsSetStorageConnectors())
-                    {
-                        context.Writer.WritePropertyName("StorageConnectors");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStorageConnectorsListValue in publicRequest.StorageConnectors)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = StorageConnectorMarshaller.Instance;
-                            marshaller.Marshall(publicRequestStorageConnectorsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStreamingExperienceSettings())
-                    {
-                        context.Writer.WritePropertyName("StreamingExperienceSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StreamingExperienceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StreamingExperienceSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUserSettings())
-                    {
-                        context.Writer.WritePropertyName("UserSettings");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserSettingsListValue in publicRequest.UserSettings)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UserSettingMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserSettingsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetApplicationSettings())
+            {
+                context.Writer.WritePropertyName("ApplicationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApplicationSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ApplicationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAttributesToDelete())
+            {
+                context.Writer.WritePropertyName("AttributesToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttributesToDeleteListValue in publicRequest.AttributesToDelete)
+                {
+                        context.Writer.WriteStringValue(publicRequestAttributesToDeleteListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDeleteStorageConnectors())
+            {
+                context.Writer.WritePropertyName("DeleteStorageConnectors");
+                context.Writer.WriteBooleanValue(publicRequest.DeleteStorageConnectors.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("DisplayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetEmbedHostDomains())
+            {
+                context.Writer.WritePropertyName("EmbedHostDomains");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEmbedHostDomainsListValue in publicRequest.EmbedHostDomains)
+                {
+                        context.Writer.WriteStringValue(publicRequestEmbedHostDomainsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFeedbackURL())
+            {
+                context.Writer.WritePropertyName("FeedbackURL");
+                context.Writer.WriteStringValue(publicRequest.FeedbackURL);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRedirectURL())
+            {
+                context.Writer.WritePropertyName("RedirectURL");
+                context.Writer.WriteStringValue(publicRequest.RedirectURL);
+            }
+
+            if(publicRequest.IsSetStorageConnectors())
+            {
+                context.Writer.WritePropertyName("StorageConnectors");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStorageConnectorsListValue in publicRequest.StorageConnectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StorageConnectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestStorageConnectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStreamingExperienceSettings())
+            {
+                context.Writer.WritePropertyName("StreamingExperienceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamingExperienceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamingExperienceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUserSettings())
+            {
+                context.Writer.WritePropertyName("UserSettings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserSettingsListValue in publicRequest.UserSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UserSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

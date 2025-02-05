@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackFrameMsec())
             {
                 context.Writer.WritePropertyName("blackFrameMsec");
-                context.Writer.Write(requestObject.BlackFrameMsec.Value);
+                context.Writer.WriteNumberValue(requestObject.BlackFrameMsec.Value);
             }
 
             if(requestObject.IsSetInputLossImageColor())
             {
                 context.Writer.WritePropertyName("inputLossImageColor");
-                context.Writer.Write(requestObject.InputLossImageColor);
+                context.Writer.WriteStringValue(requestObject.InputLossImageColor);
             }
 
             if(requestObject.IsSetInputLossImageSlate())
             {
                 context.Writer.WritePropertyName("inputLossImageSlate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputLossImageSlate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputLossImageType())
             {
                 context.Writer.WritePropertyName("inputLossImageType");
-                context.Writer.Write(requestObject.InputLossImageType);
+                context.Writer.WriteStringValue(requestObject.InputLossImageType);
             }
 
             if(requestObject.IsSetRepeatFrameMsec())
             {
                 context.Writer.WritePropertyName("repeatFrameMsec");
-                context.Writer.Write(requestObject.RepeatFrameMsec.Value);
+                context.Writer.WriteNumberValue(requestObject.RepeatFrameMsec.Value);
             }
 
         }

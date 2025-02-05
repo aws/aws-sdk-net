@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StorageDescriptor Object
     /// </summary>  
-    public class StorageDescriptorUnmarshaller : IUnmarshaller<StorageDescriptor, XmlUnmarshallerContext>, IUnmarshaller<StorageDescriptor, JsonUnmarshallerContext>
+    public class StorageDescriptorUnmarshaller : IJsonUnmarshaller<StorageDescriptor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StorageDescriptor IUnmarshaller<StorageDescriptor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StorageDescriptor Unmarshall(JsonUnmarshallerContext context)
+        public StorageDescriptor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StorageDescriptor unmarshalledObject = new StorageDescriptor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalLocations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalLocations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalLocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BucketColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.BucketColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.BucketColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Columns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Column, ColumnUnmarshaller>(ColumnUnmarshaller.Instance);
-                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Column, ColumnUnmarshaller>(ColumnUnmarshaller.Instance);
+                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Compressed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Compressed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Compressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InputFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfBuckets", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfBuckets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfBuckets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SchemaReference", targetDepth))
                 {
                     var unmarshaller = SchemaReferenceUnmarshaller.Instance;
-                    unmarshalledObject.SchemaReference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SerdeInfo", targetDepth))
                 {
                     var unmarshaller = SerDeInfoUnmarshaller.Instance;
-                    unmarshalledObject.SerdeInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SerdeInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SkewedInfo", targetDepth))
                 {
                     var unmarshaller = SkewedInfoUnmarshaller.Instance;
-                    unmarshalledObject.SkewedInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SkewedInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Order, OrderUnmarshaller>(OrderUnmarshaller.Instance);
-                    unmarshalledObject.SortColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Order, OrderUnmarshaller>(OrderUnmarshaller.Instance);
+                    unmarshalledObject.SortColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StoredAsSubDirectories", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.StoredAsSubDirectories = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StoredAsSubDirectories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

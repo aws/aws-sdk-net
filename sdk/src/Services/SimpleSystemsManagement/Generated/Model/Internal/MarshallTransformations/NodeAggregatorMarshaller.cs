@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregators())
             {
                 context.Writer.WritePropertyName("Aggregators");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregatorsListValue in requestObject.Aggregators)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NodeAggregatorMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggregatorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAggregatorType())
             {
                 context.Writer.WritePropertyName("AggregatorType");
-                context.Writer.Write(requestObject.AggregatorType);
+                context.Writer.WriteStringValue(requestObject.AggregatorType);
             }
 
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");
-                context.Writer.Write(requestObject.AttributeName);
+                context.Writer.WriteStringValue(requestObject.AttributeName);
             }
 
             if(requestObject.IsSetTypeName())
             {
                 context.Writer.WritePropertyName("TypeName");
-                context.Writer.Write(requestObject.TypeName);
+                context.Writer.WriteStringValue(requestObject.TypeName);
             }
 
         }

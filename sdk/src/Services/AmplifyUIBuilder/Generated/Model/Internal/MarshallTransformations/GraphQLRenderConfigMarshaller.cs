@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentsFilePath())
             {
                 context.Writer.WritePropertyName("fragmentsFilePath");
-                context.Writer.Write(requestObject.FragmentsFilePath);
+                context.Writer.WriteStringValue(requestObject.FragmentsFilePath);
             }
 
             if(requestObject.IsSetMutationsFilePath())
             {
                 context.Writer.WritePropertyName("mutationsFilePath");
-                context.Writer.Write(requestObject.MutationsFilePath);
+                context.Writer.WriteStringValue(requestObject.MutationsFilePath);
             }
 
             if(requestObject.IsSetQueriesFilePath())
             {
                 context.Writer.WritePropertyName("queriesFilePath");
-                context.Writer.Write(requestObject.QueriesFilePath);
+                context.Writer.WriteStringValue(requestObject.QueriesFilePath);
             }
 
             if(requestObject.IsSetSubscriptionsFilePath())
             {
                 context.Writer.WritePropertyName("subscriptionsFilePath");
-                context.Writer.Write(requestObject.SubscriptionsFilePath);
+                context.Writer.WriteStringValue(requestObject.SubscriptionsFilePath);
             }
 
             if(requestObject.IsSetTypesFilePath())
             {
                 context.Writer.WritePropertyName("typesFilePath");
-                context.Writer.Write(requestObject.TypesFilePath);
+                context.Writer.WriteStringValue(requestObject.TypesFilePath);
             }
 
         }

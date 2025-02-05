@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for NotFoundException operation
     /// </summary>  
-    public class NotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<NotFoundException, XmlUnmarshallerContext>
+    public class NotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

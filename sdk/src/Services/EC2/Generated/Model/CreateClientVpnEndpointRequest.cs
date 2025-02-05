@@ -223,9 +223,9 @@ namespace Amazon.EC2.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DisconnectOnSessionTimeout
+        public bool? DisconnectOnSessionTimeout
         {
-            get { return this._disconnectOnSessionTimeout.GetValueOrDefault(); }
+            get { return this._disconnectOnSessionTimeout; }
             set { this._disconnectOnSessionTimeout = value; }
         }
 

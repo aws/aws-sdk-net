@@ -34,16 +34,10 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("AppStream", "4.0.0.0");
 
         private static readonly AmazonAppStreamEndpointResolver EndpointResolver =
             new AmazonAppStreamEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("AppStream", "3.7.404.3");
-=======
-            InternalSDKUtils.BuildUserAgentString("AppStream", "3.7.405.2");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

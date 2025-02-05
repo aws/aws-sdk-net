@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingGroups())
             {
                 context.Writer.WritePropertyName("autoScalingGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAutoScalingGroupsListValue in requestObject.AutoScalingGroups)
                 {
-                        context.Writer.Write(requestObjectAutoScalingGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectAutoScalingGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2TagSet())
             {
                 context.Writer.WritePropertyName("ec2TagSet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EC2TagSetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ec2TagSet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTagFilters())
             {
                 context.Writer.WritePropertyName("tagFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagFiltersListValue in requestObject.TagFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EC2TagFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

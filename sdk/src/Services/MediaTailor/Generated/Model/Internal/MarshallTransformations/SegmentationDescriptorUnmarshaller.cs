@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SegmentationDescriptor Object
     /// </summary>  
-    public class SegmentationDescriptorUnmarshaller : IUnmarshaller<SegmentationDescriptor, XmlUnmarshallerContext>, IUnmarshaller<SegmentationDescriptor, JsonUnmarshallerContext>
+    public class SegmentationDescriptorUnmarshaller : IJsonUnmarshaller<SegmentationDescriptor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SegmentationDescriptor IUnmarshaller<SegmentationDescriptor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SegmentationDescriptor Unmarshall(JsonUnmarshallerContext context)
+        public SegmentationDescriptor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SegmentationDescriptor unmarshalledObject = new SegmentationDescriptor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SegmentationEventId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentationEventId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentationEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentationTypeId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentationTypeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentationTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentationUpid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentationUpid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentationUpid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentationUpidType", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentationUpidType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentationUpidType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentNum", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentNum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentNum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentsExpected", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentsExpected = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentsExpected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubSegmentNum", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SubSegmentNum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubSegmentNum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubSegmentsExpected", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SubSegmentsExpected = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubSegmentsExpected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

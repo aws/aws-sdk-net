@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackoutSlateImage())
             {
                 context.Writer.WritePropertyName("blackoutSlateImage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlackoutSlateImage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkEndBlackout())
             {
                 context.Writer.WritePropertyName("networkEndBlackout");
-                context.Writer.Write(requestObject.NetworkEndBlackout);
+                context.Writer.WriteStringValue(requestObject.NetworkEndBlackout);
             }
 
             if(requestObject.IsSetNetworkEndBlackoutImage())
             {
                 context.Writer.WritePropertyName("networkEndBlackoutImage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkEndBlackoutImage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkId())
             {
                 context.Writer.WritePropertyName("networkId");
-                context.Writer.Write(requestObject.NetworkId);
+                context.Writer.WriteStringValue(requestObject.NetworkId);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("state");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

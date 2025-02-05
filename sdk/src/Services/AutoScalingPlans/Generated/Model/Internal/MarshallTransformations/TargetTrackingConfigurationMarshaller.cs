@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomizedScalingMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedScalingMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomizedScalingMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomizedScalingMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisableScaleIn())
             {
                 context.Writer.WritePropertyName("DisableScaleIn");
-                context.Writer.Write(requestObject.DisableScaleIn.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableScaleIn.Value);
             }
 
             if(requestObject.IsSetEstimatedInstanceWarmup())
             {
                 context.Writer.WritePropertyName("EstimatedInstanceWarmup");
-                context.Writer.Write(requestObject.EstimatedInstanceWarmup.Value);
+                context.Writer.WriteNumberValue(requestObject.EstimatedInstanceWarmup.Value);
             }
 
             if(requestObject.IsSetPredefinedScalingMetricSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedScalingMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredefinedScalingMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredefinedScalingMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScaleInCooldown())
             {
                 context.Writer.WritePropertyName("ScaleInCooldown");
-                context.Writer.Write(requestObject.ScaleInCooldown.Value);
+                context.Writer.WriteNumberValue(requestObject.ScaleInCooldown.Value);
             }
 
             if(requestObject.IsSetScaleOutCooldown())
             {
                 context.Writer.WritePropertyName("ScaleOutCooldown");
-                context.Writer.Write(requestObject.ScaleOutCooldown.Value);
+                context.Writer.WriteNumberValue(requestObject.ScaleOutCooldown.Value);
             }
 
             if(requestObject.IsSetTargetValue())
@@ -99,11 +97,11 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("TargetValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetValue.Value);
                 }
             }
 

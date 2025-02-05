@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServiceConnectConfiguration Object
     /// </summary>  
-    public class ServiceConnectConfigurationUnmarshaller : IUnmarshaller<ServiceConnectConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectConfiguration, JsonUnmarshallerContext>
+    public class ServiceConnectConfigurationUnmarshaller : IJsonUnmarshaller<ServiceConnectConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServiceConnectConfiguration IUnmarshaller<ServiceConnectConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ServiceConnectConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServiceConnectConfiguration unmarshalledObject = new ServiceConnectConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logConfiguration", targetDepth))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("namespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("services", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServiceConnectService, ServiceConnectServiceUnmarshaller>(ServiceConnectServiceUnmarshaller.Instance);
-                    unmarshalledObject.Services = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ServiceConnectService, ServiceConnectServiceUnmarshaller>(ServiceConnectServiceUnmarshaller.Instance);
+                    unmarshalledObject.Services = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

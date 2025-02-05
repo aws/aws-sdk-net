@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AcceptedTerm Object
     /// </summary>  
-    public class AcceptedTermUnmarshaller : IUnmarshaller<AcceptedTerm, XmlUnmarshallerContext>, IUnmarshaller<AcceptedTerm, JsonUnmarshallerContext>
+    public class AcceptedTermUnmarshaller : IJsonUnmarshaller<AcceptedTerm, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AcceptedTerm IUnmarshaller<AcceptedTerm, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AcceptedTerm Unmarshall(JsonUnmarshallerContext context)
+        public AcceptedTerm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AcceptedTerm unmarshalledObject = new AcceptedTerm();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("byolPricingTerm", targetDepth))
                 {
                     var unmarshaller = ByolPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.ByolPricingTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ByolPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("configurableUpfrontPricingTerm", targetDepth))
                 {
                     var unmarshaller = ConfigurableUpfrontPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurableUpfrontPricingTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurableUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fixedUpfrontPricingTerm", targetDepth))
                 {
                     var unmarshaller = FixedUpfrontPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.FixedUpfrontPricingTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FixedUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("freeTrialPricingTerm", targetDepth))
                 {
                     var unmarshaller = FreeTrialPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.FreeTrialPricingTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FreeTrialPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("legalTerm", targetDepth))
                 {
                     var unmarshaller = LegalTermUnmarshaller.Instance;
-                    unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("paymentScheduleTerm", targetDepth))
                 {
                     var unmarshaller = PaymentScheduleTermUnmarshaller.Instance;
-                    unmarshalledObject.PaymentScheduleTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaymentScheduleTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recurringPaymentTerm", targetDepth))
                 {
                     var unmarshaller = RecurringPaymentTermUnmarshaller.Instance;
-                    unmarshalledObject.RecurringPaymentTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecurringPaymentTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("renewalTerm", targetDepth))
                 {
                     var unmarshaller = RenewalTermUnmarshaller.Instance;
-                    unmarshalledObject.RenewalTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RenewalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportTerm", targetDepth))
                 {
                     var unmarshaller = SupportTermUnmarshaller.Instance;
-                    unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usageBasedPricingTerm", targetDepth))
                 {
                     var unmarshaller = UsageBasedPricingTermUnmarshaller.Instance;
-                    unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("validityTerm", targetDepth))
                 {
                     var unmarshaller = ValidityTermUnmarshaller.Instance;
-                    unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

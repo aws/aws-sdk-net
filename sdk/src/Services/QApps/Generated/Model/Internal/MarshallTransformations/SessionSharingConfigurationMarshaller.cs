@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptResponses())
             {
                 context.Writer.WritePropertyName("acceptResponses");
-                context.Writer.Write(requestObject.AcceptResponses.Value);
+                context.Writer.WriteBooleanValue(requestObject.AcceptResponses.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetRevealCards())
             {
                 context.Writer.WritePropertyName("revealCards");
-                context.Writer.Write(requestObject.RevealCards.Value);
+                context.Writer.WriteBooleanValue(requestObject.RevealCards.Value);
             }
 
         }

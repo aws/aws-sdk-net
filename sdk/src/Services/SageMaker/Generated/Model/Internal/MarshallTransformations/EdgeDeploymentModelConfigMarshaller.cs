@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEdgePackagingJobName())
             {
                 context.Writer.WritePropertyName("EdgePackagingJobName");
-                context.Writer.Write(requestObject.EdgePackagingJobName);
+                context.Writer.WriteStringValue(requestObject.EdgePackagingJobName);
             }
 
             if(requestObject.IsSetModelHandle())
             {
                 context.Writer.WritePropertyName("ModelHandle");
-                context.Writer.Write(requestObject.ModelHandle);
+                context.Writer.WriteStringValue(requestObject.ModelHandle);
             }
 
         }

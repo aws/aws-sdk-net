@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObjectCount())
             {
                 context.Writer.WritePropertyName("ObjectCount");
-                context.Writer.Write(requestObject.ObjectCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ObjectCount.Value);
             }
 
             if(requestObject.IsSetRange())
             {
                 context.Writer.WritePropertyName("Range");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Range, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThresholdMarshaller.Instance;
                 marshaller.Marshall(requestObject.Threshold, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

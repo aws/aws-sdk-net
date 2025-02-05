@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnswerGenerationAIGuardrailId())
             {
                 context.Writer.WritePropertyName("answerGenerationAIGuardrailId");
-                context.Writer.Write(requestObject.AnswerGenerationAIGuardrailId);
+                context.Writer.WriteStringValue(requestObject.AnswerGenerationAIGuardrailId);
             }
 
             if(requestObject.IsSetAnswerGenerationAIPromptId())
             {
                 context.Writer.WritePropertyName("answerGenerationAIPromptId");
-                context.Writer.Write(requestObject.AnswerGenerationAIPromptId);
+                context.Writer.WriteStringValue(requestObject.AnswerGenerationAIPromptId);
             }
 
             if(requestObject.IsSetAssociationConfigurations())
             {
                 context.Writer.WritePropertyName("associationConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssociationConfigurationsListValue in requestObject.AssociationConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssociationConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAssociationConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIntentLabelingGenerationAIPromptId())
             {
                 context.Writer.WritePropertyName("intentLabelingGenerationAIPromptId");
-                context.Writer.Write(requestObject.IntentLabelingGenerationAIPromptId);
+                context.Writer.WriteStringValue(requestObject.IntentLabelingGenerationAIPromptId);
             }
 
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("locale");
-                context.Writer.Write(requestObject.Locale);
+                context.Writer.WriteStringValue(requestObject.Locale);
             }
 
             if(requestObject.IsSetQueryReformulationAIPromptId())
             {
                 context.Writer.WritePropertyName("queryReformulationAIPromptId");
-                context.Writer.Write(requestObject.QueryReformulationAIPromptId);
+                context.Writer.WriteStringValue(requestObject.QueryReformulationAIPromptId);
             }
 
         }

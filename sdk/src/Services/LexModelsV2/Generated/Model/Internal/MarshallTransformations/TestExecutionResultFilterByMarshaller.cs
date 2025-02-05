@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConversationLevelTestResultsFilterBy())
             {
                 context.Writer.WritePropertyName("conversationLevelTestResultsFilterBy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConversationLevelTestResultsFilterByMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConversationLevelTestResultsFilterBy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResultTypeFilter())
             {
                 context.Writer.WritePropertyName("resultTypeFilter");
-                context.Writer.Write(requestObject.ResultTypeFilter);
+                context.Writer.WriteStringValue(requestObject.ResultTypeFilter);
             }
 
         }

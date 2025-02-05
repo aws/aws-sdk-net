@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MonitoringScheduleConfig Object
     /// </summary>  
-    public class MonitoringScheduleConfigUnmarshaller : IUnmarshaller<MonitoringScheduleConfig, XmlUnmarshallerContext>, IUnmarshaller<MonitoringScheduleConfig, JsonUnmarshallerContext>
+    public class MonitoringScheduleConfigUnmarshaller : IJsonUnmarshaller<MonitoringScheduleConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MonitoringScheduleConfig IUnmarshaller<MonitoringScheduleConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringScheduleConfig Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringScheduleConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MonitoringScheduleConfig unmarshalledObject = new MonitoringScheduleConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MonitoringJobDefinition", targetDepth))
                 {
                     var unmarshaller = MonitoringJobDefinitionUnmarshaller.Instance;
-                    unmarshalledObject.MonitoringJobDefinition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitoringJobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitoringJobDefinitionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitoringJobDefinitionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitoringJobDefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitoringType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitoringType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitoringType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleConfig", targetDepth))
                 {
                     var unmarshaller = ScheduleConfigUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

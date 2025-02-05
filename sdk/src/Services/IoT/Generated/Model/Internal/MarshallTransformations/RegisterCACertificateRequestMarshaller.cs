@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -67,64 +70,69 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
             request.ResourcePath = "/cacertificate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCaCertificate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCaCertificate())
-                    {
-                        context.Writer.WritePropertyName("caCertificate");
-                        context.Writer.Write(publicRequest.CaCertificate);
-                    }
-
-                    if(publicRequest.IsSetCertificateMode())
-                    {
-                        context.Writer.WritePropertyName("certificateMode");
-                        context.Writer.Write(publicRequest.CertificateMode);
-                    }
-
-                    if(publicRequest.IsSetRegistrationConfig())
-                    {
-                        context.Writer.WritePropertyName("registrationConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegistrationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RegistrationConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVerificationCertificate())
-                    {
-                        context.Writer.WritePropertyName("verificationCertificate");
-                        context.Writer.Write(publicRequest.VerificationCertificate);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("caCertificate");
+                context.Writer.WriteStringValue(publicRequest.CaCertificate);
             }
+
+            if(publicRequest.IsSetCertificateMode())
+            {
+                context.Writer.WritePropertyName("certificateMode");
+                context.Writer.WriteStringValue(publicRequest.CertificateMode);
+            }
+
+            if(publicRequest.IsSetRegistrationConfig())
+            {
+                context.Writer.WritePropertyName("registrationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegistrationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RegistrationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVerificationCertificate())
+            {
+                context.Writer.WritePropertyName("verificationCertificate");
+                context.Writer.WriteStringValue(publicRequest.VerificationCertificate);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

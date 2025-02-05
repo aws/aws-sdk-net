@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudiences())
             {
                 context.Writer.WritePropertyName("audiences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudiencesListValue in requestObject.Audiences)
                 {
-                        context.Writer.Write(requestObjectAudiencesListValue);
+                        context.Writer.WriteStringValue(requestObjectAudiencesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrincipalIdClaim())
             {
                 context.Writer.WritePropertyName("principalIdClaim");
-                context.Writer.Write(requestObject.PrincipalIdClaim);
+                context.Writer.WriteStringValue(requestObject.PrincipalIdClaim);
             }
 
         }

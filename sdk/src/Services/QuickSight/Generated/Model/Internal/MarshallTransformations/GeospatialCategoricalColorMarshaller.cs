@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryDataColors())
             {
                 context.Writer.WritePropertyName("CategoryDataColors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCategoryDataColorsListValue in requestObject.CategoryDataColors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GeospatialCategoricalDataColorMarshaller.Instance;
                     marshaller.Marshall(requestObjectCategoryDataColorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDefaultOpacity())
@@ -69,29 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DefaultOpacity");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultOpacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultOpacity.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DefaultOpacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DefaultOpacity.Value);
+                    context.Writer.WriteNumberValue(requestObject.DefaultOpacity.Value);
                 }
             }
 
             if(requestObject.IsSetNullDataSettings())
             {
                 context.Writer.WritePropertyName("NullDataSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialNullDataSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NullDataSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNullDataVisibility())
             {
                 context.Writer.WritePropertyName("NullDataVisibility");
-                context.Writer.Write(requestObject.NullDataVisibility);
+                context.Writer.WriteStringValue(requestObject.NullDataVisibility);
             }
 
         }

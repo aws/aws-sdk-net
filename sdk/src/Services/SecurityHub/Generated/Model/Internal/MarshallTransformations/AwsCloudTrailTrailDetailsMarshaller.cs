@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,91 +49,91 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogsLogGroupArn())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");
-                context.Writer.Write(requestObject.CloudWatchLogsLogGroupArn);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogsLogGroupArn);
             }
 
             if(requestObject.IsSetCloudWatchLogsRoleArn())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsRoleArn");
-                context.Writer.Write(requestObject.CloudWatchLogsRoleArn);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogsRoleArn);
             }
 
             if(requestObject.IsSetHasCustomEventSelectors())
             {
                 context.Writer.WritePropertyName("HasCustomEventSelectors");
-                context.Writer.Write(requestObject.HasCustomEventSelectors.Value);
+                context.Writer.WriteBooleanValue(requestObject.HasCustomEventSelectors.Value);
             }
 
             if(requestObject.IsSetHomeRegion())
             {
                 context.Writer.WritePropertyName("HomeRegion");
-                context.Writer.Write(requestObject.HomeRegion);
+                context.Writer.WriteStringValue(requestObject.HomeRegion);
             }
 
             if(requestObject.IsSetIncludeGlobalServiceEvents())
             {
                 context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
-                context.Writer.Write(requestObject.IncludeGlobalServiceEvents.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeGlobalServiceEvents.Value);
             }
 
             if(requestObject.IsSetIsMultiRegionTrail())
             {
                 context.Writer.WritePropertyName("IsMultiRegionTrail");
-                context.Writer.Write(requestObject.IsMultiRegionTrail.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsMultiRegionTrail.Value);
             }
 
             if(requestObject.IsSetIsOrganizationTrail())
             {
                 context.Writer.WritePropertyName("IsOrganizationTrail");
-                context.Writer.Write(requestObject.IsOrganizationTrail.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsOrganizationTrail.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetLogFileValidationEnabled())
             {
                 context.Writer.WritePropertyName("LogFileValidationEnabled");
-                context.Writer.Write(requestObject.LogFileValidationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.LogFileValidationEnabled.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("S3KeyPrefix");
-                context.Writer.Write(requestObject.S3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.S3KeyPrefix);
             }
 
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");
-                context.Writer.Write(requestObject.SnsTopicArn);
+                context.Writer.WriteStringValue(requestObject.SnsTopicArn);
             }
 
             if(requestObject.IsSetSnsTopicName())
             {
                 context.Writer.WritePropertyName("SnsTopicName");
-                context.Writer.Write(requestObject.SnsTopicName);
+                context.Writer.WriteStringValue(requestObject.SnsTopicName);
             }
 
             if(requestObject.IsSetTrailArn())
             {
                 context.Writer.WritePropertyName("TrailArn");
-                context.Writer.Write(requestObject.TrailArn);
+                context.Writer.WriteStringValue(requestObject.TrailArn);
             }
 
         }

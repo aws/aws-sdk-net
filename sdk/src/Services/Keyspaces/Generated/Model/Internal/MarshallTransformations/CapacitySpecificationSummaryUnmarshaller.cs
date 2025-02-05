@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CapacitySpecificationSummary Object
     /// </summary>  
-    public class CapacitySpecificationSummaryUnmarshaller : IUnmarshaller<CapacitySpecificationSummary, XmlUnmarshallerContext>, IUnmarshaller<CapacitySpecificationSummary, JsonUnmarshallerContext>
+    public class CapacitySpecificationSummaryUnmarshaller : IJsonUnmarshaller<CapacitySpecificationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CapacitySpecificationSummary IUnmarshaller<CapacitySpecificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CapacitySpecificationSummary Unmarshall(JsonUnmarshallerContext context)
+        public CapacitySpecificationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CapacitySpecificationSummary unmarshalledObject = new CapacitySpecificationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("lastUpdateToPayPerRequestTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateToPayPerRequestTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdateToPayPerRequestTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("readCapacityUnits", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("throughputMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("writeCapacityUnits", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

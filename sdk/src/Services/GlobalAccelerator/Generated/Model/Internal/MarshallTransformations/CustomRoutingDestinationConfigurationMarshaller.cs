@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");
-                context.Writer.Write(requestObject.FromPort.Value);
+                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetProtocols())
             {
                 context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                        context.Writer.Write(requestObjectProtocolsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtocolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("ToPort");
-                context.Writer.Write(requestObject.ToPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
             }
 
         }

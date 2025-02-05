@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-                context.Writer.Write(requestObject.CreationDate);
+                context.Writer.WriteStringValue(requestObject.CreationDate);
             }
 
             if(requestObject.IsSetDimensionalValueCount())
             {
                 context.Writer.WritePropertyName("DimensionalValueCount");
-                context.Writer.Write(requestObject.DimensionalValueCount.Value);
+                context.Writer.WriteNumberValue(requestObject.DimensionalValueCount.Value);
             }
 
             if(requestObject.IsSetLastEvaluatedDate())
             {
                 context.Writer.WritePropertyName("LastEvaluatedDate");
-                context.Writer.Write(requestObject.LastEvaluatedDate);
+                context.Writer.WriteStringValue(requestObject.LastEvaluatedDate);
             }
 
             if(requestObject.IsSetLastUpdatedDate())
             {
                 context.Writer.WritePropertyName("LastUpdatedDate");
-                context.Writer.Write(requestObject.LastUpdatedDate);
+                context.Writer.WriteStringValue(requestObject.LastUpdatedDate);
             }
 
             if(requestObject.IsSetMonitorArn())
             {
                 context.Writer.WritePropertyName("MonitorArn");
-                context.Writer.Write(requestObject.MonitorArn);
+                context.Writer.WriteStringValue(requestObject.MonitorArn);
             }
 
             if(requestObject.IsSetMonitorDimension())
             {
                 context.Writer.WritePropertyName("MonitorDimension");
-                context.Writer.Write(requestObject.MonitorDimension);
+                context.Writer.WriteStringValue(requestObject.MonitorDimension);
             }
 
             if(requestObject.IsSetMonitorName())
             {
                 context.Writer.WritePropertyName("MonitorName");
-                context.Writer.Write(requestObject.MonitorName);
+                context.Writer.WriteStringValue(requestObject.MonitorName);
             }
 
             if(requestObject.IsSetMonitorSpecification())
             {
                 context.Writer.WritePropertyName("MonitorSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MonitorSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonitorType())
             {
                 context.Writer.WritePropertyName("MonitorType");
-                context.Writer.Write(requestObject.MonitorType);
+                context.Writer.WriteStringValue(requestObject.MonitorType);
             }
 
         }

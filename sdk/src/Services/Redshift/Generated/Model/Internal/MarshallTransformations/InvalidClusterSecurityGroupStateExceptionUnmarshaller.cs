@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidClusterSecurityGroupStateException operation
     /// </summary>  
-    public class InvalidClusterSecurityGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClusterSecurityGroupStateException, XmlUnmarshallerContext>
+    public class InvalidClusterSecurityGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidClusterSecurityGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

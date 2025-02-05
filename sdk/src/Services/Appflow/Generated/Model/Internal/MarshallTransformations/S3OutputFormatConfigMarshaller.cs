@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationConfig())
             {
                 context.Writer.WritePropertyName("aggregationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AggregationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AggregationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileType())
             {
                 context.Writer.WritePropertyName("fileType");
-                context.Writer.Write(requestObject.FileType);
+                context.Writer.WriteStringValue(requestObject.FileType);
             }
 
             if(requestObject.IsSetPrefixConfig())
             {
                 context.Writer.WritePropertyName("prefixConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrefixConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrefixConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPreserveSourceDataTyping())
             {
                 context.Writer.WritePropertyName("preserveSourceDataTyping");
-                context.Writer.Write(requestObject.PreserveSourceDataTyping.Value);
+                context.Writer.WriteBooleanValue(requestObject.PreserveSourceDataTyping.Value);
             }
 
         }

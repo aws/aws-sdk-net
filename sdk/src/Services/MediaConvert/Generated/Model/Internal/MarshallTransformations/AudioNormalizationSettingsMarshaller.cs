@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
             if(requestObject.IsSetAlgorithmControl())
             {
                 context.Writer.WritePropertyName("algorithmControl");
-                context.Writer.Write(requestObject.AlgorithmControl);
+                context.Writer.WriteStringValue(requestObject.AlgorithmControl);
             }
 
             if(requestObject.IsSetCorrectionGateLevel())
             {
                 context.Writer.WritePropertyName("correctionGateLevel");
-                context.Writer.Write(requestObject.CorrectionGateLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.CorrectionGateLevel.Value);
             }
 
             if(requestObject.IsSetLoudnessLogging())
             {
                 context.Writer.WritePropertyName("loudnessLogging");
-                context.Writer.Write(requestObject.LoudnessLogging);
+                context.Writer.WriteStringValue(requestObject.LoudnessLogging);
             }
 
             if(requestObject.IsSetPeakCalculation())
             {
                 context.Writer.WritePropertyName("peakCalculation");
-                context.Writer.Write(requestObject.PeakCalculation);
+                context.Writer.WriteStringValue(requestObject.PeakCalculation);
             }
 
             if(requestObject.IsSetTargetLkfs())
@@ -83,11 +81,11 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("targetLkfs");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TargetLkfs.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetLkfs.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetLkfs.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetLkfs.Value);
                 }
             }
 
@@ -96,11 +94,11 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("truePeakLimiterThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TruePeakLimiterThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TruePeakLimiterThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TruePeakLimiterThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.TruePeakLimiterThreshold.Value);
                 }
             }
 

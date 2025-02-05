@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConversionProperties Object
     /// </summary>  
-    public class ConversionPropertiesUnmarshaller : IUnmarshaller<ConversionProperties, XmlUnmarshallerContext>, IUnmarshaller<ConversionProperties, JsonUnmarshallerContext>
+    public class ConversionPropertiesUnmarshaller : IJsonUnmarshaller<ConversionProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConversionProperties IUnmarshaller<ConversionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConversionProperties Unmarshall(JsonUnmarshallerContext context)
+        public ConversionProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConversionProperties unmarshalledObject = new ConversionProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dataTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("forceUefi", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ForceUefi = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForceUefi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rootVolumeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RootVolumeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RootVolumeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeToConversionMap", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
-                    unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeToProductCodes", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<ProductCode>, StringUnmarshaller, ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>(ProductCodeUnmarshaller.Instance));
-                    unmarshalledObject.VolumeToProductCodes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ProductCode>, StringUnmarshaller, JsonListUnmarshaller<ProductCode,ProductCodeUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ProductCode, ProductCodeUnmarshaller>(ProductCodeUnmarshaller.Instance));
+                    unmarshalledObject.VolumeToProductCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeToVolumeSize", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
-                    unmarshalledObject.VolumeToVolumeSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
+                    unmarshalledObject.VolumeToVolumeSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

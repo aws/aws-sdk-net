@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchStrategy())
             {
                 context.Writer.WritePropertyName("BatchStrategy");
-                context.Writer.Write(requestObject.BatchStrategy);
+                context.Writer.WriteStringValue(requestObject.BatchStrategy);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxConcurrentTransforms())
             {
                 context.Writer.WritePropertyName("MaxConcurrentTransforms");
-                context.Writer.Write(requestObject.MaxConcurrentTransforms.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrentTransforms.Value);
             }
 
             if(requestObject.IsSetMaxPayloadInMB())
             {
                 context.Writer.WritePropertyName("MaxPayloadInMB");
-                context.Writer.Write(requestObject.MaxPayloadInMB.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPayloadInMB.Value);
             }
 
             if(requestObject.IsSetTransformInput())
             {
                 context.Writer.WritePropertyName("TransformInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TransformInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TransformInput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransformOutput())
             {
                 context.Writer.WritePropertyName("TransformOutput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TransformOutputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TransformOutput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransformResources())
             {
                 context.Writer.WritePropertyName("TransformResources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TransformResourcesMarshaller.Instance;
                 marshaller.Marshall(requestObject.TransformResources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

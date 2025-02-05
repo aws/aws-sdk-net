@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProduct())
             {
                 context.Writer.WritePropertyName("product");
-                context.Writer.Write(requestObject.Product);
+                context.Writer.WriteStringValue(requestObject.Product);
             }
 
             if(requestObject.IsSetVendor())
             {
                 context.Writer.WritePropertyName("vendor");
-                context.Writer.Write(requestObject.Vendor);
+                context.Writer.WriteStringValue(requestObject.Vendor);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -64,87 +67,92 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttachmentsConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttachmentsConfiguration())
-                    {
-                        context.Writer.WritePropertyName("attachmentsConfiguration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("attachmentsConfiguration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AttachmentsConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
+                var marshaller = AttachmentsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AttachmentsConfiguration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoSubscriptionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("autoSubscriptionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoSubscriptionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoSubscriptionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("displayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetIdentityCenterInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("identityCenterInstanceArn");
-                        context.Writer.Write(publicRequest.IdentityCenterInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetPersonalizationConfiguration())
-                    {
-                        context.Writer.WritePropertyName("personalizationConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PersonalizationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQAppsConfiguration())
-                    {
-                        context.Writer.WritePropertyName("qAppsConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QAppsConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.QAppsConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAutoSubscriptionConfiguration())
+            {
+                context.Writer.WritePropertyName("autoSubscriptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoSubscriptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoSubscriptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetIdentityCenterInstanceArn())
+            {
+                context.Writer.WritePropertyName("identityCenterInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.IdentityCenterInstanceArn);
+            }
+
+            if(publicRequest.IsSetPersonalizationConfiguration())
+            {
+                context.Writer.WritePropertyName("personalizationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PersonalizationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PersonalizationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQAppsConfiguration())
+            {
+                context.Writer.WritePropertyName("qAppsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QAppsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QAppsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

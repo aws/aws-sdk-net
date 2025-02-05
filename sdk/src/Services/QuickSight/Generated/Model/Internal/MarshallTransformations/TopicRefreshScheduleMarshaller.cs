@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasedOnSpiceSchedule())
             {
                 context.Writer.WritePropertyName("BasedOnSpiceSchedule");
-                context.Writer.Write(requestObject.BasedOnSpiceSchedule.Value);
+                context.Writer.WriteBooleanValue(requestObject.BasedOnSpiceSchedule.Value);
             }
 
             if(requestObject.IsSetIsEnabled())
             {
                 context.Writer.WritePropertyName("IsEnabled");
-                context.Writer.Write(requestObject.IsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsEnabled.Value);
             }
 
             if(requestObject.IsSetRepeatAt())
             {
                 context.Writer.WritePropertyName("RepeatAt");
-                context.Writer.Write(requestObject.RepeatAt);
+                context.Writer.WriteStringValue(requestObject.RepeatAt);
             }
 
             if(requestObject.IsSetStartingAt())
             {
                 context.Writer.WritePropertyName("StartingAt");
-                context.Writer.Write(requestObject.StartingAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartingAt.Value)));
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
             if(requestObject.IsSetTopicScheduleType())
             {
                 context.Writer.WritePropertyName("TopicScheduleType");
-                context.Writer.Write(requestObject.TopicScheduleType);
+                context.Writer.WriteStringValue(requestObject.TopicScheduleType);
             }
 
         }

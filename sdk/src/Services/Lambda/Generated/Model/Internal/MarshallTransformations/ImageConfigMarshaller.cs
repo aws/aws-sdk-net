@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("Command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("EntryPoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntryPointListValue in requestObject.EntryPoint)
                 {
-                        context.Writer.Write(requestObjectEntryPointListValue);
+                        context.Writer.WriteStringValue(requestObjectEntryPointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWorkingDirectory())
             {
                 context.Writer.WritePropertyName("WorkingDirectory");
-                context.Writer.Write(requestObject.WorkingDirectory);
+                context.Writer.WriteStringValue(requestObject.WorkingDirectory);
             }
 
         }

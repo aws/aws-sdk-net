@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserIds())
             {
                 context.Writer.WritePropertyName("UserIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserIdsListValue in requestObject.UserIds)
                 {
-                        context.Writer.Write(requestObjectUserIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectUserIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserTags())
             {
                 context.Writer.WritePropertyName("UserTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectUserTagsKvp in requestObject.UserTags)
                 {
                     context.Writer.WritePropertyName(requestObjectUserTagsKvp.Key);
                     var requestObjectUserTagsValue = requestObjectUserTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectUserTagsValue);
+                        context.Writer.WriteStringValue(requestObjectUserTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

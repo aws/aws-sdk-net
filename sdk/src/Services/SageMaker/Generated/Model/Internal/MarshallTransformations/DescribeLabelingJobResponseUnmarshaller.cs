@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -47,117 +47,117 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeLabelingJobResponse response = new DescribeLabelingJobResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HumanTaskConfig", targetDepth))
                 {
                     var unmarshaller = HumanTaskConfigUnmarshaller.Instance;
-                    response.HumanTaskConfig = unmarshaller.Unmarshall(context);
+                    response.HumanTaskConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InputConfig", targetDepth))
                 {
                     var unmarshaller = LabelingJobInputConfigUnmarshaller.Instance;
-                    response.InputConfig = unmarshaller.Unmarshall(context);
+                    response.InputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobReferenceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobReferenceCode = unmarshaller.Unmarshall(context);
+                    response.JobReferenceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelAttributeName = unmarshaller.Unmarshall(context);
+                    response.LabelAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelCategoryConfigS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelCategoryConfigS3Uri = unmarshaller.Unmarshall(context);
+                    response.LabelCategoryConfigS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelCounters", targetDepth))
                 {
                     var unmarshaller = LabelCountersUnmarshaller.Instance;
-                    response.LabelCounters = unmarshaller.Unmarshall(context);
+                    response.LabelCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobAlgorithmsConfig", targetDepth))
                 {
                     var unmarshaller = LabelingJobAlgorithmsConfigUnmarshaller.Instance;
-                    response.LabelingJobAlgorithmsConfig = unmarshaller.Unmarshall(context);
+                    response.LabelingJobAlgorithmsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelingJobArn = unmarshaller.Unmarshall(context);
+                    response.LabelingJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelingJobName = unmarshaller.Unmarshall(context);
+                    response.LabelingJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobOutput", targetDepth))
                 {
                     var unmarshaller = LabelingJobOutputUnmarshaller.Instance;
-                    response.LabelingJobOutput = unmarshaller.Unmarshall(context);
+                    response.LabelingJobOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LabelingJobStatus = unmarshaller.Unmarshall(context);
+                    response.LabelingJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputConfig", targetDepth))
                 {
                     var unmarshaller = LabelingJobOutputConfigUnmarshaller.Instance;
-                    response.OutputConfig = unmarshaller.Unmarshall(context);
+                    response.OutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StoppingConditions", targetDepth))
                 {
                     var unmarshaller = LabelingJobStoppingConditionsUnmarshaller.Instance;
-                    response.StoppingConditions = unmarshaller.Unmarshall(context);
+                    response.StoppingConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -174,18 +174,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

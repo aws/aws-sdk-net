@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidLambdaFunctionException operation
     /// </summary>  
-    public class InvalidLambdaFunctionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidLambdaFunctionException, XmlUnmarshallerContext>
+    public class InvalidLambdaFunctionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidLambdaFunctionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

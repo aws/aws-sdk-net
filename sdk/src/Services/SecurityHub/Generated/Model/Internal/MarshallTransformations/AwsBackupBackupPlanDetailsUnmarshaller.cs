@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsBackupBackupPlanDetails Object
     /// </summary>  
-    public class AwsBackupBackupPlanDetailsUnmarshaller : IUnmarshaller<AwsBackupBackupPlanDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsBackupBackupPlanDetails, JsonUnmarshallerContext>
+    public class AwsBackupBackupPlanDetailsUnmarshaller : IJsonUnmarshaller<AwsBackupBackupPlanDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsBackupBackupPlanDetails IUnmarshaller<AwsBackupBackupPlanDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsBackupBackupPlanDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsBackupBackupPlanDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsBackupBackupPlanDetails unmarshalledObject = new AwsBackupBackupPlanDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BackupPlan", targetDepth))
                 {
                     var unmarshaller = AwsBackupBackupPlanBackupPlanDetailsUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlan = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupPlanArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupPlanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

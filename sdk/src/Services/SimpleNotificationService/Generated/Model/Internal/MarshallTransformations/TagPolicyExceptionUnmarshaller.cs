@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for TagPolicyException operation
     /// </summary>  
-    public class TagPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<TagPolicyException, XmlUnmarshallerContext>
+    public class TagPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TagPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

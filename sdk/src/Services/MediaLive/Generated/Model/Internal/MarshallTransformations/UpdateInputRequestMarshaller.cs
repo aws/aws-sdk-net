@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -64,128 +67,133 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field InputId set");
             request.AddPathResource("{inputId}", StringUtils.FromString(publicRequest.InputId));
             request.ResourcePath = "/prod/inputs/{inputId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = InputDestinationRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationsListValue, context);
+                    var marshaller = InputDestinationRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInputDevices())
-                    {
-                        context.Writer.WritePropertyName("inputDevices");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputDevicesListValue in publicRequest.InputDevices)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputDeviceRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputDevicesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInputSecurityGroups())
-                    {
-                        context.Writer.WritePropertyName("inputSecurityGroups");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputSecurityGroupsListValue in publicRequest.InputSecurityGroups)
-                        {
-                                context.Writer.Write(publicRequestInputSecurityGroupsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMediaConnectFlows())
-                    {
-                        context.Writer.WritePropertyName("mediaConnectFlows");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMediaConnectFlowsListValue in publicRequest.MediaConnectFlows)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MediaConnectFlowRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMediaConnectFlowsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMulticastSettings())
-                    {
-                        context.Writer.WritePropertyName("multicastSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MulticastSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSources())
-                    {
-                        context.Writer.WritePropertyName("sources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputSourceRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSrtSettings())
-                    {
-                        context.Writer.WritePropertyName("srtSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SrtSettingsRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SrtSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetInputDevices())
+            {
+                context.Writer.WritePropertyName("inputDevices");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputDevicesListValue in publicRequest.InputDevices)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputDeviceRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputDevicesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInputSecurityGroups())
+            {
+                context.Writer.WritePropertyName("inputSecurityGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputSecurityGroupsListValue in publicRequest.InputSecurityGroups)
+                {
+                        context.Writer.WriteStringValue(publicRequestInputSecurityGroupsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMediaConnectFlows())
+            {
+                context.Writer.WritePropertyName("mediaConnectFlows");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMediaConnectFlowsListValue in publicRequest.MediaConnectFlows)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MediaConnectFlowRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMediaConnectFlowsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMulticastSettings())
+            {
+                context.Writer.WritePropertyName("multicastSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MulticastSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSources())
+            {
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputSourceRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSrtSettings())
+            {
+                context.Writer.WritePropertyName("srtSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SrtSettingsRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SrtSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

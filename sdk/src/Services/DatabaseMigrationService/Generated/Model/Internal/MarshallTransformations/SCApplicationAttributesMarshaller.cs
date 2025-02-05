@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3BucketPath())
             {
                 context.Writer.WritePropertyName("S3BucketPath");
-                context.Writer.Write(requestObject.S3BucketPath);
+                context.Writer.WriteStringValue(requestObject.S3BucketPath);
             }
 
             if(requestObject.IsSetS3BucketRoleArn())
             {
                 context.Writer.WritePropertyName("S3BucketRoleArn");
-                context.Writer.Write(requestObject.S3BucketRoleArn);
+                context.Writer.WriteStringValue(requestObject.S3BucketRoleArn);
             }
 
         }

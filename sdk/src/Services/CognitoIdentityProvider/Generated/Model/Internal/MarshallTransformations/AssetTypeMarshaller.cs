@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytes())
             {
                 context.Writer.WritePropertyName("Bytes");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Bytes));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.Write(requestObject.Category);
+                context.Writer.WriteStringValue(requestObject.Category);
             }
 
             if(requestObject.IsSetColorMode())
             {
                 context.Writer.WritePropertyName("ColorMode");
-                context.Writer.Write(requestObject.ColorMode);
+                context.Writer.WriteStringValue(requestObject.ColorMode);
             }
 
             if(requestObject.IsSetExtension())
             {
                 context.Writer.WritePropertyName("Extension");
-                context.Writer.Write(requestObject.Extension);
+                context.Writer.WriteStringValue(requestObject.Extension);
             }
 
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
         }

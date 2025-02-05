@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -61,70 +64,75 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/provisioned-model-throughput";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRequestToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCommitmentDuration())
-                    {
-                        context.Writer.WritePropertyName("commitmentDuration");
-                        context.Writer.Write(publicRequest.CommitmentDuration);
-                    }
-
-                    if(publicRequest.IsSetModelId())
-                    {
-                        context.Writer.WritePropertyName("modelId");
-                        context.Writer.Write(publicRequest.ModelId);
-                    }
-
-                    if(publicRequest.IsSetModelUnits())
-                    {
-                        context.Writer.WritePropertyName("modelUnits");
-                        context.Writer.Write(publicRequest.ModelUnits.Value);
-                    }
-
-                    if(publicRequest.IsSetProvisionedModelName())
-                    {
-                        context.Writer.WritePropertyName("provisionedModelName");
-                        context.Writer.Write(publicRequest.ProvisionedModelName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCommitmentDuration())
+            {
+                context.Writer.WritePropertyName("commitmentDuration");
+                context.Writer.WriteStringValue(publicRequest.CommitmentDuration);
+            }
+
+            if(publicRequest.IsSetModelId())
+            {
+                context.Writer.WritePropertyName("modelId");
+                context.Writer.WriteStringValue(publicRequest.ModelId);
+            }
+
+            if(publicRequest.IsSetModelUnits())
+            {
+                context.Writer.WritePropertyName("modelUnits");
+                context.Writer.WriteNumberValue(publicRequest.ModelUnits.Value);
+            }
+
+            if(publicRequest.IsSetProvisionedModelName())
+            {
+                context.Writer.WritePropertyName("provisionedModelName");
+                context.Writer.WriteStringValue(publicRequest.ProvisionedModelName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

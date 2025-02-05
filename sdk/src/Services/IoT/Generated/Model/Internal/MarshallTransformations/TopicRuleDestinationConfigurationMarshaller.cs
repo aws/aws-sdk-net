@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpUrlConfiguration())
             {
                 context.Writer.WritePropertyName("httpUrlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpUrlDestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpUrlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("vpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcDestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

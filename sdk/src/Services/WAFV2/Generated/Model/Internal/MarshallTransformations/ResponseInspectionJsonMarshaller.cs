@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureValues())
             {
                 context.Writer.WritePropertyName("FailureValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFailureValuesListValue in requestObject.FailureValues)
                 {
-                        context.Writer.Write(requestObjectFailureValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectFailureValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("Identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WriteStringValue(requestObject.Identifier);
             }
 
             if(requestObject.IsSetSuccessValues())
             {
                 context.Writer.WritePropertyName("SuccessValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSuccessValuesListValue in requestObject.SuccessValues)
                 {
-                        context.Writer.Write(requestObjectSuccessValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectSuccessValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

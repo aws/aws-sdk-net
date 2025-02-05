@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDukptKeyDerivationType())
             {
                 context.Writer.WritePropertyName("DukptKeyDerivationType");
-                context.Writer.Write(requestObject.DukptKeyDerivationType);
+                context.Writer.WriteStringValue(requestObject.DukptKeyDerivationType);
             }
 
             if(requestObject.IsSetDukptKeyVariant())
             {
                 context.Writer.WritePropertyName("DukptKeyVariant");
-                context.Writer.Write(requestObject.DukptKeyVariant);
+                context.Writer.WriteStringValue(requestObject.DukptKeyVariant);
             }
 
             if(requestObject.IsSetKeySerialNumber())
             {
                 context.Writer.WritePropertyName("KeySerialNumber");
-                context.Writer.Write(requestObject.KeySerialNumber);
+                context.Writer.WriteStringValue(requestObject.KeySerialNumber);
             }
 
         }

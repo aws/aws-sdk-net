@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("dataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("schema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSchemaListValue in requestObject.Schema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnSchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectSchemaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

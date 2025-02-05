@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RedirectActionConfig Object
     /// </summary>  
-    public class RedirectActionConfigUnmarshaller : IUnmarshaller<RedirectActionConfig, XmlUnmarshallerContext>, IUnmarshaller<RedirectActionConfig, JsonUnmarshallerContext>
+    public class RedirectActionConfigUnmarshaller : IXmlUnmarshaller<RedirectActionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RedirectActionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RedirectActionConfigUnmarshaller _instance = new RedirectActionConfigUnmarshaller();        
 

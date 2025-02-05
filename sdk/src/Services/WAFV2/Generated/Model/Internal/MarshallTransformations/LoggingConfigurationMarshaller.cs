@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogDestinationConfigs())
             {
                 context.Writer.WritePropertyName("LogDestinationConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogDestinationConfigsListValue in requestObject.LogDestinationConfigs)
                 {
-                        context.Writer.Write(requestObjectLogDestinationConfigsListValue);
+                        context.Writer.WriteStringValue(requestObjectLogDestinationConfigsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLoggingFilter())
             {
                 context.Writer.WritePropertyName("LoggingFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoggingFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoggingFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogScope())
             {
                 context.Writer.WritePropertyName("LogScope");
-                context.Writer.Write(requestObject.LogScope);
+                context.Writer.WriteStringValue(requestObject.LogScope);
             }
 
             if(requestObject.IsSetLogType())
             {
                 context.Writer.WritePropertyName("LogType");
-                context.Writer.Write(requestObject.LogType);
+                context.Writer.WriteStringValue(requestObject.LogType);
             }
 
             if(requestObject.IsSetManagedByFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedByFirewallManager");
-                context.Writer.Write(requestObject.ManagedByFirewallManager.Value);
+                context.Writer.WriteBooleanValue(requestObject.ManagedByFirewallManager.Value);
             }
 
             if(requestObject.IsSetRedactedFields())
             {
                 context.Writer.WritePropertyName("RedactedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRedactedFieldsListValue in requestObject.RedactedFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldToMatchMarshaller.Instance;
                     marshaller.Marshall(requestObjectRedactedFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
         }

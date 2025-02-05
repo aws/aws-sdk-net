@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("Command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentListValue in requestObject.Environment)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BatchEnvironmentVariableMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetResourceRequirements())
             {
                 context.Writer.WritePropertyName("ResourceRequirements");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceRequirementsListValue in requestObject.ResourceRequirements)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BatchResourceRequirementMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigure())
             {
                 context.Writer.WritePropertyName("Configure");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigureListValue in requestObject.Configure)
                 {
-                        context.Writer.Write(requestObjectConfigureListValue);
+                        context.Writer.WriteStringValue(requestObjectConfigureListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeploy())
             {
                 context.Writer.WritePropertyName("Deploy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDeployListValue in requestObject.Deploy)
                 {
-                        context.Writer.Write(requestObjectDeployListValue);
+                        context.Writer.WriteStringValue(requestObjectDeployListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSetup())
             {
                 context.Writer.WritePropertyName("Setup");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSetupListValue in requestObject.Setup)
                 {
-                        context.Writer.Write(requestObjectSetupListValue);
+                        context.Writer.WriteStringValue(requestObjectSetupListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetShutdown())
             {
                 context.Writer.WritePropertyName("Shutdown");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectShutdownListValue in requestObject.Shutdown)
                 {
-                        context.Writer.Write(requestObjectShutdownListValue);
+                        context.Writer.WriteStringValue(requestObjectShutdownListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUndeploy())
             {
                 context.Writer.WritePropertyName("Undeploy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUndeployListValue in requestObject.Undeploy)
                 {
-                        context.Writer.Write(requestObjectUndeployListValue);
+                        context.Writer.WriteStringValue(requestObjectUndeployListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

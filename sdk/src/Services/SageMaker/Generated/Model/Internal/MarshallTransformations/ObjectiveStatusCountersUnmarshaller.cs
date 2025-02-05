@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ObjectiveStatusCounters Object
     /// </summary>  
-    public class ObjectiveStatusCountersUnmarshaller : IUnmarshaller<ObjectiveStatusCounters, XmlUnmarshallerContext>, IUnmarshaller<ObjectiveStatusCounters, JsonUnmarshallerContext>
+    public class ObjectiveStatusCountersUnmarshaller : IJsonUnmarshaller<ObjectiveStatusCounters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ObjectiveStatusCounters IUnmarshaller<ObjectiveStatusCounters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ObjectiveStatusCounters Unmarshall(JsonUnmarshallerContext context)
+        public ObjectiveStatusCounters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ObjectiveStatusCounters unmarshalledObject = new ObjectiveStatusCounters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Failed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Pending", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pending = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Succeeded", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Succeeded = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Succeeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

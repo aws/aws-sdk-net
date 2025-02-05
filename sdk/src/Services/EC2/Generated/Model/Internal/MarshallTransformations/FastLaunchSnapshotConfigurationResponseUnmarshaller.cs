@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FastLaunchSnapshotConfigurationResponse Object
     /// </summary>  
-    public class FastLaunchSnapshotConfigurationResponseUnmarshaller : IUnmarshaller<FastLaunchSnapshotConfigurationResponse, XmlUnmarshallerContext>, IUnmarshaller<FastLaunchSnapshotConfigurationResponse, JsonUnmarshallerContext>
+    public class FastLaunchSnapshotConfigurationResponseUnmarshaller : IXmlUnmarshaller<FastLaunchSnapshotConfigurationResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FastLaunchSnapshotConfigurationResponse Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FastLaunchSnapshotConfigurationResponseUnmarshaller _instance = new FastLaunchSnapshotConfigurationResponseUnmarshaller();        
 

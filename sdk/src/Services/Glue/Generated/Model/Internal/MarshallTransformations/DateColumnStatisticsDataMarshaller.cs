@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.MaximumValue.Value)));
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.MinimumValue.Value)));
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())
             {
                 context.Writer.WritePropertyName("NumberOfDistinctValues");
-                context.Writer.Write(requestObject.NumberOfDistinctValues.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfDistinctValues.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfNulls.Value);
             }
 
         }

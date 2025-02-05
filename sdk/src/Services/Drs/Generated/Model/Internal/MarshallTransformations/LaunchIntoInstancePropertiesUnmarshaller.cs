@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LaunchIntoInstanceProperties Object
     /// </summary>  
-    public class LaunchIntoInstancePropertiesUnmarshaller : IUnmarshaller<LaunchIntoInstanceProperties, XmlUnmarshallerContext>, IUnmarshaller<LaunchIntoInstanceProperties, JsonUnmarshallerContext>
+    public class LaunchIntoInstancePropertiesUnmarshaller : IJsonUnmarshaller<LaunchIntoInstanceProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LaunchIntoInstanceProperties IUnmarshaller<LaunchIntoInstanceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LaunchIntoInstanceProperties Unmarshall(JsonUnmarshallerContext context)
+        public LaunchIntoInstanceProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LaunchIntoInstanceProperties unmarshalledObject = new LaunchIntoInstanceProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("launchIntoEC2InstanceID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchIntoEC2InstanceID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LaunchIntoEC2InstanceID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJobExecutionTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobExecutionTimeoutMinutes");
-                context.Writer.Write(requestObject.JobExecutionTimeoutMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.JobExecutionTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetTerminateJobsOnUpdate())
             {
                 context.Writer.WritePropertyName("terminateJobsOnUpdate");
-                context.Writer.Write(requestObject.TerminateJobsOnUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.TerminateJobsOnUpdate.Value);
             }
 
         }

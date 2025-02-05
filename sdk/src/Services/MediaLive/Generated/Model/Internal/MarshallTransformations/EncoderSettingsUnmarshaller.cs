@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EncoderSettings Object
     /// </summary>  
-    public class EncoderSettingsUnmarshaller : IUnmarshaller<EncoderSettings, XmlUnmarshallerContext>, IUnmarshaller<EncoderSettings, JsonUnmarshallerContext>
+    public class EncoderSettingsUnmarshaller : IJsonUnmarshaller<EncoderSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EncoderSettings IUnmarshaller<EncoderSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EncoderSettings Unmarshall(JsonUnmarshallerContext context)
+        public EncoderSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EncoderSettings unmarshalledObject = new EncoderSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioDescriptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioDescription, AudioDescriptionUnmarshaller>(AudioDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.AudioDescriptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AudioDescription, AudioDescriptionUnmarshaller>(AudioDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.AudioDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("availBlanking", targetDepth))
                 {
                     var unmarshaller = AvailBlankingUnmarshaller.Instance;
-                    unmarshalledObject.AvailBlanking = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailBlanking = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("availConfiguration", targetDepth))
                 {
                     var unmarshaller = AvailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AvailConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blackoutSlate", targetDepth))
                 {
                     var unmarshaller = BlackoutSlateUnmarshaller.Instance;
-                    unmarshalledObject.BlackoutSlate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlackoutSlate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("captionDescriptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CaptionDescription, CaptionDescriptionUnmarshaller>(CaptionDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CaptionDescription, CaptionDescriptionUnmarshaller>(CaptionDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("colorCorrectionSettings", targetDepth))
                 {
                     var unmarshaller = ColorCorrectionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ColorCorrectionSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorCorrectionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("featureActivations", targetDepth))
                 {
                     var unmarshaller = FeatureActivationsUnmarshaller.Instance;
-                    unmarshalledObject.FeatureActivations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureActivations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("globalConfiguration", targetDepth))
                 {
                     var unmarshaller = GlobalConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.GlobalConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlobalConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("motionGraphicsConfiguration", targetDepth))
                 {
                     var unmarshaller = MotionGraphicsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MotionGraphicsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MotionGraphicsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nielsenConfiguration", targetDepth))
                 {
                     var unmarshaller = NielsenConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);
-                    unmarshalledObject.OutputGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);
+                    unmarshalledObject.OutputGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thumbnailConfiguration", targetDepth))
                 {
                     var unmarshaller = ThumbnailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeConfig", targetDepth))
                 {
                     var unmarshaller = TimecodeConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoDescriptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VideoDescription, VideoDescriptionUnmarshaller>(VideoDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.VideoDescriptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VideoDescription, VideoDescriptionUnmarshaller>(VideoDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.VideoDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

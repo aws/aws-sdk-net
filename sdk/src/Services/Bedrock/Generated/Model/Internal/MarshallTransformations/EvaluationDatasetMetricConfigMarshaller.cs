@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataset())
             {
                 context.Writer.WritePropertyName("dataset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationDatasetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dataset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricNames())
             {
                 context.Writer.WritePropertyName("metricNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricNamesListValue in requestObject.MetricNames)
                 {
-                        context.Writer.Write(requestObjectMetricNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectMetricNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTaskType())
             {
                 context.Writer.WritePropertyName("taskType");
-                context.Writer.Write(requestObject.TaskType);
+                context.Writer.WriteStringValue(requestObject.TaskType);
             }
 
         }

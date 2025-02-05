@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnswerMachineDetectionConfig())
             {
                 context.Writer.WritePropertyName("answerMachineDetectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnswerMachineDetectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AnswerMachineDetectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectContactFlowId())
             {
                 context.Writer.WritePropertyName("connectContactFlowId");
-                context.Writer.Write(requestObject.ConnectContactFlowId);
+                context.Writer.WriteStringValue(requestObject.ConnectContactFlowId);
             }
 
             if(requestObject.IsSetConnectQueueId())
             {
                 context.Writer.WritePropertyName("connectQueueId");
-                context.Writer.Write(requestObject.ConnectQueueId);
+                context.Writer.WriteStringValue(requestObject.ConnectQueueId);
             }
 
             if(requestObject.IsSetConnectSourcePhoneNumber())
             {
                 context.Writer.WritePropertyName("connectSourcePhoneNumber");
-                context.Writer.Write(requestObject.ConnectSourcePhoneNumber);
+                context.Writer.WriteStringValue(requestObject.ConnectSourcePhoneNumber);
             }
 
         }

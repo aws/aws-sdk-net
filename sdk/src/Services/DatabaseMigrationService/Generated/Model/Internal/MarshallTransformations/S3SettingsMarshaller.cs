@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,247 +49,247 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddColumnName())
             {
                 context.Writer.WritePropertyName("AddColumnName");
-                context.Writer.Write(requestObject.AddColumnName.Value);
+                context.Writer.WriteBooleanValue(requestObject.AddColumnName.Value);
             }
 
             if(requestObject.IsSetAddTrailingPaddingCharacter())
             {
                 context.Writer.WritePropertyName("AddTrailingPaddingCharacter");
-                context.Writer.Write(requestObject.AddTrailingPaddingCharacter.Value);
+                context.Writer.WriteBooleanValue(requestObject.AddTrailingPaddingCharacter.Value);
             }
 
             if(requestObject.IsSetBucketFolder())
             {
                 context.Writer.WritePropertyName("BucketFolder");
-                context.Writer.Write(requestObject.BucketFolder);
+                context.Writer.WriteStringValue(requestObject.BucketFolder);
             }
 
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetCannedAclForObjects())
             {
                 context.Writer.WritePropertyName("CannedAclForObjects");
-                context.Writer.Write(requestObject.CannedAclForObjects);
+                context.Writer.WriteStringValue(requestObject.CannedAclForObjects);
             }
 
             if(requestObject.IsSetCdcInsertsAndUpdates())
             {
                 context.Writer.WritePropertyName("CdcInsertsAndUpdates");
-                context.Writer.Write(requestObject.CdcInsertsAndUpdates.Value);
+                context.Writer.WriteBooleanValue(requestObject.CdcInsertsAndUpdates.Value);
             }
 
             if(requestObject.IsSetCdcInsertsOnly())
             {
                 context.Writer.WritePropertyName("CdcInsertsOnly");
-                context.Writer.Write(requestObject.CdcInsertsOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.CdcInsertsOnly.Value);
             }
 
             if(requestObject.IsSetCdcMaxBatchInterval())
             {
                 context.Writer.WritePropertyName("CdcMaxBatchInterval");
-                context.Writer.Write(requestObject.CdcMaxBatchInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.CdcMaxBatchInterval.Value);
             }
 
             if(requestObject.IsSetCdcMinFileSize())
             {
                 context.Writer.WritePropertyName("CdcMinFileSize");
-                context.Writer.Write(requestObject.CdcMinFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.CdcMinFileSize.Value);
             }
 
             if(requestObject.IsSetCdcPath())
             {
                 context.Writer.WritePropertyName("CdcPath");
-                context.Writer.Write(requestObject.CdcPath);
+                context.Writer.WriteStringValue(requestObject.CdcPath);
             }
 
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
+                context.Writer.WriteStringValue(requestObject.CompressionType);
             }
 
             if(requestObject.IsSetCsvDelimiter())
             {
                 context.Writer.WritePropertyName("CsvDelimiter");
-                context.Writer.Write(requestObject.CsvDelimiter);
+                context.Writer.WriteStringValue(requestObject.CsvDelimiter);
             }
 
             if(requestObject.IsSetCsvNoSupValue())
             {
                 context.Writer.WritePropertyName("CsvNoSupValue");
-                context.Writer.Write(requestObject.CsvNoSupValue);
+                context.Writer.WriteStringValue(requestObject.CsvNoSupValue);
             }
 
             if(requestObject.IsSetCsvNullValue())
             {
                 context.Writer.WritePropertyName("CsvNullValue");
-                context.Writer.Write(requestObject.CsvNullValue);
+                context.Writer.WriteStringValue(requestObject.CsvNullValue);
             }
 
             if(requestObject.IsSetCsvRowDelimiter())
             {
                 context.Writer.WritePropertyName("CsvRowDelimiter");
-                context.Writer.Write(requestObject.CsvRowDelimiter);
+                context.Writer.WriteStringValue(requestObject.CsvRowDelimiter);
             }
 
             if(requestObject.IsSetDataFormat())
             {
                 context.Writer.WritePropertyName("DataFormat");
-                context.Writer.Write(requestObject.DataFormat);
+                context.Writer.WriteStringValue(requestObject.DataFormat);
             }
 
             if(requestObject.IsSetDataPageSize())
             {
                 context.Writer.WritePropertyName("DataPageSize");
-                context.Writer.Write(requestObject.DataPageSize.Value);
+                context.Writer.WriteNumberValue(requestObject.DataPageSize.Value);
             }
 
             if(requestObject.IsSetDatePartitionDelimiter())
             {
                 context.Writer.WritePropertyName("DatePartitionDelimiter");
-                context.Writer.Write(requestObject.DatePartitionDelimiter);
+                context.Writer.WriteStringValue(requestObject.DatePartitionDelimiter);
             }
 
             if(requestObject.IsSetDatePartitionEnabled())
             {
                 context.Writer.WritePropertyName("DatePartitionEnabled");
-                context.Writer.Write(requestObject.DatePartitionEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.DatePartitionEnabled.Value);
             }
 
             if(requestObject.IsSetDatePartitionSequence())
             {
                 context.Writer.WritePropertyName("DatePartitionSequence");
-                context.Writer.Write(requestObject.DatePartitionSequence);
+                context.Writer.WriteStringValue(requestObject.DatePartitionSequence);
             }
 
             if(requestObject.IsSetDatePartitionTimezone())
             {
                 context.Writer.WritePropertyName("DatePartitionTimezone");
-                context.Writer.Write(requestObject.DatePartitionTimezone);
+                context.Writer.WriteStringValue(requestObject.DatePartitionTimezone);
             }
 
             if(requestObject.IsSetDictPageSizeLimit())
             {
                 context.Writer.WritePropertyName("DictPageSizeLimit");
-                context.Writer.Write(requestObject.DictPageSizeLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.DictPageSizeLimit.Value);
             }
 
             if(requestObject.IsSetEnableStatistics())
             {
                 context.Writer.WritePropertyName("EnableStatistics");
-                context.Writer.Write(requestObject.EnableStatistics.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableStatistics.Value);
             }
 
             if(requestObject.IsSetEncodingType())
             {
                 context.Writer.WritePropertyName("EncodingType");
-                context.Writer.Write(requestObject.EncodingType);
+                context.Writer.WriteStringValue(requestObject.EncodingType);
             }
 
             if(requestObject.IsSetEncryptionMode())
             {
                 context.Writer.WritePropertyName("EncryptionMode");
-                context.Writer.Write(requestObject.EncryptionMode);
+                context.Writer.WriteStringValue(requestObject.EncryptionMode);
             }
 
             if(requestObject.IsSetExpectedBucketOwner())
             {
                 context.Writer.WritePropertyName("ExpectedBucketOwner");
-                context.Writer.Write(requestObject.ExpectedBucketOwner);
+                context.Writer.WriteStringValue(requestObject.ExpectedBucketOwner);
             }
 
             if(requestObject.IsSetExternalTableDefinition())
             {
                 context.Writer.WritePropertyName("ExternalTableDefinition");
-                context.Writer.Write(requestObject.ExternalTableDefinition);
+                context.Writer.WriteStringValue(requestObject.ExternalTableDefinition);
             }
 
             if(requestObject.IsSetGlueCatalogGeneration())
             {
                 context.Writer.WritePropertyName("GlueCatalogGeneration");
-                context.Writer.Write(requestObject.GlueCatalogGeneration.Value);
+                context.Writer.WriteBooleanValue(requestObject.GlueCatalogGeneration.Value);
             }
 
             if(requestObject.IsSetIgnoreHeaderRows())
             {
                 context.Writer.WritePropertyName("IgnoreHeaderRows");
-                context.Writer.Write(requestObject.IgnoreHeaderRows.Value);
+                context.Writer.WriteNumberValue(requestObject.IgnoreHeaderRows.Value);
             }
 
             if(requestObject.IsSetIncludeOpForFullLoad())
             {
                 context.Writer.WritePropertyName("IncludeOpForFullLoad");
-                context.Writer.Write(requestObject.IncludeOpForFullLoad.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeOpForFullLoad.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetParquetTimestampInMillisecond())
             {
                 context.Writer.WritePropertyName("ParquetTimestampInMillisecond");
-                context.Writer.Write(requestObject.ParquetTimestampInMillisecond.Value);
+                context.Writer.WriteBooleanValue(requestObject.ParquetTimestampInMillisecond.Value);
             }
 
             if(requestObject.IsSetParquetVersion())
             {
                 context.Writer.WritePropertyName("ParquetVersion");
-                context.Writer.Write(requestObject.ParquetVersion);
+                context.Writer.WriteStringValue(requestObject.ParquetVersion);
             }
 
             if(requestObject.IsSetPreserveTransactions())
             {
                 context.Writer.WritePropertyName("PreserveTransactions");
-                context.Writer.Write(requestObject.PreserveTransactions.Value);
+                context.Writer.WriteBooleanValue(requestObject.PreserveTransactions.Value);
             }
 
             if(requestObject.IsSetRfc4180())
             {
                 context.Writer.WritePropertyName("Rfc4180");
-                context.Writer.Write(requestObject.Rfc4180.Value);
+                context.Writer.WriteBooleanValue(requestObject.Rfc4180.Value);
             }
 
             if(requestObject.IsSetRowGroupLength())
             {
                 context.Writer.WritePropertyName("RowGroupLength");
-                context.Writer.Write(requestObject.RowGroupLength.Value);
+                context.Writer.WriteNumberValue(requestObject.RowGroupLength.Value);
             }
 
             if(requestObject.IsSetServerSideEncryptionKmsKeyId())
             {
                 context.Writer.WritePropertyName("ServerSideEncryptionKmsKeyId");
-                context.Writer.Write(requestObject.ServerSideEncryptionKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.ServerSideEncryptionKmsKeyId);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())
             {
                 context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                context.Writer.Write(requestObject.ServiceAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.ServiceAccessRoleArn);
             }
 
             if(requestObject.IsSetTimestampColumnName())
             {
                 context.Writer.WritePropertyName("TimestampColumnName");
-                context.Writer.Write(requestObject.TimestampColumnName);
+                context.Writer.WriteStringValue(requestObject.TimestampColumnName);
             }
 
             if(requestObject.IsSetUseCsvNoSupValue())
             {
                 context.Writer.WritePropertyName("UseCsvNoSupValue");
-                context.Writer.Write(requestObject.UseCsvNoSupValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseCsvNoSupValue.Value);
             }
 
             if(requestObject.IsSetUseTaskStartTimeForFullLoadTimestamp())
             {
                 context.Writer.WritePropertyName("UseTaskStartTimeForFullLoadTimestamp");
-                context.Writer.Write(requestObject.UseTaskStartTimeForFullLoadTimestamp.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseTaskStartTimeForFullLoadTimestamp.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAffectedResources())
             {
                 context.Writer.WritePropertyName("AffectedResources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAffectedResourcesKvp in requestObject.AffectedResources)
                 {
                     context.Writer.WritePropertyName(requestObjectAffectedResourcesKvp.Key);
                     var requestObjectAffectedResourcesValue = requestObjectAffectedResourcesKvp.Value;
 
-                        context.Writer.Write(requestObjectAffectedResourcesValue);
+                        context.Writer.WriteStringValue(requestObjectAffectedResourcesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApi())
             {
                 context.Writer.WritePropertyName("Api");
-                context.Writer.Write(requestObject.Api);
+                context.Writer.WriteStringValue(requestObject.Api);
             }
 
             if(requestObject.IsSetCallerType())
             {
                 context.Writer.WritePropertyName("CallerType");
-                context.Writer.Write(requestObject.CallerType);
+                context.Writer.WriteStringValue(requestObject.CallerType);
             }
 
             if(requestObject.IsSetDomainDetails())
             {
                 context.Writer.WritePropertyName("DomainDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiCallActionDomainDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirstSeen())
             {
                 context.Writer.WritePropertyName("FirstSeen");
-                context.Writer.Write(requestObject.FirstSeen);
+                context.Writer.WriteStringValue(requestObject.FirstSeen);
             }
 
             if(requestObject.IsSetLastSeen())
             {
                 context.Writer.WritePropertyName("LastSeen");
-                context.Writer.Write(requestObject.LastSeen);
+                context.Writer.WriteStringValue(requestObject.LastSeen);
             }
 
             if(requestObject.IsSetRemoteIpDetails())
             {
                 context.Writer.WritePropertyName("RemoteIpDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionRemoteIpDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemoteIpDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("ServiceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WriteStringValue(requestObject.ServiceName);
             }
 
         }

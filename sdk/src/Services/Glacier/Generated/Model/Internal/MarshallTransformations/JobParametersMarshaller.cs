@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchiveId())
             {
                 context.Writer.WritePropertyName("ArchiveId");
-                context.Writer.Write(requestObject.ArchiveId);
+                context.Writer.WriteStringValue(requestObject.ArchiveId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetInventoryRetrievalParameters())
             {
                 context.Writer.WritePropertyName("InventoryRetrievalParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InventoryRetrievalJobInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.InventoryRetrievalParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetrievalByteRange())
             {
                 context.Writer.WritePropertyName("RetrievalByteRange");
-                context.Writer.Write(requestObject.RetrievalByteRange);
+                context.Writer.WriteStringValue(requestObject.RetrievalByteRange);
             }
 
             if(requestObject.IsSetSelectParameters())
             {
                 context.Writer.WritePropertyName("SelectParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelectParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSNSTopic())
             {
                 context.Writer.WritePropertyName("SNSTopic");
-                context.Writer.Write(requestObject.SNSTopic);
+                context.Writer.WriteStringValue(requestObject.SNSTopic);
             }
 
             if(requestObject.IsSetTier())
             {
                 context.Writer.WritePropertyName("Tier");
-                context.Writer.Write(requestObject.Tier);
+                context.Writer.WriteStringValue(requestObject.Tier);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

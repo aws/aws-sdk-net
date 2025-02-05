@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
-                context.Writer.Write(requestObject.CatalogId);
+                context.Writer.WriteStringValue(requestObject.CatalogId);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetQueryAsOfTime())
             {
                 context.Writer.WritePropertyName("QueryAsOfTime");
-                context.Writer.Write(requestObject.QueryAsOfTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.QueryAsOfTime.Value)));
             }
 
             if(requestObject.IsSetQueryParameters())
             {
                 context.Writer.WritePropertyName("QueryParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectQueryParametersKvp in requestObject.QueryParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectQueryParametersKvp.Key);
                     var requestObjectQueryParametersValue = requestObjectQueryParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectQueryParametersValue);
+                        context.Writer.WriteStringValue(requestObjectQueryParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransactionId())
             {
                 context.Writer.WritePropertyName("TransactionId");
-                context.Writer.Write(requestObject.TransactionId);
+                context.Writer.WriteStringValue(requestObject.TransactionId);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomDBEngineVersionAlreadyExistsException operation
     /// </summary>  
-    public class CustomDBEngineVersionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomDBEngineVersionAlreadyExistsException, XmlUnmarshallerContext>
+    public class CustomDBEngineVersionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomDBEngineVersionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

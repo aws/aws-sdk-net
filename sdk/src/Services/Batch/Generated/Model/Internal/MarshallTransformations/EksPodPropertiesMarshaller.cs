@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainersListValue in requestObject.Containers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EksContainerMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDnsPolicy())
             {
                 context.Writer.WritePropertyName("dnsPolicy");
-                context.Writer.Write(requestObject.DnsPolicy);
+                context.Writer.WriteStringValue(requestObject.DnsPolicy);
             }
 
             if(requestObject.IsSetHostNetwork())
             {
                 context.Writer.WritePropertyName("hostNetwork");
-                context.Writer.Write(requestObject.HostNetwork.Value);
+                context.Writer.WriteBooleanValue(requestObject.HostNetwork.Value);
             }
 
             if(requestObject.IsSetImagePullSecrets())
             {
                 context.Writer.WritePropertyName("imagePullSecrets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectImagePullSecretsListValue in requestObject.ImagePullSecrets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ImagePullSecretMarshaller.Instance;
                     marshaller.Marshall(requestObjectImagePullSecretsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInitContainers())
             {
                 context.Writer.WritePropertyName("initContainers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInitContainersListValue in requestObject.InitContainers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EksContainerMarshaller.Instance;
                     marshaller.Marshall(requestObjectInitContainersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.Metadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceAccountName())
             {
                 context.Writer.WritePropertyName("serviceAccountName");
-                context.Writer.Write(requestObject.ServiceAccountName);
+                context.Writer.WriteStringValue(requestObject.ServiceAccountName);
             }
 
             if(requestObject.IsSetShareProcessNamespace())
             {
                 context.Writer.WritePropertyName("shareProcessNamespace");
-                context.Writer.Write(requestObject.ShareProcessNamespace.Value);
+                context.Writer.WriteBooleanValue(requestObject.ShareProcessNamespace.Value);
             }
 
             if(requestObject.IsSetVolumes())
             {
                 context.Writer.WritePropertyName("volumes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVolumesListValue in requestObject.Volumes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EksVolumeMarshaller.Instance;
                     marshaller.Marshall(requestObjectVolumesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

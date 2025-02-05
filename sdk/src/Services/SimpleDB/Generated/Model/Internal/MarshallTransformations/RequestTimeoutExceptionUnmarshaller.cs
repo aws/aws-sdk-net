@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RequestTimeoutException operation
     /// </summary>  
-    public class RequestTimeoutExceptionUnmarshaller : IErrorResponseUnmarshaller<RequestTimeoutException, XmlUnmarshallerContext>
+    public class RequestTimeoutExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RequestTimeoutException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

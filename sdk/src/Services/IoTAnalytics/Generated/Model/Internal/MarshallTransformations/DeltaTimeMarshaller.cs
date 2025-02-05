@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffsetSeconds())
             {
                 context.Writer.WritePropertyName("offsetSeconds");
-                context.Writer.Write(requestObject.OffsetSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.OffsetSeconds.Value);
             }
 
             if(requestObject.IsSetTimeExpression())
             {
                 context.Writer.WritePropertyName("timeExpression");
-                context.Writer.Write(requestObject.TimeExpression);
+                context.Writer.WriteStringValue(requestObject.TimeExpression);
             }
 
         }

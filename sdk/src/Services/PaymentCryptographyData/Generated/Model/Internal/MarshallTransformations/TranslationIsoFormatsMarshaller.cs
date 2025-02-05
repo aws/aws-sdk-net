@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsoFormat0())
             {
                 context.Writer.WritePropertyName("IsoFormat0");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranslationPinDataIsoFormat034Marshaller.Instance;
                 marshaller.Marshall(requestObject.IsoFormat0, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsoFormat1())
             {
                 context.Writer.WritePropertyName("IsoFormat1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranslationPinDataIsoFormat1Marshaller.Instance;
                 marshaller.Marshall(requestObject.IsoFormat1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsoFormat3())
             {
                 context.Writer.WritePropertyName("IsoFormat3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranslationPinDataIsoFormat034Marshaller.Instance;
                 marshaller.Marshall(requestObject.IsoFormat3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsoFormat4())
             {
                 context.Writer.WritePropertyName("IsoFormat4");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranslationPinDataIsoFormat034Marshaller.Instance;
                 marshaller.Marshall(requestObject.IsoFormat4, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

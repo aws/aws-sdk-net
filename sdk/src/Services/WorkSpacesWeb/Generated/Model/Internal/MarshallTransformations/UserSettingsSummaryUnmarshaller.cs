@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UserSettingsSummary Object
     /// </summary>  
-    public class UserSettingsSummaryUnmarshaller : IUnmarshaller<UserSettingsSummary, XmlUnmarshallerContext>, IUnmarshaller<UserSettingsSummary, JsonUnmarshallerContext>
+    public class UserSettingsSummaryUnmarshaller : IJsonUnmarshaller<UserSettingsSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UserSettingsSummary IUnmarshaller<UserSettingsSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UserSettingsSummary Unmarshall(JsonUnmarshallerContext context)
+        public UserSettingsSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UserSettingsSummary unmarshalledObject = new UserSettingsSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cookieSynchronizationConfiguration", targetDepth))
                 {
                     var unmarshaller = CookieSynchronizationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CookieSynchronizationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CookieSynchronizationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("copyAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deepLinkAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeepLinkAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeepLinkAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("downloadAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DownloadAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DownloadAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("idleDisconnectTimeoutInMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IdleDisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdleDisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pasteAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PasteAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PasteAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("printAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrintAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrintAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("uploadAllowed", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UploadAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UploadAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("userSettingsArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserSettingsArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserSettingsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

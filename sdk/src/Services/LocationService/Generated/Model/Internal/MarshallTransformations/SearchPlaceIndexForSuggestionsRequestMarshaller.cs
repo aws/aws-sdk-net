@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -67,81 +70,86 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/places/v0/indexes/{IndexName}/search/suggestions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBiasPosition())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("BiasPosition");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBiasPosition())
-                    {
-                        context.Writer.WritePropertyName("BiasPosition");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
-                        {
-                                context.Writer.Write(publicRequestBiasPositionListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterBBox())
-                    {
-                        context.Writer.WritePropertyName("FilterBBox");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterBBoxListValue in publicRequest.FilterBBox)
-                        {
-                                context.Writer.Write(publicRequestFilterBBoxListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterCategories())
-                    {
-                        context.Writer.WritePropertyName("FilterCategories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
-                        {
-                                context.Writer.Write(publicRequestFilterCategoriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterCountries())
-                    {
-                        context.Writer.WritePropertyName("FilterCountries");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterCountriesListValue in publicRequest.FilterCountries)
-                        {
-                                context.Writer.Write(publicRequestFilterCountriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("Language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetText())
-                    {
-                        context.Writer.WritePropertyName("Text");
-                        context.Writer.Write(publicRequest.Text);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteNumberValue(publicRequestBiasPositionListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFilterBBox())
+            {
+                context.Writer.WritePropertyName("FilterBBox");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterBBoxListValue in publicRequest.FilterBBox)
+                {
+                        context.Writer.WriteNumberValue(publicRequestFilterBBoxListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFilterCategories())
+            {
+                context.Writer.WritePropertyName("FilterCategories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
+                {
+                        context.Writer.WriteStringValue(publicRequestFilterCategoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFilterCountries())
+            {
+                context.Writer.WritePropertyName("FilterCountries");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterCountriesListValue in publicRequest.FilterCountries)
+                {
+                        context.Writer.WriteStringValue(publicRequestFilterCountriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("Language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetText())
+            {
+                context.Writer.WritePropertyName("Text");
+                context.Writer.WriteStringValue(publicRequest.Text);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
             

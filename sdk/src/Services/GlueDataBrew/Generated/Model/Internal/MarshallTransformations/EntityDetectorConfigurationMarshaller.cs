@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedStatistics())
             {
                 context.Writer.WritePropertyName("AllowedStatistics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedStatisticsListValue in requestObject.AllowedStatistics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AllowedStatisticsMarshaller.Instance;
                     marshaller.Marshall(requestObjectAllowedStatisticsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntityTypes())
             {
                 context.Writer.WritePropertyName("EntityTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityTypesListValue in requestObject.EntityTypes)
                 {
-                        context.Writer.Write(requestObjectEntityTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("Properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrivateDnsNamespacePropertiesChangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Properties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

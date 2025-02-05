@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSnapshotTenantDatabaseNotFoundException operation
     /// </summary>  
-    public class DBSnapshotTenantDatabaseNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSnapshotTenantDatabaseNotFoundException, XmlUnmarshallerContext>
+    public class DBSnapshotTenantDatabaseNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSnapshotTenantDatabaseNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

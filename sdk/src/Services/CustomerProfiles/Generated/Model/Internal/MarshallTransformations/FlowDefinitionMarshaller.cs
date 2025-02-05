@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFlowName())
             {
                 context.Writer.WritePropertyName("FlowName");
-                context.Writer.Write(requestObject.FlowName);
+                context.Writer.WriteStringValue(requestObject.FlowName);
             }
 
             if(requestObject.IsSetKmsArn())
             {
                 context.Writer.WritePropertyName("KmsArn");
-                context.Writer.Write(requestObject.KmsArn);
+                context.Writer.WriteStringValue(requestObject.KmsArn);
             }
 
             if(requestObject.IsSetSourceFlowConfig())
             {
                 context.Writer.WritePropertyName("SourceFlowConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceFlowConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceFlowConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTasks())
             {
                 context.Writer.WritePropertyName("Tasks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTasksListValue in requestObject.Tasks)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TaskMarshaller.Instance;
                     marshaller.Marshall(requestObjectTasksListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTriggerConfig())
             {
                 context.Writer.WritePropertyName("TriggerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TriggerConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TriggerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrialComponentSourceDetail Object
     /// </summary>  
-    public class TrialComponentSourceDetailUnmarshaller : IUnmarshaller<TrialComponentSourceDetail, XmlUnmarshallerContext>, IUnmarshaller<TrialComponentSourceDetail, JsonUnmarshallerContext>
+    public class TrialComponentSourceDetailUnmarshaller : IJsonUnmarshaller<TrialComponentSourceDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrialComponentSourceDetail IUnmarshaller<TrialComponentSourceDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrialComponentSourceDetail Unmarshall(JsonUnmarshallerContext context)
+        public TrialComponentSourceDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrialComponentSourceDetail unmarshalledObject = new TrialComponentSourceDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ProcessingJob", targetDepth))
                 {
                     var unmarshaller = ProcessingJobUnmarshaller.Instance;
-                    unmarshalledObject.ProcessingJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProcessingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJob", targetDepth))
                 {
                     var unmarshaller = TrainingJobUnmarshaller.Instance;
-                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransformJob", targetDepth))
                 {
                     var unmarshaller = TransformJobUnmarshaller.Instance;
-                    unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

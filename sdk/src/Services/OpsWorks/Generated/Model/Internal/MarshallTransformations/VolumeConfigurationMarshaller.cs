@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetMountPoint())
             {
                 context.Writer.WritePropertyName("MountPoint");
-                context.Writer.Write(requestObject.MountPoint);
+                context.Writer.WriteStringValue(requestObject.MountPoint);
             }
 
             if(requestObject.IsSetNumberOfDisks())
             {
                 context.Writer.WritePropertyName("NumberOfDisks");
-                context.Writer.Write(requestObject.NumberOfDisks.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfDisks.Value);
             }
 
             if(requestObject.IsSetRaidLevel())
             {
                 context.Writer.WritePropertyName("RaidLevel");
-                context.Writer.Write(requestObject.RaidLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.RaidLevel.Value);
             }
 
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size.Value);
+                context.Writer.WriteNumberValue(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
-                context.Writer.Write(requestObject.VolumeType);
+                context.Writer.WriteStringValue(requestObject.VolumeType);
             }
 
         }

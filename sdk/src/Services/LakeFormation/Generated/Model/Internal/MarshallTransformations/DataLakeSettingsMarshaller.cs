@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,129 +49,129 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowExternalDataFiltering())
             {
                 context.Writer.WritePropertyName("AllowExternalDataFiltering");
-                context.Writer.Write(requestObject.AllowExternalDataFiltering.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowExternalDataFiltering.Value);
             }
 
             if(requestObject.IsSetAllowFullTableExternalDataAccess())
             {
                 context.Writer.WritePropertyName("AllowFullTableExternalDataAccess");
-                context.Writer.Write(requestObject.AllowFullTableExternalDataAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowFullTableExternalDataAccess.Value);
             }
 
             if(requestObject.IsSetAuthorizedSessionTagValueList())
             {
                 context.Writer.WritePropertyName("AuthorizedSessionTagValueList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuthorizedSessionTagValueListListValue in requestObject.AuthorizedSessionTagValueList)
                 {
-                        context.Writer.Write(requestObjectAuthorizedSessionTagValueListListValue);
+                        context.Writer.WriteStringValue(requestObjectAuthorizedSessionTagValueListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreateDatabaseDefaultPermissions())
             {
                 context.Writer.WritePropertyName("CreateDatabaseDefaultPermissions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCreateDatabaseDefaultPermissionsListValue in requestObject.CreateDatabaseDefaultPermissions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PrincipalPermissionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectCreateDatabaseDefaultPermissionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreateTableDefaultPermissions())
             {
                 context.Writer.WritePropertyName("CreateTableDefaultPermissions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCreateTableDefaultPermissionsListValue in requestObject.CreateTableDefaultPermissions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PrincipalPermissionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectCreateTableDefaultPermissionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataLakeAdmins())
             {
                 context.Writer.WritePropertyName("DataLakeAdmins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataLakeAdminsListValue in requestObject.DataLakeAdmins)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataLakePrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataLakeAdminsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExternalDataFilteringAllowList())
             {
                 context.Writer.WritePropertyName("ExternalDataFilteringAllowList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExternalDataFilteringAllowListListValue in requestObject.ExternalDataFilteringAllowList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataLakePrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectExternalDataFilteringAllowListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReadOnlyAdmins())
             {
                 context.Writer.WritePropertyName("ReadOnlyAdmins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReadOnlyAdminsListValue in requestObject.ReadOnlyAdmins)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataLakePrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectReadOnlyAdminsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTrustedResourceOwners())
             {
                 context.Writer.WritePropertyName("TrustedResourceOwners");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTrustedResourceOwnersListValue in requestObject.TrustedResourceOwners)
                 {
-                        context.Writer.Write(requestObjectTrustedResourceOwnersListValue);
+                        context.Writer.WriteStringValue(requestObjectTrustedResourceOwnersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

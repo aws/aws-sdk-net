@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarmNames())
             {
                 context.Writer.WritePropertyName("alarmNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlarmNamesListValue in requestObject.AlarmNames)
                 {
-                        context.Writer.Write(requestObjectAlarmNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAlarmNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnable())
             {
                 context.Writer.WritePropertyName("enable");
-                context.Writer.Write(requestObject.Enable.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enable.Value);
             }
 
             if(requestObject.IsSetRollback())
             {
                 context.Writer.WritePropertyName("rollback");
-                context.Writer.Write(requestObject.Rollback.Value);
+                context.Writer.WriteBooleanValue(requestObject.Rollback.Value);
             }
 
         }

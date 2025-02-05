@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -48,7 +48,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         {
             PutCommentReactionResponse response = new PutCommentReactionResponse();
 
-
             return response;
         }
 
@@ -61,42 +60,44 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CommentDeletedException"))
                 {
-                    return CommentDeletedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CommentDeletedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CommentDoesNotExistException"))
                 {
-                    return CommentDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CommentDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CommentIdRequiredException"))
                 {
-                    return CommentIdRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CommentIdRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCommentIdException"))
                 {
-                    return InvalidCommentIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidCommentIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidReactionValueException"))
                 {
-                    return InvalidReactionValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidReactionValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReactionLimitExceededException"))
                 {
-                    return ReactionLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ReactionLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReactionValueRequiredException"))
                 {
-                    return ReactionValueRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ReactionValueRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCodeCommitException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

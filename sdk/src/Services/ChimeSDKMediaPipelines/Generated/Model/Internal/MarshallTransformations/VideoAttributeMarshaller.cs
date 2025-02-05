@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorderColor())
             {
                 context.Writer.WritePropertyName("BorderColor");
-                context.Writer.Write(requestObject.BorderColor);
+                context.Writer.WriteStringValue(requestObject.BorderColor);
             }
 
             if(requestObject.IsSetBorderThickness())
             {
                 context.Writer.WritePropertyName("BorderThickness");
-                context.Writer.Write(requestObject.BorderThickness.Value);
+                context.Writer.WriteNumberValue(requestObject.BorderThickness.Value);
             }
 
             if(requestObject.IsSetCornerRadius())
             {
                 context.Writer.WritePropertyName("CornerRadius");
-                context.Writer.Write(requestObject.CornerRadius.Value);
+                context.Writer.WriteNumberValue(requestObject.CornerRadius.Value);
             }
 
             if(requestObject.IsSetHighlightColor())
             {
                 context.Writer.WritePropertyName("HighlightColor");
-                context.Writer.Write(requestObject.HighlightColor);
+                context.Writer.WriteStringValue(requestObject.HighlightColor);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableHiveCompatiblePath())
             {
                 context.Writer.WritePropertyName("enableHiveCompatiblePath");
-                context.Writer.Write(requestObject.EnableHiveCompatiblePath.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableHiveCompatiblePath.Value);
             }
 
             if(requestObject.IsSetSuffixPath())
             {
                 context.Writer.WritePropertyName("suffixPath");
-                context.Writer.Write(requestObject.SuffixPath);
+                context.Writer.WriteStringValue(requestObject.SuffixPath);
             }
 
         }

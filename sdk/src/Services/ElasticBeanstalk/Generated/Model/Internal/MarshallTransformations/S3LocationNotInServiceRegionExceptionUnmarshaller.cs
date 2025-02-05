@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3LocationNotInServiceRegionException operation
     /// </summary>  
-    public class S3LocationNotInServiceRegionExceptionUnmarshaller : IErrorResponseUnmarshaller<S3LocationNotInServiceRegionException, XmlUnmarshallerContext>
+    public class S3LocationNotInServiceRegionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<S3LocationNotInServiceRegionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

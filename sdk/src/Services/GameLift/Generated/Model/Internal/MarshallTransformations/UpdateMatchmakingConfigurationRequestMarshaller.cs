@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -63,118 +66,123 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceptanceRequired())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceptanceRequired())
-                    {
-                        context.Writer.WritePropertyName("AcceptanceRequired");
-                        context.Writer.Write(publicRequest.AcceptanceRequired.Value);
-                    }
-
-                    if(publicRequest.IsSetAcceptanceTimeoutSeconds())
-                    {
-                        context.Writer.WritePropertyName("AcceptanceTimeoutSeconds");
-                        context.Writer.Write(publicRequest.AcceptanceTimeoutSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetAdditionalPlayerCount())
-                    {
-                        context.Writer.WritePropertyName("AdditionalPlayerCount");
-                        context.Writer.Write(publicRequest.AdditionalPlayerCount.Value);
-                    }
-
-                    if(publicRequest.IsSetBackfillMode())
-                    {
-                        context.Writer.WritePropertyName("BackfillMode");
-                        context.Writer.Write(publicRequest.BackfillMode);
-                    }
-
-                    if(publicRequest.IsSetCustomEventData())
-                    {
-                        context.Writer.WritePropertyName("CustomEventData");
-                        context.Writer.Write(publicRequest.CustomEventData);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFlexMatchMode())
-                    {
-                        context.Writer.WritePropertyName("FlexMatchMode");
-                        context.Writer.Write(publicRequest.FlexMatchMode);
-                    }
-
-                    if(publicRequest.IsSetGameProperties())
-                    {
-                        context.Writer.WritePropertyName("GameProperties");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GamePropertyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGamePropertiesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetGameSessionData())
-                    {
-                        context.Writer.WritePropertyName("GameSessionData");
-                        context.Writer.Write(publicRequest.GameSessionData);
-                    }
-
-                    if(publicRequest.IsSetGameSessionQueueArns())
-                    {
-                        context.Writer.WritePropertyName("GameSessionQueueArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGameSessionQueueArnsListValue in publicRequest.GameSessionQueueArns)
-                        {
-                                context.Writer.Write(publicRequestGameSessionQueueArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNotificationTarget())
-                    {
-                        context.Writer.WritePropertyName("NotificationTarget");
-                        context.Writer.Write(publicRequest.NotificationTarget);
-                    }
-
-                    if(publicRequest.IsSetRequestTimeoutSeconds())
-                    {
-                        context.Writer.WritePropertyName("RequestTimeoutSeconds");
-                        context.Writer.Write(publicRequest.RequestTimeoutSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetRuleSetName())
-                    {
-                        context.Writer.WritePropertyName("RuleSetName");
-                        context.Writer.Write(publicRequest.RuleSetName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AcceptanceRequired");
+                context.Writer.WriteBooleanValue(publicRequest.AcceptanceRequired.Value);
             }
+
+            if(publicRequest.IsSetAcceptanceTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("AcceptanceTimeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.AcceptanceTimeoutSeconds.Value);
+            }
+
+            if(publicRequest.IsSetAdditionalPlayerCount())
+            {
+                context.Writer.WritePropertyName("AdditionalPlayerCount");
+                context.Writer.WriteNumberValue(publicRequest.AdditionalPlayerCount.Value);
+            }
+
+            if(publicRequest.IsSetBackfillMode())
+            {
+                context.Writer.WritePropertyName("BackfillMode");
+                context.Writer.WriteStringValue(publicRequest.BackfillMode);
+            }
+
+            if(publicRequest.IsSetCustomEventData())
+            {
+                context.Writer.WritePropertyName("CustomEventData");
+                context.Writer.WriteStringValue(publicRequest.CustomEventData);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFlexMatchMode())
+            {
+                context.Writer.WritePropertyName("FlexMatchMode");
+                context.Writer.WriteStringValue(publicRequest.FlexMatchMode);
+            }
+
+            if(publicRequest.IsSetGameProperties())
+            {
+                context.Writer.WritePropertyName("GameProperties");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GamePropertyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetGameSessionData())
+            {
+                context.Writer.WritePropertyName("GameSessionData");
+                context.Writer.WriteStringValue(publicRequest.GameSessionData);
+            }
+
+            if(publicRequest.IsSetGameSessionQueueArns())
+            {
+                context.Writer.WritePropertyName("GameSessionQueueArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGameSessionQueueArnsListValue in publicRequest.GameSessionQueueArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestGameSessionQueueArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNotificationTarget())
+            {
+                context.Writer.WritePropertyName("NotificationTarget");
+                context.Writer.WriteStringValue(publicRequest.NotificationTarget);
+            }
+
+            if(publicRequest.IsSetRequestTimeoutSeconds())
+            {
+                context.Writer.WritePropertyName("RequestTimeoutSeconds");
+                context.Writer.WriteNumberValue(publicRequest.RequestTimeoutSeconds.Value);
+            }
+
+            if(publicRequest.IsSetRuleSetName())
+            {
+                context.Writer.WritePropertyName("RuleSetName");
+                context.Writer.WriteStringValue(publicRequest.RuleSetName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

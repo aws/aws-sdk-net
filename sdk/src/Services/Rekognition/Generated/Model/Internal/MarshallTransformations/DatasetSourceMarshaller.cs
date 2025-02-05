@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetArn())
             {
                 context.Writer.WritePropertyName("DatasetArn");
-                context.Writer.Write(requestObject.DatasetArn);
+                context.Writer.WriteStringValue(requestObject.DatasetArn);
             }
 
             if(requestObject.IsSetGroundTruthManifest())
             {
                 context.Writer.WritePropertyName("GroundTruthManifest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GroundTruthManifestMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroundTruthManifest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

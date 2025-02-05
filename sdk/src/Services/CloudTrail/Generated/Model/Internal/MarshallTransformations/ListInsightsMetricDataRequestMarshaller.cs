@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -63,79 +66,84 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataType())
-                    {
-                        context.Writer.WritePropertyName("DataType");
-                        context.Writer.Write(publicRequest.DataType);
-                    }
-
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("EndTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetErrorCode())
-                    {
-                        context.Writer.WritePropertyName("ErrorCode");
-                        context.Writer.Write(publicRequest.ErrorCode);
-                    }
-
-                    if(publicRequest.IsSetEventName())
-                    {
-                        context.Writer.WritePropertyName("EventName");
-                        context.Writer.Write(publicRequest.EventName);
-                    }
-
-                    if(publicRequest.IsSetEventSource())
-                    {
-                        context.Writer.WritePropertyName("EventSource");
-                        context.Writer.Write(publicRequest.EventSource);
-                    }
-
-                    if(publicRequest.IsSetInsightType())
-                    {
-                        context.Writer.WritePropertyName("InsightType");
-                        context.Writer.Write(publicRequest.InsightType);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetPeriod())
-                    {
-                        context.Writer.WritePropertyName("Period");
-                        context.Writer.Write(publicRequest.Period.Value);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("StartTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DataType");
+                context.Writer.WriteStringValue(publicRequest.DataType);
             }
+
+            if(publicRequest.IsSetEndTime())
+            {
+                context.Writer.WritePropertyName("EndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
+            }
+
+            if(publicRequest.IsSetErrorCode())
+            {
+                context.Writer.WritePropertyName("ErrorCode");
+                context.Writer.WriteStringValue(publicRequest.ErrorCode);
+            }
+
+            if(publicRequest.IsSetEventName())
+            {
+                context.Writer.WritePropertyName("EventName");
+                context.Writer.WriteStringValue(publicRequest.EventName);
+            }
+
+            if(publicRequest.IsSetEventSource())
+            {
+                context.Writer.WritePropertyName("EventSource");
+                context.Writer.WriteStringValue(publicRequest.EventSource);
+            }
+
+            if(publicRequest.IsSetInsightType())
+            {
+                context.Writer.WritePropertyName("InsightType");
+                context.Writer.WriteStringValue(publicRequest.InsightType);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetPeriod())
+            {
+                context.Writer.WritePropertyName("Period");
+                context.Writer.WriteNumberValue(publicRequest.Period.Value);
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("StartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

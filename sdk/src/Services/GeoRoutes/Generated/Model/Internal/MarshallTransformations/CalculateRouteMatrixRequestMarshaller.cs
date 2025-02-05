@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -64,141 +67,146 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/route-matrix";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllow())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllow())
-                    {
-                        context.Writer.WritePropertyName("Allow");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Allow");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = RouteMatrixAllowOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Allow, context);
+                var marshaller = RouteMatrixAllowOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Allow, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAvoid())
-                    {
-                        context.Writer.WritePropertyName("Avoid");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteMatrixAvoidanceOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Avoid, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDepartNow())
-                    {
-                        context.Writer.WritePropertyName("DepartNow");
-                        context.Writer.Write(publicRequest.DepartNow.Value);
-                    }
-
-                    if(publicRequest.IsSetDepartureTime())
-                    {
-                        context.Writer.WritePropertyName("DepartureTime");
-                        context.Writer.Write(publicRequest.DepartureTime);
-                    }
-
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("Destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RouteMatrixDestinationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetExclude())
-                    {
-                        context.Writer.WritePropertyName("Exclude");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteMatrixExclusionOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Exclude, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOptimizeRoutingFor())
-                    {
-                        context.Writer.WritePropertyName("OptimizeRoutingFor");
-                        context.Writer.Write(publicRequest.OptimizeRoutingFor);
-                    }
-
-                    if(publicRequest.IsSetOrigins())
-                    {
-                        context.Writer.WritePropertyName("Origins");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOriginsListValue in publicRequest.Origins)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RouteMatrixOriginMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOriginsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRoutingBoundary())
-                    {
-                        context.Writer.WritePropertyName("RoutingBoundary");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteMatrixBoundaryMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RoutingBoundary, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTraffic())
-                    {
-                        context.Writer.WritePropertyName("Traffic");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteMatrixTrafficOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Traffic, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTravelMode())
-                    {
-                        context.Writer.WritePropertyName("TravelMode");
-                        context.Writer.Write(publicRequest.TravelMode);
-                    }
-
-                    if(publicRequest.IsSetTravelModeOptions())
-                    {
-                        context.Writer.WritePropertyName("TravelModeOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteMatrixTravelModeOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TravelModeOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAvoid())
+            {
+                context.Writer.WritePropertyName("Avoid");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMatrixAvoidanceOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Avoid, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDepartNow())
+            {
+                context.Writer.WritePropertyName("DepartNow");
+                context.Writer.WriteBooleanValue(publicRequest.DepartNow.Value);
+            }
+
+            if(publicRequest.IsSetDepartureTime())
+            {
+                context.Writer.WritePropertyName("DepartureTime");
+                context.Writer.WriteStringValue(publicRequest.DepartureTime);
+            }
+
+            if(publicRequest.IsSetDestinations())
+            {
+                context.Writer.WritePropertyName("Destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RouteMatrixDestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetExclude())
+            {
+                context.Writer.WritePropertyName("Exclude");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMatrixExclusionOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Exclude, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOptimizeRoutingFor())
+            {
+                context.Writer.WritePropertyName("OptimizeRoutingFor");
+                context.Writer.WriteStringValue(publicRequest.OptimizeRoutingFor);
+            }
+
+            if(publicRequest.IsSetOrigins())
+            {
+                context.Writer.WritePropertyName("Origins");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOriginsListValue in publicRequest.Origins)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RouteMatrixOriginMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOriginsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRoutingBoundary())
+            {
+                context.Writer.WritePropertyName("RoutingBoundary");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMatrixBoundaryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RoutingBoundary, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTraffic())
+            {
+                context.Writer.WritePropertyName("Traffic");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMatrixTrafficOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Traffic, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTravelMode())
+            {
+                context.Writer.WritePropertyName("TravelMode");
+                context.Writer.WriteStringValue(publicRequest.TravelMode);
+            }
+
+            if(publicRequest.IsSetTravelModeOptions())
+            {
+                context.Writer.WritePropertyName("TravelModeOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouteMatrixTravelModeOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TravelModeOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

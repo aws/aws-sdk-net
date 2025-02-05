@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,91 +66,96 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFlowDefinitionName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFlowDefinitionName())
-                    {
-                        context.Writer.WritePropertyName("FlowDefinitionName");
-                        context.Writer.Write(publicRequest.FlowDefinitionName);
-                    }
-
-                    if(publicRequest.IsSetHumanLoopActivationConfig())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopActivationConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HumanLoopActivationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopActivationConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHumanLoopConfig())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HumanLoopConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHumanLoopRequestSource())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopRequestSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HumanLoopRequestSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopRequestSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FlowDefinitionOutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("FlowDefinitionName");
+                context.Writer.WriteStringValue(publicRequest.FlowDefinitionName);
             }
+
+            if(publicRequest.IsSetHumanLoopActivationConfig())
+            {
+                context.Writer.WritePropertyName("HumanLoopActivationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HumanLoopActivationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopActivationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHumanLoopConfig())
+            {
+                context.Writer.WritePropertyName("HumanLoopConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HumanLoopConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHumanLoopRequestSource())
+            {
+                context.Writer.WritePropertyName("HumanLoopRequestSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HumanLoopRequestSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopRequestSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("OutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowDefinitionOutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

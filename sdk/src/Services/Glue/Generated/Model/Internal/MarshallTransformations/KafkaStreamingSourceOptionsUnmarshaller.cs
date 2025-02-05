@@ -29,155 +29,145 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KafkaStreamingSourceOptions Object
     /// </summary>  
-    public class KafkaStreamingSourceOptionsUnmarshaller : IUnmarshaller<KafkaStreamingSourceOptions, XmlUnmarshallerContext>, IUnmarshaller<KafkaStreamingSourceOptions, JsonUnmarshallerContext>
+    public class KafkaStreamingSourceOptionsUnmarshaller : IJsonUnmarshaller<KafkaStreamingSourceOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KafkaStreamingSourceOptions IUnmarshaller<KafkaStreamingSourceOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KafkaStreamingSourceOptions Unmarshall(JsonUnmarshallerContext context)
+        public KafkaStreamingSourceOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KafkaStreamingSourceOptions unmarshalledObject = new KafkaStreamingSourceOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AddRecordTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddRecordTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddRecordTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Assign", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Assign = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Assign = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BootstrapServers", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BootstrapServers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BootstrapServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Classification", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Classification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Classification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Delimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Delimiter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Delimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmitConsumerLagMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmitConsumerLagMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmitConsumerLagMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndingOffsets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndingOffsets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndingOffsets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeHeaders", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeHeaders = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxOffsetsPerTrigger", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaxOffsetsPerTrigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxOffsetsPerTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinPartitions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinPartitions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinPartitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumRetries", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PollTimeoutMs", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PollTimeoutMs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PollTimeoutMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetryIntervalMs", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RetryIntervalMs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetryIntervalMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecurityProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartingOffsets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartingOffsets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartingOffsets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartingTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartingTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartingTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscribePattern", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscribePattern = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscribePattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopicName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

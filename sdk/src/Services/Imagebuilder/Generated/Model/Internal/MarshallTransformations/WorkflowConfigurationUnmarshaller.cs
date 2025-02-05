@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkflowConfiguration Object
     /// </summary>  
-    public class WorkflowConfigurationUnmarshaller : IUnmarshaller<WorkflowConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WorkflowConfiguration, JsonUnmarshallerContext>
+    public class WorkflowConfigurationUnmarshaller : IJsonUnmarshaller<WorkflowConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkflowConfiguration IUnmarshaller<WorkflowConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkflowConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkflowConfiguration unmarshalledObject = new WorkflowConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("onFailure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parallelGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParallelGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParallelGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parameters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<WorkflowParameter, WorkflowParameterUnmarshaller>(WorkflowParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<WorkflowParameter, WorkflowParameterUnmarshaller>(WorkflowParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workflowArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkflowArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkflowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

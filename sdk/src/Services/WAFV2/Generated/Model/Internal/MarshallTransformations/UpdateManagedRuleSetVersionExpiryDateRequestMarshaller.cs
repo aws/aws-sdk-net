@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExpiryTimestamp())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExpiryTimestamp())
-                    {
-                        context.Writer.WritePropertyName("ExpiryTimestamp");
-                        context.Writer.Write(publicRequest.ExpiryTimestamp.Value);
-                    }
-
-                    if(publicRequest.IsSetId())
-                    {
-                        context.Writer.WritePropertyName("Id");
-                        context.Writer.Write(publicRequest.Id);
-                    }
-
-                    if(publicRequest.IsSetLockToken())
-                    {
-                        context.Writer.WritePropertyName("LockToken");
-                        context.Writer.Write(publicRequest.LockToken);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("Scope");
-                        context.Writer.Write(publicRequest.Scope);
-                    }
-
-                    if(publicRequest.IsSetVersionToExpire())
-                    {
-                        context.Writer.WritePropertyName("VersionToExpire");
-                        context.Writer.Write(publicRequest.VersionToExpire);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExpiryTimestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpiryTimestamp.Value)));
             }
+
+            if(publicRequest.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.WriteStringValue(publicRequest.Id);
+            }
+
+            if(publicRequest.IsSetLockToken())
+            {
+                context.Writer.WritePropertyName("LockToken");
+                context.Writer.WriteStringValue(publicRequest.LockToken);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.WriteStringValue(publicRequest.Scope);
+            }
+
+            if(publicRequest.IsSetVersionToExpire())
+            {
+                context.Writer.WritePropertyName("VersionToExpire");
+                context.Writer.WriteStringValue(publicRequest.VersionToExpire);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

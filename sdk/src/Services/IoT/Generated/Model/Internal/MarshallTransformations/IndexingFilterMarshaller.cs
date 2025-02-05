@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeoLocations())
             {
                 context.Writer.WritePropertyName("geoLocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGeoLocationsListValue in requestObject.GeoLocations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GeoLocationTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectGeoLocationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNamedShadowNames())
             {
                 context.Writer.WritePropertyName("namedShadowNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNamedShadowNamesListValue in requestObject.NamedShadowNames)
                 {
-                        context.Writer.Write(requestObjectNamedShadowNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectNamedShadowNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

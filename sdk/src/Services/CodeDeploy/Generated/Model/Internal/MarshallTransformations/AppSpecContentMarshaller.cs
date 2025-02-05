@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("content");
-                context.Writer.Write(requestObject.Content);
+                context.Writer.WriteStringValue(requestObject.Content);
             }
 
             if(requestObject.IsSetSha256())
             {
                 context.Writer.WritePropertyName("sha256");
-                context.Writer.Write(requestObject.Sha256);
+                context.Writer.WriteStringValue(requestObject.Sha256);
             }
 
         }

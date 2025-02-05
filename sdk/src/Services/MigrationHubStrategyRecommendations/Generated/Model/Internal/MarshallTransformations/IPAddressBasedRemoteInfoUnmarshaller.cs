@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IPAddressBasedRemoteInfo Object
     /// </summary>  
-    public class IPAddressBasedRemoteInfoUnmarshaller : IUnmarshaller<IPAddressBasedRemoteInfo, XmlUnmarshallerContext>, IUnmarshaller<IPAddressBasedRemoteInfo, JsonUnmarshallerContext>
+    public class IPAddressBasedRemoteInfoUnmarshaller : IJsonUnmarshaller<IPAddressBasedRemoteInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IPAddressBasedRemoteInfo IUnmarshaller<IPAddressBasedRemoteInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IPAddressBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
+        public IPAddressBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IPAddressBasedRemoteInfo unmarshalledObject = new IPAddressBasedRemoteInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ipAddressConfigurationTimeStamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddressConfigurationTimeStamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpAddressConfigurationTimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("osType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OsType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OsType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

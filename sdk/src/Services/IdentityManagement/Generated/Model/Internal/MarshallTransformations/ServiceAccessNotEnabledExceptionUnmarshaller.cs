@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceAccessNotEnabledException operation
     /// </summary>  
-    public class ServiceAccessNotEnabledExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceAccessNotEnabledException, XmlUnmarshallerContext>
+    public class ServiceAccessNotEnabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceAccessNotEnabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

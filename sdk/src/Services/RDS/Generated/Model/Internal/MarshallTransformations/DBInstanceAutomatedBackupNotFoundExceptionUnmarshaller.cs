@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceAutomatedBackupNotFoundException operation
     /// </summary>  
-    public class DBInstanceAutomatedBackupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceAutomatedBackupNotFoundException, XmlUnmarshallerContext>
+    public class DBInstanceAutomatedBackupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceAutomatedBackupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionGroupMembership Object
     /// </summary>  
-    public class OptionGroupMembershipUnmarshaller : IUnmarshaller<OptionGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<OptionGroupMembership, JsonUnmarshallerContext>
+    public class OptionGroupMembershipUnmarshaller : IXmlUnmarshaller<OptionGroupMembership, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OptionGroupMembership Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OptionGroupMembershipUnmarshaller _instance = new OptionGroupMembershipUnmarshaller();        
 

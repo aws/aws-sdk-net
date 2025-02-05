@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationBehavior())
             {
                 context.Writer.WritePropertyName("associationBehavior");
-                context.Writer.Write(requestObject.AssociationBehavior);
+                context.Writer.WriteStringValue(requestObject.AssociationBehavior);
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecoderManifestArn())
             {
                 context.Writer.WritePropertyName("decoderManifestArn");
-                context.Writer.Write(requestObject.DecoderManifestArn);
+                context.Writer.WriteStringValue(requestObject.DecoderManifestArn);
             }
 
             if(requestObject.IsSetModelManifestArn())
             {
                 context.Writer.WritePropertyName("modelManifestArn");
-                context.Writer.Write(requestObject.ModelManifestArn);
+                context.Writer.WriteStringValue(requestObject.ModelManifestArn);
             }
 
             if(requestObject.IsSetStateTemplates())
             {
                 context.Writer.WritePropertyName("stateTemplates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStateTemplatesListValue in requestObject.StateTemplates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StateTemplateAssociationMarshaller.Instance;
                     marshaller.Marshall(requestObjectStateTemplatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVehicleName())
             {
                 context.Writer.WritePropertyName("vehicleName");
-                context.Writer.Write(requestObject.VehicleName);
+                context.Writer.WriteStringValue(requestObject.VehicleName);
             }
 
         }

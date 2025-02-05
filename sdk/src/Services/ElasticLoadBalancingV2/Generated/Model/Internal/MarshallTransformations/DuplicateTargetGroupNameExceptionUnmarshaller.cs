@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateTargetGroupNameException operation
     /// </summary>  
-    public class DuplicateTargetGroupNameExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateTargetGroupNameException, XmlUnmarshallerContext>
+    public class DuplicateTargetGroupNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateTargetGroupNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

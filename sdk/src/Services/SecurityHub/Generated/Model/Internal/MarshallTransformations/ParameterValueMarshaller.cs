@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("Boolean");
-                context.Writer.Write(requestObject.Boolean.Value);
+                context.Writer.WriteBooleanValue(requestObject.Boolean.Value);
             }
 
             if(requestObject.IsSetDouble())
@@ -59,63 +57,63 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Double");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Double.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Double.Value);
+                    context.Writer.WriteNumberValue(requestObject.Double.Value);
                 }
             }
 
             if(requestObject.IsSetEnum())
             {
                 context.Writer.WritePropertyName("Enum");
-                context.Writer.Write(requestObject.Enum);
+                context.Writer.WriteStringValue(requestObject.Enum);
             }
 
             if(requestObject.IsSetEnumList())
             {
                 context.Writer.WritePropertyName("EnumList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnumListListValue in requestObject.EnumList)
                 {
-                        context.Writer.Write(requestObjectEnumListListValue);
+                        context.Writer.WriteStringValue(requestObjectEnumListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInteger())
             {
                 context.Writer.WritePropertyName("Integer");
-                context.Writer.Write(requestObject.Integer.Value);
+                context.Writer.WriteNumberValue(requestObject.Integer.Value);
             }
 
             if(requestObject.IsSetIntegerList())
             {
                 context.Writer.WritePropertyName("IntegerList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIntegerListListValue in requestObject.IntegerList)
                 {
-                        context.Writer.Write(requestObjectIntegerListListValue);
+                        context.Writer.WriteNumberValue(requestObjectIntegerListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("String");
-                context.Writer.Write(requestObject.String);
+                context.Writer.WriteStringValue(requestObject.String);
             }
 
             if(requestObject.IsSetStringList())
             {
                 context.Writer.WritePropertyName("StringList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringListListValue in requestObject.StringList)
                 {
-                        context.Writer.Write(requestObjectStringListListValue);
+                        context.Writer.WriteStringValue(requestObjectStringListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

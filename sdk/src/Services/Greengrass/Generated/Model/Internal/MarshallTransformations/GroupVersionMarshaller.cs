@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectorDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("ConnectorDefinitionVersionArn");
-                context.Writer.Write(requestObject.ConnectorDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.ConnectorDefinitionVersionArn);
             }
 
             if(requestObject.IsSetCoreDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("CoreDefinitionVersionArn");
-                context.Writer.Write(requestObject.CoreDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.CoreDefinitionVersionArn);
             }
 
             if(requestObject.IsSetDeviceDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("DeviceDefinitionVersionArn");
-                context.Writer.Write(requestObject.DeviceDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.DeviceDefinitionVersionArn);
             }
 
             if(requestObject.IsSetFunctionDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("FunctionDefinitionVersionArn");
-                context.Writer.Write(requestObject.FunctionDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.FunctionDefinitionVersionArn);
             }
 
             if(requestObject.IsSetLoggerDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("LoggerDefinitionVersionArn");
-                context.Writer.Write(requestObject.LoggerDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.LoggerDefinitionVersionArn);
             }
 
             if(requestObject.IsSetResourceDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("ResourceDefinitionVersionArn");
-                context.Writer.Write(requestObject.ResourceDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.ResourceDefinitionVersionArn);
             }
 
             if(requestObject.IsSetSubscriptionDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("SubscriptionDefinitionVersionArn");
-                context.Writer.Write(requestObject.SubscriptionDefinitionVersionArn);
+                context.Writer.WriteStringValue(requestObject.SubscriptionDefinitionVersionArn);
             }
 
         }

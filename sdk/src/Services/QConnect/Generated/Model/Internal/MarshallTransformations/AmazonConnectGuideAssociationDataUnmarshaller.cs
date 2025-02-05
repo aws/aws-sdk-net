@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AmazonConnectGuideAssociationData Object
     /// </summary>  
-    public class AmazonConnectGuideAssociationDataUnmarshaller : IUnmarshaller<AmazonConnectGuideAssociationData, XmlUnmarshallerContext>, IUnmarshaller<AmazonConnectGuideAssociationData, JsonUnmarshallerContext>
+    public class AmazonConnectGuideAssociationDataUnmarshaller : IJsonUnmarshaller<AmazonConnectGuideAssociationData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AmazonConnectGuideAssociationData IUnmarshaller<AmazonConnectGuideAssociationData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AmazonConnectGuideAssociationData Unmarshall(JsonUnmarshallerContext context)
+        public AmazonConnectGuideAssociationData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AmazonConnectGuideAssociationData unmarshalledObject = new AmazonConnectGuideAssociationData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("flowId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccountLimit Object
     /// </summary>  
-    public class AccountLimitUnmarshaller : IUnmarshaller<AccountLimit, XmlUnmarshallerContext>, IUnmarshaller<AccountLimit, JsonUnmarshallerContext>
+    public class AccountLimitUnmarshaller : IXmlUnmarshaller<AccountLimit, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AccountLimit Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AccountLimitUnmarshaller _instance = new AccountLimitUnmarshaller();        
 

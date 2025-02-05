@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -61,65 +64,70 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/list-servers";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilterValue())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilterValue())
-                    {
-                        context.Writer.WritePropertyName("filterValue");
-                        context.Writer.Write(publicRequest.FilterValue);
-                    }
-
-                    if(publicRequest.IsSetGroupIdFilter())
-                    {
-                        context.Writer.WritePropertyName("groupIdFilter");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GroupMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetServerCriteria())
-                    {
-                        context.Writer.WritePropertyName("serverCriteria");
-                        context.Writer.Write(publicRequest.ServerCriteria);
-                    }
-
-                    if(publicRequest.IsSetSort())
-                    {
-                        context.Writer.WritePropertyName("sort");
-                        context.Writer.Write(publicRequest.Sort);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("filterValue");
+                context.Writer.WriteStringValue(publicRequest.FilterValue);
             }
+
+            if(publicRequest.IsSetGroupIdFilter())
+            {
+                context.Writer.WritePropertyName("groupIdFilter");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGroupIdFilterListValue in publicRequest.GroupIdFilter)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GroupMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGroupIdFilterListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetServerCriteria())
+            {
+                context.Writer.WritePropertyName("serverCriteria");
+                context.Writer.WriteStringValue(publicRequest.ServerCriteria);
+            }
+
+            if(publicRequest.IsSetSort())
+            {
+                context.Writer.WritePropertyName("sort");
+                context.Writer.WriteStringValue(publicRequest.Sort);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

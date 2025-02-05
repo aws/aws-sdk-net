@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PluginVisualTableQuerySort Object
     /// </summary>  
-    public class PluginVisualTableQuerySortUnmarshaller : IUnmarshaller<PluginVisualTableQuerySort, XmlUnmarshallerContext>, IUnmarshaller<PluginVisualTableQuerySort, JsonUnmarshallerContext>
+    public class PluginVisualTableQuerySortUnmarshaller : IJsonUnmarshaller<PluginVisualTableQuerySort, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PluginVisualTableQuerySort IUnmarshaller<PluginVisualTableQuerySort, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PluginVisualTableQuerySort Unmarshall(JsonUnmarshallerContext context)
+        public PluginVisualTableQuerySort Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PluginVisualTableQuerySort unmarshalledObject = new PluginVisualTableQuerySort();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ItemsLimitConfiguration", targetDepth))
                 {
                     var unmarshaller = PluginVisualItemsLimitConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ItemsLimitConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowSort", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
-                    unmarshalledObject.RowSort = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
+                    unmarshalledObject.RowSort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

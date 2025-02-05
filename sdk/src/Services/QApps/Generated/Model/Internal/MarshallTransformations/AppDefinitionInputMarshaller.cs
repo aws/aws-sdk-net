@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCards())
             {
                 context.Writer.WritePropertyName("cards");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCardsListValue in requestObject.Cards)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CardInputMarshaller.Instance;
                     marshaller.Marshall(requestObjectCardsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInitialPrompt())
             {
                 context.Writer.WritePropertyName("initialPrompt");
-                context.Writer.Write(requestObject.InitialPrompt);
+                context.Writer.WriteStringValue(requestObject.InitialPrompt);
             }
 
         }

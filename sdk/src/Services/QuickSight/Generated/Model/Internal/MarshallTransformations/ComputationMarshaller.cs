@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForecast())
             {
                 context.Writer.WritePropertyName("Forecast");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ForecastComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Forecast, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGrowthRate())
             {
                 context.Writer.WritePropertyName("GrowthRate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GrowthRateComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GrowthRate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumMinimum())
             {
                 context.Writer.WritePropertyName("MaximumMinimum");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaximumMinimumComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaximumMinimum, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricComparison())
             {
                 context.Writer.WritePropertyName("MetricComparison");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricComparisonComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricComparison, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPeriodOverPeriod())
             {
                 context.Writer.WritePropertyName("PeriodOverPeriod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PeriodOverPeriodComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PeriodOverPeriod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPeriodToDate())
             {
                 context.Writer.WritePropertyName("PeriodToDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PeriodToDateComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PeriodToDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTopBottomMovers())
             {
                 context.Writer.WritePropertyName("TopBottomMovers");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopBottomMoversComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopBottomMovers, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTopBottomRanked())
             {
                 context.Writer.WritePropertyName("TopBottomRanked");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopBottomRankedComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopBottomRanked, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTotalAggregation())
             {
                 context.Writer.WritePropertyName("TotalAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TotalAggregationComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TotalAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUniqueValues())
             {
                 context.Writer.WritePropertyName("UniqueValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UniqueValuesComputationMarshaller.Instance;
                 marshaller.Marshall(requestObject.UniqueValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

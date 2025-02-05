@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageTypeNotAvailableException operation
     /// </summary>  
-    public class StorageTypeNotAvailableExceptionUnmarshaller : IErrorResponseUnmarshaller<StorageTypeNotAvailableException, XmlUnmarshallerContext>
+    public class StorageTypeNotAvailableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StorageTypeNotAvailableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

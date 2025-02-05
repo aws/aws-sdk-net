@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InconsistentQuantitiesException operation
     /// </summary>  
-    public class InconsistentQuantitiesExceptionUnmarshaller : IErrorResponseUnmarshaller<InconsistentQuantitiesException, XmlUnmarshallerContext>
+    public class InconsistentQuantitiesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InconsistentQuantitiesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

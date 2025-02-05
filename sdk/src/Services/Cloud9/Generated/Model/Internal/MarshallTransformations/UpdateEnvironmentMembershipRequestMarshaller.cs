@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 {
@@ -63,37 +66,42 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnvironmentId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEnvironmentId())
-                    {
-                        context.Writer.WritePropertyName("environmentId");
-                        context.Writer.Write(publicRequest.EnvironmentId);
-                    }
-
-                    if(publicRequest.IsSetPermissions())
-                    {
-                        context.Writer.WritePropertyName("permissions");
-                        context.Writer.Write(publicRequest.Permissions);
-                    }
-
-                    if(publicRequest.IsSetUserArn())
-                    {
-                        context.Writer.WritePropertyName("userArn");
-                        context.Writer.Write(publicRequest.UserArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("environmentId");
+                context.Writer.WriteStringValue(publicRequest.EnvironmentId);
             }
+
+            if(publicRequest.IsSetPermissions())
+            {
+                context.Writer.WritePropertyName("permissions");
+                context.Writer.WriteStringValue(publicRequest.Permissions);
+            }
+
+            if(publicRequest.IsSetUserArn())
+            {
+                context.Writer.WritePropertyName("userArn");
+                context.Writer.WriteStringValue(publicRequest.UserArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

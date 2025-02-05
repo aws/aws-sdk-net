@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalArgs())
             {
                 context.Writer.WritePropertyName("additionalArgs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SparkGlueArgsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalArgs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlueConnectionName())
             {
                 context.Writer.WritePropertyName("glueConnectionName");
-                context.Writer.Write(requestObject.GlueConnectionName);
+                context.Writer.WriteStringValue(requestObject.GlueConnectionName);
             }
 
             if(requestObject.IsSetGlueVersion())
             {
                 context.Writer.WritePropertyName("glueVersion");
-                context.Writer.Write(requestObject.GlueVersion);
+                context.Writer.WriteStringValue(requestObject.GlueVersion);
             }
 
             if(requestObject.IsSetIdleTimeout())
             {
                 context.Writer.WritePropertyName("idleTimeout");
-                context.Writer.Write(requestObject.IdleTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.IdleTimeout.Value);
             }
 
             if(requestObject.IsSetJavaVirtualEnv())
             {
                 context.Writer.WritePropertyName("javaVirtualEnv");
-                context.Writer.Write(requestObject.JavaVirtualEnv);
+                context.Writer.WriteStringValue(requestObject.JavaVirtualEnv);
             }
 
             if(requestObject.IsSetNumberOfWorkers())
             {
                 context.Writer.WritePropertyName("numberOfWorkers");
-                context.Writer.Write(requestObject.NumberOfWorkers.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfWorkers.Value);
             }
 
             if(requestObject.IsSetPythonVirtualEnv())
             {
                 context.Writer.WritePropertyName("pythonVirtualEnv");
-                context.Writer.Write(requestObject.PythonVirtualEnv);
+                context.Writer.WriteStringValue(requestObject.PythonVirtualEnv);
             }
 
             if(requestObject.IsSetWorkerType())
             {
                 context.Writer.WritePropertyName("workerType");
-                context.Writer.Write(requestObject.WorkerType);
+                context.Writer.WriteStringValue(requestObject.WorkerType);
             }
 
         }

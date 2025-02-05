@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationDatabaseName())
             {
                 context.Writer.WritePropertyName("DestinationDatabaseName");
-                context.Writer.Write(requestObject.DestinationDatabaseName);
+                context.Writer.WriteStringValue(requestObject.DestinationDatabaseName);
             }
 
             if(requestObject.IsSetDestinationTableName())
             {
                 context.Writer.WritePropertyName("DestinationTableName");
-                context.Writer.Write(requestObject.DestinationTableName);
+                context.Writer.WriteStringValue(requestObject.DestinationTableName);
             }
 
             if(requestObject.IsSetPartitionSpec())
             {
                 context.Writer.WritePropertyName("PartitionSpec");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PartitionSpecMarshaller.Instance;
                 marshaller.Marshall(requestObject.PartitionSpec, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3ErrorOutputPrefix())
             {
                 context.Writer.WritePropertyName("S3ErrorOutputPrefix");
-                context.Writer.Write(requestObject.S3ErrorOutputPrefix);
+                context.Writer.WriteStringValue(requestObject.S3ErrorOutputPrefix);
             }
 
             if(requestObject.IsSetUniqueKeys())
             {
                 context.Writer.WritePropertyName("UniqueKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUniqueKeysListValue in requestObject.UniqueKeys)
                 {
-                        context.Writer.Write(requestObjectUniqueKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectUniqueKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

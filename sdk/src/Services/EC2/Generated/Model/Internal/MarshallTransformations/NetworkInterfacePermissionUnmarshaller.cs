@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInterfacePermission Object
     /// </summary>  
-    public class NetworkInterfacePermissionUnmarshaller : IUnmarshaller<NetworkInterfacePermission, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfacePermission, JsonUnmarshallerContext>
+    public class NetworkInterfacePermissionUnmarshaller : IXmlUnmarshaller<NetworkInterfacePermission, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInterfacePermission Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInterfacePermissionUnmarshaller _instance = new NetworkInterfacePermissionUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthMechanism())
             {
                 context.Writer.WritePropertyName("AuthMechanism");
-                context.Writer.Write(requestObject.AuthMechanism);
+                context.Writer.WriteStringValue(requestObject.AuthMechanism);
             }
 
             if(requestObject.IsSetAuthSource())
             {
                 context.Writer.WritePropertyName("AuthSource");
-                context.Writer.Write(requestObject.AuthSource);
+                context.Writer.WriteStringValue(requestObject.AuthSource);
             }
 
             if(requestObject.IsSetAuthType())
             {
                 context.Writer.WritePropertyName("AuthType");
-                context.Writer.Write(requestObject.AuthType);
+                context.Writer.WriteStringValue(requestObject.AuthType);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDocsToInvestigate())
             {
                 context.Writer.WritePropertyName("DocsToInvestigate");
-                context.Writer.Write(requestObject.DocsToInvestigate);
+                context.Writer.WriteStringValue(requestObject.DocsToInvestigate);
             }
 
             if(requestObject.IsSetExtractDocId())
             {
                 context.Writer.WritePropertyName("ExtractDocId");
-                context.Writer.Write(requestObject.ExtractDocId);
+                context.Writer.WriteStringValue(requestObject.ExtractDocId);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetNestingLevel())
             {
                 context.Writer.WritePropertyName("NestingLevel");
-                context.Writer.Write(requestObject.NestingLevel);
+                context.Writer.WriteStringValue(requestObject.NestingLevel);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetReplicateShardCollections())
             {
                 context.Writer.WritePropertyName("ReplicateShardCollections");
-                context.Writer.Write(requestObject.ReplicateShardCollections.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReplicateShardCollections.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecretId);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
             if(requestObject.IsSetUseUpdateLookUp())
             {
                 context.Writer.WritePropertyName("UseUpdateLookUp");
-                context.Writer.Write(requestObject.UseUpdateLookUp.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseUpdateLookUp.Value);
             }
 
         }

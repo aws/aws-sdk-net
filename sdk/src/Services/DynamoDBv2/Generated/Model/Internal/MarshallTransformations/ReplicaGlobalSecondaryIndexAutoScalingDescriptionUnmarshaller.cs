@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicaGlobalSecondaryIndexAutoScalingDescription Object
     /// </summary>  
-    public class ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller : IUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, JsonUnmarshallerContext>
+    public class ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller : IJsonUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReplicaGlobalSecondaryIndexAutoScalingDescription IUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaGlobalSecondaryIndexAutoScalingDescription Unmarshall(JsonUnmarshallerContext context)
+        public ReplicaGlobalSecondaryIndexAutoScalingDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReplicaGlobalSecondaryIndexAutoScalingDescription unmarshalledObject = new ReplicaGlobalSecondaryIndexAutoScalingDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

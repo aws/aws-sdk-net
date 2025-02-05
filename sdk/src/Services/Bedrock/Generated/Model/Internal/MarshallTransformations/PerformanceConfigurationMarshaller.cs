@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatency())
             {
                 context.Writer.WritePropertyName("latency");
-                context.Writer.Write(requestObject.Latency);
+                context.Writer.WriteStringValue(requestObject.Latency);
             }
 
         }

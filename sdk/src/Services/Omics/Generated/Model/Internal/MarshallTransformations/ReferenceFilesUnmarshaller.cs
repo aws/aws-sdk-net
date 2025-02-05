@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReferenceFiles Object
     /// </summary>  
-    public class ReferenceFilesUnmarshaller : IUnmarshaller<ReferenceFiles, XmlUnmarshallerContext>, IUnmarshaller<ReferenceFiles, JsonUnmarshallerContext>
+    public class ReferenceFilesUnmarshaller : IJsonUnmarshaller<ReferenceFiles, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReferenceFiles IUnmarshaller<ReferenceFiles, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReferenceFiles Unmarshall(JsonUnmarshallerContext context)
+        public ReferenceFiles Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReferenceFiles unmarshalledObject = new ReferenceFiles();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("index", targetDepth))
                 {
                     var unmarshaller = FileInformationUnmarshaller.Instance;
-                    unmarshalledObject.Index = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = FileInformationUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

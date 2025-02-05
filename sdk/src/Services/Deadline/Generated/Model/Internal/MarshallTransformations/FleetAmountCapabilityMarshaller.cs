@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("max");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Max.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max.Value);
+                    context.Writer.WriteNumberValue(requestObject.Max.Value);
                 }
             }
 
@@ -66,18 +64,18 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("min");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Min.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min.Value);
+                    context.Writer.WriteNumberValue(requestObject.Min.Value);
                 }
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompletionTimeRange())
             {
                 context.Writer.WritePropertyName("completionTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestampRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompletionTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDurationRange())
             {
                 context.Writer.WritePropertyName("durationRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DurationRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamePattern())
             {
                 context.Writer.WritePropertyName("namePattern");
-                context.Writer.Write(requestObject.NamePattern);
+                context.Writer.WriteStringValue(requestObject.NamePattern);
             }
 
             if(requestObject.IsSetRulesPackageArns())
             {
                 context.Writer.WritePropertyName("rulesPackageArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesPackageArnsListValue in requestObject.RulesPackageArns)
                 {
-                        context.Writer.Write(requestObjectRulesPackageArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectRulesPackageArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartTimeRange())
             {
                 context.Writer.WritePropertyName("startTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestampRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStateChangeTimeRange())
             {
                 context.Writer.WritePropertyName("stateChangeTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestampRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StateChangeTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStates())
             {
                 context.Writer.WritePropertyName("states");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatesListValue in requestObject.States)
                 {
-                        context.Writer.Write(requestObjectStatesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

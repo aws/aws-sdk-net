@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResponseOutputItem Object
     /// </summary>  
-    public class ResponseOutputItemUnmarshaller : IUnmarshaller<ResponseOutputItem, XmlUnmarshallerContext>, IUnmarshaller<ResponseOutputItem, JsonUnmarshallerContext>
+    public class ResponseOutputItemUnmarshaller : IJsonUnmarshaller<ResponseOutputItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResponseOutputItem IUnmarshaller<ResponseOutputItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResponseOutputItem Unmarshall(JsonUnmarshallerContext context)
+        public ResponseOutputItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResponseOutputItem unmarshalledObject = new ResponseOutputItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DashPlaylistSettings", targetDepth))
                 {
                     var unmarshaller = DashPlaylistSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DashPlaylistSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DashPlaylistSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HlsPlaylistSettings", targetDepth))
                 {
                     var unmarshaller = HlsPlaylistSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsPlaylistSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsPlaylistSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlaybackUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

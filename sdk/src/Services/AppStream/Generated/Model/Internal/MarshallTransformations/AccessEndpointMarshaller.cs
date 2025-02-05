@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointType())
             {
                 context.Writer.WritePropertyName("EndpointType");
-                context.Writer.Write(requestObject.EndpointType);
+                context.Writer.WriteStringValue(requestObject.EndpointType);
             }
 
             if(requestObject.IsSetVpceId())
             {
                 context.Writer.WritePropertyName("VpceId");
-                context.Writer.Write(requestObject.VpceId);
+                context.Writer.WriteStringValue(requestObject.VpceId);
             }
 
         }

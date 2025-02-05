@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnchorDateConfiguration())
             {
                 context.Writer.WritePropertyName("AnchorDateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnchorDateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AnchorDateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultFilterControlConfiguration())
             {
                 context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExcludePeriodConfiguration())
             {
                 context.Writer.WritePropertyName("ExcludePeriodConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExcludePeriodConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExcludePeriodConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");
-                context.Writer.Write(requestObject.FilterId);
+                context.Writer.WriteStringValue(requestObject.FilterId);
             }
 
             if(requestObject.IsSetMinimumGranularity())
             {
                 context.Writer.WritePropertyName("MinimumGranularity");
-                context.Writer.Write(requestObject.MinimumGranularity);
+                context.Writer.WriteStringValue(requestObject.MinimumGranularity);
             }
 
             if(requestObject.IsSetNullOption())
             {
                 context.Writer.WritePropertyName("NullOption");
-                context.Writer.Write(requestObject.NullOption);
+                context.Writer.WriteStringValue(requestObject.NullOption);
             }
 
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("ParameterName");
-                context.Writer.Write(requestObject.ParameterName);
+                context.Writer.WriteStringValue(requestObject.ParameterName);
             }
 
             if(requestObject.IsSetRelativeDateType())
             {
                 context.Writer.WritePropertyName("RelativeDateType");
-                context.Writer.Write(requestObject.RelativeDateType);
+                context.Writer.WriteStringValue(requestObject.RelativeDateType);
             }
 
             if(requestObject.IsSetRelativeDateValue())
             {
                 context.Writer.WritePropertyName("RelativeDateValue");
-                context.Writer.Write(requestObject.RelativeDateValue.Value);
+                context.Writer.WriteNumberValue(requestObject.RelativeDateValue.Value);
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
         }

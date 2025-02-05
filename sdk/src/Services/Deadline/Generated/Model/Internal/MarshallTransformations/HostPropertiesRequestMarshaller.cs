@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostName())
             {
                 context.Writer.WritePropertyName("hostName");
-                context.Writer.Write(requestObject.HostName);
+                context.Writer.WriteStringValue(requestObject.HostName);
             }
 
             if(requestObject.IsSetIpAddresses())
             {
                 context.Writer.WritePropertyName("ipAddresses");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IpAddressesMarshaller.Instance;
                 marshaller.Marshall(requestObject.IpAddresses, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

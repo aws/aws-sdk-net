@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEventBatchingCondition())
             {
                 context.Writer.WritePropertyName("EventBatchingCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventBatchingConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBatchingCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPredicate())
             {
                 context.Writer.WritePropertyName("Predicate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredicateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Predicate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");
-                context.Writer.Write(requestObject.Schedule);
+                context.Writer.WriteStringValue(requestObject.Schedule);
             }
 
         }

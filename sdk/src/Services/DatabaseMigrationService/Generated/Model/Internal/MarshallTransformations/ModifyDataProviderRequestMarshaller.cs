@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,60 +66,65 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataProviderIdentifier())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataProviderIdentifier())
-                    {
-                        context.Writer.WritePropertyName("DataProviderIdentifier");
-                        context.Writer.Write(publicRequest.DataProviderIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDataProviderName())
-                    {
-                        context.Writer.WritePropertyName("DataProviderName");
-                        context.Writer.Write(publicRequest.DataProviderName);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEngine())
-                    {
-                        context.Writer.WritePropertyName("Engine");
-                        context.Writer.Write(publicRequest.Engine);
-                    }
-
-                    if(publicRequest.IsSetExactSettings())
-                    {
-                        context.Writer.WritePropertyName("ExactSettings");
-                        context.Writer.Write(publicRequest.ExactSettings.Value);
-                    }
-
-                    if(publicRequest.IsSetSettings())
-                    {
-                        context.Writer.WritePropertyName("Settings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataProviderSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Settings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DataProviderIdentifier");
+                context.Writer.WriteStringValue(publicRequest.DataProviderIdentifier);
             }
+
+            if(publicRequest.IsSetDataProviderName())
+            {
+                context.Writer.WritePropertyName("DataProviderName");
+                context.Writer.WriteStringValue(publicRequest.DataProviderName);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEngine())
+            {
+                context.Writer.WritePropertyName("Engine");
+                context.Writer.WriteStringValue(publicRequest.Engine);
+            }
+
+            if(publicRequest.IsSetExactSettings())
+            {
+                context.Writer.WritePropertyName("ExactSettings");
+                context.Writer.WriteBooleanValue(publicRequest.ExactSettings.Value);
+            }
+
+            if(publicRequest.IsSetSettings())
+            {
+                context.Writer.WritePropertyName("Settings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataProviderSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Settings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

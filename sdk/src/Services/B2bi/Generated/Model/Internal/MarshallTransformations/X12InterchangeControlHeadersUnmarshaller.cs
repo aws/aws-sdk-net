@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for X12InterchangeControlHeaders Object
     /// </summary>  
-    public class X12InterchangeControlHeadersUnmarshaller : IUnmarshaller<X12InterchangeControlHeaders, XmlUnmarshallerContext>, IUnmarshaller<X12InterchangeControlHeaders, JsonUnmarshallerContext>
+    public class X12InterchangeControlHeadersUnmarshaller : IJsonUnmarshaller<X12InterchangeControlHeaders, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        X12InterchangeControlHeaders IUnmarshaller<X12InterchangeControlHeaders, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public X12InterchangeControlHeaders Unmarshall(JsonUnmarshallerContext context)
+        public X12InterchangeControlHeaders Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             X12InterchangeControlHeaders unmarshalledObject = new X12InterchangeControlHeaders();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acknowledgmentRequestedCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AcknowledgmentRequestedCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcknowledgmentRequestedCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("receiverId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReceiverId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceiverId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("receiverIdQualifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReceiverIdQualifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceiverIdQualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repetitionSeparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepetitionSeparator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepetitionSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("senderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SenderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("senderIdQualifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderIdQualifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SenderIdQualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usageIndicatorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageIndicatorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageIndicatorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

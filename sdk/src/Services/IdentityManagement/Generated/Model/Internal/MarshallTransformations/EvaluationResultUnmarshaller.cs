@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EvaluationResult Object
     /// </summary>  
-    public class EvaluationResultUnmarshaller : IUnmarshaller<EvaluationResult, XmlUnmarshallerContext>, IUnmarshaller<EvaluationResult, JsonUnmarshallerContext>
+    public class EvaluationResultUnmarshaller : IXmlUnmarshaller<EvaluationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,7 +69,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.EvalDecisionDetails == null)
                         {
                             unmarshalledObject.EvalDecisionDetails = new Dictionary<string, string>();
@@ -138,17 +138,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EvaluationResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EvaluationResultUnmarshaller _instance = new EvaluationResultUnmarshaller();        
 

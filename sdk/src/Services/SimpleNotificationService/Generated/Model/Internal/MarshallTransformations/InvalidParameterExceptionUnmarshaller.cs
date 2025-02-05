@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for InvalidParameterException operation
     /// </summary>  
-    public class InvalidParameterExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidParameterException, XmlUnmarshallerContext>
+    public class InvalidParameterExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidParameterException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

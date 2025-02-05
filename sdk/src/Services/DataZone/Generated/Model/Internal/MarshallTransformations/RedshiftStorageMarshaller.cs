@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRedshiftClusterSource())
             {
                 context.Writer.WritePropertyName("redshiftClusterSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftClusterStorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftClusterSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftServerlessSource())
             {
                 context.Writer.WritePropertyName("redshiftServerlessSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftServerlessStorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftServerlessSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

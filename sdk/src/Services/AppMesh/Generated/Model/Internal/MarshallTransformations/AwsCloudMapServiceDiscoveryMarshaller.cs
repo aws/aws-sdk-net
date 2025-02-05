@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributesListValue in requestObject.Attributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCloudMapInstanceAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpPreference())
             {
                 context.Writer.WritePropertyName("ipPreference");
-                context.Writer.Write(requestObject.IpPreference);
+                context.Writer.WriteStringValue(requestObject.IpPreference);
             }
 
             if(requestObject.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");
-                context.Writer.Write(requestObject.NamespaceName);
+                context.Writer.WriteStringValue(requestObject.NamespaceName);
             }
 
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("serviceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WriteStringValue(requestObject.ServiceName);
             }
 
         }

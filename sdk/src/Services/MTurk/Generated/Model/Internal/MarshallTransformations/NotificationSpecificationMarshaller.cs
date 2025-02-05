@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetEventTypes())
             {
                 context.Writer.WritePropertyName("EventTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTypesListValue in requestObject.EventTypes)
                 {
-                        context.Writer.Write(requestObjectEventTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTransport())
             {
                 context.Writer.WritePropertyName("Transport");
-                context.Writer.Write(requestObject.Transport);
+                context.Writer.WriteStringValue(requestObject.Transport);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteAssociationSameAccountException operation
     /// </summary>  
-    public class DeleteAssociationSameAccountExceptionUnmarshaller : IErrorResponseUnmarshaller<DeleteAssociationSameAccountException, XmlUnmarshallerContext>
+    public class DeleteAssociationSameAccountExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DeleteAssociationSameAccountException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpRule())
             {
                 context.Writer.WritePropertyName("ipRule");
-                context.Writer.Write(requestObject.IpRule);
+                context.Writer.WriteStringValue(requestObject.IpRule);
             }
 
             if(requestObject.IsSetRuleDesc())
             {
                 context.Writer.WritePropertyName("ruleDesc");
-                context.Writer.Write(requestObject.RuleDesc);
+                context.Writer.WriteStringValue(requestObject.RuleDesc);
             }
 
         }

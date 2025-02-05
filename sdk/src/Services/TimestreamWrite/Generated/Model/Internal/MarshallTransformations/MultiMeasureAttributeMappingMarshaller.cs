@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMeasureValueType())
             {
                 context.Writer.WritePropertyName("MeasureValueType");
-                context.Writer.Write(requestObject.MeasureValueType);
+                context.Writer.WriteStringValue(requestObject.MeasureValueType);
             }
 
             if(requestObject.IsSetSourceColumn())
             {
                 context.Writer.WritePropertyName("SourceColumn");
-                context.Writer.Write(requestObject.SourceColumn);
+                context.Writer.WriteStringValue(requestObject.SourceColumn);
             }
 
             if(requestObject.IsSetTargetMultiMeasureAttributeName())
             {
                 context.Writer.WritePropertyName("TargetMultiMeasureAttributeName");
-                context.Writer.Write(requestObject.TargetMultiMeasureAttributeName);
+                context.Writer.WriteStringValue(requestObject.TargetMultiMeasureAttributeName);
             }
 
         }

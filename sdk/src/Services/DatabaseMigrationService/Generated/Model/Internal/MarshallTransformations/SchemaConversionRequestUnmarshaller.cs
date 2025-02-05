@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SchemaConversionRequest Object
     /// </summary>  
-    public class SchemaConversionRequestUnmarshaller : IUnmarshaller<SchemaConversionRequest, XmlUnmarshallerContext>, IUnmarshaller<SchemaConversionRequest, JsonUnmarshallerContext>
+    public class SchemaConversionRequestUnmarshaller : IJsonUnmarshaller<SchemaConversionRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SchemaConversionRequest IUnmarshaller<SchemaConversionRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SchemaConversionRequest Unmarshall(JsonUnmarshallerContext context)
+        public SchemaConversionRequest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SchemaConversionRequest unmarshalledObject = new SchemaConversionRequest();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Error", targetDepth))
                 {
                     var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportSqlDetails", targetDepth))
                 {
                     var unmarshaller = ExportSqlDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportSqlDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportSqlDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MigrationProjectArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

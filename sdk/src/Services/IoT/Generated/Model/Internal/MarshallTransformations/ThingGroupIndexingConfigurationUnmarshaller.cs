@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThingGroupIndexingConfiguration Object
     /// </summary>  
-    public class ThingGroupIndexingConfigurationUnmarshaller : IUnmarshaller<ThingGroupIndexingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThingGroupIndexingConfiguration, JsonUnmarshallerContext>
+    public class ThingGroupIndexingConfigurationUnmarshaller : IJsonUnmarshaller<ThingGroupIndexingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThingGroupIndexingConfiguration IUnmarshaller<ThingGroupIndexingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThingGroupIndexingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ThingGroupIndexingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThingGroupIndexingConfiguration unmarshalledObject = new ThingGroupIndexingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
+                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("managedFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
+                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thingGroupIndexingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingGroupIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThingGroupIndexingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

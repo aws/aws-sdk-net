@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VirtualGatewayTlsValidationContextTrust Object
     /// </summary>  
-    public class VirtualGatewayTlsValidationContextTrustUnmarshaller : IUnmarshaller<VirtualGatewayTlsValidationContextTrust, XmlUnmarshallerContext>, IUnmarshaller<VirtualGatewayTlsValidationContextTrust, JsonUnmarshallerContext>
+    public class VirtualGatewayTlsValidationContextTrustUnmarshaller : IJsonUnmarshaller<VirtualGatewayTlsValidationContextTrust, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VirtualGatewayTlsValidationContextTrust IUnmarshaller<VirtualGatewayTlsValidationContextTrust, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VirtualGatewayTlsValidationContextTrust Unmarshall(JsonUnmarshallerContext context)
+        public VirtualGatewayTlsValidationContextTrust Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VirtualGatewayTlsValidationContextTrust unmarshalledObject = new VirtualGatewayTlsValidationContextTrust();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acm", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayTlsValidationContextAcmTrustUnmarshaller.Instance;
-                    unmarshalledObject.Acm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Acm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("file", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayTlsValidationContextFileTrustUnmarshaller.Instance;
-                    unmarshalledObject.File = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.File = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sds", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayTlsValidationContextSdsTrustUnmarshaller.Instance;
-                    unmarshalledObject.Sds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudio())
             {
                 context.Writer.WritePropertyName("Audio");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Audio, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompositedVideo())
             {
                 context.Writer.WritePropertyName("CompositedVideo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CompositedVideoConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompositedVideo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContentConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Content, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataChannel())
             {
                 context.Writer.WritePropertyName("DataChannel");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataChannelConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataChannel, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMeetingEvents())
             {
                 context.Writer.WritePropertyName("MeetingEvents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MeetingEventsConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MeetingEvents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTranscriptionMessages())
             {
                 context.Writer.WritePropertyName("TranscriptionMessages");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranscriptionMessagesConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TranscriptionMessages, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideo())
             {
                 context.Writer.WritePropertyName("Video");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Video, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

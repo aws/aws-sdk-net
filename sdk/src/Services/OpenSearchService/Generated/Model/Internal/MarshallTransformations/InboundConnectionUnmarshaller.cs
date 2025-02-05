@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InboundConnection Object
     /// </summary>  
-    public class InboundConnectionUnmarshaller : IUnmarshaller<InboundConnection, XmlUnmarshallerContext>, IUnmarshaller<InboundConnection, JsonUnmarshallerContext>
+    public class InboundConnectionUnmarshaller : IJsonUnmarshaller<InboundConnection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InboundConnection IUnmarshaller<InboundConnection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InboundConnection Unmarshall(JsonUnmarshallerContext context)
+        public InboundConnection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InboundConnection unmarshalledObject = new InboundConnection();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConnectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionStatus", targetDepth))
                 {
                     var unmarshaller = InboundConnectionStatusUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalDomainInfo", targetDepth))
                 {
                     var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
-                    unmarshalledObject.LocalDomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemoteDomainInfo", targetDepth))
                 {
                     var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
-                    unmarshalledObject.RemoteDomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoteDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

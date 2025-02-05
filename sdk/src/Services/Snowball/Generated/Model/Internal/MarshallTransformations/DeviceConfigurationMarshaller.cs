@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSnowconeDeviceConfiguration())
             {
                 context.Writer.WritePropertyName("SnowconeDeviceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnowconeDeviceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnowconeDeviceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

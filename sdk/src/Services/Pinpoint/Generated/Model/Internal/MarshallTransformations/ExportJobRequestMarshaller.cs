@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetS3UrlPrefix())
             {
                 context.Writer.WritePropertyName("S3UrlPrefix");
-                context.Writer.Write(requestObject.S3UrlPrefix);
+                context.Writer.WriteStringValue(requestObject.S3UrlPrefix);
             }
 
             if(requestObject.IsSetSegmentId())
             {
                 context.Writer.WritePropertyName("SegmentId");
-                context.Writer.Write(requestObject.SegmentId);
+                context.Writer.WriteStringValue(requestObject.SegmentId);
             }
 
             if(requestObject.IsSetSegmentVersion())
             {
                 context.Writer.WritePropertyName("SegmentVersion");
-                context.Writer.Write(requestObject.SegmentVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentVersion.Value);
             }
 
         }

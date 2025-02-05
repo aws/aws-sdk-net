@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionKey())
             {
                 context.Writer.WritePropertyName("ConditionKey");
-                context.Writer.Write(requestObject.ConditionKey);
+                context.Writer.WriteStringValue(requestObject.ConditionKey);
             }
 
             if(requestObject.IsSetConditionValue())
             {
                 context.Writer.WritePropertyName("ConditionValue");
-                context.Writer.Write(requestObject.ConditionValue);
+                context.Writer.WriteStringValue(requestObject.ConditionValue);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnnotations())
             {
                 context.Writer.WritePropertyName("Annotations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetEntityRecognizerAnnotationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Annotations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDocuments())
             {
                 context.Writer.WritePropertyName("Documents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetEntityRecognizerDocumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Documents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityList())
             {
                 context.Writer.WritePropertyName("EntityList");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetEntityRecognizerEntityListMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityList, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

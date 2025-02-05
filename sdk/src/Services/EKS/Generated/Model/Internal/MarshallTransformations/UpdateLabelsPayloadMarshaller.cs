@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddOrUpdateLabels())
             {
                 context.Writer.WritePropertyName("addOrUpdateLabels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAddOrUpdateLabelsKvp in requestObject.AddOrUpdateLabels)
                 {
                     context.Writer.WritePropertyName(requestObjectAddOrUpdateLabelsKvp.Key);
                     var requestObjectAddOrUpdateLabelsValue = requestObjectAddOrUpdateLabelsKvp.Value;
 
-                        context.Writer.Write(requestObjectAddOrUpdateLabelsValue);
+                        context.Writer.WriteStringValue(requestObjectAddOrUpdateLabelsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRemoveLabels())
             {
                 context.Writer.WritePropertyName("removeLabels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRemoveLabelsListValue in requestObject.RemoveLabels)
                 {
-                        context.Writer.Write(requestObjectRemoveLabelsListValue);
+                        context.Writer.WriteStringValue(requestObjectRemoveLabelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

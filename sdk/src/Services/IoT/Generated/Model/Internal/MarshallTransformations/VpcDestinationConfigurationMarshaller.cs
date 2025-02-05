@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("subnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("vpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

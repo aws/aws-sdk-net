@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LocalGatewayRouteTableVpcAssociation Object
     /// </summary>  
-    public class LocalGatewayRouteTableVpcAssociationUnmarshaller : IUnmarshaller<LocalGatewayRouteTableVpcAssociation, XmlUnmarshallerContext>, IUnmarshaller<LocalGatewayRouteTableVpcAssociation, JsonUnmarshallerContext>
+    public class LocalGatewayRouteTableVpcAssociationUnmarshaller : IXmlUnmarshaller<LocalGatewayRouteTableVpcAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -117,17 +117,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LocalGatewayRouteTableVpcAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LocalGatewayRouteTableVpcAssociationUnmarshaller _instance = new LocalGatewayRouteTableVpcAssociationUnmarshaller();        
 

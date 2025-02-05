@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobalConfidenceLevel())
             {
                 context.Writer.WritePropertyName("globalConfidenceLevel");
-                context.Writer.Write(requestObject.GlobalConfidenceLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.GlobalConfidenceLevel.Value);
             }
 
             if(requestObject.IsSetGlobalEnforcedUrls())
             {
                 context.Writer.WritePropertyName("globalEnforcedUrls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlobalEnforcedUrlsListValue in requestObject.GlobalEnforcedUrls)
                 {
-                        context.Writer.Write(requestObjectGlobalEnforcedUrlsListValue);
+                        context.Writer.WriteStringValue(requestObjectGlobalEnforcedUrlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGlobalExemptUrls())
             {
                 context.Writer.WritePropertyName("globalExemptUrls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlobalExemptUrlsListValue in requestObject.GlobalExemptUrls)
                 {
-                        context.Writer.Write(requestObjectGlobalExemptUrlsListValue);
+                        context.Writer.WriteStringValue(requestObjectGlobalExemptUrlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInlineRedactionPatterns())
             {
                 context.Writer.WritePropertyName("inlineRedactionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInlineRedactionPatternsListValue in requestObject.InlineRedactionPatterns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InlineRedactionPatternMarshaller.Instance;
                     marshaller.Marshall(requestObjectInlineRedactionPatternsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

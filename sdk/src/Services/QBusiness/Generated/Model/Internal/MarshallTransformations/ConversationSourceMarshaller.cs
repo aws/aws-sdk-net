@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentId())
             {
                 context.Writer.WritePropertyName("attachmentId");
-                context.Writer.Write(requestObject.AttachmentId);
+                context.Writer.WriteStringValue(requestObject.AttachmentId);
             }
 
             if(requestObject.IsSetConversationId())
             {
                 context.Writer.WritePropertyName("conversationId");
-                context.Writer.Write(requestObject.ConversationId);
+                context.Writer.WriteStringValue(requestObject.ConversationId);
             }
 
         }

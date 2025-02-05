@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerArguments())
             {
                 context.Writer.WritePropertyName("ContainerArguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerArgumentsListValue in requestObject.ContainerArguments)
                 {
-                        context.Writer.Write(requestObjectContainerArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerEntrypoint())
             {
                 context.Writer.WritePropertyName("ContainerEntrypoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerEntrypointListValue in requestObject.ContainerEntrypoint)
                 {
-                        context.Writer.Write(requestObjectContainerEntrypointListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerEntrypointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("ContainerEnvironmentVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContainerEnvironmentVariablesKvp in requestObject.ContainerEnvironmentVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectContainerEnvironmentVariablesKvp.Key);
                     var requestObjectContainerEnvironmentVariablesValue = requestObjectContainerEnvironmentVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectContainerEnvironmentVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectContainerEnvironmentVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

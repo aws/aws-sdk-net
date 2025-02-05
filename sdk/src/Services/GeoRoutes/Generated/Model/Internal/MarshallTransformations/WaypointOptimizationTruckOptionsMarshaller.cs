@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrossWeight())
             {
                 context.Writer.WritePropertyName("GrossWeight");
-                context.Writer.Write(requestObject.GrossWeight.Value);
+                context.Writer.WriteNumberValue(requestObject.GrossWeight.Value);
             }
 
             if(requestObject.IsSetHazardousCargos())
             {
                 context.Writer.WritePropertyName("HazardousCargos");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHazardousCargosListValue in requestObject.HazardousCargos)
                 {
-                        context.Writer.Write(requestObjectHazardousCargosListValue);
+                        context.Writer.WriteStringValue(requestObjectHazardousCargosListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("Length");
-                context.Writer.Write(requestObject.Length.Value);
+                context.Writer.WriteNumberValue(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetTrailer())
             {
                 context.Writer.WritePropertyName("Trailer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaypointOptimizationTrailerOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Trailer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTruckType())
             {
                 context.Writer.WritePropertyName("TruckType");
-                context.Writer.Write(requestObject.TruckType);
+                context.Writer.WriteStringValue(requestObject.TruckType);
             }
 
             if(requestObject.IsSetTunnelRestrictionCode())
             {
                 context.Writer.WritePropertyName("TunnelRestrictionCode");
-                context.Writer.Write(requestObject.TunnelRestrictionCode);
+                context.Writer.WriteStringValue(requestObject.TunnelRestrictionCode);
             }
 
             if(requestObject.IsSetWeightPerAxle())
             {
                 context.Writer.WritePropertyName("WeightPerAxle");
-                context.Writer.Write(requestObject.WeightPerAxle.Value);
+                context.Writer.WriteNumberValue(requestObject.WeightPerAxle.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

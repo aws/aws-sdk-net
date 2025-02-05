@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccent())
             {
                 context.Writer.WritePropertyName("Accent");
-                context.Writer.Write(requestObject.Accent);
+                context.Writer.WriteStringValue(requestObject.Accent);
             }
 
             if(requestObject.IsSetAccentForeground())
             {
                 context.Writer.WritePropertyName("AccentForeground");
-                context.Writer.Write(requestObject.AccentForeground);
+                context.Writer.WriteStringValue(requestObject.AccentForeground);
             }
 
             if(requestObject.IsSetDanger())
             {
                 context.Writer.WritePropertyName("Danger");
-                context.Writer.Write(requestObject.Danger);
+                context.Writer.WriteStringValue(requestObject.Danger);
             }
 
             if(requestObject.IsSetDangerForeground())
             {
                 context.Writer.WritePropertyName("DangerForeground");
-                context.Writer.Write(requestObject.DangerForeground);
+                context.Writer.WriteStringValue(requestObject.DangerForeground);
             }
 
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
-                context.Writer.Write(requestObject.Dimension);
+                context.Writer.WriteStringValue(requestObject.Dimension);
             }
 
             if(requestObject.IsSetDimensionForeground())
             {
                 context.Writer.WritePropertyName("DimensionForeground");
-                context.Writer.Write(requestObject.DimensionForeground);
+                context.Writer.WriteStringValue(requestObject.DimensionForeground);
             }
 
             if(requestObject.IsSetMeasure())
             {
                 context.Writer.WritePropertyName("Measure");
-                context.Writer.Write(requestObject.Measure);
+                context.Writer.WriteStringValue(requestObject.Measure);
             }
 
             if(requestObject.IsSetMeasureForeground())
             {
                 context.Writer.WritePropertyName("MeasureForeground");
-                context.Writer.Write(requestObject.MeasureForeground);
+                context.Writer.WriteStringValue(requestObject.MeasureForeground);
             }
 
             if(requestObject.IsSetPrimaryBackground())
             {
                 context.Writer.WritePropertyName("PrimaryBackground");
-                context.Writer.Write(requestObject.PrimaryBackground);
+                context.Writer.WriteStringValue(requestObject.PrimaryBackground);
             }
 
             if(requestObject.IsSetPrimaryForeground())
             {
                 context.Writer.WritePropertyName("PrimaryForeground");
-                context.Writer.Write(requestObject.PrimaryForeground);
+                context.Writer.WriteStringValue(requestObject.PrimaryForeground);
             }
 
             if(requestObject.IsSetSecondaryBackground())
             {
                 context.Writer.WritePropertyName("SecondaryBackground");
-                context.Writer.Write(requestObject.SecondaryBackground);
+                context.Writer.WriteStringValue(requestObject.SecondaryBackground);
             }
 
             if(requestObject.IsSetSecondaryForeground())
             {
                 context.Writer.WritePropertyName("SecondaryForeground");
-                context.Writer.Write(requestObject.SecondaryForeground);
+                context.Writer.WriteStringValue(requestObject.SecondaryForeground);
             }
 
             if(requestObject.IsSetSuccess())
             {
                 context.Writer.WritePropertyName("Success");
-                context.Writer.Write(requestObject.Success);
+                context.Writer.WriteStringValue(requestObject.Success);
             }
 
             if(requestObject.IsSetSuccessForeground())
             {
                 context.Writer.WritePropertyName("SuccessForeground");
-                context.Writer.Write(requestObject.SuccessForeground);
+                context.Writer.WriteStringValue(requestObject.SuccessForeground);
             }
 
             if(requestObject.IsSetWarning())
             {
                 context.Writer.WritePropertyName("Warning");
-                context.Writer.Write(requestObject.Warning);
+                context.Writer.WriteStringValue(requestObject.Warning);
             }
 
             if(requestObject.IsSetWarningForeground())
             {
                 context.Writer.WritePropertyName("WarningForeground");
-                context.Writer.Write(requestObject.WarningForeground);
+                context.Writer.WriteStringValue(requestObject.WarningForeground);
             }
 
         }

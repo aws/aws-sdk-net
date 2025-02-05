@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -47,63 +47,63 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GenerateMacEmvPinChangeResponse response = new GenerateMacEmvPinChangeResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EncryptedPinBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EncryptedPinBlock = unmarshaller.Unmarshall(context);
+                    response.EncryptedPinBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Mac", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Mac = unmarshaller.Unmarshall(context);
+                    response.Mac = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NewPinPekArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NewPinPekArn = unmarshaller.Unmarshall(context);
+                    response.NewPinPekArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NewPinPekKeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NewPinPekKeyCheckValue = unmarshaller.Unmarshall(context);
+                    response.NewPinPekKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecureMessagingConfidentialityKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SecureMessagingConfidentialityKeyArn = unmarshaller.Unmarshall(context);
+                    response.SecureMessagingConfidentialityKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecureMessagingConfidentialityKeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SecureMessagingConfidentialityKeyCheckValue = unmarshaller.Unmarshall(context);
+                    response.SecureMessagingConfidentialityKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecureMessagingIntegrityKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SecureMessagingIntegrityKeyArn = unmarshaller.Unmarshall(context);
+                    response.SecureMessagingIntegrityKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecureMessagingIntegrityKeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SecureMessagingIntegrityKeyCheckValue = unmarshaller.Unmarshall(context);
+                    response.SecureMessagingIntegrityKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisaAmexDerivationOutputs", targetDepth))
                 {
                     var unmarshaller = VisaAmexDerivationOutputsUnmarshaller.Instance;
-                    response.VisaAmexDerivationOutputs = unmarshaller.Unmarshall(context);
+                    response.VisaAmexDerivationOutputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -120,34 +120,36 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonPaymentCryptographyDataException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

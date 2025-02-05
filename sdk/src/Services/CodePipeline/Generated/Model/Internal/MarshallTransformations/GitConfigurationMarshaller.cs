@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPullRequest())
             {
                 context.Writer.WritePropertyName("pullRequest");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPullRequestListValue in requestObject.PullRequest)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GitPullRequestFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPullRequestListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPush())
             {
                 context.Writer.WritePropertyName("push");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPushListValue in requestObject.Push)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GitPushFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPushListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceActionName())
             {
                 context.Writer.WritePropertyName("sourceActionName");
-                context.Writer.Write(requestObject.SourceActionName);
+                context.Writer.WriteStringValue(requestObject.SourceActionName);
             }
 
         }

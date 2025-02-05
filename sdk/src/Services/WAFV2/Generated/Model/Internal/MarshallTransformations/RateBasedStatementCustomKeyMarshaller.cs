@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCookie())
             {
                 context.Writer.WritePropertyName("Cookie");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitCookieMarshaller.Instance;
                 marshaller.Marshall(requestObject.Cookie, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetForwardedIP())
             {
                 context.Writer.WritePropertyName("ForwardedIP");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitForwardedIPMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForwardedIP, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeader())
             {
                 context.Writer.WritePropertyName("Header");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitHeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.Header, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHTTPMethod())
             {
                 context.Writer.WritePropertyName("HTTPMethod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitHTTPMethodMarshaller.Instance;
                 marshaller.Marshall(requestObject.HTTPMethod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIP())
             {
                 context.Writer.WritePropertyName("IP");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitIPMarshaller.Instance;
                 marshaller.Marshall(requestObject.IP, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabelNamespace())
             {
                 context.Writer.WritePropertyName("LabelNamespace");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitLabelNamespaceMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelNamespace, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueryArgument())
             {
                 context.Writer.WritePropertyName("QueryArgument");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitQueryArgumentMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryArgument, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueryString())
             {
                 context.Writer.WritePropertyName("QueryString");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitQueryStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryString, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUriPath())
             {
                 context.Writer.WritePropertyName("UriPath");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateLimitUriPathMarshaller.Instance;
                 marshaller.Marshall(requestObject.UriPath, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

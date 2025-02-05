@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarketType())
             {
                 context.Writer.WritePropertyName("MarketType");
-                context.Writer.Write(requestObject.MarketType);
+                context.Writer.WriteStringValue(requestObject.MarketType);
             }
 
             if(requestObject.IsSetSpotOptions())
             {
                 context.Writer.WritePropertyName("SpotOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpotOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

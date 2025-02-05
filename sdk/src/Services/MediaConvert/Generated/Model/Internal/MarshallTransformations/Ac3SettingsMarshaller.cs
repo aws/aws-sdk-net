@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBitstreamMode())
             {
                 context.Writer.WritePropertyName("bitstreamMode");
-                context.Writer.Write(requestObject.BitstreamMode);
+                context.Writer.WriteStringValue(requestObject.BitstreamMode);
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm.Value);
+                context.Writer.WriteNumberValue(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDynamicRangeCompressionLine())
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionLine");
-                context.Writer.Write(requestObject.DynamicRangeCompressionLine);
+                context.Writer.WriteStringValue(requestObject.DynamicRangeCompressionLine);
             }
 
             if(requestObject.IsSetDynamicRangeCompressionProfile())
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionProfile");
-                context.Writer.Write(requestObject.DynamicRangeCompressionProfile);
+                context.Writer.WriteStringValue(requestObject.DynamicRangeCompressionProfile);
             }
 
             if(requestObject.IsSetDynamicRangeCompressionRf())
             {
                 context.Writer.WritePropertyName("dynamicRangeCompressionRf");
-                context.Writer.Write(requestObject.DynamicRangeCompressionRf);
+                context.Writer.WriteStringValue(requestObject.DynamicRangeCompressionRf);
             }
 
             if(requestObject.IsSetLfeFilter())
             {
                 context.Writer.WritePropertyName("lfeFilter");
-                context.Writer.Write(requestObject.LfeFilter);
+                context.Writer.WriteStringValue(requestObject.LfeFilter);
             }
 
             if(requestObject.IsSetMetadataControl())
             {
                 context.Writer.WritePropertyName("metadataControl");
-                context.Writer.Write(requestObject.MetadataControl);
+                context.Writer.WriteStringValue(requestObject.MetadataControl);
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
             }
 
         }

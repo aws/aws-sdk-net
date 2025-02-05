@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetId())
             {
                 context.Writer.WritePropertyName("assetId");
-                context.Writer.Write(requestObject.AssetId);
+                context.Writer.WriteStringValue(requestObject.AssetId);
             }
 
             if(requestObject.IsSetTargetName())
             {
                 context.Writer.WritePropertyName("targetName");
-                context.Writer.Write(requestObject.TargetName);
+                context.Writer.WriteStringValue(requestObject.TargetName);
             }
 
         }

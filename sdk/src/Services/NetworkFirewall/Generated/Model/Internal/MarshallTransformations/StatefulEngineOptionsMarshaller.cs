@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlowTimeouts())
             {
                 context.Writer.WritePropertyName("FlowTimeouts");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FlowTimeoutsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlowTimeouts, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleOrder())
             {
                 context.Writer.WritePropertyName("RuleOrder");
-                context.Writer.Write(requestObject.RuleOrder);
+                context.Writer.WriteStringValue(requestObject.RuleOrder);
             }
 
             if(requestObject.IsSetStreamExceptionPolicy())
             {
                 context.Writer.WritePropertyName("StreamExceptionPolicy");
-                context.Writer.Write(requestObject.StreamExceptionPolicy);
+                context.Writer.WriteStringValue(requestObject.StreamExceptionPolicy);
             }
 
         }

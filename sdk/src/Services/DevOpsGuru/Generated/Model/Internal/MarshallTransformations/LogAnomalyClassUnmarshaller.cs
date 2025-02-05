@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LogAnomalyClass Object
     /// </summary>  
-    public class LogAnomalyClassUnmarshaller : IUnmarshaller<LogAnomalyClass, XmlUnmarshallerContext>, IUnmarshaller<LogAnomalyClass, JsonUnmarshallerContext>
+    public class LogAnomalyClassUnmarshaller : IJsonUnmarshaller<LogAnomalyClass, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LogAnomalyClass IUnmarshaller<LogAnomalyClass, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogAnomalyClass Unmarshall(JsonUnmarshallerContext context)
+        public LogAnomalyClass Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LogAnomalyClass unmarshalledObject = new LogAnomalyClass();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Explanation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Explanation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Explanation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogAnomalyToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogAnomalyToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogAnomalyToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogAnomalyType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogAnomalyType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogAnomalyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogEventId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogEventId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogEventTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LogEventTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfLogLinesOccurrences", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfLogLinesOccurrences = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfLogLinesOccurrences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

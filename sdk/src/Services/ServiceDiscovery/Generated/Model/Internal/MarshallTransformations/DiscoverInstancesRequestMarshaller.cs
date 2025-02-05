@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
@@ -63,71 +66,76 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetHealthStatus())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetHealthStatus())
-                    {
-                        context.Writer.WritePropertyName("HealthStatus");
-                        context.Writer.Write(publicRequest.HealthStatus);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNamespaceName())
-                    {
-                        context.Writer.WritePropertyName("NamespaceName");
-                        context.Writer.Write(publicRequest.NamespaceName);
-                    }
-
-                    if(publicRequest.IsSetOptionalParameters())
-                    {
-                        context.Writer.WritePropertyName("OptionalParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
-                            var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestOptionalParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueryParameters())
-                    {
-                        context.Writer.WritePropertyName("QueryParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestQueryParametersKvp in publicRequest.QueryParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestQueryParametersKvp.Key);
-                            var publicRequestQueryParametersValue = publicRequestQueryParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestQueryParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceName())
-                    {
-                        context.Writer.WritePropertyName("ServiceName");
-                        context.Writer.Write(publicRequest.ServiceName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("HealthStatus");
+                context.Writer.WriteStringValue(publicRequest.HealthStatus);
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNamespaceName())
+            {
+                context.Writer.WritePropertyName("NamespaceName");
+                context.Writer.WriteStringValue(publicRequest.NamespaceName);
+            }
+
+            if(publicRequest.IsSetOptionalParameters())
+            {
+                context.Writer.WritePropertyName("OptionalParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
+                    var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestOptionalParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueryParameters())
+            {
+                context.Writer.WritePropertyName("QueryParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestQueryParametersKvp in publicRequest.QueryParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestQueryParametersKvp.Key);
+                    var publicRequestQueryParametersValue = publicRequestQueryParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestQueryParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetServiceName())
+            {
+                context.Writer.WritePropertyName("ServiceName");
+                context.Writer.WriteStringValue(publicRequest.ServiceName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"data-";

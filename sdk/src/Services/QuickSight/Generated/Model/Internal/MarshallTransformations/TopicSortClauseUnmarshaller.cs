@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicSortClause Object
     /// </summary>  
-    public class TopicSortClauseUnmarshaller : IUnmarshaller<TopicSortClause, XmlUnmarshallerContext>, IUnmarshaller<TopicSortClause, JsonUnmarshallerContext>
+    public class TopicSortClauseUnmarshaller : IJsonUnmarshaller<TopicSortClause, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicSortClause IUnmarshaller<TopicSortClause, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicSortClause Unmarshall(JsonUnmarshallerContext context)
+        public TopicSortClause Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicSortClause unmarshalledObject = new TopicSortClause();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Operand", targetDepth))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
-                    unmarshalledObject.Operand = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Operand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortDirection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

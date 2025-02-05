@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlatformCommandMarshaller.Instance;
                 marshaller.Marshall(requestObject.Command, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRunEnvironment())
             {
                 context.Writer.WritePropertyName("runEnvironment");
-                context.Writer.Write(requestObject.RunEnvironment);
+                context.Writer.WriteStringValue(requestObject.RunEnvironment);
             }
 
             if(requestObject.IsSetScriptLocationS3Bucket())
             {
                 context.Writer.WritePropertyName("scriptLocationS3Bucket");
-                context.Writer.Write(requestObject.ScriptLocationS3Bucket);
+                context.Writer.WriteStringValue(requestObject.ScriptLocationS3Bucket);
             }
 
             if(requestObject.IsSetScriptLocationS3Key())
             {
                 context.Writer.WritePropertyName("scriptLocationS3Key");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlatformScriptKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScriptLocationS3Key, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetType())
             {
                 context.Writer.WritePropertyName("targetType");
-                context.Writer.Write(requestObject.TargetType);
+                context.Writer.WriteStringValue(requestObject.TargetType);
             }
 
         }

@@ -81,9 +81,9 @@ namespace Amazon.IoTSiteWise.Model
         /// of the entire entry that contains it.
         /// </para>
         /// </summary>
-        public bool EnablePartialEntryProcessing
+        public bool? EnablePartialEntryProcessing
         {
-            get { return this._enablePartialEntryProcessing.GetValueOrDefault(); }
+            get { return this._enablePartialEntryProcessing; }
             set { this._enablePartialEntryProcessing = value; }
         }
 

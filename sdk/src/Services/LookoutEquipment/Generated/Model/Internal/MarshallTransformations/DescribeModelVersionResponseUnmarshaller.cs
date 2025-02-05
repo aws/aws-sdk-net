@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
@@ -47,219 +47,219 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeModelVersionResponse response = new DescribeModelVersionResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoPromotionResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AutoPromotionResult = unmarshaller.Unmarshall(context);
+                    response.AutoPromotionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoPromotionResultReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AutoPromotionResultReason = unmarshaller.Unmarshall(context);
+                    response.AutoPromotionResultReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataPreProcessingConfiguration", targetDepth))
                 {
                     var unmarshaller = DataPreProcessingConfigurationUnmarshaller.Instance;
-                    response.DataPreProcessingConfiguration = unmarshaller.Unmarshall(context);
+                    response.DataPreProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetArn = unmarshaller.Unmarshall(context);
+                    response.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetName = unmarshaller.Unmarshall(context);
+                    response.DatasetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationDataEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.EvaluationDataEndTime = unmarshaller.Unmarshall(context);
+                    response.EvaluationDataEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationDataStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.EvaluationDataStartTime = unmarshaller.Unmarshall(context);
+                    response.EvaluationDataStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailedReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailedReason = unmarshaller.Unmarshall(context);
+                    response.FailedReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImportedDataSizeInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.ImportedDataSizeInBytes = unmarshaller.Unmarshall(context);
+                    response.ImportedDataSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImportJobEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ImportJobEndTime = unmarshaller.Unmarshall(context);
+                    response.ImportJobEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImportJobStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ImportJobStartTime = unmarshaller.Unmarshall(context);
+                    response.ImportJobStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelsInputConfiguration", targetDepth))
                 {
                     var unmarshaller = LabelsInputConfigurationUnmarshaller.Instance;
-                    response.LabelsInputConfiguration = unmarshaller.Unmarshall(context);
+                    response.LabelsInputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    response.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelArn = unmarshaller.Unmarshall(context);
+                    response.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDiagnosticsOutputConfiguration", targetDepth))
                 {
                     var unmarshaller = ModelDiagnosticsOutputConfigurationUnmarshaller.Instance;
-                    response.ModelDiagnosticsOutputConfiguration = unmarshaller.Unmarshall(context);
+                    response.ModelDiagnosticsOutputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDiagnosticsResultsObject", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    response.ModelDiagnosticsResultsObject = unmarshaller.Unmarshall(context);
+                    response.ModelDiagnosticsResultsObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelMetrics = unmarshaller.Unmarshall(context);
+                    response.ModelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelName = unmarshaller.Unmarshall(context);
+                    response.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelQuality", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelQuality = unmarshaller.Unmarshall(context);
+                    response.ModelQuality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelVersion", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.ModelVersion = unmarshaller.Unmarshall(context);
+                    response.ModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ModelVersionArn = unmarshaller.Unmarshall(context);
+                    response.ModelVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OffCondition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.OffCondition = unmarshaller.Unmarshall(context);
+                    response.OffCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PriorModelMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PriorModelMetrics = unmarshaller.Unmarshall(context);
+                    response.PriorModelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetrainingAvailableDataInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.RetrainingAvailableDataInDays = unmarshaller.Unmarshall(context);
+                    response.RetrainingAvailableDataInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Schema", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Schema = unmarshaller.Unmarshall(context);
+                    response.Schema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerSideKmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ServerSideKmsKeyId = unmarshaller.Unmarshall(context);
+                    response.ServerSideKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceModelVersionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceModelVersionArn = unmarshaller.Unmarshall(context);
+                    response.SourceModelVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceType = unmarshaller.Unmarshall(context);
+                    response.SourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingDataEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.TrainingDataEndTime = unmarshaller.Unmarshall(context);
+                    response.TrainingDataEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingDataStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.TrainingDataStartTime = unmarshaller.Unmarshall(context);
+                    response.TrainingDataStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingExecutionEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.TrainingExecutionEndTime = unmarshaller.Unmarshall(context);
+                    response.TrainingExecutionEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingExecutionStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.TrainingExecutionStartTime = unmarshaller.Unmarshall(context);
+                    response.TrainingExecutionStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -276,34 +276,36 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonLookoutEquipmentException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

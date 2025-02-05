@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ManagedPolicyDetail Object
     /// </summary>  
-    public class ManagedPolicyDetailUnmarshaller : IUnmarshaller<ManagedPolicyDetail, XmlUnmarshallerContext>, IUnmarshaller<ManagedPolicyDetail, JsonUnmarshallerContext>
+    public class ManagedPolicyDetailUnmarshaller : IXmlUnmarshaller<ManagedPolicyDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -141,17 +141,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ManagedPolicyDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ManagedPolicyDetailUnmarshaller _instance = new ManagedPolicyDetailUnmarshaller();        
 

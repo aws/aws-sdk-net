@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,154 +49,154 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAndAll())
             {
                 context.Writer.WritePropertyName("andAll");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAndAllListValue in requestObject.AndAll)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RetrievalFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndAllListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEquals())
             {
                 context.Writer.WritePropertyName("equals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Equals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThanOrEquals())
             {
                 context.Writer.WritePropertyName("greaterThanOrEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThanOrEquals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIn())
             {
                 context.Writer.WritePropertyName("in");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.In, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThanOrEquals())
             {
                 context.Writer.WritePropertyName("lessThanOrEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThanOrEquals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListContains())
             {
                 context.Writer.WritePropertyName("listContains");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListContains, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("notEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotEquals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotIn())
             {
                 context.Writer.WritePropertyName("notIn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotIn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrAll())
             {
                 context.Writer.WritePropertyName("orAll");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrAllListValue in requestObject.OrAll)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RetrievalFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrAllListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartsWith())
             {
                 context.Writer.WritePropertyName("startsWith");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartsWith, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringContains())
             {
                 context.Writer.WritePropertyName("stringContains");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringContains, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

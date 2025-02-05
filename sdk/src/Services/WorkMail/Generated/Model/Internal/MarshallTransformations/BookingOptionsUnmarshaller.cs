@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BookingOptions Object
     /// </summary>  
-    public class BookingOptionsUnmarshaller : IUnmarshaller<BookingOptions, XmlUnmarshallerContext>, IUnmarshaller<BookingOptions, JsonUnmarshallerContext>
+    public class BookingOptionsUnmarshaller : IJsonUnmarshaller<BookingOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BookingOptions IUnmarshaller<BookingOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BookingOptions Unmarshall(JsonUnmarshallerContext context)
+        public BookingOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BookingOptions unmarshalledObject = new BookingOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoAcceptRequests", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoAcceptRequests = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoAcceptRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoDeclineConflictingRequests", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoDeclineConflictingRequests = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoDeclineConflictingRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoDeclineRecurringRequests", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoDeclineRecurringRequests = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoDeclineRecurringRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

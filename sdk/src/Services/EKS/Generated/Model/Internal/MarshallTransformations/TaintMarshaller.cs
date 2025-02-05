@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEffect())
             {
                 context.Writer.WritePropertyName("effect");
-                context.Writer.Write(requestObject.Effect);
+                context.Writer.WriteStringValue(requestObject.Effect);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

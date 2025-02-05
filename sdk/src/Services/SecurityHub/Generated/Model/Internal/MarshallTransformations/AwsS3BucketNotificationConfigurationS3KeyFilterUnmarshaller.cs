@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsS3BucketNotificationConfigurationS3KeyFilter Object
     /// </summary>  
-    public class AwsS3BucketNotificationConfigurationS3KeyFilterUnmarshaller : IUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilter, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilter, JsonUnmarshallerContext>
+    public class AwsS3BucketNotificationConfigurationS3KeyFilterUnmarshaller : IJsonUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsS3BucketNotificationConfigurationS3KeyFilter IUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsS3BucketNotificationConfigurationS3KeyFilter Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketNotificationConfigurationS3KeyFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsS3BucketNotificationConfigurationS3KeyFilter unmarshalledObject = new AwsS3BucketNotificationConfigurationS3KeyFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FilterRules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilterRule, AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller>(AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller.Instance);
-                    unmarshalledObject.FilterRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilterRule, AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller>(AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller.Instance);
+                    unmarshalledObject.FilterRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

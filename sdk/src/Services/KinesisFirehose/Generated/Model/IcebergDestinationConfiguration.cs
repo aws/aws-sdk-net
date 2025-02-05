@@ -62,9 +62,9 @@ namespace Amazon.KinesisFirehose.Model
         /// see out of order delivery. 
         /// </para>
         /// </summary>
-        public bool AppendOnly
+        public bool? AppendOnly
         {
-            get { return this._appendOnly.GetValueOrDefault(); }
+            get { return this._appendOnly; }
             set { this._appendOnly = value; }
         }
 

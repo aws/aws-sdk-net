@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredState())
             {
                 context.Writer.WritePropertyName("DesiredState");
-                context.Writer.Write(requestObject.DesiredState);
+                context.Writer.WriteStringValue(requestObject.DesiredState);
             }
 
             if(requestObject.IsSetModelHandle())
             {
                 context.Writer.WritePropertyName("ModelHandle");
-                context.Writer.Write(requestObject.ModelHandle);
+                context.Writer.WriteStringValue(requestObject.ModelHandle);
             }
 
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
-                context.Writer.Write(requestObject.ModelName);
+                context.Writer.WriteStringValue(requestObject.ModelName);
             }
 
             if(requestObject.IsSetModelVersion())
             {
                 context.Writer.WritePropertyName("ModelVersion");
-                context.Writer.Write(requestObject.ModelVersion);
+                context.Writer.WriteStringValue(requestObject.ModelVersion);
             }
 
             if(requestObject.IsSetRollbackFailureReason())
             {
                 context.Writer.WritePropertyName("RollbackFailureReason");
-                context.Writer.Write(requestObject.RollbackFailureReason);
+                context.Writer.WriteStringValue(requestObject.RollbackFailureReason);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStatusReason())
             {
                 context.Writer.WritePropertyName("StatusReason");
-                context.Writer.Write(requestObject.StatusReason);
+                context.Writer.WriteStringValue(requestObject.StatusReason);
             }
 
         }

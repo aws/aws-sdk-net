@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchChangeException operation
     /// </summary>  
-    public class NoSuchChangeExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchChangeException, XmlUnmarshallerContext>
+    public class NoSuchChangeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchChangeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

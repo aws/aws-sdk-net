@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SlackChannelConfiguration Object
     /// </summary>  
-    public class SlackChannelConfigurationUnmarshaller : IUnmarshaller<SlackChannelConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SlackChannelConfiguration, JsonUnmarshallerContext>
+    public class SlackChannelConfigurationUnmarshaller : IJsonUnmarshaller<SlackChannelConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SlackChannelConfiguration IUnmarshaller<SlackChannelConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlackChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SlackChannelConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SlackChannelConfiguration unmarshalledObject = new SlackChannelConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("channelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notifyOnAddCorrespondenceToCase", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NotifyOnAddCorrespondenceToCase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotifyOnAddCorrespondenceToCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notifyOnCaseSeverity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotifyOnCaseSeverity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotifyOnCaseSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notifyOnCreateOrReopenCase", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NotifyOnCreateOrReopenCase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotifyOnCreateOrReopenCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notifyOnResolveCase", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NotifyOnResolveCase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotifyOnResolveCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("teamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TeamId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TeamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

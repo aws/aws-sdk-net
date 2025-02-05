@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesReceived())
             {
                 context.Writer.WritePropertyName("bytesReceived");
-                context.Writer.Write(requestObject.BytesReceived.Value);
+                context.Writer.WriteNumberValue(requestObject.BytesReceived.Value);
             }
 
             if(requestObject.IsSetBytesSent())
             {
                 context.Writer.WritePropertyName("bytesSent");
-                context.Writer.Write(requestObject.BytesSent.Value);
+                context.Writer.WriteNumberValue(requestObject.BytesSent.Value);
             }
 
             if(requestObject.IsSetCapabilityArn())
             {
                 context.Writer.WritePropertyName("capabilityArn");
-                context.Writer.Write(requestObject.CapabilityArn);
+                context.Writer.WriteStringValue(requestObject.CapabilityArn);
             }
 
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("componentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetDataflowId())
             {
                 context.Writer.WritePropertyName("dataflowId");
-                context.Writer.Write(requestObject.DataflowId);
+                context.Writer.WriteStringValue(requestObject.DataflowId);
             }
 
             if(requestObject.IsSetPacketsDropped())
             {
                 context.Writer.WritePropertyName("packetsDropped");
-                context.Writer.Write(requestObject.PacketsDropped.Value);
+                context.Writer.WriteNumberValue(requestObject.PacketsDropped.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

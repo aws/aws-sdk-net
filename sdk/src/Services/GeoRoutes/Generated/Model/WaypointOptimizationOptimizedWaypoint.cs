@@ -82,9 +82,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ClusterIndex
+        public int? ClusterIndex
         {
-            get { return this._clusterIndex.GetValueOrDefault(); }
+            get { return this._clusterIndex; }
             set { this._clusterIndex = value; }
         }
 

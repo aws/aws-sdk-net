@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterBacktrackNotFoundException operation
     /// </summary>  
-    public class DBClusterBacktrackNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterBacktrackNotFoundException, XmlUnmarshallerContext>
+    public class DBClusterBacktrackNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterBacktrackNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArtifactId())
             {
                 context.Writer.WritePropertyName("ArtifactId");
-                context.Writer.Write(requestObject.ArtifactId);
+                context.Writer.WriteStringValue(requestObject.ArtifactId);
             }
 
             if(requestObject.IsSetGroupId())
             {
                 context.Writer.WritePropertyName("GroupId");
-                context.Writer.Write(requestObject.GroupId);
+                context.Writer.WriteStringValue(requestObject.GroupId);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

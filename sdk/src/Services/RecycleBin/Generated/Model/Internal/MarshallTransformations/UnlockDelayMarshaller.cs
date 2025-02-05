@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnlockDelayUnit())
             {
                 context.Writer.WritePropertyName("UnlockDelayUnit");
-                context.Writer.Write(requestObject.UnlockDelayUnit);
+                context.Writer.WriteStringValue(requestObject.UnlockDelayUnit);
             }
 
             if(requestObject.IsSetUnlockDelayValue())
             {
                 context.Writer.WritePropertyName("UnlockDelayValue");
-                context.Writer.Write(requestObject.UnlockDelayValue.Value);
+                context.Writer.WriteNumberValue(requestObject.UnlockDelayValue.Value);
             }
 
         }

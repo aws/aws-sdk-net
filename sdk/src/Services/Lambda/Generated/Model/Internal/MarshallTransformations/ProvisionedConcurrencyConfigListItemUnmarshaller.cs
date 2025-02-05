@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProvisionedConcurrencyConfigListItem Object
     /// </summary>  
-    public class ProvisionedConcurrencyConfigListItemUnmarshaller : IUnmarshaller<ProvisionedConcurrencyConfigListItem, XmlUnmarshallerContext>, IUnmarshaller<ProvisionedConcurrencyConfigListItem, JsonUnmarshallerContext>
+    public class ProvisionedConcurrencyConfigListItemUnmarshaller : IJsonUnmarshaller<ProvisionedConcurrencyConfigListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProvisionedConcurrencyConfigListItem IUnmarshaller<ProvisionedConcurrencyConfigListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProvisionedConcurrencyConfigListItem Unmarshall(JsonUnmarshallerContext context)
+        public ProvisionedConcurrencyConfigListItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProvisionedConcurrencyConfigListItem unmarshalledObject = new ProvisionedConcurrencyConfigListItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AllocatedProvisionedConcurrentExecutions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AllocatedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllocatedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailableProvisionedConcurrentExecutions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailableProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailableProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestedProvisionedConcurrentExecutions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RequestedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstraints())
             {
                 context.Writer.WritePropertyName("constraints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KmsGrantConstraintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Constraints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGranteePrincipal())
             {
                 context.Writer.WritePropertyName("granteePrincipal");
-                context.Writer.Write(requestObject.GranteePrincipal);
+                context.Writer.WriteStringValue(requestObject.GranteePrincipal);
             }
 
             if(requestObject.IsSetIssuingAccount())
             {
                 context.Writer.WritePropertyName("issuingAccount");
-                context.Writer.Write(requestObject.IssuingAccount);
+                context.Writer.WriteStringValue(requestObject.IssuingAccount);
             }
 
             if(requestObject.IsSetOperations())
             {
                 context.Writer.WritePropertyName("operations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperationsListValue in requestObject.Operations)
                 {
-                        context.Writer.Write(requestObjectOperationsListValue);
+                        context.Writer.WriteStringValue(requestObjectOperationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRetiringPrincipal())
             {
                 context.Writer.WritePropertyName("retiringPrincipal");
-                context.Writer.Write(requestObject.RetiringPrincipal);
+                context.Writer.WriteStringValue(requestObject.RetiringPrincipal);
             }
 
         }

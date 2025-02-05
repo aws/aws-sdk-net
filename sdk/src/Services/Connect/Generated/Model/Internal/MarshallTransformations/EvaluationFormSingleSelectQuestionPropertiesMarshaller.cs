@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomation())
             {
                 context.Writer.WritePropertyName("Automation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationFormSingleSelectQuestionAutomationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Automation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisplayAs())
             {
                 context.Writer.WritePropertyName("DisplayAs");
-                context.Writer.Write(requestObject.DisplayAs);
+                context.Writer.WriteStringValue(requestObject.DisplayAs);
             }
 
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOptionsListValue in requestObject.Options)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EvaluationFormSingleSelectQuestionOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

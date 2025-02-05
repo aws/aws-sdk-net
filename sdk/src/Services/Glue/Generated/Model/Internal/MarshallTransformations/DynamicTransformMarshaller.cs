@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,74 +49,74 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFunctionName())
             {
                 context.Writer.WritePropertyName("FunctionName");
-                context.Writer.Write(requestObject.FunctionName);
+                context.Writer.WriteStringValue(requestObject.FunctionName);
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputSchemas())
             {
                 context.Writer.WritePropertyName("OutputSchemas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GlueSchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputSchemasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParametersListValue in requestObject.Parameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TransformConfigParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetTransformName())
             {
                 context.Writer.WritePropertyName("TransformName");
-                context.Writer.Write(requestObject.TransformName);
+                context.Writer.WriteStringValue(requestObject.TransformName);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

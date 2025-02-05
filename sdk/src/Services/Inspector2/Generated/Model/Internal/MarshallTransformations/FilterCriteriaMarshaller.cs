@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,673 +49,673 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("awsAccountId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAwsAccountIdListValue in requestObject.AwsAccountId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectAwsAccountIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCodeVulnerabilityDetectorName())
             {
                 context.Writer.WritePropertyName("codeVulnerabilityDetectorName");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCodeVulnerabilityDetectorNameListValue in requestObject.CodeVulnerabilityDetectorName)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectCodeVulnerabilityDetectorNameListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCodeVulnerabilityDetectorTags())
             {
                 context.Writer.WritePropertyName("codeVulnerabilityDetectorTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCodeVulnerabilityDetectorTagsListValue in requestObject.CodeVulnerabilityDetectorTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectCodeVulnerabilityDetectorTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCodeVulnerabilityFilePath())
             {
                 context.Writer.WritePropertyName("codeVulnerabilityFilePath");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCodeVulnerabilityFilePathListValue in requestObject.CodeVulnerabilityFilePath)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectCodeVulnerabilityFilePathListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComponentId())
             {
                 context.Writer.WritePropertyName("componentId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComponentIdListValue in requestObject.ComponentId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectComponentIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("componentType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComponentTypeListValue in requestObject.ComponentType)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectComponentTypeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2InstanceImageId())
             {
                 context.Writer.WritePropertyName("ec2InstanceImageId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2InstanceImageIdListValue in requestObject.Ec2InstanceImageId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2InstanceImageIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2InstanceSubnetId())
             {
                 context.Writer.WritePropertyName("ec2InstanceSubnetId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2InstanceSubnetIdListValue in requestObject.Ec2InstanceSubnetId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2InstanceSubnetIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2InstanceVpcId())
             {
                 context.Writer.WritePropertyName("ec2InstanceVpcId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2InstanceVpcIdListValue in requestObject.Ec2InstanceVpcId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2InstanceVpcIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImageArchitecture())
             {
                 context.Writer.WritePropertyName("ecrImageArchitecture");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImageArchitectureListValue in requestObject.EcrImageArchitecture)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageArchitectureListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImageHash())
             {
                 context.Writer.WritePropertyName("ecrImageHash");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImageHashListValue in requestObject.EcrImageHash)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageHashListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImagePushedAt())
             {
                 context.Writer.WritePropertyName("ecrImagePushedAt");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImagePushedAtListValue in requestObject.EcrImagePushedAt)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImagePushedAtListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImageRegistry())
             {
                 context.Writer.WritePropertyName("ecrImageRegistry");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImageRegistryListValue in requestObject.EcrImageRegistry)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageRegistryListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImageRepositoryName())
             {
                 context.Writer.WritePropertyName("ecrImageRepositoryName");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImageRepositoryNameListValue in requestObject.EcrImageRepositoryName)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageRepositoryNameListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcrImageTags())
             {
                 context.Writer.WritePropertyName("ecrImageTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEcrImageTagsListValue in requestObject.EcrImageTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEpssScore())
             {
                 context.Writer.WritePropertyName("epssScore");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEpssScoreListValue in requestObject.EpssScore)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NumberFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEpssScoreListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExploitAvailable())
             {
                 context.Writer.WritePropertyName("exploitAvailable");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExploitAvailableListValue in requestObject.ExploitAvailable)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectExploitAvailableListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingArn())
             {
                 context.Writer.WritePropertyName("findingArn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingArnListValue in requestObject.FindingArn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFindingArnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingStatus())
             {
                 context.Writer.WritePropertyName("findingStatus");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingStatusListValue in requestObject.FindingStatus)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFindingStatusListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingType())
             {
                 context.Writer.WritePropertyName("findingType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingTypeListValue in requestObject.FindingType)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFindingTypeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFirstObservedAt())
             {
                 context.Writer.WritePropertyName("firstObservedAt");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFirstObservedAtListValue in requestObject.FirstObservedAt)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFirstObservedAtListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFixAvailable())
             {
                 context.Writer.WritePropertyName("fixAvailable");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFixAvailableListValue in requestObject.FixAvailable)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFixAvailableListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInspectorScore())
             {
                 context.Writer.WritePropertyName("inspectorScore");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInspectorScoreListValue in requestObject.InspectorScore)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NumberFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectInspectorScoreListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLambdaFunctionExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("lambdaFunctionExecutionRoleArn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLambdaFunctionExecutionRoleArnListValue in requestObject.LambdaFunctionExecutionRoleArn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaFunctionExecutionRoleArnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLambdaFunctionLastModifiedAt())
             {
                 context.Writer.WritePropertyName("lambdaFunctionLastModifiedAt");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLambdaFunctionLastModifiedAtListValue in requestObject.LambdaFunctionLastModifiedAt)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaFunctionLastModifiedAtListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLambdaFunctionLayers())
             {
                 context.Writer.WritePropertyName("lambdaFunctionLayers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLambdaFunctionLayersListValue in requestObject.LambdaFunctionLayers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaFunctionLayersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLambdaFunctionName())
             {
                 context.Writer.WritePropertyName("lambdaFunctionName");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLambdaFunctionNameListValue in requestObject.LambdaFunctionName)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaFunctionNameListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLambdaFunctionRuntime())
             {
                 context.Writer.WritePropertyName("lambdaFunctionRuntime");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLambdaFunctionRuntimeListValue in requestObject.LambdaFunctionRuntime)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaFunctionRuntimeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLastObservedAt())
             {
                 context.Writer.WritePropertyName("lastObservedAt");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastObservedAtListValue in requestObject.LastObservedAt)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastObservedAtListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNetworkProtocol())
             {
                 context.Writer.WritePropertyName("networkProtocol");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetworkProtocolListValue in requestObject.NetworkProtocol)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectNetworkProtocolListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPortRange())
             {
                 context.Writer.WritePropertyName("portRange");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPortRangeListValue in requestObject.PortRange)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PortRangeFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortRangeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRelatedVulnerabilities())
             {
                 context.Writer.WritePropertyName("relatedVulnerabilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelatedVulnerabilitiesListValue in requestObject.RelatedVulnerabilities)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelatedVulnerabilitiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceIdListValue in requestObject.ResourceId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTags())
             {
                 context.Writer.WritePropertyName("resourceTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTagsListValue in requestObject.ResourceTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MapFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypeListValue in requestObject.ResourceType)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceTypeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("severity");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSeverityListValue in requestObject.Severity)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectSeverityListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTitleListValue in requestObject.Title)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTitleListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("updatedAt");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUpdatedAtListValue in requestObject.UpdatedAt)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectUpdatedAtListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVendorSeverity())
             {
                 context.Writer.WritePropertyName("vendorSeverity");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVendorSeverityListValue in requestObject.VendorSeverity)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVendorSeverityListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVulnerabilityId())
             {
                 context.Writer.WritePropertyName("vulnerabilityId");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVulnerabilityIdListValue in requestObject.VulnerabilityId)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVulnerabilityIdListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVulnerabilitySource())
             {
                 context.Writer.WritePropertyName("vulnerabilitySource");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVulnerabilitySourceListValue in requestObject.VulnerabilitySource)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVulnerabilitySourceListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVulnerablePackages())
             {
                 context.Writer.WritePropertyName("vulnerablePackages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVulnerablePackagesListValue in requestObject.VulnerablePackages)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PackageFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVulnerablePackagesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

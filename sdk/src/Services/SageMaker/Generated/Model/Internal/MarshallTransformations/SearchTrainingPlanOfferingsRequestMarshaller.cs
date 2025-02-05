@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,60 +66,65 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDurationHours())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDurationHours())
-                    {
-                        context.Writer.WritePropertyName("DurationHours");
-                        context.Writer.Write(publicRequest.DurationHours.Value);
-                    }
-
-                    if(publicRequest.IsSetEndTimeBefore())
-                    {
-                        context.Writer.WritePropertyName("EndTimeBefore");
-                        context.Writer.Write(publicRequest.EndTimeBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceCount())
-                    {
-                        context.Writer.WritePropertyName("InstanceCount");
-                        context.Writer.Write(publicRequest.InstanceCount.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("InstanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetStartTimeAfter())
-                    {
-                        context.Writer.WritePropertyName("StartTimeAfter");
-                        context.Writer.Write(publicRequest.StartTimeAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetTargetResources())
-                    {
-                        context.Writer.WritePropertyName("TargetResources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
-                        {
-                                context.Writer.Write(publicRequestTargetResourcesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DurationHours");
+                context.Writer.WriteNumberValue(publicRequest.DurationHours.Value);
             }
+
+            if(publicRequest.IsSetEndTimeBefore())
+            {
+                context.Writer.WritePropertyName("EndTimeBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimeBefore.Value)));
+            }
+
+            if(publicRequest.IsSetInstanceCount())
+            {
+                context.Writer.WritePropertyName("InstanceCount");
+                context.Writer.WriteNumberValue(publicRequest.InstanceCount.Value);
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetStartTimeAfter())
+            {
+                context.Writer.WritePropertyName("StartTimeAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimeAfter.Value)));
+            }
+
+            if(publicRequest.IsSetTargetResources())
+            {
+                context.Writer.WritePropertyName("TargetResources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
+                {
+                        context.Writer.WriteStringValue(publicRequestTargetResourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

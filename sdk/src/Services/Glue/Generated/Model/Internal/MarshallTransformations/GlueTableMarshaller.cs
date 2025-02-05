@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalOptions())
             {
                 context.Writer.WritePropertyName("AdditionalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalOptionsKvp in requestObject.AdditionalOptions)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalOptionsKvp.Key);
                     var requestObjectAdditionalOptionsValue = requestObjectAdditionalOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
-                context.Writer.Write(requestObject.CatalogId);
+                context.Writer.WriteStringValue(requestObject.CatalogId);
             }
 
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
         }

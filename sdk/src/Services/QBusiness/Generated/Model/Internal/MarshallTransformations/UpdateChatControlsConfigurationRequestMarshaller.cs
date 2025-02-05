@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -64,115 +67,106 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/chatcontrols";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBlockedPhrasesConfigurationUpdate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBlockedPhrasesConfigurationUpdate())
-                    {
-                        context.Writer.WritePropertyName("blockedPhrasesConfigurationUpdate");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("blockedPhrasesConfigurationUpdate");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BlockedPhrasesConfigurationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BlockedPhrasesConfigurationUpdate, context);
+                var marshaller = BlockedPhrasesConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BlockedPhrasesConfigurationUpdate, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-<<<<<<< HEAD
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetResponseScope())
-                {
-                    context.Writer.WritePropertyName("responseScope");
-                    context.Writer.Write(publicRequest.ResponseScope);
-                }
-=======
-                if(publicRequest.IsSetOrchestrationConfiguration())
-                {
-                    context.Writer.WritePropertyName("orchestrationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrchestrationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrchestrationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetResponseScope())
-                {
-                    context.Writer.WritePropertyName("responseScope");
-                    context.Writer.Write(publicRequest.ResponseScope);
-                }
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCreatorModeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("creatorModeConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreatorModeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CreatorModeConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResponseScope())
-                    {
-                        context.Writer.WritePropertyName("responseScope");
-                        context.Writer.Write(publicRequest.ResponseScope);
-                    }
-
-                    if(publicRequest.IsSetTopicConfigurationsToCreateOrUpdate())
-                    {
-                        context.Writer.WritePropertyName("topicConfigurationsToCreateOrUpdate");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTopicConfigurationsToCreateOrUpdateListValue in publicRequest.TopicConfigurationsToCreateOrUpdate)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TopicConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTopicConfigurationsToCreateOrUpdateListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTopicConfigurationsToDelete())
-                    {
-                        context.Writer.WritePropertyName("topicConfigurationsToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTopicConfigurationsToDeleteListValue in publicRequest.TopicConfigurationsToDelete)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TopicConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTopicConfigurationsToDeleteListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCreatorModeConfiguration())
+            {
+                context.Writer.WritePropertyName("creatorModeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreatorModeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreatorModeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOrchestrationConfiguration())
+            {
+                context.Writer.WritePropertyName("orchestrationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OrchestrationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OrchestrationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResponseScope())
+            {
+                context.Writer.WritePropertyName("responseScope");
+                context.Writer.WriteStringValue(publicRequest.ResponseScope);
+            }
+
+            if(publicRequest.IsSetTopicConfigurationsToCreateOrUpdate())
+            {
+                context.Writer.WritePropertyName("topicConfigurationsToCreateOrUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTopicConfigurationsToCreateOrUpdateListValue in publicRequest.TopicConfigurationsToCreateOrUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TopicConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTopicConfigurationsToCreateOrUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTopicConfigurationsToDelete())
+            {
+                context.Writer.WritePropertyName("topicConfigurationsToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTopicConfigurationsToDeleteListValue in publicRequest.TopicConfigurationsToDelete)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TopicConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTopicConfigurationsToDeleteListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRate())
             {
                 context.Writer.WritePropertyName("DataRate");
-                context.Writer.Write(requestObject.DataRate.Value);
+                context.Writer.WriteNumberValue(requestObject.DataRate.Value);
             }
 
             if(requestObject.IsSetFrequencies())
             {
                 context.Writer.WritePropertyName("Frequencies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFrequenciesListValue in requestObject.Frequencies)
                 {
-                        context.Writer.Write(requestObjectFrequenciesListValue);
+                        context.Writer.WriteNumberValue(requestObjectFrequenciesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

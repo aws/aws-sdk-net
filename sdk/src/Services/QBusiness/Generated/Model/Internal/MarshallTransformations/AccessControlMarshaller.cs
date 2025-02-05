@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemberRelation())
             {
                 context.Writer.WritePropertyName("memberRelation");
-                context.Writer.Write(requestObject.MemberRelation);
+                context.Writer.WriteStringValue(requestObject.MemberRelation);
             }
 
             if(requestObject.IsSetPrincipals())
             {
                 context.Writer.WritePropertyName("principals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrincipalsListValue in requestObject.Principals)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PrincipalMarshaller.Instance;
                     marshaller.Marshall(requestObjectPrincipalsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

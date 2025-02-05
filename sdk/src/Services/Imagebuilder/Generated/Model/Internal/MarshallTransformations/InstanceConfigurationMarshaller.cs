@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockDeviceMappings())
             {
                 context.Writer.WritePropertyName("blockDeviceMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBlockDeviceMappingsListValue in requestObject.BlockDeviceMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InstanceBlockDeviceMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectBlockDeviceMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
         }

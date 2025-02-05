@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredentials())
             {
                 context.Writer.WritePropertyName("Credentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetBundleImportJobDataSourceCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Credentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataSourceId())
             {
                 context.Writer.WritePropertyName("DataSourceId");
-                context.Writer.Write(requestObject.DataSourceId);
+                context.Writer.WriteStringValue(requestObject.DataSourceId);
             }
 
             if(requestObject.IsSetDataSourceParameters())
             {
                 context.Writer.WritePropertyName("DataSourceParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSourceParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSslProperties())
             {
                 context.Writer.WritePropertyName("SslProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SslPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SslProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConnectionProperties())
             {
                 context.Writer.WritePropertyName("VpcConnectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConnectionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConnectionProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

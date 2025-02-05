@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeDatasetParameter())
             {
                 context.Writer.WritePropertyName("DateTimeDatasetParameter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateTimeDatasetParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateTimeDatasetParameter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecimalDatasetParameter())
             {
                 context.Writer.WritePropertyName("DecimalDatasetParameter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalDatasetParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecimalDatasetParameter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIntegerDatasetParameter())
             {
                 context.Writer.WritePropertyName("IntegerDatasetParameter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntegerDatasetParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.IntegerDatasetParameter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringDatasetParameter())
             {
                 context.Writer.WritePropertyName("StringDatasetParameter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringDatasetParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringDatasetParameter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

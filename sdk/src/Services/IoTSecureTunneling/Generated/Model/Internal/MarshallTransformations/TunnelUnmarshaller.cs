@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Tunnel Object
     /// </summary>  
-    public class TunnelUnmarshaller : IUnmarshaller<Tunnel, XmlUnmarshallerContext>, IUnmarshaller<Tunnel, JsonUnmarshallerContext>
+    public class TunnelUnmarshaller : IJsonUnmarshaller<Tunnel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Tunnel IUnmarshaller<Tunnel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Tunnel Unmarshall(JsonUnmarshallerContext context)
+        public Tunnel Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Tunnel unmarshalledObject = new Tunnel();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationConfig", targetDepth))
                 {
                     var unmarshaller = DestinationConfigUnmarshaller.Instance;
-                    unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationConnectionState", targetDepth))
                 {
                     var unmarshaller = ConnectionStateUnmarshaller.Instance;
-                    unmarshalledObject.DestinationConnectionState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationConnectionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceConnectionState", targetDepth))
                 {
                     var unmarshaller = ConnectionStateUnmarshaller.Instance;
-                    unmarshalledObject.SourceConnectionState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceConnectionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutConfig", targetDepth))
                 {
                     var unmarshaller = TimeoutConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tunnelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TunnelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TunnelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tunnelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TunnelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TunnelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

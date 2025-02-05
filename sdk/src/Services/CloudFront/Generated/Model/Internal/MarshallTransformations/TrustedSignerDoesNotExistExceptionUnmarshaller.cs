@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustedSignerDoesNotExistException operation
     /// </summary>  
-    public class TrustedSignerDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<TrustedSignerDoesNotExistException, XmlUnmarshallerContext>
+    public class TrustedSignerDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TrustedSignerDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

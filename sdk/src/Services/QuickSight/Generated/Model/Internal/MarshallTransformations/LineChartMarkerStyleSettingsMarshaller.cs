@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarkerColor())
             {
                 context.Writer.WritePropertyName("MarkerColor");
-                context.Writer.Write(requestObject.MarkerColor);
+                context.Writer.WriteStringValue(requestObject.MarkerColor);
             }
 
             if(requestObject.IsSetMarkerShape())
             {
                 context.Writer.WritePropertyName("MarkerShape");
-                context.Writer.Write(requestObject.MarkerShape);
+                context.Writer.WriteStringValue(requestObject.MarkerShape);
             }
 
             if(requestObject.IsSetMarkerSize())
             {
                 context.Writer.WritePropertyName("MarkerSize");
-                context.Writer.Write(requestObject.MarkerSize);
+                context.Writer.WriteStringValue(requestObject.MarkerSize);
             }
 
             if(requestObject.IsSetMarkerVisibility())
             {
                 context.Writer.WritePropertyName("MarkerVisibility");
-                context.Writer.Write(requestObject.MarkerVisibility);
+                context.Writer.WriteStringValue(requestObject.MarkerVisibility);
             }
 
         }

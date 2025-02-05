@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDashboardIds())
             {
                 context.Writer.WritePropertyName("DashboardIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDashboardIdsListValue in requestObject.DashboardIds)
                 {
-                        context.Writer.Write(requestObjectDashboardIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectDashboardIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLinkSharingConfiguration())
             {
                 context.Writer.WritePropertyName("LinkSharingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetBundleResourceLinkSharingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LinkSharingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPermissions())
             {
                 context.Writer.WritePropertyName("Permissions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetBundleResourcePermissionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Permissions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

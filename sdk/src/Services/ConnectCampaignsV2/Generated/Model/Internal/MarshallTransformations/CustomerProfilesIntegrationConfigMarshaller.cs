@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainArn())
             {
                 context.Writer.WritePropertyName("domainArn");
-                context.Writer.Write(requestObject.DomainArn);
+                context.Writer.WriteStringValue(requestObject.DomainArn);
             }
 
             if(requestObject.IsSetObjectTypeNames())
             {
                 context.Writer.WritePropertyName("objectTypeNames");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectObjectTypeNamesKvp in requestObject.ObjectTypeNames)
                 {
                     context.Writer.WritePropertyName(requestObjectObjectTypeNamesKvp.Key);
                     var requestObjectObjectTypeNamesValue = requestObjectObjectTypeNamesKvp.Value;
 
-                        context.Writer.Write(requestObjectObjectTypeNamesValue);
+                        context.Writer.WriteStringValue(requestObjectObjectTypeNamesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

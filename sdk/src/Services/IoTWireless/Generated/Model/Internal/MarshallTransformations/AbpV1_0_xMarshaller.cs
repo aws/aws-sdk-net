@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDevAddr())
             {
                 context.Writer.WritePropertyName("DevAddr");
-                context.Writer.Write(requestObject.DevAddr);
+                context.Writer.WriteStringValue(requestObject.DevAddr);
             }
 
             if(requestObject.IsSetFCntStart())
             {
                 context.Writer.WritePropertyName("FCntStart");
-                context.Writer.Write(requestObject.FCntStart.Value);
+                context.Writer.WriteNumberValue(requestObject.FCntStart.Value);
             }
 
             if(requestObject.IsSetSessionKeys())
             {
                 context.Writer.WritePropertyName("SessionKeys");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SessionKeysAbpV1_0_xMarshaller.Instance;
                 marshaller.Marshall(requestObject.SessionKeys, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

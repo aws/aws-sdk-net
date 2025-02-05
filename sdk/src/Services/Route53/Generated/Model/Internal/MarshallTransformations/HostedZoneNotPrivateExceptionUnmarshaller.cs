@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneNotPrivateException operation
     /// </summary>  
-    public class HostedZoneNotPrivateExceptionUnmarshaller : IErrorResponseUnmarshaller<HostedZoneNotPrivateException, XmlUnmarshallerContext>
+    public class HostedZoneNotPrivateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HostedZoneNotPrivateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -73,33 +76,38 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/service-dependencies";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetKeyAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("KeyAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestKeyAttributesKvp in publicRequest.KeyAttributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetKeyAttributes())
-                    {
-                        context.Writer.WritePropertyName("KeyAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestKeyAttributesKvp in publicRequest.KeyAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestKeyAttributesKvp.Key);
-                            var publicRequestKeyAttributesValue = publicRequestKeyAttributesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestKeyAttributesKvp.Key);
+                    var publicRequestKeyAttributesValue = publicRequestKeyAttributesKvp.Value;
 
-                                context.Writer.Write(publicRequestKeyAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestKeyAttributesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

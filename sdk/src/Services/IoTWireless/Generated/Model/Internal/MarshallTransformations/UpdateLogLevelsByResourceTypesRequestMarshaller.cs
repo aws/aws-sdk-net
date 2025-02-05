@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -61,73 +64,78 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/log-levels";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultLogLevel())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultLogLevel())
-                    {
-                        context.Writer.WritePropertyName("DefaultLogLevel");
-                        context.Writer.Write(publicRequest.DefaultLogLevel);
-                    }
-
-                    if(publicRequest.IsSetFuotaTaskLogOptions())
-                    {
-                        context.Writer.WritePropertyName("FuotaTaskLogOptions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFuotaTaskLogOptionsListValue in publicRequest.FuotaTaskLogOptions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FuotaTaskLogOptionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFuotaTaskLogOptionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWirelessDeviceLogOptions())
-                    {
-                        context.Writer.WritePropertyName("WirelessDeviceLogOptions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWirelessDeviceLogOptionsListValue in publicRequest.WirelessDeviceLogOptions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WirelessDeviceLogOptionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestWirelessDeviceLogOptionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWirelessGatewayLogOptions())
-                    {
-                        context.Writer.WritePropertyName("WirelessGatewayLogOptions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWirelessGatewayLogOptionsListValue in publicRequest.WirelessGatewayLogOptions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WirelessGatewayLogOptionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestWirelessGatewayLogOptionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DefaultLogLevel");
+                context.Writer.WriteStringValue(publicRequest.DefaultLogLevel);
             }
+
+            if(publicRequest.IsSetFuotaTaskLogOptions())
+            {
+                context.Writer.WritePropertyName("FuotaTaskLogOptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFuotaTaskLogOptionsListValue in publicRequest.FuotaTaskLogOptions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FuotaTaskLogOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFuotaTaskLogOptionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWirelessDeviceLogOptions())
+            {
+                context.Writer.WritePropertyName("WirelessDeviceLogOptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWirelessDeviceLogOptionsListValue in publicRequest.WirelessDeviceLogOptions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WirelessDeviceLogOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestWirelessDeviceLogOptionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWirelessGatewayLogOptions())
+            {
+                context.Writer.WritePropertyName("WirelessGatewayLogOptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWirelessGatewayLogOptionsListValue in publicRequest.WirelessGatewayLogOptions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WirelessGatewayLogOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestWirelessGatewayLogOptionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

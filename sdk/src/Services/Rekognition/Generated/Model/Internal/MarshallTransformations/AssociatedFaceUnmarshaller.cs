@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AssociatedFace Object
     /// </summary>  
-    public class AssociatedFaceUnmarshaller : IUnmarshaller<AssociatedFace, XmlUnmarshallerContext>, IUnmarshaller<AssociatedFace, JsonUnmarshallerContext>
+    public class AssociatedFaceUnmarshaller : IJsonUnmarshaller<AssociatedFace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AssociatedFace IUnmarshaller<AssociatedFace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssociatedFace Unmarshall(JsonUnmarshallerContext context)
+        public AssociatedFace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AssociatedFace unmarshalledObject = new AssociatedFace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

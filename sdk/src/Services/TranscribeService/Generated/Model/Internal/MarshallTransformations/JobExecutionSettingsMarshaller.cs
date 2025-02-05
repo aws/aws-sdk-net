@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowDeferredExecution())
             {
                 context.Writer.WritePropertyName("AllowDeferredExecution");
-                context.Writer.Write(requestObject.AllowDeferredExecution.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowDeferredExecution.Value);
             }
 
             if(requestObject.IsSetDataAccessRoleArn())
             {
                 context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.Write(requestObject.DataAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
             }
 
         }

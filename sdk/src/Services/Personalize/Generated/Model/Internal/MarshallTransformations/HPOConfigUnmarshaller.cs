@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HPOConfig Object
     /// </summary>  
-    public class HPOConfigUnmarshaller : IUnmarshaller<HPOConfig, XmlUnmarshallerContext>, IUnmarshaller<HPOConfig, JsonUnmarshallerContext>
+    public class HPOConfigUnmarshaller : IJsonUnmarshaller<HPOConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HPOConfig IUnmarshaller<HPOConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HPOConfig Unmarshall(JsonUnmarshallerContext context)
+        public HPOConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HPOConfig unmarshalledObject = new HPOConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("algorithmHyperParameterRanges", targetDepth))
                 {
                     var unmarshaller = HyperParameterRangesUnmarshaller.Instance;
-                    unmarshalledObject.AlgorithmHyperParameterRanges = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlgorithmHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hpoObjective", targetDepth))
                 {
                     var unmarshaller = HPOObjectiveUnmarshaller.Instance;
-                    unmarshalledObject.HpoObjective = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HpoObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hpoResourceConfig", targetDepth))
                 {
                     var unmarshaller = HPOResourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.HpoResourceConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HpoResourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

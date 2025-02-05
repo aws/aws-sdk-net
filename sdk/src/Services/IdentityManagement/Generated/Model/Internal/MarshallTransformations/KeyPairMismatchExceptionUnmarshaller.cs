@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyPairMismatchException operation
     /// </summary>  
-    public class KeyPairMismatchExceptionUnmarshaller : IErrorResponseUnmarshaller<KeyPairMismatchException, XmlUnmarshallerContext>
+    public class KeyPairMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KeyPairMismatchException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

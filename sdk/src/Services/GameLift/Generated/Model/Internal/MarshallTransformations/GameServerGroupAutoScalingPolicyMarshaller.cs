@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEstimatedInstanceWarmup())
             {
                 context.Writer.WritePropertyName("EstimatedInstanceWarmup");
-                context.Writer.Write(requestObject.EstimatedInstanceWarmup.Value);
+                context.Writer.WriteNumberValue(requestObject.EstimatedInstanceWarmup.Value);
             }
 
             if(requestObject.IsSetTargetTrackingConfiguration())
             {
                 context.Writer.WritePropertyName("TargetTrackingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TargetTrackingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetTrackingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

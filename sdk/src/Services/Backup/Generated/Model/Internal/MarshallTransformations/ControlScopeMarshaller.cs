@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComplianceResourceIds())
             {
                 context.Writer.WritePropertyName("ComplianceResourceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComplianceResourceIdsListValue in requestObject.ComplianceResourceIds)
                 {
-                        context.Writer.Write(requestObjectComplianceResourceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectComplianceResourceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComplianceResourceTypes())
             {
                 context.Writer.WritePropertyName("ComplianceResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComplianceResourceTypesListValue in requestObject.ComplianceResourceTypes)
                 {
-                        context.Writer.Write(requestObjectComplianceResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectComplianceResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

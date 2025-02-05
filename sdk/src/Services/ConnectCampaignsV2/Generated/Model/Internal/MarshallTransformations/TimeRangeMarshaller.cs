@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("endTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.WriteStringValue(requestObject.EndTime);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteStringValue(requestObject.StartTime);
             }
 
         }

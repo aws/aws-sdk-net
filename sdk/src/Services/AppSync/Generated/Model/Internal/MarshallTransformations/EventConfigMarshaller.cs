@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthProviders())
             {
                 context.Writer.WritePropertyName("authProviders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuthProvidersListValue in requestObject.AuthProviders)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AuthProviderMarshaller.Instance;
                     marshaller.Marshall(requestObjectAuthProvidersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConnectionAuthModes())
             {
                 context.Writer.WritePropertyName("connectionAuthModes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConnectionAuthModesListValue in requestObject.ConnectionAuthModes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AuthModeMarshaller.Instance;
                     marshaller.Marshall(requestObjectConnectionAuthModesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDefaultPublishAuthModes())
             {
                 context.Writer.WritePropertyName("defaultPublishAuthModes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefaultPublishAuthModesListValue in requestObject.DefaultPublishAuthModes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AuthModeMarshaller.Instance;
                     marshaller.Marshall(requestObjectDefaultPublishAuthModesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDefaultSubscribeAuthModes())
             {
                 context.Writer.WritePropertyName("defaultSubscribeAuthModes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefaultSubscribeAuthModesListValue in requestObject.DefaultSubscribeAuthModes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AuthModeMarshaller.Instance;
                     marshaller.Marshall(requestObjectDefaultSubscribeAuthModesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLogConfig())
             {
                 context.Writer.WritePropertyName("logConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventLogConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

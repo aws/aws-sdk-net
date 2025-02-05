@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NotificationEvent Object
     /// </summary>  
-    public class NotificationEventUnmarshaller : IUnmarshaller<NotificationEvent, XmlUnmarshallerContext>, IUnmarshaller<NotificationEvent, JsonUnmarshallerContext>
+    public class NotificationEventUnmarshaller : IJsonUnmarshaller<NotificationEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NotificationEvent IUnmarshaller<NotificationEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NotificationEvent Unmarshall(JsonUnmarshallerContext context)
+        public NotificationEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NotificationEvent unmarshalledObject = new NotificationEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregateNotificationEventArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregateNotificationEventArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregateNotificationEventArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregationEventType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationEventType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationEventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregationSummary", targetDepth))
                 {
                     var unmarshaller = AggregationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.AggregationSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("media", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MediaElement, MediaElementUnmarshaller>(MediaElementUnmarshaller.Instance);
-                    unmarshalledObject.Media = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MediaElement, MediaElementUnmarshaller>(MediaElementUnmarshaller.Instance);
+                    unmarshalledObject.Media = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("messageComponents", targetDepth))
                 {
                     var unmarshaller = MessageComponentsUnmarshaller.Instance;
-                    unmarshalledObject.MessageComponents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notificationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceEventDetailUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEventDetailUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEventDetailUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceEventDetailUrlDisplayText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEventDetailUrlDisplayText = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEventDetailUrlDisplayText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceEventMetadata", targetDepth))
                 {
                     var unmarshaller = SourceEventMetadataUnmarshaller.Instance;
-                    unmarshalledObject.SourceEventMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("textParts", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, TextPartValue, StringUnmarshaller, TextPartValueUnmarshaller>(StringUnmarshaller.Instance, TextPartValueUnmarshaller.Instance);
-                    unmarshalledObject.TextParts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, TextPartValue, StringUnmarshaller, TextPartValueUnmarshaller>(StringUnmarshaller.Instance, TextPartValueUnmarshaller.Instance);
+                    unmarshalledObject.TextParts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

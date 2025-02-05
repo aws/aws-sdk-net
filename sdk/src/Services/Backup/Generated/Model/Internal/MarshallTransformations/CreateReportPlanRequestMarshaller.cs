@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -61,78 +64,83 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/audit/report-plans";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIdempotencyToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    else if(!(publicRequest.IsSetIdempotencyToken()))
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetReportDeliveryChannel())
-                    {
-                        context.Writer.WritePropertyName("ReportDeliveryChannel");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ReportDeliveryChannelMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ReportDeliveryChannel, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReportPlanDescription())
-                    {
-                        context.Writer.WritePropertyName("ReportPlanDescription");
-                        context.Writer.Write(publicRequest.ReportPlanDescription);
-                    }
-
-                    if(publicRequest.IsSetReportPlanName())
-                    {
-                        context.Writer.WritePropertyName("ReportPlanName");
-                        context.Writer.Write(publicRequest.ReportPlanName);
-                    }
-
-                    if(publicRequest.IsSetReportPlanTags())
-                    {
-                        context.Writer.WritePropertyName("ReportPlanTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestReportPlanTagsKvp in publicRequest.ReportPlanTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestReportPlanTagsKvp.Key);
-                            var publicRequestReportPlanTagsValue = publicRequestReportPlanTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestReportPlanTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReportSetting())
-                    {
-                        context.Writer.WritePropertyName("ReportSetting");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ReportSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ReportSetting, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
             }
+
+            else if(!(publicRequest.IsSetIdempotencyToken()))
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetReportDeliveryChannel())
+            {
+                context.Writer.WritePropertyName("ReportDeliveryChannel");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportDeliveryChannelMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportDeliveryChannel, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReportPlanDescription())
+            {
+                context.Writer.WritePropertyName("ReportPlanDescription");
+                context.Writer.WriteStringValue(publicRequest.ReportPlanDescription);
+            }
+
+            if(publicRequest.IsSetReportPlanName())
+            {
+                context.Writer.WritePropertyName("ReportPlanName");
+                context.Writer.WriteStringValue(publicRequest.ReportPlanName);
+            }
+
+            if(publicRequest.IsSetReportPlanTags())
+            {
+                context.Writer.WritePropertyName("ReportPlanTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestReportPlanTagsKvp in publicRequest.ReportPlanTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestReportPlanTagsKvp.Key);
+                    var publicRequestReportPlanTagsValue = publicRequestReportPlanTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestReportPlanTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReportSetting())
+            {
+                context.Writer.WritePropertyName("ReportSetting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportSetting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

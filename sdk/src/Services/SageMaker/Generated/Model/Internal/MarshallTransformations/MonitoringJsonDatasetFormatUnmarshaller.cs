@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MonitoringJsonDatasetFormat Object
     /// </summary>  
-    public class MonitoringJsonDatasetFormatUnmarshaller : IUnmarshaller<MonitoringJsonDatasetFormat, XmlUnmarshallerContext>, IUnmarshaller<MonitoringJsonDatasetFormat, JsonUnmarshallerContext>
+    public class MonitoringJsonDatasetFormatUnmarshaller : IJsonUnmarshaller<MonitoringJsonDatasetFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MonitoringJsonDatasetFormat IUnmarshaller<MonitoringJsonDatasetFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringJsonDatasetFormat Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringJsonDatasetFormat Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MonitoringJsonDatasetFormat unmarshalledObject = new MonitoringJsonDatasetFormat();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Line", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Line = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Line = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -63,49 +66,54 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAmount())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAmount())
-                    {
-                        context.Writer.WritePropertyName("amount");
-                        context.Writer.Write(publicRequest.Amount.Value);
-                    }
-
-                    if(publicRequest.IsSetBreachAction())
-                    {
-                        context.Writer.WritePropertyName("breachAction");
-                        context.Writer.Write(publicRequest.BreachAction);
-                    }
-
-                    if(publicRequest.IsSetPeriod())
-                    {
-                        context.Writer.WritePropertyName("period");
-                        context.Writer.Write(publicRequest.Period);
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetUsageType())
-                    {
-                        context.Writer.WritePropertyName("usageType");
-                        context.Writer.Write(publicRequest.UsageType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("amount");
+                context.Writer.WriteNumberValue(publicRequest.Amount.Value);
             }
+
+            if(publicRequest.IsSetBreachAction())
+            {
+                context.Writer.WritePropertyName("breachAction");
+                context.Writer.WriteStringValue(publicRequest.BreachAction);
+            }
+
+            if(publicRequest.IsSetPeriod())
+            {
+                context.Writer.WritePropertyName("period");
+                context.Writer.WriteStringValue(publicRequest.Period);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetUsageType())
+            {
+                context.Writer.WritePropertyName("usageType");
+                context.Writer.WriteStringValue(publicRequest.UsageType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

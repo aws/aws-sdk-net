@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackendConnectionErrors())
             {
                 context.Writer.WritePropertyName("BackendConnectionErrors");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendConnectionErrorsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BackendConnectionErrors, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentsReceivedCount())
             {
                 context.Writer.WritePropertyName("SegmentsReceivedCount");
-                context.Writer.Write(requestObject.SegmentsReceivedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsReceivedCount.Value);
             }
 
             if(requestObject.IsSetSegmentsRejectedCount())
             {
                 context.Writer.WritePropertyName("SegmentsRejectedCount");
-                context.Writer.Write(requestObject.SegmentsRejectedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsRejectedCount.Value);
             }
 
             if(requestObject.IsSetSegmentsSentCount())
             {
                 context.Writer.WritePropertyName("SegmentsSentCount");
-                context.Writer.Write(requestObject.SegmentsSentCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsSentCount.Value);
             }
 
             if(requestObject.IsSetSegmentsSpilloverCount())
             {
                 context.Writer.WritePropertyName("SegmentsSpilloverCount");
-                context.Writer.Write(requestObject.SegmentsSpilloverCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsSpilloverCount.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
         }

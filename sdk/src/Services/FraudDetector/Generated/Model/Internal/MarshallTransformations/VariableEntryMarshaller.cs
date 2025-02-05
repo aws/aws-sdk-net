@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("dataSource");
-                context.Writer.Write(requestObject.DataSource);
+                context.Writer.WriteStringValue(requestObject.DataSource);
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                context.Writer.WriteStringValue(requestObject.DefaultValue);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetVariableType())
             {
                 context.Writer.WritePropertyName("variableType");
-                context.Writer.Write(requestObject.VariableType);
+                context.Writer.WriteStringValue(requestObject.VariableType);
             }
 
         }

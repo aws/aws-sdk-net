@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35EsamPid())
             {
                 context.Writer.WritePropertyName("scte35EsamPid");
-                context.Writer.Write(requestObject.Scte35EsamPid.Value);
+                context.Writer.WriteNumberValue(requestObject.Scte35EsamPid.Value);
             }
 
         }

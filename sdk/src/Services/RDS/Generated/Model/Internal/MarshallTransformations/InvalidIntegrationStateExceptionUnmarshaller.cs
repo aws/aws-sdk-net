@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidIntegrationStateException operation
     /// </summary>  
-    public class InvalidIntegrationStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidIntegrationStateException, XmlUnmarshallerContext>
+    public class InvalidIntegrationStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidIntegrationStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

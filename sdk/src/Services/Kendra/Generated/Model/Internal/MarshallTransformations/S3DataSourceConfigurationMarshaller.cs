@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessControlListConfiguration())
             {
                 context.Writer.WritePropertyName("AccessControlListConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccessControlListConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessControlListConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetDocumentsMetadataConfiguration())
             {
                 context.Writer.WritePropertyName("DocumentsMetadataConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentsMetadataConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentsMetadataConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPrefixes())
             {
                 context.Writer.WritePropertyName("InclusionPrefixes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPrefixesListValue in requestObject.InclusionPrefixes)
                 {
-                        context.Writer.Write(requestObjectInclusionPrefixesListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPrefixesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

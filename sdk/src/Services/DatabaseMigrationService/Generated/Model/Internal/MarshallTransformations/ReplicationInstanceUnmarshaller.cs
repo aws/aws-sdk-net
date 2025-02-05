@@ -29,197 +29,187 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicationInstance Object
     /// </summary>  
-    public class ReplicationInstanceUnmarshaller : IUnmarshaller<ReplicationInstance, XmlUnmarshallerContext>, IUnmarshaller<ReplicationInstance, JsonUnmarshallerContext>
+    public class ReplicationInstanceUnmarshaller : IJsonUnmarshaller<ReplicationInstance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReplicationInstance IUnmarshaller<ReplicationInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicationInstance Unmarshall(JsonUnmarshallerContext context)
+        public ReplicationInstance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReplicationInstance unmarshalledObject = new ReplicationInstance();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AllocatedStorage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsNameServers", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsNameServers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsNameServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FreeUntil", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FreeUntil = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FreeUntil = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceCreateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KerberosAuthenticationSettings", targetDepth))
                 {
                     var unmarshaller = KerberosAuthenticationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.KerberosAuthenticationSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KerberosAuthenticationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MultiAZ", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PendingModifiedValues", targetDepth))
                 {
                     var unmarshaller = ReplicationPendingModifiedValuesUnmarshaller.Instance;
-                    unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreferredMaintenanceWindow", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PubliclyAccessible", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstanceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstanceClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstanceClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstanceIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstanceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceIpv6Addresses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ReplicationInstanceIpv6Addresses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationInstanceIpv6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstancePrivateIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstancePrivateIpAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstancePrivateIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstancePrivateIpAddresses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ReplicationInstancePrivateIpAddresses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationInstancePrivateIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstancePublicIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstancePublicIpAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstancePublicIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstancePublicIpAddresses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ReplicationInstancePublicIpAddresses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationInstancePublicIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationInstanceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationInstanceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationSubnetGroup", targetDepth))
                 {
                     var unmarshaller = ReplicationSubnetGroupUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationSubnetGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationSubnetGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecondaryAvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecondaryAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcSecurityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VpcSecurityGroupMembership, VpcSecurityGroupMembershipUnmarshaller>(VpcSecurityGroupMembershipUnmarshaller.Instance);
-                    unmarshalledObject.VpcSecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VpcSecurityGroupMembership, VpcSecurityGroupMembershipUnmarshaller>(VpcSecurityGroupMembershipUnmarshaller.Instance);
+                    unmarshalledObject.VpcSecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

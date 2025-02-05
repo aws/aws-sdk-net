@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SnowflakeTableReference Object
     /// </summary>  
-    public class SnowflakeTableReferenceUnmarshaller : IUnmarshaller<SnowflakeTableReference, XmlUnmarshallerContext>, IUnmarshaller<SnowflakeTableReference, JsonUnmarshallerContext>
+    public class SnowflakeTableReferenceUnmarshaller : IJsonUnmarshaller<SnowflakeTableReference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SnowflakeTableReference IUnmarshaller<SnowflakeTableReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SnowflakeTableReference Unmarshall(JsonUnmarshallerContext context)
+        public SnowflakeTableReference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SnowflakeTableReference unmarshalledObject = new SnowflakeTableReference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("databaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemaName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SchemaName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("secretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tableSchema", targetDepth))
                 {
                     var unmarshaller = SnowflakeTableSchemaUnmarshaller.Instance;
-                    unmarshalledObject.TableSchema = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

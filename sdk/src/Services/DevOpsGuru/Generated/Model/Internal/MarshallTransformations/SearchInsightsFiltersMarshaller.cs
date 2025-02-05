@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceCollection())
             {
                 context.Writer.WritePropertyName("ResourceCollection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceCollectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceCollection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceCollection())
             {
                 context.Writer.WritePropertyName("ServiceCollection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceCollectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceCollection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSeverities())
             {
                 context.Writer.WritePropertyName("Severities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSeveritiesListValue in requestObject.Severities)
                 {
-                        context.Writer.Write(requestObjectSeveritiesListValue);
+                        context.Writer.WriteStringValue(requestObjectSeveritiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("Statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidReplicationGroupStateException operation
     /// </summary>  
-    public class InvalidReplicationGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidReplicationGroupStateException, XmlUnmarshallerContext>
+    public class InvalidReplicationGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidReplicationGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

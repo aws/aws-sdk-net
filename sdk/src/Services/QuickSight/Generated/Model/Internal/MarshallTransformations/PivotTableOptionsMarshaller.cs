@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,109 +49,109 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellStyle())
             {
                 context.Writer.WritePropertyName("CellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.CellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCollapsedRowDimensionsVisibility())
             {
                 context.Writer.WritePropertyName("CollapsedRowDimensionsVisibility");
-                context.Writer.Write(requestObject.CollapsedRowDimensionsVisibility);
+                context.Writer.WriteStringValue(requestObject.CollapsedRowDimensionsVisibility);
             }
 
             if(requestObject.IsSetColumnHeaderStyle())
             {
                 context.Writer.WritePropertyName("ColumnHeaderStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColumnHeaderStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumnNamesVisibility())
             {
                 context.Writer.WritePropertyName("ColumnNamesVisibility");
-                context.Writer.Write(requestObject.ColumnNamesVisibility);
+                context.Writer.WriteStringValue(requestObject.ColumnNamesVisibility);
             }
 
             if(requestObject.IsSetDefaultCellWidth())
             {
                 context.Writer.WritePropertyName("DefaultCellWidth");
-                context.Writer.Write(requestObject.DefaultCellWidth);
+                context.Writer.WriteStringValue(requestObject.DefaultCellWidth);
             }
 
             if(requestObject.IsSetMetricPlacement())
             {
                 context.Writer.WritePropertyName("MetricPlacement");
-                context.Writer.Write(requestObject.MetricPlacement);
+                context.Writer.WriteStringValue(requestObject.MetricPlacement);
             }
 
             if(requestObject.IsSetRowAlternateColorOptions())
             {
                 context.Writer.WritePropertyName("RowAlternateColorOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RowAlternateColorOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowAlternateColorOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowFieldNamesStyle())
             {
                 context.Writer.WritePropertyName("RowFieldNamesStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowFieldNamesStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowHeaderStyle())
             {
                 context.Writer.WritePropertyName("RowHeaderStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowHeaderStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowsLabelOptions())
             {
                 context.Writer.WritePropertyName("RowsLabelOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PivotTableRowsLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowsLabelOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowsLayout())
             {
                 context.Writer.WritePropertyName("RowsLayout");
-                context.Writer.Write(requestObject.RowsLayout);
+                context.Writer.WriteStringValue(requestObject.RowsLayout);
             }
 
             if(requestObject.IsSetSingleMetricVisibility())
             {
                 context.Writer.WritePropertyName("SingleMetricVisibility");
-                context.Writer.Write(requestObject.SingleMetricVisibility);
+                context.Writer.WriteStringValue(requestObject.SingleMetricVisibility);
             }
 
             if(requestObject.IsSetToggleButtonsVisibility())
             {
                 context.Writer.WritePropertyName("ToggleButtonsVisibility");
-                context.Writer.Write(requestObject.ToggleButtonsVisibility);
+                context.Writer.WriteStringValue(requestObject.ToggleButtonsVisibility);
             }
 
         }

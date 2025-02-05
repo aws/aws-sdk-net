@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -67,31 +70,36 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/evaluations/{feature}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEntityId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEntityId())
-                    {
-                        context.Writer.WritePropertyName("entityId");
-                        context.Writer.Write(publicRequest.EntityId);
-                    }
-
-                    if(publicRequest.IsSetEvaluationContext())
-                    {
-                        context.Writer.WritePropertyName("evaluationContext");
-                        context.Writer.Write(publicRequest.EvaluationContext);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("entityId");
+                context.Writer.WriteStringValue(publicRequest.EntityId);
             }
+
+            if(publicRequest.IsSetEvaluationContext())
+            {
+                context.Writer.WritePropertyName("evaluationContext");
+                context.Writer.WriteStringValue(publicRequest.EvaluationContext);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"dataplane.";

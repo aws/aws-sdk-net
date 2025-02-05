@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotName())
             {
                 context.Writer.WritePropertyName("botName");
-                context.Writer.Write(requestObject.BotName);
+                context.Writer.WriteStringValue(requestObject.BotName);
             }
 
             if(requestObject.IsSetBotTags())
             {
                 context.Writer.WritePropertyName("botTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBotTagsKvp in requestObject.BotTags)
                 {
                     context.Writer.WritePropertyName(requestObjectBotTagsKvp.Key);
                     var requestObjectBotTagsValue = requestObjectBotTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectBotTagsValue);
+                        context.Writer.WriteStringValue(requestObjectBotTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataPrivacy())
             {
                 context.Writer.WritePropertyName("dataPrivacy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPrivacyMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPrivacy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdleSessionTTLInSeconds())
             {
                 context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                context.Writer.Write(requestObject.IdleSessionTTLInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.IdleSessionTTLInSeconds.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTestBotAliasTags())
             {
                 context.Writer.WritePropertyName("testBotAliasTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTestBotAliasTagsKvp in requestObject.TestBotAliasTags)
                 {
                     context.Writer.WritePropertyName(requestObjectTestBotAliasTagsKvp.Key);
                     var requestObjectTestBotAliasTagsValue = requestObjectTestBotAliasTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTestBotAliasTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTestBotAliasTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

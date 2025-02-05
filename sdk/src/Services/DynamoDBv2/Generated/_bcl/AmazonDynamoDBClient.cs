@@ -3971,7 +3971,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days. 
         /// </para>
         ///  
         /// <para>
@@ -4016,7 +4017,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days. 
         /// </para>
         ///  
         /// <para>
@@ -9070,8 +9072,9 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
         /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
-        /// during the last 35 days. Any number of users can execute up to 50 concurrent restores
-        /// (any type of restore) in a given account. 
+        /// in the last 35 days. You can set the recovery period to any value between 1 and 35
+        /// days. Any number of users can execute up to 50 concurrent restores (any type of restore)
+        /// in a given account. 
         /// 
         ///  
         /// <para>
@@ -9213,8 +9216,9 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
         /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
-        /// during the last 35 days. Any number of users can execute up to 50 concurrent restores
-        /// (any type of restore) in a given account. 
+        /// in the last 35 days. You can set the recovery period to any value between 1 and 35
+        /// days. Any number of users can execute up to 50 concurrent restores (any type of restore)
+        /// in a given account. 
         /// 
         ///  
         /// <para>
@@ -12054,7 +12058,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -12100,7 +12105,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
-        /// can restore your table to any point in time during the last 35 days. 
+        /// can restore your table to any point in time in the last 35 days. You can set the recovery
+        /// period to any value between 1 and 35 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>

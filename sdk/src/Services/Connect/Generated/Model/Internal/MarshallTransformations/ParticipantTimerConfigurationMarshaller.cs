@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParticipantRole())
             {
                 context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.Write(requestObject.ParticipantRole);
+                context.Writer.WriteStringValue(requestObject.ParticipantRole);
             }
 
             if(requestObject.IsSetTimerType())
             {
                 context.Writer.WritePropertyName("TimerType");
-                context.Writer.Write(requestObject.TimerType);
+                context.Writer.WriteStringValue(requestObject.TimerType);
             }
 
             if(requestObject.IsSetTimerValue())
             {
                 context.Writer.WritePropertyName("TimerValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParticipantTimerValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimerValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

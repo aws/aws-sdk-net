@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LakeFormationOptInsInfo Object
     /// </summary>  
-    public class LakeFormationOptInsInfoUnmarshaller : IUnmarshaller<LakeFormationOptInsInfo, XmlUnmarshallerContext>, IUnmarshaller<LakeFormationOptInsInfo, JsonUnmarshallerContext>
+    public class LakeFormationOptInsInfoUnmarshaller : IJsonUnmarshaller<LakeFormationOptInsInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LakeFormationOptInsInfo IUnmarshaller<LakeFormationOptInsInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LakeFormationOptInsInfo Unmarshall(JsonUnmarshallerContext context)
+        public LakeFormationOptInsInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LakeFormationOptInsInfo unmarshalledObject = new LakeFormationOptInsInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionUnmarshaller.Instance;
-                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Principal", targetDepth))
                 {
                     var unmarshaller = DataLakePrincipalUnmarshaller.Instance;
-                    unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Resource", targetDepth))
                 {
                     var unmarshaller = ResourceUnmarshaller.Instance;
-                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

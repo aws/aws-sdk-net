@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for X12FunctionalGroupHeaders Object
     /// </summary>  
-    public class X12FunctionalGroupHeadersUnmarshaller : IUnmarshaller<X12FunctionalGroupHeaders, XmlUnmarshallerContext>, IUnmarshaller<X12FunctionalGroupHeaders, JsonUnmarshallerContext>
+    public class X12FunctionalGroupHeadersUnmarshaller : IJsonUnmarshaller<X12FunctionalGroupHeaders, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        X12FunctionalGroupHeaders IUnmarshaller<X12FunctionalGroupHeaders, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public X12FunctionalGroupHeaders Unmarshall(JsonUnmarshallerContext context)
+        public X12FunctionalGroupHeaders Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             X12FunctionalGroupHeaders unmarshalledObject = new X12FunctionalGroupHeaders();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("applicationReceiverCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationReceiverCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationReceiverCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("applicationSenderCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationSenderCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationSenderCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("responsibleAgencyCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResponsibleAgencyCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResponsibleAgencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

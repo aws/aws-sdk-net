@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomCSSUrl())
             {
                 context.Writer.WritePropertyName("customCSSUrl");
-                context.Writer.Write(requestObject.CustomCSSUrl);
+                context.Writer.WriteStringValue(requestObject.CustomCSSUrl);
             }
 
             if(requestObject.IsSetFaviconUrl())
             {
                 context.Writer.WritePropertyName("faviconUrl");
-                context.Writer.Write(requestObject.FaviconUrl);
+                context.Writer.WriteStringValue(requestObject.FaviconUrl);
             }
 
             if(requestObject.IsSetFontUrl())
             {
                 context.Writer.WritePropertyName("fontUrl");
-                context.Writer.Write(requestObject.FontUrl);
+                context.Writer.WriteStringValue(requestObject.FontUrl);
             }
 
             if(requestObject.IsSetLogoUrl())
             {
                 context.Writer.WritePropertyName("logoUrl");
-                context.Writer.Write(requestObject.LogoUrl);
+                context.Writer.WriteStringValue(requestObject.LogoUrl);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -61,176 +64,181 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/submitjob";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArrayProperties())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArrayProperties())
-                    {
-                        context.Writer.WritePropertyName("arrayProperties");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("arrayProperties");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ArrayPropertiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ArrayProperties, context);
+                var marshaller = ArrayPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ArrayProperties, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetContainerOverrides())
-                    {
-                        context.Writer.WritePropertyName("containerOverrides");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ContainerOverridesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ContainerOverrides, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDependsOn())
-                    {
-                        context.Writer.WritePropertyName("dependsOn");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDependsOnListValue in publicRequest.DependsOn)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = JobDependencyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDependsOnListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEcsPropertiesOverride())
-                    {
-                        context.Writer.WritePropertyName("ecsPropertiesOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EcsPropertiesOverrideMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EcsPropertiesOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEksPropertiesOverride())
-                    {
-                        context.Writer.WritePropertyName("eksPropertiesOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EksPropertiesOverrideMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EksPropertiesOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobDefinition())
-                    {
-                        context.Writer.WritePropertyName("jobDefinition");
-                        context.Writer.Write(publicRequest.JobDefinition);
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("jobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetJobQueue())
-                    {
-                        context.Writer.WritePropertyName("jobQueue");
-                        context.Writer.Write(publicRequest.JobQueue);
-                    }
-
-                    if(publicRequest.IsSetNodeOverrides())
-                    {
-                        context.Writer.WritePropertyName("nodeOverrides");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodeOverridesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NodeOverrides, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPropagateTags())
-                    {
-                        context.Writer.WritePropertyName("propagateTags");
-                        context.Writer.Write(publicRequest.PropagateTags.Value);
-                    }
-
-                    if(publicRequest.IsSetRetryStrategy())
-                    {
-                        context.Writer.WritePropertyName("retryStrategy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RetryStrategyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RetryStrategy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchedulingPriorityOverride())
-                    {
-                        context.Writer.WritePropertyName("schedulingPriorityOverride");
-                        context.Writer.Write(publicRequest.SchedulingPriorityOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetShareIdentifier())
-                    {
-                        context.Writer.WritePropertyName("shareIdentifier");
-                        context.Writer.Write(publicRequest.ShareIdentifier);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("timeout");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobTimeoutMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Timeout, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetContainerOverrides())
+            {
+                context.Writer.WritePropertyName("containerOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContainerOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContainerOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDependsOn())
+            {
+                context.Writer.WritePropertyName("dependsOn");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDependsOnListValue in publicRequest.DependsOn)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = JobDependencyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDependsOnListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEcsPropertiesOverride())
+            {
+                context.Writer.WritePropertyName("ecsPropertiesOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EcsPropertiesOverrideMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EcsPropertiesOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEksPropertiesOverride())
+            {
+                context.Writer.WritePropertyName("eksPropertiesOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksPropertiesOverrideMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EksPropertiesOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobDefinition())
+            {
+                context.Writer.WritePropertyName("jobDefinition");
+                context.Writer.WriteStringValue(publicRequest.JobDefinition);
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("jobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetJobQueue())
+            {
+                context.Writer.WritePropertyName("jobQueue");
+                context.Writer.WriteStringValue(publicRequest.JobQueue);
+            }
+
+            if(publicRequest.IsSetNodeOverrides())
+            {
+                context.Writer.WritePropertyName("nodeOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodeOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NodeOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPropagateTags())
+            {
+                context.Writer.WritePropertyName("propagateTags");
+                context.Writer.WriteBooleanValue(publicRequest.PropagateTags.Value);
+            }
+
+            if(publicRequest.IsSetRetryStrategy())
+            {
+                context.Writer.WritePropertyName("retryStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetryStrategyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetryStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchedulingPriorityOverride())
+            {
+                context.Writer.WritePropertyName("schedulingPriorityOverride");
+                context.Writer.WriteNumberValue(publicRequest.SchedulingPriorityOverride.Value);
+            }
+
+            if(publicRequest.IsSetShareIdentifier())
+            {
+                context.Writer.WritePropertyName("shareIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ShareIdentifier);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("timeout");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobTimeoutMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Timeout, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

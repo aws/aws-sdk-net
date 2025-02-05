@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResamplingConfigInput Object
     /// </summary>  
-    public class ResamplingConfigInputUnmarshaller : IUnmarshaller<ResamplingConfigInput, XmlUnmarshallerContext>, IUnmarshaller<ResamplingConfigInput, JsonUnmarshallerContext>
+    public class ResamplingConfigInputUnmarshaller : IJsonUnmarshaller<ResamplingConfigInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResamplingConfigInput IUnmarshaller<ResamplingConfigInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResamplingConfigInput Unmarshall(JsonUnmarshallerContext context)
+        public ResamplingConfigInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResamplingConfigInput unmarshalledObject = new ResamplingConfigInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AlgorithmName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlgorithmName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputResolution", targetDepth))
                 {
                     var unmarshaller = OutputResolutionResamplingInputUnmarshaller.Instance;
-                    unmarshalledObject.OutputResolution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetBands", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TargetBands = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TargetBands = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

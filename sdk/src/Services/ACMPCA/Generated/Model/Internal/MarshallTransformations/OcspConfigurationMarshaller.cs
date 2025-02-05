@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetOcspCustomCname())
             {
                 context.Writer.WritePropertyName("OcspCustomCname");
-                context.Writer.Write(requestObject.OcspCustomCname);
+                context.Writer.WriteStringValue(requestObject.OcspCustomCname);
             }
 
         }

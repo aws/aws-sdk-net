@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AcceleratorType Object
     /// </summary>  
-    public class AcceleratorTypeUnmarshaller : IUnmarshaller<AcceleratorType, XmlUnmarshallerContext>, IUnmarshaller<AcceleratorType, JsonUnmarshallerContext>
+    public class AcceleratorTypeUnmarshaller : IJsonUnmarshaller<AcceleratorType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AcceleratorType IUnmarshaller<AcceleratorType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AcceleratorType Unmarshall(JsonUnmarshallerContext context)
+        public AcceleratorType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AcceleratorType unmarshalledObject = new AcceleratorType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acceleratorTypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorTypeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcceleratorTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memoryInfo", targetDepth))
                 {
                     var unmarshaller = MemoryInfoUnmarshaller.Instance;
-                    unmarshalledObject.MemoryInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemoryInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("throughputInfo", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
-                    unmarshalledObject.ThroughputInfo = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
+                    unmarshalledObject.ThroughputInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

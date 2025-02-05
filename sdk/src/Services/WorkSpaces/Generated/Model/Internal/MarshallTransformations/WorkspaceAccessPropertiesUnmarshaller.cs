@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkspaceAccessProperties Object
     /// </summary>  
-    public class WorkspaceAccessPropertiesUnmarshaller : IUnmarshaller<WorkspaceAccessProperties, XmlUnmarshallerContext>, IUnmarshaller<WorkspaceAccessProperties, JsonUnmarshallerContext>
+    public class WorkspaceAccessPropertiesUnmarshaller : IJsonUnmarshaller<WorkspaceAccessProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkspaceAccessProperties IUnmarshaller<WorkspaceAccessProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkspaceAccessProperties Unmarshall(JsonUnmarshallerContext context)
+        public WorkspaceAccessProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkspaceAccessProperties unmarshalledObject = new WorkspaceAccessProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeviceTypeAndroid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeAndroid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeAndroid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeChromeOs", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeChromeOs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeChromeOs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeIos", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeIos = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeIos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeLinux", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeLinux = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeLinux = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeOsx", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeOsx = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeOsx = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeWeb", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWeb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeWeb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeWindows", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeWindows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeZeroClient", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeZeroClient = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeZeroClient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

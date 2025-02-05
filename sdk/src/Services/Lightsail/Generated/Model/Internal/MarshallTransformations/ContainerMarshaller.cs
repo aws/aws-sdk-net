@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetPorts())
             {
                 context.Writer.WritePropertyName("ports");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPortsKvp in requestObject.Ports)
                 {
                     context.Writer.WritePropertyName(requestObjectPortsKvp.Key);
                     var requestObjectPortsValue = requestObjectPortsKvp.Value;
 
-                        context.Writer.Write(requestObjectPortsValue);
+                        context.Writer.WriteStringValue(requestObjectPortsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

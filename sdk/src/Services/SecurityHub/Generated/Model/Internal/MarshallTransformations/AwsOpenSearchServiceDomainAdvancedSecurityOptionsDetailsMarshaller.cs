@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetInternalUserDatabaseEnabled())
             {
                 context.Writer.WritePropertyName("InternalUserDatabaseEnabled");
-                context.Writer.Write(requestObject.InternalUserDatabaseEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.InternalUserDatabaseEnabled.Value);
             }
 
             if(requestObject.IsSetMasterUserOptions())
             {
                 context.Writer.WritePropertyName("MasterUserOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainMasterUserOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MasterUserOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -57,35 +55,35 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptInferenceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InferenceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelId())
             {
                 context.Writer.WritePropertyName("modelId");
-                context.Writer.Write(requestObject.ModelId);
+                context.Writer.WriteStringValue(requestObject.ModelId);
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("templateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptTemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateType())
             {
                 context.Writer.WritePropertyName("templateType");
-                context.Writer.Write(requestObject.TemplateType);
+                context.Writer.WriteStringValue(requestObject.TemplateType);
             }
 
         }

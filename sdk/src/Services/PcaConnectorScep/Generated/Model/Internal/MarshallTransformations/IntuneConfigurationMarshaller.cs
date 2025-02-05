@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAzureApplicationId())
             {
                 context.Writer.WritePropertyName("AzureApplicationId");
-                context.Writer.Write(requestObject.AzureApplicationId);
+                context.Writer.WriteStringValue(requestObject.AzureApplicationId);
             }
 
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
-                context.Writer.Write(requestObject.Domain);
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
         }

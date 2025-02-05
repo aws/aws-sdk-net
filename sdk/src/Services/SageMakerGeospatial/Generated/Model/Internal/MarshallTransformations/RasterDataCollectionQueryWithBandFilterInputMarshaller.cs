@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAreaOfInterest())
             {
                 context.Writer.WritePropertyName("AreaOfInterest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AreaOfInterestMarshaller.Instance;
                 marshaller.Marshall(requestObject.AreaOfInterest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBandFilter())
             {
                 context.Writer.WritePropertyName("BandFilter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBandFilterListValue in requestObject.BandFilter)
                 {
-                        context.Writer.Write(requestObjectBandFilterListValue);
+                        context.Writer.WriteStringValue(requestObjectBandFilterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPropertyFilters())
             {
                 context.Writer.WritePropertyName("PropertyFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PropertyFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.PropertyFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeRangeFilter())
             {
                 context.Writer.WritePropertyName("TimeRangeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeRangeFilterInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeRangeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

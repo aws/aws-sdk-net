@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationTransactionCounter())
             {
                 context.Writer.WritePropertyName("ApplicationTransactionCounter");
-                context.Writer.Write(requestObject.ApplicationTransactionCounter);
+                context.Writer.WriteStringValue(requestObject.ApplicationTransactionCounter);
             }
 
             if(requestObject.IsSetAuthorizationRequestKeyIdentifier())
             {
                 context.Writer.WritePropertyName("AuthorizationRequestKeyIdentifier");
-                context.Writer.Write(requestObject.AuthorizationRequestKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.AuthorizationRequestKeyIdentifier);
             }
 
             if(requestObject.IsSetCurrentPinAttributes())
             {
                 context.Writer.WritePropertyName("CurrentPinAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CurrentPinAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CurrentPinAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMajorKeyDerivationMode())
             {
                 context.Writer.WritePropertyName("MajorKeyDerivationMode");
-                context.Writer.Write(requestObject.MajorKeyDerivationMode);
+                context.Writer.WriteStringValue(requestObject.MajorKeyDerivationMode);
             }
 
             if(requestObject.IsSetPanSequenceNumber())
             {
                 context.Writer.WritePropertyName("PanSequenceNumber");
-                context.Writer.Write(requestObject.PanSequenceNumber);
+                context.Writer.WriteStringValue(requestObject.PanSequenceNumber);
             }
 
             if(requestObject.IsSetPrimaryAccountNumber())
             {
                 context.Writer.WritePropertyName("PrimaryAccountNumber");
-                context.Writer.Write(requestObject.PrimaryAccountNumber);
+                context.Writer.WriteStringValue(requestObject.PrimaryAccountNumber);
             }
 
         }

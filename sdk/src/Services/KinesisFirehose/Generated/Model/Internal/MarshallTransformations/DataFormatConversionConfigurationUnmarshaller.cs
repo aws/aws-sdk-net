@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataFormatConversionConfiguration Object
     /// </summary>  
-    public class DataFormatConversionConfigurationUnmarshaller : IUnmarshaller<DataFormatConversionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DataFormatConversionConfiguration, JsonUnmarshallerContext>
+    public class DataFormatConversionConfigurationUnmarshaller : IJsonUnmarshaller<DataFormatConversionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataFormatConversionConfiguration IUnmarshaller<DataFormatConversionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataFormatConversionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DataFormatConversionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataFormatConversionConfiguration unmarshalledObject = new DataFormatConversionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InputFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = InputFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InputFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = OutputFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OutputFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SchemaConfiguration", targetDepth))
                 {
                     var unmarshaller = SchemaConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SchemaConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnalyzerNameUnion Object
     /// </summary>  
-    public class AnalyzerNameUnionUnmarshaller : IUnmarshaller<AnalyzerNameUnion, XmlUnmarshallerContext>, IUnmarshaller<AnalyzerNameUnion, JsonUnmarshallerContext>
+    public class AnalyzerNameUnionUnmarshaller : IJsonUnmarshaller<AnalyzerNameUnion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnalyzerNameUnion IUnmarshaller<AnalyzerNameUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyzerNameUnion Unmarshall(JsonUnmarshallerContext context)
+        public AnalyzerNameUnion Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnalyzerNameUnion unmarshalledObject = new AnalyzerNameUnion();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("binaryAnalyzerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BinaryAnalyzerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BinaryAnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("runTimeAnalyzerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunTimeAnalyzerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunTimeAnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceCodeAnalyzerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceCodeAnalyzerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceCodeAnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

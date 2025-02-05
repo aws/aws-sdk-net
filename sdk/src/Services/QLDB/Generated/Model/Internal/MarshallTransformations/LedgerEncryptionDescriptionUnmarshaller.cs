@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LedgerEncryptionDescription Object
     /// </summary>  
-    public class LedgerEncryptionDescriptionUnmarshaller : IUnmarshaller<LedgerEncryptionDescription, XmlUnmarshallerContext>, IUnmarshaller<LedgerEncryptionDescription, JsonUnmarshallerContext>
+    public class LedgerEncryptionDescriptionUnmarshaller : IJsonUnmarshaller<LedgerEncryptionDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LedgerEncryptionDescription IUnmarshaller<LedgerEncryptionDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LedgerEncryptionDescription Unmarshall(JsonUnmarshallerContext context)
+        public LedgerEncryptionDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LedgerEncryptionDescription unmarshalledObject = new LedgerEncryptionDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EncryptionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InaccessibleKmsKeyDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InaccessibleKmsKeyDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InaccessibleKmsKeyDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

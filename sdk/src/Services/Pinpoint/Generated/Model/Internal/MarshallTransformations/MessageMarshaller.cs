@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetImageIconUrl())
             {
                 context.Writer.WritePropertyName("ImageIconUrl");
-                context.Writer.Write(requestObject.ImageIconUrl);
+                context.Writer.WriteStringValue(requestObject.ImageIconUrl);
             }
 
             if(requestObject.IsSetImageSmallIconUrl())
             {
                 context.Writer.WritePropertyName("ImageSmallIconUrl");
-                context.Writer.Write(requestObject.ImageSmallIconUrl);
+                context.Writer.WriteStringValue(requestObject.ImageSmallIconUrl);
             }
 
             if(requestObject.IsSetImageUrl())
             {
                 context.Writer.WritePropertyName("ImageUrl");
-                context.Writer.Write(requestObject.ImageUrl);
+                context.Writer.WriteStringValue(requestObject.ImageUrl);
             }
 
             if(requestObject.IsSetJsonBody())
             {
                 context.Writer.WritePropertyName("JsonBody");
-                context.Writer.Write(requestObject.JsonBody);
+                context.Writer.WriteStringValue(requestObject.JsonBody);
             }
 
             if(requestObject.IsSetMediaUrl())
             {
                 context.Writer.WritePropertyName("MediaUrl");
-                context.Writer.Write(requestObject.MediaUrl);
+                context.Writer.WriteStringValue(requestObject.MediaUrl);
             }
 
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.Write(requestObject.RawContent);
+                context.Writer.WriteStringValue(requestObject.RawContent);
             }
 
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");
-                context.Writer.Write(requestObject.SilentPush.Value);
+                context.Writer.WriteBooleanValue(requestObject.SilentPush.Value);
             }
 
             if(requestObject.IsSetTimeToLive())
             {
                 context.Writer.WritePropertyName("TimeToLive");
-                context.Writer.Write(requestObject.TimeToLive.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeToLive.Value);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

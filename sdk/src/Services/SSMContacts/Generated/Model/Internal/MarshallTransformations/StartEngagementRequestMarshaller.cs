@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -63,72 +66,77 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContactId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContactId())
-                    {
-                        context.Writer.WritePropertyName("ContactId");
-                        context.Writer.Write(publicRequest.ContactId);
-                    }
-
-                    if(publicRequest.IsSetContent())
-                    {
-                        context.Writer.WritePropertyName("Content");
-                        context.Writer.Write(publicRequest.Content);
-                    }
-
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    else if(!(publicRequest.IsSetIdempotencyToken()))
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetIncidentId())
-                    {
-                        context.Writer.WritePropertyName("IncidentId");
-                        context.Writer.Write(publicRequest.IncidentId);
-                    }
-
-                    if(publicRequest.IsSetPublicContent())
-                    {
-                        context.Writer.WritePropertyName("PublicContent");
-                        context.Writer.Write(publicRequest.PublicContent);
-                    }
-
-                    if(publicRequest.IsSetPublicSubject())
-                    {
-                        context.Writer.WritePropertyName("PublicSubject");
-                        context.Writer.Write(publicRequest.PublicSubject);
-                    }
-
-                    if(publicRequest.IsSetSender())
-                    {
-                        context.Writer.WritePropertyName("Sender");
-                        context.Writer.Write(publicRequest.Sender);
-                    }
-
-                    if(publicRequest.IsSetSubject())
-                    {
-                        context.Writer.WritePropertyName("Subject");
-                        context.Writer.Write(publicRequest.Subject);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ContactId");
+                context.Writer.WriteStringValue(publicRequest.ContactId);
             }
+
+            if(publicRequest.IsSetContent())
+            {
+                context.Writer.WritePropertyName("Content");
+                context.Writer.WriteStringValue(publicRequest.Content);
+            }
+
+            if(publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+
+            else if(!(publicRequest.IsSetIdempotencyToken()))
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetIncidentId())
+            {
+                context.Writer.WritePropertyName("IncidentId");
+                context.Writer.WriteStringValue(publicRequest.IncidentId);
+            }
+
+            if(publicRequest.IsSetPublicContent())
+            {
+                context.Writer.WritePropertyName("PublicContent");
+                context.Writer.WriteStringValue(publicRequest.PublicContent);
+            }
+
+            if(publicRequest.IsSetPublicSubject())
+            {
+                context.Writer.WritePropertyName("PublicSubject");
+                context.Writer.WriteStringValue(publicRequest.PublicSubject);
+            }
+
+            if(publicRequest.IsSetSender())
+            {
+                context.Writer.WritePropertyName("Sender");
+                context.Writer.WriteStringValue(publicRequest.Sender);
+            }
+
+            if(publicRequest.IsSetSubject())
+            {
+                context.Writer.WritePropertyName("Subject");
+                context.Writer.WriteStringValue(publicRequest.Subject);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

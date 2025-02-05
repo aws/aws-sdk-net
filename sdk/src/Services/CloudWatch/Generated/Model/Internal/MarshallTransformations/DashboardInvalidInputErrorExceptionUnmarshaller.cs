@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DashboardInvalidInputErrorException operation
     /// </summary>  
-    public class DashboardInvalidInputErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<DashboardInvalidInputErrorException, XmlUnmarshallerContext>
+    public class DashboardInvalidInputErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DashboardInvalidInputErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

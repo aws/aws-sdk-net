@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
@@ -61,74 +64,79 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-application-settings";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationId())
-                    {
-                        context.Writer.WritePropertyName("ApplicationId");
-                        context.Writer.Write(publicRequest.ApplicationId);
-                    }
-
-                    if(publicRequest.IsSetBackint())
-                    {
-                        context.Writer.WritePropertyName("Backint");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BackintConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Backint, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCredentialsToAddOrUpdate())
-                    {
-                        context.Writer.WritePropertyName("CredentialsToAddOrUpdate");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCredentialsToAddOrUpdateListValue in publicRequest.CredentialsToAddOrUpdate)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ApplicationCredentialMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCredentialsToAddOrUpdateListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCredentialsToRemove())
-                    {
-                        context.Writer.WritePropertyName("CredentialsToRemove");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCredentialsToRemoveListValue in publicRequest.CredentialsToRemove)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ApplicationCredentialMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCredentialsToRemoveListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDatabaseArn())
-                    {
-                        context.Writer.WritePropertyName("DatabaseArn");
-                        context.Writer.Write(publicRequest.DatabaseArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ApplicationId");
+                context.Writer.WriteStringValue(publicRequest.ApplicationId);
             }
+
+            if(publicRequest.IsSetBackint())
+            {
+                context.Writer.WritePropertyName("Backint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BackintConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Backint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCredentialsToAddOrUpdate())
+            {
+                context.Writer.WritePropertyName("CredentialsToAddOrUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCredentialsToAddOrUpdateListValue in publicRequest.CredentialsToAddOrUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ApplicationCredentialMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCredentialsToAddOrUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCredentialsToRemove())
+            {
+                context.Writer.WritePropertyName("CredentialsToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCredentialsToRemoveListValue in publicRequest.CredentialsToRemove)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ApplicationCredentialMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCredentialsToRemoveListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDatabaseArn())
+            {
+                context.Writer.WritePropertyName("DatabaseArn");
+                context.Writer.WriteStringValue(publicRequest.DatabaseArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

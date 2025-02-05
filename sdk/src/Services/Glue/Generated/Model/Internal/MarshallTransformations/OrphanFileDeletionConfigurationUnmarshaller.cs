@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OrphanFileDeletionConfiguration Object
     /// </summary>  
-    public class OrphanFileDeletionConfigurationUnmarshaller : IUnmarshaller<OrphanFileDeletionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OrphanFileDeletionConfiguration, JsonUnmarshallerContext>
+    public class OrphanFileDeletionConfigurationUnmarshaller : IJsonUnmarshaller<OrphanFileDeletionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OrphanFileDeletionConfiguration IUnmarshaller<OrphanFileDeletionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrphanFileDeletionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OrphanFileDeletionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OrphanFileDeletionConfiguration unmarshalledObject = new OrphanFileDeletionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("icebergConfiguration", targetDepth))
                 {
                     var unmarshaller = IcebergOrphanFileDeletionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IcebergConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IcebergConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

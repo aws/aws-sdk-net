@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpportunitySummaryView Object
     /// </summary>  
-    public class OpportunitySummaryViewUnmarshaller : IUnmarshaller<OpportunitySummaryView, XmlUnmarshallerContext>, IUnmarshaller<OpportunitySummaryView, JsonUnmarshallerContext>
+    public class OpportunitySummaryViewUnmarshaller : IJsonUnmarshaller<OpportunitySummaryView, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpportunitySummaryView IUnmarshaller<OpportunitySummaryView, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpportunitySummaryView Unmarshall(JsonUnmarshallerContext context)
+        public OpportunitySummaryView Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpportunitySummaryView unmarshalledObject = new OpportunitySummaryView();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Customer", targetDepth))
                 {
                     var unmarshaller = CustomerUnmarshaller.Instance;
-                    unmarshalledObject.Customer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Customer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Lifecycle", targetDepth))
                 {
                     var unmarshaller = LifeCycleForViewUnmarshaller.Instance;
-                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpportunityTeam", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Contact, ContactUnmarshaller>(ContactUnmarshaller.Instance);
-                    unmarshalledObject.OpportunityTeam = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Contact, ContactUnmarshaller>(ContactUnmarshaller.Instance);
+                    unmarshalledObject.OpportunityTeam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpportunityType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpportunityType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpportunityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryNeedsFromAws", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PrimaryNeedsFromAws = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PrimaryNeedsFromAws = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Project", targetDepth))
                 {
                     var unmarshaller = ProjectViewUnmarshaller.Instance;
-                    unmarshalledObject.Project = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RelatedEntityIdentifiers", targetDepth))
                 {
                     var unmarshaller = RelatedEntityIdentifiersUnmarshaller.Instance;
-                    unmarshalledObject.RelatedEntityIdentifiers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelatedEntityIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeTypesAllowed())
             {
                 context.Writer.WritePropertyName("computeTypesAllowed");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComputeTypesAllowedListValue in requestObject.ComputeTypesAllowed)
                 {
-                        context.Writer.Write(requestObjectComputeTypesAllowedListValue);
+                        context.Writer.WriteStringValue(requestObjectComputeTypesAllowedListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFleetsAllowed())
             {
                 context.Writer.WritePropertyName("fleetsAllowed");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFleetsAllowedListValue in requestObject.FleetsAllowed)
                 {
-                        context.Writer.Write(requestObjectFleetsAllowedListValue);
+                        context.Writer.WriteStringValue(requestObjectFleetsAllowedListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaximumBuildsAllowed())
             {
                 context.Writer.WritePropertyName("maximumBuildsAllowed");
-                context.Writer.Write(requestObject.MaximumBuildsAllowed.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumBuildsAllowed.Value);
             }
 
         }

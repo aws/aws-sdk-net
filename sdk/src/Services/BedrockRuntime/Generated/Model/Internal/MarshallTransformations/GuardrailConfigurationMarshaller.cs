@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGuardrailIdentifier())
             {
                 context.Writer.WritePropertyName("guardrailIdentifier");
-                context.Writer.Write(requestObject.GuardrailIdentifier);
+                context.Writer.WriteStringValue(requestObject.GuardrailIdentifier);
             }
 
             if(requestObject.IsSetGuardrailVersion())
             {
                 context.Writer.WritePropertyName("guardrailVersion");
-                context.Writer.Write(requestObject.GuardrailVersion);
+                context.Writer.WriteStringValue(requestObject.GuardrailVersion);
             }
 
             if(requestObject.IsSetTrace())
             {
                 context.Writer.WritePropertyName("trace");
-                context.Writer.Write(requestObject.Trace);
+                context.Writer.WriteStringValue(requestObject.Trace);
             }
 
         }

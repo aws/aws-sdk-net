@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentTimestampDelimiter())
             {
                 context.Writer.WritePropertyName("ComponentTimestampDelimiter");
-                context.Writer.Write(requestObject.ComponentTimestampDelimiter);
+                context.Writer.WriteStringValue(requestObject.ComponentTimestampDelimiter);
             }
 
             if(requestObject.IsSetTimestampFormat())
             {
                 context.Writer.WritePropertyName("TimestampFormat");
-                context.Writer.Write(requestObject.TimestampFormat);
+                context.Writer.WriteStringValue(requestObject.TimestampFormat);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedCacheNodesOfferingNotFoundException operation
     /// </summary>  
-    public class ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedCacheNodesOfferingNotFoundException, XmlUnmarshallerContext>
+    public class ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedCacheNodesOfferingNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

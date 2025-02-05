@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionPasswordEncryption())
             {
                 context.Writer.WritePropertyName("ConnectionPasswordEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionPasswordEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionPasswordEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionAtRest())
             {
                 context.Writer.WritePropertyName("EncryptionAtRest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionAtRestMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionAtRest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

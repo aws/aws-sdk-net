@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTokens())
             {
                 context.Writer.WritePropertyName("maxTokens");
-                context.Writer.Write(requestObject.MaxTokens.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxTokens.Value);
             }
 
             if(requestObject.IsSetStopSequences())
             {
                 context.Writer.WritePropertyName("stopSequences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStopSequencesListValue in requestObject.StopSequences)
                 {
-                        context.Writer.Write(requestObjectStopSequencesListValue);
+                        context.Writer.WriteStringValue(requestObjectStopSequencesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTemperature())
@@ -70,11 +68,11 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("temperature");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Temperature.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Temperature.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Temperature.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Temperature.Value);
+                    context.Writer.WriteNumberValue(requestObject.Temperature.Value);
                 }
             }
 
@@ -83,11 +81,11 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("topP");
                 if(StringUtils.IsSpecialFloatValue(requestObject.TopP.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TopP.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.TopP.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TopP.Value);
+                    context.Writer.WriteNumberValue(requestObject.TopP.Value);
                 }
             }
 

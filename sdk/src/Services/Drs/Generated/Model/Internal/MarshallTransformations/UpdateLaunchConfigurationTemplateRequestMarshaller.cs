@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -61,78 +64,83 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateLaunchConfigurationTemplate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCopyPrivateIp())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCopyPrivateIp())
-                    {
-                        context.Writer.WritePropertyName("copyPrivateIp");
-                        context.Writer.Write(publicRequest.CopyPrivateIp.Value);
-                    }
-
-                    if(publicRequest.IsSetCopyTags())
-                    {
-                        context.Writer.WritePropertyName("copyTags");
-                        context.Writer.Write(publicRequest.CopyTags.Value);
-                    }
-
-                    if(publicRequest.IsSetExportBucketArn())
-                    {
-                        context.Writer.WritePropertyName("exportBucketArn");
-                        context.Writer.Write(publicRequest.ExportBucketArn);
-                    }
-
-                    if(publicRequest.IsSetLaunchConfigurationTemplateID())
-                    {
-                        context.Writer.WritePropertyName("launchConfigurationTemplateID");
-                        context.Writer.Write(publicRequest.LaunchConfigurationTemplateID);
-                    }
-
-                    if(publicRequest.IsSetLaunchDisposition())
-                    {
-                        context.Writer.WritePropertyName("launchDisposition");
-                        context.Writer.Write(publicRequest.LaunchDisposition);
-                    }
-
-                    if(publicRequest.IsSetLaunchIntoSourceInstance())
-                    {
-                        context.Writer.WritePropertyName("launchIntoSourceInstance");
-                        context.Writer.Write(publicRequest.LaunchIntoSourceInstance.Value);
-                    }
-
-                    if(publicRequest.IsSetLicensing())
-                    {
-                        context.Writer.WritePropertyName("licensing");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LicensingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Licensing, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPostLaunchEnabled())
-                    {
-                        context.Writer.WritePropertyName("postLaunchEnabled");
-                        context.Writer.Write(publicRequest.PostLaunchEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
-                    {
-                        context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
-                        context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("copyPrivateIp");
+                context.Writer.WriteBooleanValue(publicRequest.CopyPrivateIp.Value);
             }
+
+            if(publicRequest.IsSetCopyTags())
+            {
+                context.Writer.WritePropertyName("copyTags");
+                context.Writer.WriteBooleanValue(publicRequest.CopyTags.Value);
+            }
+
+            if(publicRequest.IsSetExportBucketArn())
+            {
+                context.Writer.WritePropertyName("exportBucketArn");
+                context.Writer.WriteStringValue(publicRequest.ExportBucketArn);
+            }
+
+            if(publicRequest.IsSetLaunchConfigurationTemplateID())
+            {
+                context.Writer.WritePropertyName("launchConfigurationTemplateID");
+                context.Writer.WriteStringValue(publicRequest.LaunchConfigurationTemplateID);
+            }
+
+            if(publicRequest.IsSetLaunchDisposition())
+            {
+                context.Writer.WritePropertyName("launchDisposition");
+                context.Writer.WriteStringValue(publicRequest.LaunchDisposition);
+            }
+
+            if(publicRequest.IsSetLaunchIntoSourceInstance())
+            {
+                context.Writer.WritePropertyName("launchIntoSourceInstance");
+                context.Writer.WriteBooleanValue(publicRequest.LaunchIntoSourceInstance.Value);
+            }
+
+            if(publicRequest.IsSetLicensing())
+            {
+                context.Writer.WritePropertyName("licensing");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LicensingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Licensing, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPostLaunchEnabled())
+            {
+                context.Writer.WritePropertyName("postLaunchEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.PostLaunchEnabled.Value);
+            }
+
+            if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
+            {
+                context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
+                context.Writer.WriteStringValue(publicRequest.TargetInstanceTypeRightSizingMethod);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

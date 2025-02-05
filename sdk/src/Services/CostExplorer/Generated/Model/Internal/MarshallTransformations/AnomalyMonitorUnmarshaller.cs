@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnomalyMonitor Object
     /// </summary>  
-    public class AnomalyMonitorUnmarshaller : IUnmarshaller<AnomalyMonitor, XmlUnmarshallerContext>, IUnmarshaller<AnomalyMonitor, JsonUnmarshallerContext>
+    public class AnomalyMonitorUnmarshaller : IJsonUnmarshaller<AnomalyMonitor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnomalyMonitor IUnmarshaller<AnomalyMonitor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnomalyMonitor Unmarshall(JsonUnmarshallerContext context)
+        public AnomalyMonitor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnomalyMonitor unmarshalledObject = new AnomalyMonitor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionalValueCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DimensionalValueCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionalValueCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastEvaluatedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastEvaluatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastEvaluatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorDimension", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorDimension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorDimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorSpecification", targetDepth))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.MonitorSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

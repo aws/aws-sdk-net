@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PackageConfiguration Object
     /// </summary>  
-    public class PackageConfigurationUnmarshaller : IUnmarshaller<PackageConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PackageConfiguration, JsonUnmarshallerContext>
+    public class PackageConfigurationUnmarshaller : IJsonUnmarshaller<PackageConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PackageConfiguration IUnmarshaller<PackageConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PackageConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PackageConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PackageConfiguration unmarshalledObject = new PackageConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConfigurationRequirement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationRequirement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationRequirement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseFilepath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseFilepath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseFilepath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseRequirement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseRequirement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseRequirement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequiresRestartForConfigurationUpdate", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequiresRestartForConfigurationUpdate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequiresRestartForConfigurationUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

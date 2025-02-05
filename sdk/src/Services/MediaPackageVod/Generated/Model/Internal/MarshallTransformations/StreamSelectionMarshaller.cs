@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVideoBitsPerSecond())
             {
                 context.Writer.WritePropertyName("maxVideoBitsPerSecond");
-                context.Writer.Write(requestObject.MaxVideoBitsPerSecond.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxVideoBitsPerSecond.Value);
             }
 
             if(requestObject.IsSetMinVideoBitsPerSecond())
             {
                 context.Writer.WritePropertyName("minVideoBitsPerSecond");
-                context.Writer.Write(requestObject.MinVideoBitsPerSecond.Value);
+                context.Writer.WriteNumberValue(requestObject.MinVideoBitsPerSecond.Value);
             }
 
             if(requestObject.IsSetStreamOrder())
             {
                 context.Writer.WritePropertyName("streamOrder");
-                context.Writer.Write(requestObject.StreamOrder);
+                context.Writer.WriteStringValue(requestObject.StreamOrder);
             }
 
         }

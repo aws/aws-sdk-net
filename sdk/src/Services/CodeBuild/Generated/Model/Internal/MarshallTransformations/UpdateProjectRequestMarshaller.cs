@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -63,236 +66,241 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArtifacts())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArtifacts())
-                    {
-                        context.Writer.WritePropertyName("artifacts");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("artifacts");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ProjectArtifactsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Artifacts, context);
+                var marshaller = ProjectArtifactsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Artifacts, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoRetryLimit())
-                    {
-                        context.Writer.WritePropertyName("autoRetryLimit");
-                        context.Writer.Write(publicRequest.AutoRetryLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetBadgeEnabled())
-                    {
-                        context.Writer.WritePropertyName("badgeEnabled");
-                        context.Writer.Write(publicRequest.BadgeEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetBuildBatchConfig())
-                    {
-                        context.Writer.WritePropertyName("buildBatchConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectBuildBatchConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BuildBatchConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCache())
-                    {
-                        context.Writer.WritePropertyName("cache");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectCacheMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Cache, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetConcurrentBuildLimit())
-                    {
-                        context.Writer.WritePropertyName("concurrentBuildLimit");
-                        context.Writer.Write(publicRequest.ConcurrentBuildLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEncryptionKey())
-                    {
-                        context.Writer.WritePropertyName("encryptionKey");
-                        context.Writer.Write(publicRequest.EncryptionKey);
-                    }
-
-                    if(publicRequest.IsSetEnvironment())
-                    {
-                        context.Writer.WritePropertyName("environment");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectEnvironmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Environment, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFileSystemLocations())
-                    {
-                        context.Writer.WritePropertyName("fileSystemLocations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFileSystemLocationsListValue in publicRequest.FileSystemLocations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectFileSystemLocationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFileSystemLocationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLogsConfig())
-                    {
-                        context.Writer.WritePropertyName("logsConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogsConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogsConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetQueuedTimeoutInMinutes())
-                    {
-                        context.Writer.WritePropertyName("queuedTimeoutInMinutes");
-                        context.Writer.Write(publicRequest.QueuedTimeoutInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetSecondaryArtifacts())
-                    {
-                        context.Writer.WritePropertyName("secondaryArtifacts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondaryArtifactsListValue in publicRequest.SecondaryArtifacts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectArtifactsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondaryArtifactsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSecondarySources())
-                    {
-                        context.Writer.WritePropertyName("secondarySources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondarySourcesListValue in publicRequest.SecondarySources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondarySourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSecondarySourceVersions())
-                    {
-                        context.Writer.WritePropertyName("secondarySourceVersions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondarySourceVersionsListValue in publicRequest.SecondarySourceVersions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectSourceVersionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondarySourceVersionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceRole())
-                    {
-                        context.Writer.WritePropertyName("serviceRole");
-                        context.Writer.Write(publicRequest.ServiceRole);
-                    }
-
-                    if(publicRequest.IsSetSource())
-                    {
-                        context.Writer.WritePropertyName("source");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Source, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceVersion())
-                    {
-                        context.Writer.WritePropertyName("sourceVersion");
-                        context.Writer.Write(publicRequest.SourceVersion);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeoutInMinutes())
-                    {
-                        context.Writer.WritePropertyName("timeoutInMinutes");
-                        context.Writer.Write(publicRequest.TimeoutInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetVpcConfig())
-                    {
-                        context.Writer.WritePropertyName("vpcConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VpcConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAutoRetryLimit())
+            {
+                context.Writer.WritePropertyName("autoRetryLimit");
+                context.Writer.WriteNumberValue(publicRequest.AutoRetryLimit.Value);
+            }
+
+            if(publicRequest.IsSetBadgeEnabled())
+            {
+                context.Writer.WritePropertyName("badgeEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.BadgeEnabled.Value);
+            }
+
+            if(publicRequest.IsSetBuildBatchConfig())
+            {
+                context.Writer.WritePropertyName("buildBatchConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectBuildBatchConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BuildBatchConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCache())
+            {
+                context.Writer.WritePropertyName("cache");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectCacheMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Cache, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetConcurrentBuildLimit())
+            {
+                context.Writer.WritePropertyName("concurrentBuildLimit");
+                context.Writer.WriteNumberValue(publicRequest.ConcurrentBuildLimit.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEncryptionKey())
+            {
+                context.Writer.WritePropertyName("encryptionKey");
+                context.Writer.WriteStringValue(publicRequest.EncryptionKey);
+            }
+
+            if(publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("environment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectEnvironmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Environment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFileSystemLocations())
+            {
+                context.Writer.WritePropertyName("fileSystemLocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFileSystemLocationsListValue in publicRequest.FileSystemLocations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectFileSystemLocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFileSystemLocationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLogsConfig())
+            {
+                context.Writer.WritePropertyName("logsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetQueuedTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("queuedTimeoutInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.QueuedTimeoutInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetSecondaryArtifacts())
+            {
+                context.Writer.WritePropertyName("secondaryArtifacts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondaryArtifactsListValue in publicRequest.SecondaryArtifacts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectArtifactsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondaryArtifactsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSecondarySources())
+            {
+                context.Writer.WritePropertyName("secondarySources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondarySourcesListValue in publicRequest.SecondarySources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondarySourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSecondarySourceVersions())
+            {
+                context.Writer.WritePropertyName("secondarySourceVersions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondarySourceVersionsListValue in publicRequest.SecondarySourceVersions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectSourceVersionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondarySourceVersionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetServiceRole())
+            {
+                context.Writer.WritePropertyName("serviceRole");
+                context.Writer.WriteStringValue(publicRequest.ServiceRole);
+            }
+
+            if(publicRequest.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Source, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceVersion())
+            {
+                context.Writer.WritePropertyName("sourceVersion");
+                context.Writer.WriteStringValue(publicRequest.SourceVersion);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("timeoutInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("vpcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArrayProperties())
             {
                 context.Writer.WritePropertyName("ArrayProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchArrayPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArrayProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobDefinition())
             {
                 context.Writer.WritePropertyName("JobDefinition");
-                context.Writer.Write(requestObject.JobDefinition);
+                context.Writer.WriteStringValue(requestObject.JobDefinition);
             }
 
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
-                context.Writer.Write(requestObject.JobName);
+                context.Writer.WriteStringValue(requestObject.JobName);
             }
 
             if(requestObject.IsSetRetryStrategy())
             {
                 context.Writer.WritePropertyName("RetryStrategy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchRetryStrategyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryStrategy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

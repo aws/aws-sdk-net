@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateAuthChallenge())
             {
                 context.Writer.WritePropertyName("CreateAuthChallenge");
-                context.Writer.Write(requestObject.CreateAuthChallenge);
+                context.Writer.WriteStringValue(requestObject.CreateAuthChallenge);
             }
 
             if(requestObject.IsSetCustomEmailSender())
             {
                 context.Writer.WritePropertyName("CustomEmailSender");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomEmailLambdaVersionConfigTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomEmailSender, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomMessage())
             {
                 context.Writer.WritePropertyName("CustomMessage");
-                context.Writer.Write(requestObject.CustomMessage);
+                context.Writer.WriteStringValue(requestObject.CustomMessage);
             }
 
             if(requestObject.IsSetCustomSMSSender())
             {
                 context.Writer.WritePropertyName("CustomSMSSender");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomSMSLambdaVersionConfigTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomSMSSender, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefineAuthChallenge())
             {
                 context.Writer.WritePropertyName("DefineAuthChallenge");
-                context.Writer.Write(requestObject.DefineAuthChallenge);
+                context.Writer.WriteStringValue(requestObject.DefineAuthChallenge);
             }
 
             if(requestObject.IsSetKMSKeyID())
             {
                 context.Writer.WritePropertyName("KMSKeyID");
-                context.Writer.Write(requestObject.KMSKeyID);
+                context.Writer.WriteStringValue(requestObject.KMSKeyID);
             }
 
             if(requestObject.IsSetPostAuthentication())
             {
                 context.Writer.WritePropertyName("PostAuthentication");
-                context.Writer.Write(requestObject.PostAuthentication);
+                context.Writer.WriteStringValue(requestObject.PostAuthentication);
             }
 
             if(requestObject.IsSetPostConfirmation())
             {
                 context.Writer.WritePropertyName("PostConfirmation");
-                context.Writer.Write(requestObject.PostConfirmation);
+                context.Writer.WriteStringValue(requestObject.PostConfirmation);
             }
 
             if(requestObject.IsSetPreAuthentication())
             {
                 context.Writer.WritePropertyName("PreAuthentication");
-                context.Writer.Write(requestObject.PreAuthentication);
+                context.Writer.WriteStringValue(requestObject.PreAuthentication);
             }
 
             if(requestObject.IsSetPreSignUp())
             {
                 context.Writer.WritePropertyName("PreSignUp");
-                context.Writer.Write(requestObject.PreSignUp);
+                context.Writer.WriteStringValue(requestObject.PreSignUp);
             }
 
             if(requestObject.IsSetPreTokenGeneration())
             {
                 context.Writer.WritePropertyName("PreTokenGeneration");
-                context.Writer.Write(requestObject.PreTokenGeneration);
+                context.Writer.WriteStringValue(requestObject.PreTokenGeneration);
             }
 
             if(requestObject.IsSetPreTokenGenerationConfig())
             {
                 context.Writer.WritePropertyName("PreTokenGenerationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PreTokenGenerationVersionConfigTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PreTokenGenerationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserMigration())
             {
                 context.Writer.WritePropertyName("UserMigration");
-                context.Writer.Write(requestObject.UserMigration);
+                context.Writer.WriteStringValue(requestObject.UserMigration);
             }
 
             if(requestObject.IsSetVerifyAuthChallengeResponse())
             {
                 context.Writer.WritePropertyName("VerifyAuthChallengeResponse");
-                context.Writer.Write(requestObject.VerifyAuthChallengeResponse);
+                context.Writer.WriteStringValue(requestObject.VerifyAuthChallengeResponse);
             }
 
         }

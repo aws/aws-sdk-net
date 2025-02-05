@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UpdateWirelessGatewayTaskCreate Object
     /// </summary>  
-    public class UpdateWirelessGatewayTaskCreateUnmarshaller : IUnmarshaller<UpdateWirelessGatewayTaskCreate, XmlUnmarshallerContext>, IUnmarshaller<UpdateWirelessGatewayTaskCreate, JsonUnmarshallerContext>
+    public class UpdateWirelessGatewayTaskCreateUnmarshaller : IJsonUnmarshaller<UpdateWirelessGatewayTaskCreate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UpdateWirelessGatewayTaskCreate IUnmarshaller<UpdateWirelessGatewayTaskCreate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UpdateWirelessGatewayTaskCreate Unmarshall(JsonUnmarshallerContext context)
+        public UpdateWirelessGatewayTaskCreate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UpdateWirelessGatewayTaskCreate unmarshalledObject = new UpdateWirelessGatewayTaskCreate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LoRaWAN", targetDepth))
                 {
                     var unmarshaller = LoRaWANUpdateGatewayTaskCreateUnmarshaller.Instance;
-                    unmarshalledObject.LoRaWAN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoRaWAN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdateDataRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdateDataRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateDataRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdateDataSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdateDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

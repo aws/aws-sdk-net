@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DecoderManifestValidationException Object
     /// </summary>  
-    public class DecoderManifestValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<DecoderManifestValidationException, JsonUnmarshallerContext>
+    public class DecoderManifestValidationExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<DecoderManifestValidationException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public DecoderManifestValidationException Unmarshall(JsonUnmarshallerContext context)
+        public DecoderManifestValidationException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,28 +55,35 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public DecoderManifestValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public DecoderManifestValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             DecoderManifestValidationException unmarshalledObject = new DecoderManifestValidationException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("invalidNetworkInterfaces", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = new ListUnmarshaller<InvalidNetworkInterface, InvalidNetworkInterfaceUnmarshaller>(InvalidNetworkInterfaceUnmarshaller.Instance);
-                    unmarshalledObject.InvalidNetworkInterfaces = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("invalidSignals", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InvalidSignalDecoder, InvalidSignalDecoderUnmarshaller>(InvalidSignalDecoderUnmarshaller.Instance);
-                    unmarshalledObject.InvalidSignals = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("invalidNetworkInterfaces", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<InvalidNetworkInterface, InvalidNetworkInterfaceUnmarshaller>(InvalidNetworkInterfaceUnmarshaller.Instance);
+                        unmarshalledObject.InvalidNetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("invalidSignals", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<InvalidSignalDecoder, InvalidSignalDecoderUnmarshaller>(InvalidSignalDecoderUnmarshaller.Instance);
+                        unmarshalledObject.InvalidSignals = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

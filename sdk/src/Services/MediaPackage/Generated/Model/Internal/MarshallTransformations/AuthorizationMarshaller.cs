@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdnIdentifierSecret())
             {
                 context.Writer.WritePropertyName("cdnIdentifierSecret");
-                context.Writer.Write(requestObject.CdnIdentifierSecret);
+                context.Writer.WriteStringValue(requestObject.CdnIdentifierSecret);
             }
 
             if(requestObject.IsSetSecretsRoleArn())
             {
                 context.Writer.WritePropertyName("secretsRoleArn");
-                context.Writer.Write(requestObject.SecretsRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsRoleArn);
             }
 
         }

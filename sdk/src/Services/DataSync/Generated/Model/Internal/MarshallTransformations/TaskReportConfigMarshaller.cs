@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReportDestinationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetObjectVersionIds())
             {
                 context.Writer.WritePropertyName("ObjectVersionIds");
-                context.Writer.Write(requestObject.ObjectVersionIds);
+                context.Writer.WriteStringValue(requestObject.ObjectVersionIds);
             }
 
             if(requestObject.IsSetOutputType())
             {
                 context.Writer.WritePropertyName("OutputType");
-                context.Writer.Write(requestObject.OutputType);
+                context.Writer.WriteStringValue(requestObject.OutputType);
             }
 
             if(requestObject.IsSetOverrides())
             {
                 context.Writer.WritePropertyName("Overrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReportOverridesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Overrides, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReportLevel())
             {
                 context.Writer.WritePropertyName("ReportLevel");
-                context.Writer.Write(requestObject.ReportLevel);
+                context.Writer.WriteStringValue(requestObject.ReportLevel);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CompositeAlarm Object
     /// </summary>  
-    public class CompositeAlarmUnmarshaller : IUnmarshaller<CompositeAlarm, XmlUnmarshallerContext>, IUnmarshaller<CompositeAlarm, JsonUnmarshallerContext>
+    public class CompositeAlarmUnmarshaller : IXmlUnmarshaller<CompositeAlarm, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -193,17 +193,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CompositeAlarm Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CompositeAlarmUnmarshaller _instance = new CompositeAlarmUnmarshaller();        
 

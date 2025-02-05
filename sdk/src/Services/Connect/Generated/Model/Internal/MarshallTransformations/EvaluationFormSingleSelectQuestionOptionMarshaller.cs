@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticFail())
             {
                 context.Writer.WritePropertyName("AutomaticFail");
-                context.Writer.Write(requestObject.AutomaticFail.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutomaticFail.Value);
             }
 
             if(requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
-                context.Writer.Write(requestObject.RefId);
+                context.Writer.WriteStringValue(requestObject.RefId);
             }
 
             if(requestObject.IsSetScore())
             {
                 context.Writer.WritePropertyName("Score");
-                context.Writer.Write(requestObject.Score.Value);
+                context.Writer.WriteNumberValue(requestObject.Score.Value);
             }
 
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("Text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteStringValue(requestObject.Text);
             }
 
         }

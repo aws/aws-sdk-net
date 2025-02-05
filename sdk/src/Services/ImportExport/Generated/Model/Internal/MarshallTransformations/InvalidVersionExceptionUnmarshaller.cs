@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidVersionException operation
     /// </summary>  
-    public class InvalidVersionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidVersionException, XmlUnmarshallerContext>
+    public class InvalidVersionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidVersionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

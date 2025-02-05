@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
@@ -63,166 +66,77 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllocatedStorage())
             {
-<<<<<<< HEAD
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDbInstanceType())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllocatedStorage())
-                {
-                    context.Writer.WritePropertyName("allocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage);
-                }
-
-                if(publicRequest.IsSetDbInstanceType())
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDbInstanceType())
-                    {
-                        context.Writer.WritePropertyName("dbInstanceType");
-                        context.Writer.Write(publicRequest.DbInstanceType);
-                    }
-
-                    if(publicRequest.IsSetDbParameterGroupIdentifier())
-                    {
-                        context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                        context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDeploymentType())
-                    {
-                        context.Writer.WritePropertyName("deploymentType");
-                        context.Writer.Write(publicRequest.DeploymentType);
-                    }
-
-                    if(publicRequest.IsSetIdentifier())
-                    {
-                        context.Writer.WritePropertyName("identifier");
-                        context.Writer.Write(publicRequest.Identifier);
-                    }
-
-                    if(publicRequest.IsSetLogDeliveryConfiguration())
-                    {
-                        context.Writer.WritePropertyName("logDeliveryConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPort())
-                    {
-                        context.Writer.WritePropertyName("port");
-                        context.Writer.Write(publicRequest.Port.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-<<<<<<< HEAD
-                request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetDbParameterGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetDeploymentType())
-                {
-                    context.Writer.WritePropertyName("deploymentType");
-                    context.Writer.Write(publicRequest.DeploymentType);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetLogDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("logDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPort())
-                {
-                    context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetDbParameterGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetDbStorageType())
-                {
-                    context.Writer.WritePropertyName("dbStorageType");
-                    context.Writer.Write(publicRequest.DbStorageType);
-                }
-
-                if(publicRequest.IsSetDeploymentType())
-                {
-                    context.Writer.WritePropertyName("deploymentType");
-                    context.Writer.Write(publicRequest.DeploymentType);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                if(publicRequest.IsSetLogDeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("logDeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPort())
-                {
-                    context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+                context.Writer.WritePropertyName("allocatedStorage");
+                context.Writer.WriteNumberValue(publicRequest.AllocatedStorage.Value);
             }
+
+            if(publicRequest.IsSetDbInstanceType())
+            {
+                context.Writer.WritePropertyName("dbInstanceType");
+                context.Writer.WriteStringValue(publicRequest.DbInstanceType);
+            }
+
+            if(publicRequest.IsSetDbParameterGroupIdentifier())
+            {
+                context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.DbParameterGroupIdentifier);
+            }
+
+            if(publicRequest.IsSetDbStorageType())
+            {
+                context.Writer.WritePropertyName("dbStorageType");
+                context.Writer.WriteStringValue(publicRequest.DbStorageType);
+            }
+
+            if(publicRequest.IsSetDeploymentType())
+            {
+                context.Writer.WritePropertyName("deploymentType");
+                context.Writer.WriteStringValue(publicRequest.DeploymentType);
+            }
+
+            if(publicRequest.IsSetIdentifier())
+            {
+                context.Writer.WritePropertyName("identifier");
+                context.Writer.WriteStringValue(publicRequest.Identifier);
+            }
+
+            if(publicRequest.IsSetLogDeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("logDeliveryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.WriteNumberValue(publicRequest.Port.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

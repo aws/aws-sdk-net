@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataLabels())
             {
                 context.Writer.WritePropertyName("DataLabels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataLabels, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldWells())
             {
                 context.Writer.WritePropertyName("FieldWells");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScatterPlotFieldWellsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldWells, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInteractions())
             {
                 context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualInteractionOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Interactions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLegend())
             {
                 context.Writer.WritePropertyName("Legend");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LegendOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Legend, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSortConfiguration())
             {
                 context.Writer.WritePropertyName("SortConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScatterPlotSortConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SortConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTooltip())
             {
                 context.Writer.WritePropertyName("Tooltip");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TooltipOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tooltip, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualPalette())
             {
                 context.Writer.WritePropertyName("VisualPalette");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualPaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualPalette, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXAxisDisplayOptions())
             {
                 context.Writer.WritePropertyName("XAxisDisplayOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AxisDisplayOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XAxisDisplayOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXAxisLabelOptions())
             {
                 context.Writer.WritePropertyName("XAxisLabelOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChartAxisLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XAxisLabelOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetYAxisDisplayOptions())
             {
                 context.Writer.WritePropertyName("YAxisDisplayOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AxisDisplayOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.YAxisDisplayOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetYAxisLabelOptions())
             {
                 context.Writer.WritePropertyName("YAxisLabelOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChartAxisLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.YAxisLabelOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

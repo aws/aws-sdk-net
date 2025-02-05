@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InvalidSensorData Object
     /// </summary>  
-    public class InvalidSensorDataUnmarshaller : IUnmarshaller<InvalidSensorData, XmlUnmarshallerContext>, IUnmarshaller<InvalidSensorData, JsonUnmarshallerContext>
+    public class InvalidSensorDataUnmarshaller : IJsonUnmarshaller<InvalidSensorData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InvalidSensorData IUnmarshaller<InvalidSensorData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InvalidSensorData Unmarshall(JsonUnmarshallerContext context)
+        public InvalidSensorData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InvalidSensorData unmarshalledObject = new InvalidSensorData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AffectedSensorCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AffectedSensorCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AffectedSensorCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfInvalidValues", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfInvalidValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfInvalidValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

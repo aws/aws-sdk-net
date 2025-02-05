@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataflowEndpointName())
             {
                 context.Writer.WritePropertyName("dataflowEndpointName");
-                context.Writer.Write(requestObject.DataflowEndpointName);
+                context.Writer.WriteStringValue(requestObject.DataflowEndpointName);
             }
 
             if(requestObject.IsSetDataflowEndpointRegion())
             {
                 context.Writer.WritePropertyName("dataflowEndpointRegion");
-                context.Writer.Write(requestObject.DataflowEndpointRegion);
+                context.Writer.WriteStringValue(requestObject.DataflowEndpointRegion);
             }
 
         }

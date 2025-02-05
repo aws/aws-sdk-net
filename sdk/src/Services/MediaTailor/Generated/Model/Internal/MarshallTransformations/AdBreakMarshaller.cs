@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdBreakMetadata())
             {
                 context.Writer.WritePropertyName("AdBreakMetadata");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdBreakMetadataListValue in requestObject.AdBreakMetadata)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KeyValuePairMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdBreakMetadataListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
+                context.Writer.WriteStringValue(requestObject.MessageType);
             }
 
             if(requestObject.IsSetOffsetMillis())
             {
                 context.Writer.WritePropertyName("OffsetMillis");
-                context.Writer.Write(requestObject.OffsetMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.OffsetMillis.Value);
             }
 
             if(requestObject.IsSetSlate())
             {
                 context.Writer.WritePropertyName("Slate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SlateSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Slate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSpliceInsertMessage())
             {
                 context.Writer.WritePropertyName("SpliceInsertMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpliceInsertMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpliceInsertMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeSignalMessage())
             {
                 context.Writer.WritePropertyName("TimeSignalMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSignalMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeSignalMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

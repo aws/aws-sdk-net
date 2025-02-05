@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
@@ -64,145 +67,74 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 throw new AmazonPrometheusServiceException("Request object does not have required field ScraperId set");
             request.AddPathResource("{scraperId}", StringUtils.FromString(publicRequest.ScraperId));
             request.ResourcePath = "/scrapers/{scraperId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlias())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlias())
-                    {
-                        context.Writer.WritePropertyName("alias");
-                        context.Writer.Write(publicRequest.Alias);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("destination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Destination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScrapeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("scrapeConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScrapeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-<<<<<<< HEAD
-                request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScrapeConfiguration())
-                {
-                    context.Writer.WritePropertyName("scrapeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScrapeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleConfiguration())
-                {
-                    context.Writer.WritePropertyName("roleConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RoleConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RoleConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScrapeConfiguration())
-                {
-                    context.Writer.WritePropertyName("scrapeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScrapeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+                context.Writer.WritePropertyName("alias");
+                context.Writer.WriteStringValue(publicRequest.Alias);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Destination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleConfiguration())
+            {
+                context.Writer.WritePropertyName("roleConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RoleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RoleConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScrapeConfiguration())
+            {
+                context.Writer.WritePropertyName("scrapeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScrapeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

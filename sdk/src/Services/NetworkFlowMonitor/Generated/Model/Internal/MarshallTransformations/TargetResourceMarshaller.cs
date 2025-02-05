@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetTargetIdentifier())
             {
                 context.Writer.WritePropertyName("targetIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TargetIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

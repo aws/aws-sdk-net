@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAffinity())
             {
                 context.Writer.WritePropertyName("Affinity");
-                context.Writer.Write(requestObject.Affinity);
+                context.Writer.WriteStringValue(requestObject.Affinity);
             }
 
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetGroupName())
             {
                 context.Writer.WritePropertyName("GroupName");
-                context.Writer.Write(requestObject.GroupName);
+                context.Writer.WriteStringValue(requestObject.GroupName);
             }
 
             if(requestObject.IsSetHostId())
             {
                 context.Writer.WritePropertyName("HostId");
-                context.Writer.Write(requestObject.HostId);
+                context.Writer.WriteStringValue(requestObject.HostId);
             }
 
             if(requestObject.IsSetHostResourceGroupArn())
             {
                 context.Writer.WritePropertyName("HostResourceGroupArn");
-                context.Writer.Write(requestObject.HostResourceGroupArn);
+                context.Writer.WriteStringValue(requestObject.HostResourceGroupArn);
             }
 
             if(requestObject.IsSetPartitionNumber())
             {
                 context.Writer.WritePropertyName("PartitionNumber");
-                context.Writer.Write(requestObject.PartitionNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.PartitionNumber.Value);
             }
 
             if(requestObject.IsSetSpreadDomain())
             {
                 context.Writer.WritePropertyName("SpreadDomain");
-                context.Writer.Write(requestObject.SpreadDomain);
+                context.Writer.WriteStringValue(requestObject.SpreadDomain);
             }
 
             if(requestObject.IsSetTenancy())
             {
                 context.Writer.WritePropertyName("Tenancy");
-                context.Writer.Write(requestObject.Tenancy);
+                context.Writer.WriteStringValue(requestObject.Tenancy);
             }
 
         }

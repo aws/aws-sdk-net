@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVmManagerName())
             {
                 context.Writer.WritePropertyName("vmManagerName");
-                context.Writer.Write(requestObject.VmManagerName);
+                context.Writer.WriteStringValue(requestObject.VmManagerName);
             }
 
             if(requestObject.IsSetVmManagerType())
             {
                 context.Writer.WritePropertyName("vmManagerType");
-                context.Writer.Write(requestObject.VmManagerType);
+                context.Writer.WriteStringValue(requestObject.VmManagerType);
             }
 
             if(requestObject.IsSetVmName())
             {
                 context.Writer.WritePropertyName("vmName");
-                context.Writer.Write(requestObject.VmName);
+                context.Writer.WriteStringValue(requestObject.VmName);
             }
 
             if(requestObject.IsSetVmPath())
             {
                 context.Writer.WritePropertyName("vmPath");
-                context.Writer.Write(requestObject.VmPath);
+                context.Writer.WriteStringValue(requestObject.VmPath);
             }
 
             if(requestObject.IsSetVmServerAddress())
             {
                 context.Writer.WritePropertyName("vmServerAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VmServerAddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.VmServerAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

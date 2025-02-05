@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkflowTypeConfiguration Object
     /// </summary>  
-    public class WorkflowTypeConfigurationUnmarshaller : IUnmarshaller<WorkflowTypeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WorkflowTypeConfiguration, JsonUnmarshallerContext>
+    public class WorkflowTypeConfigurationUnmarshaller : IJsonUnmarshaller<WorkflowTypeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkflowTypeConfiguration IUnmarshaller<WorkflowTypeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkflowTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowTypeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkflowTypeConfiguration unmarshalledObject = new WorkflowTypeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("defaultChildPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultChildPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultChildPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultExecutionStartToCloseTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultExecutionStartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultExecutionStartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultLambdaRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultLambdaRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultLambdaRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultTaskList", targetDepth))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultTaskPriority", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTaskPriority = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultTaskPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTaskStartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultTaskStartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

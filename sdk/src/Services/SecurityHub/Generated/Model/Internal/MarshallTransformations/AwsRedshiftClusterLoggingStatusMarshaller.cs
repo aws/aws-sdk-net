@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetLastFailureMessage())
             {
                 context.Writer.WritePropertyName("LastFailureMessage");
-                context.Writer.Write(requestObject.LastFailureMessage);
+                context.Writer.WriteStringValue(requestObject.LastFailureMessage);
             }
 
             if(requestObject.IsSetLastFailureTime())
             {
                 context.Writer.WritePropertyName("LastFailureTime");
-                context.Writer.Write(requestObject.LastFailureTime);
+                context.Writer.WriteStringValue(requestObject.LastFailureTime);
             }
 
             if(requestObject.IsSetLastSuccessfulDeliveryTime())
             {
                 context.Writer.WritePropertyName("LastSuccessfulDeliveryTime");
-                context.Writer.Write(requestObject.LastSuccessfulDeliveryTime);
+                context.Writer.WriteStringValue(requestObject.LastSuccessfulDeliveryTime);
             }
 
             if(requestObject.IsSetLoggingEnabled())
             {
                 context.Writer.WritePropertyName("LoggingEnabled");
-                context.Writer.Write(requestObject.LoggingEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.LoggingEnabled.Value);
             }
 
             if(requestObject.IsSetS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("S3KeyPrefix");
-                context.Writer.Write(requestObject.S3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.S3KeyPrefix);
             }
 
         }

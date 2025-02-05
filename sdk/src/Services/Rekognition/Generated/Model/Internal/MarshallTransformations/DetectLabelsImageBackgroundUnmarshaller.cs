@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DetectLabelsImageBackground Object
     /// </summary>  
-    public class DetectLabelsImageBackgroundUnmarshaller : IUnmarshaller<DetectLabelsImageBackground, XmlUnmarshallerContext>, IUnmarshaller<DetectLabelsImageBackground, JsonUnmarshallerContext>
+    public class DetectLabelsImageBackgroundUnmarshaller : IJsonUnmarshaller<DetectLabelsImageBackground, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DetectLabelsImageBackground IUnmarshaller<DetectLabelsImageBackground, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DetectLabelsImageBackground Unmarshall(JsonUnmarshallerContext context)
+        public DetectLabelsImageBackground Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DetectLabelsImageBackground unmarshalledObject = new DetectLabelsImageBackground();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DominantColors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
-                    unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
+                    unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Quality", targetDepth))
                 {
                     var unmarshaller = DetectLabelsImageQualityUnmarshaller.Instance;
-                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

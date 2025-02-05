@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplication())
             {
                 context.Writer.WritePropertyName("application");
-                context.Writer.Write(requestObject.Application);
+                context.Writer.WriteStringValue(requestObject.Application);
             }
 
             if(requestObject.IsSetApplicationVersion())
             {
                 context.Writer.WritePropertyName("applicationVersion");
-                context.Writer.Write(requestObject.ApplicationVersion);
+                context.Writer.WriteStringValue(requestObject.ApplicationVersion);
             }
 
             if(requestObject.IsSetLaunchConfig())
             {
                 context.Writer.WritePropertyName("launchConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentLaunchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

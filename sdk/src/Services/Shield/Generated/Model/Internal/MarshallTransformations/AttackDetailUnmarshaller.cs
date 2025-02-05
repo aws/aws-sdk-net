@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AttackDetail Object
     /// </summary>  
-    public class AttackDetailUnmarshaller : IUnmarshaller<AttackDetail, XmlUnmarshallerContext>, IUnmarshaller<AttackDetail, JsonUnmarshallerContext>
+    public class AttackDetailUnmarshaller : IJsonUnmarshaller<AttackDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AttackDetail IUnmarshaller<AttackDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AttackDetail Unmarshall(JsonUnmarshallerContext context)
+        public AttackDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AttackDetail unmarshalledObject = new AttackDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AttackCounters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
-                    unmarshalledObject.AttackCounters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
+                    unmarshalledObject.AttackCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AttackId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttackId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AttackProperties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance);
-                    unmarshalledObject.AttackProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AttackProperty, AttackPropertyUnmarshaller>(AttackPropertyUnmarshaller.Instance);
+                    unmarshalledObject.AttackProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Mitigations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Mitigation, MitigationUnmarshaller>(MitigationUnmarshaller.Instance);
-                    unmarshalledObject.Mitigations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Mitigation, MitigationUnmarshaller>(MitigationUnmarshaller.Instance);
+                    unmarshalledObject.Mitigations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SubResourceSummary, SubResourceSummaryUnmarshaller>(SubResourceSummaryUnmarshaller.Instance);
-                    unmarshalledObject.SubResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SubResourceSummary, SubResourceSummaryUnmarshaller>(SubResourceSummaryUnmarshaller.Instance);
+                    unmarshalledObject.SubResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

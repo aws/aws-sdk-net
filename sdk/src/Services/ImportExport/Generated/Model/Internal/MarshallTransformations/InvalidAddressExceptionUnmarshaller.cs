@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidAddressException operation
     /// </summary>  
-    public class InvalidAddressExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidAddressException, XmlUnmarshallerContext>
+    public class InvalidAddressExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidAddressException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

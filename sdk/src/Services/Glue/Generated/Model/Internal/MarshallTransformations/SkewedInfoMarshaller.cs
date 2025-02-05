@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSkewedColumnNames())
             {
                 context.Writer.WritePropertyName("SkewedColumnNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSkewedColumnNamesListValue in requestObject.SkewedColumnNames)
                 {
-                        context.Writer.Write(requestObjectSkewedColumnNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectSkewedColumnNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSkewedColumnValueLocationMaps())
             {
                 context.Writer.WritePropertyName("SkewedColumnValueLocationMaps");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSkewedColumnValueLocationMapsKvp in requestObject.SkewedColumnValueLocationMaps)
                 {
                     context.Writer.WritePropertyName(requestObjectSkewedColumnValueLocationMapsKvp.Key);
                     var requestObjectSkewedColumnValueLocationMapsValue = requestObjectSkewedColumnValueLocationMapsKvp.Value;
 
-                        context.Writer.Write(requestObjectSkewedColumnValueLocationMapsValue);
+                        context.Writer.WriteStringValue(requestObjectSkewedColumnValueLocationMapsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSkewedColumnValues())
             {
                 context.Writer.WritePropertyName("SkewedColumnValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSkewedColumnValuesListValue in requestObject.SkewedColumnValues)
                 {
-                        context.Writer.Write(requestObjectSkewedColumnValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectSkewedColumnValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

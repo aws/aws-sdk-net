@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration.Value);
+                context.Writer.WriteNumberValue(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetSpliceEventId())
             {
                 context.Writer.WritePropertyName("spliceEventId");
-                context.Writer.Write(requestObject.SpliceEventId.Value);
+                context.Writer.WriteNumberValue(requestObject.SpliceEventId.Value);
             }
 
         }

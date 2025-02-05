@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubnetNotAllowedException operation
     /// </summary>  
-    public class SubnetNotAllowedExceptionUnmarshaller : IErrorResponseUnmarshaller<SubnetNotAllowedException, XmlUnmarshallerContext>
+    public class SubnetNotAllowedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubnetNotAllowedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

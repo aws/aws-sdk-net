@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFindingId())
             {
                 context.Writer.WritePropertyName("findingId");
-                context.Writer.Write(requestObject.FindingId);
+                context.Writer.WriteStringValue(requestObject.FindingId);
             }
 
             if(requestObject.IsSetScanName())
             {
                 context.Writer.WritePropertyName("scanName");
-                context.Writer.Write(requestObject.ScanName);
+                context.Writer.WriteStringValue(requestObject.ScanName);
             }
 
         }

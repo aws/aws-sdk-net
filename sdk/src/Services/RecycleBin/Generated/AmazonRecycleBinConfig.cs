@@ -34,16 +34,10 @@ namespace Amazon.RecycleBin
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("rbin", "4.0.0.0");
 
         private static readonly AmazonRecycleBinEndpointResolver EndpointResolver =
             new AmazonRecycleBinEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("rbin", "3.7.401.15");
-=======
-            InternalSDKUtils.BuildUserAgentString("rbin", "3.7.401.33");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

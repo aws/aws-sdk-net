@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableMaintenanceSettings Object
     /// </summary>  
-    public class TableMaintenanceSettingsUnmarshaller : IUnmarshaller<TableMaintenanceSettings, XmlUnmarshallerContext>, IUnmarshaller<TableMaintenanceSettings, JsonUnmarshallerContext>
+    public class TableMaintenanceSettingsUnmarshaller : IJsonUnmarshaller<TableMaintenanceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableMaintenanceSettings IUnmarshaller<TableMaintenanceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableMaintenanceSettings Unmarshall(JsonUnmarshallerContext context)
+        public TableMaintenanceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableMaintenanceSettings unmarshalledObject = new TableMaintenanceSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("icebergCompaction", targetDepth))
                 {
                     var unmarshaller = IcebergCompactionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.IcebergCompaction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IcebergCompaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("icebergSnapshotManagement", targetDepth))
                 {
                     var unmarshaller = IcebergSnapshotManagementSettingsUnmarshaller.Instance;
-                    unmarshalledObject.IcebergSnapshotManagement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IcebergSnapshotManagement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

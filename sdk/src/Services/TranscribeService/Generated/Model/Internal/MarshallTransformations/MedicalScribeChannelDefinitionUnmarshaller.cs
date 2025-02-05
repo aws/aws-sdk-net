@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MedicalScribeChannelDefinition Object
     /// </summary>  
-    public class MedicalScribeChannelDefinitionUnmarshaller : IUnmarshaller<MedicalScribeChannelDefinition, XmlUnmarshallerContext>, IUnmarshaller<MedicalScribeChannelDefinition, JsonUnmarshallerContext>
+    public class MedicalScribeChannelDefinitionUnmarshaller : IJsonUnmarshaller<MedicalScribeChannelDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MedicalScribeChannelDefinition IUnmarshaller<MedicalScribeChannelDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MedicalScribeChannelDefinition Unmarshall(JsonUnmarshallerContext context)
+        public MedicalScribeChannelDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MedicalScribeChannelDefinition unmarshalledObject = new MedicalScribeChannelDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChannelId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParticipantRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

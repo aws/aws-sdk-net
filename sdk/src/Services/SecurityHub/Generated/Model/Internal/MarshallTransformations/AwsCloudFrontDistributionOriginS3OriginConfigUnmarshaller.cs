@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsCloudFrontDistributionOriginS3OriginConfig Object
     /// </summary>  
-    public class AwsCloudFrontDistributionOriginS3OriginConfigUnmarshaller : IUnmarshaller<AwsCloudFrontDistributionOriginS3OriginConfig, XmlUnmarshallerContext>, IUnmarshaller<AwsCloudFrontDistributionOriginS3OriginConfig, JsonUnmarshallerContext>
+    public class AwsCloudFrontDistributionOriginS3OriginConfigUnmarshaller : IJsonUnmarshaller<AwsCloudFrontDistributionOriginS3OriginConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsCloudFrontDistributionOriginS3OriginConfig IUnmarshaller<AwsCloudFrontDistributionOriginS3OriginConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsCloudFrontDistributionOriginS3OriginConfig Unmarshall(JsonUnmarshallerContext context)
+        public AwsCloudFrontDistributionOriginS3OriginConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsCloudFrontDistributionOriginS3OriginConfig unmarshalledObject = new AwsCloudFrontDistributionOriginS3OriginConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("OriginAccessIdentity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OriginAccessIdentity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginAccessIdentity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

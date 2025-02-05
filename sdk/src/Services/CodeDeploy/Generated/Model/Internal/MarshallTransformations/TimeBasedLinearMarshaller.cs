@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLinearInterval())
             {
                 context.Writer.WritePropertyName("linearInterval");
-                context.Writer.Write(requestObject.LinearInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.LinearInterval.Value);
             }
 
             if(requestObject.IsSetLinearPercentage())
             {
                 context.Writer.WritePropertyName("linearPercentage");
-                context.Writer.Write(requestObject.LinearPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.LinearPercentage.Value);
             }
 
         }

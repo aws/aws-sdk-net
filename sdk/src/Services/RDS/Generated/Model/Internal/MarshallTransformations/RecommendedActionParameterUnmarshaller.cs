@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RecommendedActionParameter Object
     /// </summary>  
-    public class RecommendedActionParameterUnmarshaller : IUnmarshaller<RecommendedActionParameter, XmlUnmarshallerContext>, IUnmarshaller<RecommendedActionParameter, JsonUnmarshallerContext>
+    public class RecommendedActionParameterUnmarshaller : IXmlUnmarshaller<RecommendedActionParameter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RecommendedActionParameter Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RecommendedActionParameterUnmarshaller _instance = new RecommendedActionParameterUnmarshaller();        
 

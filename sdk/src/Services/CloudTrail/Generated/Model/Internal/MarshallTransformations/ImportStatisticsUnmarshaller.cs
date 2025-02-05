@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImportStatistics Object
     /// </summary>  
-    public class ImportStatisticsUnmarshaller : IUnmarshaller<ImportStatistics, XmlUnmarshallerContext>, IUnmarshaller<ImportStatistics, JsonUnmarshallerContext>
+    public class ImportStatisticsUnmarshaller : IJsonUnmarshaller<ImportStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImportStatistics IUnmarshaller<ImportStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportStatistics Unmarshall(JsonUnmarshallerContext context)
+        public ImportStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImportStatistics unmarshalledObject = new ImportStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EventsCompleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EventsCompleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventsCompleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailedEntries", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FailedEntries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailedEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilesCompleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FilesCompleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilesCompleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrefixesCompleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PrefixesCompleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrefixesCompleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrefixesFound", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PrefixesFound = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrefixesFound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

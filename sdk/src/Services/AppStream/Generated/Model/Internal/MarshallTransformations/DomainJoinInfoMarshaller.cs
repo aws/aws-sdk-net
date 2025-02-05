@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectoryName())
             {
                 context.Writer.WritePropertyName("DirectoryName");
-                context.Writer.Write(requestObject.DirectoryName);
+                context.Writer.WriteStringValue(requestObject.DirectoryName);
             }
 
             if(requestObject.IsSetOrganizationalUnitDistinguishedName())
             {
                 context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
-                context.Writer.Write(requestObject.OrganizationalUnitDistinguishedName);
+                context.Writer.WriteStringValue(requestObject.OrganizationalUnitDistinguishedName);
             }
 
         }

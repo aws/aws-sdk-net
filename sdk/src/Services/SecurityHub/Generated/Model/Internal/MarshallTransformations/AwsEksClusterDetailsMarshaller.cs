@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetCertificateAuthorityData())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityData");
-                context.Writer.Write(requestObject.CertificateAuthorityData);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityData);
             }
 
             if(requestObject.IsSetClusterStatus())
             {
                 context.Writer.WritePropertyName("ClusterStatus");
-                context.Writer.Write(requestObject.ClusterStatus);
+                context.Writer.WriteStringValue(requestObject.ClusterStatus);
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("Endpoint");
-                context.Writer.Write(requestObject.Endpoint);
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
             if(requestObject.IsSetLogging())
             {
                 context.Writer.WritePropertyName("Logging");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEksClusterLoggingDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Logging, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetResourcesVpcConfig())
             {
                 context.Writer.WritePropertyName("ResourcesVpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEksClusterResourcesVpcConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourcesVpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

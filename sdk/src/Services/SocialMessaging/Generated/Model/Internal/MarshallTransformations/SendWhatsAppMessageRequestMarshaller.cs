@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
@@ -61,37 +64,42 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/whatsapp/send";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMessage())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMessage())
-                    {
-                        context.Writer.WritePropertyName("message");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Message));
-                    }
-
-                    if(publicRequest.IsSetMetaApiVersion())
-                    {
-                        context.Writer.WritePropertyName("metaApiVersion");
-                        context.Writer.Write(publicRequest.MetaApiVersion);
-                    }
-
-                    if(publicRequest.IsSetOriginationPhoneNumberId())
-                    {
-                        context.Writer.WritePropertyName("originationPhoneNumberId");
-                        context.Writer.Write(publicRequest.OriginationPhoneNumberId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("message");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Message));
             }
+
+            if(publicRequest.IsSetMetaApiVersion())
+            {
+                context.Writer.WritePropertyName("metaApiVersion");
+                context.Writer.WriteStringValue(publicRequest.MetaApiVersion);
+            }
+
+            if(publicRequest.IsSetOriginationPhoneNumberId())
+            {
+                context.Writer.WritePropertyName("originationPhoneNumberId");
+                context.Writer.WriteStringValue(publicRequest.OriginationPhoneNumberId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

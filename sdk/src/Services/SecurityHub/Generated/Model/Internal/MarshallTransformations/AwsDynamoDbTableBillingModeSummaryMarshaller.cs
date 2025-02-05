@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBillingMode())
             {
                 context.Writer.WritePropertyName("BillingMode");
-                context.Writer.Write(requestObject.BillingMode);
+                context.Writer.WriteStringValue(requestObject.BillingMode);
             }
 
             if(requestObject.IsSetLastUpdateToPayPerRequestDateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateToPayPerRequestDateTime");
-                context.Writer.Write(requestObject.LastUpdateToPayPerRequestDateTime);
+                context.Writer.WriteStringValue(requestObject.LastUpdateToPayPerRequestDateTime);
             }
 
         }

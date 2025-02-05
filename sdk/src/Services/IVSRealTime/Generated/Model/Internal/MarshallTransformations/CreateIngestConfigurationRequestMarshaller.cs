@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -61,77 +64,82 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateIngestConfiguration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("attributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributes())
-                    {
-                        context.Writer.WritePropertyName("attributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                    var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                                context.Writer.Write(publicRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIngestProtocol())
-                    {
-                        context.Writer.WritePropertyName("ingestProtocol");
-                        context.Writer.Write(publicRequest.IngestProtocol);
-                    }
-
-                    if(publicRequest.IsSetInsecureIngest())
-                    {
-                        context.Writer.WritePropertyName("insecureIngest");
-                        context.Writer.Write(publicRequest.InsecureIngest.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetStageArn())
-                    {
-                        context.Writer.WritePropertyName("stageArn");
-                        context.Writer.Write(publicRequest.StageArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUserId())
-                    {
-                        context.Writer.WritePropertyName("userId");
-                        context.Writer.Write(publicRequest.UserId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAttributesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetIngestProtocol())
+            {
+                context.Writer.WritePropertyName("ingestProtocol");
+                context.Writer.WriteStringValue(publicRequest.IngestProtocol);
+            }
+
+            if(publicRequest.IsSetInsecureIngest())
+            {
+                context.Writer.WritePropertyName("insecureIngest");
+                context.Writer.WriteBooleanValue(publicRequest.InsecureIngest.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetStageArn())
+            {
+                context.Writer.WritePropertyName("stageArn");
+                context.Writer.WriteStringValue(publicRequest.StageArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("userId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

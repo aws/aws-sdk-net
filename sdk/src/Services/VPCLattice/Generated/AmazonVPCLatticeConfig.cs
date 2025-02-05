@@ -34,16 +34,10 @@ namespace Amazon.VPCLattice
     public partial class AmazonVPCLatticeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("VPC Lattice", "4.0.0.0");
 
         private static readonly AmazonVPCLatticeEndpointResolver EndpointResolver =
             new AmazonVPCLatticeEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "3.7.401.12");
-=======
-            InternalSDKUtils.BuildUserAgentString("VPC Lattice", "3.7.401.30");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

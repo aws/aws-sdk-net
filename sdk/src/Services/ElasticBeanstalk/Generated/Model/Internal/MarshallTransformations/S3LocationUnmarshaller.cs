@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Location Object
     /// </summary>  
-    public class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext>
+    public class S3LocationUnmarshaller : IXmlUnmarshaller<S3Location, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3Location Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static S3LocationUnmarshaller _instance = new S3LocationUnmarshaller();        
 

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DocumentOverrideConfiguration Object
     /// </summary>  
-    public class DocumentOverrideConfigurationUnmarshaller : IUnmarshaller<DocumentOverrideConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DocumentOverrideConfiguration, JsonUnmarshallerContext>
+    public class DocumentOverrideConfigurationUnmarshaller : IJsonUnmarshaller<DocumentOverrideConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DocumentOverrideConfiguration IUnmarshaller<DocumentOverrideConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DocumentOverrideConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DocumentOverrideConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DocumentOverrideConfiguration unmarshalledObject = new DocumentOverrideConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("splitter", targetDepth))
                 {
                     var unmarshaller = SplitterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Splitter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Splitter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

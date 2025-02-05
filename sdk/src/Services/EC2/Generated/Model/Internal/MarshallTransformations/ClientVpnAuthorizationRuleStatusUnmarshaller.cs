@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClientVpnAuthorizationRuleStatus Object
     /// </summary>  
-    public class ClientVpnAuthorizationRuleStatusUnmarshaller : IUnmarshaller<ClientVpnAuthorizationRuleStatus, XmlUnmarshallerContext>, IUnmarshaller<ClientVpnAuthorizationRuleStatus, JsonUnmarshallerContext>
+    public class ClientVpnAuthorizationRuleStatusUnmarshaller : IXmlUnmarshaller<ClientVpnAuthorizationRuleStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClientVpnAuthorizationRuleStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClientVpnAuthorizationRuleStatusUnmarshaller _instance = new ClientVpnAuthorizationRuleStatusUnmarshaller();        
 

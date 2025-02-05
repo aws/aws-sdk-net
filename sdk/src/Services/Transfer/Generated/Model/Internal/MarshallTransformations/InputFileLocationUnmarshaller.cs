@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InputFileLocation Object
     /// </summary>  
-    public class InputFileLocationUnmarshaller : IUnmarshaller<InputFileLocation, XmlUnmarshallerContext>, IUnmarshaller<InputFileLocation, JsonUnmarshallerContext>
+    public class InputFileLocationUnmarshaller : IJsonUnmarshaller<InputFileLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InputFileLocation IUnmarshaller<InputFileLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputFileLocation Unmarshall(JsonUnmarshallerContext context)
+        public InputFileLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InputFileLocation unmarshalledObject = new InputFileLocation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EfsFileLocation", targetDepth))
                 {
                     var unmarshaller = EfsFileLocationUnmarshaller.Instance;
-                    unmarshalledObject.EfsFileLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EfsFileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3FileLocation", targetDepth))
                 {
                     var unmarshaller = S3InputFileLocationUnmarshaller.Instance;
-                    unmarshalledObject.S3FileLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3FileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

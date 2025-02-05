@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceRefreshProgressDetails Object
     /// </summary>  
-    public class InstanceRefreshProgressDetailsUnmarshaller : IUnmarshaller<InstanceRefreshProgressDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceRefreshProgressDetails, JsonUnmarshallerContext>
+    public class InstanceRefreshProgressDetailsUnmarshaller : IXmlUnmarshaller<InstanceRefreshProgressDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceRefreshProgressDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceRefreshProgressDetailsUnmarshaller _instance = new InstanceRefreshProgressDetailsUnmarshaller();        
 

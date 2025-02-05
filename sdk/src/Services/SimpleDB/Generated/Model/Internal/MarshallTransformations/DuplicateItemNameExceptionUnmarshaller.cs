@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateItemNameException operation
     /// </summary>  
-    public class DuplicateItemNameExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateItemNameException, XmlUnmarshallerContext>
+    public class DuplicateItemNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateItemNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

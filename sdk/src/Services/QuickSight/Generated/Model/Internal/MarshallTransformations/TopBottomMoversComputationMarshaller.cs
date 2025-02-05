@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.Category, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComputationId())
             {
                 context.Writer.WritePropertyName("ComputationId");
-                context.Writer.Write(requestObject.ComputationId);
+                context.Writer.WriteStringValue(requestObject.ComputationId);
             }
 
             if(requestObject.IsSetMoverSize())
             {
                 context.Writer.WritePropertyName("MoverSize");
-                context.Writer.Write(requestObject.MoverSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MoverSize.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("SortOrder");
-                context.Writer.Write(requestObject.SortOrder);
+                context.Writer.WriteStringValue(requestObject.SortOrder);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.Time, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MeasureFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

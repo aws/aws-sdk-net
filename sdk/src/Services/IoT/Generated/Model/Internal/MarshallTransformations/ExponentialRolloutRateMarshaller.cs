@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("baseRatePerMinute");
-                context.Writer.Write(requestObject.BaseRatePerMinute.Value);
+                context.Writer.WriteNumberValue(requestObject.BaseRatePerMinute.Value);
             }
 
             if(requestObject.IsSetIncrementFactor())
@@ -59,23 +57,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("incrementFactor");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.IncrementFactor.Value);
+                    context.Writer.WriteNumberValue(requestObject.IncrementFactor.Value);
                 }
             }
 
             if(requestObject.IsSetRateIncreaseCriteria())
             {
                 context.Writer.WritePropertyName("rateIncreaseCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateIncreaseCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.RateIncreaseCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

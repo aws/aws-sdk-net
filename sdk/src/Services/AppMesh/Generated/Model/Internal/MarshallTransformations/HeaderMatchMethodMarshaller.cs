@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExact())
             {
                 context.Writer.WritePropertyName("exact");
-                context.Writer.Write(requestObject.Exact);
+                context.Writer.WriteStringValue(requestObject.Exact);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetRange())
             {
                 context.Writer.WritePropertyName("range");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MatchRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Range, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegex())
             {
                 context.Writer.WritePropertyName("regex");
-                context.Writer.Write(requestObject.Regex);
+                context.Writer.WriteStringValue(requestObject.Regex);
             }
 
             if(requestObject.IsSetSuffix())
             {
                 context.Writer.WritePropertyName("suffix");
-                context.Writer.Write(requestObject.Suffix);
+                context.Writer.WriteStringValue(requestObject.Suffix);
             }
 
         }

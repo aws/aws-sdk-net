@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudMetricEnabled())
             {
                 context.Writer.WritePropertyName("cloudMetricEnabled");
-                context.Writer.Write(requestObject.CloudMetricEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudMetricEnabled.Value);
             }
 
             if(requestObject.IsSetMetricRuleRoleArn())
             {
                 context.Writer.WritePropertyName("metricRuleRoleArn");
-                context.Writer.Write(requestObject.MetricRuleRoleArn);
+                context.Writer.WriteStringValue(requestObject.MetricRuleRoleArn);
             }
 
         }

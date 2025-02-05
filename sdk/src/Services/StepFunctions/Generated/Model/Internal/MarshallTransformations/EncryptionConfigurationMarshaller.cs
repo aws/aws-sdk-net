@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsDataKeyReusePeriodSeconds())
             {
                 context.Writer.WritePropertyName("kmsDataKeyReusePeriodSeconds");
-                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.KmsDataKeyReusePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LayerCustomAction Object
     /// </summary>  
-    public class LayerCustomActionUnmarshaller : IUnmarshaller<LayerCustomAction, XmlUnmarshallerContext>, IUnmarshaller<LayerCustomAction, JsonUnmarshallerContext>
+    public class LayerCustomActionUnmarshaller : IJsonUnmarshaller<LayerCustomAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LayerCustomAction IUnmarshaller<LayerCustomAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LayerCustomAction Unmarshall(JsonUnmarshallerContext context)
+        public LayerCustomAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LayerCustomAction unmarshalledObject = new LayerCustomAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActionOperations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LayerCustomActionOperation, LayerCustomActionOperationUnmarshaller>(LayerCustomActionOperationUnmarshaller.Instance);
-                    unmarshalledObject.ActionOperations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LayerCustomActionOperation, LayerCustomActionOperationUnmarshaller>(LayerCustomActionOperationUnmarshaller.Instance);
+                    unmarshalledObject.ActionOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomActionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomActionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomActionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Trigger", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Trigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

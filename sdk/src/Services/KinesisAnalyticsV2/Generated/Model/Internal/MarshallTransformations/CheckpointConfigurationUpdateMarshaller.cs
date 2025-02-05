@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckpointingEnabledUpdate())
             {
                 context.Writer.WritePropertyName("CheckpointingEnabledUpdate");
-                context.Writer.Write(requestObject.CheckpointingEnabledUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.CheckpointingEnabledUpdate.Value);
             }
 
             if(requestObject.IsSetCheckpointIntervalUpdate())
             {
                 context.Writer.WritePropertyName("CheckpointIntervalUpdate");
-                context.Writer.Write(requestObject.CheckpointIntervalUpdate.Value);
+                context.Writer.WriteNumberValue(requestObject.CheckpointIntervalUpdate.Value);
             }
 
             if(requestObject.IsSetConfigurationTypeUpdate())
             {
                 context.Writer.WritePropertyName("ConfigurationTypeUpdate");
-                context.Writer.Write(requestObject.ConfigurationTypeUpdate);
+                context.Writer.WriteStringValue(requestObject.ConfigurationTypeUpdate);
             }
 
             if(requestObject.IsSetMinPauseBetweenCheckpointsUpdate())
             {
                 context.Writer.WritePropertyName("MinPauseBetweenCheckpointsUpdate");
-                context.Writer.Write(requestObject.MinPauseBetweenCheckpointsUpdate.Value);
+                context.Writer.WriteNumberValue(requestObject.MinPauseBetweenCheckpointsUpdate.Value);
             }
 
         }

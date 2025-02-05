@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreferredProtocol())
             {
                 context.Writer.WritePropertyName("PreferredProtocol");
-                context.Writer.Write(requestObject.PreferredProtocol);
+                context.Writer.WriteStringValue(requestObject.PreferredProtocol);
             }
 
         }

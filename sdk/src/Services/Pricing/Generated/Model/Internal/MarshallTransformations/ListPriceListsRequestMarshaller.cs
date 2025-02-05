@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pricing.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCurrencyCode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCurrencyCode())
-                    {
-                        context.Writer.WritePropertyName("CurrencyCode");
-                        context.Writer.Write(publicRequest.CurrencyCode);
-                    }
-
-                    if(publicRequest.IsSetEffectiveDate())
-                    {
-                        context.Writer.WritePropertyName("EffectiveDate");
-                        context.Writer.Write(publicRequest.EffectiveDate.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetRegionCode())
-                    {
-                        context.Writer.WritePropertyName("RegionCode");
-                        context.Writer.Write(publicRequest.RegionCode);
-                    }
-
-                    if(publicRequest.IsSetServiceCode())
-                    {
-                        context.Writer.WritePropertyName("ServiceCode");
-                        context.Writer.Write(publicRequest.ServiceCode);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CurrencyCode");
+                context.Writer.WriteStringValue(publicRequest.CurrencyCode);
             }
+
+            if(publicRequest.IsSetEffectiveDate())
+            {
+                context.Writer.WritePropertyName("EffectiveDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EffectiveDate.Value)));
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetRegionCode())
+            {
+                context.Writer.WritePropertyName("RegionCode");
+                context.Writer.WriteStringValue(publicRequest.RegionCode);
+            }
+
+            if(publicRequest.IsSetServiceCode())
+            {
+                context.Writer.WritePropertyName("ServiceCode");
+                context.Writer.WriteStringValue(publicRequest.ServiceCode);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyListenersException operation
     /// </summary>  
-    public class TooManyListenersExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyListenersException, XmlUnmarshallerContext>
+    public class TooManyListenersExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyListenersException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

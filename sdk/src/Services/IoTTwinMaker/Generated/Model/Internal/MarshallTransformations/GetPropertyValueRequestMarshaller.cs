@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -64,83 +67,88 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/entity-properties/value";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComponentName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComponentName())
-                    {
-                        context.Writer.WritePropertyName("componentName");
-                        context.Writer.Write(publicRequest.ComponentName);
-                    }
-
-                    if(publicRequest.IsSetComponentPath())
-                    {
-                        context.Writer.WritePropertyName("componentPath");
-                        context.Writer.Write(publicRequest.ComponentPath);
-                    }
-
-                    if(publicRequest.IsSetComponentTypeId())
-                    {
-                        context.Writer.WritePropertyName("componentTypeId");
-                        context.Writer.Write(publicRequest.ComponentTypeId);
-                    }
-
-                    if(publicRequest.IsSetEntityId())
-                    {
-                        context.Writer.WritePropertyName("entityId");
-                        context.Writer.Write(publicRequest.EntityId);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetPropertyGroupName())
-                    {
-                        context.Writer.WritePropertyName("propertyGroupName");
-                        context.Writer.Write(publicRequest.PropertyGroupName);
-                    }
-
-                    if(publicRequest.IsSetSelectedProperties())
-                    {
-                        context.Writer.WritePropertyName("selectedProperties");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
-                        {
-                                context.Writer.Write(publicRequestSelectedPropertiesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTabularConditions())
-                    {
-                        context.Writer.WritePropertyName("tabularConditions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TabularConditionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TabularConditions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("componentName");
+                context.Writer.WriteStringValue(publicRequest.ComponentName);
             }
+
+            if(publicRequest.IsSetComponentPath())
+            {
+                context.Writer.WritePropertyName("componentPath");
+                context.Writer.WriteStringValue(publicRequest.ComponentPath);
+            }
+
+            if(publicRequest.IsSetComponentTypeId())
+            {
+                context.Writer.WritePropertyName("componentTypeId");
+                context.Writer.WriteStringValue(publicRequest.ComponentTypeId);
+            }
+
+            if(publicRequest.IsSetEntityId())
+            {
+                context.Writer.WritePropertyName("entityId");
+                context.Writer.WriteStringValue(publicRequest.EntityId);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetPropertyGroupName())
+            {
+                context.Writer.WritePropertyName("propertyGroupName");
+                context.Writer.WriteStringValue(publicRequest.PropertyGroupName);
+            }
+
+            if(publicRequest.IsSetSelectedProperties())
+            {
+                context.Writer.WritePropertyName("selectedProperties");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSelectedPropertiesListValue in publicRequest.SelectedProperties)
+                {
+                        context.Writer.WriteStringValue(publicRequestSelectedPropertiesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTabularConditions())
+            {
+                context.Writer.WritePropertyName("tabularConditions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TabularConditionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TabularConditions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"data.";

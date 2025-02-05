@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,155 +49,155 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanadaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("canadaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CanadaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.CanadaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEstoniaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("estoniaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EstoniaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.EstoniaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeorgiaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("georgiaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeorgiaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeorgiaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsraelAdditionalInfo())
             {
                 context.Writer.WritePropertyName("israelAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IsraelAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.IsraelAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetItalyAdditionalInfo())
             {
                 context.Writer.WritePropertyName("italyAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ItalyAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.ItalyAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKenyaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("kenyaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KenyaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.KenyaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMalaysiaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("malaysiaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MalaysiaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.MalaysiaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolandAdditionalInfo())
             {
                 context.Writer.WritePropertyName("polandAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PolandAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolandAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRomaniaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("romaniaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RomaniaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.RomaniaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSaudiArabiaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("saudiArabiaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SaudiArabiaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.SaudiArabiaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSouthKoreaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("southKoreaAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SouthKoreaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.SouthKoreaAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSpainAdditionalInfo())
             {
                 context.Writer.WritePropertyName("spainAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpainAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpainAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTurkeyAdditionalInfo())
             {
                 context.Writer.WritePropertyName("turkeyAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TurkeyAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.TurkeyAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUkraineAdditionalInfo())
             {
                 context.Writer.WritePropertyName("ukraineAdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UkraineAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.UkraineAdditionalInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -63,94 +66,99 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDatasetArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDatasetArn())
-                    {
-                        context.Writer.WritePropertyName("DatasetArn");
-                        context.Writer.Write(publicRequest.DatasetArn);
-                    }
-
-                    if(publicRequest.IsSetDatasetImportJobName())
-                    {
-                        context.Writer.WritePropertyName("DatasetImportJobName");
-                        context.Writer.Write(publicRequest.DatasetImportJobName);
-                    }
-
-                    if(publicRequest.IsSetDataSource())
-                    {
-                        context.Writer.WritePropertyName("DataSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFormat())
-                    {
-                        context.Writer.WritePropertyName("Format");
-                        context.Writer.Write(publicRequest.Format);
-                    }
-
-                    if(publicRequest.IsSetGeolocationFormat())
-                    {
-                        context.Writer.WritePropertyName("GeolocationFormat");
-                        context.Writer.Write(publicRequest.GeolocationFormat);
-                    }
-
-                    if(publicRequest.IsSetImportMode())
-                    {
-                        context.Writer.WritePropertyName("ImportMode");
-                        context.Writer.Write(publicRequest.ImportMode);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTimestampFormat())
-                    {
-                        context.Writer.WritePropertyName("TimestampFormat");
-                        context.Writer.Write(publicRequest.TimestampFormat);
-                    }
-
-                    if(publicRequest.IsSetTimeZone())
-                    {
-                        context.Writer.WritePropertyName("TimeZone");
-                        context.Writer.Write(publicRequest.TimeZone);
-                    }
-
-                    if(publicRequest.IsSetUseGeolocationForTimeZone())
-                    {
-                        context.Writer.WritePropertyName("UseGeolocationForTimeZone");
-                        context.Writer.Write(publicRequest.UseGeolocationForTimeZone.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DatasetArn");
+                context.Writer.WriteStringValue(publicRequest.DatasetArn);
             }
+
+            if(publicRequest.IsSetDatasetImportJobName())
+            {
+                context.Writer.WritePropertyName("DatasetImportJobName");
+                context.Writer.WriteStringValue(publicRequest.DatasetImportJobName);
+            }
+
+            if(publicRequest.IsSetDataSource())
+            {
+                context.Writer.WritePropertyName("DataSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("Format");
+                context.Writer.WriteStringValue(publicRequest.Format);
+            }
+
+            if(publicRequest.IsSetGeolocationFormat())
+            {
+                context.Writer.WritePropertyName("GeolocationFormat");
+                context.Writer.WriteStringValue(publicRequest.GeolocationFormat);
+            }
+
+            if(publicRequest.IsSetImportMode())
+            {
+                context.Writer.WritePropertyName("ImportMode");
+                context.Writer.WriteStringValue(publicRequest.ImportMode);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTimestampFormat())
+            {
+                context.Writer.WritePropertyName("TimestampFormat");
+                context.Writer.WriteStringValue(publicRequest.TimestampFormat);
+            }
+
+            if(publicRequest.IsSetTimeZone())
+            {
+                context.Writer.WritePropertyName("TimeZone");
+                context.Writer.WriteStringValue(publicRequest.TimeZone);
+            }
+
+            if(publicRequest.IsSetUseGeolocationForTimeZone())
+            {
+                context.Writer.WritePropertyName("UseGeolocationForTimeZone");
+                context.Writer.WriteBooleanValue(publicRequest.UseGeolocationForTimeZone.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

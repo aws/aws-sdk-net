@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
+                context.Writer.WriteStringValue(requestObject.CompressionType);
             }
 
             if(requestObject.IsSetETag())
             {
                 context.Writer.WritePropertyName("ETag");
-                context.Writer.Write(requestObject.ETag);
+                context.Writer.WriteStringValue(requestObject.ETag);
             }
 
             if(requestObject.IsSetHubAccessConfig())
             {
                 context.Writer.WritePropertyName("HubAccessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InferenceHubAccessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HubAccessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestEtag())
             {
                 context.Writer.WritePropertyName("ManifestEtag");
-                context.Writer.Write(requestObject.ManifestEtag);
+                context.Writer.WriteStringValue(requestObject.ManifestEtag);
             }
 
             if(requestObject.IsSetManifestS3Uri())
             {
                 context.Writer.WritePropertyName("ManifestS3Uri");
-                context.Writer.Write(requestObject.ManifestS3Uri);
+                context.Writer.WriteStringValue(requestObject.ManifestS3Uri);
             }
 
             if(requestObject.IsSetModelAccessConfig())
             {
                 context.Writer.WritePropertyName("ModelAccessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelAccessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelAccessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3DataType())
             {
                 context.Writer.WritePropertyName("S3DataType");
-                context.Writer.Write(requestObject.S3DataType);
+                context.Writer.WriteStringValue(requestObject.S3DataType);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

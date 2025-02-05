@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryGenerationTable Object
     /// </summary>  
-    public class QueryGenerationTableUnmarshaller : IUnmarshaller<QueryGenerationTable, XmlUnmarshallerContext>, IUnmarshaller<QueryGenerationTable, JsonUnmarshallerContext>
+    public class QueryGenerationTableUnmarshaller : IJsonUnmarshaller<QueryGenerationTable, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryGenerationTable IUnmarshaller<QueryGenerationTable, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryGenerationTable Unmarshall(JsonUnmarshallerContext context)
+        public QueryGenerationTable Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryGenerationTable unmarshalledObject = new QueryGenerationTable();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("columns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<QueryGenerationColumn, QueryGenerationColumnUnmarshaller>(QueryGenerationColumnUnmarshaller.Instance);
-                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<QueryGenerationColumn, QueryGenerationColumnUnmarshaller>(QueryGenerationColumnUnmarshaller.Instance);
+                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inclusion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Inclusion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Inclusion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

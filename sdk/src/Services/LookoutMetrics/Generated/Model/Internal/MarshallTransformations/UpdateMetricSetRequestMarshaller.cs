@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -61,108 +64,113 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateMetricSet";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDimensionFilterList())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DimensionFilterList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDimensionFilterListListValue in publicRequest.DimensionFilterList)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDimensionFilterList())
-                    {
-                        context.Writer.WritePropertyName("DimensionFilterList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDimensionFilterListListValue in publicRequest.DimensionFilterList)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = MetricSetDimensionFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDimensionFilterListListValue, context);
+                    var marshaller = MetricSetDimensionFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDimensionFilterListListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDimensionList())
-                    {
-                        context.Writer.WritePropertyName("DimensionList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDimensionListListValue in publicRequest.DimensionList)
-                        {
-                                context.Writer.Write(publicRequestDimensionListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMetricList())
-                    {
-                        context.Writer.WritePropertyName("MetricList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetricListListValue in publicRequest.MetricList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MetricMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMetricListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMetricSetArn())
-                    {
-                        context.Writer.WritePropertyName("MetricSetArn");
-                        context.Writer.Write(publicRequest.MetricSetArn);
-                    }
-
-                    if(publicRequest.IsSetMetricSetDescription())
-                    {
-                        context.Writer.WritePropertyName("MetricSetDescription");
-                        context.Writer.Write(publicRequest.MetricSetDescription);
-                    }
-
-                    if(publicRequest.IsSetMetricSetFrequency())
-                    {
-                        context.Writer.WritePropertyName("MetricSetFrequency");
-                        context.Writer.Write(publicRequest.MetricSetFrequency);
-                    }
-
-                    if(publicRequest.IsSetMetricSource())
-                    {
-                        context.Writer.WritePropertyName("MetricSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MetricSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MetricSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOffset())
-                    {
-                        context.Writer.WritePropertyName("Offset");
-                        context.Writer.Write(publicRequest.Offset.Value);
-                    }
-
-                    if(publicRequest.IsSetTimestampColumn())
-                    {
-                        context.Writer.WritePropertyName("TimestampColumn");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimestampColumnMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TimestampColumn, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDimensionList())
+            {
+                context.Writer.WritePropertyName("DimensionList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDimensionListListValue in publicRequest.DimensionList)
+                {
+                        context.Writer.WriteStringValue(publicRequestDimensionListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMetricList())
+            {
+                context.Writer.WritePropertyName("MetricList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricListListValue in publicRequest.MetricList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetricMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetricListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMetricSetArn())
+            {
+                context.Writer.WritePropertyName("MetricSetArn");
+                context.Writer.WriteStringValue(publicRequest.MetricSetArn);
+            }
+
+            if(publicRequest.IsSetMetricSetDescription())
+            {
+                context.Writer.WritePropertyName("MetricSetDescription");
+                context.Writer.WriteStringValue(publicRequest.MetricSetDescription);
+            }
+
+            if(publicRequest.IsSetMetricSetFrequency())
+            {
+                context.Writer.WritePropertyName("MetricSetFrequency");
+                context.Writer.WriteStringValue(publicRequest.MetricSetFrequency);
+            }
+
+            if(publicRequest.IsSetMetricSource())
+            {
+                context.Writer.WritePropertyName("MetricSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetricSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetricSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOffset())
+            {
+                context.Writer.WritePropertyName("Offset");
+                context.Writer.WriteNumberValue(publicRequest.Offset.Value);
+            }
+
+            if(publicRequest.IsSetTimestampColumn())
+            {
+                context.Writer.WritePropertyName("TimestampColumn");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimestampColumnMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TimestampColumn, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

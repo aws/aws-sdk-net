@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
@@ -47,165 +47,165 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             AllocatePublicVirtualInterfaceResponse response = new AllocatePublicVirtualInterfaceResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("addressFamily", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AddressFamily = unmarshaller.Unmarshall(context);
+                    response.AddressFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("amazonAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AmazonAddress = unmarshaller.Unmarshall(context);
+                    response.AmazonAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("amazonSideAsn", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.AmazonSideAsn = unmarshaller.Unmarshall(context);
+                    response.AmazonSideAsn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("asn", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Asn = unmarshaller.Unmarshall(context);
+                    response.Asn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("authKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthKey = unmarshaller.Unmarshall(context);
+                    response.AuthKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsDeviceV2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsLogicalDeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsLogicalDeviceId = unmarshaller.Unmarshall(context);
+                    response.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bgpPeers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);
-                    response.BgpPeers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);
+                    response.BgpPeers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionId = unmarshaller.Unmarshall(context);
+                    response.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customerAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CustomerAddress = unmarshaller.Unmarshall(context);
+                    response.CustomerAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customerRouterConfig", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CustomerRouterConfig = unmarshaller.Unmarshall(context);
+                    response.CustomerRouterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("directConnectGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
+                    response.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.JumboFrameCapable = unmarshaller.Unmarshall(context);
+                    response.JumboFrameCapable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Location = unmarshaller.Unmarshall(context);
+                    response.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mtu", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Mtu = unmarshaller.Unmarshall(context);
+                    response.Mtu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ownerAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwnerAccount = unmarshaller.Unmarshall(context);
+                    response.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
+                    response.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("routeFilterPrefixes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
-                    response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    response.RouteFilterPrefixes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("siteLinkEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.SiteLinkEnabled = unmarshaller.Unmarshall(context);
+                    response.SiteLinkEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VirtualGatewayId = unmarshaller.Unmarshall(context);
+                    response.VirtualGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VirtualInterfaceId = unmarshaller.Unmarshall(context);
+                    response.VirtualInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VirtualInterfaceName = unmarshaller.Unmarshall(context);
+                    response.VirtualInterfaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VirtualInterfaceState = unmarshaller.Unmarshall(context);
+                    response.VirtualInterfaceState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VirtualInterfaceType = unmarshaller.Unmarshall(context);
+                    response.VirtualInterfaceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vlan", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Vlan = unmarshaller.Unmarshall(context);
+                    response.Vlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -222,30 +222,32 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
                 {
-                    return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
                 {
-                    return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateTagKeysException"))
                 {
-                    return DuplicateTagKeysExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DuplicateTagKeysExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
                 {
-                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonDirectConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

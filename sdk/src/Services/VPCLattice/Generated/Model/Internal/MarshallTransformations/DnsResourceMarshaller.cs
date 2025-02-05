@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("domainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("ipAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
         }

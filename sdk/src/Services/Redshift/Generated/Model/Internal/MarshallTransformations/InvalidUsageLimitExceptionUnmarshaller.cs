@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidUsageLimitException operation
     /// </summary>  
-    public class InvalidUsageLimitExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidUsageLimitException, XmlUnmarshallerContext>
+    public class InvalidUsageLimitExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidUsageLimitException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

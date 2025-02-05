@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvalidFallbackBehavior())
             {
                 context.Writer.WritePropertyName("InvalidFallbackBehavior");
-                context.Writer.Write(requestObject.InvalidFallbackBehavior);
+                context.Writer.WriteStringValue(requestObject.InvalidFallbackBehavior);
             }
 
             if(requestObject.IsSetMatchPattern())
             {
                 context.Writer.WritePropertyName("MatchPattern");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JsonMatchPatternMarshaller.Instance;
                 marshaller.Marshall(requestObject.MatchPattern, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMatchScope())
             {
                 context.Writer.WritePropertyName("MatchScope");
-                context.Writer.Write(requestObject.MatchScope);
+                context.Writer.WriteStringValue(requestObject.MatchScope);
             }
 
             if(requestObject.IsSetOversizeHandling())
             {
                 context.Writer.WritePropertyName("OversizeHandling");
-                context.Writer.Write(requestObject.OversizeHandling);
+                context.Writer.WriteStringValue(requestObject.OversizeHandling);
             }
 
         }

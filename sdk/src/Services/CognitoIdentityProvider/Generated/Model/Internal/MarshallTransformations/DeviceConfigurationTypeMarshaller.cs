@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChallengeRequiredOnNewDevice())
             {
                 context.Writer.WritePropertyName("ChallengeRequiredOnNewDevice");
-                context.Writer.Write(requestObject.ChallengeRequiredOnNewDevice.Value);
+                context.Writer.WriteBooleanValue(requestObject.ChallengeRequiredOnNewDevice.Value);
             }
 
             if(requestObject.IsSetDeviceOnlyRememberedOnUserPrompt())
             {
                 context.Writer.WritePropertyName("DeviceOnlyRememberedOnUserPrompt");
-                context.Writer.Write(requestObject.DeviceOnlyRememberedOnUserPrompt.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeviceOnlyRememberedOnUserPrompt.Value);
             }
 
         }

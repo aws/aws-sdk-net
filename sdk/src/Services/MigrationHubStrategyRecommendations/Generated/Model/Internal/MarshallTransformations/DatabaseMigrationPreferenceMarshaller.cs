@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetHeterogeneous())
             {
                 context.Writer.WritePropertyName("heterogeneous");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HeterogeneousMarshaller.Instance;
                 marshaller.Marshall(requestObject.Heterogeneous, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHomogeneous())
             {
                 context.Writer.WritePropertyName("homogeneous");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HomogeneousMarshaller.Instance;
                 marshaller.Marshall(requestObject.Homogeneous, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoPreference())
             {
                 context.Writer.WritePropertyName("noPreference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoDatabaseMigrationPreferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoPreference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingParameterException operation
     /// </summary>  
-    public class MissingParameterExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingParameterException, XmlUnmarshallerContext>
+    public class MissingParameterExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingParameterException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

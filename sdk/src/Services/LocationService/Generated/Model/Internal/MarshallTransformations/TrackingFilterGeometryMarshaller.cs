@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,22 +49,22 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolygonListValue in requestObject.Polygon)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectPolygonListValueListValue in requestObjectPolygonListValue)
                     {
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectPolygonListValueListValueListValue in requestObjectPolygonListValueListValue)
                         {
-                                context.Writer.Write(requestObjectPolygonListValueListValueListValue);
+                                context.Writer.WriteNumberValue(requestObjectPolygonListValueListValueListValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionVersion Object
     /// </summary>  
-    public class OptionVersionUnmarshaller : IUnmarshaller<OptionVersion, XmlUnmarshallerContext>, IUnmarshaller<OptionVersion, JsonUnmarshallerContext>
+    public class OptionVersionUnmarshaller : IXmlUnmarshaller<OptionVersion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OptionVersion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OptionVersionUnmarshaller _instance = new OptionVersionUnmarshaller();        
 

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AuthenticationMethodItem Object
     /// </summary>  
-    public class AuthenticationMethodItemUnmarshaller : IUnmarshaller<AuthenticationMethodItem, XmlUnmarshallerContext>, IUnmarshaller<AuthenticationMethodItem, JsonUnmarshallerContext>
+    public class AuthenticationMethodItemUnmarshaller : IJsonUnmarshaller<AuthenticationMethodItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AuthenticationMethodItem IUnmarshaller<AuthenticationMethodItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthenticationMethodItem Unmarshall(JsonUnmarshallerContext context)
+        public AuthenticationMethodItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AuthenticationMethodItem unmarshalledObject = new AuthenticationMethodItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthenticationMethod", targetDepth))
                 {
                     var unmarshaller = AuthenticationMethodUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AuthenticationMethodType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationMethodType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationMethodType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidQueryExpressionException operation
     /// </summary>  
-    public class InvalidQueryExpressionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidQueryExpressionException, XmlUnmarshallerContext>
+    public class InvalidQueryExpressionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidQueryExpressionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

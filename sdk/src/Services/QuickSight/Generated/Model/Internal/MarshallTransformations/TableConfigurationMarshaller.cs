@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldOptions())
             {
                 context.Writer.WritePropertyName("FieldOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableFieldOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldWells())
             {
                 context.Writer.WritePropertyName("FieldWells");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableFieldWellsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldWells, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInteractions())
             {
                 context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualInteractionOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Interactions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPaginatedReportOptions())
             {
                 context.Writer.WritePropertyName("PaginatedReportOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TablePaginatedReportOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PaginatedReportOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSortConfiguration())
             {
                 context.Writer.WritePropertyName("SortConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableSortConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SortConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableInlineVisualizations())
             {
                 context.Writer.WritePropertyName("TableInlineVisualizations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTableInlineVisualizationsListValue in requestObject.TableInlineVisualizations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TableInlineVisualizationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTableInlineVisualizationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTableOptions())
             {
                 context.Writer.WritePropertyName("TableOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TableOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTotalOptions())
             {
                 context.Writer.WritePropertyName("TotalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TotalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TotalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

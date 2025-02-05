@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnalyzeIDDetections Object
     /// </summary>  
-    public class AnalyzeIDDetectionsUnmarshaller : IUnmarshaller<AnalyzeIDDetections, XmlUnmarshallerContext>, IUnmarshaller<AnalyzeIDDetections, JsonUnmarshallerContext>
+    public class AnalyzeIDDetectionsUnmarshaller : IJsonUnmarshaller<AnalyzeIDDetections, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnalyzeIDDetections IUnmarshaller<AnalyzeIDDetections, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyzeIDDetections Unmarshall(JsonUnmarshallerContext context)
+        public AnalyzeIDDetections Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnalyzeIDDetections unmarshalledObject = new AnalyzeIDDetections();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NormalizedValue", targetDepth))
                 {
                     var unmarshaller = NormalizedValueUnmarshaller.Instance;
-                    unmarshalledObject.NormalizedValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NormalizedValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

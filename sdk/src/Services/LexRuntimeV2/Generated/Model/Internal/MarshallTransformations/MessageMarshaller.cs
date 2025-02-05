@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("content");
-                context.Writer.Write(requestObject.Content);
+                context.Writer.WriteStringValue(requestObject.Content);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("contentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetImageResponseCard())
             {
                 context.Writer.WritePropertyName("imageResponseCard");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageResponseCardMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageResponseCard, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

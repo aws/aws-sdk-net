@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Answer Object
     /// </summary>  
-    public class AnswerUnmarshaller : IUnmarshaller<Answer, XmlUnmarshallerContext>, IUnmarshaller<Answer, JsonUnmarshallerContext>
+    public class AnswerUnmarshaller : IJsonUnmarshaller<Answer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Answer IUnmarshaller<Answer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Answer Unmarshall(JsonUnmarshallerContext context)
+        public Answer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Answer unmarshalledObject = new Answer();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChoiceAnswers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ChoiceAnswer, ChoiceAnswerUnmarshaller>(ChoiceAnswerUnmarshaller.Instance);
-                    unmarshalledObject.ChoiceAnswers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ChoiceAnswer, ChoiceAnswerUnmarshaller>(ChoiceAnswerUnmarshaller.Instance);
+                    unmarshalledObject.ChoiceAnswers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Choices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Choice, ChoiceUnmarshaller>(ChoiceUnmarshaller.Instance);
-                    unmarshalledObject.Choices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Choice, ChoiceUnmarshaller>(ChoiceUnmarshaller.Instance);
+                    unmarshalledObject.Choices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HelpfulResourceDisplayText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HelpfulResourceDisplayText = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HelpfulResourceDisplayText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HelpfulResourceUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HelpfulResourceUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HelpfulResourceUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImprovementPlanUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImprovementPlanUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImprovementPlanUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsApplicable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JiraConfiguration", targetDepth))
                 {
                     var unmarshaller = JiraConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Notes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Notes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Notes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PillarId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuestionDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuestionDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuestionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuestionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuestionTitle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuestionTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Risk", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Risk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Risk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectedChoices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SelectedChoices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SelectedChoices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

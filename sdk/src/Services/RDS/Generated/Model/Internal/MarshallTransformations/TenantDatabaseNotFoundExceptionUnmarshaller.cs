@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TenantDatabaseNotFoundException operation
     /// </summary>  
-    public class TenantDatabaseNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<TenantDatabaseNotFoundException, XmlUnmarshallerContext>
+    public class TenantDatabaseNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TenantDatabaseNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

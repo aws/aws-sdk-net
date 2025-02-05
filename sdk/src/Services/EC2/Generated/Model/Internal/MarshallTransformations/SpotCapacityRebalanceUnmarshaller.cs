@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotCapacityRebalance Object
     /// </summary>  
-    public class SpotCapacityRebalanceUnmarshaller : IUnmarshaller<SpotCapacityRebalance, XmlUnmarshallerContext>, IUnmarshaller<SpotCapacityRebalance, JsonUnmarshallerContext>
+    public class SpotCapacityRebalanceUnmarshaller : IXmlUnmarshaller<SpotCapacityRebalance, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotCapacityRebalance Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotCapacityRebalanceUnmarshaller _instance = new SpotCapacityRebalanceUnmarshaller();        
 

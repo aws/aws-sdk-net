@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AuthenticationConfig Object
     /// </summary>  
-    public class AuthenticationConfigUnmarshaller : IUnmarshaller<AuthenticationConfig, XmlUnmarshallerContext>, IUnmarshaller<AuthenticationConfig, JsonUnmarshallerContext>
+    public class AuthenticationConfigUnmarshaller : IJsonUnmarshaller<AuthenticationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AuthenticationConfig IUnmarshaller<AuthenticationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthenticationConfig Unmarshall(JsonUnmarshallerContext context)
+        public AuthenticationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AuthenticationConfig unmarshalledObject = new AuthenticationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customAuthConfigs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomAuthConfig, CustomAuthConfigUnmarshaller>(CustomAuthConfigUnmarshaller.Instance);
-                    unmarshalledObject.CustomAuthConfigs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CustomAuthConfig, CustomAuthConfigUnmarshaller>(CustomAuthConfigUnmarshaller.Instance);
+                    unmarshalledObject.CustomAuthConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isApiKeyAuthSupported", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsApiKeyAuthSupported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsApiKeyAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isBasicAuthSupported", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsBasicAuthSupported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsBasicAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isCustomAuthSupported", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsCustomAuthSupported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsCustomAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isOAuth2Supported", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsOAuth2Supported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsOAuth2Supported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("oAuth2Defaults", targetDepth))
                 {
                     var unmarshaller = OAuth2DefaultsUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2Defaults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OAuth2Defaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

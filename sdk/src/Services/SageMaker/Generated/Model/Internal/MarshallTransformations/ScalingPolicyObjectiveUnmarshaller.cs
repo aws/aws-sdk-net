@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScalingPolicyObjective Object
     /// </summary>  
-    public class ScalingPolicyObjectiveUnmarshaller : IUnmarshaller<ScalingPolicyObjective, XmlUnmarshallerContext>, IUnmarshaller<ScalingPolicyObjective, JsonUnmarshallerContext>
+    public class ScalingPolicyObjectiveUnmarshaller : IJsonUnmarshaller<ScalingPolicyObjective, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScalingPolicyObjective IUnmarshaller<ScalingPolicyObjective, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScalingPolicyObjective Unmarshall(JsonUnmarshallerContext context)
+        public ScalingPolicyObjective Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScalingPolicyObjective unmarshalledObject = new ScalingPolicyObjective();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaxInvocationsPerMinute", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxInvocationsPerMinute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxInvocationsPerMinute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinInvocationsPerMinute", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinInvocationsPerMinute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinInvocationsPerMinute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

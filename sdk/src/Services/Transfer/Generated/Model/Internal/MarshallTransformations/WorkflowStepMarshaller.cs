@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyStepDetails())
             {
                 context.Writer.WritePropertyName("CopyStepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CopyStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CopyStepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomStepDetails())
             {
                 context.Writer.WritePropertyName("CustomStepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomStepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecryptStepDetails())
             {
                 context.Writer.WritePropertyName("DecryptStepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecryptStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecryptStepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeleteStepDetails())
             {
                 context.Writer.WritePropertyName("DeleteStepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeleteStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeleteStepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTagStepDetails())
             {
                 context.Writer.WritePropertyName("TagStepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TagStepDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TagStepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,86 +49,86 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("certificate");
-                context.Writer.Write(requestObject.Certificate);
+                context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
             if(requestObject.IsSetComputeConfiguration())
             {
                 context.Writer.WritePropertyName("computeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComputeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComputeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComputeType())
             {
                 context.Writer.WritePropertyName("computeType");
-                context.Writer.Write(requestObject.ComputeType);
+                context.Writer.WriteStringValue(requestObject.ComputeType);
             }
 
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentVariablesListValue in requestObject.EnvironmentVariables)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EnvironmentVariableMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentVariablesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFleet())
             {
                 context.Writer.WritePropertyName("fleet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProjectFleetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Fleet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetImagePullCredentialsType())
             {
                 context.Writer.WritePropertyName("imagePullCredentialsType");
-                context.Writer.Write(requestObject.ImagePullCredentialsType);
+                context.Writer.WriteStringValue(requestObject.ImagePullCredentialsType);
             }
 
             if(requestObject.IsSetPrivilegedMode())
             {
                 context.Writer.WritePropertyName("privilegedMode");
-                context.Writer.Write(requestObject.PrivilegedMode.Value);
+                context.Writer.WriteBooleanValue(requestObject.PrivilegedMode.Value);
             }
 
             if(requestObject.IsSetRegistryCredential())
             {
                 context.Writer.WritePropertyName("registryCredential");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegistryCredentialMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegistryCredential, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

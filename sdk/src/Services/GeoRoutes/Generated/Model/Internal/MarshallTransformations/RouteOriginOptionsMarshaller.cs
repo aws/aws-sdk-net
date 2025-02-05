@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidActionsForDistance())
             {
                 context.Writer.WritePropertyName("AvoidActionsForDistance");
-                context.Writer.Write(requestObject.AvoidActionsForDistance.Value);
+                context.Writer.WriteNumberValue(requestObject.AvoidActionsForDistance.Value);
             }
 
             if(requestObject.IsSetAvoidUTurns())
             {
                 context.Writer.WritePropertyName("AvoidUTurns");
-                context.Writer.Write(requestObject.AvoidUTurns.Value);
+                context.Writer.WriteBooleanValue(requestObject.AvoidUTurns.Value);
             }
 
             if(requestObject.IsSetHeading())
@@ -65,34 +63,34 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Heading");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading.Value);
+                    context.Writer.WriteNumberValue(requestObject.Heading.Value);
                 }
             }
 
             if(requestObject.IsSetMatching())
             {
                 context.Writer.WritePropertyName("Matching");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RouteMatchingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Matching, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSideOfStreet())
             {
                 context.Writer.WritePropertyName("SideOfStreet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RouteSideOfStreetOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SideOfStreet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

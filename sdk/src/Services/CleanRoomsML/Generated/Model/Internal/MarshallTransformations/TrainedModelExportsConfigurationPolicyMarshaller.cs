@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilesToExport())
             {
                 context.Writer.WritePropertyName("filesToExport");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilesToExportListValue in requestObject.FilesToExport)
                 {
-                        context.Writer.Write(requestObjectFilesToExportListValue);
+                        context.Writer.WriteStringValue(requestObjectFilesToExportListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxSize())
             {
                 context.Writer.WritePropertyName("maxSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainedModelExportsMaxSizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaxSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

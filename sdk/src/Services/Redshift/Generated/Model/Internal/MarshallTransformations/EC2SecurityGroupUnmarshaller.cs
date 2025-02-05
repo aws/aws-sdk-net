@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EC2SecurityGroup Object
     /// </summary>  
-    public class EC2SecurityGroupUnmarshaller : IUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<EC2SecurityGroup, JsonUnmarshallerContext>
+    public class EC2SecurityGroupUnmarshaller : IXmlUnmarshaller<EC2SecurityGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,17 +93,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EC2SecurityGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EC2SecurityGroupUnmarshaller _instance = new EC2SecurityGroupUnmarshaller();        
 

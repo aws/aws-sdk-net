@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoprovision())
             {
                 context.Writer.WritePropertyName("Autoprovision");
-                context.Writer.Write(requestObject.Autoprovision.Value);
+                context.Writer.WriteBooleanValue(requestObject.Autoprovision.Value);
             }
 
             if(requestObject.IsSetDriver())
             {
                 context.Writer.WritePropertyName("Driver");
-                context.Writer.Write(requestObject.Driver);
+                context.Writer.WriteStringValue(requestObject.Driver);
             }
 
             if(requestObject.IsSetDriverOpts())
             {
                 context.Writer.WritePropertyName("DriverOpts");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDriverOptsKvp in requestObject.DriverOpts)
                 {
                     context.Writer.WritePropertyName(requestObjectDriverOptsKvp.Key);
                     var requestObjectDriverOptsValue = requestObjectDriverOptsKvp.Value;
 
-                        context.Writer.Write(requestObjectDriverOptsValue);
+                        context.Writer.WriteStringValue(requestObjectDriverOptsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabels())
             {
                 context.Writer.WritePropertyName("Labels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLabelsKvp in requestObject.Labels)
                 {
                     context.Writer.WritePropertyName(requestObjectLabelsKvp.Key);
                     var requestObjectLabelsValue = requestObjectLabelsKvp.Value;
 
-                        context.Writer.Write(requestObjectLabelsValue);
+                        context.Writer.WriteStringValue(requestObjectLabelsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("Scope");
-                context.Writer.Write(requestObject.Scope);
+                context.Writer.WriteStringValue(requestObject.Scope);
             }
 
         }

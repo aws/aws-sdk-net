@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GeospatialGradientColor Object
     /// </summary>  
-    public class GeospatialGradientColorUnmarshaller : IUnmarshaller<GeospatialGradientColor, XmlUnmarshallerContext>, IUnmarshaller<GeospatialGradientColor, JsonUnmarshallerContext>
+    public class GeospatialGradientColorUnmarshaller : IJsonUnmarshaller<GeospatialGradientColor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GeospatialGradientColor IUnmarshaller<GeospatialGradientColor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GeospatialGradientColor Unmarshall(JsonUnmarshallerContext context)
+        public GeospatialGradientColor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GeospatialGradientColor unmarshalledObject = new GeospatialGradientColor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DefaultOpacity", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOpacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultOpacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullDataSettings", targetDepth))
                 {
                     var unmarshaller = GeospatialNullDataSettingsUnmarshaller.Instance;
-                    unmarshalledObject.NullDataSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullDataSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullDataVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NullDataVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullDataVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StepColors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GeospatialGradientStepColor, GeospatialGradientStepColorUnmarshaller>(GeospatialGradientStepColorUnmarshaller.Instance);
-                    unmarshalledObject.StepColors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GeospatialGradientStepColor, GeospatialGradientStepColorUnmarshaller>(GeospatialGradientStepColorUnmarshaller.Instance);
+                    unmarshalledObject.StepColors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

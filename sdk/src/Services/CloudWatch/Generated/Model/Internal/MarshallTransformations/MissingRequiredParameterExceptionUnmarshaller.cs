@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingRequiredParameterException operation
     /// </summary>  
-    public class MissingRequiredParameterExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingRequiredParameterException, XmlUnmarshallerContext>
+    public class MissingRequiredParameterExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingRequiredParameterException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,85 +49,85 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterConnectScript())
             {
                 context.Writer.WritePropertyName("AfterConnectScript");
-                context.Writer.Write(requestObject.AfterConnectScript);
+                context.Writer.WriteStringValue(requestObject.AfterConnectScript);
             }
 
             if(requestObject.IsSetCleanSourceMetadataOnMismatch())
             {
                 context.Writer.WritePropertyName("CleanSourceMetadataOnMismatch");
-                context.Writer.Write(requestObject.CleanSourceMetadataOnMismatch.Value);
+                context.Writer.WriteBooleanValue(requestObject.CleanSourceMetadataOnMismatch.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetEventsPollInterval())
             {
                 context.Writer.WritePropertyName("EventsPollInterval");
-                context.Writer.Write(requestObject.EventsPollInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.EventsPollInterval.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetParallelLoadThreads())
             {
                 context.Writer.WritePropertyName("ParallelLoadThreads");
-                context.Writer.Write(requestObject.ParallelLoadThreads.Value);
+                context.Writer.WriteNumberValue(requestObject.ParallelLoadThreads.Value);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecretId);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetServerTimezone())
             {
                 context.Writer.WritePropertyName("ServerTimezone");
-                context.Writer.Write(requestObject.ServerTimezone);
+                context.Writer.WriteStringValue(requestObject.ServerTimezone);
             }
 
             if(requestObject.IsSetTargetDbType())
             {
                 context.Writer.WritePropertyName("TargetDbType");
-                context.Writer.Write(requestObject.TargetDbType);
+                context.Writer.WriteStringValue(requestObject.TargetDbType);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContains())
             {
                 context.Writer.WritePropertyName("contains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainsListValue in requestObject.Contains)
                 {
-                        context.Writer.Write(requestObjectContainsListValue);
+                        context.Writer.WriteStringValue(requestObjectContainsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("eq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqListValue in requestObject.Eq)
                 {
-                        context.Writer.Write(requestObjectEqListValue);
+                        context.Writer.WriteStringValue(requestObjectEqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExists())
             {
                 context.Writer.WritePropertyName("exists");
-                context.Writer.Write(requestObject.Exists.Value);
+                context.Writer.WriteBooleanValue(requestObject.Exists.Value);
             }
 
             if(requestObject.IsSetNeq())
             {
                 context.Writer.WritePropertyName("neq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNeqListValue in requestObject.Neq)
                 {
-                        context.Writer.Write(requestObjectNeqListValue);
+                        context.Writer.WriteStringValue(requestObjectNeqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

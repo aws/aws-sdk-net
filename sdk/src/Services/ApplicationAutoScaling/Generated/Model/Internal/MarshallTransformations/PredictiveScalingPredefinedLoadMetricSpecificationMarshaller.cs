@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPredefinedMetricType())
             {
                 context.Writer.WritePropertyName("PredefinedMetricType");
-                context.Writer.Write(requestObject.PredefinedMetricType);
+                context.Writer.WriteStringValue(requestObject.PredefinedMetricType);
             }
 
             if(requestObject.IsSetResourceLabel())
             {
                 context.Writer.WritePropertyName("ResourceLabel");
-                context.Writer.Write(requestObject.ResourceLabel);
+                context.Writer.WriteStringValue(requestObject.ResourceLabel);
             }
 
         }

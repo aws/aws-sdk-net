@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -67,117 +70,108 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field QueueId set");
             request.AddPathResource("{queueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues/{queueId}/jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttachments())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttachments())
-                    {
-                        context.Writer.WritePropertyName("attachments");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("attachments");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AttachmentsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Attachments, context);
+                var marshaller = AttachmentsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Attachments, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxFailedTasksCount())
-                    {
-                        context.Writer.WritePropertyName("maxFailedTasksCount");
-                        context.Writer.Write(publicRequest.MaxFailedTasksCount.Value);
-                    }
-
-<<<<<<< HEAD
-                    if(publicRequest.IsSetMaxRetriesPerTask())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-=======
-                if(publicRequest.IsSetMaxWorkerCount())
-                {
-                    context.Writer.WritePropertyName("maxWorkerCount");
-                    context.Writer.Write(publicRequest.MaxWorkerCount);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
-                    {
-                        context.Writer.WritePropertyName("maxRetriesPerTask");
-                        context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = JobParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParametersValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetSourceJobId())
-                    {
-                        context.Writer.WritePropertyName("sourceJobId");
-                        context.Writer.Write(publicRequest.SourceJobId);
-                    }
-
-                    if(publicRequest.IsSetStorageProfileId())
-                    {
-                        context.Writer.WritePropertyName("storageProfileId");
-                        context.Writer.Write(publicRequest.StorageProfileId);
-                    }
-
-                    if(publicRequest.IsSetTargetTaskRunStatus())
-                    {
-                        context.Writer.WritePropertyName("targetTaskRunStatus");
-                        context.Writer.Write(publicRequest.TargetTaskRunStatus);
-                    }
-
-                    if(publicRequest.IsSetTemplate())
-                    {
-                        context.Writer.WritePropertyName("template");
-                        context.Writer.Write(publicRequest.Template);
-                    }
-
-                    if(publicRequest.IsSetTemplateType())
-                    {
-                        context.Writer.WritePropertyName("templateType");
-                        context.Writer.Write(publicRequest.TemplateType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMaxFailedTasksCount())
+            {
+                context.Writer.WritePropertyName("maxFailedTasksCount");
+                context.Writer.WriteNumberValue(publicRequest.MaxFailedTasksCount.Value);
+            }
+
+            if(publicRequest.IsSetMaxRetriesPerTask())
+            {
+                context.Writer.WritePropertyName("maxRetriesPerTask");
+                context.Writer.WriteNumberValue(publicRequest.MaxRetriesPerTask.Value);
+            }
+
+            if(publicRequest.IsSetMaxWorkerCount())
+            {
+                context.Writer.WritePropertyName("maxWorkerCount");
+                context.Writer.WriteNumberValue(publicRequest.MaxWorkerCount.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = JobParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParametersValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetSourceJobId())
+            {
+                context.Writer.WritePropertyName("sourceJobId");
+                context.Writer.WriteStringValue(publicRequest.SourceJobId);
+            }
+
+            if(publicRequest.IsSetStorageProfileId())
+            {
+                context.Writer.WritePropertyName("storageProfileId");
+                context.Writer.WriteStringValue(publicRequest.StorageProfileId);
+            }
+
+            if(publicRequest.IsSetTargetTaskRunStatus())
+            {
+                context.Writer.WritePropertyName("targetTaskRunStatus");
+                context.Writer.WriteStringValue(publicRequest.TargetTaskRunStatus);
+            }
+
+            if(publicRequest.IsSetTemplate())
+            {
+                context.Writer.WritePropertyName("template");
+                context.Writer.WriteStringValue(publicRequest.Template);
+            }
+
+            if(publicRequest.IsSetTemplateType())
+            {
+                context.Writer.WritePropertyName("templateType");
+                context.Writer.WriteStringValue(publicRequest.TemplateType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

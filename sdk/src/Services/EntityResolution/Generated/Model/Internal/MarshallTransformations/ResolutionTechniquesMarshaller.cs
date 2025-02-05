@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProviderProperties())
             {
                 context.Writer.WritePropertyName("providerProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProviderPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProviderProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResolutionType())
             {
                 context.Writer.WritePropertyName("resolutionType");
-                context.Writer.Write(requestObject.ResolutionType);
+                context.Writer.WriteStringValue(requestObject.ResolutionType);
             }
 
             if(requestObject.IsSetRuleBasedProperties())
             {
                 context.Writer.WritePropertyName("ruleBasedProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleBasedPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleBasedProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StackEvent Object
     /// </summary>  
-    public class StackEventUnmarshaller : IUnmarshaller<StackEvent, XmlUnmarshallerContext>, IUnmarshaller<StackEvent, JsonUnmarshallerContext>
+    public class StackEventUnmarshaller : IXmlUnmarshaller<StackEvent, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -166,17 +166,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StackEvent Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StackEventUnmarshaller _instance = new StackEventUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             if(requestObject.IsSetControlIdentifiers())
             {
                 context.Writer.WritePropertyName("controlIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectControlIdentifiersListValue in requestObject.ControlIdentifiers)
                 {
-                        context.Writer.Write(requestObjectControlIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectControlIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetControlOperationTypes())
             {
                 context.Writer.WritePropertyName("controlOperationTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectControlOperationTypesListValue in requestObject.ControlOperationTypes)
                 {
-                        context.Writer.Write(requestObjectControlOperationTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectControlOperationTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnabledControlIdentifiers())
             {
                 context.Writer.WritePropertyName("enabledControlIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnabledControlIdentifiersListValue in requestObject.EnabledControlIdentifiers)
                 {
-                        context.Writer.Write(requestObjectEnabledControlIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectEnabledControlIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetIdentifiers())
             {
                 context.Writer.WritePropertyName("targetIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetIdentifiersListValue in requestObject.TargetIdentifiers)
                 {
-                        context.Writer.Write(requestObjectTargetIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

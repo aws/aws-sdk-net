@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,83 +49,83 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmiDistributionConfiguration())
             {
                 context.Writer.WritePropertyName("amiDistributionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmiDistributionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmiDistributionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerDistributionConfiguration())
             {
                 context.Writer.WritePropertyName("containerDistributionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerDistributionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerDistributionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFastLaunchConfigurations())
             {
                 context.Writer.WritePropertyName("fastLaunchConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFastLaunchConfigurationsListValue in requestObject.FastLaunchConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FastLaunchConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectFastLaunchConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLaunchTemplateConfigurations())
             {
                 context.Writer.WritePropertyName("launchTemplateConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLaunchTemplateConfigurationsListValue in requestObject.LaunchTemplateConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LaunchTemplateConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectLaunchTemplateConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLicenseConfigurationArns())
             {
                 context.Writer.WritePropertyName("licenseConfigurationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLicenseConfigurationArnsListValue in requestObject.LicenseConfigurationArns)
                 {
-                        context.Writer.Write(requestObjectLicenseConfigurationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectLicenseConfigurationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetS3ExportConfiguration())
             {
                 context.Writer.WritePropertyName("s3ExportConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ExportConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3ExportConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

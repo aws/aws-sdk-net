@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChildPolicy())
             {
                 context.Writer.WritePropertyName("childPolicy");
-                context.Writer.Write(requestObject.ChildPolicy);
+                context.Writer.WriteStringValue(requestObject.ChildPolicy);
             }
 
             if(requestObject.IsSetExecutionStartToCloseTimeout())
             {
                 context.Writer.WritePropertyName("executionStartToCloseTimeout");
-                context.Writer.Write(requestObject.ExecutionStartToCloseTimeout);
+                context.Writer.WriteStringValue(requestObject.ExecutionStartToCloseTimeout);
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetLambdaRole())
             {
                 context.Writer.WritePropertyName("lambdaRole");
-                context.Writer.Write(requestObject.LambdaRole);
+                context.Writer.WriteStringValue(requestObject.LambdaRole);
             }
 
             if(requestObject.IsSetTagList())
             {
                 context.Writer.WritePropertyName("tagList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagListListValue in requestObject.TagList)
                 {
-                        context.Writer.Write(requestObjectTagListListValue);
+                        context.Writer.WriteStringValue(requestObjectTagListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTaskList())
             {
                 context.Writer.WritePropertyName("taskList");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TaskListMarshaller.Instance;
                 marshaller.Marshall(requestObject.TaskList, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskPriority())
             {
                 context.Writer.WritePropertyName("taskPriority");
-                context.Writer.Write(requestObject.TaskPriority);
+                context.Writer.WriteStringValue(requestObject.TaskPriority);
             }
 
             if(requestObject.IsSetTaskStartToCloseTimeout())
             {
                 context.Writer.WritePropertyName("taskStartToCloseTimeout");
-                context.Writer.Write(requestObject.TaskStartToCloseTimeout);
+                context.Writer.WriteStringValue(requestObject.TaskStartToCloseTimeout);
             }
 
             if(requestObject.IsSetWorkflowTypeVersion())
             {
                 context.Writer.WritePropertyName("workflowTypeVersion");
-                context.Writer.Write(requestObject.WorkflowTypeVersion);
+                context.Writer.WriteStringValue(requestObject.WorkflowTypeVersion);
             }
 
         }

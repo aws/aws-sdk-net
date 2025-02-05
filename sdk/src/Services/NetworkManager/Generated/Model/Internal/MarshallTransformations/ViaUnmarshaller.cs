@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Via Object
     /// </summary>  
-    public class ViaUnmarshaller : IUnmarshaller<Via, XmlUnmarshallerContext>, IUnmarshaller<Via, JsonUnmarshallerContext>
+    public class ViaUnmarshaller : IJsonUnmarshaller<Via, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Via IUnmarshaller<Via, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Via Unmarshall(JsonUnmarshallerContext context)
+        public Via Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Via unmarshalledObject = new Via();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("NetworkFunctionGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkFunctionGroup, NetworkFunctionGroupUnmarshaller>(NetworkFunctionGroupUnmarshaller.Instance);
-                    unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkFunctionGroup, NetworkFunctionGroupUnmarshaller>(NetworkFunctionGroupUnmarshaller.Instance);
+                    unmarshalledObject.NetworkFunctionGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WithEdgeOverrides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EdgeOverride, EdgeOverrideUnmarshaller>(EdgeOverrideUnmarshaller.Instance);
-                    unmarshalledObject.WithEdgeOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EdgeOverride, EdgeOverrideUnmarshaller>(EdgeOverrideUnmarshaller.Instance);
+                    unmarshalledObject.WithEdgeOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

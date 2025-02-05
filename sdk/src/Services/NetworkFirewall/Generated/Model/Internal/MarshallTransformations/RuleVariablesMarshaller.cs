@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIPSets())
             {
                 context.Writer.WritePropertyName("IPSets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectIPSetsKvp in requestObject.IPSets)
                 {
                     context.Writer.WritePropertyName(requestObjectIPSetsKvp.Key);
                     var requestObjectIPSetsValue = requestObjectIPSetsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IPSetMarshaller.Instance;
                     marshaller.Marshall(requestObjectIPSetsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPortSets())
             {
                 context.Writer.WritePropertyName("PortSets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPortSetsKvp in requestObject.PortSets)
                 {
                     context.Writer.WritePropertyName(requestObjectPortSetsKvp.Key);
                     var requestObjectPortSetsValue = requestObjectPortSetsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PortSetMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortSetsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

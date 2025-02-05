@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgressPercent())
             {
                 context.Writer.WritePropertyName("ProgressPercent");
-                context.Writer.Write(requestObject.ProgressPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgressPercent.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStatusDetail())
             {
                 context.Writer.WritePropertyName("StatusDetail");
-                context.Writer.Write(requestObject.StatusDetail);
+                context.Writer.WriteStringValue(requestObject.StatusDetail);
             }
 
         }

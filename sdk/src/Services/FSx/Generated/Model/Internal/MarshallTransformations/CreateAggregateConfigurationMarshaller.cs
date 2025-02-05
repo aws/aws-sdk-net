@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregates())
             {
                 context.Writer.WritePropertyName("Aggregates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregatesListValue in requestObject.Aggregates)
                 {
-                        context.Writer.Write(requestObjectAggregatesListValue);
+                        context.Writer.WriteStringValue(requestObjectAggregatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConstituentsPerAggregate())
             {
                 context.Writer.WritePropertyName("ConstituentsPerAggregate");
-                context.Writer.Write(requestObject.ConstituentsPerAggregate.Value);
+                context.Writer.WriteNumberValue(requestObject.ConstituentsPerAggregate.Value);
             }
 
         }

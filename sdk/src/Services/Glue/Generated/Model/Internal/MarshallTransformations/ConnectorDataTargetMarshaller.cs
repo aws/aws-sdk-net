@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionType())
             {
                 context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.Write(requestObject.ConnectionType);
+                context.Writer.WriteStringValue(requestObject.ConnectionType);
             }
 
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDataKvp in requestObject.Data)
                 {
                     context.Writer.WritePropertyName(requestObjectDataKvp.Key);
                     var requestObjectDataValue = requestObjectDataKvp.Value;
 
-                        context.Writer.Write(requestObjectDataValue);
+                        context.Writer.WriteStringValue(requestObjectDataValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

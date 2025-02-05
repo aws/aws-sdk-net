@@ -90,7 +90,7 @@ namespace Amazon
         /// <summary>
         /// The Asia Pacific (Thailand) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint APSoutheast7 = GetEndpoint("ap-southeast-7", "Asia Pacific (Thailand)");
+        public static readonly RegionEndpoint APSoutheast7 = GetRegionEndpoint("ap-southeast-7", "Asia Pacific (Thailand)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The Canada (Central) endpoint.
@@ -160,7 +160,7 @@ namespace Amazon
         /// <summary>
         /// The Mexico (Central) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint MXCentral1 = GetEndpoint("mx-central-1", "Mexico (Central)");
+        public static readonly RegionEndpoint MXCentral1 = GetRegionEndpoint("mx-central-1", "Mexico (Central)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The South America (Sao Paulo) endpoint.
@@ -231,24 +231,6 @@ namespace Amazon
         /// <summary>
         /// The EU ISOE West endpoint.
         /// </summary>
-<<<<<<< HEAD
         public static readonly RegionEndpoint EUIsoeWest1 = GetRegionEndpoint("eu-isoe-west-1", "EU ISOE West", "aws-iso-e", "cloud.adc-e.uk", @"^eu\-isoe\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
-||||||| Commit version number update changes
-        public static readonly RegionEndpoint EUIsoeWest1 = GetEndpoint("eu-isoe-west-1", "EU ISOE West");
-
-=======
-        public static readonly RegionEndpoint EUIsoeWest1 = GetEndpoint("eu-isoe-west-1", "EU ISOE West");
-
-        /// <summary>
-        /// The US ISOF EAST endpoint.
-        /// </summary>
-        public static readonly RegionEndpoint USIsofEast1 = GetEndpoint("us-isof-east-1", "US ISOF EAST");
-
-        /// <summary>
-        /// The US ISOF SOUTH endpoint.
-        /// </summary>
-        public static readonly RegionEndpoint USIsofSouth1 = GetEndpoint("us-isof-south-1", "US ISOF SOUTH");
-
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
     }
 }

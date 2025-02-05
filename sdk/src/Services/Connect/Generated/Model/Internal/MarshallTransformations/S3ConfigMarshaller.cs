@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetBucketPrefix())
             {
                 context.Writer.WritePropertyName("BucketPrefix");
-                context.Writer.Write(requestObject.BucketPrefix);
+                context.Writer.WriteStringValue(requestObject.BucketPrefix);
             }
 
             if(requestObject.IsSetEncryptionConfig())
             {
                 context.Writer.WritePropertyName("EncryptionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

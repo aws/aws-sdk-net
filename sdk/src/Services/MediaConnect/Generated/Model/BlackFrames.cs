@@ -57,9 +57,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ThresholdSeconds. Specifies the number of consecutive seconds
         /// of black frames that triggers an event or alert.
         /// </summary>
-        public int ThresholdSeconds
+        public int? ThresholdSeconds
         {
-            get { return this._thresholdSeconds.GetValueOrDefault(); }
+            get { return this._thresholdSeconds; }
             set { this._thresholdSeconds = value; }
         }
 

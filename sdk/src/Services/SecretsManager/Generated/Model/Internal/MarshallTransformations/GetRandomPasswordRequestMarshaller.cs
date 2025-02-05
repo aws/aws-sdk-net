@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExcludeCharacters())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExcludeCharacters())
-                    {
-                        context.Writer.WritePropertyName("ExcludeCharacters");
-                        context.Writer.Write(publicRequest.ExcludeCharacters);
-                    }
-
-                    if(publicRequest.IsSetExcludeLowercase())
-                    {
-                        context.Writer.WritePropertyName("ExcludeLowercase");
-                        context.Writer.Write(publicRequest.ExcludeLowercase.Value);
-                    }
-
-                    if(publicRequest.IsSetExcludeNumbers())
-                    {
-                        context.Writer.WritePropertyName("ExcludeNumbers");
-                        context.Writer.Write(publicRequest.ExcludeNumbers.Value);
-                    }
-
-                    if(publicRequest.IsSetExcludePunctuation())
-                    {
-                        context.Writer.WritePropertyName("ExcludePunctuation");
-                        context.Writer.Write(publicRequest.ExcludePunctuation.Value);
-                    }
-
-                    if(publicRequest.IsSetExcludeUppercase())
-                    {
-                        context.Writer.WritePropertyName("ExcludeUppercase");
-                        context.Writer.Write(publicRequest.ExcludeUppercase.Value);
-                    }
-
-                    if(publicRequest.IsSetIncludeSpace())
-                    {
-                        context.Writer.WritePropertyName("IncludeSpace");
-                        context.Writer.Write(publicRequest.IncludeSpace.Value);
-                    }
-
-                    if(publicRequest.IsSetPasswordLength())
-                    {
-                        context.Writer.WritePropertyName("PasswordLength");
-                        context.Writer.Write(publicRequest.PasswordLength.Value);
-                    }
-
-                    if(publicRequest.IsSetRequireEachIncludedType())
-                    {
-                        context.Writer.WritePropertyName("RequireEachIncludedType");
-                        context.Writer.Write(publicRequest.RequireEachIncludedType.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExcludeCharacters");
+                context.Writer.WriteStringValue(publicRequest.ExcludeCharacters);
             }
+
+            if(publicRequest.IsSetExcludeLowercase())
+            {
+                context.Writer.WritePropertyName("ExcludeLowercase");
+                context.Writer.WriteBooleanValue(publicRequest.ExcludeLowercase.Value);
+            }
+
+            if(publicRequest.IsSetExcludeNumbers())
+            {
+                context.Writer.WritePropertyName("ExcludeNumbers");
+                context.Writer.WriteBooleanValue(publicRequest.ExcludeNumbers.Value);
+            }
+
+            if(publicRequest.IsSetExcludePunctuation())
+            {
+                context.Writer.WritePropertyName("ExcludePunctuation");
+                context.Writer.WriteBooleanValue(publicRequest.ExcludePunctuation.Value);
+            }
+
+            if(publicRequest.IsSetExcludeUppercase())
+            {
+                context.Writer.WritePropertyName("ExcludeUppercase");
+                context.Writer.WriteBooleanValue(publicRequest.ExcludeUppercase.Value);
+            }
+
+            if(publicRequest.IsSetIncludeSpace())
+            {
+                context.Writer.WritePropertyName("IncludeSpace");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeSpace.Value);
+            }
+
+            if(publicRequest.IsSetPasswordLength())
+            {
+                context.Writer.WritePropertyName("PasswordLength");
+                context.Writer.WriteNumberValue(publicRequest.PasswordLength.Value);
+            }
+
+            if(publicRequest.IsSetRequireEachIncludedType())
+            {
+                context.Writer.WritePropertyName("RequireEachIncludedType");
+                context.Writer.WriteBooleanValue(publicRequest.RequireEachIncludedType.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

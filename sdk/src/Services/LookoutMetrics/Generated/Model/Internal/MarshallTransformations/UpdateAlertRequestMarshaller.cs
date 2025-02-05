@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateAlert";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("Action");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Action, context);
+                var marshaller = ActionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Action, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAlertArn())
-                    {
-                        context.Writer.WritePropertyName("AlertArn");
-                        context.Writer.Write(publicRequest.AlertArn);
-                    }
-
-                    if(publicRequest.IsSetAlertDescription())
-                    {
-                        context.Writer.WritePropertyName("AlertDescription");
-                        context.Writer.Write(publicRequest.AlertDescription);
-                    }
-
-                    if(publicRequest.IsSetAlertFilters())
-                    {
-                        context.Writer.WritePropertyName("AlertFilters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlertFiltersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlertFilters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAlertSensitivityThreshold())
-                    {
-                        context.Writer.WritePropertyName("AlertSensitivityThreshold");
-                        context.Writer.Write(publicRequest.AlertSensitivityThreshold.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAlertArn())
+            {
+                context.Writer.WritePropertyName("AlertArn");
+                context.Writer.WriteStringValue(publicRequest.AlertArn);
+            }
+
+            if(publicRequest.IsSetAlertDescription())
+            {
+                context.Writer.WritePropertyName("AlertDescription");
+                context.Writer.WriteStringValue(publicRequest.AlertDescription);
+            }
+
+            if(publicRequest.IsSetAlertFilters())
+            {
+                context.Writer.WritePropertyName("AlertFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AlertFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlertFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAlertSensitivityThreshold())
+            {
+                context.Writer.WritePropertyName("AlertSensitivityThreshold");
+                context.Writer.WriteNumberValue(publicRequest.AlertSensitivityThreshold.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

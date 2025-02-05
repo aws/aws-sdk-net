@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -47,87 +47,87 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeReplicatorResponse response = new DescribeReplicatorResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CurrentVersion = unmarshaller.Unmarshall(context);
+                    response.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isReplicatorReference", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.IsReplicatorReference = unmarshaller.Unmarshall(context);
+                    response.IsReplicatorReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kafkaClusters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KafkaClusterDescription, KafkaClusterDescriptionUnmarshaller>(KafkaClusterDescriptionUnmarshaller.Instance);
-                    response.KafkaClusters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KafkaClusterDescription, KafkaClusterDescriptionUnmarshaller>(KafkaClusterDescriptionUnmarshaller.Instance);
+                    response.KafkaClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicationInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicationInfoDescription, ReplicationInfoDescriptionUnmarshaller>(ReplicationInfoDescriptionUnmarshaller.Instance);
-                    response.ReplicationInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ReplicationInfoDescription, ReplicationInfoDescriptionUnmarshaller>(ReplicationInfoDescriptionUnmarshaller.Instance);
+                    response.ReplicationInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicatorArn = unmarshaller.Unmarshall(context);
+                    response.ReplicatorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatorDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicatorDescription = unmarshaller.Unmarshall(context);
+                    response.ReplicatorDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicatorName = unmarshaller.Unmarshall(context);
+                    response.ReplicatorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatorResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicatorResourceArn = unmarshaller.Unmarshall(context);
+                    response.ReplicatorResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatorState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicatorState = unmarshaller.Unmarshall(context);
+                    response.ReplicatorState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ServiceExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    response.ServiceExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stateInfo", targetDepth))
                 {
                     var unmarshaller = ReplicationStateInfoUnmarshaller.Instance;
-                    response.StateInfo = unmarshaller.Unmarshall(context);
+                    response.StateInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -144,42 +144,44 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
-                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
                 {
-                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
-                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
-                    return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonKafkaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

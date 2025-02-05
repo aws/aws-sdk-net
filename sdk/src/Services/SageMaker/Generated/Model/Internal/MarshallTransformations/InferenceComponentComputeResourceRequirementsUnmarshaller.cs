@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InferenceComponentComputeResourceRequirements Object
     /// </summary>  
-    public class InferenceComponentComputeResourceRequirementsUnmarshaller : IUnmarshaller<InferenceComponentComputeResourceRequirements, XmlUnmarshallerContext>, IUnmarshaller<InferenceComponentComputeResourceRequirements, JsonUnmarshallerContext>
+    public class InferenceComponentComputeResourceRequirementsUnmarshaller : IJsonUnmarshaller<InferenceComponentComputeResourceRequirements, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InferenceComponentComputeResourceRequirements IUnmarshaller<InferenceComponentComputeResourceRequirements, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceComponentComputeResourceRequirements Unmarshall(JsonUnmarshallerContext context)
+        public InferenceComponentComputeResourceRequirements Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InferenceComponentComputeResourceRequirements unmarshalledObject = new InferenceComponentComputeResourceRequirements();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaxMemoryRequiredInMb", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxMemoryRequiredInMb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxMemoryRequiredInMb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinMemoryRequiredInMb", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinMemoryRequiredInMb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinMemoryRequiredInMb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfAcceleratorDevicesRequired", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfAcceleratorDevicesRequired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfAcceleratorDevicesRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfCpuCoresRequired", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfCpuCoresRequired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfCpuCoresRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

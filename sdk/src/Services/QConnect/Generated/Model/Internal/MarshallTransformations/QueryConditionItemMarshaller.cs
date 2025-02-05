@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparator())
             {
                 context.Writer.WritePropertyName("comparator");
-                context.Writer.Write(requestObject.Comparator);
+                context.Writer.WriteStringValue(requestObject.Comparator);
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

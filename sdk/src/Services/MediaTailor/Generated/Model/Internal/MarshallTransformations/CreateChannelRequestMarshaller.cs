@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -64,94 +67,99 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
             request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
             request.ResourcePath = "/channel/{ChannelName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudiences())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Audiences");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAudiences())
-                    {
-                        context.Writer.WritePropertyName("Audiences");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
-                        {
-                                context.Writer.Write(publicRequestAudiencesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFillerSlate())
-                    {
-                        context.Writer.WritePropertyName("FillerSlate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SlateSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FillerSlate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputs())
-                    {
-                        context.Writer.WritePropertyName("Outputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RequestOutputItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPlaybackMode())
-                    {
-                        context.Writer.WritePropertyName("PlaybackMode");
-                        context.Writer.Write(publicRequest.PlaybackMode);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTier())
-                    {
-                        context.Writer.WritePropertyName("Tier");
-                        context.Writer.Write(publicRequest.Tier);
-                    }
-
-                    if(publicRequest.IsSetTimeShiftConfiguration())
-                    {
-                        context.Writer.WritePropertyName("TimeShiftConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeShiftConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TimeShiftConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAudiencesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFillerSlate())
+            {
+                context.Writer.WritePropertyName("FillerSlate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SlateSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FillerSlate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputs())
+            {
+                context.Writer.WritePropertyName("Outputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RequestOutputItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPlaybackMode())
+            {
+                context.Writer.WritePropertyName("PlaybackMode");
+                context.Writer.WriteStringValue(publicRequest.PlaybackMode);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTier())
+            {
+                context.Writer.WritePropertyName("Tier");
+                context.Writer.WriteStringValue(publicRequest.Tier);
+            }
+
+            if(publicRequest.IsSetTimeShiftConfiguration())
+            {
+                context.Writer.WritePropertyName("TimeShiftConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeShiftConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TimeShiftConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

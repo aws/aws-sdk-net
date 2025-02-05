@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,168 +49,168 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
                 {
-                        context.Writer.Write(requestObjectAvailabilityZonesListValue);
+                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBackendServerDescriptions())
             {
                 context.Writer.WritePropertyName("BackendServerDescriptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBackendServerDescriptionsListValue in requestObject.BackendServerDescriptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbLoadBalancerBackendServerDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectBackendServerDescriptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCanonicalHostedZoneName())
             {
                 context.Writer.WritePropertyName("CanonicalHostedZoneName");
-                context.Writer.Write(requestObject.CanonicalHostedZoneName);
+                context.Writer.WriteStringValue(requestObject.CanonicalHostedZoneName);
             }
 
             if(requestObject.IsSetCanonicalHostedZoneNameID())
             {
                 context.Writer.WritePropertyName("CanonicalHostedZoneNameID");
-                context.Writer.Write(requestObject.CanonicalHostedZoneNameID);
+                context.Writer.WriteStringValue(requestObject.CanonicalHostedZoneNameID);
             }
 
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
-                context.Writer.Write(requestObject.CreatedTime);
+                context.Writer.WriteStringValue(requestObject.CreatedTime);
             }
 
             if(requestObject.IsSetDnsName())
             {
                 context.Writer.WritePropertyName("DnsName");
-                context.Writer.Write(requestObject.DnsName);
+                context.Writer.WriteStringValue(requestObject.DnsName);
             }
 
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("HealthCheck");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerHealthCheckMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheck, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstances())
             {
                 context.Writer.WritePropertyName("Instances");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstancesListValue in requestObject.Instances)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbLoadBalancerInstanceMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstancesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetListenerDescriptions())
             {
                 context.Writer.WritePropertyName("ListenerDescriptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListenerDescriptionsListValue in requestObject.ListenerDescriptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbLoadBalancerListenerDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectListenerDescriptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLoadBalancerAttributes())
             {
                 context.Writer.WritePropertyName("LoadBalancerAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoadBalancerAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLoadBalancerName())
             {
                 context.Writer.WritePropertyName("LoadBalancerName");
-                context.Writer.Write(requestObject.LoadBalancerName);
+                context.Writer.WriteStringValue(requestObject.LoadBalancerName);
             }
 
             if(requestObject.IsSetPolicies())
             {
                 context.Writer.WritePropertyName("Policies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerPoliciesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Policies, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheme())
             {
                 context.Writer.WritePropertyName("Scheme");
-                context.Writer.Write(requestObject.Scheme);
+                context.Writer.WriteStringValue(requestObject.Scheme);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceSecurityGroup())
             {
                 context.Writer.WritePropertyName("SourceSecurityGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerSourceSecurityGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceSecurityGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubnets())
             {
                 context.Writer.WritePropertyName("Subnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                        context.Writer.Write(requestObjectSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

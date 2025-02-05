@@ -44,9 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long DrivingDistance
+        public long? DrivingDistance
         {
-            get { return this._drivingDistance.GetValueOrDefault(); }
+            get { return this._drivingDistance; }
             set { this._drivingDistance = value; }
         }
 

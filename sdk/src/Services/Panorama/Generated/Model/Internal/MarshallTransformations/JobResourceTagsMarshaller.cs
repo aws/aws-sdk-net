@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationArn())
             {
                 context.Writer.WritePropertyName("ApplicationArn");
-                context.Writer.Write(requestObject.ApplicationArn);
+                context.Writer.WriteStringValue(requestObject.ApplicationArn);
             }
 
             if(requestObject.IsSetInstanceArn())
             {
                 context.Writer.WritePropertyName("InstanceArn");
-                context.Writer.Write(requestObject.InstanceArn);
+                context.Writer.WriteStringValue(requestObject.InstanceArn);
             }
 
         }

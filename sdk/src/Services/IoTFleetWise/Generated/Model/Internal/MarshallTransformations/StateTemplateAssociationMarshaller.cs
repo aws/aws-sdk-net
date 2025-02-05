@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WriteStringValue(requestObject.Identifier);
             }
 
             if(requestObject.IsSetStateTemplateUpdateStrategy())
             {
                 context.Writer.WritePropertyName("stateTemplateUpdateStrategy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StateTemplateUpdateStrategyMarshaller.Instance;
                 marshaller.Marshall(requestObject.StateTemplateUpdateStrategy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

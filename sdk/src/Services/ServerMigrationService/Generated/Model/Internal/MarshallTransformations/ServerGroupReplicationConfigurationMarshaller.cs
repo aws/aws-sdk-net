@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServerGroupId())
             {
                 context.Writer.WritePropertyName("serverGroupId");
-                context.Writer.Write(requestObject.ServerGroupId);
+                context.Writer.WriteStringValue(requestObject.ServerGroupId);
             }
 
             if(requestObject.IsSetServerReplicationConfigurations())
             {
                 context.Writer.WritePropertyName("serverReplicationConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServerReplicationConfigurationsListValue in requestObject.ServerReplicationConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServerReplicationConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerReplicationConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

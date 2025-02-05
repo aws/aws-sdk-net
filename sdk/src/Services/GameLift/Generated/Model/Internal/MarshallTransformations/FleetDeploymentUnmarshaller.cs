@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FleetDeployment Object
     /// </summary>  
-    public class FleetDeploymentUnmarshaller : IUnmarshaller<FleetDeployment, XmlUnmarshallerContext>, IUnmarshaller<FleetDeployment, JsonUnmarshallerContext>
+    public class FleetDeploymentUnmarshaller : IJsonUnmarshaller<FleetDeployment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FleetDeployment IUnmarshaller<FleetDeployment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FleetDeployment Unmarshall(JsonUnmarshallerContext context)
+        public FleetDeployment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FleetDeployment unmarshalledObject = new FleetDeployment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentConfiguration", targetDepth))
                 {
                     var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FleetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FleetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GameServerBinaryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerBinaryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GameServerBinaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PerInstanceBinaryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PerInstanceBinaryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerInstanceBinaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RollbackGameServerBinaryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackGameServerBinaryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackGameServerBinaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RollbackPerInstanceBinaryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackPerInstanceBinaryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackPerInstanceBinaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbortConfig())
             {
                 context.Writer.WritePropertyName("abortConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IoTJobAbortConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbortConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobExecutionsRolloutConfig())
             {
                 context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IoTJobExecutionsRolloutConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobExecutionsRolloutConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeoutConfig())
             {
                 context.Writer.WritePropertyName("timeoutConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IoTJobTimeoutConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeoutConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

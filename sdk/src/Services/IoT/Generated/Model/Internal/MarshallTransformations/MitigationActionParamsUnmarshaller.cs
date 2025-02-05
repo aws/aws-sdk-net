@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MitigationActionParams Object
     /// </summary>  
-    public class MitigationActionParamsUnmarshaller : IUnmarshaller<MitigationActionParams, XmlUnmarshallerContext>, IUnmarshaller<MitigationActionParams, JsonUnmarshallerContext>
+    public class MitigationActionParamsUnmarshaller : IJsonUnmarshaller<MitigationActionParams, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MitigationActionParams IUnmarshaller<MitigationActionParams, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MitigationActionParams Unmarshall(JsonUnmarshallerContext context)
+        public MitigationActionParams Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MitigationActionParams unmarshalledObject = new MitigationActionParams();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("addThingsToThingGroupParams", targetDepth))
                 {
                     var unmarshaller = AddThingsToThingGroupParamsUnmarshaller.Instance;
-                    unmarshalledObject.AddThingsToThingGroupParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddThingsToThingGroupParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("enableIoTLoggingParams", targetDepth))
                 {
                     var unmarshaller = EnableIoTLoggingParamsUnmarshaller.Instance;
-                    unmarshalledObject.EnableIoTLoggingParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableIoTLoggingParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("publishFindingToSnsParams", targetDepth))
                 {
                     var unmarshaller = PublishFindingToSnsParamsUnmarshaller.Instance;
-                    unmarshalledObject.PublishFindingToSnsParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PublishFindingToSnsParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replaceDefaultPolicyVersionParams", targetDepth))
                 {
                     var unmarshaller = ReplaceDefaultPolicyVersionParamsUnmarshaller.Instance;
-                    unmarshalledObject.ReplaceDefaultPolicyVersionParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplaceDefaultPolicyVersionParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateCACertificateParams", targetDepth))
                 {
                     var unmarshaller = UpdateCACertificateParamsUnmarshaller.Instance;
-                    unmarshalledObject.UpdateCACertificateParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateCACertificateParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateDeviceCertificateParams", targetDepth))
                 {
                     var unmarshaller = UpdateDeviceCertificateParamsUnmarshaller.Instance;
-                    unmarshalledObject.UpdateDeviceCertificateParams = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateDeviceCertificateParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -64,55 +67,60 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 throw new AmazonMainframeModernizationException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/environments/{environmentId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplyDuringMaintenanceWindow())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplyDuringMaintenanceWindow())
-                    {
-                        context.Writer.WritePropertyName("applyDuringMaintenanceWindow");
-                        context.Writer.Write(publicRequest.ApplyDuringMaintenanceWindow.Value);
-                    }
-
-                    if(publicRequest.IsSetDesiredCapacity())
-                    {
-                        context.Writer.WritePropertyName("desiredCapacity");
-                        context.Writer.Write(publicRequest.DesiredCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetEngineVersion())
-                    {
-                        context.Writer.WritePropertyName("engineVersion");
-                        context.Writer.Write(publicRequest.EngineVersion);
-                    }
-
-                    if(publicRequest.IsSetForceUpdate())
-                    {
-                        context.Writer.WritePropertyName("forceUpdate");
-                        context.Writer.Write(publicRequest.ForceUpdate.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("instanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetPreferredMaintenanceWindow())
-                    {
-                        context.Writer.WritePropertyName("preferredMaintenanceWindow");
-                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applyDuringMaintenanceWindow");
+                context.Writer.WriteBooleanValue(publicRequest.ApplyDuringMaintenanceWindow.Value);
             }
+
+            if(publicRequest.IsSetDesiredCapacity())
+            {
+                context.Writer.WritePropertyName("desiredCapacity");
+                context.Writer.WriteNumberValue(publicRequest.DesiredCapacity.Value);
+            }
+
+            if(publicRequest.IsSetEngineVersion())
+            {
+                context.Writer.WritePropertyName("engineVersion");
+                context.Writer.WriteStringValue(publicRequest.EngineVersion);
+            }
+
+            if(publicRequest.IsSetForceUpdate())
+            {
+                context.Writer.WritePropertyName("forceUpdate");
+                context.Writer.WriteBooleanValue(publicRequest.ForceUpdate.Value);
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("instanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetPreferredMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                context.Writer.WriteStringValue(publicRequest.PreferredMaintenanceWindow);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

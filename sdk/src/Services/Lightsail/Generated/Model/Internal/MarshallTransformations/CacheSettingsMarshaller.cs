@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedHTTPMethods())
             {
                 context.Writer.WritePropertyName("allowedHTTPMethods");
-                context.Writer.Write(requestObject.AllowedHTTPMethods);
+                context.Writer.WriteStringValue(requestObject.AllowedHTTPMethods);
             }
 
             if(requestObject.IsSetCachedHTTPMethods())
             {
                 context.Writer.WritePropertyName("cachedHTTPMethods");
-                context.Writer.Write(requestObject.CachedHTTPMethods);
+                context.Writer.WriteStringValue(requestObject.CachedHTTPMethods);
             }
 
             if(requestObject.IsSetDefaultTTL())
             {
                 context.Writer.WritePropertyName("defaultTTL");
-                context.Writer.Write(requestObject.DefaultTTL.Value);
+                context.Writer.WriteNumberValue(requestObject.DefaultTTL.Value);
             }
 
             if(requestObject.IsSetForwardedCookies())
             {
                 context.Writer.WritePropertyName("forwardedCookies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CookieObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForwardedCookies, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetForwardedHeaders())
             {
                 context.Writer.WritePropertyName("forwardedHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HeaderObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForwardedHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetForwardedQueryStrings())
             {
                 context.Writer.WritePropertyName("forwardedQueryStrings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QueryStringObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForwardedQueryStrings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumTTL())
             {
                 context.Writer.WritePropertyName("maximumTTL");
-                context.Writer.Write(requestObject.MaximumTTL.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumTTL.Value);
             }
 
             if(requestObject.IsSetMinimumTTL())
             {
                 context.Writer.WritePropertyName("minimumTTL");
-                context.Writer.Write(requestObject.MinimumTTL.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumTTL.Value);
             }
 
         }

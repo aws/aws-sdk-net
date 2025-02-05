@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeArn())
             {
                 context.Writer.WritePropertyName("computeArn");
-                context.Writer.Write(requestObject.ComputeArn);
+                context.Writer.WriteStringValue(requestObject.ComputeArn);
             }
 
             if(requestObject.IsSetInstanceProfileArn())
             {
                 context.Writer.WritePropertyName("instanceProfileArn");
-                context.Writer.Write(requestObject.InstanceProfileArn);
+                context.Writer.WriteStringValue(requestObject.InstanceProfileArn);
             }
 
             if(requestObject.IsSetJavaVirtualEnv())
             {
                 context.Writer.WritePropertyName("javaVirtualEnv");
-                context.Writer.Write(requestObject.JavaVirtualEnv);
+                context.Writer.WriteStringValue(requestObject.JavaVirtualEnv);
             }
 
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("logUri");
-                context.Writer.Write(requestObject.LogUri);
+                context.Writer.WriteStringValue(requestObject.LogUri);
             }
 
             if(requestObject.IsSetPythonVirtualEnv())
             {
                 context.Writer.WritePropertyName("pythonVirtualEnv");
-                context.Writer.Write(requestObject.PythonVirtualEnv);
+                context.Writer.WriteStringValue(requestObject.PythonVirtualEnv);
             }
 
             if(requestObject.IsSetRuntimeRole())
             {
                 context.Writer.WritePropertyName("runtimeRole");
-                context.Writer.Write(requestObject.RuntimeRole);
+                context.Writer.WriteStringValue(requestObject.RuntimeRole);
             }
 
             if(requestObject.IsSetTrustedCertificatesS3Uri())
             {
                 context.Writer.WritePropertyName("trustedCertificatesS3Uri");
-                context.Writer.Write(requestObject.TrustedCertificatesS3Uri);
+                context.Writer.WriteStringValue(requestObject.TrustedCertificatesS3Uri);
             }
 
         }

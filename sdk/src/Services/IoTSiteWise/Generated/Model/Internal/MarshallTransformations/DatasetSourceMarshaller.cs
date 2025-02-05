@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceDetail())
             {
                 context.Writer.WritePropertyName("sourceDetail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceDetail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceFormat())
             {
                 context.Writer.WritePropertyName("sourceFormat");
-                context.Writer.Write(requestObject.SourceFormat);
+                context.Writer.WriteStringValue(requestObject.SourceFormat);
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("sourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaAnalysisOutputConfig Object
     /// </summary>  
-    public class MediaAnalysisOutputConfigUnmarshaller : IUnmarshaller<MediaAnalysisOutputConfig, XmlUnmarshallerContext>, IUnmarshaller<MediaAnalysisOutputConfig, JsonUnmarshallerContext>
+    public class MediaAnalysisOutputConfigUnmarshaller : IJsonUnmarshaller<MediaAnalysisOutputConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaAnalysisOutputConfig IUnmarshaller<MediaAnalysisOutputConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaAnalysisOutputConfig Unmarshall(JsonUnmarshallerContext context)
+        public MediaAnalysisOutputConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaAnalysisOutputConfig unmarshalledObject = new MediaAnalysisOutputConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3KeyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

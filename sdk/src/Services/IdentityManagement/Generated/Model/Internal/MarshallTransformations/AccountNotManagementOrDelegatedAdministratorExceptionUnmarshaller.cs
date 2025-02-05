@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccountNotManagementOrDelegatedAdministratorException operation
     /// </summary>  
-    public class AccountNotManagementOrDelegatedAdministratorExceptionUnmarshaller : IErrorResponseUnmarshaller<AccountNotManagementOrDelegatedAdministratorException, XmlUnmarshallerContext>
+    public class AccountNotManagementOrDelegatedAdministratorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AccountNotManagementOrDelegatedAdministratorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

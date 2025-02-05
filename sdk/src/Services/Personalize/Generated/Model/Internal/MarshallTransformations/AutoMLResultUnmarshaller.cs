@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoMLResult Object
     /// </summary>  
-    public class AutoMLResultUnmarshaller : IUnmarshaller<AutoMLResult, XmlUnmarshallerContext>, IUnmarshaller<AutoMLResult, JsonUnmarshallerContext>
+    public class AutoMLResultUnmarshaller : IJsonUnmarshaller<AutoMLResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoMLResult IUnmarshaller<AutoMLResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoMLResult Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoMLResult unmarshalledObject = new AutoMLResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bestRecipeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BestRecipeArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BestRecipeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

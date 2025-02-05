@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NielsenNonLinearWatermarkSettings Object
     /// </summary>  
-    public class NielsenNonLinearWatermarkSettingsUnmarshaller : IUnmarshaller<NielsenNonLinearWatermarkSettings, XmlUnmarshallerContext>, IUnmarshaller<NielsenNonLinearWatermarkSettings, JsonUnmarshallerContext>
+    public class NielsenNonLinearWatermarkSettingsUnmarshaller : IJsonUnmarshaller<NielsenNonLinearWatermarkSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NielsenNonLinearWatermarkSettings IUnmarshaller<NielsenNonLinearWatermarkSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NielsenNonLinearWatermarkSettings Unmarshall(JsonUnmarshallerContext context)
+        public NielsenNonLinearWatermarkSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NielsenNonLinearWatermarkSettings unmarshalledObject = new NielsenNonLinearWatermarkSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeWatermarkProcess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveWatermarkProcess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveWatermarkProcess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("adiFilename", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdiFilename = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdiFilename = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cbetSourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CbetSourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CbetSourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("episodeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EpisodeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EpisodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadataDestination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetadataDestination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetadataDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceWatermarkStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceWatermarkStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceWatermarkStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ticServerUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TicServerUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TicServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("uniqueTicPerAudioTrack", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UniqueTicPerAudioTrack = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UniqueTicPerAudioTrack = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

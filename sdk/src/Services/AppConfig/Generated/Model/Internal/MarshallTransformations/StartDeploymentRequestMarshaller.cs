@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
@@ -67,77 +70,82 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}/deployments";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationProfileId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationProfileId())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationProfileId");
-                        context.Writer.Write(publicRequest.ConfigurationProfileId);
-                    }
-
-                    if(publicRequest.IsSetConfigurationVersion())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationVersion");
-                        context.Writer.Write(publicRequest.ConfigurationVersion);
-                    }
-
-                    if(publicRequest.IsSetDeploymentStrategyId())
-                    {
-                        context.Writer.WritePropertyName("DeploymentStrategyId");
-                        context.Writer.Write(publicRequest.DeploymentStrategyId);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDynamicExtensionParameters())
-                    {
-                        context.Writer.WritePropertyName("DynamicExtensionParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDynamicExtensionParametersKvp in publicRequest.DynamicExtensionParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDynamicExtensionParametersKvp.Key);
-                            var publicRequestDynamicExtensionParametersValue = publicRequestDynamicExtensionParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestDynamicExtensionParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyIdentifier");
-                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationProfileId");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationProfileId);
             }
+
+            if(publicRequest.IsSetConfigurationVersion())
+            {
+                context.Writer.WritePropertyName("ConfigurationVersion");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationVersion);
+            }
+
+            if(publicRequest.IsSetDeploymentStrategyId())
+            {
+                context.Writer.WritePropertyName("DeploymentStrategyId");
+                context.Writer.WriteStringValue(publicRequest.DeploymentStrategyId);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDynamicExtensionParameters())
+            {
+                context.Writer.WritePropertyName("DynamicExtensionParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDynamicExtensionParametersKvp in publicRequest.DynamicExtensionParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestDynamicExtensionParametersKvp.Key);
+                    var publicRequestDynamicExtensionParametersValue = publicRequestDynamicExtensionParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDynamicExtensionParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKmsKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("KmsKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

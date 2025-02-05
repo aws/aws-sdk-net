@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCriterionKey())
             {
                 context.Writer.WritePropertyName("criterionKey");
-                context.Writer.Write(requestObject.CriterionKey);
+                context.Writer.WriteStringValue(requestObject.CriterionKey);
             }
 
             if(requestObject.IsSetFilterCondition())
             {
                 context.Writer.WritePropertyName("filterCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CoverageFilterConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

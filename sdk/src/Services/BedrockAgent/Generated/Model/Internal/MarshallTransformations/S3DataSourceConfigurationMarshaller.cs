@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketArn())
             {
                 context.Writer.WritePropertyName("bucketArn");
-                context.Writer.Write(requestObject.BucketArn);
+                context.Writer.WriteStringValue(requestObject.BucketArn);
             }
 
             if(requestObject.IsSetBucketOwnerAccountId())
             {
                 context.Writer.WritePropertyName("bucketOwnerAccountId");
-                context.Writer.Write(requestObject.BucketOwnerAccountId);
+                context.Writer.WriteStringValue(requestObject.BucketOwnerAccountId);
             }
 
             if(requestObject.IsSetInclusionPrefixes())
             {
                 context.Writer.WritePropertyName("inclusionPrefixes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPrefixesListValue in requestObject.InclusionPrefixes)
                 {
-                        context.Writer.Write(requestObjectInclusionPrefixesListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPrefixesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

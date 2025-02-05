@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAWSAccountId())
             {
                 context.Writer.WritePropertyName("AWSAccountId");
-                context.Writer.Write(requestObject.AWSAccountId);
+                context.Writer.WriteStringValue(requestObject.AWSAccountId);
             }
 
             if(requestObject.IsSetCreationDate())
@@ -59,48 +57,48 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CreationDate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CreationDate.Value);
+                    context.Writer.WriteNumberValue(requestObject.CreationDate.Value);
                 }
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("KeyId");
-                context.Writer.Write(requestObject.KeyId);
+                context.Writer.WriteStringValue(requestObject.KeyId);
             }
 
             if(requestObject.IsSetKeyManager())
             {
                 context.Writer.WritePropertyName("KeyManager");
-                context.Writer.Write(requestObject.KeyManager);
+                context.Writer.WriteStringValue(requestObject.KeyManager);
             }
 
             if(requestObject.IsSetKeyRotationStatus())
             {
                 context.Writer.WritePropertyName("KeyRotationStatus");
-                context.Writer.Write(requestObject.KeyRotationStatus.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeyRotationStatus.Value);
             }
 
             if(requestObject.IsSetKeyState())
             {
                 context.Writer.WritePropertyName("KeyState");
-                context.Writer.Write(requestObject.KeyState);
+                context.Writer.WriteStringValue(requestObject.KeyState);
             }
 
             if(requestObject.IsSetOrigin())
             {
                 context.Writer.WritePropertyName("Origin");
-                context.Writer.Write(requestObject.Origin);
+                context.Writer.WriteStringValue(requestObject.Origin);
             }
 
         }

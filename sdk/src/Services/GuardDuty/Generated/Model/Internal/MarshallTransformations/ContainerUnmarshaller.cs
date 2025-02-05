@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Container Object
     /// </summary>  
-    public class ContainerUnmarshaller : IUnmarshaller<Container, XmlUnmarshallerContext>, IUnmarshaller<Container, JsonUnmarshallerContext>
+    public class ContainerUnmarshaller : IJsonUnmarshaller<Container, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Container IUnmarshaller<Container, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Container Unmarshall(JsonUnmarshallerContext context)
+        public Container Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Container unmarshalledObject = new Container();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("containerRuntime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerRuntime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerRuntime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imagePrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImagePrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImagePrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("securityContext", targetDepth))
                 {
                     var unmarshaller = SecurityContextUnmarshaller.Instance;
-                    unmarshalledObject.SecurityContext = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeMounts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VolumeMount, VolumeMountUnmarshaller>(VolumeMountUnmarshaller.Instance);
-                    unmarshalledObject.VolumeMounts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VolumeMount, VolumeMountUnmarshaller>(VolumeMountUnmarshaller.Instance);
+                    unmarshalledObject.VolumeMounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

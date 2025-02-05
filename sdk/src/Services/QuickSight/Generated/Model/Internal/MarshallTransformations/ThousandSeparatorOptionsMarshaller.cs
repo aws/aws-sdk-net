@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupingStyle())
             {
                 context.Writer.WritePropertyName("GroupingStyle");
-                context.Writer.Write(requestObject.GroupingStyle);
+                context.Writer.WriteStringValue(requestObject.GroupingStyle);
             }
 
             if(requestObject.IsSetSymbol())
             {
                 context.Writer.WritePropertyName("Symbol");
-                context.Writer.Write(requestObject.Symbol);
+                context.Writer.WriteStringValue(requestObject.Symbol);
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetStringValueList())
             {
                 context.Writer.WritePropertyName("StringValueList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringValueListListValue in requestObject.StringValueList)
                 {
-                        context.Writer.Write(requestObjectStringValueListListValue);
+                        context.Writer.WriteStringValue(requestObjectStringValueListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

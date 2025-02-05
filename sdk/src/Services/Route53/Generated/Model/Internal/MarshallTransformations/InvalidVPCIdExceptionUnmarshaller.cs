@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidVPCIdException operation
     /// </summary>  
-    public class InvalidVPCIdExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidVPCIdException, XmlUnmarshallerContext>
+    public class InvalidVPCIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidVPCIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

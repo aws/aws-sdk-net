@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntervalCadence())
             {
                 context.Writer.WritePropertyName("intervalCadence");
-                context.Writer.Write(requestObject.IntervalCadence);
+                context.Writer.WriteStringValue(requestObject.IntervalCadence);
             }
 
             if(requestObject.IsSetThumbnailHeight())
             {
                 context.Writer.WritePropertyName("thumbnailHeight");
-                context.Writer.Write(requestObject.ThumbnailHeight.Value);
+                context.Writer.WriteNumberValue(requestObject.ThumbnailHeight.Value);
             }
 
             if(requestObject.IsSetThumbnailInterval())
@@ -65,30 +63,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("thumbnailInterval");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThumbnailInterval.Value);
+                    context.Writer.WriteNumberValue(requestObject.ThumbnailInterval.Value);
                 }
             }
 
             if(requestObject.IsSetThumbnailWidth())
             {
                 context.Writer.WritePropertyName("thumbnailWidth");
-                context.Writer.Write(requestObject.ThumbnailWidth.Value);
+                context.Writer.WriteNumberValue(requestObject.ThumbnailWidth.Value);
             }
 
             if(requestObject.IsSetTileHeight())
             {
                 context.Writer.WritePropertyName("tileHeight");
-                context.Writer.Write(requestObject.TileHeight.Value);
+                context.Writer.WriteNumberValue(requestObject.TileHeight.Value);
             }
 
             if(requestObject.IsSetTileWidth())
             {
                 context.Writer.WritePropertyName("tileWidth");
-                context.Writer.Write(requestObject.TileWidth.Value);
+                context.Writer.WriteNumberValue(requestObject.TileWidth.Value);
             }
 
         }

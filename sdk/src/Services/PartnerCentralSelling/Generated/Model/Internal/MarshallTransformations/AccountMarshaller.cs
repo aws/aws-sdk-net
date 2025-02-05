@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.Address, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("AwsAccountId");
-                context.Writer.Write(requestObject.AwsAccountId);
+                context.Writer.WriteStringValue(requestObject.AwsAccountId);
             }
 
             if(requestObject.IsSetCompanyName())
             {
                 context.Writer.WritePropertyName("CompanyName");
-                context.Writer.Write(requestObject.CompanyName);
+                context.Writer.WriteStringValue(requestObject.CompanyName);
             }
 
             if(requestObject.IsSetDuns())
             {
                 context.Writer.WritePropertyName("Duns");
-                context.Writer.Write(requestObject.Duns);
+                context.Writer.WriteStringValue(requestObject.Duns);
             }
 
             if(requestObject.IsSetIndustry())
             {
                 context.Writer.WritePropertyName("Industry");
-                context.Writer.Write(requestObject.Industry);
+                context.Writer.WriteStringValue(requestObject.Industry);
             }
 
             if(requestObject.IsSetOtherIndustry())
             {
                 context.Writer.WritePropertyName("OtherIndustry");
-                context.Writer.Write(requestObject.OtherIndustry);
+                context.Writer.WriteStringValue(requestObject.OtherIndustry);
             }
 
             if(requestObject.IsSetWebsiteUrl())
             {
                 context.Writer.WritePropertyName("WebsiteUrl");
-                context.Writer.Write(requestObject.WebsiteUrl);
+                context.Writer.WriteStringValue(requestObject.WebsiteUrl);
             }
 
         }

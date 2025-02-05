@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InspectorServiceAttributes Object
     /// </summary>  
-    public class InspectorServiceAttributesUnmarshaller : IUnmarshaller<InspectorServiceAttributes, XmlUnmarshallerContext>, IUnmarshaller<InspectorServiceAttributes, JsonUnmarshallerContext>
+    public class InspectorServiceAttributesUnmarshaller : IJsonUnmarshaller<InspectorServiceAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InspectorServiceAttributes IUnmarshaller<InspectorServiceAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InspectorServiceAttributes Unmarshall(JsonUnmarshallerContext context)
+        public InspectorServiceAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InspectorServiceAttributes unmarshalledObject = new InspectorServiceAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("assessmentRunArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssessmentRunArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssessmentRunArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rulesPackageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RulesPackageArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RulesPackageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

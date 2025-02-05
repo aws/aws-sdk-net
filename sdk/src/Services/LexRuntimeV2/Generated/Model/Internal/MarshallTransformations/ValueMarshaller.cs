@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInterpretedValue())
             {
                 context.Writer.WritePropertyName("interpretedValue");
-                context.Writer.Write(requestObject.InterpretedValue);
+                context.Writer.WriteStringValue(requestObject.InterpretedValue);
             }
 
             if(requestObject.IsSetOriginalValue())
             {
                 context.Writer.WritePropertyName("originalValue");
-                context.Writer.Write(requestObject.OriginalValue);
+                context.Writer.WriteStringValue(requestObject.OriginalValue);
             }
 
             if(requestObject.IsSetResolvedValues())
             {
                 context.Writer.WritePropertyName("resolvedValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResolvedValuesListValue in requestObject.ResolvedValues)
                 {
-                        context.Writer.Write(requestObjectResolvedValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectResolvedValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

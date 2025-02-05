@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RateBasedStatementCustomKey Object
     /// </summary>  
-    public class RateBasedStatementCustomKeyUnmarshaller : IUnmarshaller<RateBasedStatementCustomKey, XmlUnmarshallerContext>, IUnmarshaller<RateBasedStatementCustomKey, JsonUnmarshallerContext>
+    public class RateBasedStatementCustomKeyUnmarshaller : IJsonUnmarshaller<RateBasedStatementCustomKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RateBasedStatementCustomKey IUnmarshaller<RateBasedStatementCustomKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RateBasedStatementCustomKey Unmarshall(JsonUnmarshallerContext context)
+        public RateBasedStatementCustomKey Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RateBasedStatementCustomKey unmarshalledObject = new RateBasedStatementCustomKey();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Cookie", targetDepth))
                 {
                     var unmarshaller = RateLimitCookieUnmarshaller.Instance;
-                    unmarshalledObject.Cookie = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cookie = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForwardedIP", targetDepth))
                 {
                     var unmarshaller = RateLimitForwardedIPUnmarshaller.Instance;
-                    unmarshalledObject.ForwardedIP = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForwardedIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Header", targetDepth))
                 {
                     var unmarshaller = RateLimitHeaderUnmarshaller.Instance;
-                    unmarshalledObject.Header = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Header = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HTTPMethod", targetDepth))
                 {
                     var unmarshaller = RateLimitHTTPMethodUnmarshaller.Instance;
-                    unmarshalledObject.HTTPMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HTTPMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IP", targetDepth))
                 {
                     var unmarshaller = RateLimitIPUnmarshaller.Instance;
-                    unmarshalledObject.IP = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelNamespace", targetDepth))
                 {
                     var unmarshaller = RateLimitLabelNamespaceUnmarshaller.Instance;
-                    unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryArgument", targetDepth))
                 {
                     var unmarshaller = RateLimitQueryArgumentUnmarshaller.Instance;
-                    unmarshalledObject.QueryArgument = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryArgument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryString", targetDepth))
                 {
                     var unmarshaller = RateLimitQueryStringUnmarshaller.Instance;
-                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UriPath", targetDepth))
                 {
                     var unmarshaller = RateLimitUriPathUnmarshaller.Instance;
-                    unmarshalledObject.UriPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UriPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

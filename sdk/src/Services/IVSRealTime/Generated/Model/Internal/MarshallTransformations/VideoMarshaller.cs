@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetFramerate())
@@ -59,24 +57,24 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("framerate");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Framerate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Framerate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Framerate.Value);
+                    context.Writer.WriteNumberValue(requestObject.Framerate.Value);
                 }
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

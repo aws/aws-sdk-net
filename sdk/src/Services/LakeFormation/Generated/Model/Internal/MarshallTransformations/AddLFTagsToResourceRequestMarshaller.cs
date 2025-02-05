@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -61,52 +64,57 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/AddLFTagsToResource";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalogId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalogId())
-                    {
-                        context.Writer.WritePropertyName("CatalogId");
-                        context.Writer.Write(publicRequest.CatalogId);
-                    }
-
-                    if(publicRequest.IsSetLFTags())
-                    {
-                        context.Writer.WritePropertyName("LFTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLFTagsListValue in publicRequest.LFTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = LFTagPairMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLFTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResource())
-                    {
-                        context.Writer.WritePropertyName("Resource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Resource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.WriteStringValue(publicRequest.CatalogId);
             }
+
+            if(publicRequest.IsSetLFTags())
+            {
+                context.Writer.WritePropertyName("LFTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLFTagsListValue in publicRequest.LFTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LFTagPairMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLFTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResource())
+            {
+                context.Writer.WritePropertyName("Resource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Resource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

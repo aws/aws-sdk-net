@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConfigurationOptionDescription Object
     /// </summary>  
-    public class ConfigurationOptionDescriptionUnmarshaller : IUnmarshaller<ConfigurationOptionDescription, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationOptionDescription, JsonUnmarshallerContext>
+    public class ConfigurationOptionDescriptionUnmarshaller : IXmlUnmarshaller<ConfigurationOptionDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -135,17 +135,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConfigurationOptionDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConfigurationOptionDescriptionUnmarshaller _instance = new ConfigurationOptionDescriptionUnmarshaller();        
 

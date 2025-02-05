@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BackupRule Object
     /// </summary>  
-    public class BackupRuleUnmarshaller : IUnmarshaller<BackupRule, XmlUnmarshallerContext>, IUnmarshaller<BackupRule, JsonUnmarshallerContext>
+    public class BackupRuleUnmarshaller : IJsonUnmarshaller<BackupRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BackupRule IUnmarshaller<BackupRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BackupRule Unmarshall(JsonUnmarshallerContext context)
+        public BackupRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BackupRule unmarshalledObject = new BackupRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CompletionWindowMinutes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CompletionWindowMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionWindowMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CopyActions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CopyAction, CopyActionUnmarshaller>(CopyActionUnmarshaller.Instance);
-                    unmarshalledObject.CopyActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CopyAction, CopyActionUnmarshaller>(CopyActionUnmarshaller.Instance);
+                    unmarshalledObject.CopyActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableContinuousBackup", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableContinuousBackup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableContinuousBackup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexActions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<IndexAction, IndexActionUnmarshaller>(IndexActionUnmarshaller.Instance);
-                    unmarshalledObject.IndexActions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<IndexAction, IndexActionUnmarshaller>(IndexActionUnmarshaller.Instance);
+                    unmarshalledObject.IndexActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Lifecycle", targetDepth))
                 {
                     var unmarshaller = LifecycleUnmarshaller.Instance;
-                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecoveryPointTags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.RecoveryPointTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.RecoveryPointTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleExpressionTimezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpressionTimezone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleExpressionTimezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartWindowMinutes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.StartWindowMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartWindowMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetBackupVaultName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetBackupVaultName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetBackupVaultName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

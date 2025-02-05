@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterSnapshotNotFoundException operation
     /// </summary>  
-    public class DBClusterSnapshotNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterSnapshotNotFoundException, XmlUnmarshallerContext>
+    public class DBClusterSnapshotNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterSnapshotNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

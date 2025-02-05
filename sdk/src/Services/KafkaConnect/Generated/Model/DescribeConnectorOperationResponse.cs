@@ -125,9 +125,9 @@ namespace Amazon.KafkaConnect.Model
         /// The time when the operation was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.KafkaConnect.Model
         /// The time when the operation ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 

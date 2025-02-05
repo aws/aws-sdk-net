@@ -73,9 +73,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int CurrentCount
+        public int? CurrentCount
         {
-            get { return this._currentCount.GetValueOrDefault(); }
+            get { return this._currentCount; }
             set { this._currentCount = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1, Max=2147483647)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.Deadline.Model
         /// The Unix timestamp of the date and time that the limit was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

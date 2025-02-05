@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,97 +66,102 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetGlueVersion())
-                    {
-                        context.Writer.WritePropertyName("GlueVersion");
-                        context.Writer.Write(publicRequest.GlueVersion);
-                    }
-
-                    if(publicRequest.IsSetMaxCapacity())
-                    {
-                        context.Writer.WritePropertyName("MaxCapacity");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.MaxCapacity.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetMaxRetries())
-                    {
-                        context.Writer.WritePropertyName("MaxRetries");
-                        context.Writer.Write(publicRequest.MaxRetries.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNumberOfWorkers())
-                    {
-                        context.Writer.WritePropertyName("NumberOfWorkers");
-                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("Parameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TransformParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Parameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("Timeout");
-                        context.Writer.Write(publicRequest.Timeout.Value);
-                    }
-
-                    if(publicRequest.IsSetTransformId())
-                    {
-                        context.Writer.WritePropertyName("TransformId");
-                        context.Writer.Write(publicRequest.TransformId);
-                    }
-
-                    if(publicRequest.IsSetWorkerType())
-                    {
-                        context.Writer.WritePropertyName("WorkerType");
-                        context.Writer.Write(publicRequest.WorkerType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetGlueVersion())
+            {
+                context.Writer.WritePropertyName("GlueVersion");
+                context.Writer.WriteStringValue(publicRequest.GlueVersion);
+            }
+
+            if(publicRequest.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("MaxCapacity");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.MaxCapacity.Value);
+                }
+            }
+
+            if(publicRequest.IsSetMaxRetries())
+            {
+                context.Writer.WritePropertyName("MaxRetries");
+                context.Writer.WriteNumberValue(publicRequest.MaxRetries.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNumberOfWorkers())
+            {
+                context.Writer.WritePropertyName("NumberOfWorkers");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfWorkers.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TransformParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Parameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("Timeout");
+                context.Writer.WriteNumberValue(publicRequest.Timeout.Value);
+            }
+
+            if(publicRequest.IsSetTransformId())
+            {
+                context.Writer.WritePropertyName("TransformId");
+                context.Writer.WriteStringValue(publicRequest.TransformId);
+            }
+
+            if(publicRequest.IsSetWorkerType())
+            {
+                context.Writer.WritePropertyName("WorkerType");
+                context.Writer.WriteStringValue(publicRequest.WorkerType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

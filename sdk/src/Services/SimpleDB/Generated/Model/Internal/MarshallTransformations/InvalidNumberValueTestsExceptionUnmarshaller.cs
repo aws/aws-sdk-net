@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidNumberValueTestsException operation
     /// </summary>  
-    public class InvalidNumberValueTestsExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidNumberValueTestsException, XmlUnmarshallerContext>
+    public class InvalidNumberValueTestsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidNumberValueTestsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

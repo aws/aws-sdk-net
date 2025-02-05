@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -64,47 +67,52 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field SipRuleId set");
             request.AddPathResource("{sipRuleId}", StringUtils.FromString(publicRequest.SipRuleId));
             request.ResourcePath = "/sip-rules/{sipRuleId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDisabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDisabled())
-                    {
-                        context.Writer.WritePropertyName("Disabled");
-                        context.Writer.Write(publicRequest.Disabled.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetTargetApplications())
-                    {
-                        context.Writer.WritePropertyName("TargetApplications");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetApplicationsListValue in publicRequest.TargetApplications)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SipRuleTargetApplicationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetApplicationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Disabled");
+                context.Writer.WriteBooleanValue(publicRequest.Disabled.Value);
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetTargetApplications())
+            {
+                context.Writer.WritePropertyName("TargetApplications");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetApplicationsListValue in publicRequest.TargetApplications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SipRuleTargetApplicationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetApplicationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

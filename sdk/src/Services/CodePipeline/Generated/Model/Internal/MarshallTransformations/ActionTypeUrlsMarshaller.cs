@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationUrl())
             {
                 context.Writer.WritePropertyName("configurationUrl");
-                context.Writer.Write(requestObject.ConfigurationUrl);
+                context.Writer.WriteStringValue(requestObject.ConfigurationUrl);
             }
 
             if(requestObject.IsSetEntityUrlTemplate())
             {
                 context.Writer.WritePropertyName("entityUrlTemplate");
-                context.Writer.Write(requestObject.EntityUrlTemplate);
+                context.Writer.WriteStringValue(requestObject.EntityUrlTemplate);
             }
 
             if(requestObject.IsSetExecutionUrlTemplate())
             {
                 context.Writer.WritePropertyName("executionUrlTemplate");
-                context.Writer.Write(requestObject.ExecutionUrlTemplate);
+                context.Writer.WriteStringValue(requestObject.ExecutionUrlTemplate);
             }
 
             if(requestObject.IsSetRevisionUrlTemplate())
             {
                 context.Writer.WritePropertyName("revisionUrlTemplate");
-                context.Writer.Write(requestObject.RevisionUrlTemplate);
+                context.Writer.WriteStringValue(requestObject.RevisionUrlTemplate);
             }
 
         }

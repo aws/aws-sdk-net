@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateColumn())
             {
                 context.Writer.WritePropertyName("CreateColumn");
-                context.Writer.Write(requestObject.CreateColumn.Value);
+                context.Writer.WriteBooleanValue(requestObject.CreateColumn.Value);
             }
 
             if(requestObject.IsSetDatetimeOptions())
             {
                 context.Writer.WritePropertyName("DatetimeOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatetimeOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatetimeOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Filter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVoutSpent())
             {
                 context.Writer.WritePropertyName("voutSpent");
-                context.Writer.Write(requestObject.VoutSpent.Value);
+                context.Writer.WriteBooleanValue(requestObject.VoutSpent.Value);
             }
 
         }

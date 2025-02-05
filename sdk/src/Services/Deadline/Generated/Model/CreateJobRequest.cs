@@ -166,9 +166,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
-        public int MaxWorkerCount
+        public int? MaxWorkerCount
         {
-            get { return this._maxWorkerCount.GetValueOrDefault(); }
+            get { return this._maxWorkerCount; }
             set { this._maxWorkerCount = value; }
         }
 

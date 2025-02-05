@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputChannelLevels())
             {
                 context.Writer.WritePropertyName("inputChannelLevels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputChannelLevelsListValue in requestObject.InputChannelLevels)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputChannelLevelMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputChannelLevelsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputChannel())
             {
                 context.Writer.WritePropertyName("outputChannel");
-                context.Writer.Write(requestObject.OutputChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.OutputChannel.Value);
             }
 
         }

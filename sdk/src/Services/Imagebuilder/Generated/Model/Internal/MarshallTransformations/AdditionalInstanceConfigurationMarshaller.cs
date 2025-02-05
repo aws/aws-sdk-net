@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSystemsManagerAgent())
             {
                 context.Writer.WritePropertyName("systemsManagerAgent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SystemsManagerAgentMarshaller.Instance;
                 marshaller.Marshall(requestObject.SystemsManagerAgent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserDataOverride())
             {
                 context.Writer.WritePropertyName("userDataOverride");
-                context.Writer.Write(requestObject.UserDataOverride);
+                context.Writer.WriteStringValue(requestObject.UserDataOverride);
             }
 
         }

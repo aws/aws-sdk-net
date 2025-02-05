@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationConfigurationData())
             {
                 context.Writer.WritePropertyName("associationConfigurationData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssociationConfigurationDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssociationConfigurationData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAssociationId())
             {
                 context.Writer.WritePropertyName("associationId");
-                context.Writer.Write(requestObject.AssociationId);
+                context.Writer.WriteStringValue(requestObject.AssociationId);
             }
 
             if(requestObject.IsSetAssociationType())
             {
                 context.Writer.WritePropertyName("associationType");
-                context.Writer.Write(requestObject.AssociationType);
+                context.Writer.WriteStringValue(requestObject.AssociationType);
             }
 
         }

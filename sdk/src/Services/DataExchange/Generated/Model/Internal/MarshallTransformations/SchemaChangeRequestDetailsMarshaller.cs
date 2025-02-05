@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChanges())
             {
                 context.Writer.WritePropertyName("Changes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChangesListValue in requestObject.Changes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SchemaChangeDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectChangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSchemaChangeAt())
             {
                 context.Writer.WritePropertyName("SchemaChangeAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SchemaChangeAt));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SchemaChangeAt));
             }
 
         }

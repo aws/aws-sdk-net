@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreamSelection Object
     /// </summary>  
-    public class StreamSelectionUnmarshaller : IUnmarshaller<StreamSelection, XmlUnmarshallerContext>, IUnmarshaller<StreamSelection, JsonUnmarshallerContext>
+    public class StreamSelectionUnmarshaller : IJsonUnmarshaller<StreamSelection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StreamSelection IUnmarshaller<StreamSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreamSelection Unmarshall(JsonUnmarshallerContext context)
+        public StreamSelection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StreamSelection unmarshalledObject = new StreamSelection();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("maxVideoBitsPerSecond", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxVideoBitsPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxVideoBitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minVideoBitsPerSecond", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinVideoBitsPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinVideoBitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

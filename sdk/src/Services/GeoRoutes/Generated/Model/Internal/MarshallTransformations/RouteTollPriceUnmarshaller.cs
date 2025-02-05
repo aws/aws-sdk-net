@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteTollPrice Object
     /// </summary>  
-    public class RouteTollPriceUnmarshaller : IUnmarshaller<RouteTollPrice, XmlUnmarshallerContext>, IUnmarshaller<RouteTollPrice, JsonUnmarshallerContext>
+    public class RouteTollPriceUnmarshaller : IJsonUnmarshaller<RouteTollPrice, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteTollPrice IUnmarshaller<RouteTollPrice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteTollPrice Unmarshall(JsonUnmarshallerContext context)
+        public RouteTollPrice Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteTollPrice unmarshalledObject = new RouteTollPrice();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Currency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Estimate", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Estimate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Estimate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PerDuration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PerDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Range", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Range = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Range = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RangeValue", targetDepth))
                 {
                     var unmarshaller = RouteTollPriceValueRangeUnmarshaller.Instance;
-                    unmarshalledObject.RangeValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RangeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

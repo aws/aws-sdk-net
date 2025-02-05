@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BrokerLogs Object
     /// </summary>  
-    public class BrokerLogsUnmarshaller : IUnmarshaller<BrokerLogs, XmlUnmarshallerContext>, IUnmarshaller<BrokerLogs, JsonUnmarshallerContext>
+    public class BrokerLogsUnmarshaller : IJsonUnmarshaller<BrokerLogs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BrokerLogs IUnmarshaller<BrokerLogs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BrokerLogs Unmarshall(JsonUnmarshallerContext context)
+        public BrokerLogs Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BrokerLogs unmarshalledObject = new BrokerLogs();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cloudWatchLogs", targetDepth))
                 {
                     var unmarshaller = CloudWatchLogsUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("firehose", targetDepth))
                 {
                     var unmarshaller = FirehoseUnmarshaller.Instance;
-                    unmarshalledObject.Firehose = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Firehose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3", targetDepth))
                 {
                     var unmarshaller = S3Unmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

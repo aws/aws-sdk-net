@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatastoreProperties Object
     /// </summary>  
-    public class DatastorePropertiesUnmarshaller : IUnmarshaller<DatastoreProperties, XmlUnmarshallerContext>, IUnmarshaller<DatastoreProperties, JsonUnmarshallerContext>
+    public class DatastorePropertiesUnmarshaller : IJsonUnmarshaller<DatastoreProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatastoreProperties IUnmarshaller<DatastoreProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatastoreProperties Unmarshall(JsonUnmarshallerContext context)
+        public DatastoreProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatastoreProperties unmarshalledObject = new DatastoreProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatastoreTypeVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatastoreTypeVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatastoreTypeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorCause", targetDepth))
                 {
                     var unmarshaller = ErrorCauseUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCause = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentityProviderConfiguration", targetDepth))
                 {
                     var unmarshaller = IdentityProviderConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProviderConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityProviderConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreloadDataConfig", targetDepth))
                 {
                     var unmarshaller = PreloadDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.PreloadDataConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreloadDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SseConfiguration", targetDepth))
                 {
                     var unmarshaller = SseConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SseConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

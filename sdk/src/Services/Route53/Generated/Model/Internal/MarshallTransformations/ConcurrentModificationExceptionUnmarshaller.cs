@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConcurrentModificationException operation
     /// </summary>  
-    public class ConcurrentModificationExceptionUnmarshaller : IErrorResponseUnmarshaller<ConcurrentModificationException, XmlUnmarshallerContext>
+    public class ConcurrentModificationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConcurrentModificationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

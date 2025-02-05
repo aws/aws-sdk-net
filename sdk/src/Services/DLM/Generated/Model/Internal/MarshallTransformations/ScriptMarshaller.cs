@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecuteOperationOnScriptFailure())
             {
                 context.Writer.WritePropertyName("ExecuteOperationOnScriptFailure");
-                context.Writer.Write(requestObject.ExecuteOperationOnScriptFailure.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExecuteOperationOnScriptFailure.Value);
             }
 
             if(requestObject.IsSetExecutionHandler())
             {
                 context.Writer.WritePropertyName("ExecutionHandler");
-                context.Writer.Write(requestObject.ExecutionHandler);
+                context.Writer.WriteStringValue(requestObject.ExecutionHandler);
             }
 
             if(requestObject.IsSetExecutionHandlerService())
             {
                 context.Writer.WritePropertyName("ExecutionHandlerService");
-                context.Writer.Write(requestObject.ExecutionHandlerService);
+                context.Writer.WriteStringValue(requestObject.ExecutionHandlerService);
             }
 
             if(requestObject.IsSetExecutionTimeout())
             {
                 context.Writer.WritePropertyName("ExecutionTimeout");
-                context.Writer.Write(requestObject.ExecutionTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.ExecutionTimeout.Value);
             }
 
             if(requestObject.IsSetMaximumRetryCount())
             {
                 context.Writer.WritePropertyName("MaximumRetryCount");
-                context.Writer.Write(requestObject.MaximumRetryCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumRetryCount.Value);
             }
 
             if(requestObject.IsSetStages())
             {
                 context.Writer.WritePropertyName("Stages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStagesListValue in requestObject.Stages)
                 {
-                        context.Writer.Write(requestObjectStagesListValue);
+                        context.Writer.WriteStringValue(requestObjectStagesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

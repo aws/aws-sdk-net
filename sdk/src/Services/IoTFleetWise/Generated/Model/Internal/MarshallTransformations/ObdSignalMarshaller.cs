@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");
-                context.Writer.Write(requestObject.BitMaskLength.Value);
+                context.Writer.WriteNumberValue(requestObject.BitMaskLength.Value);
             }
 
             if(requestObject.IsSetBitRightShift())
             {
                 context.Writer.WritePropertyName("bitRightShift");
-                context.Writer.Write(requestObject.BitRightShift.Value);
+                context.Writer.WriteNumberValue(requestObject.BitRightShift.Value);
             }
 
             if(requestObject.IsSetByteLength())
             {
                 context.Writer.WritePropertyName("byteLength");
-                context.Writer.Write(requestObject.ByteLength.Value);
+                context.Writer.WriteNumberValue(requestObject.ByteLength.Value);
             }
 
             if(requestObject.IsSetOffset())
@@ -71,24 +69,24 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("offset");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset.Value);
+                    context.Writer.WriteNumberValue(requestObject.Offset.Value);
                 }
             }
 
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetPidResponseLength())
             {
                 context.Writer.WritePropertyName("pidResponseLength");
-                context.Writer.Write(requestObject.PidResponseLength.Value);
+                context.Writer.WriteNumberValue(requestObject.PidResponseLength.Value);
             }
 
             if(requestObject.IsSetScaling())
@@ -96,24 +94,24 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scaling");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scaling.Value);
+                    context.Writer.WriteNumberValue(requestObject.Scaling.Value);
                 }
             }
 
             if(requestObject.IsSetServiceMode())
             {
                 context.Writer.WritePropertyName("serviceMode");
-                context.Writer.Write(requestObject.ServiceMode.Value);
+                context.Writer.WriteNumberValue(requestObject.ServiceMode.Value);
             }
 
             if(requestObject.IsSetStartByte())
             {
                 context.Writer.WritePropertyName("startByte");
-                context.Writer.Write(requestObject.StartByte.Value);
+                context.Writer.WriteNumberValue(requestObject.StartByte.Value);
             }
 
         }

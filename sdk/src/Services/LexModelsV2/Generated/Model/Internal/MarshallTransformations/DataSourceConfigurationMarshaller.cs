@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBedrockKnowledgeStoreConfiguration())
             {
                 context.Writer.WritePropertyName("bedrockKnowledgeStoreConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BedrockKnowledgeStoreConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BedrockKnowledgeStoreConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKendraConfiguration())
             {
                 context.Writer.WritePropertyName("kendraConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QnAKendraConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KendraConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpensearchConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpensearchConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpensearchConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

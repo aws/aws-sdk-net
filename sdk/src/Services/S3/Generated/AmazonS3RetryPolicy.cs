@@ -81,13 +81,7 @@ namespace Amazon.S3.Internal
             typeof(GetBucketWebsiteRequest),
             typeof(GetCORSConfigurationRequest),
             typeof(GetLifecycleConfigurationRequest),
-<<<<<<< HEAD
-            typeof(GetObjectRequest),
             typeof(GetObjectAclRequest),
-||||||| Commit version number update changes
-            typeof(GetObjectRequest),
-=======
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             typeof(GetObjectAttributesRequest),
             typeof(GetObjectLegalHoldRequest),
             typeof(GetObjectLockConfigurationRequest),
@@ -127,12 +121,8 @@ namespace Amazon.S3.Internal
             typeof(PutBucketWebsiteRequest),
             typeof(PutCORSConfigurationRequest),
             typeof(PutLifecycleConfigurationRequest),
-<<<<<<< HEAD
-            typeof(PutObjectAclRequest),
-||||||| Commit version number update changes
-=======
             typeof(PutObjectRequest),
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+            typeof(PutObjectAclRequest),
             typeof(PutObjectLegalHoldRequest),
             typeof(PutObjectLockConfigurationRequest),
             typeof(PutObjectRetentionRequest),

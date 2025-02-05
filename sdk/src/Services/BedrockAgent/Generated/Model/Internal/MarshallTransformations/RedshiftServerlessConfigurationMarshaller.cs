@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthConfiguration())
             {
                 context.Writer.WritePropertyName("authConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftServerlessAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkgroupArn())
             {
                 context.Writer.WritePropertyName("workgroupArn");
-                context.Writer.Write(requestObject.WorkgroupArn);
+                context.Writer.WriteStringValue(requestObject.WorkgroupArn);
             }
 
         }

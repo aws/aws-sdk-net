@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyCheckValueAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyCheckValueAlgorithm");
-                context.Writer.Write(requestObject.KeyCheckValueAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyCheckValueAlgorithm);
             }
 
             if(requestObject.IsSetWrappedKeyMaterial())
             {
                 context.Writer.WritePropertyName("WrappedKeyMaterial");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WrappedKeyMaterialMarshaller.Instance;
                 marshaller.Marshall(requestObject.WrappedKeyMaterial, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

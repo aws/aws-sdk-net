@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenHours Object
     /// </summary>  
-    public class OpenHoursUnmarshaller : IUnmarshaller<OpenHours, XmlUnmarshallerContext>, IUnmarshaller<OpenHours, JsonUnmarshallerContext>
+    public class OpenHoursUnmarshaller : IJsonUnmarshaller<OpenHours, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenHours IUnmarshaller<OpenHours, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenHours Unmarshall(JsonUnmarshallerContext context)
+        public OpenHours Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenHours unmarshalledObject = new OpenHours();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CUSTOM", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
-                    unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, JsonListUnmarshaller<OpenHoursRule,OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
+                    unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EMAIL", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
-                    unmarshalledObject.EMAIL = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, JsonListUnmarshaller<OpenHoursRule,OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
+                    unmarshalledObject.EMAIL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PUSH", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
-                    unmarshalledObject.PUSH = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, JsonListUnmarshaller<OpenHoursRule,OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
+                    unmarshalledObject.PUSH = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SMS", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
-                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, JsonListUnmarshaller<OpenHoursRule,OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
+                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VOICE", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
-                    unmarshalledObject.VOICE = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<OpenHoursRule>, StringUnmarshaller, JsonListUnmarshaller<OpenHoursRule,OpenHoursRuleUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<OpenHoursRule, OpenHoursRuleUnmarshaller>(OpenHoursRuleUnmarshaller.Instance));
+                    unmarshalledObject.VOICE = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

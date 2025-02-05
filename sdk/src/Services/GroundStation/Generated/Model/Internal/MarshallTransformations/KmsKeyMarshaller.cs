@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsAliasArn())
             {
                 context.Writer.WritePropertyName("kmsAliasArn");
-                context.Writer.Write(requestObject.KmsAliasArn);
+                context.Writer.WriteStringValue(requestObject.KmsAliasArn);
             }
 
             if(requestObject.IsSetKmsAliasName())
             {
                 context.Writer.WritePropertyName("kmsAliasName");
-                context.Writer.Write(requestObject.KmsAliasName);
+                context.Writer.WriteStringValue(requestObject.KmsAliasName);
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
         }

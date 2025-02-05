@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAthenaProperties())
             {
                 context.Writer.WritePropertyName("athenaProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AthenaPropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.AthenaProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlueProperties())
             {
                 context.Writer.WritePropertyName("glueProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GluePropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlueProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHyperPodProperties())
             {
                 context.Writer.WritePropertyName("hyperPodProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperPodPropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.HyperPodProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIamProperties())
             {
                 context.Writer.WritePropertyName("iamProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IamPropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.IamProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftProperties())
             {
                 context.Writer.WritePropertyName("redshiftProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftPropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSparkEmrProperties())
             {
                 context.Writer.WritePropertyName("sparkEmrProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SparkEmrPropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SparkEmrProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSparkGlueProperties())
             {
                 context.Writer.WritePropertyName("sparkGlueProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SparkGluePropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SparkGlueProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

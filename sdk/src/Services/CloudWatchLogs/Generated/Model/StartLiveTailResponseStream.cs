@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
@@ -48,8 +49,20 @@ namespace Amazon.CloudWatchLogs.Model
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
-            {"SessionStart", payload => new LiveTailSessionStartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
-            {"SessionUpdate", payload => new LiveTailSessionUpdateUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"SessionStart", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new LiveTailSessionStartUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"SessionUpdate", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new LiveTailSessionUpdateUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
@@ -57,8 +70,20 @@ namespace Amazon.CloudWatchLogs.Model
         protected override IDictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-            { "SessionStreamingException", payload => new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionStreamingExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "SessionTimeoutException", payload => new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionTimeoutExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+                    {"SessionStreamingException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionStreamingExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"SessionTimeoutException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionTimeoutExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

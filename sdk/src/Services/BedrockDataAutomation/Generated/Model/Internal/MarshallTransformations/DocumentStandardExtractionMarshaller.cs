@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundingBox())
             {
                 context.Writer.WritePropertyName("boundingBox");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentBoundingBoxMarshaller.Instance;
                 marshaller.Marshall(requestObject.BoundingBox, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGranularity())
             {
                 context.Writer.WritePropertyName("granularity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentExtractionGranularityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Granularity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

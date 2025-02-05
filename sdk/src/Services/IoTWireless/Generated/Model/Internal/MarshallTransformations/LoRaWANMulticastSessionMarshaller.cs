@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDlDr())
             {
                 context.Writer.WritePropertyName("DlDr");
-                context.Writer.Write(requestObject.DlDr.Value);
+                context.Writer.WriteNumberValue(requestObject.DlDr.Value);
             }
 
             if(requestObject.IsSetDlFreq())
             {
                 context.Writer.WritePropertyName("DlFreq");
-                context.Writer.Write(requestObject.DlFreq.Value);
+                context.Writer.WriteNumberValue(requestObject.DlFreq.Value);
             }
 
             if(requestObject.IsSetPingSlotPeriod())
             {
                 context.Writer.WritePropertyName("PingSlotPeriod");
-                context.Writer.Write(requestObject.PingSlotPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.PingSlotPeriod.Value);
             }
 
             if(requestObject.IsSetSessionStartTime())
             {
                 context.Writer.WritePropertyName("SessionStartTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SessionStartTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SessionStartTime));
             }
 
             if(requestObject.IsSetSessionTimeout())
             {
                 context.Writer.WritePropertyName("SessionTimeout");
-                context.Writer.Write(requestObject.SessionTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.SessionTimeout.Value);
             }
 
         }

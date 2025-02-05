@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DomainControllerLimitExceededException Object
     /// </summary>  
-    public class DomainControllerLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<DomainControllerLimitExceededException, JsonUnmarshallerContext>
+    public class DomainControllerLimitExceededExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<DomainControllerLimitExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public DomainControllerLimitExceededException Unmarshall(JsonUnmarshallerContext context)
+        public DomainControllerLimitExceededException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,22 +55,29 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public DomainControllerLimitExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public DomainControllerLimitExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             DomainControllerLimitExceededException unmarshalledObject = new DomainControllerLimitExceededException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("RequestId", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("RequestId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

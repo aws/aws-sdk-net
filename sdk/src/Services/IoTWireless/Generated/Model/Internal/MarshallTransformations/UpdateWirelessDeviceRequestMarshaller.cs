@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -64,54 +67,59 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-devices/{Id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDestinationName())
-                    {
-                        context.Writer.WritePropertyName("DestinationName");
-                        context.Writer.Write(publicRequest.DestinationName);
-                    }
-
-                    if(publicRequest.IsSetLoRaWAN())
-                    {
-                        context.Writer.WritePropertyName("LoRaWAN");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LoRaWANUpdateDeviceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LoRaWAN, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPositioning())
-                    {
-                        context.Writer.WritePropertyName("Positioning");
-                        context.Writer.Write(publicRequest.Positioning);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetDestinationName())
+            {
+                context.Writer.WritePropertyName("DestinationName");
+                context.Writer.WriteStringValue(publicRequest.DestinationName);
+            }
+
+            if(publicRequest.IsSetLoRaWAN())
+            {
+                context.Writer.WritePropertyName("LoRaWAN");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LoRaWANUpdateDeviceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoRaWAN, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteStringValue(publicRequest.Positioning);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

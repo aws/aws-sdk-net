@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnections())
             {
                 context.Writer.WritePropertyName("Connections");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConnectionsListValue in requestObject.Connections)
                 {
-                        context.Writer.Write(requestObjectConnectionsListValue);
+                        context.Writer.WriteStringValue(requestObjectConnectionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 {
@@ -47,147 +47,147 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetRecommendationResponse response = new GetRecommendationResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccountId = unmarshaller.Unmarshall(context);
+                    response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("actionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActionType = unmarshaller.Unmarshall(context);
+                    response.ActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("costCalculationLookbackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.CostCalculationLookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                    response.CostCalculationLookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currencyCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CurrencyCode = unmarshaller.Unmarshall(context);
+                    response.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentResourceDetails", targetDepth))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;
-                    response.CurrentResourceDetails = unmarshaller.Unmarshall(context);
+                    response.CurrentResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CurrentResourceType = unmarshaller.Unmarshall(context);
+                    response.CurrentResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedMonthlyCost", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.EstimatedMonthlyCost = unmarshaller.Unmarshall(context);
+                    response.EstimatedMonthlyCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedMonthlySavings", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                    response.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedSavingsOverCostCalculationLookbackPeriod", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.EstimatedSavingsOverCostCalculationLookbackPeriod = unmarshaller.Unmarshall(context);
+                    response.EstimatedSavingsOverCostCalculationLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedSavingsPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.EstimatedSavingsPercentage = unmarshaller.Unmarshall(context);
+                    response.EstimatedSavingsPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("implementationEffort", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ImplementationEffort = unmarshaller.Unmarshall(context);
+                    response.ImplementationEffort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                    response.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommendationId = unmarshaller.Unmarshall(context);
+                    response.RecommendationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendationLookbackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.RecommendationLookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                    response.RecommendationLookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendedResourceDetails", targetDepth))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;
-                    response.RecommendedResourceDetails = unmarshaller.Unmarshall(context);
+                    response.RecommendedResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendedResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommendedResourceType = unmarshaller.Unmarshall(context);
+                    response.RecommendedResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
+                    response.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceArn = unmarshaller.Unmarshall(context);
+                    response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceId = unmarshaller.Unmarshall(context);
+                    response.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("restartNeeded", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.RestartNeeded = unmarshaller.Unmarshall(context);
+                    response.RestartNeeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rollbackPossible", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.RollbackPossible = unmarshaller.Unmarshall(context);
+                    response.RollbackPossible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Source = unmarshaller.Unmarshall(context);
+                    response.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -204,34 +204,36 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCostOptimizationHubException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

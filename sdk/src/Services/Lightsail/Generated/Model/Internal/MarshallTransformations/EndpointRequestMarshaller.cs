@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerName())
             {
                 context.Writer.WritePropertyName("containerName");
-                context.Writer.Write(requestObject.ContainerName);
+                context.Writer.WriteStringValue(requestObject.ContainerName);
             }
 
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("containerPort");
-                context.Writer.Write(requestObject.ContainerPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
             }
 
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("healthCheck");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerServiceHealthCheckConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheck, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

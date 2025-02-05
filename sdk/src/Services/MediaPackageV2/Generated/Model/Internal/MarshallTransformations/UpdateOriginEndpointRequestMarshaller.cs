@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -70,107 +73,112 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageV2Exception("Request object does not have required field OriginEndpointName set");
             request.AddPathResource("{OriginEndpointName}", StringUtils.FromString(publicRequest.OriginEndpointName));
             request.ResourcePath = "/channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContainerType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContainerType())
-                    {
-                        context.Writer.WritePropertyName("ContainerType");
-                        context.Writer.Write(publicRequest.ContainerType);
-                    }
-
-                    if(publicRequest.IsSetDashManifests())
-                    {
-                        context.Writer.WritePropertyName("DashManifests");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDashManifestsListValue in publicRequest.DashManifests)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CreateDashManifestConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDashManifestsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetForceEndpointErrorConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ForceEndpointErrorConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ForceEndpointErrorConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ForceEndpointErrorConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHlsManifests())
-                    {
-                        context.Writer.WritePropertyName("HlsManifests");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestHlsManifestsListValue in publicRequest.HlsManifests)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CreateHlsManifestConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestHlsManifestsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLowLatencyHlsManifests())
-                    {
-                        context.Writer.WritePropertyName("LowLatencyHlsManifests");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLowLatencyHlsManifestsListValue in publicRequest.LowLatencyHlsManifests)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CreateLowLatencyHlsManifestConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLowLatencyHlsManifestsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSegment())
-                    {
-                        context.Writer.WritePropertyName("Segment");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SegmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Segment, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartoverWindowSeconds())
-                    {
-                        context.Writer.WritePropertyName("StartoverWindowSeconds");
-                        context.Writer.Write(publicRequest.StartoverWindowSeconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ContainerType");
+                context.Writer.WriteStringValue(publicRequest.ContainerType);
             }
+
+            if(publicRequest.IsSetDashManifests())
+            {
+                context.Writer.WritePropertyName("DashManifests");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDashManifestsListValue in publicRequest.DashManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateDashManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDashManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetForceEndpointErrorConfiguration())
+            {
+                context.Writer.WritePropertyName("ForceEndpointErrorConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ForceEndpointErrorConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ForceEndpointErrorConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHlsManifests())
+            {
+                context.Writer.WritePropertyName("HlsManifests");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestHlsManifestsListValue in publicRequest.HlsManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateHlsManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestHlsManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLowLatencyHlsManifests())
+            {
+                context.Writer.WritePropertyName("LowLatencyHlsManifests");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLowLatencyHlsManifestsListValue in publicRequest.LowLatencyHlsManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateLowLatencyHlsManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLowLatencyHlsManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSegment())
+            {
+                context.Writer.WritePropertyName("Segment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SegmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Segment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartoverWindowSeconds())
+            {
+                context.Writer.WritePropertyName("StartoverWindowSeconds");
+                context.Writer.WriteNumberValue(publicRequest.StartoverWindowSeconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetETag()) 

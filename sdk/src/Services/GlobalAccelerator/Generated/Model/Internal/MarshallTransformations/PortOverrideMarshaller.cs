@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointPort())
             {
                 context.Writer.WritePropertyName("EndpointPort");
-                context.Writer.Write(requestObject.EndpointPort.Value);
+                context.Writer.WriteNumberValue(requestObject.EndpointPort.Value);
             }
 
             if(requestObject.IsSetListenerPort())
             {
                 context.Writer.WritePropertyName("ListenerPort");
-                context.Writer.Write(requestObject.ListenerPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ListenerPort.Value);
             }
 
         }

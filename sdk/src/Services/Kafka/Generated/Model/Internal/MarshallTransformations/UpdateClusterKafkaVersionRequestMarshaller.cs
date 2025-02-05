@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -64,42 +67,47 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 throw new AmazonKafkaException("Request object does not have required field ClusterArn set");
             request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
             request.ResourcePath = "/v1/clusters/{clusterArn}/version";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationInfo())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationInfo())
-                    {
-                        context.Writer.WritePropertyName("configurationInfo");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("configurationInfo");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ConfigurationInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConfigurationInfo, context);
+                var marshaller = ConfigurationInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfigurationInfo, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCurrentVersion())
-                    {
-                        context.Writer.WritePropertyName("currentVersion");
-                        context.Writer.Write(publicRequest.CurrentVersion);
-                    }
-
-                    if(publicRequest.IsSetTargetKafkaVersion())
-                    {
-                        context.Writer.WritePropertyName("targetKafkaVersion");
-                        context.Writer.Write(publicRequest.TargetKafkaVersion);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCurrentVersion())
+            {
+                context.Writer.WritePropertyName("currentVersion");
+                context.Writer.WriteStringValue(publicRequest.CurrentVersion);
+            }
+
+            if(publicRequest.IsSetTargetKafkaVersion())
+            {
+                context.Writer.WritePropertyName("targetKafkaVersion");
+                context.Writer.WriteStringValue(publicRequest.TargetKafkaVersion);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

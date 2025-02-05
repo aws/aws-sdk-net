@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -70,61 +73,66 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field UserName set");
             request.AddPathResource("{UserName}", StringUtils.FromString(publicRequest.UserName));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomFederationProviderUrl())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomFederationProviderUrl())
-                    {
-                        context.Writer.WritePropertyName("CustomFederationProviderUrl");
-                        context.Writer.Write(publicRequest.CustomFederationProviderUrl);
-                    }
-
-                    if(publicRequest.IsSetCustomPermissionsName())
-                    {
-                        context.Writer.WritePropertyName("CustomPermissionsName");
-                        context.Writer.Write(publicRequest.CustomPermissionsName);
-                    }
-
-                    if(publicRequest.IsSetEmail())
-                    {
-                        context.Writer.WritePropertyName("Email");
-                        context.Writer.Write(publicRequest.Email);
-                    }
-
-                    if(publicRequest.IsSetExternalLoginFederationProviderType())
-                    {
-                        context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
-                        context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
-                    }
-
-                    if(publicRequest.IsSetExternalLoginId())
-                    {
-                        context.Writer.WritePropertyName("ExternalLoginId");
-                        context.Writer.Write(publicRequest.ExternalLoginId);
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    if(publicRequest.IsSetUnapplyCustomPermissions())
-                    {
-                        context.Writer.WritePropertyName("UnapplyCustomPermissions");
-                        context.Writer.Write(publicRequest.UnapplyCustomPermissions.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CustomFederationProviderUrl");
+                context.Writer.WriteStringValue(publicRequest.CustomFederationProviderUrl);
             }
+
+            if(publicRequest.IsSetCustomPermissionsName())
+            {
+                context.Writer.WritePropertyName("CustomPermissionsName");
+                context.Writer.WriteStringValue(publicRequest.CustomPermissionsName);
+            }
+
+            if(publicRequest.IsSetEmail())
+            {
+                context.Writer.WritePropertyName("Email");
+                context.Writer.WriteStringValue(publicRequest.Email);
+            }
+
+            if(publicRequest.IsSetExternalLoginFederationProviderType())
+            {
+                context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
+                context.Writer.WriteStringValue(publicRequest.ExternalLoginFederationProviderType);
+            }
+
+            if(publicRequest.IsSetExternalLoginId())
+            {
+                context.Writer.WritePropertyName("ExternalLoginId");
+                context.Writer.WriteStringValue(publicRequest.ExternalLoginId);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetUnapplyCustomPermissions())
+            {
+                context.Writer.WritePropertyName("UnapplyCustomPermissions");
+                context.Writer.WriteBooleanValue(publicRequest.UnapplyCustomPermissions.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

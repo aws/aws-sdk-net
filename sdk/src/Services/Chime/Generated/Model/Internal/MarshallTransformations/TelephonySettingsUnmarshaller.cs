@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TelephonySettings Object
     /// </summary>  
-    public class TelephonySettingsUnmarshaller : IUnmarshaller<TelephonySettings, XmlUnmarshallerContext>, IUnmarshaller<TelephonySettings, JsonUnmarshallerContext>
+    public class TelephonySettingsUnmarshaller : IJsonUnmarshaller<TelephonySettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TelephonySettings IUnmarshaller<TelephonySettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TelephonySettings Unmarshall(JsonUnmarshallerContext context)
+        public TelephonySettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TelephonySettings unmarshalledObject = new TelephonySettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("InboundCalling", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InboundCalling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InboundCalling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutboundCalling", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.OutboundCalling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutboundCalling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SMS", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SMS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AppUnitError Object
     /// </summary>  
-    public class AppUnitErrorUnmarshaller : IUnmarshaller<AppUnitError, XmlUnmarshallerContext>, IUnmarshaller<AppUnitError, JsonUnmarshallerContext>
+    public class AppUnitErrorUnmarshaller : IJsonUnmarshaller<AppUnitError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AppUnitError IUnmarshaller<AppUnitError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AppUnitError Unmarshall(JsonUnmarshallerContext context)
+        public AppUnitError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AppUnitError unmarshalledObject = new AppUnitError();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appUnitErrorCategory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppUnitErrorCategory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppUnitErrorCategory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

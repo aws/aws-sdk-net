@@ -72,9 +72,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the import job was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedTimestamp
+        public DateTime? CompletedTimestamp
         {
-            get { return this._completedTimestamp.GetValueOrDefault(); }
+            get { return this._completedTimestamp; }
             set { this._completedTimestamp = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.MailManager.Model
         /// The number of input addresses that failed to be imported into the address list.
         /// </para>
         /// </summary>
-        public int FailedItemsCount
+        public int? FailedItemsCount
         {
-            get { return this._failedItemsCount.GetValueOrDefault(); }
+            get { return this._failedItemsCount; }
             set { this._failedItemsCount = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.MailManager.Model
         /// The number of input addresses successfully imported into the address list.
         /// </para>
         /// </summary>
-        public int ImportedItemsCount
+        public int? ImportedItemsCount
         {
-            get { return this._importedItemsCount.GetValueOrDefault(); }
+            get { return this._importedItemsCount; }
             set { this._importedItemsCount = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the import job was started.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

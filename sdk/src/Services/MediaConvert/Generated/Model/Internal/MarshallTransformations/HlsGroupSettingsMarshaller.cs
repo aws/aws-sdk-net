@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,143 +49,143 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalManifests())
             {
                 context.Writer.WritePropertyName("additionalManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalManifestsListValue in requestObject.AdditionalManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HlsAdditionalManifestMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdMarkersListValue in requestObject.AdMarkers)
                 {
-                        context.Writer.Write(requestObjectAdMarkersListValue);
+                        context.Writer.WriteStringValue(requestObjectAdMarkersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAudioOnlyHeader())
             {
                 context.Writer.WritePropertyName("audioOnlyHeader");
-                context.Writer.Write(requestObject.AudioOnlyHeader);
+                context.Writer.WriteStringValue(requestObject.AudioOnlyHeader);
             }
 
             if(requestObject.IsSetBaseUrl())
             {
                 context.Writer.WritePropertyName("baseUrl");
-                context.Writer.Write(requestObject.BaseUrl);
+                context.Writer.WriteStringValue(requestObject.BaseUrl);
             }
 
             if(requestObject.IsSetCaptionLanguageMappings())
             {
                 context.Writer.WritePropertyName("captionLanguageMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HlsCaptionLanguageMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionLanguageSetting())
             {
                 context.Writer.WritePropertyName("captionLanguageSetting");
-                context.Writer.Write(requestObject.CaptionLanguageSetting);
+                context.Writer.WriteStringValue(requestObject.CaptionLanguageSetting);
             }
 
             if(requestObject.IsSetCaptionSegmentLengthControl())
             {
                 context.Writer.WritePropertyName("captionSegmentLengthControl");
-                context.Writer.Write(requestObject.CaptionSegmentLengthControl);
+                context.Writer.WriteStringValue(requestObject.CaptionSegmentLengthControl);
             }
 
             if(requestObject.IsSetClientCache())
             {
                 context.Writer.WritePropertyName("clientCache");
-                context.Writer.Write(requestObject.ClientCache);
+                context.Writer.WriteStringValue(requestObject.ClientCache);
             }
 
             if(requestObject.IsSetCodecSpecification())
             {
                 context.Writer.WritePropertyName("codecSpecification");
-                context.Writer.Write(requestObject.CodecSpecification);
+                context.Writer.WriteStringValue(requestObject.CodecSpecification);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetDestinationSettings())
             {
                 context.Writer.WritePropertyName("destinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDirectoryStructure())
             {
                 context.Writer.WritePropertyName("directoryStructure");
-                context.Writer.Write(requestObject.DirectoryStructure);
+                context.Writer.WriteStringValue(requestObject.DirectoryStructure);
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsEncryptionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageBasedTrickPlay())
             {
                 context.Writer.WritePropertyName("imageBasedTrickPlay");
-                context.Writer.Write(requestObject.ImageBasedTrickPlay);
+                context.Writer.WriteStringValue(requestObject.ImageBasedTrickPlay);
             }
 
             if(requestObject.IsSetImageBasedTrickPlaySettings())
             {
                 context.Writer.WritePropertyName("imageBasedTrickPlaySettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsImageBasedTrickPlaySettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageBasedTrickPlaySettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestCompression())
             {
                 context.Writer.WritePropertyName("manifestCompression");
-                context.Writer.Write(requestObject.ManifestCompression);
+                context.Writer.WriteStringValue(requestObject.ManifestCompression);
             }
 
             if(requestObject.IsSetManifestDurationFormat())
             {
                 context.Writer.WritePropertyName("manifestDurationFormat");
-                context.Writer.Write(requestObject.ManifestDurationFormat);
+                context.Writer.WriteStringValue(requestObject.ManifestDurationFormat);
             }
 
             if(requestObject.IsSetMinFinalSegmentLength())
@@ -195,96 +193,96 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("minFinalSegmentLength");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinFinalSegmentLength.Value);
                 }
             }
 
             if(requestObject.IsSetMinSegmentLength())
             {
                 context.Writer.WritePropertyName("minSegmentLength");
-                context.Writer.Write(requestObject.MinSegmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MinSegmentLength.Value);
             }
 
             if(requestObject.IsSetOutputSelection())
             {
                 context.Writer.WritePropertyName("outputSelection");
-                context.Writer.Write(requestObject.OutputSelection);
+                context.Writer.WriteStringValue(requestObject.OutputSelection);
             }
 
             if(requestObject.IsSetProgramDateTime())
             {
                 context.Writer.WritePropertyName("programDateTime");
-                context.Writer.Write(requestObject.ProgramDateTime);
+                context.Writer.WriteStringValue(requestObject.ProgramDateTime);
             }
 
             if(requestObject.IsSetProgramDateTimePeriod())
             {
                 context.Writer.WritePropertyName("programDateTimePeriod");
-                context.Writer.Write(requestObject.ProgramDateTimePeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramDateTimePeriod.Value);
             }
 
             if(requestObject.IsSetProgressiveWriteHlsManifest())
             {
                 context.Writer.WritePropertyName("progressiveWriteHlsManifest");
-                context.Writer.Write(requestObject.ProgressiveWriteHlsManifest);
+                context.Writer.WriteStringValue(requestObject.ProgressiveWriteHlsManifest);
             }
 
             if(requestObject.IsSetSegmentControl())
             {
                 context.Writer.WritePropertyName("segmentControl");
-                context.Writer.Write(requestObject.SegmentControl);
+                context.Writer.WriteStringValue(requestObject.SegmentControl);
             }
 
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentLengthControl())
             {
                 context.Writer.WritePropertyName("segmentLengthControl");
-                context.Writer.Write(requestObject.SegmentLengthControl);
+                context.Writer.WriteStringValue(requestObject.SegmentLengthControl);
             }
 
             if(requestObject.IsSetSegmentsPerSubdirectory())
             {
                 context.Writer.WritePropertyName("segmentsPerSubdirectory");
-                context.Writer.Write(requestObject.SegmentsPerSubdirectory.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsPerSubdirectory.Value);
             }
 
             if(requestObject.IsSetStreamInfResolution())
             {
                 context.Writer.WritePropertyName("streamInfResolution");
-                context.Writer.Write(requestObject.StreamInfResolution);
+                context.Writer.WriteStringValue(requestObject.StreamInfResolution);
             }
 
             if(requestObject.IsSetTargetDurationCompatibilityMode())
             {
                 context.Writer.WritePropertyName("targetDurationCompatibilityMode");
-                context.Writer.Write(requestObject.TargetDurationCompatibilityMode);
+                context.Writer.WriteStringValue(requestObject.TargetDurationCompatibilityMode);
             }
 
             if(requestObject.IsSetTimedMetadataId3Frame())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Frame");
-                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
             }
 
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
             }
 
             if(requestObject.IsSetTimestampDeltaMilliseconds())
             {
                 context.Writer.WritePropertyName("timestampDeltaMilliseconds");
-                context.Writer.Write(requestObject.TimestampDeltaMilliseconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimestampDeltaMilliseconds.Value);
             }
 
         }

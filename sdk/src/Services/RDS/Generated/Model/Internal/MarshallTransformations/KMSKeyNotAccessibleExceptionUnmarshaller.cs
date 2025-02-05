@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KMSKeyNotAccessibleException operation
     /// </summary>  
-    public class KMSKeyNotAccessibleExceptionUnmarshaller : IErrorResponseUnmarshaller<KMSKeyNotAccessibleException, XmlUnmarshallerContext>
+    public class KMSKeyNotAccessibleExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KMSKeyNotAccessibleException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

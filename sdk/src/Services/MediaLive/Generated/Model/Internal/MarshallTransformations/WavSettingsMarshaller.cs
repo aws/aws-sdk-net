@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bitDepth");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.BitDepth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BitDepth.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BitDepth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BitDepth.Value);
+                    context.Writer.WriteNumberValue(requestObject.BitDepth.Value);
                 }
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetSampleRate())
@@ -72,11 +70,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("sampleRate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SampleRate.Value);
+                    context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
                 }
             }
 

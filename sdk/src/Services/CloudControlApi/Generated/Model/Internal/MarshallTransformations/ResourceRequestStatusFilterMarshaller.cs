@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOperations())
             {
                 context.Writer.WritePropertyName("Operations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperationsListValue in requestObject.Operations)
                 {
-                        context.Writer.Write(requestObjectOperationsListValue);
+                        context.Writer.WriteStringValue(requestObjectOperationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOperationStatuses())
             {
                 context.Writer.WritePropertyName("OperationStatuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperationStatusesListValue in requestObject.OperationStatuses)
                 {
-                        context.Writer.Write(requestObjectOperationStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectOperationStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

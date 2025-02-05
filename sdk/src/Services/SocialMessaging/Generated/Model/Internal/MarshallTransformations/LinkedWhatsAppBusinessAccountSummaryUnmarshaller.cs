@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LinkedWhatsAppBusinessAccountSummary Object
     /// </summary>  
-    public class LinkedWhatsAppBusinessAccountSummaryUnmarshaller : IUnmarshaller<LinkedWhatsAppBusinessAccountSummary, XmlUnmarshallerContext>, IUnmarshaller<LinkedWhatsAppBusinessAccountSummary, JsonUnmarshallerContext>
+    public class LinkedWhatsAppBusinessAccountSummaryUnmarshaller : IJsonUnmarshaller<LinkedWhatsAppBusinessAccountSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LinkedWhatsAppBusinessAccountSummary IUnmarshaller<LinkedWhatsAppBusinessAccountSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LinkedWhatsAppBusinessAccountSummary Unmarshall(JsonUnmarshallerContext context)
+        public LinkedWhatsAppBusinessAccountSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LinkedWhatsAppBusinessAccountSummary unmarshalledObject = new LinkedWhatsAppBusinessAccountSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eventDestinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<WhatsAppBusinessAccountEventDestination, WhatsAppBusinessAccountEventDestinationUnmarshaller>(WhatsAppBusinessAccountEventDestinationUnmarshaller.Instance);
-                    unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<WhatsAppBusinessAccountEventDestination, WhatsAppBusinessAccountEventDestinationUnmarshaller>(WhatsAppBusinessAccountEventDestinationUnmarshaller.Instance);
+                    unmarshalledObject.EventDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("linkDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LinkDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LinkDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("registrationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("wabaId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WabaId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WabaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("wabaName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WabaName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WabaName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

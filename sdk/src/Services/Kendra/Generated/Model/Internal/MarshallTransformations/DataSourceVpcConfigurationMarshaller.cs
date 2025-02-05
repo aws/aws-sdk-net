@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

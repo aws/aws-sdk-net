@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddOrRunAnomalyDetectionForAnalyses())
             {
                 context.Writer.WritePropertyName("AddOrRunAnomalyDetectionForAnalyses");
-                context.Writer.Write(requestObject.AddOrRunAnomalyDetectionForAnalyses);
+                context.Writer.WriteStringValue(requestObject.AddOrRunAnomalyDetectionForAnalyses);
             }
 
             if(requestObject.IsSetCreateAndUpdateDashboardEmailReports())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateDashboardEmailReports");
-                context.Writer.Write(requestObject.CreateAndUpdateDashboardEmailReports);
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateDashboardEmailReports);
             }
 
             if(requestObject.IsSetCreateAndUpdateDatasets())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateDatasets");
-                context.Writer.Write(requestObject.CreateAndUpdateDatasets);
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateDatasets);
             }
 
             if(requestObject.IsSetCreateAndUpdateDataSources())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateDataSources");
-                context.Writer.Write(requestObject.CreateAndUpdateDataSources);
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateDataSources);
             }
 
             if(requestObject.IsSetCreateAndUpdateThemes())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateThemes");
-                context.Writer.Write(requestObject.CreateAndUpdateThemes);
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateThemes);
             }
 
             if(requestObject.IsSetCreateAndUpdateThresholdAlerts())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateThresholdAlerts");
-                context.Writer.Write(requestObject.CreateAndUpdateThresholdAlerts);
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateThresholdAlerts);
             }
 
             if(requestObject.IsSetCreateSharedFolders())
             {
                 context.Writer.WritePropertyName("CreateSharedFolders");
-                context.Writer.Write(requestObject.CreateSharedFolders);
+                context.Writer.WriteStringValue(requestObject.CreateSharedFolders);
             }
 
             if(requestObject.IsSetCreateSPICEDataset())
             {
                 context.Writer.WritePropertyName("CreateSPICEDataset");
-                context.Writer.Write(requestObject.CreateSPICEDataset);
+                context.Writer.WriteStringValue(requestObject.CreateSPICEDataset);
             }
 
             if(requestObject.IsSetExportToCsv())
             {
                 context.Writer.WritePropertyName("ExportToCsv");
-                context.Writer.Write(requestObject.ExportToCsv);
+                context.Writer.WriteStringValue(requestObject.ExportToCsv);
             }
 
             if(requestObject.IsSetExportToExcel())
             {
                 context.Writer.WritePropertyName("ExportToExcel");
-                context.Writer.Write(requestObject.ExportToExcel);
+                context.Writer.WriteStringValue(requestObject.ExportToExcel);
             }
 
             if(requestObject.IsSetRenameSharedFolders())
             {
                 context.Writer.WritePropertyName("RenameSharedFolders");
-                context.Writer.Write(requestObject.RenameSharedFolders);
+                context.Writer.WriteStringValue(requestObject.RenameSharedFolders);
             }
 
             if(requestObject.IsSetShareAnalyses())
             {
                 context.Writer.WritePropertyName("ShareAnalyses");
-                context.Writer.Write(requestObject.ShareAnalyses);
+                context.Writer.WriteStringValue(requestObject.ShareAnalyses);
             }
 
             if(requestObject.IsSetShareDashboards())
             {
                 context.Writer.WritePropertyName("ShareDashboards");
-                context.Writer.Write(requestObject.ShareDashboards);
+                context.Writer.WriteStringValue(requestObject.ShareDashboards);
             }
 
             if(requestObject.IsSetShareDatasets())
             {
                 context.Writer.WritePropertyName("ShareDatasets");
-                context.Writer.Write(requestObject.ShareDatasets);
+                context.Writer.WriteStringValue(requestObject.ShareDatasets);
             }
 
             if(requestObject.IsSetShareDataSources())
             {
                 context.Writer.WritePropertyName("ShareDataSources");
-                context.Writer.Write(requestObject.ShareDataSources);
+                context.Writer.WriteStringValue(requestObject.ShareDataSources);
             }
 
             if(requestObject.IsSetSubscribeDashboardEmailReports())
             {
                 context.Writer.WritePropertyName("SubscribeDashboardEmailReports");
-                context.Writer.Write(requestObject.SubscribeDashboardEmailReports);
+                context.Writer.WriteStringValue(requestObject.SubscribeDashboardEmailReports);
             }
 
             if(requestObject.IsSetViewAccountSPICECapacity())
             {
                 context.Writer.WritePropertyName("ViewAccountSPICECapacity");
-                context.Writer.Write(requestObject.ViewAccountSPICECapacity);
+                context.Writer.WriteStringValue(requestObject.ViewAccountSPICECapacity);
             }
 
         }

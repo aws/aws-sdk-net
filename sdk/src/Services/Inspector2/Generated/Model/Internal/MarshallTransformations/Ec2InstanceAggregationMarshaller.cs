@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmis())
             {
                 context.Writer.WritePropertyName("amis");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAmisListValue in requestObject.Amis)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectAmisListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceIds())
             {
                 context.Writer.WritePropertyName("instanceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceIdsListValue in requestObject.InstanceIds)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceIdsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceTags())
             {
                 context.Writer.WritePropertyName("instanceTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceTagsListValue in requestObject.InstanceTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MapFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOperatingSystems())
             {
                 context.Writer.WritePropertyName("operatingSystems");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperatingSystemsListValue in requestObject.OperatingSystems)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectOperatingSystemsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("sortBy");
-                context.Writer.Write(requestObject.SortBy);
+                context.Writer.WriteStringValue(requestObject.SortBy);
             }
 
             if(requestObject.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("sortOrder");
-                context.Writer.Write(requestObject.SortOrder);
+                context.Writer.WriteStringValue(requestObject.SortOrder);
             }
 
         }

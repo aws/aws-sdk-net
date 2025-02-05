@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -67,42 +70,47 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2019-09-25/functions/{FunctionName}/event-invoke-config";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinationConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinationConfig())
-                    {
-                        context.Writer.WritePropertyName("DestinationConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DestinationConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = DestinationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationConfig, context);
+                var marshaller = DestinationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaximumEventAgeInSeconds())
-                    {
-                        context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
-                        context.Writer.Write(publicRequest.MaximumEventAgeInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetMaximumRetryAttempts())
-                    {
-                        context.Writer.WritePropertyName("MaximumRetryAttempts");
-                        context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMaximumEventAgeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.MaximumEventAgeInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetMaximumRetryAttempts())
+            {
+                context.Writer.WritePropertyName("MaximumRetryAttempts");
+                context.Writer.WriteNumberValue(publicRequest.MaximumRetryAttempts.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
-                context.Writer.Write(requestObject.CrawlAttachments.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlAttachments.Value);
             }
 
             if(requestObject.IsSetDocumentDataFieldName())
             {
                 context.Writer.WritePropertyName("DocumentDataFieldName");
-                context.Writer.Write(requestObject.DocumentDataFieldName);
+                context.Writer.WriteStringValue(requestObject.DocumentDataFieldName);
             }
 
             if(requestObject.IsSetDocumentTitleFieldName())
             {
                 context.Writer.WritePropertyName("DocumentTitleFieldName");
-                context.Writer.Write(requestObject.DocumentTitleFieldName);
+                context.Writer.WriteStringValue(requestObject.DocumentTitleFieldName);
             }
 
             if(requestObject.IsSetExcludeAttachmentFilePatterns())
             {
                 context.Writer.WritePropertyName("ExcludeAttachmentFilePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeAttachmentFilePatternsListValue in requestObject.ExcludeAttachmentFilePatterns)
                 {
-                        context.Writer.Write(requestObjectExcludeAttachmentFilePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeAttachmentFilePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldMappingsListValue in requestObject.FieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeAttachmentFilePatterns())
             {
                 context.Writer.WritePropertyName("IncludeAttachmentFilePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeAttachmentFilePatternsListValue in requestObject.IncludeAttachmentFilePatterns)
                 {
-                        context.Writer.Write(requestObjectIncludeAttachmentFilePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeAttachmentFilePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

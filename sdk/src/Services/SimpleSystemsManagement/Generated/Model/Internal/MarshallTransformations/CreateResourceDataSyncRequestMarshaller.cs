@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,53 +66,58 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetS3Destination())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetS3Destination())
-                    {
-                        context.Writer.WritePropertyName("S3Destination");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("S3Destination");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ResourceDataSyncS3DestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3Destination, context);
+                var marshaller = ResourceDataSyncS3DestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3Destination, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSyncName())
-                    {
-                        context.Writer.WritePropertyName("SyncName");
-                        context.Writer.Write(publicRequest.SyncName);
-                    }
-
-                    if(publicRequest.IsSetSyncSource())
-                    {
-                        context.Writer.WritePropertyName("SyncSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceDataSyncSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SyncSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSyncType())
-                    {
-                        context.Writer.WritePropertyName("SyncType");
-                        context.Writer.Write(publicRequest.SyncType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetSyncName())
+            {
+                context.Writer.WritePropertyName("SyncName");
+                context.Writer.WriteStringValue(publicRequest.SyncName);
+            }
+
+            if(publicRequest.IsSetSyncSource())
+            {
+                context.Writer.WritePropertyName("SyncSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceDataSyncSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SyncSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSyncType())
+            {
+                context.Writer.WritePropertyName("SyncType");
+                context.Writer.WriteStringValue(publicRequest.SyncType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHiveJsonSerDe())
             {
                 context.Writer.WritePropertyName("HiveJsonSerDe");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HiveJsonSerDeMarshaller.Instance;
                 marshaller.Marshall(requestObject.HiveJsonSerDe, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpenXJsonSerDe())
             {
                 context.Writer.WritePropertyName("OpenXJsonSerDe");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenXJsonSerDeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenXJsonSerDe, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -105,9 +105,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

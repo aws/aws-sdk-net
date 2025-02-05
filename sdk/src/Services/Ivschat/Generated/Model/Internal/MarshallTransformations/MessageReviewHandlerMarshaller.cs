@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFallbackResult())
             {
                 context.Writer.WritePropertyName("fallbackResult");
-                context.Writer.Write(requestObject.FallbackResult);
+                context.Writer.WriteStringValue(requestObject.FallbackResult);
             }
 
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("uri");
-                context.Writer.Write(requestObject.Uri);
+                context.Writer.WriteStringValue(requestObject.Uri);
             }
 
         }

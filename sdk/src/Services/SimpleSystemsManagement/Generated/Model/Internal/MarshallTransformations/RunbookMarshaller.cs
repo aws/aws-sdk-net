@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,106 +49,106 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentName())
             {
                 context.Writer.WritePropertyName("DocumentName");
-                context.Writer.Write(requestObject.DocumentName);
+                context.Writer.WriteStringValue(requestObject.DocumentName);
             }
 
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("DocumentVersion");
-                context.Writer.Write(requestObject.DocumentVersion);
+                context.Writer.WriteStringValue(requestObject.DocumentVersion);
             }
 
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("MaxConcurrency");
-                context.Writer.Write(requestObject.MaxConcurrency);
+                context.Writer.WriteStringValue(requestObject.MaxConcurrency);
             }
 
             if(requestObject.IsSetMaxErrors())
             {
                 context.Writer.WritePropertyName("MaxErrors");
-                context.Writer.Write(requestObject.MaxErrors);
+                context.Writer.WriteStringValue(requestObject.MaxErrors);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectParametersValueListValue in requestObjectParametersValue)
                     {
-                            context.Writer.Write(requestObjectParametersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectParametersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetLocations())
             {
                 context.Writer.WritePropertyName("TargetLocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetLocationsListValue in requestObject.TargetLocations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetLocationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetLocationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetMaps())
             {
                 context.Writer.WritePropertyName("TargetMaps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetMapsListValue in requestObject.TargetMaps)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectTargetMapsListValueKvp in requestObjectTargetMapsListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectTargetMapsListValueKvp.Key);
                         var requestObjectTargetMapsListValueValue = requestObjectTargetMapsListValueKvp.Value;
 
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectTargetMapsListValueValueListValue in requestObjectTargetMapsListValueValue)
                         {
-                                context.Writer.Write(requestObjectTargetMapsListValueValueListValue);
+                                context.Writer.WriteStringValue(requestObjectTargetMapsListValueValueListValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetParameterName())
             {
                 context.Writer.WritePropertyName("TargetParameterName");
-                context.Writer.Write(requestObject.TargetParameterName);
+                context.Writer.WriteStringValue(requestObject.TargetParameterName);
             }
 
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

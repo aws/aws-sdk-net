@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFontColor())
             {
                 context.Writer.WritePropertyName("FontColor");
-                context.Writer.Write(requestObject.FontColor);
+                context.Writer.WriteStringValue(requestObject.FontColor);
             }
 
             if(requestObject.IsSetFontDecoration())
             {
                 context.Writer.WritePropertyName("FontDecoration");
-                context.Writer.Write(requestObject.FontDecoration);
+                context.Writer.WriteStringValue(requestObject.FontDecoration);
             }
 
             if(requestObject.IsSetFontFamily())
             {
                 context.Writer.WritePropertyName("FontFamily");
-                context.Writer.Write(requestObject.FontFamily);
+                context.Writer.WriteStringValue(requestObject.FontFamily);
             }
 
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("FontSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontSizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.FontSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFontStyle())
             {
                 context.Writer.WritePropertyName("FontStyle");
-                context.Writer.Write(requestObject.FontStyle);
+                context.Writer.WriteStringValue(requestObject.FontStyle);
             }
 
             if(requestObject.IsSetFontWeight())
             {
                 context.Writer.WritePropertyName("FontWeight");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontWeightMarshaller.Instance;
                 marshaller.Marshall(requestObject.FontWeight, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

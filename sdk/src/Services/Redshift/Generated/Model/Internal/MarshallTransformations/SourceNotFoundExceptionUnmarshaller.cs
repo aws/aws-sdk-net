@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SourceNotFoundException operation
     /// </summary>  
-    public class SourceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SourceNotFoundException, XmlUnmarshallerContext>
+    public class SourceNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SourceNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionRetryInterval())
             {
                 context.Writer.WritePropertyName("connectionRetryInterval");
-                context.Writer.Write(requestObject.ConnectionRetryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.ConnectionRetryInterval.Value);
             }
 
             if(requestObject.IsSetFilecacheDuration())
             {
                 context.Writer.WritePropertyName("filecacheDuration");
-                context.Writer.Write(requestObject.FilecacheDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.FilecacheDuration.Value);
             }
 
             if(requestObject.IsSetMediaStoreStorageClass())
             {
                 context.Writer.WritePropertyName("mediaStoreStorageClass");
-                context.Writer.Write(requestObject.MediaStoreStorageClass);
+                context.Writer.WriteStringValue(requestObject.MediaStoreStorageClass);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("numRetries");
-                context.Writer.Write(requestObject.NumRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");
-                context.Writer.Write(requestObject.RestartDelay.Value);
+                context.Writer.WriteNumberValue(requestObject.RestartDelay.Value);
             }
 
         }

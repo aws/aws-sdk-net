@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("snsTopicArn");
-                context.Writer.Write(requestObject.SnsTopicArn);
+                context.Writer.WriteStringValue(requestObject.SnsTopicArn);
             }
 
         }

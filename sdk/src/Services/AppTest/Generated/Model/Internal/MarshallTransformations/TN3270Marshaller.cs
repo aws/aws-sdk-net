@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportDataSetNames())
             {
                 context.Writer.WritePropertyName("exportDataSetNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExportDataSetNamesListValue in requestObject.ExportDataSetNames)
                 {
-                        context.Writer.Write(requestObjectExportDataSetNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectExportDataSetNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScript())
             {
                 context.Writer.WritePropertyName("script");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScriptMarshaller.Instance;
                 marshaller.Marshall(requestObject.Script, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

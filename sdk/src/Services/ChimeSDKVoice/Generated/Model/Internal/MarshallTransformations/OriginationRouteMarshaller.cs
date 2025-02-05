@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
+                context.Writer.WriteStringValue(requestObject.Host);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                context.Writer.Write(requestObject.Weight.Value);
+                context.Writer.WriteNumberValue(requestObject.Weight.Value);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,107 +66,112 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCdcStartPosition())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCdcStartPosition())
-                    {
-                        context.Writer.WritePropertyName("CdcStartPosition");
-                        context.Writer.Write(publicRequest.CdcStartPosition);
-                    }
-
-                    if(publicRequest.IsSetCdcStartTime())
-                    {
-                        context.Writer.WritePropertyName("CdcStartTime");
-                        context.Writer.Write(publicRequest.CdcStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetCdcStopPosition())
-                    {
-                        context.Writer.WritePropertyName("CdcStopPosition");
-                        context.Writer.Write(publicRequest.CdcStopPosition);
-                    }
-
-                    if(publicRequest.IsSetMigrationType())
-                    {
-                        context.Writer.WritePropertyName("MigrationType");
-                        context.Writer.Write(publicRequest.MigrationType);
-                    }
-
-                    if(publicRequest.IsSetReplicationInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("ReplicationInstanceArn");
-                        context.Writer.Write(publicRequest.ReplicationInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetReplicationTaskIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ReplicationTaskIdentifier");
-                        context.Writer.Write(publicRequest.ReplicationTaskIdentifier);
-                    }
-
-                    if(publicRequest.IsSetReplicationTaskSettings())
-                    {
-                        context.Writer.WritePropertyName("ReplicationTaskSettings");
-                        context.Writer.Write(publicRequest.ReplicationTaskSettings);
-                    }
-
-                    if(publicRequest.IsSetResourceIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ResourceIdentifier");
-                        context.Writer.Write(publicRequest.ResourceIdentifier);
-                    }
-
-                    if(publicRequest.IsSetSourceEndpointArn())
-                    {
-                        context.Writer.WritePropertyName("SourceEndpointArn");
-                        context.Writer.Write(publicRequest.SourceEndpointArn);
-                    }
-
-                    if(publicRequest.IsSetTableMappings())
-                    {
-                        context.Writer.WritePropertyName("TableMappings");
-                        context.Writer.Write(publicRequest.TableMappings);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetEndpointArn())
-                    {
-                        context.Writer.WritePropertyName("TargetEndpointArn");
-                        context.Writer.Write(publicRequest.TargetEndpointArn);
-                    }
-
-                    if(publicRequest.IsSetTaskData())
-                    {
-                        context.Writer.WritePropertyName("TaskData");
-                        context.Writer.Write(publicRequest.TaskData);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CdcStartPosition");
+                context.Writer.WriteStringValue(publicRequest.CdcStartPosition);
             }
+
+            if(publicRequest.IsSetCdcStartTime())
+            {
+                context.Writer.WritePropertyName("CdcStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CdcStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetCdcStopPosition())
+            {
+                context.Writer.WritePropertyName("CdcStopPosition");
+                context.Writer.WriteStringValue(publicRequest.CdcStopPosition);
+            }
+
+            if(publicRequest.IsSetMigrationType())
+            {
+                context.Writer.WritePropertyName("MigrationType");
+                context.Writer.WriteStringValue(publicRequest.MigrationType);
+            }
+
+            if(publicRequest.IsSetReplicationInstanceArn())
+            {
+                context.Writer.WritePropertyName("ReplicationInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.ReplicationInstanceArn);
+            }
+
+            if(publicRequest.IsSetReplicationTaskIdentifier())
+            {
+                context.Writer.WritePropertyName("ReplicationTaskIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ReplicationTaskIdentifier);
+            }
+
+            if(publicRequest.IsSetReplicationTaskSettings())
+            {
+                context.Writer.WritePropertyName("ReplicationTaskSettings");
+                context.Writer.WriteStringValue(publicRequest.ReplicationTaskSettings);
+            }
+
+            if(publicRequest.IsSetResourceIdentifier())
+            {
+                context.Writer.WritePropertyName("ResourceIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ResourceIdentifier);
+            }
+
+            if(publicRequest.IsSetSourceEndpointArn())
+            {
+                context.Writer.WritePropertyName("SourceEndpointArn");
+                context.Writer.WriteStringValue(publicRequest.SourceEndpointArn);
+            }
+
+            if(publicRequest.IsSetTableMappings())
+            {
+                context.Writer.WritePropertyName("TableMappings");
+                context.Writer.WriteStringValue(publicRequest.TableMappings);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetEndpointArn())
+            {
+                context.Writer.WritePropertyName("TargetEndpointArn");
+                context.Writer.WriteStringValue(publicRequest.TargetEndpointArn);
+            }
+
+            if(publicRequest.IsSetTaskData())
+            {
+                context.Writer.WritePropertyName("TaskData");
+                context.Writer.WriteStringValue(publicRequest.TaskData);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

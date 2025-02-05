@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddGwMetadata())
             {
                 context.Writer.WritePropertyName("AddGwMetadata");
-                context.Writer.Write(requestObject.AddGwMetadata.Value);
+                context.Writer.WriteBooleanValue(requestObject.AddGwMetadata.Value);
             }
 
             if(requestObject.IsSetDrMax())
             {
                 context.Writer.WritePropertyName("DrMax");
-                context.Writer.Write(requestObject.DrMax.Value);
+                context.Writer.WriteNumberValue(requestObject.DrMax.Value);
             }
 
             if(requestObject.IsSetDrMin())
             {
                 context.Writer.WritePropertyName("DrMin");
-                context.Writer.Write(requestObject.DrMin.Value);
+                context.Writer.WriteNumberValue(requestObject.DrMin.Value);
             }
 
             if(requestObject.IsSetPrAllowed())
             {
                 context.Writer.WritePropertyName("PrAllowed");
-                context.Writer.Write(requestObject.PrAllowed.Value);
+                context.Writer.WriteBooleanValue(requestObject.PrAllowed.Value);
             }
 
             if(requestObject.IsSetRaAllowed())
             {
                 context.Writer.WritePropertyName("RaAllowed");
-                context.Writer.Write(requestObject.RaAllowed.Value);
+                context.Writer.WriteBooleanValue(requestObject.RaAllowed.Value);
             }
 
         }

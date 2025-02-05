@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetSendEmailNotification())
             {
                 context.Writer.WritePropertyName("SendEmailNotification");
-                context.Writer.Write(requestObject.SendEmailNotification.Value);
+                context.Writer.WriteBooleanValue(requestObject.SendEmailNotification.Value);
             }
 
             if(requestObject.IsSetStackName())
             {
                 context.Writer.WritePropertyName("StackName");
-                context.Writer.Write(requestObject.StackName);
+                context.Writer.WriteStringValue(requestObject.StackName);
             }
 
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");
-                context.Writer.Write(requestObject.UserName);
+                context.Writer.WriteStringValue(requestObject.UserName);
             }
 
         }

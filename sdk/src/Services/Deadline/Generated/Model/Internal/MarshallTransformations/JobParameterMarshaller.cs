@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFloat())
             {
                 context.Writer.WritePropertyName("float");
-                context.Writer.Write(requestObject.Float);
+                context.Writer.WriteStringValue(requestObject.Float);
             }
 
             if(requestObject.IsSetInt())
             {
                 context.Writer.WritePropertyName("int");
-                context.Writer.Write(requestObject.Int);
+                context.Writer.WriteStringValue(requestObject.Int);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("string");
-                context.Writer.Write(requestObject.String);
+                context.Writer.WriteStringValue(requestObject.String);
             }
 
         }

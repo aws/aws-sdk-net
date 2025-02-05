@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConformancePackNames())
             {
                 context.Writer.WritePropertyName("ConformancePackNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConformancePackNamesListValue in requestObject.ConformancePackNames)
                 {
-                        context.Writer.Write(requestObjectConformancePackNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectConformancePackNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -64,87 +67,92 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/aggregatedutterances/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAggregationDuration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAggregationDuration())
-                    {
-                        context.Writer.WritePropertyName("aggregationDuration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("aggregationDuration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = UtteranceAggregationDurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AggregationDuration, context);
+                var marshaller = UtteranceAggregationDurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AggregationDuration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBotAliasId())
-                    {
-                        context.Writer.WritePropertyName("botAliasId");
-                        context.Writer.Write(publicRequest.BotAliasId);
-                    }
-
-                    if(publicRequest.IsSetBotVersion())
-                    {
-                        context.Writer.WritePropertyName("botVersion");
-                        context.Writer.Write(publicRequest.BotVersion);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("filters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AggregatedUtterancesFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLocaleId())
-                    {
-                        context.Writer.WritePropertyName("localeId");
-                        context.Writer.Write(publicRequest.LocaleId);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("sortBy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AggregatedUtterancesSortByMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SortBy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBotAliasId())
+            {
+                context.Writer.WritePropertyName("botAliasId");
+                context.Writer.WriteStringValue(publicRequest.BotAliasId);
+            }
+
+            if(publicRequest.IsSetBotVersion())
+            {
+                context.Writer.WritePropertyName("botVersion");
+                context.Writer.WriteStringValue(publicRequest.BotVersion);
+            }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AggregatedUtterancesFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLocaleId())
+            {
+                context.Writer.WritePropertyName("localeId");
+                context.Writer.WriteStringValue(publicRequest.LocaleId);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("sortBy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AggregatedUtterancesSortByMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SortBy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

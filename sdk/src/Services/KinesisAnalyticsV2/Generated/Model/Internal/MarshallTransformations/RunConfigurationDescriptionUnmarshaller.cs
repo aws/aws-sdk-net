@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RunConfigurationDescription Object
     /// </summary>  
-    public class RunConfigurationDescriptionUnmarshaller : IUnmarshaller<RunConfigurationDescription, XmlUnmarshallerContext>, IUnmarshaller<RunConfigurationDescription, JsonUnmarshallerContext>
+    public class RunConfigurationDescriptionUnmarshaller : IJsonUnmarshaller<RunConfigurationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RunConfigurationDescription IUnmarshaller<RunConfigurationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RunConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
+        public RunConfigurationDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RunConfigurationDescription unmarshalledObject = new RunConfigurationDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApplicationRestoreConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = ApplicationRestoreConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationRestoreConfigurationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationRestoreConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FlinkRunConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = FlinkRunConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FlinkRunConfigurationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlinkRunConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

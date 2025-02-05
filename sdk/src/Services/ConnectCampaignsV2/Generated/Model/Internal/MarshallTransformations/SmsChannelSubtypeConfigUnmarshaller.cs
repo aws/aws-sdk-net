@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SmsChannelSubtypeConfig Object
     /// </summary>  
-    public class SmsChannelSubtypeConfigUnmarshaller : IUnmarshaller<SmsChannelSubtypeConfig, XmlUnmarshallerContext>, IUnmarshaller<SmsChannelSubtypeConfig, JsonUnmarshallerContext>
+    public class SmsChannelSubtypeConfigUnmarshaller : IJsonUnmarshaller<SmsChannelSubtypeConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SmsChannelSubtypeConfig IUnmarshaller<SmsChannelSubtypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SmsChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public SmsChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SmsChannelSubtypeConfig unmarshalledObject = new SmsChannelSubtypeConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("capacity", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultOutboundConfig", targetDepth))
                 {
                     var unmarshaller = SmsOutboundConfigUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOutboundConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultOutboundConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outboundMode", targetDepth))
                 {
                     var unmarshaller = SmsOutboundModeUnmarshaller.Instance;
-                    unmarshalledObject.OutboundMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutboundMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

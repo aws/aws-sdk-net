@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForgotPasswordLink())
             {
                 context.Writer.WritePropertyName("ForgotPasswordLink");
-                context.Writer.Write(requestObject.ForgotPasswordLink);
+                context.Writer.WriteStringValue(requestObject.ForgotPasswordLink);
             }
 
             if(requestObject.IsSetLoginMessage())
             {
                 context.Writer.WritePropertyName("LoginMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLoginMessageKvp in requestObject.LoginMessage)
                 {
                     context.Writer.WritePropertyName(requestObjectLoginMessageKvp.Key);
                     var requestObjectLoginMessageValue = requestObjectLoginMessageKvp.Value;
 
-                        context.Writer.Write(requestObjectLoginMessageValue);
+                        context.Writer.WriteStringValue(requestObjectLoginMessageValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogo())
             {
                 context.Writer.WritePropertyName("Logo");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Logo));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo));
             }
 
             if(requestObject.IsSetLogo2x())
             {
                 context.Writer.WritePropertyName("Logo2x");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Logo2x));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo2x));
             }
 
             if(requestObject.IsSetLogo3x())
             {
                 context.Writer.WritePropertyName("Logo3x");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Logo3x));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo3x));
             }
 
             if(requestObject.IsSetSupportEmail())
             {
                 context.Writer.WritePropertyName("SupportEmail");
-                context.Writer.Write(requestObject.SupportEmail);
+                context.Writer.WriteStringValue(requestObject.SupportEmail);
             }
 
             if(requestObject.IsSetSupportLink())
             {
                 context.Writer.WritePropertyName("SupportLink");
-                context.Writer.Write(requestObject.SupportLink);
+                context.Writer.WriteStringValue(requestObject.SupportLink);
             }
 
         }

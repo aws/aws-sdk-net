@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppFlowConfig())
             {
                 context.Writer.WritePropertyName("AppFlowConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AppFlowConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AppFlowConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAthenaSourceConfig())
             {
                 context.Writer.WritePropertyName("AthenaSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AthenaSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AthenaSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchConfig())
             {
                 context.Writer.WritePropertyName("CloudWatchConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRDSSourceConfig())
             {
                 context.Writer.WritePropertyName("RDSSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RDSSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RDSSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftSourceConfig())
             {
                 context.Writer.WritePropertyName("RedshiftSourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftSourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftSourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3SourceConfig())
             {
                 context.Writer.WritePropertyName("S3SourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3SourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3SourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

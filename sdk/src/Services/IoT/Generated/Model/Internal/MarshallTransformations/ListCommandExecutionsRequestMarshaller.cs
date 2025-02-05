@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -67,71 +70,76 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/command-executions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCommandArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCommandArn())
-                    {
-                        context.Writer.WritePropertyName("commandArn");
-                        context.Writer.Write(publicRequest.CommandArn);
-                    }
-
-                    if(publicRequest.IsSetCompletedTimeFilter())
-                    {
-                        context.Writer.WritePropertyName("completedTimeFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CompletedTimeFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNamespace())
-                    {
-                        context.Writer.WritePropertyName("namespace");
-                        context.Writer.Write(publicRequest.Namespace);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("sortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    if(publicRequest.IsSetStartedTimeFilter())
-                    {
-                        context.Writer.WritePropertyName("startedTimeFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StartedTimeFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetTargetArn())
-                    {
-                        context.Writer.WritePropertyName("targetArn");
-                        context.Writer.Write(publicRequest.TargetArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("commandArn");
+                context.Writer.WriteStringValue(publicRequest.CommandArn);
             }
+
+            if(publicRequest.IsSetCompletedTimeFilter())
+            {
+                context.Writer.WritePropertyName("completedTimeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CompletedTimeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNamespace())
+            {
+                context.Writer.WritePropertyName("namespace");
+                context.Writer.WriteStringValue(publicRequest.Namespace);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("sortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            if(publicRequest.IsSetStartedTimeFilter())
+            {
+                context.Writer.WritePropertyName("startedTimeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StartedTimeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetTargetArn())
+            {
+                context.Writer.WritePropertyName("targetArn");
+                context.Writer.WriteStringValue(publicRequest.TargetArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

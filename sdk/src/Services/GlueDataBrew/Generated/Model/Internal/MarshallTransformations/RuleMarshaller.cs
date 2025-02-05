@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckExpression())
             {
                 context.Writer.WritePropertyName("CheckExpression");
-                context.Writer.Write(requestObject.CheckExpression);
+                context.Writer.WriteStringValue(requestObject.CheckExpression);
             }
 
             if(requestObject.IsSetColumnSelectors())
             {
                 context.Writer.WritePropertyName("ColumnSelectors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnSelectorsListValue in requestObject.ColumnSelectors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnSelectorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Disabled.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSubstitutionMap())
             {
                 context.Writer.WritePropertyName("SubstitutionMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionMapKvp in requestObject.SubstitutionMap)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionMapKvp.Key);
                     var requestObjectSubstitutionMapValue = requestObjectSubstitutionMapKvp.Value;
 
-                        context.Writer.Write(requestObjectSubstitutionMapValue);
+                        context.Writer.WriteStringValue(requestObjectSubstitutionMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThresholdMarshaller.Instance;
                 marshaller.Marshall(requestObject.Threshold, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentHierarchyGroups())
             {
                 context.Writer.WritePropertyName("AgentHierarchyGroups");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AgentHierarchyGroupsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AgentHierarchyGroups, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAgentIds())
             {
                 context.Writer.WritePropertyName("AgentIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentIdsListValue in requestObject.AgentIds)
                 {
-                        context.Writer.Write(requestObjectAgentIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAgentIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelsListValue in requestObject.Channels)
                 {
-                        context.Writer.Write(requestObjectChannelsListValue);
+                        context.Writer.WriteStringValue(requestObjectChannelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContactAnalysis())
             {
                 context.Writer.WritePropertyName("ContactAnalysis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContactAnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContactAnalysis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInitiationMethods())
             {
                 context.Writer.WritePropertyName("InitiationMethods");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInitiationMethodsListValue in requestObject.InitiationMethods)
                 {
-                        context.Writer.Write(requestObjectInitiationMethodsListValue);
+                        context.Writer.WriteStringValue(requestObjectInitiationMethodsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueueIds())
             {
                 context.Writer.WritePropertyName("QueueIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueueIdsListValue in requestObject.QueueIds)
                 {
-                        context.Writer.Write(requestObjectQueueIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectQueueIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSearchableContactAttributes())
             {
                 context.Writer.WritePropertyName("SearchableContactAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SearchableContactAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SearchableContactAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSearchableSegmentAttributes())
             {
                 context.Writer.WritePropertyName("SearchableSegmentAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SearchableSegmentAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SearchableSegmentAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

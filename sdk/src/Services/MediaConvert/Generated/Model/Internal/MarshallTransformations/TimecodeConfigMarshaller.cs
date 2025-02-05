@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnchor())
             {
                 context.Writer.WritePropertyName("anchor");
-                context.Writer.Write(requestObject.Anchor);
+                context.Writer.WriteStringValue(requestObject.Anchor);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("start");
-                context.Writer.Write(requestObject.Start);
+                context.Writer.WriteStringValue(requestObject.Start);
             }
 
             if(requestObject.IsSetTimestampOffset())
             {
                 context.Writer.WritePropertyName("timestampOffset");
-                context.Writer.Write(requestObject.TimestampOffset);
+                context.Writer.WriteStringValue(requestObject.TimestampOffset);
             }
 
         }

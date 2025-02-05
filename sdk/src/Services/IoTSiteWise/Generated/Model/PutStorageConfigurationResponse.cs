@@ -66,9 +66,9 @@ namespace Amazon.IoTSiteWise.Model
         /// is allowed. The feature is disallowed if the value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool DisallowIngestNullNaN
+        public bool? DisallowIngestNullNaN
         {
-            get { return this._disallowIngestNullNaN.GetValueOrDefault(); }
+            get { return this._disallowIngestNullNaN; }
             set { this._disallowIngestNullNaN = value; }
         }
 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -67,63 +70,68 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field KnowledgeBaseId set");
             request.AddPathResource("{knowledgeBaseId}", StringUtils.FromString(publicRequest.KnowledgeBaseId));
             request.ResourcePath = "/knowledgeBases/{knowledgeBaseId}/contents/{contentId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMetadata())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMetadata())
-                    {
-                        context.Writer.WritePropertyName("metadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
-                            var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                    var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
 
-                                context.Writer.Write(publicRequestMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOverrideLinkOutUri())
-                    {
-                        context.Writer.WritePropertyName("overrideLinkOutUri");
-                        context.Writer.Write(publicRequest.OverrideLinkOutUri);
-                    }
-
-                    if(publicRequest.IsSetRemoveOverrideLinkOutUri())
-                    {
-                        context.Writer.WritePropertyName("removeOverrideLinkOutUri");
-                        context.Writer.Write(publicRequest.RemoveOverrideLinkOutUri.Value);
-                    }
-
-                    if(publicRequest.IsSetRevisionId())
-                    {
-                        context.Writer.WritePropertyName("revisionId");
-                        context.Writer.Write(publicRequest.RevisionId);
-                    }
-
-                    if(publicRequest.IsSetTitle())
-                    {
-                        context.Writer.WritePropertyName("title");
-                        context.Writer.Write(publicRequest.Title);
-                    }
-
-                    if(publicRequest.IsSetUploadId())
-                    {
-                        context.Writer.WritePropertyName("uploadId");
-                        context.Writer.Write(publicRequest.UploadId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestMetadataValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetOverrideLinkOutUri())
+            {
+                context.Writer.WritePropertyName("overrideLinkOutUri");
+                context.Writer.WriteStringValue(publicRequest.OverrideLinkOutUri);
+            }
+
+            if(publicRequest.IsSetRemoveOverrideLinkOutUri())
+            {
+                context.Writer.WritePropertyName("removeOverrideLinkOutUri");
+                context.Writer.WriteBooleanValue(publicRequest.RemoveOverrideLinkOutUri.Value);
+            }
+
+            if(publicRequest.IsSetRevisionId())
+            {
+                context.Writer.WritePropertyName("revisionId");
+                context.Writer.WriteStringValue(publicRequest.RevisionId);
+            }
+
+            if(publicRequest.IsSetTitle())
+            {
+                context.Writer.WritePropertyName("title");
+                context.Writer.WriteStringValue(publicRequest.Title);
+            }
+
+            if(publicRequest.IsSetUploadId())
+            {
+                context.Writer.WritePropertyName("uploadId");
+                context.Writer.WriteStringValue(publicRequest.UploadId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

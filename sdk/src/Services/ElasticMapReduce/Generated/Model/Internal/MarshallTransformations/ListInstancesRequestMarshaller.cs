@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -63,71 +66,76 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClusterId())
-                    {
-                        context.Writer.WritePropertyName("ClusterId");
-                        context.Writer.Write(publicRequest.ClusterId);
-                    }
-
-                    if(publicRequest.IsSetInstanceFleetId())
-                    {
-                        context.Writer.WritePropertyName("InstanceFleetId");
-                        context.Writer.Write(publicRequest.InstanceFleetId);
-                    }
-
-                    if(publicRequest.IsSetInstanceFleetType())
-                    {
-                        context.Writer.WritePropertyName("InstanceFleetType");
-                        context.Writer.Write(publicRequest.InstanceFleetType);
-                    }
-
-                    if(publicRequest.IsSetInstanceGroupId())
-                    {
-                        context.Writer.WritePropertyName("InstanceGroupId");
-                        context.Writer.Write(publicRequest.InstanceGroupId);
-                    }
-
-                    if(publicRequest.IsSetInstanceGroupTypes())
-                    {
-                        context.Writer.WritePropertyName("InstanceGroupTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
-                        {
-                                context.Writer.Write(publicRequestInstanceGroupTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInstanceStates())
-                    {
-                        context.Writer.WritePropertyName("InstanceStates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstanceStatesListValue in publicRequest.InstanceStates)
-                        {
-                                context.Writer.Write(publicRequestInstanceStatesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMarker())
-                    {
-                        context.Writer.WritePropertyName("Marker");
-                        context.Writer.Write(publicRequest.Marker);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClusterId");
+                context.Writer.WriteStringValue(publicRequest.ClusterId);
             }
+
+            if(publicRequest.IsSetInstanceFleetId())
+            {
+                context.Writer.WritePropertyName("InstanceFleetId");
+                context.Writer.WriteStringValue(publicRequest.InstanceFleetId);
+            }
+
+            if(publicRequest.IsSetInstanceFleetType())
+            {
+                context.Writer.WritePropertyName("InstanceFleetType");
+                context.Writer.WriteStringValue(publicRequest.InstanceFleetType);
+            }
+
+            if(publicRequest.IsSetInstanceGroupId())
+            {
+                context.Writer.WritePropertyName("InstanceGroupId");
+                context.Writer.WriteStringValue(publicRequest.InstanceGroupId);
+            }
+
+            if(publicRequest.IsSetInstanceGroupTypes())
+            {
+                context.Writer.WritePropertyName("InstanceGroupTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceGroupTypesListValue in publicRequest.InstanceGroupTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestInstanceGroupTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInstanceStates())
+            {
+                context.Writer.WritePropertyName("InstanceStates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceStatesListValue in publicRequest.InstanceStates)
+                {
+                        context.Writer.WriteStringValue(publicRequestInstanceStatesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMarker())
+            {
+                context.Writer.WritePropertyName("Marker");
+                context.Writer.WriteStringValue(publicRequest.Marker);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

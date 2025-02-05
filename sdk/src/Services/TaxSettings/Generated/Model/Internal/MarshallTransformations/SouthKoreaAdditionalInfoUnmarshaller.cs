@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SouthKoreaAdditionalInfo Object
     /// </summary>  
-    public class SouthKoreaAdditionalInfoUnmarshaller : IUnmarshaller<SouthKoreaAdditionalInfo, XmlUnmarshallerContext>, IUnmarshaller<SouthKoreaAdditionalInfo, JsonUnmarshallerContext>
+    public class SouthKoreaAdditionalInfoUnmarshaller : IJsonUnmarshaller<SouthKoreaAdditionalInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SouthKoreaAdditionalInfo IUnmarshaller<SouthKoreaAdditionalInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SouthKoreaAdditionalInfo Unmarshall(JsonUnmarshallerContext context)
+        public SouthKoreaAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SouthKoreaAdditionalInfo unmarshalledObject = new SouthKoreaAdditionalInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("businessRepresentativeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BusinessRepresentativeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BusinessRepresentativeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("itemOfBusiness", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemOfBusiness = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemOfBusiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lineOfBusiness", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineOfBusiness = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LineOfBusiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOAuth2GrantType())
             {
                 context.Writer.WritePropertyName("oAuth2GrantType");
-                context.Writer.Write(requestObject.OAuth2GrantType);
+                context.Writer.WriteStringValue(requestObject.OAuth2GrantType);
             }
 
             if(requestObject.IsSetTokenUrl())
             {
                 context.Writer.WritePropertyName("tokenUrl");
-                context.Writer.Write(requestObject.TokenUrl);
+                context.Writer.WriteStringValue(requestObject.TokenUrl);
             }
 
             if(requestObject.IsSetTokenUrlCustomProperties())
             {
                 context.Writer.WritePropertyName("tokenUrlCustomProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTokenUrlCustomPropertiesKvp in requestObject.TokenUrlCustomProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectTokenUrlCustomPropertiesKvp.Key);
                     var requestObjectTokenUrlCustomPropertiesValue = requestObjectTokenUrlCustomPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectTokenUrlCustomPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectTokenUrlCustomPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

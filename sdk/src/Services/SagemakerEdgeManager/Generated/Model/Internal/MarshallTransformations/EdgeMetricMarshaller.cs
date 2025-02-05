@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
-                context.Writer.Write(requestObject.Dimension);
+                context.Writer.WriteStringValue(requestObject.Dimension);
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
             if(requestObject.IsSetValue())
@@ -71,11 +69,11 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Value");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value.Value);
+                    context.Writer.WriteNumberValue(requestObject.Value.Value);
                 }
             }
 

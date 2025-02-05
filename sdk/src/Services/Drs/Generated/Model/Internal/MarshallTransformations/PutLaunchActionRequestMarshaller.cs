@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -61,98 +64,103 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PutLaunchAction";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActionCode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActionCode())
-                    {
-                        context.Writer.WritePropertyName("actionCode");
-                        context.Writer.Write(publicRequest.ActionCode);
-                    }
-
-                    if(publicRequest.IsSetActionId())
-                    {
-                        context.Writer.WritePropertyName("actionId");
-                        context.Writer.Write(publicRequest.ActionId);
-                    }
-
-                    if(publicRequest.IsSetActionVersion())
-                    {
-                        context.Writer.WritePropertyName("actionVersion");
-                        context.Writer.Write(publicRequest.ActionVersion);
-                    }
-
-                    if(publicRequest.IsSetActive())
-                    {
-                        context.Writer.WritePropertyName("active");
-                        context.Writer.Write(publicRequest.Active.Value);
-                    }
-
-                    if(publicRequest.IsSetCategory())
-                    {
-                        context.Writer.WritePropertyName("category");
-                        context.Writer.Write(publicRequest.Category);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOptional())
-                    {
-                        context.Writer.WritePropertyName("optional");
-                        context.Writer.Write(publicRequest.Optional.Value);
-                    }
-
-                    if(publicRequest.IsSetOrder())
-                    {
-                        context.Writer.WritePropertyName("order");
-                        context.Writer.Write(publicRequest.Order.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = LaunchActionParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParametersValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceId())
-                    {
-                        context.Writer.WritePropertyName("resourceId");
-                        context.Writer.Write(publicRequest.ResourceId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("actionCode");
+                context.Writer.WriteStringValue(publicRequest.ActionCode);
             }
+
+            if(publicRequest.IsSetActionId())
+            {
+                context.Writer.WritePropertyName("actionId");
+                context.Writer.WriteStringValue(publicRequest.ActionId);
+            }
+
+            if(publicRequest.IsSetActionVersion())
+            {
+                context.Writer.WritePropertyName("actionVersion");
+                context.Writer.WriteStringValue(publicRequest.ActionVersion);
+            }
+
+            if(publicRequest.IsSetActive())
+            {
+                context.Writer.WritePropertyName("active");
+                context.Writer.WriteBooleanValue(publicRequest.Active.Value);
+            }
+
+            if(publicRequest.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("category");
+                context.Writer.WriteStringValue(publicRequest.Category);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOptional())
+            {
+                context.Writer.WritePropertyName("optional");
+                context.Writer.WriteBooleanValue(publicRequest.Optional.Value);
+            }
+
+            if(publicRequest.IsSetOrder())
+            {
+                context.Writer.WritePropertyName("order");
+                context.Writer.WriteNumberValue(publicRequest.Order.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LaunchActionParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParametersValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceId())
+            {
+                context.Writer.WritePropertyName("resourceId");
+                context.Writer.WriteStringValue(publicRequest.ResourceId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

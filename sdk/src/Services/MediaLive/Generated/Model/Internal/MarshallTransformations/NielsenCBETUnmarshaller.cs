@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NielsenCBET Object
     /// </summary>  
-    public class NielsenCBETUnmarshaller : IUnmarshaller<NielsenCBET, XmlUnmarshallerContext>, IUnmarshaller<NielsenCBET, JsonUnmarshallerContext>
+    public class NielsenCBETUnmarshaller : IJsonUnmarshaller<NielsenCBET, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NielsenCBET IUnmarshaller<NielsenCBET, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NielsenCBET Unmarshall(JsonUnmarshallerContext context)
+        public NielsenCBET Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NielsenCBET unmarshalledObject = new NielsenCBET();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cbetCheckDigitString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CbetCheckDigitString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CbetCheckDigitString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cbetStepaside", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CbetStepaside = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CbetStepaside = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("csid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Csid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Csid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

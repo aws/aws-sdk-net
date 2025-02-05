@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End.Value);
+                context.Writer.WriteNumberValue(requestObject.End.Value);
             }
 
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start.Value);
+                context.Writer.WriteNumberValue(requestObject.Start.Value);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

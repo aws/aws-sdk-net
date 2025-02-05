@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomAttributes())
             {
                 context.Writer.WritePropertyName("CustomAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCustomAttributesKvp in requestObject.CustomAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectCustomAttributesKvp.Key);
                     var requestObjectCustomAttributesValue = requestObjectCustomAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectCustomAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectCustomAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomerProfileAttributes())
             {
                 context.Writer.WritePropertyName("CustomerProfileAttributes");
-                context.Writer.Write(requestObject.CustomerProfileAttributes);
+                context.Writer.WriteStringValue(requestObject.CustomerProfileAttributes);
             }
 
         }

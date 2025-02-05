@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReservedCapacityDetails Object
     /// </summary>  
-    public class ReservedCapacityDetailsUnmarshaller : IUnmarshaller<ReservedCapacityDetails, XmlUnmarshallerContext>, IUnmarshaller<ReservedCapacityDetails, JsonUnmarshallerContext>
+    public class ReservedCapacityDetailsUnmarshaller : IJsonUnmarshaller<ReservedCapacityDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReservedCapacityDetails IUnmarshaller<ReservedCapacityDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReservedCapacityDetails Unmarshall(JsonUnmarshallerContext context)
+        public ReservedCapacityDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReservedCapacityDetails unmarshalledObject = new ReservedCapacityDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DynamoDBCapacityDetails", targetDepth))
                 {
                     var unmarshaller = DynamoDBCapacityDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DynamoDBCapacityDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamoDBCapacityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

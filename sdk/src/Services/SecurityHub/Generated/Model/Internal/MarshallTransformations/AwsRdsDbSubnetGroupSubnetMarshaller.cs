@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubnetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("SubnetAvailabilityZone");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsRdsDbSubnetGroupSubnetAvailabilityZoneMarshaller.Instance;
                 marshaller.Marshall(requestObject.SubnetAvailabilityZone, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubnetIdentifier())
             {
                 context.Writer.WritePropertyName("SubnetIdentifier");
-                context.Writer.Write(requestObject.SubnetIdentifier);
+                context.Writer.WriteStringValue(requestObject.SubnetIdentifier);
             }
 
             if(requestObject.IsSetSubnetStatus())
             {
                 context.Writer.WritePropertyName("SubnetStatus");
-                context.Writer.Write(requestObject.SubnetStatus);
+                context.Writer.WriteStringValue(requestObject.SubnetStatus);
             }
 
         }

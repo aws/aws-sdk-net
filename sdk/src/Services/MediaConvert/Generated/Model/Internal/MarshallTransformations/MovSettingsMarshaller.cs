@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClapAtom())
             {
                 context.Writer.WritePropertyName("clapAtom");
-                context.Writer.Write(requestObject.ClapAtom);
+                context.Writer.WriteStringValue(requestObject.ClapAtom);
             }
 
             if(requestObject.IsSetCslgAtom())
             {
                 context.Writer.WritePropertyName("cslgAtom");
-                context.Writer.Write(requestObject.CslgAtom);
+                context.Writer.WriteStringValue(requestObject.CslgAtom);
             }
 
             if(requestObject.IsSetMpeg2FourCCControl())
             {
                 context.Writer.WritePropertyName("mpeg2FourCCControl");
-                context.Writer.Write(requestObject.Mpeg2FourCCControl);
+                context.Writer.WriteStringValue(requestObject.Mpeg2FourCCControl);
             }
 
             if(requestObject.IsSetPaddingControl())
             {
                 context.Writer.WritePropertyName("paddingControl");
-                context.Writer.Write(requestObject.PaddingControl);
+                context.Writer.WriteStringValue(requestObject.PaddingControl);
             }
 
             if(requestObject.IsSetReference())
             {
                 context.Writer.WritePropertyName("reference");
-                context.Writer.Write(requestObject.Reference);
+                context.Writer.WriteStringValue(requestObject.Reference);
             }
 
         }

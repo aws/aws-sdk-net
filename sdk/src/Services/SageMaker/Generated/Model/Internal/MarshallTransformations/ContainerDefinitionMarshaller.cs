@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalModelDataSources())
             {
                 context.Writer.WritePropertyName("AdditionalModelDataSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalModelDataSourcesListValue in requestObject.AdditionalModelDataSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AdditionalModelDataSourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalModelDataSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerHostname())
             {
                 context.Writer.WritePropertyName("ContainerHostname");
-                context.Writer.Write(requestObject.ContainerHostname);
+                context.Writer.WriteStringValue(requestObject.ContainerHostname);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetImageConfig())
             {
                 context.Writer.WritePropertyName("ImageConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInferenceSpecificationName())
             {
                 context.Writer.WritePropertyName("InferenceSpecificationName");
-                context.Writer.Write(requestObject.InferenceSpecificationName);
+                context.Writer.WriteStringValue(requestObject.InferenceSpecificationName);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetModelDataSource())
             {
                 context.Writer.WritePropertyName("ModelDataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelDataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelDataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelDataUrl())
             {
                 context.Writer.WritePropertyName("ModelDataUrl");
-                context.Writer.Write(requestObject.ModelDataUrl);
+                context.Writer.WriteStringValue(requestObject.ModelDataUrl);
             }
 
             if(requestObject.IsSetModelPackageName())
             {
                 context.Writer.WritePropertyName("ModelPackageName");
-                context.Writer.Write(requestObject.ModelPackageName);
+                context.Writer.WriteStringValue(requestObject.ModelPackageName);
             }
 
             if(requestObject.IsSetMultiModelConfig())
             {
                 context.Writer.WritePropertyName("MultiModelConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiModelConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.MultiModelConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

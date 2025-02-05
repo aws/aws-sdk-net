@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for InvalidBatchEntryIdException operation
     /// </summary>  
-    public class InvalidBatchEntryIdExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidBatchEntryIdException, XmlUnmarshallerContext>
+    public class InvalidBatchEntryIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidBatchEntryIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

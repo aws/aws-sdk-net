@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountTargeting())
             {
                 context.Writer.WritePropertyName("accountTargeting");
-                context.Writer.Write(requestObject.AccountTargeting);
+                context.Writer.WriteStringValue(requestObject.AccountTargeting);
             }
 
             if(requestObject.IsSetEmptyTargetResolutionMode())
             {
                 context.Writer.WritePropertyName("emptyTargetResolutionMode");
-                context.Writer.Write(requestObject.EmptyTargetResolutionMode);
+                context.Writer.WriteStringValue(requestObject.EmptyTargetResolutionMode);
             }
 
         }

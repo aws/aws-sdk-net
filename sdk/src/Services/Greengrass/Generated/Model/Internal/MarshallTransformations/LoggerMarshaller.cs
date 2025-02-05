@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponent())
             {
                 context.Writer.WritePropertyName("Component");
-                context.Writer.Write(requestObject.Component);
+                context.Writer.WriteStringValue(requestObject.Component);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.WriteStringValue(requestObject.Level);
             }
 
             if(requestObject.IsSetSpace())
             {
                 context.Writer.WritePropertyName("Space");
-                context.Writer.Write(requestObject.Space.Value);
+                context.Writer.WriteNumberValue(requestObject.Space.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

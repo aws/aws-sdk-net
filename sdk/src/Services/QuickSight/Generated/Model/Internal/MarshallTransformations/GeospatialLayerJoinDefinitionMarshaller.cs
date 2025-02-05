@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorField())
             {
                 context.Writer.WritePropertyName("ColorField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialLayerColorFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatasetKeyField())
             {
                 context.Writer.WritePropertyName("DatasetKeyField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UnaggregatedFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatasetKeyField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetShapeKeyField())
             {
                 context.Writer.WritePropertyName("ShapeKeyField");
-                context.Writer.Write(requestObject.ShapeKeyField);
+                context.Writer.WriteStringValue(requestObject.ShapeKeyField);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExternalIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExternalId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUniqueAttribute())
             {
                 context.Writer.WritePropertyName("UniqueAttribute");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UniqueAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.UniqueAttribute, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

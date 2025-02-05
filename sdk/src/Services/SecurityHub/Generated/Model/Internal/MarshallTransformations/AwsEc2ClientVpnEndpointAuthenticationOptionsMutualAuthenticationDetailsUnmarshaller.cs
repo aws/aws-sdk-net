@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails Object
     /// </summary>  
-    public class AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsUnmarshaller : IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails, JsonUnmarshallerContext>
+    public class AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails IUnmarshaller<AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails unmarshalledObject = new AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClientRootCertificateChain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientRootCertificateChain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientRootCertificateChain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

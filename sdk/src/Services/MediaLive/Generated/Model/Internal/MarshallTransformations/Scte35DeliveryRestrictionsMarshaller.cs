@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchiveAllowedFlag())
             {
                 context.Writer.WritePropertyName("archiveAllowedFlag");
-                context.Writer.Write(requestObject.ArchiveAllowedFlag);
+                context.Writer.WriteStringValue(requestObject.ArchiveAllowedFlag);
             }
 
             if(requestObject.IsSetDeviceRestrictions())
             {
                 context.Writer.WritePropertyName("deviceRestrictions");
-                context.Writer.Write(requestObject.DeviceRestrictions);
+                context.Writer.WriteStringValue(requestObject.DeviceRestrictions);
             }
 
             if(requestObject.IsSetNoRegionalBlackoutFlag())
             {
                 context.Writer.WritePropertyName("noRegionalBlackoutFlag");
-                context.Writer.Write(requestObject.NoRegionalBlackoutFlag);
+                context.Writer.WriteStringValue(requestObject.NoRegionalBlackoutFlag);
             }
 
             if(requestObject.IsSetWebDeliveryAllowedFlag())
             {
                 context.Writer.WritePropertyName("webDeliveryAllowedFlag");
-                context.Writer.Write(requestObject.WebDeliveryAllowedFlag);
+                context.Writer.WriteStringValue(requestObject.WebDeliveryAllowedFlag);
             }
 
         }

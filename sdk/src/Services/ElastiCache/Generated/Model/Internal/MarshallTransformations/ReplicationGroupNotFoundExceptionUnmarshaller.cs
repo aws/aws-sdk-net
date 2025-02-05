@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationGroupNotFoundException operation
     /// </summary>  
-    public class ReplicationGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ReplicationGroupNotFoundException, XmlUnmarshallerContext>
+    public class ReplicationGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReplicationGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

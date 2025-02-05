@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStateMachineVersionArn())
             {
                 context.Writer.WritePropertyName("stateMachineVersionArn");
-                context.Writer.Write(requestObject.StateMachineVersionArn);
+                context.Writer.WriteStringValue(requestObject.StateMachineVersionArn);
             }
 
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("weight");
-                context.Writer.Write(requestObject.Weight.Value);
+                context.Writer.WriteNumberValue(requestObject.Weight.Value);
             }
 
         }

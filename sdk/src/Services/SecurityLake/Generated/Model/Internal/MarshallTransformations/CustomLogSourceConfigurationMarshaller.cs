@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlerConfiguration())
             {
                 context.Writer.WritePropertyName("crawlerConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomLogSourceCrawlerConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrawlerConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProviderIdentity())
             {
                 context.Writer.WritePropertyName("providerIdentity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsIdentityMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProviderIdentity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

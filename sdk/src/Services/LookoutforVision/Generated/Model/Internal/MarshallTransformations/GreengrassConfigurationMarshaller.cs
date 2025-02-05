@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompilerOptions())
             {
                 context.Writer.WritePropertyName("CompilerOptions");
-                context.Writer.Write(requestObject.CompilerOptions);
+                context.Writer.WriteStringValue(requestObject.CompilerOptions);
             }
 
             if(requestObject.IsSetComponentDescription())
             {
                 context.Writer.WritePropertyName("ComponentDescription");
-                context.Writer.Write(requestObject.ComponentDescription);
+                context.Writer.WriteStringValue(requestObject.ComponentDescription);
             }
 
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("ComponentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetComponentVersion())
             {
                 context.Writer.WritePropertyName("ComponentVersion");
-                context.Writer.Write(requestObject.ComponentVersion);
+                context.Writer.WriteStringValue(requestObject.ComponentVersion);
             }
 
             if(requestObject.IsSetS3OutputLocation())
             {
                 context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OutputLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetDevice())
             {
                 context.Writer.WritePropertyName("TargetDevice");
-                context.Writer.Write(requestObject.TargetDevice);
+                context.Writer.WriteStringValue(requestObject.TargetDevice);
             }
 
             if(requestObject.IsSetTargetPlatform())
             {
                 context.Writer.WritePropertyName("TargetPlatform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TargetPlatformMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetPlatform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

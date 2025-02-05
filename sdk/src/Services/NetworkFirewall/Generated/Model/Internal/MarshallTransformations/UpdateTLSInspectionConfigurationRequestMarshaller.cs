@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEncryptionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("EncryptionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTLSInspectionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("TLSInspectionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TLSInspectionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TLSInspectionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTLSInspectionConfigurationArn())
-                    {
-                        context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
-                        context.Writer.Write(publicRequest.TLSInspectionConfigurationArn);
-                    }
-
-                    if(publicRequest.IsSetTLSInspectionConfigurationName())
-                    {
-                        context.Writer.WritePropertyName("TLSInspectionConfigurationName");
-                        context.Writer.Write(publicRequest.TLSInspectionConfigurationName);
-                    }
-
-                    if(publicRequest.IsSetUpdateToken())
-                    {
-                        context.Writer.WritePropertyName("UpdateToken");
-                        context.Writer.Write(publicRequest.UpdateToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("EncryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTLSInspectionConfiguration())
+            {
+                context.Writer.WritePropertyName("TLSInspectionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TLSInspectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TLSInspectionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTLSInspectionConfigurationArn())
+            {
+                context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.TLSInspectionConfigurationArn);
+            }
+
+            if(publicRequest.IsSetTLSInspectionConfigurationName())
+            {
+                context.Writer.WritePropertyName("TLSInspectionConfigurationName");
+                context.Writer.WriteStringValue(publicRequest.TLSInspectionConfigurationName);
+            }
+
+            if(publicRequest.IsSetUpdateToken())
+            {
+                context.Writer.WritePropertyName("UpdateToken");
+                context.Writer.WriteStringValue(publicRequest.UpdateToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

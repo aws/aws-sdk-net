@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,92 +49,92 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.Write(requestObject.Category);
+                context.Writer.WriteStringValue(requestObject.Category);
             }
 
             if(requestObject.IsSetCustomerGatewayConfiguration())
             {
                 context.Writer.WritePropertyName("CustomerGatewayConfiguration");
-                context.Writer.Write(requestObject.CustomerGatewayConfiguration);
+                context.Writer.WriteStringValue(requestObject.CustomerGatewayConfiguration);
             }
 
             if(requestObject.IsSetCustomerGatewayId())
             {
                 context.Writer.WritePropertyName("CustomerGatewayId");
-                context.Writer.Write(requestObject.CustomerGatewayId);
+                context.Writer.WriteStringValue(requestObject.CustomerGatewayId);
             }
 
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2VpnConnectionOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Options, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoutes())
             {
                 context.Writer.WritePropertyName("Routes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRoutesListValue in requestObject.Routes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2VpnConnectionRoutesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectRoutesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetTransitGatewayId())
             {
                 context.Writer.WritePropertyName("TransitGatewayId");
-                context.Writer.Write(requestObject.TransitGatewayId);
+                context.Writer.WriteStringValue(requestObject.TransitGatewayId);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetVgwTelemetry())
             {
                 context.Writer.WritePropertyName("VgwTelemetry");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVgwTelemetryListValue in requestObject.VgwTelemetry)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2VpnConnectionVgwTelemetryDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectVgwTelemetryListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpnConnectionId())
             {
                 context.Writer.WritePropertyName("VpnConnectionId");
-                context.Writer.Write(requestObject.VpnConnectionId);
+                context.Writer.WriteStringValue(requestObject.VpnConnectionId);
             }
 
             if(requestObject.IsSetVpnGatewayId())
             {
                 context.Writer.WritePropertyName("VpnGatewayId");
-                context.Writer.Write(requestObject.VpnGatewayId);
+                context.Writer.WriteStringValue(requestObject.VpnGatewayId);
             }
 
         }

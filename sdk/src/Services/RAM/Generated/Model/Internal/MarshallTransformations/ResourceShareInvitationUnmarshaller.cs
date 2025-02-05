@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceShareInvitation Object
     /// </summary>  
-    public class ResourceShareInvitationUnmarshaller : IUnmarshaller<ResourceShareInvitation, XmlUnmarshallerContext>, IUnmarshaller<ResourceShareInvitation, JsonUnmarshallerContext>
+    public class ResourceShareInvitationUnmarshaller : IJsonUnmarshaller<ResourceShareInvitation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceShareInvitation IUnmarshaller<ResourceShareInvitation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceShareInvitation Unmarshall(JsonUnmarshallerContext context)
+        public ResourceShareInvitation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceShareInvitation unmarshalledObject = new ResourceShareInvitation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("invitationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvitationTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvitationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("receiverAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReceiverAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceiverAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("receiverArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReceiverArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceiverArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceShareArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceShareAssociations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResourceShareAssociation, ResourceShareAssociationUnmarshaller>(ResourceShareAssociationUnmarshaller.Instance);
-                    unmarshalledObject.ResourceShareAssociations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResourceShareAssociation, ResourceShareAssociationUnmarshaller>(ResourceShareAssociationUnmarshaller.Instance);
+                    unmarshalledObject.ResourceShareAssociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceShareInvitationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareInvitationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceShareInvitationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceShareName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceShareName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("senderAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SenderAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

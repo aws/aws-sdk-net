@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableOptions Object
     /// </summary>  
-    public class TableOptionsUnmarshaller : IUnmarshaller<TableOptions, XmlUnmarshallerContext>, IUnmarshaller<TableOptions, JsonUnmarshallerContext>
+    public class TableOptionsUnmarshaller : IJsonUnmarshaller<TableOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableOptions IUnmarshaller<TableOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableOptions Unmarshall(JsonUnmarshallerContext context)
+        public TableOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableOptions unmarshalledObject = new TableOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HeaderStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.HeaderStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Orientation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Orientation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Orientation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowAlternateColorOptions", targetDepth))
                 {
                     var unmarshaller = RowAlternateColorOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

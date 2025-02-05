@@ -68,9 +68,9 @@ namespace Amazon.IdentityManagement.Model
         /// </a> format, when the private key was uploaded.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

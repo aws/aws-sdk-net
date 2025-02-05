@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableMaintenanceJobStatusValue Object
     /// </summary>  
-    public class TableMaintenanceJobStatusValueUnmarshaller : IUnmarshaller<TableMaintenanceJobStatusValue, XmlUnmarshallerContext>, IUnmarshaller<TableMaintenanceJobStatusValue, JsonUnmarshallerContext>
+    public class TableMaintenanceJobStatusValueUnmarshaller : IJsonUnmarshaller<TableMaintenanceJobStatusValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableMaintenanceJobStatusValue IUnmarshaller<TableMaintenanceJobStatusValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableMaintenanceJobStatusValue Unmarshall(JsonUnmarshallerContext context)
+        public TableMaintenanceJobStatusValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableMaintenanceJobStatusValue unmarshalledObject = new TableMaintenanceJobStatusValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("failureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRunTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRunTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastRunTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

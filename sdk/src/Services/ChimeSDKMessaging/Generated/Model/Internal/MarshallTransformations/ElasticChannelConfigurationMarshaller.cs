@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumSubChannels())
             {
                 context.Writer.WritePropertyName("MaximumSubChannels");
-                context.Writer.Write(requestObject.MaximumSubChannels.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumSubChannels.Value);
             }
 
             if(requestObject.IsSetMinimumMembershipPercentage())
             {
                 context.Writer.WritePropertyName("MinimumMembershipPercentage");
-                context.Writer.Write(requestObject.MinimumMembershipPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumMembershipPercentage.Value);
             }
 
             if(requestObject.IsSetTargetMembershipsPerSubChannel())
             {
                 context.Writer.WritePropertyName("TargetMembershipsPerSubChannel");
-                context.Writer.Write(requestObject.TargetMembershipsPerSubChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetMembershipsPerSubChannel.Value);
             }
 
         }

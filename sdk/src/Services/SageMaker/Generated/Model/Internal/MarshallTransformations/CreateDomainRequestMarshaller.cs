@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,127 +66,132 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppNetworkAccessType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppNetworkAccessType())
-                    {
-                        context.Writer.WritePropertyName("AppNetworkAccessType");
-                        context.Writer.Write(publicRequest.AppNetworkAccessType);
-                    }
-
-                    if(publicRequest.IsSetAppSecurityGroupManagement())
-                    {
-                        context.Writer.WritePropertyName("AppSecurityGroupManagement");
-                        context.Writer.Write(publicRequest.AppSecurityGroupManagement);
-                    }
-
-                    if(publicRequest.IsSetAuthMode())
-                    {
-                        context.Writer.WritePropertyName("AuthMode");
-                        context.Writer.Write(publicRequest.AuthMode);
-                    }
-
-                    if(publicRequest.IsSetDefaultSpaceSettings())
-                    {
-                        context.Writer.WritePropertyName("DefaultSpaceSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DefaultSpaceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultUserSettings())
-                    {
-                        context.Writer.WritePropertyName("DefaultUserSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultUserSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDomainName())
-                    {
-                        context.Writer.WritePropertyName("DomainName");
-                        context.Writer.Write(publicRequest.DomainName);
-                    }
-
-                    if(publicRequest.IsSetDomainSettings())
-                    {
-                        context.Writer.WritePropertyName("DomainSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DomainSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHomeEfsFileSystemKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
-                        context.Writer.Write(publicRequest.HomeEfsFileSystemKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("SubnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                        {
-                                context.Writer.Write(publicRequestSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagPropagation())
-                    {
-                        context.Writer.WritePropertyName("TagPropagation");
-                        context.Writer.Write(publicRequest.TagPropagation);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVpcId())
-                    {
-                        context.Writer.WritePropertyName("VpcId");
-                        context.Writer.Write(publicRequest.VpcId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AppNetworkAccessType");
+                context.Writer.WriteStringValue(publicRequest.AppNetworkAccessType);
             }
+
+            if(publicRequest.IsSetAppSecurityGroupManagement())
+            {
+                context.Writer.WritePropertyName("AppSecurityGroupManagement");
+                context.Writer.WriteStringValue(publicRequest.AppSecurityGroupManagement);
+            }
+
+            if(publicRequest.IsSetAuthMode())
+            {
+                context.Writer.WritePropertyName("AuthMode");
+                context.Writer.WriteStringValue(publicRequest.AuthMode);
+            }
+
+            if(publicRequest.IsSetDefaultSpaceSettings())
+            {
+                context.Writer.WritePropertyName("DefaultSpaceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDefaultUserSettings())
+            {
+                context.Writer.WritePropertyName("DefaultUserSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultUserSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+
+            if(publicRequest.IsSetDomainSettings())
+            {
+                context.Writer.WritePropertyName("DomainSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DomainSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHomeEfsFileSystemKmsKeyId())
+            {
+                context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.HomeEfsFileSystemKmsKeyId);
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagPropagation())
+            {
+                context.Writer.WritePropertyName("TagPropagation");
+                context.Writer.WriteStringValue(publicRequest.TagPropagation);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVpcId())
+            {
+                context.Writer.WritePropertyName("VpcId");
+                context.Writer.WriteStringValue(publicRequest.VpcId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

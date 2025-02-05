@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SigningPlatform Object
     /// </summary>  
-    public class SigningPlatformUnmarshaller : IUnmarshaller<SigningPlatform, XmlUnmarshallerContext>, IUnmarshaller<SigningPlatform, JsonUnmarshallerContext>
+    public class SigningPlatformUnmarshaller : IJsonUnmarshaller<SigningPlatform, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SigningPlatform IUnmarshaller<SigningPlatform, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SigningPlatform Unmarshall(JsonUnmarshallerContext context)
+        public SigningPlatform Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SigningPlatform unmarshalledObject = new SigningPlatform();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("category", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("displayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maxSizeInMB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxSizeInMB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxSizeInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("partner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Partner = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Partner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("platformId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlatformId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlatformId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("revocationSupported", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RevocationSupported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevocationSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signingConfiguration", targetDepth))
                 {
                     var unmarshaller = SigningConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SigningConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SigningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signingImageFormat", targetDepth))
                 {
                     var unmarshaller = SigningImageFormatUnmarshaller.Instance;
-                    unmarshalledObject.SigningImageFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SigningImageFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("target", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogsLogGroupArn())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsLogGroupArn");
-                context.Writer.Write(requestObject.CloudWatchLogsLogGroupArn);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogsLogGroupArn);
             }
 
             if(requestObject.IsSetHostedZoneId())
             {
                 context.Writer.WritePropertyName("HostedZoneId");
-                context.Writer.Write(requestObject.HostedZoneId);
+                context.Writer.WriteStringValue(requestObject.HostedZoneId);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
         }

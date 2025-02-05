@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OrganizationDataSourceConfigurationsResult Object
     /// </summary>  
-    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
+    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IJsonUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OrganizationDataSourceConfigurationsResult IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
+        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("kubernetes", targetDepth))
                 {
                     var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("malwareProtection", targetDepth))
                 {
                     var unmarshaller = OrganizationMalwareProtectionConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

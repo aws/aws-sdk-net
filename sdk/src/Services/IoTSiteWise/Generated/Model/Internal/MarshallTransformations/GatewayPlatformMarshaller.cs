@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGreengrass())
             {
                 context.Writer.WritePropertyName("greengrass");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreengrassMarshaller.Instance;
                 marshaller.Marshall(requestObject.Greengrass, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreengrassV2())
             {
                 context.Writer.WritePropertyName("greengrassV2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreengrassV2Marshaller.Instance;
                 marshaller.Marshall(requestObject.GreengrassV2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSiemensIE())
             {
                 context.Writer.WritePropertyName("siemensIE");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SiemensIEMarshaller.Instance;
                 marshaller.Marshall(requestObject.SiemensIE, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

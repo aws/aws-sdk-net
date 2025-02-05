@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomSecurityGroupId())
             {
                 context.Writer.WritePropertyName("CustomSecurityGroupId");
-                context.Writer.Write(requestObject.CustomSecurityGroupId);
+                context.Writer.WriteStringValue(requestObject.CustomSecurityGroupId);
             }
 
             if(requestObject.IsSetDefaultOu())
             {
                 context.Writer.WritePropertyName("DefaultOu");
-                context.Writer.Write(requestObject.DefaultOu);
+                context.Writer.WriteStringValue(requestObject.DefaultOu);
             }
 
             if(requestObject.IsSetEnableInternetAccess())
             {
                 context.Writer.WritePropertyName("EnableInternetAccess");
-                context.Writer.Write(requestObject.EnableInternetAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableInternetAccess.Value);
             }
 
             if(requestObject.IsSetEnableMaintenanceMode())
             {
                 context.Writer.WritePropertyName("EnableMaintenanceMode");
-                context.Writer.Write(requestObject.EnableMaintenanceMode.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMaintenanceMode.Value);
             }
 
             if(requestObject.IsSetEnableWorkDocs())
             {
                 context.Writer.WritePropertyName("EnableWorkDocs");
-                context.Writer.Write(requestObject.EnableWorkDocs.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableWorkDocs.Value);
             }
 
             if(requestObject.IsSetInstanceIamRoleArn())
             {
                 context.Writer.WritePropertyName("InstanceIamRoleArn");
-                context.Writer.Write(requestObject.InstanceIamRoleArn);
+                context.Writer.WriteStringValue(requestObject.InstanceIamRoleArn);
             }
 
             if(requestObject.IsSetUserEnabledAsLocalAdministrator())
             {
                 context.Writer.WritePropertyName("UserEnabledAsLocalAdministrator");
-                context.Writer.Write(requestObject.UserEnabledAsLocalAdministrator.Value);
+                context.Writer.WriteBooleanValue(requestObject.UserEnabledAsLocalAdministrator.Value);
             }
 
         }

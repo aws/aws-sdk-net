@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsGuardDutyDetectorDataSourcesDetails Object
     /// </summary>  
-    public class AwsGuardDutyDetectorDataSourcesDetailsUnmarshaller : IUnmarshaller<AwsGuardDutyDetectorDataSourcesDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsGuardDutyDetectorDataSourcesDetails, JsonUnmarshallerContext>
+    public class AwsGuardDutyDetectorDataSourcesDetailsUnmarshaller : IJsonUnmarshaller<AwsGuardDutyDetectorDataSourcesDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsGuardDutyDetectorDataSourcesDetails IUnmarshaller<AwsGuardDutyDetectorDataSourcesDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsGuardDutyDetectorDataSourcesDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsGuardDutyDetectorDataSourcesDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsGuardDutyDetectorDataSourcesDetails unmarshalledObject = new AwsGuardDutyDetectorDataSourcesDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CloudTrail", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesCloudTrailDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsLogs", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesDnsLogsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FlowLogs", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesFlowLogsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Kubernetes", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesKubernetesDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MalwareProtection", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesMalwareProtectionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Logs", targetDepth))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesS3LogsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

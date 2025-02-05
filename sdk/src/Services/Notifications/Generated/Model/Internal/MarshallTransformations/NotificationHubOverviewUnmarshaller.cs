@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NotificationHubOverview Object
     /// </summary>  
-    public class NotificationHubOverviewUnmarshaller : IUnmarshaller<NotificationHubOverview, XmlUnmarshallerContext>, IUnmarshaller<NotificationHubOverview, JsonUnmarshallerContext>
+    public class NotificationHubOverviewUnmarshaller : IJsonUnmarshaller<NotificationHubOverview, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NotificationHubOverview IUnmarshaller<NotificationHubOverview, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NotificationHubOverview Unmarshall(JsonUnmarshallerContext context)
+        public NotificationHubOverview Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NotificationHubOverview unmarshalledObject = new NotificationHubOverview();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastActivationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastActivationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastActivationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notificationHubRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotificationHubRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotificationHubRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("statusSummary", targetDepth))
                 {
                     var unmarshaller = NotificationHubStatusSummaryUnmarshaller.Instance;
-                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalFileFormat())
             {
                 context.Writer.WritePropertyName("additionalFileFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentOutputAdditionalFileFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalFileFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextFormat())
             {
                 context.Writer.WritePropertyName("textFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentOutputTextFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

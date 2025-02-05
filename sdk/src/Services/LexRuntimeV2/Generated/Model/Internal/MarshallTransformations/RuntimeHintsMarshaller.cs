@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlotHints())
             {
                 context.Writer.WritePropertyName("slotHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSlotHintsKvp in requestObject.SlotHints)
                 {
                     context.Writer.WritePropertyName(requestObjectSlotHintsKvp.Key);
                     var requestObjectSlotHintsValue = requestObjectSlotHintsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectSlotHintsValueKvp in requestObjectSlotHintsValue)
                     {
                         context.Writer.WritePropertyName(requestObjectSlotHintsValueKvp.Key);
                         var requestObjectSlotHintsValueValue = requestObjectSlotHintsValueKvp.Value;
 
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = RuntimeHintDetailsMarshaller.Instance;
                         marshaller.Marshall(requestObjectSlotHintsValueValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

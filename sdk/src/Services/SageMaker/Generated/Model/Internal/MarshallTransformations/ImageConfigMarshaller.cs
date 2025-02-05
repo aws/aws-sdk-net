@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRepositoryAccessMode())
             {
                 context.Writer.WritePropertyName("RepositoryAccessMode");
-                context.Writer.Write(requestObject.RepositoryAccessMode);
+                context.Writer.WriteStringValue(requestObject.RepositoryAccessMode);
             }
 
             if(requestObject.IsSetRepositoryAuthConfig())
             {
                 context.Writer.WritePropertyName("RepositoryAuthConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RepositoryAuthConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RepositoryAuthConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

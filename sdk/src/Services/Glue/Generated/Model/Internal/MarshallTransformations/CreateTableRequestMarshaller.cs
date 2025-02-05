@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,80 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalogId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalogId())
-                    {
-                        context.Writer.WritePropertyName("CatalogId");
-                        context.Writer.Write(publicRequest.CatalogId);
-                    }
-
-                    if(publicRequest.IsSetDatabaseName())
-                    {
-                        context.Writer.WritePropertyName("DatabaseName");
-                        context.Writer.Write(publicRequest.DatabaseName);
-                    }
-
-                    if(publicRequest.IsSetOpenTableFormatInput())
-                    {
-                        context.Writer.WritePropertyName("OpenTableFormatInput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpenTableFormatInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OpenTableFormatInput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPartitionIndexes())
-                    {
-                        context.Writer.WritePropertyName("PartitionIndexes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPartitionIndexesListValue in publicRequest.PartitionIndexes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PartitionIndexMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPartitionIndexesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTableInput())
-                    {
-                        context.Writer.WritePropertyName("TableInput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TableInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TableInput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTransactionId())
-                    {
-                        context.Writer.WritePropertyName("TransactionId");
-                        context.Writer.Write(publicRequest.TransactionId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.WriteStringValue(publicRequest.CatalogId);
             }
+
+            if(publicRequest.IsSetDatabaseName())
+            {
+                context.Writer.WritePropertyName("DatabaseName");
+                context.Writer.WriteStringValue(publicRequest.DatabaseName);
+            }
+
+            if(publicRequest.IsSetOpenTableFormatInput())
+            {
+                context.Writer.WritePropertyName("OpenTableFormatInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenTableFormatInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OpenTableFormatInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPartitionIndexes())
+            {
+                context.Writer.WritePropertyName("PartitionIndexes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPartitionIndexesListValue in publicRequest.PartitionIndexes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PartitionIndexMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPartitionIndexesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTableInput())
+            {
+                context.Writer.WritePropertyName("TableInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TableInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TableInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTransactionId())
+            {
+                context.Writer.WritePropertyName("TransactionId");
+                context.Writer.WriteStringValue(publicRequest.TransactionId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

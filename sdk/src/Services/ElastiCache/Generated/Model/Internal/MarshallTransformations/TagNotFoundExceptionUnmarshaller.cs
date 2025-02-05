@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TagNotFoundException operation
     /// </summary>  
-    public class TagNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<TagNotFoundException, XmlUnmarshallerContext>
+    public class TagNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TagNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

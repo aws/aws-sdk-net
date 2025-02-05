@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImportAssetFromApiGatewayApiResponseDetails Object
     /// </summary>  
-    public class ImportAssetFromApiGatewayApiResponseDetailsUnmarshaller : IUnmarshaller<ImportAssetFromApiGatewayApiResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportAssetFromApiGatewayApiResponseDetails, JsonUnmarshallerContext>
+    public class ImportAssetFromApiGatewayApiResponseDetailsUnmarshaller : IJsonUnmarshaller<ImportAssetFromApiGatewayApiResponseDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImportAssetFromApiGatewayApiResponseDetails IUnmarshaller<ImportAssetFromApiGatewayApiResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportAssetFromApiGatewayApiResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ImportAssetFromApiGatewayApiResponseDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImportAssetFromApiGatewayApiResponseDetails unmarshalledObject = new ImportAssetFromApiGatewayApiResponseDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApiDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiSpecificationMd5Hash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiSpecificationMd5Hash = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiSpecificationMd5Hash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiSpecificationUploadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiSpecificationUploadUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiSpecificationUploadUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApiSpecificationUploadUrlExpiresAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ApiSpecificationUploadUrlExpiresAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiSpecificationUploadUrlExpiresAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProtocolType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtocolType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProtocolType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Stage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

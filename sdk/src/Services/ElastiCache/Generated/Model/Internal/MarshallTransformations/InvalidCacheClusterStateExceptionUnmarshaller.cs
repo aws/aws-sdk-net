@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCacheClusterStateException operation
     /// </summary>  
-    public class InvalidCacheClusterStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCacheClusterStateException, XmlUnmarshallerContext>
+    public class InvalidCacheClusterStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCacheClusterStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

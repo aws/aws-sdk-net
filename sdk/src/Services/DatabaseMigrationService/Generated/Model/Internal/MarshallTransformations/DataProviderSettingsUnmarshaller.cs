@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataProviderSettings Object
     /// </summary>  
-    public class DataProviderSettingsUnmarshaller : IUnmarshaller<DataProviderSettings, XmlUnmarshallerContext>, IUnmarshaller<DataProviderSettings, JsonUnmarshallerContext>
+    public class DataProviderSettingsUnmarshaller : IJsonUnmarshaller<DataProviderSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataProviderSettings IUnmarshaller<DataProviderSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataProviderSettings Unmarshall(JsonUnmarshallerContext context)
+        public DataProviderSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataProviderSettings unmarshalledObject = new DataProviderSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DocDbSettings", targetDepth))
                 {
                     var unmarshaller = DocDbDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MariaDbSettings", targetDepth))
                 {
                     var unmarshaller = MariaDbDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MariaDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MariaDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicrosoftSqlServerSettings", targetDepth))
                 {
                     var unmarshaller = MicrosoftSqlServerDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MicrosoftSqlServerSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicrosoftSqlServerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MongoDbSettings", targetDepth))
                 {
                     var unmarshaller = MongoDbDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MySqlSettings", targetDepth))
                 {
                     var unmarshaller = MySqlDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MySqlSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MySqlSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OracleSettings", targetDepth))
                 {
                     var unmarshaller = OracleDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostgreSqlSettings", targetDepth))
                 {
                     var unmarshaller = PostgreSqlDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PostgreSqlSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostgreSqlSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftSettings", targetDepth))
                 {
                     var unmarshaller = RedshiftDataProviderSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArc())
             {
                 context.Writer.WritePropertyName("Arc");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Arc, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetArcAxis())
             {
                 context.Writer.WritePropertyName("ArcAxis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArcAxisConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArcAxis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComparison())
             {
                 context.Writer.WritePropertyName("Comparison");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComparisonConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Comparison, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrimaryValueDisplayType())
             {
                 context.Writer.WritePropertyName("PrimaryValueDisplayType");
-                context.Writer.Write(requestObject.PrimaryValueDisplayType);
+                context.Writer.WriteStringValue(requestObject.PrimaryValueDisplayType);
             }
 
             if(requestObject.IsSetPrimaryValueFontConfiguration())
             {
                 context.Writer.WritePropertyName("PrimaryValueFontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryValueFontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

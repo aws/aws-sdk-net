@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDnsResolvers())
             {
                 context.Writer.WritePropertyName("DnsResolvers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsResolversListValue in requestObject.DnsResolvers)
                 {
-                        context.Writer.Write(requestObjectDnsResolversListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsResolversListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVPCConnectionId())
             {
                 context.Writer.WritePropertyName("VPCConnectionId");
-                context.Writer.Write(requestObject.VPCConnectionId);
+                context.Writer.WriteStringValue(requestObject.VPCConnectionId);
             }
 
         }

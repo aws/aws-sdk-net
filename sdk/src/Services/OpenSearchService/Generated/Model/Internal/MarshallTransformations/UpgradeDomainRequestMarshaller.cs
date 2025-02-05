@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -61,51 +64,56 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/upgradeDomain";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdvancedOptions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdvancedOptions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdvancedOptions())
-                    {
-                        context.Writer.WritePropertyName("AdvancedOptions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAdvancedOptionsKvp in publicRequest.AdvancedOptions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
-                            var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAdvancedOptionsKvp.Key);
+                    var publicRequestAdvancedOptionsValue = publicRequestAdvancedOptionsKvp.Value;
 
-                                context.Writer.Write(publicRequestAdvancedOptionsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDomainName())
-                    {
-                        context.Writer.WritePropertyName("DomainName");
-                        context.Writer.Write(publicRequest.DomainName);
-                    }
-
-                    if(publicRequest.IsSetPerformCheckOnly())
-                    {
-                        context.Writer.WritePropertyName("PerformCheckOnly");
-                        context.Writer.Write(publicRequest.PerformCheckOnly.Value);
-                    }
-
-                    if(publicRequest.IsSetTargetVersion())
-                    {
-                        context.Writer.WritePropertyName("TargetVersion");
-                        context.Writer.Write(publicRequest.TargetVersion);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAdvancedOptionsValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+
+            if(publicRequest.IsSetPerformCheckOnly())
+            {
+                context.Writer.WritePropertyName("PerformCheckOnly");
+                context.Writer.WriteBooleanValue(publicRequest.PerformCheckOnly.Value);
+            }
+
+            if(publicRequest.IsSetTargetVersion())
+            {
+                context.Writer.WritePropertyName("TargetVersion");
+                context.Writer.WriteStringValue(publicRequest.TargetVersion);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

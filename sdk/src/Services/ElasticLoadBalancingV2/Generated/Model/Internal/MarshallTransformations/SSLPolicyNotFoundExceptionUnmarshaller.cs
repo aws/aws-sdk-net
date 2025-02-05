@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SSLPolicyNotFoundException operation
     /// </summary>  
-    public class SSLPolicyNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SSLPolicyNotFoundException, XmlUnmarshallerContext>
+    public class SSLPolicyNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SSLPolicyNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectionConfig())
             {
                 context.Writer.WritePropertyName("CollectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CollectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CollectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCollectionType())
             {
                 context.Writer.WritePropertyName("CollectionType");
-                context.Writer.Write(requestObject.CollectionType);
+                context.Writer.WriteStringValue(requestObject.CollectionType);
             }
 
             if(requestObject.IsSetFeatureName())
             {
                 context.Writer.WritePropertyName("FeatureName");
-                context.Writer.Write(requestObject.FeatureName);
+                context.Writer.WriteStringValue(requestObject.FeatureName);
             }
 
             if(requestObject.IsSetFeatureType())
             {
                 context.Writer.WritePropertyName("FeatureType");
-                context.Writer.Write(requestObject.FeatureType);
+                context.Writer.WriteStringValue(requestObject.FeatureType);
             }
 
         }

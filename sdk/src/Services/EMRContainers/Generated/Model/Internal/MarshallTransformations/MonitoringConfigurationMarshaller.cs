@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("cloudWatchMonitoringConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchMonitoringConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchMonitoringConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerLogRotationConfiguration())
             {
                 context.Writer.WritePropertyName("containerLogRotationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerLogRotationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerLogRotationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPersistentAppUI())
             {
                 context.Writer.WritePropertyName("persistentAppUI");
-                context.Writer.Write(requestObject.PersistentAppUI);
+                context.Writer.WriteStringValue(requestObject.PersistentAppUI);
             }
 
             if(requestObject.IsSetS3MonitoringConfiguration())
             {
                 context.Writer.WritePropertyName("s3MonitoringConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3MonitoringConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3MonitoringConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

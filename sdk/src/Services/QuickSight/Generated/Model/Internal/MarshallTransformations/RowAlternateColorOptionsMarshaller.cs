@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRowAlternateColors())
             {
                 context.Writer.WritePropertyName("RowAlternateColors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRowAlternateColorsListValue in requestObject.RowAlternateColors)
                 {
-                        context.Writer.Write(requestObjectRowAlternateColorsListValue);
+                        context.Writer.WriteStringValue(requestObjectRowAlternateColorsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetUsePrimaryBackgroundColor())
             {
                 context.Writer.WritePropertyName("UsePrimaryBackgroundColor");
-                context.Writer.Write(requestObject.UsePrimaryBackgroundColor);
+                context.Writer.WriteStringValue(requestObject.UsePrimaryBackgroundColor);
             }
 
         }

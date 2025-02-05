@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DecisionTaskScheduledEventAttributes Object
     /// </summary>  
-    public class DecisionTaskScheduledEventAttributesUnmarshaller : IUnmarshaller<DecisionTaskScheduledEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<DecisionTaskScheduledEventAttributes, JsonUnmarshallerContext>
+    public class DecisionTaskScheduledEventAttributesUnmarshaller : IJsonUnmarshaller<DecisionTaskScheduledEventAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DecisionTaskScheduledEventAttributes IUnmarshaller<DecisionTaskScheduledEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DecisionTaskScheduledEventAttributes Unmarshall(JsonUnmarshallerContext context)
+        public DecisionTaskScheduledEventAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DecisionTaskScheduledEventAttributes unmarshalledObject = new DecisionTaskScheduledEventAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("scheduleToStartTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleToStartTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleToStartTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startToCloseTimeout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartToCloseTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskList", targetDepth))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;
-                    unmarshalledObject.TaskList = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskPriority", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskPriority = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

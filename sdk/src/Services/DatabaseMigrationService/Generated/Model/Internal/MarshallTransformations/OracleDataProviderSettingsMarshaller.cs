@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsmServer())
             {
                 context.Writer.WritePropertyName("AsmServer");
-                context.Writer.Write(requestObject.AsmServer);
+                context.Writer.WriteStringValue(requestObject.AsmServer);
             }
 
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("CertificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerOracleAsmAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerOracleAsmAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerOracleAsmAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerOracleAsmAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerOracleAsmSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerOracleAsmSecretId");
-                context.Writer.Write(requestObject.SecretsManagerOracleAsmSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerOracleAsmSecretId);
             }
 
             if(requestObject.IsSetSecretsManagerSecurityDbEncryptionAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecurityDbEncryptionAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerSecurityDbEncryptionAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecurityDbEncryptionAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerSecurityDbEncryptionSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecurityDbEncryptionSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecurityDbEncryptionSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecurityDbEncryptionSecretId);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetSslMode())
             {
                 context.Writer.WritePropertyName("SslMode");
-                context.Writer.Write(requestObject.SslMode);
+                context.Writer.WriteStringValue(requestObject.SslMode);
             }
 
         }

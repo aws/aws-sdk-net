@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OfflineStoreConfig Object
     /// </summary>  
-    public class OfflineStoreConfigUnmarshaller : IUnmarshaller<OfflineStoreConfig, XmlUnmarshallerContext>, IUnmarshaller<OfflineStoreConfig, JsonUnmarshallerContext>
+    public class OfflineStoreConfigUnmarshaller : IJsonUnmarshaller<OfflineStoreConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OfflineStoreConfig IUnmarshaller<OfflineStoreConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OfflineStoreConfig Unmarshall(JsonUnmarshallerContext context)
+        public OfflineStoreConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OfflineStoreConfig unmarshalledObject = new OfflineStoreConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataCatalogConfig", targetDepth))
                 {
                     var unmarshaller = DataCatalogConfigUnmarshaller.Instance;
-                    unmarshalledObject.DataCatalogConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataCatalogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisableGlueTableCreation", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableGlueTableCreation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisableGlueTableCreation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3StorageConfig", targetDepth))
                 {
                     var unmarshaller = S3StorageConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3StorageConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3StorageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -70,75 +73,80 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/environments/{environmentIdentifier}/subscription-targets/{identifier}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicableAssetTypes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("applicableAssetTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestApplicableAssetTypesListValue in publicRequest.ApplicableAssetTypes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicableAssetTypes())
-                    {
-                        context.Writer.WritePropertyName("applicableAssetTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestApplicableAssetTypesListValue in publicRequest.ApplicableAssetTypes)
-                        {
-                                context.Writer.Write(publicRequestApplicableAssetTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthorizedPrincipals())
-                    {
-                        context.Writer.WritePropertyName("authorizedPrincipals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthorizedPrincipalsListValue in publicRequest.AuthorizedPrincipals)
-                        {
-                                context.Writer.Write(publicRequestAuthorizedPrincipalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetManageAccessRole())
-                    {
-                        context.Writer.WritePropertyName("manageAccessRole");
-                        context.Writer.Write(publicRequest.ManageAccessRole);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetProvider())
-                    {
-                        context.Writer.WritePropertyName("provider");
-                        context.Writer.Write(publicRequest.Provider);
-                    }
-
-                    if(publicRequest.IsSetSubscriptionTargetConfig())
-                    {
-                        context.Writer.WritePropertyName("subscriptionTargetConfig");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubscriptionTargetConfigListValue in publicRequest.SubscriptionTargetConfig)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SubscriptionTargetFormMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSubscriptionTargetConfigListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestApplicableAssetTypesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAuthorizedPrincipals())
+            {
+                context.Writer.WritePropertyName("authorizedPrincipals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthorizedPrincipalsListValue in publicRequest.AuthorizedPrincipals)
+                {
+                        context.Writer.WriteStringValue(publicRequestAuthorizedPrincipalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManageAccessRole())
+            {
+                context.Writer.WritePropertyName("manageAccessRole");
+                context.Writer.WriteStringValue(publicRequest.ManageAccessRole);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProvider())
+            {
+                context.Writer.WritePropertyName("provider");
+                context.Writer.WriteStringValue(publicRequest.Provider);
+            }
+
+            if(publicRequest.IsSetSubscriptionTargetConfig())
+            {
+                context.Writer.WritePropertyName("subscriptionTargetConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubscriptionTargetConfigListValue in publicRequest.SubscriptionTargetConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SubscriptionTargetFormMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSubscriptionTargetConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

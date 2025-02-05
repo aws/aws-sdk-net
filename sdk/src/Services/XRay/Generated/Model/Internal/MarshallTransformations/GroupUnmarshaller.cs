@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Group Object
     /// </summary>  
-    public class GroupUnmarshaller : IUnmarshaller<Group, XmlUnmarshallerContext>, IUnmarshaller<Group, JsonUnmarshallerContext>
+    public class GroupUnmarshaller : IJsonUnmarshaller<Group, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Group IUnmarshaller<Group, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Group Unmarshall(JsonUnmarshallerContext context)
+        public Group Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Group unmarshalledObject = new Group();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FilterExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GroupARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InsightsConfiguration", targetDepth))
                 {
                     var unmarshaller = InsightsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InsightsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InsightsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

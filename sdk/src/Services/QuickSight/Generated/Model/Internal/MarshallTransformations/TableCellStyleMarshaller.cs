@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundColor())
             {
                 context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.Write(requestObject.BackgroundColor);
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
             }
 
             if(requestObject.IsSetBorder())
             {
                 context.Writer.WritePropertyName("Border");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GlobalTableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Border, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFontConfiguration())
             {
                 context.Writer.WritePropertyName("FontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetHorizontalTextAlignment())
             {
                 context.Writer.WritePropertyName("HorizontalTextAlignment");
-                context.Writer.Write(requestObject.HorizontalTextAlignment);
+                context.Writer.WriteStringValue(requestObject.HorizontalTextAlignment);
             }
 
             if(requestObject.IsSetTextWrap())
             {
                 context.Writer.WritePropertyName("TextWrap");
-                context.Writer.Write(requestObject.TextWrap);
+                context.Writer.WriteStringValue(requestObject.TextWrap);
             }
 
             if(requestObject.IsSetVerticalTextAlignment())
             {
                 context.Writer.WritePropertyName("VerticalTextAlignment");
-                context.Writer.Write(requestObject.VerticalTextAlignment);
+                context.Writer.WriteStringValue(requestObject.VerticalTextAlignment);
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -61,72 +64,77 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/api/v1/users";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEmailAddress())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("EmailAddress");
-                        context.Writer.Write(publicRequest.EmailAddress);
-                    }
-
-                    if(publicRequest.IsSetGivenName())
-                    {
-                        context.Writer.WritePropertyName("GivenName");
-                        context.Writer.Write(publicRequest.GivenName);
-                    }
-
-                    if(publicRequest.IsSetOrganizationId())
-                    {
-                        context.Writer.WritePropertyName("OrganizationId");
-                        context.Writer.Write(publicRequest.OrganizationId);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("Password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    if(publicRequest.IsSetStorageRule())
-                    {
-                        context.Writer.WritePropertyName("StorageRule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StorageRuleTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StorageRule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSurname())
-                    {
-                        context.Writer.WritePropertyName("Surname");
-                        context.Writer.Write(publicRequest.Surname);
-                    }
-
-                    if(publicRequest.IsSetTimeZoneId())
-                    {
-                        context.Writer.WritePropertyName("TimeZoneId");
-                        context.Writer.Write(publicRequest.TimeZoneId);
-                    }
-
-                    if(publicRequest.IsSetUsername())
-                    {
-                        context.Writer.WritePropertyName("Username");
-                        context.Writer.Write(publicRequest.Username);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EmailAddress");
+                context.Writer.WriteStringValue(publicRequest.EmailAddress);
             }
+
+            if(publicRequest.IsSetGivenName())
+            {
+                context.Writer.WritePropertyName("GivenName");
+                context.Writer.WriteStringValue(publicRequest.GivenName);
+            }
+
+            if(publicRequest.IsSetOrganizationId())
+            {
+                context.Writer.WritePropertyName("OrganizationId");
+                context.Writer.WriteStringValue(publicRequest.OrganizationId);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("Password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            if(publicRequest.IsSetStorageRule())
+            {
+                context.Writer.WritePropertyName("StorageRule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StorageRuleTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StorageRule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSurname())
+            {
+                context.Writer.WritePropertyName("Surname");
+                context.Writer.WriteStringValue(publicRequest.Surname);
+            }
+
+            if(publicRequest.IsSetTimeZoneId())
+            {
+                context.Writer.WritePropertyName("TimeZoneId");
+                context.Writer.WriteStringValue(publicRequest.TimeZoneId);
+            }
+
+            if(publicRequest.IsSetUsername())
+            {
+                context.Writer.WritePropertyName("Username");
+                context.Writer.WriteStringValue(publicRequest.Username);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetAuthenticationToken()) 

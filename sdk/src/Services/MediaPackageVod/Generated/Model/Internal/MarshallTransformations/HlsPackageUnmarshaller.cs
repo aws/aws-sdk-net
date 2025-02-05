@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HlsPackage Object
     /// </summary>  
-    public class HlsPackageUnmarshaller : IUnmarshaller<HlsPackage, XmlUnmarshallerContext>, IUnmarshaller<HlsPackage, JsonUnmarshallerContext>
+    public class HlsPackageUnmarshaller : IJsonUnmarshaller<HlsPackage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HlsPackage IUnmarshaller<HlsPackage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HlsPackage Unmarshall(JsonUnmarshallerContext context)
+        public HlsPackage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HlsPackage unmarshalledObject = new HlsPackage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("encryption", targetDepth))
                 {
                     var unmarshaller = HlsEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HlsManifest, HlsManifestUnmarshaller>(HlsManifestUnmarshaller.Instance);
-                    unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HlsManifest, HlsManifestUnmarshaller>(HlsManifestUnmarshaller.Instance);
+                    unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("includeDvbSubtitles", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("useAudioRenditionGroup", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseAudioRenditionGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseAudioRenditionGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

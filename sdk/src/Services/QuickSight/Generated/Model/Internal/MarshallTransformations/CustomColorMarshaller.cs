@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColor())
             {
                 context.Writer.WritePropertyName("Color");
-                context.Writer.Write(requestObject.Color);
+                context.Writer.WriteStringValue(requestObject.Color);
             }
 
             if(requestObject.IsSetFieldValue())
             {
                 context.Writer.WritePropertyName("FieldValue");
-                context.Writer.Write(requestObject.FieldValue);
+                context.Writer.WriteStringValue(requestObject.FieldValue);
             }
 
             if(requestObject.IsSetSpecialValue())
             {
                 context.Writer.WritePropertyName("SpecialValue");
-                context.Writer.Write(requestObject.SpecialValue);
+                context.Writer.WriteStringValue(requestObject.SpecialValue);
             }
 
         }

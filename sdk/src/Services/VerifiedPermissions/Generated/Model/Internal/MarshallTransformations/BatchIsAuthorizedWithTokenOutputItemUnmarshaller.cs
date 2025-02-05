@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchIsAuthorizedWithTokenOutputItem Object
     /// </summary>  
-    public class BatchIsAuthorizedWithTokenOutputItemUnmarshaller : IUnmarshaller<BatchIsAuthorizedWithTokenOutputItem, XmlUnmarshallerContext>, IUnmarshaller<BatchIsAuthorizedWithTokenOutputItem, JsonUnmarshallerContext>
+    public class BatchIsAuthorizedWithTokenOutputItemUnmarshaller : IJsonUnmarshaller<BatchIsAuthorizedWithTokenOutputItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchIsAuthorizedWithTokenOutputItem IUnmarshaller<BatchIsAuthorizedWithTokenOutputItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchIsAuthorizedWithTokenOutputItem Unmarshall(JsonUnmarshallerContext context)
+        public BatchIsAuthorizedWithTokenOutputItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchIsAuthorizedWithTokenOutputItem unmarshalledObject = new BatchIsAuthorizedWithTokenOutputItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("decision", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Decision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Decision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("determiningPolicies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DeterminingPolicyItem, DeterminingPolicyItemUnmarshaller>(DeterminingPolicyItemUnmarshaller.Instance);
-                    unmarshalledObject.DeterminingPolicies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DeterminingPolicyItem, DeterminingPolicyItemUnmarshaller>(DeterminingPolicyItemUnmarshaller.Instance);
+                    unmarshalledObject.DeterminingPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EvaluationErrorItem, EvaluationErrorItemUnmarshaller>(EvaluationErrorItemUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EvaluationErrorItem, EvaluationErrorItemUnmarshaller>(EvaluationErrorItemUnmarshaller.Instance);
+                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("request", targetDepth))
                 {
                     var unmarshaller = BatchIsAuthorizedWithTokenInputItemUnmarshaller.Instance;
-                    unmarshalledObject.Request = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Request = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

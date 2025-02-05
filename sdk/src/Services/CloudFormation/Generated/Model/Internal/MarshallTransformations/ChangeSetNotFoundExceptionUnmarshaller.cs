@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ChangeSetNotFoundException operation
     /// </summary>  
-    public class ChangeSetNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ChangeSetNotFoundException, XmlUnmarshallerContext>
+    public class ChangeSetNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ChangeSetNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

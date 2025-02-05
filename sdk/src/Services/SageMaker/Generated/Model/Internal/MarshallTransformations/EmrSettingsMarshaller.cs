@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssumableRoleArns())
             {
                 context.Writer.WritePropertyName("AssumableRoleArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssumableRoleArnsListValue in requestObject.AssumableRoleArns)
                 {
-                        context.Writer.Write(requestObjectAssumableRoleArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectAssumableRoleArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExecutionRoleArns())
             {
                 context.Writer.WritePropertyName("ExecutionRoleArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExecutionRoleArnsListValue in requestObject.ExecutionRoleArns)
                 {
-                        context.Writer.Write(requestObjectExecutionRoleArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectExecutionRoleArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

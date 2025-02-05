@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsDynamoDbTableLocalSecondaryIndex Object
     /// </summary>  
-    public class AwsDynamoDbTableLocalSecondaryIndexUnmarshaller : IUnmarshaller<AwsDynamoDbTableLocalSecondaryIndex, XmlUnmarshallerContext>, IUnmarshaller<AwsDynamoDbTableLocalSecondaryIndex, JsonUnmarshallerContext>
+    public class AwsDynamoDbTableLocalSecondaryIndexUnmarshaller : IJsonUnmarshaller<AwsDynamoDbTableLocalSecondaryIndex, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsDynamoDbTableLocalSecondaryIndex IUnmarshaller<AwsDynamoDbTableLocalSecondaryIndex, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsDynamoDbTableLocalSecondaryIndex Unmarshall(JsonUnmarshallerContext context)
+        public AwsDynamoDbTableLocalSecondaryIndex Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsDynamoDbTableLocalSecondaryIndex unmarshalledObject = new AwsDynamoDbTableLocalSecondaryIndex();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IndexArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeySchema", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsDynamoDbTableKeySchema, AwsDynamoDbTableKeySchemaUnmarshaller>(AwsDynamoDbTableKeySchemaUnmarshaller.Instance);
-                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableKeySchema, AwsDynamoDbTableKeySchemaUnmarshaller>(AwsDynamoDbTableKeySchemaUnmarshaller.Instance);
+                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Projection", targetDepth))
                 {
                     var unmarshaller = AwsDynamoDbTableProjectionUnmarshaller.Instance;
-                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

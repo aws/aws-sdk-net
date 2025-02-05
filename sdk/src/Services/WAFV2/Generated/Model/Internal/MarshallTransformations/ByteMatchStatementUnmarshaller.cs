@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ByteMatchStatement Object
     /// </summary>  
-    public class ByteMatchStatementUnmarshaller : IUnmarshaller<ByteMatchStatement, XmlUnmarshallerContext>, IUnmarshaller<ByteMatchStatement, JsonUnmarshallerContext>
+    public class ByteMatchStatementUnmarshaller : IJsonUnmarshaller<ByteMatchStatement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ByteMatchStatement IUnmarshaller<ByteMatchStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ByteMatchStatement Unmarshall(JsonUnmarshallerContext context)
+        public ByteMatchStatement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ByteMatchStatement unmarshalledObject = new ByteMatchStatement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FieldToMatch", targetDepth))
                 {
                     var unmarshaller = FieldToMatchUnmarshaller.Instance;
-                    unmarshalledObject.FieldToMatch = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldToMatch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PositionalConstraint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PositionalConstraint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PositionalConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SearchString", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.SearchString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SearchString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextTransformations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TextTransformation, TextTransformationUnmarshaller>(TextTransformationUnmarshaller.Instance);
-                    unmarshalledObject.TextTransformations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TextTransformation, TextTransformationUnmarshaller>(TextTransformationUnmarshaller.Instance);
+                    unmarshalledObject.TextTransformations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

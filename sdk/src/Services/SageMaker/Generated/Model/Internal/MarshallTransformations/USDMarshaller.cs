@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCents())
             {
                 context.Writer.WritePropertyName("Cents");
-                context.Writer.Write(requestObject.Cents.Value);
+                context.Writer.WriteNumberValue(requestObject.Cents.Value);
             }
 
             if(requestObject.IsSetDollars())
             {
                 context.Writer.WritePropertyName("Dollars");
-                context.Writer.Write(requestObject.Dollars.Value);
+                context.Writer.WriteNumberValue(requestObject.Dollars.Value);
             }
 
             if(requestObject.IsSetTenthFractionsOfACent())
             {
                 context.Writer.WritePropertyName("TenthFractionsOfACent");
-                context.Writer.Write(requestObject.TenthFractionsOfACent.Value);
+                context.Writer.WriteNumberValue(requestObject.TenthFractionsOfACent.Value);
             }
 
         }

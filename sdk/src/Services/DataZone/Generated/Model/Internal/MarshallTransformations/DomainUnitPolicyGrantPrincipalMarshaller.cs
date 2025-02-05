@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainUnitDesignation())
             {
                 context.Writer.WritePropertyName("domainUnitDesignation");
-                context.Writer.Write(requestObject.DomainUnitDesignation);
+                context.Writer.WriteStringValue(requestObject.DomainUnitDesignation);
             }
 
             if(requestObject.IsSetDomainUnitGrantFilter())
             {
                 context.Writer.WritePropertyName("domainUnitGrantFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DomainUnitGrantFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainUnitGrantFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainUnitIdentifier())
             {
                 context.Writer.WritePropertyName("domainUnitIdentifier");
-                context.Writer.Write(requestObject.DomainUnitIdentifier);
+                context.Writer.WriteStringValue(requestObject.DomainUnitIdentifier);
             }
 
         }

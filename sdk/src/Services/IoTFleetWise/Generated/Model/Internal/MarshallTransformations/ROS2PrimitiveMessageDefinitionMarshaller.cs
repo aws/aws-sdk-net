@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("offset");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset.Value);
+                    context.Writer.WriteNumberValue(requestObject.Offset.Value);
                 }
             }
 
             if(requestObject.IsSetPrimitiveType())
             {
                 context.Writer.WritePropertyName("primitiveType");
-                context.Writer.Write(requestObject.PrimitiveType);
+                context.Writer.WriteStringValue(requestObject.PrimitiveType);
             }
 
             if(requestObject.IsSetScaling())
@@ -72,18 +70,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scaling");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scaling.Value);
+                    context.Writer.WriteNumberValue(requestObject.Scaling.Value);
                 }
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("upperBound");
-                context.Writer.Write(requestObject.UpperBound.Value);
+                context.Writer.WriteNumberValue(requestObject.UpperBound.Value);
             }
 
         }

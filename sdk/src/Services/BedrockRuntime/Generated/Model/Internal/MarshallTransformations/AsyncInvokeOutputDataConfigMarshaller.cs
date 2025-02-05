@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3OutputDataConfig())
             {
                 context.Writer.WritePropertyName("s3OutputDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AsyncInvokeS3OutputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OutputDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

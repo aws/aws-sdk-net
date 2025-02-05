@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonMskCluster())
             {
                 context.Writer.WritePropertyName("amazonMskCluster");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonMskClusterMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonMskCluster, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("vpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KafkaClusterClientVpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

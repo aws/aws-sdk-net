@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureStrings())
             {
                 context.Writer.WritePropertyName("FailureStrings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFailureStringsListValue in requestObject.FailureStrings)
                 {
-                        context.Writer.Write(requestObjectFailureStringsListValue);
+                        context.Writer.WriteStringValue(requestObjectFailureStringsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSuccessStrings())
             {
                 context.Writer.WritePropertyName("SuccessStrings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSuccessStringsListValue in requestObject.SuccessStrings)
                 {
-                        context.Writer.Write(requestObjectSuccessStringsListValue);
+                        context.Writer.WriteStringValue(requestObjectSuccessStringsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

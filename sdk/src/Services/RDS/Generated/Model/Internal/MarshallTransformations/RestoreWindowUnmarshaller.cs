@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RestoreWindow Object
     /// </summary>  
-    public class RestoreWindowUnmarshaller : IUnmarshaller<RestoreWindow, XmlUnmarshallerContext>, IUnmarshaller<RestoreWindow, JsonUnmarshallerContext>
+    public class RestoreWindowUnmarshaller : IXmlUnmarshaller<RestoreWindow, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RestoreWindow Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RestoreWindowUnmarshaller _instance = new RestoreWindowUnmarshaller();        
 

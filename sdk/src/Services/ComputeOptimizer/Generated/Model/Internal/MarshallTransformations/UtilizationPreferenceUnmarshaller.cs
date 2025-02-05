@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UtilizationPreference Object
     /// </summary>  
-    public class UtilizationPreferenceUnmarshaller : IUnmarshaller<UtilizationPreference, XmlUnmarshallerContext>, IUnmarshaller<UtilizationPreference, JsonUnmarshallerContext>
+    public class UtilizationPreferenceUnmarshaller : IJsonUnmarshaller<UtilizationPreference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UtilizationPreference IUnmarshaller<UtilizationPreference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UtilizationPreference Unmarshall(JsonUnmarshallerContext context)
+        public UtilizationPreference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UtilizationPreference unmarshalledObject = new UtilizationPreference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("metricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metricParameters", targetDepth))
                 {
                     var unmarshaller = CustomizableMetricParametersUnmarshaller.Instance;
-                    unmarshalledObject.MetricParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

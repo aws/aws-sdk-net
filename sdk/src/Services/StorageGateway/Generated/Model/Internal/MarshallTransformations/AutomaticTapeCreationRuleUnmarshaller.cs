@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutomaticTapeCreationRule Object
     /// </summary>  
-    public class AutomaticTapeCreationRuleUnmarshaller : IUnmarshaller<AutomaticTapeCreationRule, XmlUnmarshallerContext>, IUnmarshaller<AutomaticTapeCreationRule, JsonUnmarshallerContext>
+    public class AutomaticTapeCreationRuleUnmarshaller : IJsonUnmarshaller<AutomaticTapeCreationRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutomaticTapeCreationRule IUnmarshaller<AutomaticTapeCreationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomaticTapeCreationRule Unmarshall(JsonUnmarshallerContext context)
+        public AutomaticTapeCreationRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutomaticTapeCreationRule unmarshalledObject = new AutomaticTapeCreationRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MinimumNumTapes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinimumNumTapes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumNumTapes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TapeBarcodePrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TapeBarcodePrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeBarcodePrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TapeSizeInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TapeSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Worm", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Worm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Worm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

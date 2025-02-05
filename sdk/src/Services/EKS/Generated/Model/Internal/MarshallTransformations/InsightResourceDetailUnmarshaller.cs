@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InsightResourceDetail Object
     /// </summary>  
-    public class InsightResourceDetailUnmarshaller : IUnmarshaller<InsightResourceDetail, XmlUnmarshallerContext>, IUnmarshaller<InsightResourceDetail, JsonUnmarshallerContext>
+    public class InsightResourceDetailUnmarshaller : IJsonUnmarshaller<InsightResourceDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InsightResourceDetail IUnmarshaller<InsightResourceDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InsightResourceDetail Unmarshall(JsonUnmarshallerContext context)
+        public InsightResourceDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InsightResourceDetail unmarshalledObject = new InsightResourceDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("insightStatus", targetDepth))
                 {
                     var unmarshaller = InsightStatusUnmarshaller.Instance;
-                    unmarshalledObject.InsightStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InsightStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kubernetesResourceUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KubernetesResourceUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KubernetesResourceUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,139 +49,139 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPolicies())
             {
                 context.Writer.WritePropertyName("AccessPolicies");
-                context.Writer.Write(requestObject.AccessPolicies);
+                context.Writer.WriteStringValue(requestObject.AccessPolicies);
             }
 
             if(requestObject.IsSetAdvancedSecurityOptions())
             {
                 context.Writer.WritePropertyName("AdvancedSecurityOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdvancedSecurityOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetClusterConfig())
             {
                 context.Writer.WritePropertyName("ClusterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainClusterConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClusterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainEndpoint())
             {
                 context.Writer.WritePropertyName("DomainEndpoint");
-                context.Writer.Write(requestObject.DomainEndpoint);
+                context.Writer.WriteStringValue(requestObject.DomainEndpoint);
             }
 
             if(requestObject.IsSetDomainEndpointOptions())
             {
                 context.Writer.WritePropertyName("DomainEndpointOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainEndpointOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainEndpoints())
             {
                 context.Writer.WritePropertyName("DomainEndpoints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDomainEndpointsKvp in requestObject.DomainEndpoints)
                 {
                     context.Writer.WritePropertyName(requestObjectDomainEndpointsKvp.Key);
                     var requestObjectDomainEndpointsValue = requestObjectDomainEndpointsKvp.Value;
 
-                        context.Writer.Write(requestObjectDomainEndpointsValue);
+                        context.Writer.WriteStringValue(requestObjectDomainEndpointsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetEncryptionAtRestOptions())
             {
                 context.Writer.WritePropertyName("EncryptionAtRestOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionAtRestOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.Write(requestObject.EngineVersion);
+                context.Writer.WriteStringValue(requestObject.EngineVersion);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLogPublishingOptions())
             {
                 context.Writer.WritePropertyName("LogPublishingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainLogPublishingOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogPublishingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNodeToNodeEncryptionOptions())
             {
                 context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NodeToNodeEncryptionOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceSoftwareOptions())
             {
                 context.Writer.WritePropertyName("ServiceSoftwareOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceSoftwareOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcOptions())
             {
                 context.Writer.WritePropertyName("VpcOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsOpenSearchServiceDomainVpcOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

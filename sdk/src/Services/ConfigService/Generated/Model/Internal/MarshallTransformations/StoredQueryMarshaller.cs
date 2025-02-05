@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetQueryArn())
             {
                 context.Writer.WritePropertyName("QueryArn");
-                context.Writer.Write(requestObject.QueryArn);
+                context.Writer.WriteStringValue(requestObject.QueryArn);
             }
 
             if(requestObject.IsSetQueryId())
             {
                 context.Writer.WritePropertyName("QueryId");
-                context.Writer.Write(requestObject.QueryId);
+                context.Writer.WriteStringValue(requestObject.QueryId);
             }
 
             if(requestObject.IsSetQueryName())
             {
                 context.Writer.WritePropertyName("QueryName");
-                context.Writer.Write(requestObject.QueryName);
+                context.Writer.WriteStringValue(requestObject.QueryName);
             }
 
         }

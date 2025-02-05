@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApprovalThresholdPolicy())
             {
                 context.Writer.WritePropertyName("ApprovalThresholdPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApprovalThresholdPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApprovalThresholdPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

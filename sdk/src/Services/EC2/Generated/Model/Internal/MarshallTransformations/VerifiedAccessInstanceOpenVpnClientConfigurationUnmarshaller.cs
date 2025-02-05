@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VerifiedAccessInstanceOpenVpnClientConfiguration Object
     /// </summary>  
-    public class VerifiedAccessInstanceOpenVpnClientConfigurationUnmarshaller : IUnmarshaller<VerifiedAccessInstanceOpenVpnClientConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessInstanceOpenVpnClientConfiguration, JsonUnmarshallerContext>
+    public class VerifiedAccessInstanceOpenVpnClientConfigurationUnmarshaller : IXmlUnmarshaller<VerifiedAccessInstanceOpenVpnClientConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VerifiedAccessInstanceOpenVpnClientConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VerifiedAccessInstanceOpenVpnClientConfigurationUnmarshaller _instance = new VerifiedAccessInstanceOpenVpnClientConfigurationUnmarshaller();        
 

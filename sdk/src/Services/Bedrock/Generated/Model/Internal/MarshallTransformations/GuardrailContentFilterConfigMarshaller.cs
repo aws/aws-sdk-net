@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputModalities())
             {
                 context.Writer.WritePropertyName("inputModalities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputModalitiesListValue in requestObject.InputModalities)
                 {
-                        context.Writer.Write(requestObjectInputModalitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectInputModalitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputStrength())
             {
                 context.Writer.WritePropertyName("inputStrength");
-                context.Writer.Write(requestObject.InputStrength);
+                context.Writer.WriteStringValue(requestObject.InputStrength);
             }
 
             if(requestObject.IsSetOutputModalities())
             {
                 context.Writer.WritePropertyName("outputModalities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputModalitiesListValue in requestObject.OutputModalities)
                 {
-                        context.Writer.Write(requestObjectOutputModalitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectOutputModalitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputStrength())
             {
                 context.Writer.WritePropertyName("outputStrength");
-                context.Writer.Write(requestObject.OutputStrength);
+                context.Writer.WriteStringValue(requestObject.OutputStrength);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

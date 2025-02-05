@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentConfiguration Object
     /// </summary>  
-    public class DeploymentConfigurationUnmarshaller : IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfiguration, JsonUnmarshallerContext>
+    public class DeploymentConfigurationUnmarshaller : IJsonUnmarshaller<DeploymentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentConfiguration IUnmarshaller<DeploymentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentConfiguration unmarshalledObject = new DeploymentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("alarms", targetDepth))
                 {
                     var unmarshaller = DeploymentAlarmsUnmarshaller.Instance;
-                    unmarshalledObject.Alarms = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
                 {
                     var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maximumPercent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minimumHealthyPercent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

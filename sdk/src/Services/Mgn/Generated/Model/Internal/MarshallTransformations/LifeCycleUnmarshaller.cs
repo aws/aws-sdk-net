@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LifeCycle Object
     /// </summary>  
-    public class LifeCycleUnmarshaller : IUnmarshaller<LifeCycle, XmlUnmarshallerContext>, IUnmarshaller<LifeCycle, JsonUnmarshallerContext>
+    public class LifeCycleUnmarshaller : IJsonUnmarshaller<LifeCycle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LifeCycle IUnmarshaller<LifeCycle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LifeCycle Unmarshall(JsonUnmarshallerContext context)
+        public LifeCycle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LifeCycle unmarshalledObject = new LifeCycle();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("addedToServiceDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddedToServiceDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddedToServiceDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("elapsedReplicationDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ElapsedReplicationDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElapsedReplicationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("firstByteDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirstByteDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirstByteDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastCutover", targetDepth))
                 {
                     var unmarshaller = LifeCycleLastCutoverUnmarshaller.Instance;
-                    unmarshalledObject.LastCutover = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastCutover = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastSeenByServiceDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSeenByServiceDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSeenByServiceDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastTest", targetDepth))
                 {
                     var unmarshaller = LifeCycleLastTestUnmarshaller.Instance;
-                    unmarshalledObject.LastTest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastTest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

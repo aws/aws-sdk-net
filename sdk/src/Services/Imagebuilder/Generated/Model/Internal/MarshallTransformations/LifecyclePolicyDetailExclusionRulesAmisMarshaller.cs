@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsPublic())
             {
                 context.Writer.WritePropertyName("isPublic");
-                context.Writer.Write(requestObject.IsPublic.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsPublic.Value);
             }
 
             if(requestObject.IsSetLastLaunched())
             {
                 context.Writer.WritePropertyName("lastLaunched");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LifecyclePolicyDetailExclusionRulesAmisLastLaunchedMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastLaunched, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSharedAccounts())
             {
                 context.Writer.WritePropertyName("sharedAccounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSharedAccountsListValue in requestObject.SharedAccounts)
                 {
-                        context.Writer.Write(requestObjectSharedAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectSharedAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTagMap())
             {
                 context.Writer.WritePropertyName("tagMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagMapKvp in requestObject.TagMap)
                 {
                     context.Writer.WritePropertyName(requestObjectTagMapKvp.Key);
                     var requestObjectTagMapValue = requestObjectTagMapKvp.Value;
 
-                        context.Writer.Write(requestObjectTagMapValue);
+                        context.Writer.WriteStringValue(requestObjectTagMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

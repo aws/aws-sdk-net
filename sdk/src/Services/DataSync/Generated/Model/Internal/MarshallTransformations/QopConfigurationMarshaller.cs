@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTransferProtection())
             {
                 context.Writer.WritePropertyName("DataTransferProtection");
-                context.Writer.Write(requestObject.DataTransferProtection);
+                context.Writer.WriteStringValue(requestObject.DataTransferProtection);
             }
 
             if(requestObject.IsSetRpcProtection())
             {
                 context.Writer.WritePropertyName("RpcProtection");
-                context.Writer.Write(requestObject.RpcProtection);
+                context.Writer.WriteStringValue(requestObject.RpcProtection);
             }
 
         }

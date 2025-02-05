@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecoveryPointSelection())
             {
                 context.Writer.WritePropertyName("RecoveryPointSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RestoreTestingRecoveryPointSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecoveryPointSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
             if(requestObject.IsSetScheduleExpressionTimezone())
             {
                 context.Writer.WritePropertyName("ScheduleExpressionTimezone");
-                context.Writer.Write(requestObject.ScheduleExpressionTimezone);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpressionTimezone);
             }
 
             if(requestObject.IsSetStartWindowHours())
             {
                 context.Writer.WritePropertyName("StartWindowHours");
-                context.Writer.Write(requestObject.StartWindowHours.Value);
+                context.Writer.WriteNumberValue(requestObject.StartWindowHours.Value);
             }
 
         }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ListSolFunctionInstanceInfo Object
     /// </summary>  
-    public class ListSolFunctionInstanceInfoUnmarshaller : IUnmarshaller<ListSolFunctionInstanceInfo, XmlUnmarshallerContext>, IUnmarshaller<ListSolFunctionInstanceInfo, JsonUnmarshallerContext>
+    public class ListSolFunctionInstanceInfoUnmarshaller : IJsonUnmarshaller<ListSolFunctionInstanceInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ListSolFunctionInstanceInfo IUnmarshaller<ListSolFunctionInstanceInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListSolFunctionInstanceInfo Unmarshall(JsonUnmarshallerContext context)
+        public ListSolFunctionInstanceInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ListSolFunctionInstanceInfo unmarshalledObject = new ListSolFunctionInstanceInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instantiatedVnfInfo", targetDepth))
                 {
                     var unmarshaller = GetSolInstantiatedVnfInfoUnmarshaller.Instance;
-                    unmarshalledObject.InstantiatedVnfInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstantiatedVnfInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instantiationState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstantiationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstantiationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadata", targetDepth))
                 {
                     var unmarshaller = ListSolFunctionInstanceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nsInstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NsInstanceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NsInstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfPkgId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfPkgId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfPkgId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfPkgName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfPkgName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfPkgName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

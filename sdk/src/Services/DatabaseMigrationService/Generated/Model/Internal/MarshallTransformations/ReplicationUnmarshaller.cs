@@ -29,155 +29,145 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Replication Object
     /// </summary>  
-    public class ReplicationUnmarshaller : IUnmarshaller<Replication, XmlUnmarshallerContext>, IUnmarshaller<Replication, JsonUnmarshallerContext>
+    public class ReplicationUnmarshaller : IJsonUnmarshaller<Replication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Replication IUnmarshaller<Replication, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Replication Unmarshall(JsonUnmarshallerContext context)
+        public Replication Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Replication unmarshalledObject = new Replication();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CdcStartPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CdcStartPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CdcStartPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CdcStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CdcStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CdcStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CdcStopPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CdcStopPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CdcStopPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.FailureMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FailureMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionData", targetDepth))
                 {
                     var unmarshaller = ProvisionDataUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecoveryCheckpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryCheckpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecoveryCheckpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationConfigIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationConfigIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationConfigIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationCreateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationCreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationDeprovisionTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationDeprovisionTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationDeprovisionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationLastStopTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationLastStopTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationLastStopTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationStats", targetDepth))
                 {
                     var unmarshaller = ReplicationStatsUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationStats = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationUpdateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationUpdateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicationUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartReplicationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartReplicationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartReplicationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StopReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StopReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StopReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetEndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

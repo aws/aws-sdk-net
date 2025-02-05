@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalConfigs())
             {
                 context.Writer.WritePropertyName("AdditionalConfigs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalConfigsKvp in requestObject.AdditionalConfigs)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalConfigsKvp.Key);
                     var requestObjectAdditionalConfigsValue = requestObjectAdditionalConfigsKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalConfigsValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalConfigsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCoordinatorDpuSize())
             {
                 context.Writer.WritePropertyName("CoordinatorDpuSize");
-                context.Writer.Write(requestObject.CoordinatorDpuSize.Value);
+                context.Writer.WriteNumberValue(requestObject.CoordinatorDpuSize.Value);
             }
 
             if(requestObject.IsSetDefaultExecutorDpuSize())
             {
                 context.Writer.WritePropertyName("DefaultExecutorDpuSize");
-                context.Writer.Write(requestObject.DefaultExecutorDpuSize.Value);
+                context.Writer.WriteNumberValue(requestObject.DefaultExecutorDpuSize.Value);
             }
 
             if(requestObject.IsSetMaxConcurrentDpus())
             {
                 context.Writer.WritePropertyName("MaxConcurrentDpus");
-                context.Writer.Write(requestObject.MaxConcurrentDpus.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrentDpus.Value);
             }
 
             if(requestObject.IsSetSparkProperties())
             {
                 context.Writer.WritePropertyName("SparkProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSparkPropertiesKvp in requestObject.SparkProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectSparkPropertiesKvp.Key);
                     var requestObjectSparkPropertiesValue = requestObjectSparkPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectSparkPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectSparkPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

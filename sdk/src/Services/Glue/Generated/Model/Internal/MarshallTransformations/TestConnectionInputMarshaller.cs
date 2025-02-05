@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthenticationConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionProperties())
             {
                 context.Writer.WritePropertyName("ConnectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConnectionPropertiesKvp in requestObject.ConnectionProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectConnectionPropertiesKvp.Key);
                     var requestObjectConnectionPropertiesValue = requestObjectConnectionPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectConnectionPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectConnectionPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionType())
             {
                 context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.Write(requestObject.ConnectionType);
+                context.Writer.WriteStringValue(requestObject.ConnectionType);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalytics())
             {
                 context.Writer.WritePropertyName("Analytics");
-                context.Writer.Write(requestObject.Analytics);
+                context.Writer.WriteStringValue(requestObject.Analytics);
             }
 
             if(requestObject.IsSetColumnRange())
             {
                 context.Writer.WritePropertyName("ColumnRange");
-                context.Writer.Write(requestObject.ColumnRange.Value);
+                context.Writer.WriteNumberValue(requestObject.ColumnRange.Value);
             }
 
             if(requestObject.IsSetHiddenColumns())
             {
                 context.Writer.WritePropertyName("HiddenColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenColumnsListValue in requestObject.HiddenColumns)
                 {
-                        context.Writer.Write(requestObjectHiddenColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectHiddenColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRowRange())
             {
                 context.Writer.WritePropertyName("RowRange");
-                context.Writer.Write(requestObject.RowRange.Value);
+                context.Writer.WriteNumberValue(requestObject.RowRange.Value);
             }
 
             if(requestObject.IsSetStartColumnIndex())
             {
                 context.Writer.WritePropertyName("StartColumnIndex");
-                context.Writer.Write(requestObject.StartColumnIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.StartColumnIndex.Value);
             }
 
             if(requestObject.IsSetStartRowIndex())
             {
                 context.Writer.WritePropertyName("StartRowIndex");
-                context.Writer.Write(requestObject.StartRowIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.StartRowIndex.Value);
             }
 
         }

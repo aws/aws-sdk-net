@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCapabilities())
             {
                 context.Writer.WritePropertyName("instanceCapabilities");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceManagedEc2InstanceCapabilitiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceCapabilities, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceMarketOptions())
             {
                 context.Writer.WritePropertyName("instanceMarketOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceManagedEc2InstanceMarketOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceMarketOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

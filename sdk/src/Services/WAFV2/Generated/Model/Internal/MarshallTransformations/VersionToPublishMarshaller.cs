@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatedRuleGroupArn())
             {
                 context.Writer.WritePropertyName("AssociatedRuleGroupArn");
-                context.Writer.Write(requestObject.AssociatedRuleGroupArn);
+                context.Writer.WriteStringValue(requestObject.AssociatedRuleGroupArn);
             }
 
             if(requestObject.IsSetForecastedLifetime())
             {
                 context.Writer.WritePropertyName("ForecastedLifetime");
-                context.Writer.Write(requestObject.ForecastedLifetime.Value);
+                context.Writer.WriteNumberValue(requestObject.ForecastedLifetime.Value);
             }
 
         }

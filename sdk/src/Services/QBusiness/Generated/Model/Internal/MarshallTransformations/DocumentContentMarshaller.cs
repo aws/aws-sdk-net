@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlob())
             {
                 context.Writer.WritePropertyName("blob");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Blob));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Blob));
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("s3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3Marshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

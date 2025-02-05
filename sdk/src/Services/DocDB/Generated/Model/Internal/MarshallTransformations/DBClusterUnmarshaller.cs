@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBCluster Object
     /// </summary>  
-    public class DBClusterUnmarshaller : IUnmarshaller<DBCluster, XmlUnmarshallerContext>, IUnmarshaller<DBCluster, JsonUnmarshallerContext>
+    public class DBClusterUnmarshaller : IXmlUnmarshaller<DBCluster, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -298,17 +298,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBCluster Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBClusterUnmarshaller _instance = new DBClusterUnmarshaller();        
 

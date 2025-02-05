@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PredictiveScalingMetricSpecification Object
     /// </summary>  
-    public class PredictiveScalingMetricSpecificationUnmarshaller : IUnmarshaller<PredictiveScalingMetricSpecification, XmlUnmarshallerContext>, IUnmarshaller<PredictiveScalingMetricSpecification, JsonUnmarshallerContext>
+    public class PredictiveScalingMetricSpecificationUnmarshaller : IJsonUnmarshaller<PredictiveScalingMetricSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PredictiveScalingMetricSpecification IUnmarshaller<PredictiveScalingMetricSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PredictiveScalingMetricSpecification Unmarshall(JsonUnmarshallerContext context)
+        public PredictiveScalingMetricSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PredictiveScalingMetricSpecification unmarshalledObject = new PredictiveScalingMetricSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomizedCapacityMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomizedCapacityMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomizedCapacityMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingPredefinedLoadMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredefinedMetricPairSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingPredefinedMetricPairSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PredefinedMetricPairSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredefinedMetricPairSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredictiveScalingPredefinedScalingMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetValue", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

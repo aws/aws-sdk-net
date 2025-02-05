@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndpointsPerClusterLimitExceededException operation
     /// </summary>  
-    public class EndpointsPerClusterLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<EndpointsPerClusterLimitExceededException, XmlUnmarshallerContext>
+    public class EndpointsPerClusterLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EndpointsPerClusterLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

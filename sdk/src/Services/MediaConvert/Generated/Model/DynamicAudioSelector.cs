@@ -114,9 +114,9 @@ namespace Amazon.MediaConvert.Model
         /// specify an offset: Enter an integer from -2147483648 to 2147483647
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

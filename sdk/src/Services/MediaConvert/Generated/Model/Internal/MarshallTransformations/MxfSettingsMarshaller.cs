@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfdSignaling())
             {
                 context.Writer.WritePropertyName("afdSignaling");
-                context.Writer.Write(requestObject.AfdSignaling);
+                context.Writer.WriteStringValue(requestObject.AfdSignaling);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetXavcProfileSettings())
             {
                 context.Writer.WritePropertyName("xavcProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MxfXavcProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XavcProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

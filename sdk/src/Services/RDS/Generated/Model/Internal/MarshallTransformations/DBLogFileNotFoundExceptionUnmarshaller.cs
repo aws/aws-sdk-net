@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBLogFileNotFoundException operation
     /// </summary>  
-    public class DBLogFileNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBLogFileNotFoundException, XmlUnmarshallerContext>
+    public class DBLogFileNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBLogFileNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

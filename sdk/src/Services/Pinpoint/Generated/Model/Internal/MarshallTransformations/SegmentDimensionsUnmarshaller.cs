@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SegmentDimensions Object
     /// </summary>  
-    public class SegmentDimensionsUnmarshaller : IUnmarshaller<SegmentDimensions, XmlUnmarshallerContext>, IUnmarshaller<SegmentDimensions, JsonUnmarshallerContext>
+    public class SegmentDimensionsUnmarshaller : IJsonUnmarshaller<SegmentDimensions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SegmentDimensions IUnmarshaller<SegmentDimensions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SegmentDimensions Unmarshall(JsonUnmarshallerContext context)
+        public SegmentDimensions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SegmentDimensions unmarshalledObject = new SegmentDimensions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Attributes", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Behavior", targetDepth))
                 {
                     var unmarshaller = SegmentBehaviorsUnmarshaller.Instance;
-                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Demographic", targetDepth))
                 {
                     var unmarshaller = SegmentDemographicsUnmarshaller.Instance;
-                    unmarshalledObject.Demographic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Demographic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Location", targetDepth))
                 {
                     var unmarshaller = SegmentLocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Metrics", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, MetricDimension, StringUnmarshaller, MetricDimensionUnmarshaller>(StringUnmarshaller.Instance, MetricDimensionUnmarshaller.Instance);
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MetricDimension, StringUnmarshaller, MetricDimensionUnmarshaller>(StringUnmarshaller.Instance, MetricDimensionUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserAttributes", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
-                    unmarshalledObject.UserAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
+                    unmarshalledObject.UserAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCsvContentTypes())
             {
                 context.Writer.WritePropertyName("CsvContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCsvContentTypesListValue in requestObject.CsvContentTypes)
                 {
-                        context.Writer.Write(requestObjectCsvContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectCsvContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJsonContentTypes())
             {
                 context.Writer.WritePropertyName("JsonContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJsonContentTypesListValue in requestObject.JsonContentTypes)
                 {
-                        context.Writer.Write(requestObjectJsonContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectJsonContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

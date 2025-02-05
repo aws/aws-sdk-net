@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -61,89 +64,94 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/createjobqueue";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComputeEnvironmentOrder())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("computeEnvironmentOrder");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestComputeEnvironmentOrderListValue in publicRequest.ComputeEnvironmentOrder)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComputeEnvironmentOrder())
-                    {
-                        context.Writer.WritePropertyName("computeEnvironmentOrder");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestComputeEnvironmentOrderListValue in publicRequest.ComputeEnvironmentOrder)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ComputeEnvironmentOrderMarshaller.Instance;
-                            marshaller.Marshall(publicRequestComputeEnvironmentOrderListValue, context);
+                    var marshaller = ComputeEnvironmentOrderMarshaller.Instance;
+                    marshaller.Marshall(publicRequestComputeEnvironmentOrderListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetJobQueueName())
-                    {
-                        context.Writer.WritePropertyName("jobQueueName");
-                        context.Writer.Write(publicRequest.JobQueueName);
-                    }
-
-                    if(publicRequest.IsSetJobStateTimeLimitActions())
-                    {
-                        context.Writer.WritePropertyName("jobStateTimeLimitActions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestJobStateTimeLimitActionsListValue in publicRequest.JobStateTimeLimitActions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = JobStateTimeLimitActionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestJobStateTimeLimitActionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetSchedulingPolicyArn())
-                    {
-                        context.Writer.WritePropertyName("schedulingPolicyArn");
-                        context.Writer.Write(publicRequest.SchedulingPolicyArn);
-                    }
-
-                    if(publicRequest.IsSetState())
-                    {
-                        context.Writer.WritePropertyName("state");
-                        context.Writer.Write(publicRequest.State);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetJobQueueName())
+            {
+                context.Writer.WritePropertyName("jobQueueName");
+                context.Writer.WriteStringValue(publicRequest.JobQueueName);
+            }
+
+            if(publicRequest.IsSetJobStateTimeLimitActions())
+            {
+                context.Writer.WritePropertyName("jobStateTimeLimitActions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestJobStateTimeLimitActionsListValue in publicRequest.JobStateTimeLimitActions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = JobStateTimeLimitActionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestJobStateTimeLimitActionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetSchedulingPolicyArn())
+            {
+                context.Writer.WritePropertyName("schedulingPolicyArn");
+                context.Writer.WriteStringValue(publicRequest.SchedulingPolicyArn);
+            }
+
+            if(publicRequest.IsSetState())
+            {
+                context.Writer.WritePropertyName("state");
+                context.Writer.WriteStringValue(publicRequest.State);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

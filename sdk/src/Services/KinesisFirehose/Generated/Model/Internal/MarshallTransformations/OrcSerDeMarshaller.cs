@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
-                context.Writer.Write(requestObject.BlockSizeBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.BlockSizeBytes.Value);
             }
 
             if(requestObject.IsSetBloomFilterColumns())
             {
                 context.Writer.WritePropertyName("BloomFilterColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBloomFilterColumnsListValue in requestObject.BloomFilterColumns)
                 {
-                        context.Writer.Write(requestObjectBloomFilterColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectBloomFilterColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBloomFilterFalsePositiveProbability())
@@ -70,18 +68,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("BloomFilterFalsePositiveProbability");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability.Value);
+                    context.Writer.WriteNumberValue(requestObject.BloomFilterFalsePositiveProbability.Value);
                 }
             }
 
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
-                context.Writer.Write(requestObject.Compression);
+                context.Writer.WriteStringValue(requestObject.Compression);
             }
 
             if(requestObject.IsSetDictionaryKeyThreshold())
@@ -89,24 +87,24 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DictionaryKeyThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DictionaryKeyThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DictionaryKeyThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.DictionaryKeyThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetEnablePadding())
             {
                 context.Writer.WritePropertyName("EnablePadding");
-                context.Writer.Write(requestObject.EnablePadding.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnablePadding.Value);
             }
 
             if(requestObject.IsSetFormatVersion())
             {
                 context.Writer.WritePropertyName("FormatVersion");
-                context.Writer.Write(requestObject.FormatVersion);
+                context.Writer.WriteStringValue(requestObject.FormatVersion);
             }
 
             if(requestObject.IsSetPaddingTolerance())
@@ -114,24 +112,24 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PaddingTolerance");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PaddingTolerance.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PaddingTolerance.Value);
+                    context.Writer.WriteNumberValue(requestObject.PaddingTolerance.Value);
                 }
             }
 
             if(requestObject.IsSetRowIndexStride())
             {
                 context.Writer.WritePropertyName("RowIndexStride");
-                context.Writer.Write(requestObject.RowIndexStride.Value);
+                context.Writer.WriteNumberValue(requestObject.RowIndexStride.Value);
             }
 
             if(requestObject.IsSetStripeSizeBytes())
             {
                 context.Writer.WritePropertyName("StripeSizeBytes");
-                context.Writer.Write(requestObject.StripeSizeBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.StripeSizeBytes.Value);
             }
 
         }

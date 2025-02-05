@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             if(requestObject.IsSetAttribute())
             {
                 context.Writer.WritePropertyName("Attribute");
-                context.Writer.Write(requestObject.Attribute);
+                context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("Operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

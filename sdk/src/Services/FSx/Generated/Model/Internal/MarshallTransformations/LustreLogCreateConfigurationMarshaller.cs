@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("Destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.WriteStringValue(requestObject.Level);
             }
 
         }

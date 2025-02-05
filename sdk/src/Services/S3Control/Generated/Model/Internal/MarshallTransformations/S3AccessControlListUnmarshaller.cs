@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3AccessControlList Object
     /// </summary>  
-    public class S3AccessControlListUnmarshaller : IUnmarshaller<S3AccessControlList, XmlUnmarshallerContext>, IUnmarshaller<S3AccessControlList, JsonUnmarshallerContext>
+    public class S3AccessControlListUnmarshaller : IXmlUnmarshaller<S3AccessControlList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3AccessControlList Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static S3AccessControlListUnmarshaller _instance = new S3AccessControlListUnmarshaller();        
 
         /// <summary>

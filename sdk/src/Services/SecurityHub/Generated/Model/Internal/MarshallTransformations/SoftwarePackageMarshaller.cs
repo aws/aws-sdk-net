@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchitecture())
             {
                 context.Writer.WritePropertyName("Architecture");
-                context.Writer.Write(requestObject.Architecture);
+                context.Writer.WriteStringValue(requestObject.Architecture);
             }
 
             if(requestObject.IsSetEpoch())
             {
                 context.Writer.WritePropertyName("Epoch");
-                context.Writer.Write(requestObject.Epoch);
+                context.Writer.WriteStringValue(requestObject.Epoch);
             }
 
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("FilePath");
-                context.Writer.Write(requestObject.FilePath);
+                context.Writer.WriteStringValue(requestObject.FilePath);
             }
 
             if(requestObject.IsSetFixedInVersion())
             {
                 context.Writer.WritePropertyName("FixedInVersion");
-                context.Writer.Write(requestObject.FixedInVersion);
+                context.Writer.WriteStringValue(requestObject.FixedInVersion);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPackageManager())
             {
                 context.Writer.WritePropertyName("PackageManager");
-                context.Writer.Write(requestObject.PackageManager);
+                context.Writer.WriteStringValue(requestObject.PackageManager);
             }
 
             if(requestObject.IsSetRelease())
             {
                 context.Writer.WritePropertyName("Release");
-                context.Writer.Write(requestObject.Release);
+                context.Writer.WriteStringValue(requestObject.Release);
             }
 
             if(requestObject.IsSetRemediation())
             {
                 context.Writer.WritePropertyName("Remediation");
-                context.Writer.Write(requestObject.Remediation);
+                context.Writer.WriteStringValue(requestObject.Remediation);
             }
 
             if(requestObject.IsSetSourceLayerArn())
             {
                 context.Writer.WritePropertyName("SourceLayerArn");
-                context.Writer.Write(requestObject.SourceLayerArn);
+                context.Writer.WriteStringValue(requestObject.SourceLayerArn);
             }
 
             if(requestObject.IsSetSourceLayerHash())
             {
                 context.Writer.WritePropertyName("SourceLayerHash");
-                context.Writer.Write(requestObject.SourceLayerHash);
+                context.Writer.WriteStringValue(requestObject.SourceLayerHash);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

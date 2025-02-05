@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInterfaceCount Object
     /// </summary>  
-    public class NetworkInterfaceCountUnmarshaller : IUnmarshaller<NetworkInterfaceCount, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceCount, JsonUnmarshallerContext>
+    public class NetworkInterfaceCountUnmarshaller : IXmlUnmarshaller<NetworkInterfaceCount, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInterfaceCount Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInterfaceCountUnmarshaller _instance = new NetworkInterfaceCountUnmarshaller();        
 

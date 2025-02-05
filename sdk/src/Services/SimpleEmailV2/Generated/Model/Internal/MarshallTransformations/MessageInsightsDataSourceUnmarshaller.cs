@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MessageInsightsDataSource Object
     /// </summary>  
-    public class MessageInsightsDataSourceUnmarshaller : IUnmarshaller<MessageInsightsDataSource, XmlUnmarshallerContext>, IUnmarshaller<MessageInsightsDataSource, JsonUnmarshallerContext>
+    public class MessageInsightsDataSourceUnmarshaller : IJsonUnmarshaller<MessageInsightsDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MessageInsightsDataSource IUnmarshaller<MessageInsightsDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageInsightsDataSource Unmarshall(JsonUnmarshallerContext context)
+        public MessageInsightsDataSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MessageInsightsDataSource unmarshalledObject = new MessageInsightsDataSource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EndDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Exclude", targetDepth))
                 {
                     var unmarshaller = MessageInsightsFiltersUnmarshaller.Instance;
-                    unmarshalledObject.Exclude = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Exclude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Include", targetDepth))
                 {
                     var unmarshaller = MessageInsightsFiltersUnmarshaller.Instance;
-                    unmarshalledObject.Include = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Include = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxResults", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

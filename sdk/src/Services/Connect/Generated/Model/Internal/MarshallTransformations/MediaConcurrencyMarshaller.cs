@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("Channel");
-                context.Writer.Write(requestObject.Channel);
+                context.Writer.WriteStringValue(requestObject.Channel);
             }
 
             if(requestObject.IsSetConcurrency())
             {
                 context.Writer.WritePropertyName("Concurrency");
-                context.Writer.Write(requestObject.Concurrency.Value);
+                context.Writer.WriteNumberValue(requestObject.Concurrency.Value);
             }
 
             if(requestObject.IsSetCrossChannelBehavior())
             {
                 context.Writer.WritePropertyName("CrossChannelBehavior");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CrossChannelBehaviorMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrossChannelBehavior, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

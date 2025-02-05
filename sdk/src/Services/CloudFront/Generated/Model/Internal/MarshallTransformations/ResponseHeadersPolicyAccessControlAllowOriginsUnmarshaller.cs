@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyAccessControlAllowOrigins Object
     /// </summary>  
-    public class ResponseHeadersPolicyAccessControlAllowOriginsUnmarshaller : IUnmarshaller<ResponseHeadersPolicyAccessControlAllowOrigins, XmlUnmarshallerContext>, IUnmarshaller<ResponseHeadersPolicyAccessControlAllowOrigins, JsonUnmarshallerContext>
+    public class ResponseHeadersPolicyAccessControlAllowOriginsUnmarshaller : IXmlUnmarshaller<ResponseHeadersPolicyAccessControlAllowOrigins, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResponseHeadersPolicyAccessControlAllowOrigins Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ResponseHeadersPolicyAccessControlAllowOriginsUnmarshaller _instance = new ResponseHeadersPolicyAccessControlAllowOriginsUnmarshaller();        
 
         /// <summary>

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -63,105 +66,110 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationName())
-                    {
-                        context.Writer.WritePropertyName("applicationName");
-                        context.Writer.Write(publicRequest.ApplicationName);
-                    }
-
-                    if(publicRequest.IsSetAutoRollbackConfiguration())
-                    {
-                        context.Writer.WritePropertyName("autoRollbackConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoRollbackConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeploymentConfigName())
-                    {
-                        context.Writer.WritePropertyName("deploymentConfigName");
-                        context.Writer.Write(publicRequest.DeploymentConfigName);
-                    }
-
-                    if(publicRequest.IsSetDeploymentGroupName())
-                    {
-                        context.Writer.WritePropertyName("deploymentGroupName");
-                        context.Writer.Write(publicRequest.DeploymentGroupName);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFileExistsBehavior())
-                    {
-                        context.Writer.WritePropertyName("fileExistsBehavior");
-                        context.Writer.Write(publicRequest.FileExistsBehavior);
-                    }
-
-                    if(publicRequest.IsSetIgnoreApplicationStopFailures())
-                    {
-                        context.Writer.WritePropertyName("ignoreApplicationStopFailures");
-                        context.Writer.Write(publicRequest.IgnoreApplicationStopFailures.Value);
-                    }
-
-                    if(publicRequest.IsSetOverrideAlarmConfiguration())
-                    {
-                        context.Writer.WritePropertyName("overrideAlarmConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlarmConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRevision())
-                    {
-                        context.Writer.WritePropertyName("revision");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RevisionLocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Revision, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetInstances())
-                    {
-                        context.Writer.WritePropertyName("targetInstances");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetInstancesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TargetInstances, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
-                    {
-                        context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
-                        context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
             }
+
+            if(publicRequest.IsSetAutoRollbackConfiguration())
+            {
+                context.Writer.WritePropertyName("autoRollbackConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoRollbackConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeploymentConfigName())
+            {
+                context.Writer.WritePropertyName("deploymentConfigName");
+                context.Writer.WriteStringValue(publicRequest.DeploymentConfigName);
+            }
+
+            if(publicRequest.IsSetDeploymentGroupName())
+            {
+                context.Writer.WritePropertyName("deploymentGroupName");
+                context.Writer.WriteStringValue(publicRequest.DeploymentGroupName);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFileExistsBehavior())
+            {
+                context.Writer.WritePropertyName("fileExistsBehavior");
+                context.Writer.WriteStringValue(publicRequest.FileExistsBehavior);
+            }
+
+            if(publicRequest.IsSetIgnoreApplicationStopFailures())
+            {
+                context.Writer.WritePropertyName("ignoreApplicationStopFailures");
+                context.Writer.WriteBooleanValue(publicRequest.IgnoreApplicationStopFailures.Value);
+            }
+
+            if(publicRequest.IsSetOverrideAlarmConfiguration())
+            {
+                context.Writer.WritePropertyName("overrideAlarmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRevision())
+            {
+                context.Writer.WritePropertyName("revision");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RevisionLocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Revision, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetInstances())
+            {
+                context.Writer.WritePropertyName("targetInstances");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetInstancesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetInstances, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
+            {
+                context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
+                context.Writer.WriteBooleanValue(publicRequest.UpdateOutdatedInstancesOnly.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

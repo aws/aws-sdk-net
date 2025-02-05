@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArgs())
             {
                 context.Writer.WritePropertyName("Args");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectArgsKvp in requestObject.Args)
                 {
                     context.Writer.WritePropertyName(requestObjectArgsKvp.Key);
                     var requestObjectArgsValue = requestObjectArgsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectArgsValueListValue in requestObjectArgsValue)
                     {
-                            context.Writer.Write(requestObjectArgsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectArgsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

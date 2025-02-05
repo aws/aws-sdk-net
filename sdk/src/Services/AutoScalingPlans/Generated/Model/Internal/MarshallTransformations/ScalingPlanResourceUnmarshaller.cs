@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScalingPlanResource Object
     /// </summary>  
-    public class ScalingPlanResourceUnmarshaller : IUnmarshaller<ScalingPlanResource, XmlUnmarshallerContext>, IUnmarshaller<ScalingPlanResource, JsonUnmarshallerContext>
+    public class ScalingPlanResourceUnmarshaller : IJsonUnmarshaller<ScalingPlanResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScalingPlanResource IUnmarshaller<ScalingPlanResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScalingPlanResource Unmarshall(JsonUnmarshallerContext context)
+        public ScalingPlanResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScalingPlanResource unmarshalledObject = new ScalingPlanResource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalableDimension", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingPlanName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalingPlanName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingPlanVersion", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ScalingPlanVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingPlanVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingPolicies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ScalingPolicy, ScalingPolicyUnmarshaller>(ScalingPolicyUnmarshaller.Instance);
-                    unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ScalingPolicy, ScalingPolicyUnmarshaller>(ScalingPolicyUnmarshaller.Instance);
+                    unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingStatusCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalingStatusCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingStatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalingStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceNamespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

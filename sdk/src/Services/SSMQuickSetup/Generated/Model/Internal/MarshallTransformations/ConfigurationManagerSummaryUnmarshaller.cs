@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationManagerSummary Object
     /// </summary>  
-    public class ConfigurationManagerSummaryUnmarshaller : IUnmarshaller<ConfigurationManagerSummary, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationManagerSummary, JsonUnmarshallerContext>
+    public class ConfigurationManagerSummaryUnmarshaller : IJsonUnmarshaller<ConfigurationManagerSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigurationManagerSummary IUnmarshaller<ConfigurationManagerSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationManagerSummary Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationManagerSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigurationManagerSummary unmarshalledObject = new ConfigurationManagerSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConfigurationDefinitionSummaries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ConfigurationDefinitionSummary, ConfigurationDefinitionSummaryUnmarshaller>(ConfigurationDefinitionSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ConfigurationDefinitionSummaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ConfigurationDefinitionSummary, ConfigurationDefinitionSummaryUnmarshaller>(ConfigurationDefinitionSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ConfigurationDefinitionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManagerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagerArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManagerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusSummaries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StatusSummary, StatusSummaryUnmarshaller>(StatusSummaryUnmarshaller.Instance);
-                    unmarshalledObject.StatusSummaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StatusSummary, StatusSummaryUnmarshaller>(StatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.StatusSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExclude())
             {
                 context.Writer.WritePropertyName("exclude");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExcludeKvp in requestObject.Exclude)
                 {
                     context.Writer.WritePropertyName(requestObjectExcludeKvp.Key);
                     var requestObjectExcludeValue = requestObjectExcludeKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ScanConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectExcludeValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInclude())
             {
                 context.Writer.WritePropertyName("include");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectIncludeKvp in requestObject.Include)
                 {
                     context.Writer.WritePropertyName(requestObjectIncludeKvp.Key);
                     var requestObjectIncludeValue = requestObjectIncludeKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ScanConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectIncludeValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

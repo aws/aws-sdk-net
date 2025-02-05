@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndLine())
             {
                 context.Writer.WritePropertyName("EndLine");
-                context.Writer.Write(requestObject.EndLine.Value);
+                context.Writer.WriteNumberValue(requestObject.EndLine.Value);
             }
 
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("FileName");
-                context.Writer.Write(requestObject.FileName);
+                context.Writer.WriteStringValue(requestObject.FileName);
             }
 
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("FilePath");
-                context.Writer.Write(requestObject.FilePath);
+                context.Writer.WriteStringValue(requestObject.FilePath);
             }
 
             if(requestObject.IsSetStartLine())
             {
                 context.Writer.WritePropertyName("StartLine");
-                context.Writer.Write(requestObject.StartLine.Value);
+                context.Writer.WriteNumberValue(requestObject.StartLine.Value);
             }
 
         }

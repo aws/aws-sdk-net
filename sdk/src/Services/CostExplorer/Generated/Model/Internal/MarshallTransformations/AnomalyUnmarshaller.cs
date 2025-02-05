@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Anomaly Object
     /// </summary>  
-    public class AnomalyUnmarshaller : IUnmarshaller<Anomaly, XmlUnmarshallerContext>, IUnmarshaller<Anomaly, JsonUnmarshallerContext>
+    public class AnomalyUnmarshaller : IJsonUnmarshaller<Anomaly, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Anomaly IUnmarshaller<Anomaly, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Anomaly Unmarshall(JsonUnmarshallerContext context)
+        public Anomaly Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Anomaly unmarshalledObject = new Anomaly();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnomalyEndDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyEndDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnomalyEndDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnomalyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnomalyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnomalyScore", targetDepth))
                 {
                     var unmarshaller = AnomalyScoreUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyScore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnomalyScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnomalyStartDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyStartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnomalyStartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DimensionValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Feedback", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Feedback = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Feedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Impact", targetDepth))
                 {
                     var unmarshaller = ImpactUnmarshaller.Instance;
-                    unmarshalledObject.Impact = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Impact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RootCauses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RootCause, RootCauseUnmarshaller>(RootCauseUnmarshaller.Instance);
-                    unmarshalledObject.RootCauses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RootCause, RootCauseUnmarshaller>(RootCauseUnmarshaller.Instance);
+                    unmarshalledObject.RootCauses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

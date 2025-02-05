@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProvisionedProductPlanSummary Object
     /// </summary>  
-    public class ProvisionedProductPlanSummaryUnmarshaller : IUnmarshaller<ProvisionedProductPlanSummary, XmlUnmarshallerContext>, IUnmarshaller<ProvisionedProductPlanSummary, JsonUnmarshallerContext>
+    public class ProvisionedProductPlanSummaryUnmarshaller : IJsonUnmarshaller<ProvisionedProductPlanSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProvisionedProductPlanSummary IUnmarshaller<ProvisionedProductPlanSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProvisionedProductPlanSummary Unmarshall(JsonUnmarshallerContext context)
+        public ProvisionedProductPlanSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProvisionedProductPlanSummary unmarshalledObject = new ProvisionedProductPlanSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PlanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlanId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlanName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlanName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlanType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlanType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisioningArtifactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisioningArtifactId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisioningArtifactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionProductId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionProductId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionProductId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionProductName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionProductName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionProductName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

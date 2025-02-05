@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionGroupNotFoundException operation
     /// </summary>  
-    public class OptionGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<OptionGroupNotFoundException, XmlUnmarshallerContext>
+    public class OptionGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OptionGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

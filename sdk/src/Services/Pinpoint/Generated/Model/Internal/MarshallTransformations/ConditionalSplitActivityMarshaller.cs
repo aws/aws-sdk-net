@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("Condition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Condition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEvaluationWaitTime())
             {
                 context.Writer.WritePropertyName("EvaluationWaitTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaitTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.EvaluationWaitTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFalseActivity())
             {
                 context.Writer.WritePropertyName("FalseActivity");
-                context.Writer.Write(requestObject.FalseActivity);
+                context.Writer.WriteStringValue(requestObject.FalseActivity);
             }
 
             if(requestObject.IsSetTrueActivity())
             {
                 context.Writer.WritePropertyName("TrueActivity");
-                context.Writer.Write(requestObject.TrueActivity);
+                context.Writer.WriteStringValue(requestObject.TrueActivity);
             }
 
         }

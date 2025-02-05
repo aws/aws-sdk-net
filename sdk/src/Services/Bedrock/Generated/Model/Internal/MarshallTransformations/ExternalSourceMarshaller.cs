@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetByteContent())
             {
                 context.Writer.WritePropertyName("byteContent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ByteContentDocMarshaller.Instance;
                 marshaller.Marshall(requestObject.ByteContent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("s3Location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ObjectDocMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("sourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
         }

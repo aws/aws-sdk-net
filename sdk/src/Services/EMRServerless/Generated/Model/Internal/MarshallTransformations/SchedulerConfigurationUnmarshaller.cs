@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SchedulerConfiguration Object
     /// </summary>  
-    public class SchedulerConfigurationUnmarshaller : IUnmarshaller<SchedulerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SchedulerConfiguration, JsonUnmarshallerContext>
+    public class SchedulerConfigurationUnmarshaller : IJsonUnmarshaller<SchedulerConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SchedulerConfiguration IUnmarshaller<SchedulerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SchedulerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SchedulerConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SchedulerConfiguration unmarshalledObject = new SchedulerConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("maxConcurrentRuns", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queueTimeoutMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.QueueTimeoutMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueueTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

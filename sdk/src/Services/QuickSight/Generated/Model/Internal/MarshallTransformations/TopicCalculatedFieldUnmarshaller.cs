@@ -29,143 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicCalculatedField Object
     /// </summary>  
-    public class TopicCalculatedFieldUnmarshaller : IUnmarshaller<TopicCalculatedField, XmlUnmarshallerContext>, IUnmarshaller<TopicCalculatedField, JsonUnmarshallerContext>
+    public class TopicCalculatedFieldUnmarshaller : IJsonUnmarshaller<TopicCalculatedField, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicCalculatedField IUnmarshaller<TopicCalculatedField, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicCalculatedField Unmarshall(JsonUnmarshallerContext context)
+        public TopicCalculatedField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicCalculatedField unmarshalledObject = new TopicCalculatedField();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Aggregation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AllowedAggregations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedAggregations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedAggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedFieldDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CalculatedFieldDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CalculatedFieldDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CalculatedFieldName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CalculatedFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedFieldSynonyms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.CalculatedFieldSynonyms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CalculatedFieldSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CellValueSynonyms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CellValueSynonym, CellValueSynonymUnmarshaller>(CellValueSynonymUnmarshaller.Instance);
-                    unmarshalledObject.CellValueSynonyms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CellValueSynonym, CellValueSynonymUnmarshaller>(CellValueSynonymUnmarshaller.Instance);
+                    unmarshalledObject.CellValueSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnDataRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColumnDataRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnDataRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ComparativeOrder", targetDepth))
                 {
                     var unmarshaller = ComparativeOrderUnmarshaller.Instance;
-                    unmarshalledObject.ComparativeOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparativeOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultFormatting", targetDepth))
                 {
                     var unmarshaller = DefaultFormattingUnmarshaller.Instance;
-                    unmarshalledObject.DefaultFormatting = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultFormatting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisableIndexing", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableIndexing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisableIndexing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Expression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsIncludedInTopic", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsIncludedInTopic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsIncludedInTopic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NeverAggregateInFilter", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NeverAggregateInFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NeverAggregateInFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonAdditive", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NonAdditive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonAdditive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NotAllowedAggregations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NotAllowedAggregations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NotAllowedAggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SemanticType", targetDepth))
                 {
                     var unmarshaller = SemanticTypeUnmarshaller.Instance;
-                    unmarshalledObject.SemanticType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SemanticType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDbClusterParameterGroupStatus())
             {
                 context.Writer.WritePropertyName("DbClusterParameterGroupStatus");
-                context.Writer.Write(requestObject.DbClusterParameterGroupStatus);
+                context.Writer.WriteStringValue(requestObject.DbClusterParameterGroupStatus);
             }
 
             if(requestObject.IsSetDbInstanceIdentifier())
             {
                 context.Writer.WritePropertyName("DbInstanceIdentifier");
-                context.Writer.Write(requestObject.DbInstanceIdentifier);
+                context.Writer.WriteStringValue(requestObject.DbInstanceIdentifier);
             }
 
             if(requestObject.IsSetIsClusterWriter())
             {
                 context.Writer.WritePropertyName("IsClusterWriter");
-                context.Writer.Write(requestObject.IsClusterWriter.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsClusterWriter.Value);
             }
 
             if(requestObject.IsSetPromotionTier())
             {
                 context.Writer.WritePropertyName("PromotionTier");
-                context.Writer.Write(requestObject.PromotionTier.Value);
+                context.Writer.WriteNumberValue(requestObject.PromotionTier.Value);
             }
 
         }

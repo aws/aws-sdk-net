@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetLicenseCostReduction())
             {
                 context.Writer.WritePropertyName("licenseCostReduction");
-                context.Writer.Write(requestObject.LicenseCostReduction.Value);
+                context.Writer.WriteNumberValue(requestObject.LicenseCostReduction.Value);
             }
 
             if(requestObject.IsSetModernizeInfrastructureWithCloudNativeTechnologies())
             {
                 context.Writer.WritePropertyName("modernizeInfrastructureWithCloudNativeTechnologies");
-                context.Writer.Write(requestObject.ModernizeInfrastructureWithCloudNativeTechnologies.Value);
+                context.Writer.WriteNumberValue(requestObject.ModernizeInfrastructureWithCloudNativeTechnologies.Value);
             }
 
             if(requestObject.IsSetReduceOperationalOverheadWithManagedServices())
             {
                 context.Writer.WritePropertyName("reduceOperationalOverheadWithManagedServices");
-                context.Writer.Write(requestObject.ReduceOperationalOverheadWithManagedServices.Value);
+                context.Writer.WriteNumberValue(requestObject.ReduceOperationalOverheadWithManagedServices.Value);
             }
 
             if(requestObject.IsSetSpeedOfMigration())
             {
                 context.Writer.WritePropertyName("speedOfMigration");
-                context.Writer.Write(requestObject.SpeedOfMigration.Value);
+                context.Writer.WriteNumberValue(requestObject.SpeedOfMigration.Value);
             }
 
         }

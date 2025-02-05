@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompareAction())
             {
                 context.Writer.WritePropertyName("compareAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CompareActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompareAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMainframeAction())
             {
                 context.Writer.WritePropertyName("mainframeAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MainframeActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MainframeAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceAction())
             {
                 context.Writer.WritePropertyName("resourceAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

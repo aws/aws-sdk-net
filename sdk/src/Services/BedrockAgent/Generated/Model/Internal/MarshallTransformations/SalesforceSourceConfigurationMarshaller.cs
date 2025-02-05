@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthType())
             {
                 context.Writer.WritePropertyName("authType");
-                context.Writer.Write(requestObject.AuthType);
+                context.Writer.WriteStringValue(requestObject.AuthType);
             }
 
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");
-                context.Writer.Write(requestObject.CredentialsSecretArn);
+                context.Writer.WriteStringValue(requestObject.CredentialsSecretArn);
             }
 
             if(requestObject.IsSetHostUrl())
             {
                 context.Writer.WritePropertyName("hostUrl");
-                context.Writer.Write(requestObject.HostUrl);
+                context.Writer.WriteStringValue(requestObject.HostUrl);
             }
 
         }

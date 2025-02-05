@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustStoreInUseException operation
     /// </summary>  
-    public class TrustStoreInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<TrustStoreInUseException, XmlUnmarshallerContext>
+    public class TrustStoreInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TrustStoreInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

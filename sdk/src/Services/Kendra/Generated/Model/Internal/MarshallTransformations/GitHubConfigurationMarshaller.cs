@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,268 +49,268 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExclusionFileNamePatterns())
             {
                 context.Writer.WritePropertyName("ExclusionFileNamePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionFileNamePatternsListValue in requestObject.ExclusionFileNamePatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionFileNamePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionFileNamePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExclusionFileTypePatterns())
             {
                 context.Writer.WritePropertyName("ExclusionFileTypePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionFileTypePatternsListValue in requestObject.ExclusionFileTypePatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionFileTypePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionFileTypePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExclusionFolderNamePatterns())
             {
                 context.Writer.WritePropertyName("ExclusionFolderNamePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionFolderNamePatternsListValue in requestObject.ExclusionFolderNamePatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionFolderNamePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionFolderNamePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubCommitConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubCommitConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubCommitConfigurationFieldMappingsListValue in requestObject.GitHubCommitConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubCommitConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubDocumentCrawlProperties())
             {
                 context.Writer.WritePropertyName("GitHubDocumentCrawlProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitHubDocumentCrawlPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitHubDocumentCrawlProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGitHubIssueAttachmentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubIssueAttachmentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubIssueAttachmentConfigurationFieldMappingsListValue in requestObject.GitHubIssueAttachmentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubIssueAttachmentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubIssueCommentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubIssueCommentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubIssueCommentConfigurationFieldMappingsListValue in requestObject.GitHubIssueCommentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubIssueCommentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubIssueDocumentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubIssueDocumentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubIssueDocumentConfigurationFieldMappingsListValue in requestObject.GitHubIssueDocumentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubIssueDocumentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubPullRequestCommentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubPullRequestCommentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubPullRequestCommentConfigurationFieldMappingsListValue in requestObject.GitHubPullRequestCommentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubPullRequestCommentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubPullRequestDocumentAttachmentConfigurationFieldMappingsListValue in requestObject.GitHubPullRequestDocumentAttachmentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubPullRequestDocumentAttachmentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubPullRequestDocumentConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubPullRequestDocumentConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubPullRequestDocumentConfigurationFieldMappingsListValue in requestObject.GitHubPullRequestDocumentConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubPullRequestDocumentConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGitHubRepositoryConfigurationFieldMappings())
             {
                 context.Writer.WritePropertyName("GitHubRepositoryConfigurationFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGitHubRepositoryConfigurationFieldMappingsListValue in requestObject.GitHubRepositoryConfigurationFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectGitHubRepositoryConfigurationFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionFileNamePatterns())
             {
                 context.Writer.WritePropertyName("InclusionFileNamePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionFileNamePatternsListValue in requestObject.InclusionFileNamePatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionFileNamePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionFileNamePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionFileTypePatterns())
             {
                 context.Writer.WritePropertyName("InclusionFileTypePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionFileTypePatternsListValue in requestObject.InclusionFileTypePatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionFileTypePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionFileTypePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionFolderNamePatterns())
             {
                 context.Writer.WritePropertyName("InclusionFolderNamePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionFolderNamePatternsListValue in requestObject.InclusionFolderNamePatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionFolderNamePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionFolderNamePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOnPremiseConfiguration())
             {
                 context.Writer.WritePropertyName("OnPremiseConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnPremiseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnPremiseConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepositoryFilter())
             {
                 context.Writer.WritePropertyName("RepositoryFilter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRepositoryFilterListValue in requestObject.RepositoryFilter)
                 {
-                        context.Writer.Write(requestObjectRepositoryFilterListValue);
+                        context.Writer.WriteStringValue(requestObjectRepositoryFilterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSaaSConfiguration())
             {
                 context.Writer.WritePropertyName("SaaSConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SaaSConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SaaSConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

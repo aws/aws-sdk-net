@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,44 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomMetrics())
             {
                 context.Writer.WritePropertyName("customMetrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomMetricsListValue in requestObject.CustomMetrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HumanEvaluationCustomMetricMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDatasetMetricConfigs())
             {
                 context.Writer.WritePropertyName("datasetMetricConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDatasetMetricConfigsListValue in requestObject.DatasetMetricConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EvaluationDatasetMetricConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectDatasetMetricConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHumanWorkflowConfig())
             {
                 context.Writer.WritePropertyName("humanWorkflowConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HumanWorkflowConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HumanWorkflowConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

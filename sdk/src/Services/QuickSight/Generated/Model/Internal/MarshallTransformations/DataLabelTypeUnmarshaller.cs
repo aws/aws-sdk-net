@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataLabelType Object
     /// </summary>  
-    public class DataLabelTypeUnmarshaller : IUnmarshaller<DataLabelType, XmlUnmarshallerContext>, IUnmarshaller<DataLabelType, JsonUnmarshallerContext>
+    public class DataLabelTypeUnmarshaller : IJsonUnmarshaller<DataLabelType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataLabelType IUnmarshaller<DataLabelType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataLabelType Unmarshall(JsonUnmarshallerContext context)
+        public DataLabelType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataLabelType unmarshalledObject = new DataLabelType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataPathLabelType", targetDepth))
                 {
                     var unmarshaller = DataPathLabelTypeUnmarshaller.Instance;
-                    unmarshalledObject.DataPathLabelType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataPathLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldLabelType", targetDepth))
                 {
                     var unmarshaller = FieldLabelTypeUnmarshaller.Instance;
-                    unmarshalledObject.FieldLabelType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumLabelType", targetDepth))
                 {
                     var unmarshaller = MaximumLabelTypeUnmarshaller.Instance;
-                    unmarshalledObject.MaximumLabelType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinimumLabelType", targetDepth))
                 {
                     var unmarshaller = MinimumLabelTypeUnmarshaller.Instance;
-                    unmarshalledObject.MinimumLabelType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RangeEndsLabelType", targetDepth))
                 {
                     var unmarshaller = RangeEndsLabelTypeUnmarshaller.Instance;
-                    unmarshalledObject.RangeEndsLabelType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RangeEndsLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceNameContains())
             {
                 context.Writer.WritePropertyName("DeviceNameContains");
-                context.Writer.Write(requestObject.DeviceNameContains);
+                context.Writer.WriteStringValue(requestObject.DeviceNameContains);
             }
 
             if(requestObject.IsSetDeviceNames())
             {
                 context.Writer.WritePropertyName("DeviceNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDeviceNamesListValue in requestObject.DeviceNames)
                 {
-                        context.Writer.Write(requestObjectDeviceNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectDeviceNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeviceSubsetType())
             {
                 context.Writer.WritePropertyName("DeviceSubsetType");
-                context.Writer.Write(requestObject.DeviceSubsetType);
+                context.Writer.WriteStringValue(requestObject.DeviceSubsetType);
             }
 
             if(requestObject.IsSetPercentage())
             {
                 context.Writer.WritePropertyName("Percentage");
-                context.Writer.Write(requestObject.Percentage.Value);
+                context.Writer.WriteNumberValue(requestObject.Percentage.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIr())
             {
                 context.Writer.WritePropertyName("Ir");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicIRMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ir, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
             if(requestObject.IsSetSupportingVisuals())
             {
                 context.Writer.WritePropertyName("SupportingVisuals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportingVisualsListValue in requestObject.SupportingVisuals)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicVisualMarshaller.Instance;
                     marshaller.Marshall(requestObjectSupportingVisualsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVisualId())
             {
                 context.Writer.WritePropertyName("VisualId");
-                context.Writer.Write(requestObject.VisualId);
+                context.Writer.WriteStringValue(requestObject.VisualId);
             }
 
         }

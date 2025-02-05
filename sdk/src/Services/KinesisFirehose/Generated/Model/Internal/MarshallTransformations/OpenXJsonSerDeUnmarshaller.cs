@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenXJsonSerDe Object
     /// </summary>  
-    public class OpenXJsonSerDeUnmarshaller : IUnmarshaller<OpenXJsonSerDe, XmlUnmarshallerContext>, IUnmarshaller<OpenXJsonSerDe, JsonUnmarshallerContext>
+    public class OpenXJsonSerDeUnmarshaller : IJsonUnmarshaller<OpenXJsonSerDe, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenXJsonSerDe IUnmarshaller<OpenXJsonSerDe, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenXJsonSerDe Unmarshall(JsonUnmarshallerContext context)
+        public OpenXJsonSerDe Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenXJsonSerDe unmarshalledObject = new OpenXJsonSerDe();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CaseInsensitive", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CaseInsensitive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CaseInsensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnToJsonKeyMappings", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ColumnToJsonKeyMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.ColumnToJsonKeyMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConvertDotsInJsonKeysToUnderscores", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ConvertDotsInJsonKeysToUnderscores = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConvertDotsInJsonKeysToUnderscores = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

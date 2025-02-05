@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuthorizedActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AuthorizedActions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthorizedActionsListValue in publicRequest.AuthorizedActions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuthorizedActions())
-                    {
-                        context.Writer.WritePropertyName("AuthorizedActions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthorizedActionsListValue in publicRequest.AuthorizedActions)
-                        {
-                                context.Writer.Write(publicRequestAuthorizedActionsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentifier())
-                    {
-                        context.Writer.WritePropertyName("Identifier");
-                        context.Writer.Write(publicRequest.Identifier);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMetrics())
-                    {
-                        context.Writer.WritePropertyName("Metrics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
-                        {
-                                context.Writer.Write(publicRequestMetricsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetServiceType())
-                    {
-                        context.Writer.WritePropertyName("ServiceType");
-                        context.Writer.Write(publicRequest.ServiceType);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAuthorizedActionsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetIdentifier())
+            {
+                context.Writer.WritePropertyName("Identifier");
+                context.Writer.WriteStringValue(publicRequest.Identifier);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetMetrics())
+            {
+                context.Writer.WritePropertyName("Metrics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                {
+                        context.Writer.WriteStringValue(publicRequestMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetServiceType())
+            {
+                context.Writer.WritePropertyName("ServiceType");
+                context.Writer.WriteStringValue(publicRequest.ServiceType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetCreateNativeDeltaTable())
             {
                 context.Writer.WritePropertyName("CreateNativeDeltaTable");
-                context.Writer.Write(requestObject.CreateNativeDeltaTable.Value);
+                context.Writer.WriteBooleanValue(requestObject.CreateNativeDeltaTable.Value);
             }
 
             if(requestObject.IsSetDeltaTables())
             {
                 context.Writer.WritePropertyName("DeltaTables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDeltaTablesListValue in requestObject.DeltaTables)
                 {
-                        context.Writer.Write(requestObjectDeltaTablesListValue);
+                        context.Writer.WriteStringValue(requestObjectDeltaTablesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWriteManifest())
             {
                 context.Writer.WritePropertyName("WriteManifest");
-                context.Writer.Write(requestObject.WriteManifest.Value);
+                context.Writer.WriteBooleanValue(requestObject.WriteManifest.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSignatureMap())
             {
                 context.Writer.WritePropertyName("signatureMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSignatureMapKvp in requestObject.SignatureMap)
                 {
                     context.Writer.WritePropertyName(requestObjectSignatureMapKvp.Key);
                     var requestObjectSignatureMapValue = requestObjectSignatureMapKvp.Value;
 
-                        context.Writer.Write(requestObjectSignatureMapValue);
+                        context.Writer.WriteBooleanValue(requestObjectSignatureMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

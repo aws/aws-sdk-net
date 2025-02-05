@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThingIndexingConfiguration Object
     /// </summary>  
-    public class ThingIndexingConfigurationUnmarshaller : IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThingIndexingConfiguration, JsonUnmarshallerContext>
+    public class ThingIndexingConfigurationUnmarshaller : IJsonUnmarshaller<ThingIndexingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThingIndexingConfiguration IUnmarshaller<ThingIndexingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThingIndexingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ThingIndexingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThingIndexingConfiguration unmarshalledObject = new ThingIndexingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
+                    unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deviceDefenderIndexingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceDefenderIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceDefenderIndexingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filter", targetDepth))
                 {
                     var unmarshaller = IndexingFilterUnmarshaller.Instance;
-                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("managedFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
-                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
+                    unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("namedShadowIndexingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamedShadowIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamedShadowIndexingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thingConnectivityIndexingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingConnectivityIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThingConnectivityIndexingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thingIndexingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingIndexingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThingIndexingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

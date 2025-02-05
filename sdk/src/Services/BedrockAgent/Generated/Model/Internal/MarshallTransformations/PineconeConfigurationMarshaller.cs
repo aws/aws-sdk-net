@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionString())
             {
                 context.Writer.WritePropertyName("connectionString");
-                context.Writer.Write(requestObject.ConnectionString);
+                context.Writer.WriteStringValue(requestObject.ConnectionString);
             }
 
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");
-                context.Writer.Write(requestObject.CredentialsSecretArn);
+                context.Writer.WriteStringValue(requestObject.CredentialsSecretArn);
             }
 
             if(requestObject.IsSetFieldMapping())
             {
                 context.Writer.WritePropertyName("fieldMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PineconeFieldMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
         }

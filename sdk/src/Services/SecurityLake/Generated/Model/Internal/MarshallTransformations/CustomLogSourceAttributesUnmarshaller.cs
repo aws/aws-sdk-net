@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomLogSourceAttributes Object
     /// </summary>  
-    public class CustomLogSourceAttributesUnmarshaller : IUnmarshaller<CustomLogSourceAttributes, XmlUnmarshallerContext>, IUnmarshaller<CustomLogSourceAttributes, JsonUnmarshallerContext>
+    public class CustomLogSourceAttributesUnmarshaller : IJsonUnmarshaller<CustomLogSourceAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomLogSourceAttributes IUnmarshaller<CustomLogSourceAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomLogSourceAttributes Unmarshall(JsonUnmarshallerContext context)
+        public CustomLogSourceAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomLogSourceAttributes unmarshalledObject = new CustomLogSourceAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("crawlerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("databaseArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tableArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

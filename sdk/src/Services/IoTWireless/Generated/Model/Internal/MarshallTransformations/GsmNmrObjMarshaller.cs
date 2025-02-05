@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBcch())
             {
                 context.Writer.WritePropertyName("Bcch");
-                context.Writer.Write(requestObject.Bcch.Value);
+                context.Writer.WriteNumberValue(requestObject.Bcch.Value);
             }
 
             if(requestObject.IsSetBsic())
             {
                 context.Writer.WritePropertyName("Bsic");
-                context.Writer.Write(requestObject.Bsic.Value);
+                context.Writer.WriteNumberValue(requestObject.Bsic.Value);
             }
 
             if(requestObject.IsSetGlobalIdentity())
             {
                 context.Writer.WritePropertyName("GlobalIdentity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GlobalIdentityMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlobalIdentity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRxLevel())
             {
                 context.Writer.WritePropertyName("RxLevel");
-                context.Writer.Write(requestObject.RxLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.RxLevel.Value);
             }
 
         }

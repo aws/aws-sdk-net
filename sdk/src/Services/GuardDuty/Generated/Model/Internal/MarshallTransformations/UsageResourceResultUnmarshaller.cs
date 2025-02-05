@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UsageResourceResult Object
     /// </summary>  
-    public class UsageResourceResultUnmarshaller : IUnmarshaller<UsageResourceResult, XmlUnmarshallerContext>, IUnmarshaller<UsageResourceResult, JsonUnmarshallerContext>
+    public class UsageResourceResultUnmarshaller : IJsonUnmarshaller<UsageResourceResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UsageResourceResult IUnmarshaller<UsageResourceResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UsageResourceResult Unmarshall(JsonUnmarshallerContext context)
+        public UsageResourceResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UsageResourceResult unmarshalledObject = new UsageResourceResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("resource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
                     var unmarshaller = TotalUnmarshaller.Instance;
-                    unmarshalledObject.Total = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Total = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

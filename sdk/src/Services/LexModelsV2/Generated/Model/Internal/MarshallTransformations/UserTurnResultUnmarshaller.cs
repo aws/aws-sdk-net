@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UserTurnResult Object
     /// </summary>  
-    public class UserTurnResultUnmarshaller : IUnmarshaller<UserTurnResult, XmlUnmarshallerContext>, IUnmarshaller<UserTurnResult, JsonUnmarshallerContext>
+    public class UserTurnResultUnmarshaller : IJsonUnmarshaller<UserTurnResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UserTurnResult IUnmarshaller<UserTurnResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UserTurnResult Unmarshall(JsonUnmarshallerContext context)
+        public UserTurnResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UserTurnResult unmarshalledObject = new UserTurnResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actualOutput", targetDepth))
                 {
                     var unmarshaller = UserTurnOutputSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ActualOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("conversationLevelResult", targetDepth))
                 {
                     var unmarshaller = ConversationLevelResultDetailUnmarshaller.Instance;
-                    unmarshalledObject.ConversationLevelResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConversationLevelResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endToEndResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndToEndResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndToEndResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errorDetails", targetDepth))
                 {
                     var unmarshaller = ExecutionErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("expectedOutput", targetDepth))
                 {
                     var unmarshaller = UserTurnOutputSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpectedOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("input", targetDepth))
                 {
                     var unmarshaller = UserTurnInputSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("intentMatchResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntentMatchResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntentMatchResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotMatchResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotMatchResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlotMatchResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("speechTranscriptionResult", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpeechTranscriptionResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpeechTranscriptionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

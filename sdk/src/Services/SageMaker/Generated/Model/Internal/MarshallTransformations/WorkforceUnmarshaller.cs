@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Workforce Object
     /// </summary>  
-    public class WorkforceUnmarshaller : IUnmarshaller<Workforce, XmlUnmarshallerContext>, IUnmarshaller<Workforce, JsonUnmarshallerContext>
+    public class WorkforceUnmarshaller : IJsonUnmarshaller<Workforce, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Workforce IUnmarshaller<Workforce, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Workforce Unmarshall(JsonUnmarshallerContext context)
+        public Workforce Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Workforce unmarshalledObject = new Workforce();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CognitoConfig", targetDepth))
                 {
                     var unmarshaller = CognitoConfigUnmarshaller.Instance;
-                    unmarshalledObject.CognitoConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CognitoConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreateDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OidcConfig", targetDepth))
                 {
                     var unmarshaller = OidcConfigForResponseUnmarshaller.Instance;
-                    unmarshalledObject.OidcConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OidcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceIpConfig", targetDepth))
                 {
                     var unmarshaller = SourceIpConfigUnmarshaller.Instance;
-                    unmarshalledObject.SourceIpConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceIpConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubDomain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubDomain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkforceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkforceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkforceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkforceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkforceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkforceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkforceVpcConfig", targetDepth))
                 {
                     var unmarshaller = WorkforceVpcConfigResponseUnmarshaller.Instance;
-                    unmarshalledObject.WorkforceVpcConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkforceVpcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

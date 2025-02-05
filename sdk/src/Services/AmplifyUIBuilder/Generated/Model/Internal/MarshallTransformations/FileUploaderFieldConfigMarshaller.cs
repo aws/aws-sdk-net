@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptedFileTypes())
             {
                 context.Writer.WritePropertyName("acceptedFileTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAcceptedFileTypesListValue in requestObject.AcceptedFileTypes)
                 {
-                        context.Writer.Write(requestObjectAcceptedFileTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectAcceptedFileTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAccessLevel())
             {
                 context.Writer.WritePropertyName("accessLevel");
-                context.Writer.Write(requestObject.AccessLevel);
+                context.Writer.WriteStringValue(requestObject.AccessLevel);
             }
 
             if(requestObject.IsSetIsResumable())
             {
                 context.Writer.WritePropertyName("isResumable");
-                context.Writer.Write(requestObject.IsResumable.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsResumable.Value);
             }
 
             if(requestObject.IsSetMaxFileCount())
             {
                 context.Writer.WritePropertyName("maxFileCount");
-                context.Writer.Write(requestObject.MaxFileCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFileCount.Value);
             }
 
             if(requestObject.IsSetMaxSize())
             {
                 context.Writer.WritePropertyName("maxSize");
-                context.Writer.Write(requestObject.MaxSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSize.Value);
             }
 
             if(requestObject.IsSetShowThumbnails())
             {
                 context.Writer.WritePropertyName("showThumbnails");
-                context.Writer.Write(requestObject.ShowThumbnails.Value);
+                context.Writer.WriteBooleanValue(requestObject.ShowThumbnails.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");
-                context.Writer.Write(requestObject.Bucket);
+                context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
             if(requestObject.IsSetEtag())
             {
                 context.Writer.WritePropertyName("etag");
-                context.Writer.Write(requestObject.Etag);
+                context.Writer.WriteStringValue(requestObject.Etag);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
         }

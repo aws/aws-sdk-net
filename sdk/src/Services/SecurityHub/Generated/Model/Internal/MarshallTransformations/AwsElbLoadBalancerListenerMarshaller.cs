@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstancePort())
             {
                 context.Writer.WritePropertyName("InstancePort");
-                context.Writer.Write(requestObject.InstancePort.Value);
+                context.Writer.WriteNumberValue(requestObject.InstancePort.Value);
             }
 
             if(requestObject.IsSetInstanceProtocol())
             {
                 context.Writer.WritePropertyName("InstanceProtocol");
-                context.Writer.Write(requestObject.InstanceProtocol);
+                context.Writer.WriteStringValue(requestObject.InstanceProtocol);
             }
 
             if(requestObject.IsSetLoadBalancerPort())
             {
                 context.Writer.WritePropertyName("LoadBalancerPort");
-                context.Writer.Write(requestObject.LoadBalancerPort.Value);
+                context.Writer.WriteNumberValue(requestObject.LoadBalancerPort.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetSslCertificateId())
             {
                 context.Writer.WritePropertyName("SslCertificateId");
-                context.Writer.Write(requestObject.SslCertificateId);
+                context.Writer.WriteStringValue(requestObject.SslCertificateId);
             }
 
         }

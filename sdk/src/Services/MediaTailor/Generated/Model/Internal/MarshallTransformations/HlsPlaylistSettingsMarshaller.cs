@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdMarkupType())
             {
                 context.Writer.WritePropertyName("AdMarkupType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdMarkupTypeListValue in requestObject.AdMarkupType)
                 {
-                        context.Writer.Write(requestObjectAdMarkupTypeListValue);
+                        context.Writer.WriteStringValue(requestObjectAdMarkupTypeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ManifestWindowSeconds.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetToxicityCategories())
             {
                 context.Writer.WritePropertyName("ToxicityCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectToxicityCategoriesListValue in requestObject.ToxicityCategories)
                 {
-                        context.Writer.Write(requestObjectToxicityCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectToxicityCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

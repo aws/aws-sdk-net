@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpnConnectionOptions Object
     /// </summary>  
-    public class VpnConnectionOptionsUnmarshaller : IUnmarshaller<VpnConnectionOptions, XmlUnmarshallerContext>, IUnmarshaller<VpnConnectionOptions, JsonUnmarshallerContext>
+    public class VpnConnectionOptionsUnmarshaller : IXmlUnmarshaller<VpnConnectionOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,17 +129,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VpnConnectionOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VpnConnectionOptionsUnmarshaller _instance = new VpnConnectionOptionsUnmarshaller();        
 

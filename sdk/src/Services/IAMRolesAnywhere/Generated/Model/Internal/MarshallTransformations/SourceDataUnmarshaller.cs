@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SourceData Object
     /// </summary>  
-    public class SourceDataUnmarshaller : IUnmarshaller<SourceData, XmlUnmarshallerContext>, IUnmarshaller<SourceData, JsonUnmarshallerContext>
+    public class SourceDataUnmarshaller : IJsonUnmarshaller<SourceData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SourceData IUnmarshaller<SourceData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceData Unmarshall(JsonUnmarshallerContext context)
+        public SourceData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SourceData unmarshalledObject = new SourceData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acmPcaArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AcmPcaArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcmPcaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("x509CertificateData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.X509CertificateData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.X509CertificateData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

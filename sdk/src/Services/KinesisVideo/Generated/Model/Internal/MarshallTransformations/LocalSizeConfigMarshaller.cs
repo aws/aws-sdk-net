@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLocalMediaSizeInMB())
             {
                 context.Writer.WritePropertyName("MaxLocalMediaSizeInMB");
-                context.Writer.Write(requestObject.MaxLocalMediaSizeInMB.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLocalMediaSizeInMB.Value);
             }
 
             if(requestObject.IsSetStrategyOnFullSize())
             {
                 context.Writer.WritePropertyName("StrategyOnFullSize");
-                context.Writer.Write(requestObject.StrategyOnFullSize);
+                context.Writer.WriteStringValue(requestObject.StrategyOnFullSize);
             }
 
         }

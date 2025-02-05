@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Subscription Object
     /// </summary>  
-    public class SubscriptionUnmarshaller : IUnmarshaller<Subscription, XmlUnmarshallerContext>, IUnmarshaller<Subscription, JsonUnmarshallerContext>
+    public class SubscriptionUnmarshaller : IJsonUnmarshaller<Subscription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Subscription IUnmarshaller<Subscription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Subscription Unmarshall(JsonUnmarshallerContext context)
+        public Subscription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Subscription unmarshalledObject = new Subscription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoRenew", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Limits", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
-                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
+                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProactiveEngagementStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProactiveEngagementStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProactiveEngagementStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionLimits", targetDepth))
                 {
                     var unmarshaller = SubscriptionLimitsUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionLimits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeCommitmentInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

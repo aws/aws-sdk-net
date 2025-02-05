@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompatibleRuntimes())
             {
                 context.Writer.WritePropertyName("CompatibleRuntimes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCompatibleRuntimesListValue in requestObject.CompatibleRuntimes)
                 {
-                        context.Writer.Write(requestObjectCompatibleRuntimesListValue);
+                        context.Writer.WriteStringValue(requestObjectCompatibleRuntimesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");
-                context.Writer.Write(requestObject.CreatedDate);
+                context.Writer.WriteStringValue(requestObject.CreatedDate);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version.Value);
+                context.Writer.WriteNumberValue(requestObject.Version.Value);
             }
 
         }

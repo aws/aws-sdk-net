@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundingBox())
             {
                 context.Writer.WritePropertyName("BoundingBox");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBoundingBoxListValue in requestObject.BoundingBox)
                 {
-                        context.Writer.Write(requestObjectBoundingBoxListValue);
+                        context.Writer.WriteNumberValue(requestObjectBoundingBoxListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeBusinessChains())
             {
                 context.Writer.WritePropertyName("ExcludeBusinessChains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeBusinessChainsListValue in requestObject.ExcludeBusinessChains)
                 {
-                        context.Writer.Write(requestObjectExcludeBusinessChainsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeBusinessChainsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeCategories())
             {
                 context.Writer.WritePropertyName("ExcludeCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeCategoriesListValue in requestObject.ExcludeCategories)
                 {
-                        context.Writer.Write(requestObjectExcludeCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeFoodTypes())
             {
                 context.Writer.WritePropertyName("ExcludeFoodTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeFoodTypesListValue in requestObject.ExcludeFoodTypes)
                 {
-                        context.Writer.Write(requestObjectExcludeFoodTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeFoodTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeBusinessChains())
             {
                 context.Writer.WritePropertyName("IncludeBusinessChains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeBusinessChainsListValue in requestObject.IncludeBusinessChains)
                 {
-                        context.Writer.Write(requestObjectIncludeBusinessChainsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeBusinessChainsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeCategories())
             {
                 context.Writer.WritePropertyName("IncludeCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeCategoriesListValue in requestObject.IncludeCategories)
                 {
-                        context.Writer.Write(requestObjectIncludeCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeCountries())
             {
                 context.Writer.WritePropertyName("IncludeCountries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeCountriesListValue in requestObject.IncludeCountries)
                 {
-                        context.Writer.Write(requestObjectIncludeCountriesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeCountriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeFoodTypes())
             {
                 context.Writer.WritePropertyName("IncludeFoodTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeFoodTypesListValue in requestObject.IncludeFoodTypes)
                 {
-                        context.Writer.Write(requestObjectIncludeFoodTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeFoodTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

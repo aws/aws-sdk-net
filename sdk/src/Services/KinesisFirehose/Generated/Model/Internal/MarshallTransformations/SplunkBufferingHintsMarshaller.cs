@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntervalInSeconds())
             {
                 context.Writer.WritePropertyName("IntervalInSeconds");
-                context.Writer.Write(requestObject.IntervalInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.IntervalInSeconds.Value);
             }
 
             if(requestObject.IsSetSizeInMBs())
             {
                 context.Writer.WritePropertyName("SizeInMBs");
-                context.Writer.Write(requestObject.SizeInMBs.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeInMBs.Value);
             }
 
         }

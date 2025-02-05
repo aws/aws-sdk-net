@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -53,50 +51,50 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("defaultValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DefaultValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.DefaultValue.Value);
                 }
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDimensionsKvp in requestObject.Dimensions)
                 {
                     context.Writer.WritePropertyName(requestObjectDimensionsKvp.Key);
                     var requestObjectDimensionsValue = requestObjectDimensionsKvp.Value;
 
-                        context.Writer.Write(requestObjectDimensionsValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetMetricNamespace())
             {
                 context.Writer.WritePropertyName("metricNamespace");
-                context.Writer.Write(requestObject.MetricNamespace);
+                context.Writer.WriteStringValue(requestObject.MetricNamespace);
             }
 
             if(requestObject.IsSetMetricValue())
             {
                 context.Writer.WritePropertyName("metricValue");
-                context.Writer.Write(requestObject.MetricValue);
+                context.Writer.WriteStringValue(requestObject.MetricValue);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

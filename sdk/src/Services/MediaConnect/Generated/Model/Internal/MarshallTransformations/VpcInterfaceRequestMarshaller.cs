@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNetworkInterfaceType())
             {
                 context.Writer.WritePropertyName("networkInterfaceType");
-                context.Writer.Write(requestObject.NetworkInterfaceType);
+                context.Writer.WriteStringValue(requestObject.NetworkInterfaceType);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("subnetId");
-                context.Writer.Write(requestObject.SubnetId);
+                context.Writer.WriteStringValue(requestObject.SubnetId);
             }
 
         }

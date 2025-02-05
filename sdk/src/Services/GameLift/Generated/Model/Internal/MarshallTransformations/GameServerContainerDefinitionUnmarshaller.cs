@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GameServerContainerDefinition Object
     /// </summary>  
-    public class GameServerContainerDefinitionUnmarshaller : IUnmarshaller<GameServerContainerDefinition, XmlUnmarshallerContext>, IUnmarshaller<GameServerContainerDefinition, JsonUnmarshallerContext>
+    public class GameServerContainerDefinitionUnmarshaller : IJsonUnmarshaller<GameServerContainerDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GameServerContainerDefinition IUnmarshaller<GameServerContainerDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GameServerContainerDefinition Unmarshall(JsonUnmarshallerContext context)
+        public GameServerContainerDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GameServerContainerDefinition unmarshalledObject = new GameServerContainerDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContainerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DependsOn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);
-                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);
+                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnvironmentOverride", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerEnvironment, ContainerEnvironmentUnmarshaller>(ContainerEnvironmentUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentOverride = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContainerEnvironment, ContainerEnvironmentUnmarshaller>(ContainerEnvironmentUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImageUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MountPoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerMountPoint, ContainerMountPointUnmarshaller>(ContainerMountPointUnmarshaller.Instance);
-                    unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContainerMountPoint, ContainerMountPointUnmarshaller>(ContainerMountPointUnmarshaller.Instance);
+                    unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PortConfiguration", targetDepth))
                 {
                     var unmarshaller = ContainerPortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PortConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResolvedImageDigest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolvedImageDigest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResolvedImageDigest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerSdkVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerSdkVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerSdkVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

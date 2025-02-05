@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationCode())
             {
                 context.Writer.WritePropertyName("AuthorizationCode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthorizationCodeGrantMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthorizationCode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJwtBearer())
             {
                 context.Writer.WritePropertyName("JwtBearer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JwtBearerGrantMarshaller.Instance;
                 marshaller.Marshall(requestObject.JwtBearer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRefreshToken())
             {
                 context.Writer.WritePropertyName("RefreshToken");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RefreshTokenGrantMarshaller.Instance;
                 marshaller.Marshall(requestObject.RefreshToken, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTokenExchange())
             {
                 context.Writer.WritePropertyName("TokenExchange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TokenExchangeGrantMarshaller.Instance;
                 marshaller.Marshall(requestObject.TokenExchange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

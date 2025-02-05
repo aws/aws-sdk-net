@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoImportPolicy())
             {
                 context.Writer.WritePropertyName("AutoImportPolicy");
-                context.Writer.Write(requestObject.AutoImportPolicy);
+                context.Writer.WriteStringValue(requestObject.AutoImportPolicy);
             }
 
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDataCompressionType())
             {
                 context.Writer.WritePropertyName("DataCompressionType");
-                context.Writer.Write(requestObject.DataCompressionType);
+                context.Writer.WriteStringValue(requestObject.DataCompressionType);
             }
 
             if(requestObject.IsSetLogConfiguration())
             {
                 context.Writer.WritePropertyName("LogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LustreLogCreateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetadataConfiguration())
             {
                 context.Writer.WritePropertyName("MetadataConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateFileSystemLustreMetadataConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetadataConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
-                context.Writer.Write(requestObject.PerUnitStorageThroughput.Value);
+                context.Writer.WriteNumberValue(requestObject.PerUnitStorageThroughput.Value);
             }
 
             if(requestObject.IsSetRootSquashConfiguration())
             {
                 context.Writer.WritePropertyName("RootSquashConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LustreRootSquashConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootSquashConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCredentialsException operation
     /// </summary>  
-    public class InvalidCredentialsExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCredentialsException, XmlUnmarshallerContext>
+    public class InvalidCredentialsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCredentialsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

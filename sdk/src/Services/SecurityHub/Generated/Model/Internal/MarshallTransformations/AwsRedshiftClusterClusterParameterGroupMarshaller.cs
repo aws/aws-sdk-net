@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterParameterStatusList())
             {
                 context.Writer.WritePropertyName("ClusterParameterStatusList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClusterParameterStatusListListValue in requestObject.ClusterParameterStatusList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRedshiftClusterClusterParameterStatusMarshaller.Instance;
                     marshaller.Marshall(requestObjectClusterParameterStatusListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParameterApplyStatus())
             {
                 context.Writer.WritePropertyName("ParameterApplyStatus");
-                context.Writer.Write(requestObject.ParameterApplyStatus);
+                context.Writer.WriteStringValue(requestObject.ParameterApplyStatus);
             }
 
             if(requestObject.IsSetParameterGroupName())
             {
                 context.Writer.WritePropertyName("ParameterGroupName");
-                context.Writer.Write(requestObject.ParameterGroupName);
+                context.Writer.WriteStringValue(requestObject.ParameterGroupName);
             }
 
         }

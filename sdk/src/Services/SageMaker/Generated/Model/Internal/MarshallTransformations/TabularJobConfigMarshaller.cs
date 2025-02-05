@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCandidateGenerationConfig())
             {
                 context.Writer.WritePropertyName("CandidateGenerationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CandidateGenerationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLJobCompletionCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompletionCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFeatureSpecificationS3Uri())
             {
                 context.Writer.WritePropertyName("FeatureSpecificationS3Uri");
-                context.Writer.Write(requestObject.FeatureSpecificationS3Uri);
+                context.Writer.WriteStringValue(requestObject.FeatureSpecificationS3Uri);
             }
 
             if(requestObject.IsSetGenerateCandidateDefinitionsOnly())
             {
                 context.Writer.WritePropertyName("GenerateCandidateDefinitionsOnly");
-                context.Writer.Write(requestObject.GenerateCandidateDefinitionsOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.GenerateCandidateDefinitionsOnly.Value);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetProblemType())
             {
                 context.Writer.WritePropertyName("ProblemType");
-                context.Writer.Write(requestObject.ProblemType);
+                context.Writer.WriteStringValue(requestObject.ProblemType);
             }
 
             if(requestObject.IsSetSampleWeightAttributeName())
             {
                 context.Writer.WritePropertyName("SampleWeightAttributeName");
-                context.Writer.Write(requestObject.SampleWeightAttributeName);
+                context.Writer.WriteStringValue(requestObject.SampleWeightAttributeName);
             }
 
             if(requestObject.IsSetTargetAttributeName())
             {
                 context.Writer.WritePropertyName("TargetAttributeName");
-                context.Writer.Write(requestObject.TargetAttributeName);
+                context.Writer.WriteStringValue(requestObject.TargetAttributeName);
             }
 
         }

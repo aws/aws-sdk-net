@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAbrBitrate())
             {
                 context.Writer.WritePropertyName("maxAbrBitrate");
-                context.Writer.Write(requestObject.MaxAbrBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAbrBitrate.Value);
             }
 
             if(requestObject.IsSetMaxRenditions())
             {
                 context.Writer.WritePropertyName("maxRenditions");
-                context.Writer.Write(requestObject.MaxRenditions.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRenditions.Value);
             }
 
             if(requestObject.IsSetMinAbrBitrate())
             {
                 context.Writer.WritePropertyName("minAbrBitrate");
-                context.Writer.Write(requestObject.MinAbrBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MinAbrBitrate.Value);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AutomatedAbrRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

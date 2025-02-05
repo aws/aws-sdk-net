@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2VpcDetails Object
     /// </summary>  
-    public class AwsEc2VpcDetailsUnmarshaller : IUnmarshaller<AwsEc2VpcDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2VpcDetails, JsonUnmarshallerContext>
+    public class AwsEc2VpcDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2VpcDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2VpcDetails IUnmarshaller<AwsEc2VpcDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2VpcDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2VpcDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2VpcDetails unmarshalledObject = new AwsEc2VpcDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CidrBlockAssociationSet", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CidrBlockAssociation, CidrBlockAssociationUnmarshaller>(CidrBlockAssociationUnmarshaller.Instance);
-                    unmarshalledObject.CidrBlockAssociationSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CidrBlockAssociation, CidrBlockAssociationUnmarshaller>(CidrBlockAssociationUnmarshaller.Instance);
+                    unmarshalledObject.CidrBlockAssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DhcpOptionsId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ipv6CidrBlockAssociationSet", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Ipv6CidrBlockAssociation, Ipv6CidrBlockAssociationUnmarshaller>(Ipv6CidrBlockAssociationUnmarshaller.Instance);
-                    unmarshalledObject.Ipv6CidrBlockAssociationSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Ipv6CidrBlockAssociation, Ipv6CidrBlockAssociationUnmarshaller>(Ipv6CidrBlockAssociationUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6CidrBlockAssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

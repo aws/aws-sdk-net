@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeliveryOptions Object
     /// </summary>  
-    public class DeliveryOptionsUnmarshaller : IUnmarshaller<DeliveryOptions, XmlUnmarshallerContext>, IUnmarshaller<DeliveryOptions, JsonUnmarshallerContext>
+    public class DeliveryOptionsUnmarshaller : IXmlUnmarshaller<DeliveryOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeliveryOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DeliveryOptionsUnmarshaller _instance = new DeliveryOptionsUnmarshaller();        
 

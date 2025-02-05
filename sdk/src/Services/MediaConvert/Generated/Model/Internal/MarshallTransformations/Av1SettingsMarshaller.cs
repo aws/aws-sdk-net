@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
-                context.Writer.Write(requestObject.AdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.AdaptiveQuantization);
             }
 
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth);
+                context.Writer.WriteStringValue(requestObject.BitDepth);
             }
 
             if(requestObject.IsSetFilmGrainSynthesis())
             {
                 context.Writer.WritePropertyName("filmGrainSynthesis");
-                context.Writer.Write(requestObject.FilmGrainSynthesis);
+                context.Writer.WriteStringValue(requestObject.FilmGrainSynthesis);
             }
 
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
-                context.Writer.Write(requestObject.FramerateControl);
+                context.Writer.WriteStringValue(requestObject.FramerateControl);
             }
 
             if(requestObject.IsSetFramerateConversionAlgorithm())
             {
                 context.Writer.WritePropertyName("framerateConversionAlgorithm");
-                context.Writer.Write(requestObject.FramerateConversionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.FramerateConversionAlgorithm);
             }
 
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopSize())
@@ -95,53 +93,53 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("gopSize");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GopSize.Value);
+                    context.Writer.WriteNumberValue(requestObject.GopSize.Value);
                 }
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetNumberBFramesBetweenReferenceFrames())
             {
                 context.Writer.WritePropertyName("numberBFramesBetweenReferenceFrames");
-                context.Writer.Write(requestObject.NumberBFramesBetweenReferenceFrames.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberBFramesBetweenReferenceFrames.Value);
             }
 
             if(requestObject.IsSetQvbrSettings())
             {
                 context.Writer.WritePropertyName("qvbrSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Av1QvbrSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.QvbrSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRateControlMode())
             {
                 context.Writer.WritePropertyName("rateControlMode");
-                context.Writer.Write(requestObject.RateControlMode);
+                context.Writer.WriteStringValue(requestObject.RateControlMode);
             }
 
             if(requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
-                context.Writer.Write(requestObject.Slices.Value);
+                context.Writer.WriteNumberValue(requestObject.Slices.Value);
             }
 
             if(requestObject.IsSetSpatialAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("spatialAdaptiveQuantization");
-                context.Writer.Write(requestObject.SpatialAdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.SpatialAdaptiveQuantization);
             }
 
         }

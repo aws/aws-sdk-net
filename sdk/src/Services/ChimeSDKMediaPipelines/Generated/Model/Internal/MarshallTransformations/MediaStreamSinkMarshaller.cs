@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaStreamType())
             {
                 context.Writer.WritePropertyName("MediaStreamType");
-                context.Writer.Write(requestObject.MediaStreamType);
+                context.Writer.WriteStringValue(requestObject.MediaStreamType);
             }
 
             if(requestObject.IsSetReservedStreamCapacity())
             {
                 context.Writer.WritePropertyName("ReservedStreamCapacity");
-                context.Writer.Write(requestObject.ReservedStreamCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.ReservedStreamCapacity.Value);
             }
 
             if(requestObject.IsSetSinkArn())
             {
                 context.Writer.WritePropertyName("SinkArn");
-                context.Writer.Write(requestObject.SinkArn);
+                context.Writer.WriteStringValue(requestObject.SinkArn);
             }
 
             if(requestObject.IsSetSinkType())
             {
                 context.Writer.WritePropertyName("SinkType");
-                context.Writer.Write(requestObject.SinkType);
+                context.Writer.WriteStringValue(requestObject.SinkType);
             }
 
         }

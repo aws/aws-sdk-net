@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,90 +49,90 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChatterFeedConfiguration())
             {
                 context.Writer.WritePropertyName("ChatterFeedConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceChatterFeedConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChatterFeedConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
-                context.Writer.Write(requestObject.CrawlAttachments.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlAttachments.Value);
             }
 
             if(requestObject.IsSetExcludeAttachmentFilePatterns())
             {
                 context.Writer.WritePropertyName("ExcludeAttachmentFilePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeAttachmentFilePatternsListValue in requestObject.ExcludeAttachmentFilePatterns)
                 {
-                        context.Writer.Write(requestObjectExcludeAttachmentFilePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeAttachmentFilePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeAttachmentFilePatterns())
             {
                 context.Writer.WritePropertyName("IncludeAttachmentFilePatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeAttachmentFilePatternsListValue in requestObject.IncludeAttachmentFilePatterns)
                 {
-                        context.Writer.Write(requestObjectIncludeAttachmentFilePatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeAttachmentFilePatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKnowledgeArticleConfiguration())
             {
                 context.Writer.WritePropertyName("KnowledgeArticleConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceKnowledgeArticleConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KnowledgeArticleConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetServerUrl())
             {
                 context.Writer.WritePropertyName("ServerUrl");
-                context.Writer.Write(requestObject.ServerUrl);
+                context.Writer.WriteStringValue(requestObject.ServerUrl);
             }
 
             if(requestObject.IsSetStandardObjectAttachmentConfiguration())
             {
                 context.Writer.WritePropertyName("StandardObjectAttachmentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceStandardObjectAttachmentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StandardObjectAttachmentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStandardObjectConfigurations())
             {
                 context.Writer.WritePropertyName("StandardObjectConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStandardObjectConfigurationsListValue in requestObject.StandardObjectConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SalesforceStandardObjectConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectStandardObjectConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

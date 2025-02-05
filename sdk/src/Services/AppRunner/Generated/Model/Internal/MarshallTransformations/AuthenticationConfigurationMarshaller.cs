@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessRoleArn())
             {
                 context.Writer.WritePropertyName("AccessRoleArn");
-                context.Writer.Write(requestObject.AccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.AccessRoleArn);
             }
 
             if(requestObject.IsSetConnectionArn())
             {
                 context.Writer.WritePropertyName("ConnectionArn");
-                context.Writer.Write(requestObject.ConnectionArn);
+                context.Writer.WriteStringValue(requestObject.ConnectionArn);
             }
 
         }

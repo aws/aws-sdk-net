@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNFS())
             {
                 context.Writer.WritePropertyName("NFS");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FsxProtocolNfsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFS, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSMB())
             {
                 context.Writer.WritePropertyName("SMB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FsxProtocolSmbMarshaller.Instance;
                 marshaller.Marshall(requestObject.SMB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

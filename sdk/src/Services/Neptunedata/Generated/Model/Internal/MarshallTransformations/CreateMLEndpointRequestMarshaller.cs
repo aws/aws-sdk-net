@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 {
@@ -61,73 +64,78 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ml/endpoints";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetId())
-                    {
-                        context.Writer.WritePropertyName("id");
-                        context.Writer.Write(publicRequest.Id);
-                    }
-
-                    if(publicRequest.IsSetInstanceCount())
-                    {
-                        context.Writer.WritePropertyName("instanceCount");
-                        context.Writer.Write(publicRequest.InstanceCount.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("instanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetMlModelTrainingJobId())
-                    {
-                        context.Writer.WritePropertyName("mlModelTrainingJobId");
-                        context.Writer.Write(publicRequest.MlModelTrainingJobId);
-                    }
-
-                    if(publicRequest.IsSetMlModelTransformJobId())
-                    {
-                        context.Writer.WritePropertyName("mlModelTransformJobId");
-                        context.Writer.Write(publicRequest.MlModelTransformJobId);
-                    }
-
-                    if(publicRequest.IsSetModelName())
-                    {
-                        context.Writer.WritePropertyName("modelName");
-                        context.Writer.Write(publicRequest.ModelName);
-                    }
-
-                    if(publicRequest.IsSetNeptuneIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("neptuneIamRoleArn");
-                        context.Writer.Write(publicRequest.NeptuneIamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetUpdate())
-                    {
-                        context.Writer.WritePropertyName("update");
-                        context.Writer.Write(publicRequest.Update.Value);
-                    }
-
-                    if(publicRequest.IsSetVolumeEncryptionKMSKey())
-                    {
-                        context.Writer.WritePropertyName("volumeEncryptionKMSKey");
-                        context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("id");
+                context.Writer.WriteStringValue(publicRequest.Id);
             }
+
+            if(publicRequest.IsSetInstanceCount())
+            {
+                context.Writer.WritePropertyName("instanceCount");
+                context.Writer.WriteNumberValue(publicRequest.InstanceCount.Value);
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("instanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetMlModelTrainingJobId())
+            {
+                context.Writer.WritePropertyName("mlModelTrainingJobId");
+                context.Writer.WriteStringValue(publicRequest.MlModelTrainingJobId);
+            }
+
+            if(publicRequest.IsSetMlModelTransformJobId())
+            {
+                context.Writer.WritePropertyName("mlModelTransformJobId");
+                context.Writer.WriteStringValue(publicRequest.MlModelTransformJobId);
+            }
+
+            if(publicRequest.IsSetModelName())
+            {
+                context.Writer.WritePropertyName("modelName");
+                context.Writer.WriteStringValue(publicRequest.ModelName);
+            }
+
+            if(publicRequest.IsSetNeptuneIamRoleArn())
+            {
+                context.Writer.WritePropertyName("neptuneIamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.NeptuneIamRoleArn);
+            }
+
+            if(publicRequest.IsSetUpdate())
+            {
+                context.Writer.WritePropertyName("update");
+                context.Writer.WriteBooleanValue(publicRequest.Update.Value);
+            }
+
+            if(publicRequest.IsSetVolumeEncryptionKMSKey())
+            {
+                context.Writer.WritePropertyName("volumeEncryptionKMSKey");
+                context.Writer.WriteStringValue(publicRequest.VolumeEncryptionKMSKey);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

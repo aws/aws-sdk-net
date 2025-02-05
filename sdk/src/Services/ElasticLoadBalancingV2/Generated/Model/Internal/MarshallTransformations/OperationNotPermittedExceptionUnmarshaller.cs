@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OperationNotPermittedException operation
     /// </summary>  
-    public class OperationNotPermittedExceptionUnmarshaller : IErrorResponseUnmarshaller<OperationNotPermittedException, XmlUnmarshallerContext>
+    public class OperationNotPermittedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OperationNotPermittedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

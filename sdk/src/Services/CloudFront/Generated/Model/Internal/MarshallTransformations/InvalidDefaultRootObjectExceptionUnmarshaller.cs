@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDefaultRootObjectException operation
     /// </summary>  
-    public class InvalidDefaultRootObjectExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDefaultRootObjectException, XmlUnmarshallerContext>
+    public class InvalidDefaultRootObjectExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDefaultRootObjectException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("Operator");
-                context.Writer.Write(requestObject.Operator);
+                context.Writer.WriteStringValue(requestObject.Operator);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value.Value);
+                context.Writer.WriteNumberValue(requestObject.Value.Value);
             }
 
         }

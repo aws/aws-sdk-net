@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -47,99 +47,99 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetPatchBaselineResponse response = new GetPatchBaselineResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApprovalRules", targetDepth))
                 {
                     var unmarshaller = PatchRuleGroupUnmarshaller.Instance;
-                    response.ApprovalRules = unmarshaller.Unmarshall(context);
+                    response.ApprovalRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApprovedPatches", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.ApprovedPatches = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ApprovedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApprovedPatchesComplianceLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApprovedPatchesComplianceLevel = unmarshaller.Unmarshall(context);
+                    response.ApprovedPatchesComplianceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApprovedPatchesEnableNonSecurity", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.ApprovedPatchesEnableNonSecurity = unmarshaller.Unmarshall(context);
+                    response.ApprovedPatchesEnableNonSecurity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BaselineId = unmarshaller.Unmarshall(context);
+                    response.BaselineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedDate = unmarshaller.Unmarshall(context);
+                    response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GlobalFilters", targetDepth))
                 {
                     var unmarshaller = PatchFilterGroupUnmarshaller.Instance;
-                    response.GlobalFilters = unmarshaller.Unmarshall(context);
+                    response.GlobalFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ModifiedDate = unmarshaller.Unmarshall(context);
+                    response.ModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OperatingSystem", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.OperatingSystem = unmarshaller.Unmarshall(context);
+                    response.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PatchGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.PatchGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.PatchGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RejectedPatches", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.RejectedPatches = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.RejectedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RejectedPatchesAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RejectedPatchesAction = unmarshaller.Unmarshall(context);
+                    response.RejectedPatchesAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PatchSource, PatchSourceUnmarshaller>(PatchSourceUnmarshaller.Instance);
-                    response.Sources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PatchSource, PatchSourceUnmarshaller>(PatchSourceUnmarshaller.Instance);
+                    response.Sources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -156,26 +156,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DoesNotExistException"))
                 {
-                    return DoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
-                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceId"))
                 {
-                    return InvalidResourceIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidResourceIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

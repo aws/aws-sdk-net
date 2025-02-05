@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestNameModifier())
             {
                 context.Writer.WritePropertyName("manifestNameModifier");
-                context.Writer.Write(requestObject.ManifestNameModifier);
+                context.Writer.WriteStringValue(requestObject.ManifestNameModifier);
             }
 
             if(requestObject.IsSetSelectedOutputs())
             {
                 context.Writer.WritePropertyName("selectedOutputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedOutputsListValue in requestObject.SelectedOutputs)
                 {
-                        context.Writer.Write(requestObjectSelectedOutputsListValue);
+                        context.Writer.WriteStringValue(requestObjectSelectedOutputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

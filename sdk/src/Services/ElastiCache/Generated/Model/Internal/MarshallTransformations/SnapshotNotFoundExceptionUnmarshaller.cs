@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotNotFoundException operation
     /// </summary>  
-    public class SnapshotNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotNotFoundException, XmlUnmarshallerContext>
+    public class SnapshotNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

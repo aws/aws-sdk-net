@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IntegrationConflictOperationException operation
     /// </summary>  
-    public class IntegrationConflictOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<IntegrationConflictOperationException, XmlUnmarshallerContext>
+    public class IntegrationConflictOperationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IntegrationConflictOperationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

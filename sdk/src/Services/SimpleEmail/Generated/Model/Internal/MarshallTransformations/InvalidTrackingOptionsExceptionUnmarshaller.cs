@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTrackingOptionsException operation
     /// </summary>  
-    public class InvalidTrackingOptionsExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTrackingOptionsException, XmlUnmarshallerContext>
+    public class InvalidTrackingOptionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTrackingOptionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

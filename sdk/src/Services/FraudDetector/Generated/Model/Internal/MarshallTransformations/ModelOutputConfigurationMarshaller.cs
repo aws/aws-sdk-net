@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCsvIndexToVariableMap())
             {
                 context.Writer.WritePropertyName("csvIndexToVariableMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCsvIndexToVariableMapKvp in requestObject.CsvIndexToVariableMap)
                 {
                     context.Writer.WritePropertyName(requestObjectCsvIndexToVariableMapKvp.Key);
                     var requestObjectCsvIndexToVariableMapValue = requestObjectCsvIndexToVariableMapKvp.Value;
 
-                        context.Writer.Write(requestObjectCsvIndexToVariableMapValue);
+                        context.Writer.WriteStringValue(requestObjectCsvIndexToVariableMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetJsonKeyToVariableMap())
             {
                 context.Writer.WritePropertyName("jsonKeyToVariableMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectJsonKeyToVariableMapKvp in requestObject.JsonKeyToVariableMap)
                 {
                     context.Writer.WritePropertyName(requestObjectJsonKeyToVariableMapKvp.Key);
                     var requestObjectJsonKeyToVariableMapValue = requestObjectJsonKeyToVariableMapKvp.Value;
 
-                        context.Writer.Write(requestObjectJsonKeyToVariableMapValue);
+                        context.Writer.WriteStringValue(requestObjectJsonKeyToVariableMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

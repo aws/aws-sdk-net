@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScatterPlotCategoricallyAggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("ScatterPlotCategoricallyAggregatedFieldWells");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScatterPlotCategoricallyAggregatedFieldWellsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScatterPlotCategoricallyAggregatedFieldWells, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScatterPlotUnaggregatedFieldWells())
             {
                 context.Writer.WritePropertyName("ScatterPlotUnaggregatedFieldWells");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScatterPlotUnaggregatedFieldWellsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScatterPlotUnaggregatedFieldWells, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

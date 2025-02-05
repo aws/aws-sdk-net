@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2SecurityGroupIpv6Range Object
     /// </summary>  
-    public class AwsEc2SecurityGroupIpv6RangeUnmarshaller : IUnmarshaller<AwsEc2SecurityGroupIpv6Range, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2SecurityGroupIpv6Range, JsonUnmarshallerContext>
+    public class AwsEc2SecurityGroupIpv6RangeUnmarshaller : IJsonUnmarshaller<AwsEc2SecurityGroupIpv6Range, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2SecurityGroupIpv6Range IUnmarshaller<AwsEc2SecurityGroupIpv6Range, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2SecurityGroupIpv6Range Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2SecurityGroupIpv6Range Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2SecurityGroupIpv6Range unmarshalledObject = new AwsEc2SecurityGroupIpv6Range();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CidrIpv6", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CidrIpv6 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CidrIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

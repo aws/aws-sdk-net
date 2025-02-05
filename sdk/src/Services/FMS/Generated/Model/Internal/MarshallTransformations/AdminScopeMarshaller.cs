@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountScope())
             {
                 context.Writer.WritePropertyName("AccountScope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccountScope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrganizationalUnitScope())
             {
                 context.Writer.WritePropertyName("OrganizationalUnitScope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OrganizationalUnitScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OrganizationalUnitScope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolicyTypeScope())
             {
                 context.Writer.WritePropertyName("PolicyTypeScope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PolicyTypeScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyTypeScope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegionScope())
             {
                 context.Writer.WritePropertyName("RegionScope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegionScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegionScope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

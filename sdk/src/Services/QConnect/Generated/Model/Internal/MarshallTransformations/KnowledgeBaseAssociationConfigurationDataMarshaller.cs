@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentTagFilter())
             {
                 context.Writer.WritePropertyName("contentTagFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TagFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContentTagFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");
-                context.Writer.Write(requestObject.MaxResults.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetOverrideKnowledgeBaseSearchType())
             {
                 context.Writer.WritePropertyName("overrideKnowledgeBaseSearchType");
-                context.Writer.Write(requestObject.OverrideKnowledgeBaseSearchType);
+                context.Writer.WriteStringValue(requestObject.OverrideKnowledgeBaseSearchType);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeQuotaResources())
             {
                 context.Writer.WritePropertyName("ComputeQuotaResources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComputeQuotaResourcesListValue in requestObject.ComputeQuotaResources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComputeQuotaResourceConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectComputeQuotaResourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPreemptTeamTasks())
             {
                 context.Writer.WritePropertyName("PreemptTeamTasks");
-                context.Writer.Write(requestObject.PreemptTeamTasks);
+                context.Writer.WriteStringValue(requestObject.PreemptTeamTasks);
             }
 
             if(requestObject.IsSetResourceSharingConfig())
             {
                 context.Writer.WritePropertyName("ResourceSharingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceSharingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceSharingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

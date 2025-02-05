@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("email");
-                context.Writer.Write(requestObject.Email);
+                context.Writer.WriteStringValue(requestObject.Email);
             }
 
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("groups");
-                context.Writer.Write(requestObject.Groups);
+                context.Writer.WriteStringValue(requestObject.Groups);
             }
 
             if(requestObject.IsSetLogin())
             {
                 context.Writer.WritePropertyName("login");
-                context.Writer.Write(requestObject.Login);
+                context.Writer.WriteStringValue(requestObject.Login);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOrg())
             {
                 context.Writer.WritePropertyName("org");
-                context.Writer.Write(requestObject.Org);
+                context.Writer.WriteStringValue(requestObject.Org);
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
         }

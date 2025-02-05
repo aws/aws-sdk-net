@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("createdAfter");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedAfter));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedAfter));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("createdBefore");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedBefore));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedBefore));
             }
 
         }

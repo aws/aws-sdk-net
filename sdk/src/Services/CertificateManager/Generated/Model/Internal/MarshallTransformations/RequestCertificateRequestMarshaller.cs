@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
@@ -63,103 +66,108 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificateAuthorityArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCertificateAuthorityArn())
-                    {
-                        context.Writer.WritePropertyName("CertificateAuthorityArn");
-                        context.Writer.Write(publicRequest.CertificateAuthorityArn);
-                    }
-
-                    if(publicRequest.IsSetDomainName())
-                    {
-                        context.Writer.WritePropertyName("DomainName");
-                        context.Writer.Write(publicRequest.DomainName);
-                    }
-
-                    if(publicRequest.IsSetDomainValidationOptions())
-                    {
-                        context.Writer.WritePropertyName("DomainValidationOptions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDomainValidationOptionsListValue in publicRequest.DomainValidationOptions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DomainValidationOptionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDomainValidationOptionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    if(publicRequest.IsSetKeyAlgorithm())
-                    {
-                        context.Writer.WritePropertyName("KeyAlgorithm");
-                        context.Writer.Write(publicRequest.KeyAlgorithm);
-                    }
-
-                    if(publicRequest.IsSetOptions())
-                    {
-                        context.Writer.WritePropertyName("Options");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CertificateOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Options, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSubjectAlternativeNames())
-                    {
-                        context.Writer.WritePropertyName("SubjectAlternativeNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubjectAlternativeNamesListValue in publicRequest.SubjectAlternativeNames)
-                        {
-                                context.Writer.Write(publicRequestSubjectAlternativeNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetValidationMethod())
-                    {
-                        context.Writer.WritePropertyName("ValidationMethod");
-                        context.Writer.Write(publicRequest.ValidationMethod);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CertificateAuthorityArn");
+                context.Writer.WriteStringValue(publicRequest.CertificateAuthorityArn);
             }
+
+            if(publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+
+            if(publicRequest.IsSetDomainValidationOptions())
+            {
+                context.Writer.WritePropertyName("DomainValidationOptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainValidationOptionsListValue in publicRequest.DomainValidationOptions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DomainValidationOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDomainValidationOptionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+
+            if(publicRequest.IsSetKeyAlgorithm())
+            {
+                context.Writer.WritePropertyName("KeyAlgorithm");
+                context.Writer.WriteStringValue(publicRequest.KeyAlgorithm);
+            }
+
+            if(publicRequest.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CertificateOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Options, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSubjectAlternativeNames())
+            {
+                context.Writer.WritePropertyName("SubjectAlternativeNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubjectAlternativeNamesListValue in publicRequest.SubjectAlternativeNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubjectAlternativeNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetValidationMethod())
+            {
+                context.Writer.WritePropertyName("ValidationMethod");
+                context.Writer.WriteStringValue(publicRequest.ValidationMethod);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

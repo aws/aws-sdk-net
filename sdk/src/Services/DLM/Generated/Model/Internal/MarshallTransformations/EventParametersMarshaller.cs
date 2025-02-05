@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescriptionRegex())
             {
                 context.Writer.WritePropertyName("DescriptionRegex");
-                context.Writer.Write(requestObject.DescriptionRegex);
+                context.Writer.WriteStringValue(requestObject.DescriptionRegex);
             }
 
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("EventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetSnapshotOwner())
             {
                 context.Writer.WritePropertyName("SnapshotOwner");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSnapshotOwnerListValue in requestObject.SnapshotOwner)
                 {
-                        context.Writer.Write(requestObjectSnapshotOwnerListValue);
+                        context.Writer.WriteStringValue(requestObjectSnapshotOwnerListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

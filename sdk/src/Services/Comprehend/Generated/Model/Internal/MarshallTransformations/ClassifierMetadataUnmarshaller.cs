@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClassifierMetadata Object
     /// </summary>  
-    public class ClassifierMetadataUnmarshaller : IUnmarshaller<ClassifierMetadata, XmlUnmarshallerContext>, IUnmarshaller<ClassifierMetadata, JsonUnmarshallerContext>
+    public class ClassifierMetadataUnmarshaller : IJsonUnmarshaller<ClassifierMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClassifierMetadata IUnmarshaller<ClassifierMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClassifierMetadata Unmarshall(JsonUnmarshallerContext context)
+        public ClassifierMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClassifierMetadata unmarshalledObject = new ClassifierMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EvaluationMetrics", targetDepth))
                 {
                     var unmarshaller = ClassifierEvaluationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfLabels", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfLabels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfTestDocuments", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfTestDocuments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfTestDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfTrainedDocuments", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfTrainedDocuments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfTrainedDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidNamespaceException operation
     /// </summary>  
-    public class InvalidNamespaceExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidNamespaceException, XmlUnmarshallerContext>
+    public class InvalidNamespaceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidNamespaceException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

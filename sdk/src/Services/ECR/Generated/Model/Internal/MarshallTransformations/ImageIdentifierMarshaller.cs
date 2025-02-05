@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageDigest())
             {
                 context.Writer.WritePropertyName("imageDigest");
-                context.Writer.Write(requestObject.ImageDigest);
+                context.Writer.WriteStringValue(requestObject.ImageDigest);
             }
 
             if(requestObject.IsSetImageTag())
             {
                 context.Writer.WritePropertyName("imageTag");
-                context.Writer.Write(requestObject.ImageTag);
+                context.Writer.WriteStringValue(requestObject.ImageTag);
             }
 
         }

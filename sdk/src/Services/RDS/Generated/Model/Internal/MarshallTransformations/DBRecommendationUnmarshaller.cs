@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBRecommendation Object
     /// </summary>  
-    public class DBRecommendationUnmarshaller : IUnmarshaller<DBRecommendation, XmlUnmarshallerContext>, IUnmarshaller<DBRecommendation, JsonUnmarshallerContext>
+    public class DBRecommendationUnmarshaller : IXmlUnmarshaller<DBRecommendation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -194,17 +194,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBRecommendation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBRecommendationUnmarshaller _instance = new DBRecommendationUnmarshaller();        
 

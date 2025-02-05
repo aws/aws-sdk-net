@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CompareDataSetsStepOutput Object
     /// </summary>  
-    public class CompareDataSetsStepOutputUnmarshaller : IUnmarshaller<CompareDataSetsStepOutput, XmlUnmarshallerContext>, IUnmarshaller<CompareDataSetsStepOutput, JsonUnmarshallerContext>
+    public class CompareDataSetsStepOutputUnmarshaller : IJsonUnmarshaller<CompareDataSetsStepOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CompareDataSetsStepOutput IUnmarshaller<CompareDataSetsStepOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CompareDataSetsStepOutput Unmarshall(JsonUnmarshallerContext context)
+        public CompareDataSetsStepOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CompareDataSetsStepOutput unmarshalledObject = new CompareDataSetsStepOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("comparisonOutputLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonOutputLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparisonOutputLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("comparisonStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparisonStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

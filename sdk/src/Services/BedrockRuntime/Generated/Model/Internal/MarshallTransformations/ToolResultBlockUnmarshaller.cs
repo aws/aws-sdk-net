@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ToolResultBlock Object
     /// </summary>  
-    public class ToolResultBlockUnmarshaller : IUnmarshaller<ToolResultBlock, XmlUnmarshallerContext>, IUnmarshaller<ToolResultBlock, JsonUnmarshallerContext>
+    public class ToolResultBlockUnmarshaller : IJsonUnmarshaller<ToolResultBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ToolResultBlock IUnmarshaller<ToolResultBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ToolResultBlock Unmarshall(JsonUnmarshallerContext context)
+        public ToolResultBlock Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ToolResultBlock unmarshalledObject = new ToolResultBlock();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("content", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ToolResultContentBlock, ToolResultContentBlockUnmarshaller>(ToolResultContentBlockUnmarshaller.Instance);
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ToolResultContentBlock, ToolResultContentBlockUnmarshaller>(ToolResultContentBlockUnmarshaller.Instance);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("toolUseId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToolUseId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToolUseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

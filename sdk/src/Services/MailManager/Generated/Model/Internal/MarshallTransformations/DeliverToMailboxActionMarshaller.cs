@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionFailurePolicy())
             {
                 context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.Write(requestObject.ActionFailurePolicy);
+                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
             }
 
             if(requestObject.IsSetMailboxArn())
             {
                 context.Writer.WritePropertyName("MailboxArn");
-                context.Writer.Write(requestObject.MailboxArn);
+                context.Writer.WriteStringValue(requestObject.MailboxArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

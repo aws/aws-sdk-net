@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetKmsEncryptionContext())
             {
                 context.Writer.WritePropertyName("kmsEncryptionContext");
-                context.Writer.Write(requestObject.KmsEncryptionContext);
+                context.Writer.WriteStringValue(requestObject.KmsEncryptionContext);
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
         }

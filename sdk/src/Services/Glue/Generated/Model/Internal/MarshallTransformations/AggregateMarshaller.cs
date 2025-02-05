@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggs())
             {
                 context.Writer.WritePropertyName("Aggs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggsListValue in requestObject.Aggs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AggregateOperationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupsListValue in requestObject.Groups)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectGroupsListValueListValue in requestObjectGroupsListValue)
                     {
-                            context.Writer.Write(requestObjectGroupsListValueListValue);
+                            context.Writer.WriteStringValue(requestObjectGroupsListValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

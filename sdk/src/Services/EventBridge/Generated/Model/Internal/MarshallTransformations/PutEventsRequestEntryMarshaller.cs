@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetail())
             {
                 context.Writer.WritePropertyName("Detail");
-                context.Writer.Write(requestObject.Detail);
+                context.Writer.WriteStringValue(requestObject.Detail);
             }
 
             if(requestObject.IsSetDetailType())
             {
                 context.Writer.WritePropertyName("DetailType");
-                context.Writer.Write(requestObject.DetailType);
+                context.Writer.WriteStringValue(requestObject.DetailType);
             }
 
             if(requestObject.IsSetEventBusName())
             {
                 context.Writer.WritePropertyName("EventBusName");
-                context.Writer.Write(requestObject.EventBusName);
+                context.Writer.WriteStringValue(requestObject.EventBusName);
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("Resources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourcesListValue in requestObject.Resources)
                 {
-                        context.Writer.Write(requestObjectResourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.Write(requestObject.Time.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Time.Value)));
             }
 
             if(requestObject.IsSetTraceHeader())
             {
                 context.Writer.WritePropertyName("TraceHeader");
-                context.Writer.Write(requestObject.TraceHeader);
+                context.Writer.WriteStringValue(requestObject.TraceHeader);
             }
 
         }

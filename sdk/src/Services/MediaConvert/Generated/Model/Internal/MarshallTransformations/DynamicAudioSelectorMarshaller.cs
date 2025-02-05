@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDurationCorrection())
             {
                 context.Writer.WritePropertyName("audioDurationCorrection");
-                context.Writer.Write(requestObject.AudioDurationCorrection);
+                context.Writer.WriteStringValue(requestObject.AudioDurationCorrection);
             }
 
             if(requestObject.IsSetExternalAudioFileInput())
             {
                 context.Writer.WritePropertyName("externalAudioFileInput");
-                context.Writer.Write(requestObject.ExternalAudioFileInput);
+                context.Writer.WriteStringValue(requestObject.ExternalAudioFileInput);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.WriteNumberValue(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetSelectorType())
             {
                 context.Writer.WritePropertyName("selectorType");
-                context.Writer.Write(requestObject.SelectorType);
+                context.Writer.WriteStringValue(requestObject.SelectorType);
             }
 
         }

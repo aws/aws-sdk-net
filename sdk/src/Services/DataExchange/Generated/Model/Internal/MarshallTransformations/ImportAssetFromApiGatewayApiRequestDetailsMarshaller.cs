@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiDescription())
             {
                 context.Writer.WritePropertyName("ApiDescription");
-                context.Writer.Write(requestObject.ApiDescription);
+                context.Writer.WriteStringValue(requestObject.ApiDescription);
             }
 
             if(requestObject.IsSetApiId())
             {
                 context.Writer.WritePropertyName("ApiId");
-                context.Writer.Write(requestObject.ApiId);
+                context.Writer.WriteStringValue(requestObject.ApiId);
             }
 
             if(requestObject.IsSetApiKey())
             {
                 context.Writer.WritePropertyName("ApiKey");
-                context.Writer.Write(requestObject.ApiKey);
+                context.Writer.WriteStringValue(requestObject.ApiKey);
             }
 
             if(requestObject.IsSetApiName())
             {
                 context.Writer.WritePropertyName("ApiName");
-                context.Writer.Write(requestObject.ApiName);
+                context.Writer.WriteStringValue(requestObject.ApiName);
             }
 
             if(requestObject.IsSetApiSpecificationMd5Hash())
             {
                 context.Writer.WritePropertyName("ApiSpecificationMd5Hash");
-                context.Writer.Write(requestObject.ApiSpecificationMd5Hash);
+                context.Writer.WriteStringValue(requestObject.ApiSpecificationMd5Hash);
             }
 
             if(requestObject.IsSetDataSetId())
             {
                 context.Writer.WritePropertyName("DataSetId");
-                context.Writer.Write(requestObject.DataSetId);
+                context.Writer.WriteStringValue(requestObject.DataSetId);
             }
 
             if(requestObject.IsSetProtocolType())
             {
                 context.Writer.WritePropertyName("ProtocolType");
-                context.Writer.Write(requestObject.ProtocolType);
+                context.Writer.WriteStringValue(requestObject.ProtocolType);
             }
 
             if(requestObject.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
-                context.Writer.Write(requestObject.RevisionId);
+                context.Writer.WriteStringValue(requestObject.RevisionId);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("Stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
         }

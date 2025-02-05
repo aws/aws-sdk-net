@@ -34,16 +34,10 @@ namespace Amazon.ComputeOptimizer
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "4.0.0.0");
 
         private static readonly AmazonComputeOptimizerEndpointResolver EndpointResolver =
             new AmazonComputeOptimizerEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "3.7.401.15");
-=======
-            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "3.7.402.12");
->>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

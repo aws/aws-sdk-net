@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("types");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTypesListValue in requestObject.Types)
                 {
-                        context.Writer.Write(requestObjectTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

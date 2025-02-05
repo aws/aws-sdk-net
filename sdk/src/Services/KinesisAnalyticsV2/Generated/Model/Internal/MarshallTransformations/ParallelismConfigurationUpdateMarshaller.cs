@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingEnabledUpdate())
             {
                 context.Writer.WritePropertyName("AutoScalingEnabledUpdate");
-                context.Writer.Write(requestObject.AutoScalingEnabledUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoScalingEnabledUpdate.Value);
             }
 
             if(requestObject.IsSetConfigurationTypeUpdate())
             {
                 context.Writer.WritePropertyName("ConfigurationTypeUpdate");
-                context.Writer.Write(requestObject.ConfigurationTypeUpdate);
+                context.Writer.WriteStringValue(requestObject.ConfigurationTypeUpdate);
             }
 
             if(requestObject.IsSetParallelismPerKPUUpdate())
             {
                 context.Writer.WritePropertyName("ParallelismPerKPUUpdate");
-                context.Writer.Write(requestObject.ParallelismPerKPUUpdate.Value);
+                context.Writer.WriteNumberValue(requestObject.ParallelismPerKPUUpdate.Value);
             }
 
             if(requestObject.IsSetParallelismUpdate())
             {
                 context.Writer.WritePropertyName("ParallelismUpdate");
-                context.Writer.Write(requestObject.ParallelismUpdate.Value);
+                context.Writer.WriteNumberValue(requestObject.ParallelismUpdate.Value);
             }
 
         }

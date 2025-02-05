@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectorOperator())
             {
                 context.Writer.WritePropertyName("connectorOperator");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectorOperatorMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectorOperator, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestinationField())
             {
                 context.Writer.WritePropertyName("destinationField");
-                context.Writer.Write(requestObject.DestinationField);
+                context.Writer.WriteStringValue(requestObject.DestinationField);
             }
 
             if(requestObject.IsSetSourceFields())
             {
                 context.Writer.WritePropertyName("sourceFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceFieldsListValue in requestObject.SourceFields)
                 {
-                        context.Writer.Write(requestObjectSourceFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTaskProperties())
             {
                 context.Writer.WritePropertyName("taskProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTaskPropertiesKvp in requestObject.TaskProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectTaskPropertiesKvp.Key);
                     var requestObjectTaskPropertiesValue = requestObjectTaskPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectTaskPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectTaskPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskType())
             {
                 context.Writer.WritePropertyName("taskType");
-                context.Writer.Write(requestObject.TaskType);
+                context.Writer.WriteStringValue(requestObject.TaskType);
             }
 
         }

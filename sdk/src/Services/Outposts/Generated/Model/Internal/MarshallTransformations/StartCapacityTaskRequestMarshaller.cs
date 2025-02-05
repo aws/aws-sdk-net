@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -64,64 +67,69 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field OutpostIdentifier set");
             request.AddPathResource("{OutpostId}", StringUtils.FromString(publicRequest.OutpostIdentifier));
             request.ResourcePath = "/outposts/{OutpostId}/capacity";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDryRun())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDryRun())
-                    {
-                        context.Writer.WritePropertyName("DryRun");
-                        context.Writer.Write(publicRequest.DryRun.Value);
-                    }
-
-                    if(publicRequest.IsSetInstancePools())
-                    {
-                        context.Writer.WritePropertyName("InstancePools");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InstanceTypeCapacityMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInstancePoolsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInstancesToExclude())
-                    {
-                        context.Writer.WritePropertyName("InstancesToExclude");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstancesToExcludeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InstancesToExclude, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOrderId())
-                    {
-                        context.Writer.WritePropertyName("OrderId");
-                        context.Writer.Write(publicRequest.OrderId);
-                    }
-
-                    if(publicRequest.IsSetTaskActionOnBlockingInstances())
-                    {
-                        context.Writer.WritePropertyName("TaskActionOnBlockingInstances");
-                        context.Writer.Write(publicRequest.TaskActionOnBlockingInstances);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
             }
+
+            if(publicRequest.IsSetInstancePools())
+            {
+                context.Writer.WritePropertyName("InstancePools");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstancePoolsListValue in publicRequest.InstancePools)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InstanceTypeCapacityMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInstancePoolsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInstancesToExclude())
+            {
+                context.Writer.WritePropertyName("InstancesToExclude");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InstancesToExcludeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InstancesToExclude, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOrderId())
+            {
+                context.Writer.WritePropertyName("OrderId");
+                context.Writer.WriteStringValue(publicRequest.OrderId);
+            }
+
+            if(publicRequest.IsSetTaskActionOnBlockingInstances())
+            {
+                context.Writer.WritePropertyName("TaskActionOnBlockingInstances");
+                context.Writer.WriteStringValue(publicRequest.TaskActionOnBlockingInstances);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

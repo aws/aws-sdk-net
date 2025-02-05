@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataInputConfig())
             {
                 context.Writer.WritePropertyName("DataInputConfig");
-                context.Writer.Write(requestObject.DataInputConfig);
+                context.Writer.WriteStringValue(requestObject.DataInputConfig);
             }
 
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
-                context.Writer.Write(requestObject.Domain);
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
             if(requestObject.IsSetFramework())
             {
                 context.Writer.WritePropertyName("Framework");
-                context.Writer.Write(requestObject.Framework);
+                context.Writer.WriteStringValue(requestObject.Framework);
             }
 
             if(requestObject.IsSetFrameworkVersion())
             {
                 context.Writer.WritePropertyName("FrameworkVersion");
-                context.Writer.Write(requestObject.FrameworkVersion);
+                context.Writer.WriteStringValue(requestObject.FrameworkVersion);
             }
 
             if(requestObject.IsSetNearestModelName())
             {
                 context.Writer.WritePropertyName("NearestModelName");
-                context.Writer.Write(requestObject.NearestModelName);
+                context.Writer.WriteStringValue(requestObject.NearestModelName);
             }
 
             if(requestObject.IsSetPayloadConfig())
             {
                 context.Writer.WritePropertyName("PayloadConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecommendationJobPayloadConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PayloadConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSupportedEndpointType())
             {
                 context.Writer.WritePropertyName("SupportedEndpointType");
-                context.Writer.Write(requestObject.SupportedEndpointType);
+                context.Writer.WriteStringValue(requestObject.SupportedEndpointType);
             }
 
             if(requestObject.IsSetSupportedInstanceTypes())
             {
                 context.Writer.WritePropertyName("SupportedInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedInstanceTypesListValue in requestObject.SupportedInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedResponseMIMETypes())
             {
                 context.Writer.WritePropertyName("SupportedResponseMIMETypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedResponseMIMETypesListValue in requestObject.SupportedResponseMIMETypes)
                 {
-                        context.Writer.Write(requestObjectSupportedResponseMIMETypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedResponseMIMETypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTask())
             {
                 context.Writer.WritePropertyName("Task");
-                context.Writer.Write(requestObject.Task);
+                context.Writer.WriteStringValue(requestObject.Task);
             }
 
         }

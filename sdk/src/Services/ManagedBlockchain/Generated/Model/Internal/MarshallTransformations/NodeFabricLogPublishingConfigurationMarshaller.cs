@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChaincodeLogs())
             {
                 context.Writer.WritePropertyName("ChaincodeLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChaincodeLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPeerLogs())
             {
                 context.Writer.WritePropertyName("PeerLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PeerLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SharePointDataSourceConfiguration Object
     /// </summary>  
-    public class SharePointDataSourceConfigurationUnmarshaller : IUnmarshaller<SharePointDataSourceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SharePointDataSourceConfiguration, JsonUnmarshallerContext>
+    public class SharePointDataSourceConfigurationUnmarshaller : IJsonUnmarshaller<SharePointDataSourceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SharePointDataSourceConfiguration IUnmarshaller<SharePointDataSourceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SharePointDataSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SharePointDataSourceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SharePointDataSourceConfiguration unmarshalledObject = new SharePointDataSourceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("crawlerConfiguration", targetDepth))
                 {
                     var unmarshaller = SharePointCrawlerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceConfiguration", targetDepth))
                 {
                     var unmarshaller = SharePointSourceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

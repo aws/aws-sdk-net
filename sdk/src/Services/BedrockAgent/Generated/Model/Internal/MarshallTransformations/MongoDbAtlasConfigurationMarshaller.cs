@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectionName())
             {
                 context.Writer.WritePropertyName("collectionName");
-                context.Writer.Write(requestObject.CollectionName);
+                context.Writer.WriteStringValue(requestObject.CollectionName);
             }
 
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");
-                context.Writer.Write(requestObject.CredentialsSecretArn);
+                context.Writer.WriteStringValue(requestObject.CredentialsSecretArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
-                context.Writer.Write(requestObject.Endpoint);
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
             if(requestObject.IsSetEndpointServiceName())
             {
                 context.Writer.WritePropertyName("endpointServiceName");
-                context.Writer.Write(requestObject.EndpointServiceName);
+                context.Writer.WriteStringValue(requestObject.EndpointServiceName);
             }
 
             if(requestObject.IsSetFieldMapping())
             {
                 context.Writer.WritePropertyName("fieldMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MongoDbAtlasFieldMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVectorIndexName())
             {
                 context.Writer.WritePropertyName("vectorIndexName");
-                context.Writer.Write(requestObject.VectorIndexName);
+                context.Writer.WriteStringValue(requestObject.VectorIndexName);
             }
 
         }

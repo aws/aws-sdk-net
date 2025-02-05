@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AvailabilityOptionsStatus Object
     /// </summary>  
-    public class AvailabilityOptionsStatusUnmarshaller : IUnmarshaller<AvailabilityOptionsStatus, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityOptionsStatus, JsonUnmarshallerContext>
+    public class AvailabilityOptionsStatusUnmarshaller : IXmlUnmarshaller<AvailabilityOptionsStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AvailabilityOptionsStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AvailabilityOptionsStatusUnmarshaller _instance = new AvailabilityOptionsStatusUnmarshaller();        
 

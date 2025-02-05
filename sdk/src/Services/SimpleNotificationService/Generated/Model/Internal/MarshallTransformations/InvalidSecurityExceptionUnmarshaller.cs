@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for InvalidSecurityException operation
     /// </summary>  
-    public class InvalidSecurityExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSecurityException, XmlUnmarshallerContext>
+    public class InvalidSecurityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSecurityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

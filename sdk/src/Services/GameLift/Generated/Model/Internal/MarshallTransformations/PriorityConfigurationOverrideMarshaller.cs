@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLocationOrder())
             {
                 context.Writer.WritePropertyName("LocationOrder");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLocationOrderListValue in requestObject.LocationOrder)
                 {
-                        context.Writer.Write(requestObjectLocationOrderListValue);
+                        context.Writer.WriteStringValue(requestObjectLocationOrderListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPlacementFallbackStrategy())
             {
                 context.Writer.WritePropertyName("PlacementFallbackStrategy");
-                context.Writer.Write(requestObject.PlacementFallbackStrategy);
+                context.Writer.WriteStringValue(requestObject.PlacementFallbackStrategy);
             }
 
         }

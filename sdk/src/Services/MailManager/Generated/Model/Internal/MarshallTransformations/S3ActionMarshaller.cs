@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionFailurePolicy())
             {
                 context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.Write(requestObject.ActionFailurePolicy);
+                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Prefix())
             {
                 context.Writer.WritePropertyName("S3Prefix");
-                context.Writer.Write(requestObject.S3Prefix);
+                context.Writer.WriteStringValue(requestObject.S3Prefix);
             }
 
             if(requestObject.IsSetS3SseKmsKeyId())
             {
                 context.Writer.WritePropertyName("S3SseKmsKeyId");
-                context.Writer.Write(requestObject.S3SseKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.S3SseKmsKeyId);
             }
 
         }

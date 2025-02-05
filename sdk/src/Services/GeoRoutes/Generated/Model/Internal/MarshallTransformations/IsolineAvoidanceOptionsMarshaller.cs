@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,98 +49,98 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAreas())
             {
                 context.Writer.WritePropertyName("Areas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAreasListValue in requestObject.Areas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IsolineAvoidanceAreaMarshaller.Instance;
                     marshaller.Marshall(requestObjectAreasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCarShuttleTrains())
             {
                 context.Writer.WritePropertyName("CarShuttleTrains");
-                context.Writer.Write(requestObject.CarShuttleTrains.Value);
+                context.Writer.WriteBooleanValue(requestObject.CarShuttleTrains.Value);
             }
 
             if(requestObject.IsSetControlledAccessHighways())
             {
                 context.Writer.WritePropertyName("ControlledAccessHighways");
-                context.Writer.Write(requestObject.ControlledAccessHighways.Value);
+                context.Writer.WriteBooleanValue(requestObject.ControlledAccessHighways.Value);
             }
 
             if(requestObject.IsSetDirtRoads())
             {
                 context.Writer.WritePropertyName("DirtRoads");
-                context.Writer.Write(requestObject.DirtRoads.Value);
+                context.Writer.WriteBooleanValue(requestObject.DirtRoads.Value);
             }
 
             if(requestObject.IsSetFerries())
             {
                 context.Writer.WritePropertyName("Ferries");
-                context.Writer.Write(requestObject.Ferries.Value);
+                context.Writer.WriteBooleanValue(requestObject.Ferries.Value);
             }
 
             if(requestObject.IsSetSeasonalClosure())
             {
                 context.Writer.WritePropertyName("SeasonalClosure");
-                context.Writer.Write(requestObject.SeasonalClosure.Value);
+                context.Writer.WriteBooleanValue(requestObject.SeasonalClosure.Value);
             }
 
             if(requestObject.IsSetTollRoads())
             {
                 context.Writer.WritePropertyName("TollRoads");
-                context.Writer.Write(requestObject.TollRoads.Value);
+                context.Writer.WriteBooleanValue(requestObject.TollRoads.Value);
             }
 
             if(requestObject.IsSetTollTransponders())
             {
                 context.Writer.WritePropertyName("TollTransponders");
-                context.Writer.Write(requestObject.TollTransponders.Value);
+                context.Writer.WriteBooleanValue(requestObject.TollTransponders.Value);
             }
 
             if(requestObject.IsSetTruckRoadTypes())
             {
                 context.Writer.WritePropertyName("TruckRoadTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTruckRoadTypesListValue in requestObject.TruckRoadTypes)
                 {
-                        context.Writer.Write(requestObjectTruckRoadTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTruckRoadTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTunnels())
             {
                 context.Writer.WritePropertyName("Tunnels");
-                context.Writer.Write(requestObject.Tunnels.Value);
+                context.Writer.WriteBooleanValue(requestObject.Tunnels.Value);
             }
 
             if(requestObject.IsSetUTurns())
             {
                 context.Writer.WritePropertyName("UTurns");
-                context.Writer.Write(requestObject.UTurns.Value);
+                context.Writer.WriteBooleanValue(requestObject.UTurns.Value);
             }
 
             if(requestObject.IsSetZoneCategories())
             {
                 context.Writer.WritePropertyName("ZoneCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectZoneCategoriesListValue in requestObject.ZoneCategories)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IsolineAvoidanceZoneCategoryMarshaller.Instance;
                     marshaller.Marshall(requestObjectZoneCategoriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

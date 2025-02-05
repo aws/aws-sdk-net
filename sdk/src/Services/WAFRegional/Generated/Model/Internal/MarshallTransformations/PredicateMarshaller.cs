@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataId())
             {
                 context.Writer.WritePropertyName("DataId");
-                context.Writer.Write(requestObject.DataId);
+                context.Writer.WriteStringValue(requestObject.DataId);
             }
 
             if(requestObject.IsSetNegated())
             {
                 context.Writer.WritePropertyName("Negated");
-                context.Writer.Write(requestObject.Negated.Value);
+                context.Writer.WriteBooleanValue(requestObject.Negated.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

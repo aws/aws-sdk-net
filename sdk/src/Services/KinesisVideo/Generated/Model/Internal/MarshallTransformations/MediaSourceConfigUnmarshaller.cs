@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaSourceConfig Object
     /// </summary>  
-    public class MediaSourceConfigUnmarshaller : IUnmarshaller<MediaSourceConfig, XmlUnmarshallerContext>, IUnmarshaller<MediaSourceConfig, JsonUnmarshallerContext>
+    public class MediaSourceConfigUnmarshaller : IJsonUnmarshaller<MediaSourceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaSourceConfig IUnmarshaller<MediaSourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaSourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public MediaSourceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaSourceConfig unmarshalledObject = new MediaSourceConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MediaUriSecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaUriSecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaUriSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaUriType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaUriType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaUriType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

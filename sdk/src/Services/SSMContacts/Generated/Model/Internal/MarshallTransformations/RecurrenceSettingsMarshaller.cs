@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,85 +49,85 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDailySettings())
             {
                 context.Writer.WritePropertyName("DailySettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDailySettingsListValue in requestObject.DailySettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HandOffTimeMarshaller.Instance;
                     marshaller.Marshall(requestObjectDailySettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMonthlySettings())
             {
                 context.Writer.WritePropertyName("MonthlySettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMonthlySettingsListValue in requestObject.MonthlySettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MonthlySettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectMonthlySettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNumberOfOnCalls())
             {
                 context.Writer.WritePropertyName("NumberOfOnCalls");
-                context.Writer.Write(requestObject.NumberOfOnCalls.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfOnCalls.Value);
             }
 
             if(requestObject.IsSetRecurrenceMultiplier())
             {
                 context.Writer.WritePropertyName("RecurrenceMultiplier");
-                context.Writer.Write(requestObject.RecurrenceMultiplier.Value);
+                context.Writer.WriteNumberValue(requestObject.RecurrenceMultiplier.Value);
             }
 
             if(requestObject.IsSetShiftCoverages())
             {
                 context.Writer.WritePropertyName("ShiftCoverages");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectShiftCoveragesKvp in requestObject.ShiftCoverages)
                 {
                     context.Writer.WritePropertyName(requestObjectShiftCoveragesKvp.Key);
                     var requestObjectShiftCoveragesValue = requestObjectShiftCoveragesKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectShiftCoveragesValueListValue in requestObjectShiftCoveragesValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = CoverageTimeMarshaller.Instance;
                         marshaller.Marshall(requestObjectShiftCoveragesValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWeeklySettings())
             {
                 context.Writer.WritePropertyName("WeeklySettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWeeklySettingsListValue in requestObject.WeeklySettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WeeklySettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectWeeklySettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

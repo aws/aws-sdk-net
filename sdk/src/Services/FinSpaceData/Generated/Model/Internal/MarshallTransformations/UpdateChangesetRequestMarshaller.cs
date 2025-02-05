@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
@@ -67,58 +70,63 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 throw new AmazonFinSpaceDataException("Request object does not have required field DatasetId set");
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
             request.ResourcePath = "/datasets/{datasetId}/changesetsv2/{changesetId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetFormatParams())
-                    {
-                        context.Writer.WritePropertyName("formatParams");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFormatParamsKvp in publicRequest.FormatParams)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFormatParamsKvp.Key);
-                            var publicRequestFormatParamsValue = publicRequestFormatParamsKvp.Value;
-
-                                context.Writer.Write(publicRequestFormatParamsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceParams())
-                    {
-                        context.Writer.WritePropertyName("sourceParams");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSourceParamsKvp in publicRequest.SourceParams)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSourceParamsKvp.Key);
-                            var publicRequestSourceParamsValue = publicRequestSourceParamsKvp.Value;
-
-                                context.Writer.Write(publicRequestSourceParamsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetFormatParams())
+            {
+                context.Writer.WritePropertyName("formatParams");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFormatParamsKvp in publicRequest.FormatParams)
+                {
+                    context.Writer.WritePropertyName(publicRequestFormatParamsKvp.Key);
+                    var publicRequestFormatParamsValue = publicRequestFormatParamsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFormatParamsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceParams())
+            {
+                context.Writer.WritePropertyName("sourceParams");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestSourceParamsKvp in publicRequest.SourceParams)
+                {
+                    context.Writer.WritePropertyName(publicRequestSourceParamsKvp.Key);
+                    var publicRequestSourceParamsValue = publicRequestSourceParamsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestSourceParamsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

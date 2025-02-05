@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceData Object
     /// </summary>  
-    public class ResourceDataUnmarshaller : IUnmarshaller<ResourceData, XmlUnmarshallerContext>, IUnmarshaller<ResourceData, JsonUnmarshallerContext>
+    public class ResourceDataUnmarshaller : IJsonUnmarshaller<ResourceData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceData IUnmarshaller<ResourceData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceData Unmarshall(JsonUnmarshallerContext context)
+        public ResourceData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceData unmarshalledObject = new ResourceData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accessKey", targetDepth))
                 {
                     var unmarshaller = AccessKeyUnmarshaller.Instance;
-                    unmarshalledObject.AccessKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ec2Instance", targetDepth))
                 {
                     var unmarshaller = Ec2InstanceUnmarshaller.Instance;
-                    unmarshalledObject.Ec2Instance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ec2Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ec2NetworkInterface", targetDepth))
                 {
                     var unmarshaller = Ec2NetworkInterfaceUnmarshaller.Instance;
-                    unmarshalledObject.Ec2NetworkInterface = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ec2NetworkInterface = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Bucket", targetDepth))
                 {
                     var unmarshaller = S3BucketUnmarshaller.Instance;
-                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Object", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.S3Object = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

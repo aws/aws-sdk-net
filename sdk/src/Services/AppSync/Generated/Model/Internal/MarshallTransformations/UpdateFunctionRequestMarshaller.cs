@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -67,89 +70,94 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field FunctionId set");
             request.AddPathResource("{functionId}", StringUtils.FromString(publicRequest.FunctionId));
             request.ResourcePath = "/v1/apis/{apiId}/functions/{functionId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCode())
-                    {
-                        context.Writer.WritePropertyName("code");
-                        context.Writer.Write(publicRequest.Code);
-                    }
-
-                    if(publicRequest.IsSetDataSourceName())
-                    {
-                        context.Writer.WritePropertyName("dataSourceName");
-                        context.Writer.Write(publicRequest.DataSourceName);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFunctionVersion())
-                    {
-                        context.Writer.WritePropertyName("functionVersion");
-                        context.Writer.Write(publicRequest.FunctionVersion);
-                    }
-
-                    if(publicRequest.IsSetMaxBatchSize())
-                    {
-                        context.Writer.WritePropertyName("maxBatchSize");
-                        context.Writer.Write(publicRequest.MaxBatchSize.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRequestMappingTemplate())
-                    {
-                        context.Writer.WritePropertyName("requestMappingTemplate");
-                        context.Writer.Write(publicRequest.RequestMappingTemplate);
-                    }
-
-                    if(publicRequest.IsSetResponseMappingTemplate())
-                    {
-                        context.Writer.WritePropertyName("responseMappingTemplate");
-                        context.Writer.Write(publicRequest.ResponseMappingTemplate);
-                    }
-
-                    if(publicRequest.IsSetRuntime())
-                    {
-                        context.Writer.WritePropertyName("runtime");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AppSyncRuntimeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Runtime, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSyncConfig())
-                    {
-                        context.Writer.WritePropertyName("syncConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SyncConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SyncConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("code");
+                context.Writer.WriteStringValue(publicRequest.Code);
             }
+
+            if(publicRequest.IsSetDataSourceName())
+            {
+                context.Writer.WritePropertyName("dataSourceName");
+                context.Writer.WriteStringValue(publicRequest.DataSourceName);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFunctionVersion())
+            {
+                context.Writer.WritePropertyName("functionVersion");
+                context.Writer.WriteStringValue(publicRequest.FunctionVersion);
+            }
+
+            if(publicRequest.IsSetMaxBatchSize())
+            {
+                context.Writer.WritePropertyName("maxBatchSize");
+                context.Writer.WriteNumberValue(publicRequest.MaxBatchSize.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRequestMappingTemplate())
+            {
+                context.Writer.WritePropertyName("requestMappingTemplate");
+                context.Writer.WriteStringValue(publicRequest.RequestMappingTemplate);
+            }
+
+            if(publicRequest.IsSetResponseMappingTemplate())
+            {
+                context.Writer.WritePropertyName("responseMappingTemplate");
+                context.Writer.WriteStringValue(publicRequest.ResponseMappingTemplate);
+            }
+
+            if(publicRequest.IsSetRuntime())
+            {
+                context.Writer.WritePropertyName("runtime");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AppSyncRuntimeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Runtime, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSyncConfig())
+            {
+                context.Writer.WritePropertyName("syncConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SyncConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SyncConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

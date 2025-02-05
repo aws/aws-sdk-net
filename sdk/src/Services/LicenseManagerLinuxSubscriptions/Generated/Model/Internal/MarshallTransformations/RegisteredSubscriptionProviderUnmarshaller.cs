@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RegisteredSubscriptionProvider Object
     /// </summary>  
-    public class RegisteredSubscriptionProviderUnmarshaller : IUnmarshaller<RegisteredSubscriptionProvider, XmlUnmarshallerContext>, IUnmarshaller<RegisteredSubscriptionProvider, JsonUnmarshallerContext>
+    public class RegisteredSubscriptionProviderUnmarshaller : IJsonUnmarshaller<RegisteredSubscriptionProvider, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RegisteredSubscriptionProvider IUnmarshaller<RegisteredSubscriptionProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RegisteredSubscriptionProvider Unmarshall(JsonUnmarshallerContext context)
+        public RegisteredSubscriptionProvider Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RegisteredSubscriptionProvider unmarshalledObject = new RegisteredSubscriptionProvider();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LastSuccessfulDataRetrievalTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessfulDataRetrievalTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulDataRetrievalTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionProviderArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionProviderArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionProviderSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionProviderSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionProviderSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionProviderStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionProviderStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionProviderStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionProviderStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionProviderStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionProviderStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomDataIdentifiersResult Object
     /// </summary>  
-    public class CustomDataIdentifiersResultUnmarshaller : IUnmarshaller<CustomDataIdentifiersResult, XmlUnmarshallerContext>, IUnmarshaller<CustomDataIdentifiersResult, JsonUnmarshallerContext>
+    public class CustomDataIdentifiersResultUnmarshaller : IJsonUnmarshaller<CustomDataIdentifiersResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomDataIdentifiersResult IUnmarshaller<CustomDataIdentifiersResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomDataIdentifiersResult Unmarshall(JsonUnmarshallerContext context)
+        public CustomDataIdentifiersResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomDataIdentifiersResult unmarshalledObject = new CustomDataIdentifiersResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Detections", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomDataIdentifiersDetections, CustomDataIdentifiersDetectionsUnmarshaller>(CustomDataIdentifiersDetectionsUnmarshaller.Instance);
-                    unmarshalledObject.Detections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CustomDataIdentifiersDetections, CustomDataIdentifiersDetectionsUnmarshaller>(CustomDataIdentifiersDetectionsUnmarshaller.Instance);
+                    unmarshalledObject.Detections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TableLimitExceededException operation
     /// </summary>  
-    public class TableLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<TableLimitExceededException, XmlUnmarshallerContext>
+    public class TableLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TableLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

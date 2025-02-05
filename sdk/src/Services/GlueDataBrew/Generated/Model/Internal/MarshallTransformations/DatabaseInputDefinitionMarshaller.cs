@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseTableName())
             {
                 context.Writer.WritePropertyName("DatabaseTableName");
-                context.Writer.Write(requestObject.DatabaseTableName);
+                context.Writer.WriteStringValue(requestObject.DatabaseTableName);
             }
 
             if(requestObject.IsSetGlueConnectionName())
             {
                 context.Writer.WritePropertyName("GlueConnectionName");
-                context.Writer.Write(requestObject.GlueConnectionName);
+                context.Writer.WriteStringValue(requestObject.GlueConnectionName);
             }
 
             if(requestObject.IsSetQueryString())
             {
                 context.Writer.WritePropertyName("QueryString");
-                context.Writer.Write(requestObject.QueryString);
+                context.Writer.WriteStringValue(requestObject.QueryString);
             }
 
             if(requestObject.IsSetTempDirectory())
             {
                 context.Writer.WritePropertyName("TempDirectory");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TempDirectory, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

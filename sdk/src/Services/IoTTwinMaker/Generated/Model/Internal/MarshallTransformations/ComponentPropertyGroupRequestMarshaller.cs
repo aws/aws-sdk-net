@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupType())
             {
                 context.Writer.WritePropertyName("groupType");
-                context.Writer.Write(requestObject.GroupType);
+                context.Writer.WriteStringValue(requestObject.GroupType);
             }
 
             if(requestObject.IsSetPropertyNames())
             {
                 context.Writer.WritePropertyName("propertyNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPropertyNamesListValue in requestObject.PropertyNames)
                 {
-                        context.Writer.Write(requestObjectPropertyNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectPropertyNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUpdateType())
             {
                 context.Writer.WritePropertyName("updateType");
-                context.Writer.Write(requestObject.UpdateType);
+                context.Writer.WriteStringValue(requestObject.UpdateType);
             }
 
         }

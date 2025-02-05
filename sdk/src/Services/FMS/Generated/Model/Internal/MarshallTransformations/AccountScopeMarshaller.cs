@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("Accounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
-                        context.Writer.Write(requestObjectAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllAccountsEnabled())
             {
                 context.Writer.WritePropertyName("AllAccountsEnabled");
-                context.Writer.Write(requestObject.AllAccountsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllAccountsEnabled.Value);
             }
 
             if(requestObject.IsSetExcludeSpecifiedAccounts())
             {
                 context.Writer.WritePropertyName("ExcludeSpecifiedAccounts");
-                context.Writer.Write(requestObject.ExcludeSpecifiedAccounts.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeSpecifiedAccounts.Value);
             }
 
         }

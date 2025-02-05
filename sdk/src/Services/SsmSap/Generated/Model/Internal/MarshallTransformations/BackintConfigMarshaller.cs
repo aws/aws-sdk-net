@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackintMode())
             {
                 context.Writer.WritePropertyName("BackintMode");
-                context.Writer.Write(requestObject.BackintMode);
+                context.Writer.WriteStringValue(requestObject.BackintMode);
             }
 
             if(requestObject.IsSetEnsureNoBackupInProcess())
             {
                 context.Writer.WritePropertyName("EnsureNoBackupInProcess");
-                context.Writer.Write(requestObject.EnsureNoBackupInProcess.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnsureNoBackupInProcess.Value);
             }
 
         }

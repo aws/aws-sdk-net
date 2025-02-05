@@ -186,9 +186,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The timestamp until when the cluster can be rolled back to its original HSM type.
         /// </para>
         /// </summary>
-        public DateTime HsmTypeRollbackExpiration
+        public DateTime? HsmTypeRollbackExpiration
         {
-            get { return this._hsmTypeRollbackExpiration.GetValueOrDefault(); }
+            get { return this._hsmTypeRollbackExpiration; }
             set { this._hsmTypeRollbackExpiration = value; }
         }
 

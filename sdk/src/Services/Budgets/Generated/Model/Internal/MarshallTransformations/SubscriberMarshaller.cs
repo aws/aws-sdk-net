@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.Write(requestObject.Address);
+                context.Writer.WriteStringValue(requestObject.Address);
             }
 
             if(requestObject.IsSetSubscriptionType())
             {
                 context.Writer.WritePropertyName("SubscriptionType");
-                context.Writer.Write(requestObject.SubscriptionType);
+                context.Writer.WriteStringValue(requestObject.SubscriptionType);
             }
 
         }

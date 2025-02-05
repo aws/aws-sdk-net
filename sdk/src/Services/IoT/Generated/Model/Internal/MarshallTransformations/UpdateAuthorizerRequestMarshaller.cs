@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,57 +67,62 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field AuthorizerName set");
             request.AddPathResource("{authorizerName}", StringUtils.FromString(publicRequest.AuthorizerName));
             request.ResourcePath = "/authorizer/{authorizerName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuthorizerFunctionArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuthorizerFunctionArn())
-                    {
-                        context.Writer.WritePropertyName("authorizerFunctionArn");
-                        context.Writer.Write(publicRequest.AuthorizerFunctionArn);
-                    }
-
-                    if(publicRequest.IsSetEnableCachingForHttp())
-                    {
-                        context.Writer.WritePropertyName("enableCachingForHttp");
-                        context.Writer.Write(publicRequest.EnableCachingForHttp.Value);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetTokenKeyName())
-                    {
-                        context.Writer.WritePropertyName("tokenKeyName");
-                        context.Writer.Write(publicRequest.TokenKeyName);
-                    }
-
-                    if(publicRequest.IsSetTokenSigningPublicKeys())
-                    {
-                        context.Writer.WritePropertyName("tokenSigningPublicKeys");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTokenSigningPublicKeysKvp in publicRequest.TokenSigningPublicKeys)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTokenSigningPublicKeysKvp.Key);
-                            var publicRequestTokenSigningPublicKeysValue = publicRequestTokenSigningPublicKeysKvp.Value;
-
-                                context.Writer.Write(publicRequestTokenSigningPublicKeysValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("authorizerFunctionArn");
+                context.Writer.WriteStringValue(publicRequest.AuthorizerFunctionArn);
             }
+
+            if(publicRequest.IsSetEnableCachingForHttp())
+            {
+                context.Writer.WritePropertyName("enableCachingForHttp");
+                context.Writer.WriteBooleanValue(publicRequest.EnableCachingForHttp.Value);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetTokenKeyName())
+            {
+                context.Writer.WritePropertyName("tokenKeyName");
+                context.Writer.WriteStringValue(publicRequest.TokenKeyName);
+            }
+
+            if(publicRequest.IsSetTokenSigningPublicKeys())
+            {
+                context.Writer.WritePropertyName("tokenSigningPublicKeys");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTokenSigningPublicKeysKvp in publicRequest.TokenSigningPublicKeys)
+                {
+                    context.Writer.WritePropertyName(publicRequestTokenSigningPublicKeysKvp.Key);
+                    var publicRequestTokenSigningPublicKeysValue = publicRequestTokenSigningPublicKeysKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTokenSigningPublicKeysValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

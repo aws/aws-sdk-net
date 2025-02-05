@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetOutput())
             {
                 context.Writer.WritePropertyName("output");
-                context.Writer.Write(requestObject.Output);
+                context.Writer.WriteStringValue(requestObject.Output);
             }
 
         }

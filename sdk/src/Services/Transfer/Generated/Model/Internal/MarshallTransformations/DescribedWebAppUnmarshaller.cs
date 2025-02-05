@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DescribedWebApp Object
     /// </summary>  
-    public class DescribedWebAppUnmarshaller : IUnmarshaller<DescribedWebApp, XmlUnmarshallerContext>, IUnmarshaller<DescribedWebApp, JsonUnmarshallerContext>
+    public class DescribedWebAppUnmarshaller : IJsonUnmarshaller<DescribedWebApp, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DescribedWebApp IUnmarshaller<DescribedWebApp, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DescribedWebApp Unmarshall(JsonUnmarshallerContext context)
+        public DescribedWebApp Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DescribedWebApp unmarshalledObject = new DescribedWebApp();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DescribedIdentityProviderDetails", targetDepth))
                 {
                     var unmarshaller = DescribedWebAppIdentityProviderDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DescribedIdentityProviderDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DescribedIdentityProviderDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebAppEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebAppEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebAppId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebAppUnits", targetDepth))
                 {
                     var unmarshaller = WebAppUnitsUnmarshaller.Instance;
-                    unmarshalledObject.WebAppUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebAppUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

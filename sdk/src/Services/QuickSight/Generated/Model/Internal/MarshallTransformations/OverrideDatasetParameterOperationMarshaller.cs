@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNewDefaultValues())
             {
                 context.Writer.WritePropertyName("NewDefaultValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NewDefaultValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.NewDefaultValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNewParameterName())
             {
                 context.Writer.WritePropertyName("NewParameterName");
-                context.Writer.Write(requestObject.NewParameterName);
+                context.Writer.WriteStringValue(requestObject.NewParameterName);
             }
 
             if(requestObject.IsSetParameterName())
             {
                 context.Writer.WritePropertyName("ParameterName");
-                context.Writer.Write(requestObject.ParameterName);
+                context.Writer.WriteStringValue(requestObject.ParameterName);
             }
 
         }

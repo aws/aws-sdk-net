@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -61,74 +64,79 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/position-estimate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCellTowers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCellTowers())
-                    {
-                        context.Writer.WritePropertyName("CellTowers");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CellTowers");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CellTowersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CellTowers, context);
+                var marshaller = CellTowersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CellTowers, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGnss())
-                    {
-                        context.Writer.WritePropertyName("Gnss");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GnssMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Gnss, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIp())
-                    {
-                        context.Writer.WritePropertyName("Ip");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IpMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Ip, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTimestamp())
-                    {
-                        context.Writer.WritePropertyName("Timestamp");
-                        context.Writer.Write(publicRequest.Timestamp.Value);
-                    }
-
-                    if(publicRequest.IsSetWiFiAccessPoints())
-                    {
-                        context.Writer.WritePropertyName("WiFiAccessPoints");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWiFiAccessPointsListValue in publicRequest.WiFiAccessPoints)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WiFiAccessPointMarshaller.Instance;
-                            marshaller.Marshall(publicRequestWiFiAccessPointsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetGnss())
+            {
+                context.Writer.WritePropertyName("Gnss");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GnssMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Gnss, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIp())
+            {
+                context.Writer.WritePropertyName("Ip");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IpMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ip, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTimestamp())
+            {
+                context.Writer.WritePropertyName("Timestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Timestamp.Value)));
+            }
+
+            if(publicRequest.IsSetWiFiAccessPoints())
+            {
+                context.Writer.WritePropertyName("WiFiAccessPoints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWiFiAccessPointsListValue in publicRequest.WiFiAccessPoints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WiFiAccessPointMarshaller.Instance;
+                    marshaller.Marshall(publicRequestWiFiAccessPointsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

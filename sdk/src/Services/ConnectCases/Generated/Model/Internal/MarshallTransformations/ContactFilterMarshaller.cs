@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("channel");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelListValue in requestObject.Channel)
                 {
-                        context.Writer.Write(requestObjectChannelListValue);
+                        context.Writer.WriteStringValue(requestObjectChannelListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContactArn())
             {
                 context.Writer.WritePropertyName("contactArn");
-                context.Writer.Write(requestObject.ContactArn);
+                context.Writer.WriteStringValue(requestObject.ContactArn);
             }
 
         }

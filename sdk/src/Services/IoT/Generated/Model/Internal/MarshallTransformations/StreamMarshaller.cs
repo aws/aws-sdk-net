@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileId())
             {
                 context.Writer.WritePropertyName("fileId");
-                context.Writer.Write(requestObject.FileId.Value);
+                context.Writer.WriteNumberValue(requestObject.FileId.Value);
             }
 
             if(requestObject.IsSetStreamId())
             {
                 context.Writer.WritePropertyName("streamId");
-                context.Writer.Write(requestObject.StreamId);
+                context.Writer.WriteStringValue(requestObject.StreamId);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaskEphemeralStorage Object
     /// </summary>  
-    public class TaskEphemeralStorageUnmarshaller : IUnmarshaller<TaskEphemeralStorage, XmlUnmarshallerContext>, IUnmarshaller<TaskEphemeralStorage, JsonUnmarshallerContext>
+    public class TaskEphemeralStorageUnmarshaller : IJsonUnmarshaller<TaskEphemeralStorage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaskEphemeralStorage IUnmarshaller<TaskEphemeralStorage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskEphemeralStorage Unmarshall(JsonUnmarshallerContext context)
+        public TaskEphemeralStorage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaskEphemeralStorage unmarshalledObject = new TaskEphemeralStorage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("kmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sizeInGiB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SizeInGiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SizeInGiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

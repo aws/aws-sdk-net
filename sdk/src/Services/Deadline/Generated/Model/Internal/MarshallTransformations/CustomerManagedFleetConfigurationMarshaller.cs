@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetStorageProfileId())
             {
                 context.Writer.WritePropertyName("storageProfileId");
-                context.Writer.Write(requestObject.StorageProfileId);
+                context.Writer.WriteStringValue(requestObject.StorageProfileId);
             }
 
             if(requestObject.IsSetWorkerCapabilities())
             {
                 context.Writer.WritePropertyName("workerCapabilities");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerManagedWorkerCapabilitiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.WorkerCapabilities, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

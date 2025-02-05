@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MedicalScribeOutput Object
     /// </summary>  
-    public class MedicalScribeOutputUnmarshaller : IUnmarshaller<MedicalScribeOutput, XmlUnmarshallerContext>, IUnmarshaller<MedicalScribeOutput, JsonUnmarshallerContext>
+    public class MedicalScribeOutputUnmarshaller : IJsonUnmarshaller<MedicalScribeOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MedicalScribeOutput IUnmarshaller<MedicalScribeOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MedicalScribeOutput Unmarshall(JsonUnmarshallerContext context)
+        public MedicalScribeOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MedicalScribeOutput unmarshalledObject = new MedicalScribeOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClinicalDocumentUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClinicalDocumentUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClinicalDocumentUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TranscriptFileUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptFileUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TranscriptFileUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

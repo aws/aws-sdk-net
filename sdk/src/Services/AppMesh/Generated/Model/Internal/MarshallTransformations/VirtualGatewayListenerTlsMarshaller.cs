@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("certificate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VirtualGatewayListenerTlsCertificateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Certificate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetValidation())
             {
                 context.Writer.WritePropertyName("validation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VirtualGatewayListenerTlsValidationContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.Validation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

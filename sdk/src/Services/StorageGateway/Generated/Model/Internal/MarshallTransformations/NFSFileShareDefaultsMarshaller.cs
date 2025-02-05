@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectoryMode())
             {
                 context.Writer.WritePropertyName("DirectoryMode");
-                context.Writer.Write(requestObject.DirectoryMode);
+                context.Writer.WriteStringValue(requestObject.DirectoryMode);
             }
 
             if(requestObject.IsSetFileMode())
             {
                 context.Writer.WritePropertyName("FileMode");
-                context.Writer.Write(requestObject.FileMode);
+                context.Writer.WriteStringValue(requestObject.FileMode);
             }
 
             if(requestObject.IsSetGroupId())
             {
                 context.Writer.WritePropertyName("GroupId");
-                context.Writer.Write(requestObject.GroupId.Value);
+                context.Writer.WriteNumberValue(requestObject.GroupId.Value);
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId.Value);
+                context.Writer.WriteNumberValue(requestObject.OwnerId.Value);
             }
 
         }

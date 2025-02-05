@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

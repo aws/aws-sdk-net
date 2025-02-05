@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTemplateV2())
             {
                 context.Writer.WritePropertyName("TemplateV2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateV2Marshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateV2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateV3())
             {
                 context.Writer.WritePropertyName("TemplateV3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateV3Marshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateV3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateV4())
             {
                 context.Writer.WritePropertyName("TemplateV4");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateV4, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

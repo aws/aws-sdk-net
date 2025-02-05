@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrameName())
             {
                 context.Writer.WritePropertyName("frameName");
-                context.Writer.Write(requestObject.FrameName);
+                context.Writer.WriteStringValue(requestObject.FrameName);
             }
 
             if(requestObject.IsSetThreadStates())
             {
                 context.Writer.WritePropertyName("threadStates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectThreadStatesListValue in requestObject.ThreadStates)
                 {
-                        context.Writer.Write(requestObjectThreadStatesListValue);
+                        context.Writer.WriteStringValue(requestObjectThreadStatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

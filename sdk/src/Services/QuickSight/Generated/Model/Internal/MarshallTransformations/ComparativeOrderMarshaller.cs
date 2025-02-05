@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpecifedOrder())
             {
                 context.Writer.WritePropertyName("SpecifedOrder");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSpecifedOrderListValue in requestObject.SpecifedOrder)
                 {
-                        context.Writer.Write(requestObjectSpecifedOrderListValue);
+                        context.Writer.WriteStringValue(requestObjectSpecifedOrderListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTreatUndefinedSpecifiedValues())
             {
                 context.Writer.WritePropertyName("TreatUndefinedSpecifiedValues");
-                context.Writer.Write(requestObject.TreatUndefinedSpecifiedValues);
+                context.Writer.WriteStringValue(requestObject.TreatUndefinedSpecifiedValues);
             }
 
             if(requestObject.IsSetUseOrdering())
             {
                 context.Writer.WritePropertyName("UseOrdering");
-                context.Writer.Write(requestObject.UseOrdering);
+                context.Writer.WriteStringValue(requestObject.UseOrdering);
             }
 
         }

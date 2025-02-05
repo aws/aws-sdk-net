@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DialerConfig Object
     /// </summary>  
-    public class DialerConfigUnmarshaller : IUnmarshaller<DialerConfig, XmlUnmarshallerContext>, IUnmarshaller<DialerConfig, JsonUnmarshallerContext>
+    public class DialerConfigUnmarshaller : IJsonUnmarshaller<DialerConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DialerConfig IUnmarshaller<DialerConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DialerConfig Unmarshall(JsonUnmarshallerContext context)
+        public DialerConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DialerConfig unmarshalledObject = new DialerConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("agentlessDialerConfig", targetDepth))
                 {
                     var unmarshaller = AgentlessDialerConfigUnmarshaller.Instance;
-                    unmarshalledObject.AgentlessDialerConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentlessDialerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("predictiveDialerConfig", targetDepth))
                 {
                     var unmarshaller = PredictiveDialerConfigUnmarshaller.Instance;
-                    unmarshalledObject.PredictiveDialerConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictiveDialerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("progressiveDialerConfig", targetDepth))
                 {
                     var unmarshaller = ProgressiveDialerConfigUnmarshaller.Instance;
-                    unmarshalledObject.ProgressiveDialerConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressiveDialerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

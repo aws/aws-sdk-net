@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImpairmentStrategy())
             {
                 context.Writer.WritePropertyName("ImpairmentStrategy");
-                context.Writer.Write(requestObject.ImpairmentStrategy);
+                context.Writer.WriteStringValue(requestObject.ImpairmentStrategy);
             }
 
             if(requestObject.IsSetMinimumHealthyPercentage())
             {
                 context.Writer.WritePropertyName("MinimumHealthyPercentage");
-                context.Writer.Write(requestObject.MinimumHealthyPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumHealthyPercentage.Value);
             }
 
             if(requestObject.IsSetProtectionStrategy())
             {
                 context.Writer.WritePropertyName("ProtectionStrategy");
-                context.Writer.Write(requestObject.ProtectionStrategy);
+                context.Writer.WriteStringValue(requestObject.ProtectionStrategy);
             }
 
         }

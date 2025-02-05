@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerParams())
             {
                 context.Writer.WritePropertyName("containerParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaContainerParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsolationMode())
             {
                 context.Writer.WritePropertyName("isolationMode");
-                context.Writer.Write(requestObject.IsolationMode);
+                context.Writer.WriteStringValue(requestObject.IsolationMode);
             }
 
         }

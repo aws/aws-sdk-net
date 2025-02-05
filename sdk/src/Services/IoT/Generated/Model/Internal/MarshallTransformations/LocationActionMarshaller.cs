@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceId())
             {
                 context.Writer.WritePropertyName("deviceId");
-                context.Writer.Write(requestObject.DeviceId);
+                context.Writer.WriteStringValue(requestObject.DeviceId);
             }
 
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
-                context.Writer.Write(requestObject.Latitude);
+                context.Writer.WriteStringValue(requestObject.Latitude);
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
-                context.Writer.Write(requestObject.Longitude);
+                context.Writer.WriteStringValue(requestObject.Longitude);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocationTimestampMarshaller.Instance;
                 marshaller.Marshall(requestObject.Timestamp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrackerName())
             {
                 context.Writer.WritePropertyName("trackerName");
-                context.Writer.Write(requestObject.TrackerName);
+                context.Writer.WriteStringValue(requestObject.TrackerName);
             }
 
         }

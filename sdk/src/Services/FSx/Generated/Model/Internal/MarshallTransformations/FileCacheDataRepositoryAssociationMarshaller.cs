@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRepositoryPath())
             {
                 context.Writer.WritePropertyName("DataRepositoryPath");
-                context.Writer.Write(requestObject.DataRepositoryPath);
+                context.Writer.WriteStringValue(requestObject.DataRepositoryPath);
             }
 
             if(requestObject.IsSetDataRepositorySubdirectories())
             {
                 context.Writer.WritePropertyName("DataRepositorySubdirectories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataRepositorySubdirectoriesListValue in requestObject.DataRepositorySubdirectories)
                 {
-                        context.Writer.Write(requestObjectDataRepositorySubdirectoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectDataRepositorySubdirectoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFileCachePath())
             {
                 context.Writer.WritePropertyName("FileCachePath");
-                context.Writer.Write(requestObject.FileCachePath);
+                context.Writer.WriteStringValue(requestObject.FileCachePath);
             }
 
             if(requestObject.IsSetNFS())
             {
                 context.Writer.WritePropertyName("NFS");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileCacheNFSConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFS, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

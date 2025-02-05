@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SubtotalOptions Object
     /// </summary>  
-    public class SubtotalOptionsUnmarshaller : IUnmarshaller<SubtotalOptions, XmlUnmarshallerContext>, IUnmarshaller<SubtotalOptions, JsonUnmarshallerContext>
+    public class SubtotalOptionsUnmarshaller : IJsonUnmarshaller<SubtotalOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SubtotalOptions IUnmarshaller<SubtotalOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubtotalOptions Unmarshall(JsonUnmarshallerContext context)
+        public SubtotalOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SubtotalOptions unmarshalledObject = new SubtotalOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomLabel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldLevelOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PivotTableFieldSubtotalOptions, PivotTableFieldSubtotalOptionsUnmarshaller>(PivotTableFieldSubtotalOptionsUnmarshaller.Instance);
-                    unmarshalledObject.FieldLevelOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PivotTableFieldSubtotalOptions, PivotTableFieldSubtotalOptionsUnmarshaller>(PivotTableFieldSubtotalOptionsUnmarshaller.Instance);
+                    unmarshalledObject.FieldLevelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricHeaderCellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.MetricHeaderCellStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricHeaderCellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StyleTargets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TableStyleTarget, TableStyleTargetUnmarshaller>(TableStyleTargetUnmarshaller.Instance);
-                    unmarshalledObject.StyleTargets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TableStyleTarget, TableStyleTargetUnmarshaller>(TableStyleTargetUnmarshaller.Instance);
+                    unmarshalledObject.StyleTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalCellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.TotalCellStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalCellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalsVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalsVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValueCellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.ValueCellStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValueCellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

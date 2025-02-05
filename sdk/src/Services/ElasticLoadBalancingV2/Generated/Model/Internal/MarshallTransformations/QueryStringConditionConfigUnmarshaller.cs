@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryStringConditionConfig Object
     /// </summary>  
-    public class QueryStringConditionConfigUnmarshaller : IUnmarshaller<QueryStringConditionConfig, XmlUnmarshallerContext>, IUnmarshaller<QueryStringConditionConfig, JsonUnmarshallerContext>
+    public class QueryStringConditionConfigUnmarshaller : IXmlUnmarshaller<QueryStringConditionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public QueryStringConditionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static QueryStringConditionConfigUnmarshaller _instance = new QueryStringConditionConfigUnmarshaller();        
 

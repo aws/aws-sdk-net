@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WindowsAuditLogConfiguration Object
     /// </summary>  
-    public class WindowsAuditLogConfigurationUnmarshaller : IUnmarshaller<WindowsAuditLogConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WindowsAuditLogConfiguration, JsonUnmarshallerContext>
+    public class WindowsAuditLogConfigurationUnmarshaller : IJsonUnmarshaller<WindowsAuditLogConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WindowsAuditLogConfiguration IUnmarshaller<WindowsAuditLogConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WindowsAuditLogConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WindowsAuditLogConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WindowsAuditLogConfiguration unmarshalledObject = new WindowsAuditLogConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuditLogDestination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuditLogDestination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuditLogDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FileAccessAuditLogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileAccessAuditLogLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileAccessAuditLogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FileShareAccessAuditLogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileShareAccessAuditLogLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileShareAccessAuditLogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

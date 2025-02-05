@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -61,103 +64,108 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/restapis";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApiKeySource())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApiKeySource())
-                    {
-                        context.Writer.WritePropertyName("apiKeySource");
-                        context.Writer.Write(publicRequest.ApiKeySource);
-                    }
-
-                    if(publicRequest.IsSetBinaryMediaTypes())
-                    {
-                        context.Writer.WritePropertyName("binaryMediaTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBinaryMediaTypesListValue in publicRequest.BinaryMediaTypes)
-                        {
-                                context.Writer.Write(publicRequestBinaryMediaTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCloneFrom())
-                    {
-                        context.Writer.WritePropertyName("cloneFrom");
-                        context.Writer.Write(publicRequest.CloneFrom);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisableExecuteApiEndpoint())
-                    {
-                        context.Writer.WritePropertyName("disableExecuteApiEndpoint");
-                        context.Writer.Write(publicRequest.DisableExecuteApiEndpoint.Value);
-                    }
-
-                    if(publicRequest.IsSetEndpointConfiguration())
-                    {
-                        context.Writer.WritePropertyName("endpointConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EndpointConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EndpointConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMinimumCompressionSize())
-                    {
-                        context.Writer.WritePropertyName("minimumCompressionSize");
-                        context.Writer.Write(publicRequest.MinimumCompressionSize.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPolicy())
-                    {
-                        context.Writer.WritePropertyName("policy");
-                        context.Writer.Write(publicRequest.Policy);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVersion())
-                    {
-                        context.Writer.WritePropertyName("version");
-                        context.Writer.Write(publicRequest.Version);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("apiKeySource");
+                context.Writer.WriteStringValue(publicRequest.ApiKeySource);
             }
+
+            if(publicRequest.IsSetBinaryMediaTypes())
+            {
+                context.Writer.WritePropertyName("binaryMediaTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBinaryMediaTypesListValue in publicRequest.BinaryMediaTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestBinaryMediaTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCloneFrom())
+            {
+                context.Writer.WritePropertyName("cloneFrom");
+                context.Writer.WriteStringValue(publicRequest.CloneFrom);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisableExecuteApiEndpoint())
+            {
+                context.Writer.WritePropertyName("disableExecuteApiEndpoint");
+                context.Writer.WriteBooleanValue(publicRequest.DisableExecuteApiEndpoint.Value);
+            }
+
+            if(publicRequest.IsSetEndpointConfiguration())
+            {
+                context.Writer.WritePropertyName("endpointConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndpointConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMinimumCompressionSize())
+            {
+                context.Writer.WritePropertyName("minimumCompressionSize");
+                context.Writer.WriteNumberValue(publicRequest.MinimumCompressionSize.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStringValue(publicRequest.Policy);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("version");
+                context.Writer.WriteStringValue(publicRequest.Version);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

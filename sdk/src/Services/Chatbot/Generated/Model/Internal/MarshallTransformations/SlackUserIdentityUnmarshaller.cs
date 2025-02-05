@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SlackUserIdentity Object
     /// </summary>  
-    public class SlackUserIdentityUnmarshaller : IUnmarshaller<SlackUserIdentity, XmlUnmarshallerContext>, IUnmarshaller<SlackUserIdentity, JsonUnmarshallerContext>
+    public class SlackUserIdentityUnmarshaller : IJsonUnmarshaller<SlackUserIdentity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SlackUserIdentity IUnmarshaller<SlackUserIdentity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlackUserIdentity Unmarshall(JsonUnmarshallerContext context)
+        public SlackUserIdentity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SlackUserIdentity unmarshalledObject = new SlackUserIdentity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AwsUserIdentity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsUserIdentity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsUserIdentity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChatConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChatConfigurationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChatConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IamRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SlackTeamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlackTeamId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlackTeamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SlackUserId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlackUserId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlackUserId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

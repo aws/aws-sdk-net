@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogsRoleArn())
             {
                 context.Writer.WritePropertyName("cloudWatchLogsRoleArn");
-                context.Writer.Write(requestObject.CloudWatchLogsRoleArn);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogsRoleArn);
             }
 
             if(requestObject.IsSetExcludeVerboseContent())
             {
                 context.Writer.WritePropertyName("excludeVerboseContent");
-                context.Writer.Write(requestObject.ExcludeVerboseContent.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeVerboseContent.Value);
             }
 
             if(requestObject.IsSetFieldLogLevel())
             {
                 context.Writer.WritePropertyName("fieldLogLevel");
-                context.Writer.Write(requestObject.FieldLogLevel);
+                context.Writer.WriteStringValue(requestObject.FieldLogLevel);
             }
 
         }

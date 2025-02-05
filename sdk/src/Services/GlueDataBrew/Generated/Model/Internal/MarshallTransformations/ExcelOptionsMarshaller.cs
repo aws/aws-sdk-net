@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaderRow())
             {
                 context.Writer.WritePropertyName("HeaderRow");
-                context.Writer.Write(requestObject.HeaderRow.Value);
+                context.Writer.WriteBooleanValue(requestObject.HeaderRow.Value);
             }
 
             if(requestObject.IsSetSheetIndexes())
             {
                 context.Writer.WritePropertyName("SheetIndexes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSheetIndexesListValue in requestObject.SheetIndexes)
                 {
-                        context.Writer.Write(requestObjectSheetIndexesListValue);
+                        context.Writer.WriteNumberValue(requestObjectSheetIndexesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSheetNames())
             {
                 context.Writer.WritePropertyName("SheetNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSheetNamesListValue in requestObject.SheetNames)
                 {
-                        context.Writer.Write(requestObjectSheetNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectSheetNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

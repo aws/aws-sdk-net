@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidPublicKeyException operation
     /// </summary>  
-    public class InvalidPublicKeyExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidPublicKeyException, XmlUnmarshallerContext>
+    public class InvalidPublicKeyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidPublicKeyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

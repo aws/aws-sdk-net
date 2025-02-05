@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId3Behavior())
             {
                 context.Writer.WritePropertyName("id3Behavior");
-                context.Writer.Write(requestObject.Id3Behavior);
+                context.Writer.WriteStringValue(requestObject.Id3Behavior);
             }
 
             if(requestObject.IsSetId3NameModifier())
             {
                 context.Writer.WritePropertyName("id3NameModifier");
-                context.Writer.Write(requestObject.Id3NameModifier);
+                context.Writer.WriteStringValue(requestObject.Id3NameModifier);
             }
 
             if(requestObject.IsSetKlvBehavior())
             {
                 context.Writer.WritePropertyName("klvBehavior");
-                context.Writer.Write(requestObject.KlvBehavior);
+                context.Writer.WriteStringValue(requestObject.KlvBehavior);
             }
 
             if(requestObject.IsSetKlvNameModifier())
             {
                 context.Writer.WritePropertyName("klvNameModifier");
-                context.Writer.Write(requestObject.KlvNameModifier);
+                context.Writer.WriteStringValue(requestObject.KlvNameModifier);
             }
 
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
+                context.Writer.WriteStringValue(requestObject.NielsenId3Behavior);
             }
 
             if(requestObject.IsSetNielsenId3NameModifier())
             {
                 context.Writer.WritePropertyName("nielsenId3NameModifier");
-                context.Writer.Write(requestObject.NielsenId3NameModifier);
+                context.Writer.WriteStringValue(requestObject.NielsenId3NameModifier);
             }
 
             if(requestObject.IsSetScte35NameModifier())
             {
                 context.Writer.WritePropertyName("scte35NameModifier");
-                context.Writer.Write(requestObject.Scte35NameModifier);
+                context.Writer.WriteStringValue(requestObject.Scte35NameModifier);
             }
 
             if(requestObject.IsSetScte35Type())
             {
                 context.Writer.WritePropertyName("scte35Type");
-                context.Writer.Write(requestObject.Scte35Type);
+                context.Writer.WriteStringValue(requestObject.Scte35Type);
             }
 
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentLengthUnits())
             {
                 context.Writer.WritePropertyName("segmentLengthUnits");
-                context.Writer.Write(requestObject.SegmentLengthUnits);
+                context.Writer.WriteStringValue(requestObject.SegmentLengthUnits);
             }
 
             if(requestObject.IsSetSendDelayMs())
             {
                 context.Writer.WritePropertyName("sendDelayMs");
-                context.Writer.Write(requestObject.SendDelayMs.Value);
+                context.Writer.WriteNumberValue(requestObject.SendDelayMs.Value);
             }
 
         }

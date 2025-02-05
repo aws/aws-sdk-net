@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHourOfDay())
             {
                 context.Writer.WritePropertyName("HourOfDay");
-                context.Writer.Write(requestObject.HourOfDay.Value);
+                context.Writer.WriteNumberValue(requestObject.HourOfDay.Value);
             }
 
             if(requestObject.IsSetMinuteOfHour())
             {
                 context.Writer.WritePropertyName("MinuteOfHour");
-                context.Writer.Write(requestObject.MinuteOfHour.Value);
+                context.Writer.WriteNumberValue(requestObject.MinuteOfHour.Value);
             }
 
         }

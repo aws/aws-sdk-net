@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayAttachmentBgpConfiguration Object
     /// </summary>  
-    public class TransitGatewayAttachmentBgpConfigurationUnmarshaller : IUnmarshaller<TransitGatewayAttachmentBgpConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayAttachmentBgpConfiguration, JsonUnmarshallerContext>
+    public class TransitGatewayAttachmentBgpConfigurationUnmarshaller : IXmlUnmarshaller<TransitGatewayAttachmentBgpConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayAttachmentBgpConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayAttachmentBgpConfigurationUnmarshaller _instance = new TransitGatewayAttachmentBgpConfigurationUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoreNetworkNetworkFunctionGroup())
             {
                 context.Writer.WritePropertyName("CoreNetworkNetworkFunctionGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CoreNetworkNetworkFunctionGroupIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.CoreNetworkNetworkFunctionGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCoreNetworkSegmentEdge())
             {
                 context.Writer.WritePropertyName("CoreNetworkSegmentEdge");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CoreNetworkSegmentEdgeIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.CoreNetworkSegmentEdge, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransitGatewayRouteTableArn())
             {
                 context.Writer.WritePropertyName("TransitGatewayRouteTableArn");
-                context.Writer.Write(requestObject.TransitGatewayRouteTableArn);
+                context.Writer.WriteStringValue(requestObject.TransitGatewayRouteTableArn);
             }
 
         }

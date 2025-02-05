@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteToll Object
     /// </summary>  
-    public class RouteTollUnmarshaller : IUnmarshaller<RouteToll, XmlUnmarshallerContext>, IUnmarshaller<RouteToll, JsonUnmarshallerContext>
+    public class RouteTollUnmarshaller : IJsonUnmarshaller<RouteToll, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteToll IUnmarshaller<RouteToll, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteToll Unmarshall(JsonUnmarshallerContext context)
+        public RouteToll Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteToll unmarshalledObject = new RouteToll();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Country", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PaymentSites", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteTollPaymentSite, RouteTollPaymentSiteUnmarshaller>(RouteTollPaymentSiteUnmarshaller.Instance);
-                    unmarshalledObject.PaymentSites = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteTollPaymentSite, RouteTollPaymentSiteUnmarshaller>(RouteTollPaymentSiteUnmarshaller.Instance);
+                    unmarshalledObject.PaymentSites = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteTollRate, RouteTollRateUnmarshaller>(RouteTollRateUnmarshaller.Instance);
-                    unmarshalledObject.Rates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteTollRate, RouteTollRateUnmarshaller>(RouteTollRateUnmarshaller.Instance);
+                    unmarshalledObject.Rates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Systems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.Systems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.Systems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

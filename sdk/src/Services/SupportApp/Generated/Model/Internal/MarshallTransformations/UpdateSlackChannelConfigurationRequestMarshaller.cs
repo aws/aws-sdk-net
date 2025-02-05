@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
 {
@@ -61,67 +64,72 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/control/update-slack-channel-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChannelId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChannelId())
-                    {
-                        context.Writer.WritePropertyName("channelId");
-                        context.Writer.Write(publicRequest.ChannelId);
-                    }
-
-                    if(publicRequest.IsSetChannelName())
-                    {
-                        context.Writer.WritePropertyName("channelName");
-                        context.Writer.Write(publicRequest.ChannelName);
-                    }
-
-                    if(publicRequest.IsSetChannelRoleArn())
-                    {
-                        context.Writer.WritePropertyName("channelRoleArn");
-                        context.Writer.Write(publicRequest.ChannelRoleArn);
-                    }
-
-                    if(publicRequest.IsSetNotifyOnAddCorrespondenceToCase())
-                    {
-                        context.Writer.WritePropertyName("notifyOnAddCorrespondenceToCase");
-                        context.Writer.Write(publicRequest.NotifyOnAddCorrespondenceToCase.Value);
-                    }
-
-                    if(publicRequest.IsSetNotifyOnCaseSeverity())
-                    {
-                        context.Writer.WritePropertyName("notifyOnCaseSeverity");
-                        context.Writer.Write(publicRequest.NotifyOnCaseSeverity);
-                    }
-
-                    if(publicRequest.IsSetNotifyOnCreateOrReopenCase())
-                    {
-                        context.Writer.WritePropertyName("notifyOnCreateOrReopenCase");
-                        context.Writer.Write(publicRequest.NotifyOnCreateOrReopenCase.Value);
-                    }
-
-                    if(publicRequest.IsSetNotifyOnResolveCase())
-                    {
-                        context.Writer.WritePropertyName("notifyOnResolveCase");
-                        context.Writer.Write(publicRequest.NotifyOnResolveCase.Value);
-                    }
-
-                    if(publicRequest.IsSetTeamId())
-                    {
-                        context.Writer.WritePropertyName("teamId");
-                        context.Writer.Write(publicRequest.TeamId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("channelId");
+                context.Writer.WriteStringValue(publicRequest.ChannelId);
             }
+
+            if(publicRequest.IsSetChannelName())
+            {
+                context.Writer.WritePropertyName("channelName");
+                context.Writer.WriteStringValue(publicRequest.ChannelName);
+            }
+
+            if(publicRequest.IsSetChannelRoleArn())
+            {
+                context.Writer.WritePropertyName("channelRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ChannelRoleArn);
+            }
+
+            if(publicRequest.IsSetNotifyOnAddCorrespondenceToCase())
+            {
+                context.Writer.WritePropertyName("notifyOnAddCorrespondenceToCase");
+                context.Writer.WriteBooleanValue(publicRequest.NotifyOnAddCorrespondenceToCase.Value);
+            }
+
+            if(publicRequest.IsSetNotifyOnCaseSeverity())
+            {
+                context.Writer.WritePropertyName("notifyOnCaseSeverity");
+                context.Writer.WriteStringValue(publicRequest.NotifyOnCaseSeverity);
+            }
+
+            if(publicRequest.IsSetNotifyOnCreateOrReopenCase())
+            {
+                context.Writer.WritePropertyName("notifyOnCreateOrReopenCase");
+                context.Writer.WriteBooleanValue(publicRequest.NotifyOnCreateOrReopenCase.Value);
+            }
+
+            if(publicRequest.IsSetNotifyOnResolveCase())
+            {
+                context.Writer.WritePropertyName("notifyOnResolveCase");
+                context.Writer.WriteBooleanValue(publicRequest.NotifyOnResolveCase.Value);
+            }
+
+            if(publicRequest.IsSetTeamId())
+            {
+                context.Writer.WritePropertyName("teamId");
+                context.Writer.WriteStringValue(publicRequest.TeamId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

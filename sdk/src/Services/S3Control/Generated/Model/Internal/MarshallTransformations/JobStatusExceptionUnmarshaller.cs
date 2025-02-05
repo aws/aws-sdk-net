@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobStatusException operation
     /// </summary>  
-    public class JobStatusExceptionUnmarshaller : IErrorResponseUnmarshaller<JobStatusException, XmlUnmarshallerContext>
+    public class JobStatusExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<JobStatusException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrainedModelExportsConfigurationPolicy Object
     /// </summary>  
-    public class TrainedModelExportsConfigurationPolicyUnmarshaller : IUnmarshaller<TrainedModelExportsConfigurationPolicy, XmlUnmarshallerContext>, IUnmarshaller<TrainedModelExportsConfigurationPolicy, JsonUnmarshallerContext>
+    public class TrainedModelExportsConfigurationPolicyUnmarshaller : IJsonUnmarshaller<TrainedModelExportsConfigurationPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrainedModelExportsConfigurationPolicy IUnmarshaller<TrainedModelExportsConfigurationPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrainedModelExportsConfigurationPolicy Unmarshall(JsonUnmarshallerContext context)
+        public TrainedModelExportsConfigurationPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrainedModelExportsConfigurationPolicy unmarshalledObject = new TrainedModelExportsConfigurationPolicy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("filesToExport", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.FilesToExport = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FilesToExport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maxSize", targetDepth))
                 {
                     var unmarshaller = TrainedModelExportsMaxSizeUnmarshaller.Instance;
-                    unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

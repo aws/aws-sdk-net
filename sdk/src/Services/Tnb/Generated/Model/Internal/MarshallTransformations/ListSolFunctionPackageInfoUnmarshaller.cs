@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ListSolFunctionPackageInfo Object
     /// </summary>  
-    public class ListSolFunctionPackageInfoUnmarshaller : IUnmarshaller<ListSolFunctionPackageInfo, XmlUnmarshallerContext>, IUnmarshaller<ListSolFunctionPackageInfo, JsonUnmarshallerContext>
+    public class ListSolFunctionPackageInfoUnmarshaller : IJsonUnmarshaller<ListSolFunctionPackageInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ListSolFunctionPackageInfo IUnmarshaller<ListSolFunctionPackageInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListSolFunctionPackageInfo Unmarshall(JsonUnmarshallerContext context)
+        public ListSolFunctionPackageInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ListSolFunctionPackageInfo unmarshalledObject = new ListSolFunctionPackageInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadata", targetDepth))
                 {
                     var unmarshaller = ListSolFunctionPackageMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("onboardingState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnboardingState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnboardingState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operationalState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationalState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperationalState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usageState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfdId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfdId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfdId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfdVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfdVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfdVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfProductName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfProductName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfProductName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vnfProvider", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VnfProvider = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VnfProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

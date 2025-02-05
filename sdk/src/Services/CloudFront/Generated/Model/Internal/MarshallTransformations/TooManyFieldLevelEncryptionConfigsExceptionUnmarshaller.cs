@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyFieldLevelEncryptionConfigsException operation
     /// </summary>  
-    public class TooManyFieldLevelEncryptionConfigsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyFieldLevelEncryptionConfigsException, XmlUnmarshallerContext>
+    public class TooManyFieldLevelEncryptionConfigsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyFieldLevelEncryptionConfigsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -63,100 +66,105 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndpointConfigurations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("EndpointConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEndpointConfigurationsListValue in publicRequest.EndpointConfigurations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndpointConfigurations())
-                    {
-                        context.Writer.WritePropertyName("EndpointConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEndpointConfigurationsListValue in publicRequest.EndpointConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = EndpointConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEndpointConfigurationsListValue, context);
+                    var marshaller = EndpointConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEndpointConfigurationsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEndpointGroupArn())
-                    {
-                        context.Writer.WritePropertyName("EndpointGroupArn");
-                        context.Writer.Write(publicRequest.EndpointGroupArn);
-                    }
-
-                    if(publicRequest.IsSetHealthCheckIntervalSeconds())
-                    {
-                        context.Writer.WritePropertyName("HealthCheckIntervalSeconds");
-                        context.Writer.Write(publicRequest.HealthCheckIntervalSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetHealthCheckPath())
-                    {
-                        context.Writer.WritePropertyName("HealthCheckPath");
-                        context.Writer.Write(publicRequest.HealthCheckPath);
-                    }
-
-                    if(publicRequest.IsSetHealthCheckPort())
-                    {
-                        context.Writer.WritePropertyName("HealthCheckPort");
-                        context.Writer.Write(publicRequest.HealthCheckPort.Value);
-                    }
-
-                    if(publicRequest.IsSetHealthCheckProtocol())
-                    {
-                        context.Writer.WritePropertyName("HealthCheckProtocol");
-                        context.Writer.Write(publicRequest.HealthCheckProtocol);
-                    }
-
-                    if(publicRequest.IsSetPortOverrides())
-                    {
-                        context.Writer.WritePropertyName("PortOverrides");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPortOverridesListValue in publicRequest.PortOverrides)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PortOverrideMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPortOverridesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetThresholdCount())
-                    {
-                        context.Writer.WritePropertyName("ThresholdCount");
-                        context.Writer.Write(publicRequest.ThresholdCount.Value);
-                    }
-
-                    if(publicRequest.IsSetTrafficDialPercentage())
-                    {
-                        context.Writer.WritePropertyName("TrafficDialPercentage");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.TrafficDialPercentage.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.TrafficDialPercentage.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.TrafficDialPercentage.Value);
-                        }
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetEndpointGroupArn())
+            {
+                context.Writer.WritePropertyName("EndpointGroupArn");
+                context.Writer.WriteStringValue(publicRequest.EndpointGroupArn);
+            }
+
+            if(publicRequest.IsSetHealthCheckIntervalSeconds())
+            {
+                context.Writer.WritePropertyName("HealthCheckIntervalSeconds");
+                context.Writer.WriteNumberValue(publicRequest.HealthCheckIntervalSeconds.Value);
+            }
+
+            if(publicRequest.IsSetHealthCheckPath())
+            {
+                context.Writer.WritePropertyName("HealthCheckPath");
+                context.Writer.WriteStringValue(publicRequest.HealthCheckPath);
+            }
+
+            if(publicRequest.IsSetHealthCheckPort())
+            {
+                context.Writer.WritePropertyName("HealthCheckPort");
+                context.Writer.WriteNumberValue(publicRequest.HealthCheckPort.Value);
+            }
+
+            if(publicRequest.IsSetHealthCheckProtocol())
+            {
+                context.Writer.WritePropertyName("HealthCheckProtocol");
+                context.Writer.WriteStringValue(publicRequest.HealthCheckProtocol);
+            }
+
+            if(publicRequest.IsSetPortOverrides())
+            {
+                context.Writer.WritePropertyName("PortOverrides");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPortOverridesListValue in publicRequest.PortOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PortOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPortOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetThresholdCount())
+            {
+                context.Writer.WritePropertyName("ThresholdCount");
+                context.Writer.WriteNumberValue(publicRequest.ThresholdCount.Value);
+            }
+
+            if(publicRequest.IsSetTrafficDialPercentage())
+            {
+                context.Writer.WritePropertyName("TrafficDialPercentage");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.TrafficDialPercentage.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.TrafficDialPercentage.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.TrafficDialPercentage.Value);
+                }
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

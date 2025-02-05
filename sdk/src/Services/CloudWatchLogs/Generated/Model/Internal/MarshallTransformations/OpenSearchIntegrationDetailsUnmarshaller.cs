@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenSearchIntegrationDetails Object
     /// </summary>  
-    public class OpenSearchIntegrationDetailsUnmarshaller : IUnmarshaller<OpenSearchIntegrationDetails, XmlUnmarshallerContext>, IUnmarshaller<OpenSearchIntegrationDetails, JsonUnmarshallerContext>
+    public class OpenSearchIntegrationDetailsUnmarshaller : IJsonUnmarshaller<OpenSearchIntegrationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenSearchIntegrationDetails IUnmarshaller<OpenSearchIntegrationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenSearchIntegrationDetails Unmarshall(JsonUnmarshallerContext context)
+        public OpenSearchIntegrationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenSearchIntegrationDetails unmarshalledObject = new OpenSearchIntegrationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accessPolicy", targetDepth))
                 {
                     var unmarshaller = OpenSearchDataAccessPolicyUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("application", targetDepth))
                 {
                     var unmarshaller = OpenSearchApplicationUnmarshaller.Instance;
-                    unmarshalledObject.Application = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Application = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("collection", targetDepth))
                 {
                     var unmarshaller = OpenSearchCollectionUnmarshaller.Instance;
-                    unmarshalledObject.Collection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Collection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataSource", targetDepth))
                 {
                     var unmarshaller = OpenSearchDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryptionPolicy", targetDepth))
                 {
                     var unmarshaller = OpenSearchEncryptionPolicyUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lifecyclePolicy", targetDepth))
                 {
                     var unmarshaller = OpenSearchLifecyclePolicyUnmarshaller.Instance;
-                    unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkPolicy", targetDepth))
                 {
                     var unmarshaller = OpenSearchNetworkPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workspace", targetDepth))
                 {
                     var unmarshaller = OpenSearchWorkspaceUnmarshaller.Instance;
-                    unmarshalledObject.Workspace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Workspace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

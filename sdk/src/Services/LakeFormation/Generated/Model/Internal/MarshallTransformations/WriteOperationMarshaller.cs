@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddObject())
             {
                 context.Writer.WritePropertyName("AddObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddObjectInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeleteObject())
             {
                 context.Writer.WritePropertyName("DeleteObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeleteObjectInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeleteObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

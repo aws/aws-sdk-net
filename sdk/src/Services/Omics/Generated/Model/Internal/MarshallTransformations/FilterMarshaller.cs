@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceArnsListValue in requestObject.ResourceArns)
                 {
-                        context.Writer.Write(requestObjectResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusListValue in requestObject.Status)
                 {
-                        context.Writer.Write(requestObjectStatusListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTypeListValue in requestObject.Type)
                 {
-                        context.Writer.Write(requestObjectTypeListValue);
+                        context.Writer.WriteStringValue(requestObjectTypeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultDimensionValue())
             {
                 context.Writer.WritePropertyName("DefaultDimensionValue");
-                context.Writer.Write(requestObject.DefaultDimensionValue);
+                context.Writer.WriteStringValue(requestObject.DefaultDimensionValue);
             }
 
             if(requestObject.IsSetDimensionName())
             {
                 context.Writer.WritePropertyName("DimensionName");
-                context.Writer.Write(requestObject.DimensionName);
+                context.Writer.WriteStringValue(requestObject.DimensionName);
             }
 
             if(requestObject.IsSetDimensionValueSource())
             {
                 context.Writer.WritePropertyName("DimensionValueSource");
-                context.Writer.Write(requestObject.DimensionValueSource);
+                context.Writer.WriteStringValue(requestObject.DimensionValueSource);
             }
 
         }

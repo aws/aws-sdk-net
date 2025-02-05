@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioDescription Object
     /// </summary>  
-    public class AudioDescriptionUnmarshaller : IUnmarshaller<AudioDescription, XmlUnmarshallerContext>, IUnmarshaller<AudioDescription, JsonUnmarshallerContext>
+    public class AudioDescriptionUnmarshaller : IJsonUnmarshaller<AudioDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioDescription IUnmarshaller<AudioDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioDescription Unmarshall(JsonUnmarshallerContext context)
+        public AudioDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioDescription unmarshalledObject = new AudioDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioChannelTaggingSettings", targetDepth))
                 {
                     var unmarshaller = AudioChannelTaggingSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AudioChannelTaggingSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioChannelTaggingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioNormalizationSettings", targetDepth))
                 {
                     var unmarshaller = AudioNormalizationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AudioNormalizationSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioNormalizationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioSourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioType", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AudioType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioTypeControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioTypeControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioTypeControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codecSettings", targetDepth))
                 {
                     var unmarshaller = AudioCodecSettingsUnmarshaller.Instance;
-                    unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customLanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomLanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomLanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("languageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("languageCodeControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCodeControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCodeControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("remixSettings", targetDepth))
                 {
                     var unmarshaller = RemixSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RemixSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemixSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

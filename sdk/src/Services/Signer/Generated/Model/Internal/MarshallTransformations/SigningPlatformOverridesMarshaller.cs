@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSigningConfiguration())
             {
                 context.Writer.WritePropertyName("signingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SigningConfigurationOverridesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SigningConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSigningImageFormat())
             {
                 context.Writer.WritePropertyName("signingImageFormat");
-                context.Writer.Write(requestObject.SigningImageFormat);
+                context.Writer.WriteStringValue(requestObject.SigningImageFormat);
             }
 
         }

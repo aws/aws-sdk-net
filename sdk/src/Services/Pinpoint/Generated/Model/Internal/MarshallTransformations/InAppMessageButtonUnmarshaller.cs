@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InAppMessageButton Object
     /// </summary>  
-    public class InAppMessageButtonUnmarshaller : IUnmarshaller<InAppMessageButton, XmlUnmarshallerContext>, IUnmarshaller<InAppMessageButton, JsonUnmarshallerContext>
+    public class InAppMessageButtonUnmarshaller : IJsonUnmarshaller<InAppMessageButton, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InAppMessageButton IUnmarshaller<InAppMessageButton, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InAppMessageButton Unmarshall(JsonUnmarshallerContext context)
+        public InAppMessageButton Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InAppMessageButton unmarshalledObject = new InAppMessageButton();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Android", targetDepth))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Android = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Android = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultConfig", targetDepth))
                 {
                     var unmarshaller = DefaultButtonConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DefaultConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IOS", targetDepth))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IOS = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IOS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Web", targetDepth))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Web = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Web = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

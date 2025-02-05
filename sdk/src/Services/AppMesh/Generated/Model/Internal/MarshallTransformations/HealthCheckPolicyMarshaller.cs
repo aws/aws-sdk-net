@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("healthyThreshold");
-                context.Writer.Write(requestObject.HealthyThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthyThreshold.Value);
             }
 
             if(requestObject.IsSetIntervalMillis())
             {
                 context.Writer.WritePropertyName("intervalMillis");
-                context.Writer.Write(requestObject.IntervalMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.IntervalMillis.Value);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetTimeoutMillis())
             {
                 context.Writer.WritePropertyName("timeoutMillis");
-                context.Writer.Write(requestObject.TimeoutMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutMillis.Value);
             }
 
             if(requestObject.IsSetUnhealthyThreshold())
             {
                 context.Writer.WritePropertyName("unhealthyThreshold");
-                context.Writer.Write(requestObject.UnhealthyThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.UnhealthyThreshold.Value);
             }
 
         }

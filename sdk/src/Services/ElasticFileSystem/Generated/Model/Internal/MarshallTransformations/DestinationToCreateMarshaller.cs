@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZoneName())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneName");
-                context.Writer.Write(requestObject.AvailabilityZoneName);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZoneName);
             }
 
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("FileSystemId");
-                context.Writer.Write(requestObject.FileSystemId);
+                context.Writer.WriteStringValue(requestObject.FileSystemId);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

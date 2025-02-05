@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExtendedKeyUsage())
             {
                 context.Writer.WritePropertyName("extendedKeyUsage");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExtendedKeyUsageListValue in requestObject.ExtendedKeyUsage)
                 {
-                        context.Writer.Write(requestObjectExtendedKeyUsageListValue);
+                        context.Writer.WriteStringValue(requestObjectExtendedKeyUsageListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeyTypes())
             {
                 context.Writer.WritePropertyName("keyTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeyTypesListValue in requestObject.KeyTypes)
                 {
-                        context.Writer.Write(requestObjectKeyTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectKeyTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeyUsage())
             {
                 context.Writer.WritePropertyName("keyUsage");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeyUsageListValue in requestObject.KeyUsage)
                 {
-                        context.Writer.Write(requestObjectKeyUsageListValue);
+                        context.Writer.WriteStringValue(requestObjectKeyUsageListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

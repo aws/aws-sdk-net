@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDevices())
             {
                 context.Writer.WritePropertyName("devices");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDevicesListValue in requestObject.Devices)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LambdaDeviceMountMarshaller.Instance;
                     marshaller.Marshall(requestObjectDevicesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMemorySizeInKB())
             {
                 context.Writer.WritePropertyName("memorySizeInKB");
-                context.Writer.Write(requestObject.MemorySizeInKB.Value);
+                context.Writer.WriteNumberValue(requestObject.MemorySizeInKB.Value);
             }
 
             if(requestObject.IsSetMountROSysfs())
             {
                 context.Writer.WritePropertyName("mountROSysfs");
-                context.Writer.Write(requestObject.MountROSysfs.Value);
+                context.Writer.WriteBooleanValue(requestObject.MountROSysfs.Value);
             }
 
             if(requestObject.IsSetVolumes())
             {
                 context.Writer.WritePropertyName("volumes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVolumesListValue in requestObject.Volumes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LambdaVolumeMountMarshaller.Instance;
                     marshaller.Marshall(requestObjectVolumesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

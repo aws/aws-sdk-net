@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FindingsReportSummary Object
     /// </summary>  
-    public class FindingsReportSummaryUnmarshaller : IUnmarshaller<FindingsReportSummary, XmlUnmarshallerContext>, IUnmarshaller<FindingsReportSummary, JsonUnmarshallerContext>
+    public class FindingsReportSummaryUnmarshaller : IJsonUnmarshaller<FindingsReportSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FindingsReportSummary IUnmarshaller<FindingsReportSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FindingsReportSummary Unmarshall(JsonUnmarshallerContext context)
+        public FindingsReportSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FindingsReportSummary unmarshalledObject = new FindingsReportSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("profileEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ProfileEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProfileEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("profileStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ProfileStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProfileStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("profilingGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProfilingGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProfilingGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalNumberOfFindings", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfFindings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

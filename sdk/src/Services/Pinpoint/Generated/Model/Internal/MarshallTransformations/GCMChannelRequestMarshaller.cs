@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiKey())
             {
                 context.Writer.WritePropertyName("ApiKey");
-                context.Writer.Write(requestObject.ApiKey);
+                context.Writer.WriteStringValue(requestObject.ApiKey);
             }
 
             if(requestObject.IsSetDefaultAuthenticationMethod())
             {
                 context.Writer.WritePropertyName("DefaultAuthenticationMethod");
-                context.Writer.Write(requestObject.DefaultAuthenticationMethod);
+                context.Writer.WriteStringValue(requestObject.DefaultAuthenticationMethod);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetServiceJson())
             {
                 context.Writer.WritePropertyName("ServiceJson");
-                context.Writer.Write(requestObject.ServiceJson);
+                context.Writer.WriteStringValue(requestObject.ServiceJson);
             }
 
         }

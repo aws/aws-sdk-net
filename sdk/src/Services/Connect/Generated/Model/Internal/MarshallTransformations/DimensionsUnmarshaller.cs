@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Dimensions Object
     /// </summary>  
-    public class DimensionsUnmarshaller : IUnmarshaller<Dimensions, XmlUnmarshallerContext>, IUnmarshaller<Dimensions, JsonUnmarshallerContext>
+    public class DimensionsUnmarshaller : IJsonUnmarshaller<Dimensions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Dimensions IUnmarshaller<Dimensions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Dimensions Unmarshall(JsonUnmarshallerContext context)
+        public Dimensions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Dimensions unmarshalledObject = new Dimensions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Channel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Queue", targetDepth))
                 {
                     var unmarshaller = QueueReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Queue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoutingProfile", targetDepth))
                 {
                     var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoutingStepExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

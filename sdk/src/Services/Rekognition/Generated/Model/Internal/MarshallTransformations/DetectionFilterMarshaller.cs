@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinBoundingBoxHeight");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxHeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxHeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinBoundingBoxHeight.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinBoundingBoxHeight.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinBoundingBoxWidth");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinBoundingBoxWidth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinBoundingBoxWidth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinBoundingBoxWidth.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinBoundingBoxWidth.Value);
                 }
             }
 
@@ -79,11 +77,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinConfidence");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinConfidence.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinConfidence.Value);
                 }
             }
 

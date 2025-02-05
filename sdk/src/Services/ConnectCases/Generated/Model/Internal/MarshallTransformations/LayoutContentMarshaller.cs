@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasic())
             {
                 context.Writer.WritePropertyName("basic");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BasicLayoutMarshaller.Instance;
                 marshaller.Marshall(requestObject.Basic, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

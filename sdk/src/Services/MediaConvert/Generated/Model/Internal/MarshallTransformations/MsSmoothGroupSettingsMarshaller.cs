@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalManifests())
             {
                 context.Writer.WritePropertyName("additionalManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalManifestsListValue in requestObject.AdditionalManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MsSmoothAdditionalManifestMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAudioDeduplication())
             {
                 context.Writer.WritePropertyName("audioDeduplication");
-                context.Writer.Write(requestObject.AudioDeduplication);
+                context.Writer.WriteStringValue(requestObject.AudioDeduplication);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetDestinationSettings())
             {
                 context.Writer.WritePropertyName("destinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MsSmoothEncryptionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFragmentLength())
             {
                 context.Writer.WritePropertyName("fragmentLength");
-                context.Writer.Write(requestObject.FragmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.FragmentLength.Value);
             }
 
             if(requestObject.IsSetFragmentLengthControl())
             {
                 context.Writer.WritePropertyName("fragmentLengthControl");
-                context.Writer.Write(requestObject.FragmentLengthControl);
+                context.Writer.WriteStringValue(requestObject.FragmentLengthControl);
             }
 
             if(requestObject.IsSetManifestEncoding())
             {
                 context.Writer.WritePropertyName("manifestEncoding");
-                context.Writer.Write(requestObject.ManifestEncoding);
+                context.Writer.WriteStringValue(requestObject.ManifestEncoding);
             }
 
         }

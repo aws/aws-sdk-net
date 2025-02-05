@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEthernet0())
             {
                 context.Writer.WritePropertyName("Ethernet0");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EthernetPayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ethernet0, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEthernet1())
             {
                 context.Writer.WritePropertyName("Ethernet1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EthernetPayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ethernet1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNtp())
             {
                 context.Writer.WritePropertyName("Ntp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NtpPayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ntp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

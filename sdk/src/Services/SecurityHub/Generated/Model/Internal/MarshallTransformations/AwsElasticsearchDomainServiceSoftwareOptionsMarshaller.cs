@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomatedUpdateDate())
             {
                 context.Writer.WritePropertyName("AutomatedUpdateDate");
-                context.Writer.Write(requestObject.AutomatedUpdateDate);
+                context.Writer.WriteStringValue(requestObject.AutomatedUpdateDate);
             }
 
             if(requestObject.IsSetCancellable())
             {
                 context.Writer.WritePropertyName("Cancellable");
-                context.Writer.Write(requestObject.Cancellable.Value);
+                context.Writer.WriteBooleanValue(requestObject.Cancellable.Value);
             }
 
             if(requestObject.IsSetCurrentVersion())
             {
                 context.Writer.WritePropertyName("CurrentVersion");
-                context.Writer.Write(requestObject.CurrentVersion);
+                context.Writer.WriteStringValue(requestObject.CurrentVersion);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetNewVersion())
             {
                 context.Writer.WritePropertyName("NewVersion");
-                context.Writer.Write(requestObject.NewVersion);
+                context.Writer.WriteStringValue(requestObject.NewVersion);
             }
 
             if(requestObject.IsSetUpdateAvailable())
             {
                 context.Writer.WritePropertyName("UpdateAvailable");
-                context.Writer.Write(requestObject.UpdateAvailable.Value);
+                context.Writer.WriteBooleanValue(requestObject.UpdateAvailable.Value);
             }
 
             if(requestObject.IsSetUpdateStatus())
             {
                 context.Writer.WritePropertyName("UpdateStatus");
-                context.Writer.Write(requestObject.UpdateStatus);
+                context.Writer.WriteStringValue(requestObject.UpdateStatus);
             }
 
         }

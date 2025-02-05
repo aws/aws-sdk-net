@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationVisibility())
             {
                 context.Writer.WritePropertyName("AggregationVisibility");
-                context.Writer.Write(requestObject.AggregationVisibility);
+                context.Writer.WriteStringValue(requestObject.AggregationVisibility);
             }
 
             if(requestObject.IsSetTooltipFields())
             {
                 context.Writer.WritePropertyName("TooltipFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTooltipFieldsListValue in requestObject.TooltipFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TooltipItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectTooltipFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTooltipTitleType())
             {
                 context.Writer.WritePropertyName("TooltipTitleType");
-                context.Writer.Write(requestObject.TooltipTitleType);
+                context.Writer.WriteStringValue(requestObject.TooltipTitleType);
             }
 
         }

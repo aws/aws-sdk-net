@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContactFlowId())
             {
                 context.Writer.WritePropertyName("ContactFlowId");
-                context.Writer.Write(requestObject.ContactFlowId);
+                context.Writer.WriteStringValue(requestObject.ContactFlowId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetReferences())
             {
                 context.Writer.WritePropertyName("References");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectReferencesKvp in requestObject.References)
                 {
                     context.Writer.WritePropertyName(requestObjectReferencesKvp.Key);
                     var requestObjectReferencesValue = requestObjectReferencesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ReferenceMarshaller.Instance;
                     marshaller.Marshall(requestObjectReferencesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

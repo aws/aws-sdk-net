@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("Schema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

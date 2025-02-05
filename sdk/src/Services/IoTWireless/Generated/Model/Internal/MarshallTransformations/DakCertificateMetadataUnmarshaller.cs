@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DakCertificateMetadata Object
     /// </summary>  
-    public class DakCertificateMetadataUnmarshaller : IUnmarshaller<DakCertificateMetadata, XmlUnmarshallerContext>, IUnmarshaller<DakCertificateMetadata, JsonUnmarshallerContext>
+    public class DakCertificateMetadataUnmarshaller : IJsonUnmarshaller<DakCertificateMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DakCertificateMetadata IUnmarshaller<DakCertificateMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DakCertificateMetadata Unmarshall(JsonUnmarshallerContext context)
+        public DakCertificateMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DakCertificateMetadata unmarshalledObject = new DakCertificateMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceTypeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceTypeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FactorySupport", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.FactorySupport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FactorySupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxAllowedSignature", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAllowedSignature = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxAllowedSignature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
