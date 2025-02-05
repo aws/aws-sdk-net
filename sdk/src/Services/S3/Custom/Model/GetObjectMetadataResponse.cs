@@ -61,12 +61,6 @@ namespace Amazon.S3.Model
         private ChecksumType _checksumType;
 
         /// <summary>
-        /// Flag which returns true if the Expires property has been unmarshalled
-        /// from the raw value or set by user code.
-        /// </summary>
-        private bool isExpiresUnmarshalled;
-
-        /// <summary>
         /// The date and time at which the object is no longer cacheable.
         /// </summary>
         public string ExpiresString { get; set; }

@@ -63,31 +63,6 @@ namespace Amazon.Runtime.Internal.Util
             return $"{_checksumHeaderPrefix}{checksumAlgorithm.ToString().ToLower()}";
         }
 
-        /// <remarks> 
-        /// Note, this was called directly from service packages prior to compression support
-        /// being added shortly after 3.7.200. It's important to preserve the signature and functionality
-        /// until the next minor version for those older 3.7.* service packages.
-        /// </remarks>
-        /// <summary>
-        /// Attempts to select and then calculate the checksum for a request
-        /// </summary>
-        /// <param name="request">Request to calculate the checksum for</param>
-        /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
-        /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>, this flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
-        [Obsolete("This method is deprecated in favor of SetRequestChecksumV2")]
-        public static void SetRequestChecksum(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
-        {
-            // TODO: As mentioned in the remarks section, this method used to be called from the marshallers in older service packages.
-            // It's not used anymore from Core (which uses "SetRequestChecksumV2" instead), and should be removed in V4.
-            if (request.ChecksumData == null)
-            {
-                SetChecksumData(request, checksumAlgorithm, fallbackToMD5);
-                return;
-            }
-
-            SetRequestChecksumV2(request, clientConfig: null);
-        }
-
         /// <summary>
         /// Attempts to select and then calculate the checksum for a request.
         /// </summary>
@@ -320,40 +295,6 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="request">Request to calculate the checksum for</param>
         /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
         /// <param name="fallbackToMD5">This flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
-        [Obsolete("This overload is deprecated in favor of the options that accept whether the checksum is required for the given request")]
-        public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
-        {
-            // This overload will only be invoked from older service packages (i.e. not updated for the latest flexible checksums specification).
-            // We need to maintain the previous behavior (of only setting a checksum if provided) to account for edge cases in multipart uploads (S3 was
-            // the only service using the checksum trait in the initial revision of the specification).
-
-            // The specific scenario we're concerned about is:
-            // - Customer is using multiple SDK packages
-            // - Customer updates one of their dependencies (let's say SQS), which brings the latest version of Core as well
-            // - Previous version of S3 will still compile successfully since it specifies "AWSSDK.Core(>= 3.7.x && < 4.0.0)" as a dependency
-            // - Large object is uploaded using the TransferUtility, and setting the checksum automatically for the individual parts will
-            // cause the CompleteMPU call to fail (as our SDK will add the part checksums via CompleteMultipartUploadRequest.AddPartETags - which
-            // S3 does not support).
-
-            // TODO: Similar to "SetRequestChecksum", this method should be removed in V4.
-            if (!string.IsNullOrEmpty(checksumAlgorithm))
-            {
-                SetChecksumData(request, checksumAlgorithm, fallbackToMD5, isRequestChecksumRequired: true);
-            }
-            else
-            {
-                // Important: We can't set ChecksumData to null as previous versions of the S3 package assume it'll be present.
-                // The SkipChecksum flag is then used in the pipeline handler to determine whether the calculation should be performed.
-                request.ChecksumData = new ChecksumData { SkipChecksum = true };
-            }
-        }
-
-        /// <summary>
-        /// Set checksum data in marshaller after compressing request payload.
-        /// </summary>
-        /// <param name="request">Request to calculate the checksum for</param>
-        /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
-        /// <param name="fallbackToMD5">This flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
         /// <param name="isRequestChecksumRequired">This flag indicates whether an operation requires a checksum in its request</param>
         public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5, bool isRequestChecksumRequired)
         {
@@ -413,14 +354,6 @@ namespace Amazon.Runtime.Internal.Util
         /// Optional: Name of the header that indicates which algorithm was used to calculate the checksum.
         /// </summary>
         public string HeaderName { get; set; }
-
-        /// <summary>
-        /// TODO: This property is only used to handle the mismatch of older service packages and newer Core.
-        /// It should also be removed in V4 (same comment applies to the internal parameterless constructor) .
-        /// </summary>
-        internal bool SkipChecksum { get; set; }
-
-        internal ChecksumData() { }
 
         public ChecksumData(string selectedChecksum, bool MD5Checksum, bool? fallbackToMD5, bool isRequestChecksumRequired, string headerName)
         {

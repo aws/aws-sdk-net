@@ -73,46 +73,13 @@ namespace Amazon.Runtime.Internal
                 return;
             }
 
-            if (ShouldSkipChecksum(request, clientConfig))
+            // Do not attempt to set checksum when using SigV2 (only applicable to S3).
+            if (clientConfig.SignatureVersion == "2")
             {
                 return;
             }
 
             ChecksumUtils.SetRequestChecksumV2(request, clientConfig);
-        }
-
-        private bool ShouldSkipChecksum(IRequest request, IClientConfig clientConfig)
-        {
-            if (request.ChecksumData.SkipChecksum)
-            {
-                return true;
-            }
-
-            // Do not attempt to set checksum when using SigV2 (only applicable to S3).
-            if (clientConfig.SignatureVersion == "2")
-            {
-                return true;
-            }
-
-            // This is a workaround for mismatches between older S3 packages and newer Core (and more specifically for S3 Express and multi-part
-            // uploads). The service package would attempt to override the checksum for directory buckets, but the approach used would cause Core (which
-            // is following the flexible checksum specification) to calculate a checksum for the InitiateMPU / CreateMPU operations.
-            // TODO: This should be removed in V4 (the only component of this method that should remain is the signature version check)
-            if (clientConfig.ServiceId.Equals("S3", StringComparison.OrdinalIgnoreCase))
-            {
-                var isMPURequest =
-                    request.RequestName.Equals("InitiateMultipartUploadRequest", StringComparison.OrdinalIgnoreCase) ||
-                    request.RequestName.Equals("CompleteMultipartUploadRequest", StringComparison.OrdinalIgnoreCase);
-                var isS3ExpressRequest =
-                    request.EndpointAttributes["backend"] != null && (string)request.EndpointAttributes["backend"] == "S3Express";
-
-                if (isMPURequest && isS3ExpressRequest)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }
