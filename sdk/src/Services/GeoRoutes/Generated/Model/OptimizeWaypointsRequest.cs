@@ -31,13 +31,14 @@ namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
     /// Container for the parameters to the OptimizeWaypoints operation.
-    /// Calculates the optimal order to travel between a set of waypoints to minimize either
-    /// the travel time or the distance travelled during the journey, based on road network
-    /// restrictions and the traffic pattern data.
+    /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
+    /// waypoints to minimize either the travel time or the distance travelled during the
+    /// journey, based on road network restrictions and the traffic pattern data.
     /// </summary>
     public partial class OptimizeWaypointsRequest : AmazonGeoRoutesRequest
     {
         private WaypointOptimizationAvoidanceOptions _avoid;
+        private WaypointOptimizationClusteringOptions _clustering;
         private string _departureTime;
         private List<double> _destination = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private WaypointOptimizationDestinationOptions _destinationOptions;
@@ -55,8 +56,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Avoid. 
         /// <para>
-        /// Features that are avoided while calculating a route. Avoidance is on a best-case basis.
-        /// If an avoidance can't be satisfied for a particular case, this setting is ignored.
+        /// Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't
+        /// be satisfied for a particular case, this setting is ignored.
         /// </para>
         /// </summary>
         public WaypointOptimizationAvoidanceOptions Avoid
@@ -69,6 +70,25 @@ namespace Amazon.GeoRoutes.Model
         internal bool IsSetAvoid()
         {
             return this._avoid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Clustering. 
+        /// <para>
+        /// Clustering allows you to specify how nearby waypoints can be clustered to improve
+        /// the optimized sequence.
+        /// </para>
+        /// </summary>
+        public WaypointOptimizationClusteringOptions Clustering
+        {
+            get { return this._clustering; }
+            set { this._clustering = value; }
+        }
+
+        // Check to see if Clustering property is set
+        internal bool IsSetClustering()
+        {
+            return this._clustering != null;
         }
 
         /// <summary>

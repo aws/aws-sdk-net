@@ -112,8 +112,31 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                         var marshaller = DeliveryStreamEncryptionConfigurationInputMarshaller.Instance;
                         marshaller.Marshall(publicRequest.DeliveryStreamEncryptionConfigurationInput, context);
 
+<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetElasticsearchDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetDirectPutSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DirectPutSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DirectPutSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DirectPutSourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetElasticsearchDestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("ElasticsearchDestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     if(publicRequest.IsSetDeliveryStreamName())
                     {

@@ -79,8 +79,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IdcApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created
-        /// for this data accessor.
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center application created for
+        /// this data accessor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

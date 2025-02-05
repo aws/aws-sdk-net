@@ -162,6 +162,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.StopReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetDataSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TargetDataSetting, TargetDataSettingUnmarshaller>(TargetDataSettingUnmarshaller.Instance);
+                    unmarshalledObject.TargetDataSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

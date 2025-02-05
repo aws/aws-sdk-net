@@ -32,6 +32,15 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchCreateWorkloadEstimateUsage operation.
     /// Create Amazon Web Services service usage that you want to model in a Workload Estimate.
+    /// 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchCreateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+    /// To authorize this operation for Amazon Web Services principals, include the permission
+    /// <c>bcm-pricing-calculator:CreateWorkloadEstimateUsage</c> in your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchCreateWorkloadEstimateUsageRequest : AmazonBCMPricingCalculatorRequest
     {

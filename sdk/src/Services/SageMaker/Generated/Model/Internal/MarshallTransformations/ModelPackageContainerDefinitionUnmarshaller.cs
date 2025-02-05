@@ -108,6 +108,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelDataETag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelDataETag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelDataSource", targetDepth))
                 {
                     var unmarshaller = ModelDataSourceUnmarshaller.Instance;

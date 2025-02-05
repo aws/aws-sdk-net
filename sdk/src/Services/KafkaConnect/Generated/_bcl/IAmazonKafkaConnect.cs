@@ -627,6 +627,86 @@ namespace Amazon.KafkaConnect
 
         #endregion
         
+        #region  DescribeConnectorOperation
+
+
+        /// <summary>
+        /// Returns information about the specified connector's operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectorOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectorOperation service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
+        DescribeConnectorOperationResponse DescribeConnectorOperation(DescribeConnectorOperationRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the specified connector's operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectorOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectorOperation service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
+        Task<DescribeConnectorOperationResponse> DescribeConnectorOperationAsync(DescribeConnectorOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeCustomPlugin
 
 
@@ -784,6 +864,86 @@ namespace Amazon.KafkaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration">REST API Reference for DescribeWorkerConfiguration Operation</seealso>
         Task<DescribeWorkerConfigurationResponse> DescribeWorkerConfigurationAsync(DescribeWorkerConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConnectorOperations
+
+
+        /// <summary>
+        /// Lists information about a connector's operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorOperations service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
+        ListConnectorOperationsResponse ListConnectorOperations(ListConnectorOperationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists information about a connector's operation(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectorOperations service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
+        Task<ListConnectorOperationsResponse> ListConnectorOperationsAsync(ListConnectorOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

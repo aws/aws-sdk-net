@@ -30,19 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the configuration of an Auto Scaling group.
+    /// Describes the configuration of an EC2 Auto Scaling group.
     /// </summary>
     public partial class AutoScalingGroupConfiguration
     {
+        private AllocationStrategy _allocationStrategy;
         private int? _desiredCapacity;
+        private double? _estimatedInstanceHourReductionPercentage;
         private string _instanceType;
         private int? _maxSize;
         private int? _minSize;
+        private List<string> _mixedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AsgType _type;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        ///  Describes the allocation strategy that the EC2 Auto Scaling group uses. This field
+        /// is only available for EC2 Auto Scaling groups with mixed instance types. 
+        /// </para>
+        /// </summary>
+        public AllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The desired capacity, or number of instances, for the Auto Scaling group.
+        /// The desired capacity, or number of instances, for the EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public int? DesiredCapacity
@@ -58,9 +81,29 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EstimatedInstanceHourReductionPercentage. 
+        /// <para>
+        ///  Describes the projected percentage reduction in instance hours after adopting the
+        /// recommended configuration. This field is only available for EC2 Auto Scaling groups
+        /// with scaling policies. 
+        /// </para>
+        /// </summary>
+        public double EstimatedInstanceHourReductionPercentage
+        {
+            get { return this._estimatedInstanceHourReductionPercentage.GetValueOrDefault(); }
+            set { this._estimatedInstanceHourReductionPercentage = value; }
+        }
+
+        // Check to see if EstimatedInstanceHourReductionPercentage property is set
+        internal bool IsSetEstimatedInstanceHourReductionPercentage()
+        {
+            return this._estimatedInstanceHourReductionPercentage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for the Auto Scaling group.
+        /// The instance type for the EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -78,7 +121,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size, or maximum number of instances, for the Auto Scaling group.
+        /// The maximum size, or maximum number of instances, for the EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public int? MaxSize
@@ -96,7 +139,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size, or minimum number of instances, for the Auto Scaling group.
+        /// The minimum size, or minimum number of instances, for the EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public int? MinSize
@@ -109,6 +152,44 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetMinSize()
         {
             return this._minSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MixedInstanceTypes. 
+        /// <para>
+        ///  List the instance types within an EC2 Auto Scaling group that has mixed instance
+        /// types. 
+        /// </para>
+        /// </summary>
+        public List<string> MixedInstanceTypes
+        {
+            get { return this._mixedInstanceTypes; }
+            set { this._mixedInstanceTypes = value; }
+        }
+
+        // Check to see if MixedInstanceTypes property is set
+        internal bool IsSetMixedInstanceTypes()
+        {
+            return this._mixedInstanceTypes != null && (this._mixedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  Describes whether the EC2 Auto Scaling group has a single instance type or a mixed
+        /// instance type configuration. 
+        /// </para>
+        /// </summary>
+        public AsgType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

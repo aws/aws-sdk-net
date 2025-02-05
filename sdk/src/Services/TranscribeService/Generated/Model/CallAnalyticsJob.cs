@@ -67,6 +67,7 @@ namespace Amazon.TranscribeService.Model
         private int? _mediaSampleRateHertz;
         private CallAnalyticsJobSettings _settings;
         private DateTime? _startTime;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private Transcript _transcript;
 
         /// <summary>
@@ -447,6 +448,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags, each in the form of a key:value pair, assigned to the specified call analytics
+        /// job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

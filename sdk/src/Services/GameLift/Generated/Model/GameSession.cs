@@ -373,7 +373,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionCreationPolicy. 
         /// <para>
-        /// Indicates whether or not the game session is accepting new players.
+        /// Indicates whether the game session is accepting new players.
         /// </para>
         /// </summary>
         public PlayerSessionCreationPolicy PlayerSessionCreationPolicy
@@ -430,10 +430,24 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// Provides additional information about game session status. <c>INTERRUPTED</c> indicates
-        /// that the game session was hosted on a spot instance that was reclaimed, causing the
-        /// active game session to be terminated.
+        /// Provides additional information about game session status. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INTERRUPTED</c> -- The game session was hosted on an EC2 Spot instance that was
+        /// reclaimed, causing the active game session to be stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRIGGERED_ON_PROCESS_TERMINATE</c> – The game session was stopped by calling <c>TerminateGameSession</c>
+        /// with the termination mode <c>TRIGGER_ON_PROCESS_TERMINATE</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FORCE_TERMINATED</c> – The game session was stopped by calling <c>TerminateGameSession</c>
+        /// with the termination mode <c>FORCE_TERMINATE</c>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public GameSessionStatusReason StatusReason
         {

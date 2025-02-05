@@ -67,6 +67,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -76,6 +77,50 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("AccessRole");
                         context.Writer.Write(publicRequest.AccessRole);
                     }
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("AccessRole");
+                    context.Writer.Write(publicRequest.AccessRole);
+                }
+
+                if(publicRequest.IsSetBaseDirectory())
+                {
+                    context.Writer.WritePropertyName("BaseDirectory");
+                    context.Writer.Write(publicRequest.BaseDirectory);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                    context.Writer.WritePropertyName("AccessRole");
+                    context.Writer.Write(publicRequest.AccessRole);
+                }
+
+                if(publicRequest.IsSetBaseDirectory())
+                {
+                    context.Writer.WritePropertyName("BaseDirectory");
+                    context.Writer.Write(publicRequest.BaseDirectory);
+                }
+
+                if(publicRequest.IsSetCustomDirectories())
+                {
+                    context.Writer.WritePropertyName("CustomDirectories");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDirectoriesTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDirectories, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     if(publicRequest.IsSetBaseDirectory())
                     {

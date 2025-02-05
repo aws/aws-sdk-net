@@ -34,10 +34,16 @@ namespace Amazon.Billing
     public partial class AmazonBillingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Billing", "4.0.0.0");
 
         private static readonly AmazonBillingEndpointResolver EndpointResolver =
             new AmazonBillingEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Billing", "3.7.401.2");
+=======
+            InternalSDKUtils.BuildUserAgentString("Billing", "3.7.401.20");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

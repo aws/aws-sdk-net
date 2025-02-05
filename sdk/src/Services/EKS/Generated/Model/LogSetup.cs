@@ -42,7 +42,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// If a log type is enabled, that log type exports its control plane logs to CloudWatch
-        /// Logs. If a log type isn't enabled, that log type doesn't export its control plane
+        /// Logs . If a log type isn't enabled, that log type doesn't export its control plane
         /// logs. Each individual log type can be enabled or disabled independently.
         /// </para>
         /// </summary>

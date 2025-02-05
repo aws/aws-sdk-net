@@ -79,6 +79,24 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if the given node has "eventstream": true which can be applied to a shape
+        /// or a member.
+        /// </summary>
+        public bool IsEventStream
+        {
+            get
+            {
+                var isEventStream = data[Shape.EventStreamKey];
+                if (isEventStream != null && isEventStream.IsBoolean)
+                {
+                    return (bool)isEventStream;
+                }
+
+                return false;
+            }
+        }
+
+        /// <summary>
         /// If defined, specifies the namespace prefix the xml constructed
         /// </summary>
         public string XmlNamespacePrefix

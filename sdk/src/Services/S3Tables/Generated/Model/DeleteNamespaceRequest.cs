@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNamespace operation.
-    /// Deletes a namespace.
+    /// Deletes a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html">Delete
+    /// a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:DeleteNamespace</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class DeleteNamespaceRequest : AmazonS3TablesRequest
     {

@@ -31,15 +31,16 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetQueueUrl operation.
-    /// Returns the URL of an existing Amazon SQS queue.
+    /// The <c>GetQueueUrl</c> API returns the URL of an existing Amazon SQS queue. This is
+    /// useful when you know the queue's name but need to retrieve its URL for further operations.
     /// 
     ///  
     /// <para>
-    /// To access a queue that belongs to another AWS account, use the <c>QueueOwnerAWSAccountId</c>
-    /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
-    /// you permission to access the queue. For more information about shared queue access,
-    /// see <c> <a>AddPermission</a> </c> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-    /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer
+    /// To access a queue owned by another Amazon Web Services account, use the <c>QueueOwnerAWSAccountId</c>
+    /// parameter to specify the account ID of the queue's owner. Note that the queue owner
+    /// must grant you the necessary permissions to access the queue. For more information
+    /// about accessing shared queues, see the <c> <a>AddPermission</a> </c> API or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+    /// developers to write messages to a shared queue</a> in the <i>Amazon SQS Developer
     /// Guide</i>. 
     /// </para>
     /// </summary>
@@ -56,7 +57,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates GetQueueUrlRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<c>-</c>), and underscores (<c>_</c>). Queue URLs and names are case-sensitive.</param>
+        /// <param name="queueName">(Required) The name of the queue for which you want to fetch the URL. The name can be up to 80 characters long and can include alphanumeric characters, hyphens (-), and underscores (_). Queue URLs and names are case-sensitive.</param>
         public GetQueueUrlRequest(string queueName)
         {
             _queueName = queueName;
@@ -65,12 +66,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueName. 
         /// <para>
-        /// The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values:
-        /// alphanumeric characters, hyphens (<c>-</c>), and underscores (<c>_</c>).
-        /// </para>
-        ///  
-        /// <para>
-        /// Queue URLs and names are case-sensitive.
+        /// (Required) The name of the queue for which you want to fetch the URL. The name can
+        /// be up to 80 characters long and can include alphanumeric characters, hyphens (-),
+        /// and underscores (_). Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +87,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueOwnerAWSAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the account that created the queue.
+        /// (Optional) The Amazon Web Services account ID of the account that created the queue.
+        /// This is only required when you are attempting to access a queue owned by another Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         public string QueueOwnerAWSAccountId

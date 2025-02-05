@@ -15,11 +15,12 @@
 
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
+using AWSSDK.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
-using ThirdParty.MD5;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -28,6 +29,30 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public static class ChecksumUtils
     {
+        private const string _checksumHeaderPrefix = "x-amz-checksum-";
+
+        // TODO: Once CRC64 is available in the CRT, update the supported algorithms list.
+        private static CoreChecksumAlgorithm _defaultAlgorithm = CoreChecksumAlgorithm.CRC32;
+        private readonly static List<CoreChecksumAlgorithm> _responseChecksumsInPriorityOrder = ChecksumCRTWrapper.IsCrtAvailable() ?
+            new List<CoreChecksumAlgorithm>
+            {
+                CoreChecksumAlgorithm.CRC32C,
+                CoreChecksumAlgorithm.CRC32,
+                CoreChecksumAlgorithm.SHA1,
+                CoreChecksumAlgorithm.SHA256
+            } :
+            new List<CoreChecksumAlgorithm>
+            {
+                CoreChecksumAlgorithm.CRC32,
+                CoreChecksumAlgorithm.SHA1,
+                CoreChecksumAlgorithm.SHA256
+            };
+
+        /// <summary>
+        /// Returns the current default checksum algorithm used by the SDK.
+        /// </summary>
+        public static CoreChecksumAlgorithm DefaultAlgorithm => _defaultAlgorithm;
+
         /// <summary>
         /// Generates the name of the header key to use for a given checksum algorithm
         /// </summary>
@@ -35,7 +60,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>Name of the HTTP header key for the given algorithm</returns>
         internal static string GetChecksumHeaderKey(CoreChecksumAlgorithm checksumAlgorithm)
         {
-            return $"x-amz-checksum-{checksumAlgorithm.ToString().ToLower()}";
+            return $"{_checksumHeaderPrefix}{checksumAlgorithm.ToString().ToLower()}";
         }
 
         /// <remarks> 
@@ -48,28 +73,72 @@ namespace Amazon.Runtime.Internal.Util
         /// </summary>
         /// <param name="request">Request to calculate the checksum for</param>
         /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
-        /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>,
-        /// this flag controls whether or not to fallback to using a MD5 to generate a checksum. </param>
+        /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>, this flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
+        [Obsolete("This method is deprecated in favor of SetRequestChecksumV2")]
         public static void SetRequestChecksum(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
         {
-            var coreChecksumAlgoritm = ChecksumUtils.ConvertToCoreChecksumAlgorithm(checksumAlgorithm);
+            // TODO: As mentioned in the remarks section, this method used to be called from the marshallers in older service packages.
+            // It's not used anymore from Core (which uses "SetRequestChecksumV2" instead), and should be removed in V4.
+            if (request.ChecksumData == null)
+            {
+                SetChecksumData(request, checksumAlgorithm, fallbackToMD5);
+                return;
+            }
+
+            SetRequestChecksumV2(request, clientConfig: null);
+        }
+
+        /// <summary>
+        /// Attempts to select and then calculate the checksum for a request.
+        /// </summary>
+        /// <param name="request">Request to calculate the checksum for</param>
+        /// <param name="clientConfig">Client configuration data encompassing the service call</param>
+        public static void SetRequestChecksumV2(IRequest request, IClientConfig clientConfig)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException("request");
+            }
+
+            if (request.ChecksumData == null)
+            {
+                throw new ArgumentException("Request checksum data cannot be null", "request");
+            }
+
+            // If a pre-calculated value was specified, we won't attempt to calculate it again.
+            if (request.Headers.Any(h => h.Key.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase)))
+            {
+                return;
+            }
+
+            var coreChecksumAlgoritm = ConvertToCoreChecksumAlgorithm(request.ChecksumData.SelectedChecksum);
             if (coreChecksumAlgoritm == CoreChecksumAlgorithm.NONE)
             {
+                var fallbackToMD5 = request.ChecksumData.FallbackToMD5 ?? false;
                 if (fallbackToMD5)
+                {
                     SetRequestChecksumMD5(request);
+                    return;
+                }
+
+                // If no algorithm was specified for the request, use the best available option.
+                coreChecksumAlgoritm = DefaultAlgorithm;
+            }
+
+            // If client config is null, this method was called from older service packages.
+            if (clientConfig == null)
+            {
+                return;
+            }
+
+            // Check the value of the "RequestChecksumCalculation" property to determine whether the checksum should be calculated.
+            if (clientConfig.RequestChecksumCalculation == RequestChecksumCalculation.WHEN_REQUIRED && !request.ChecksumData.IsRequestChecksumRequired)
+            {
                 return;
             }
 
             var checksumHeaderKey = GetChecksumHeaderKey(coreChecksumAlgoritm);
-
-            // If the user provided a precalculated header for this checksum, don't recalculate it
-            if (request.Headers.TryGetValue(checksumHeaderKey, out var checksumHeaderValue))
-            {
-                if (!string.IsNullOrEmpty(checksumHeaderValue))
-                {
-                    return;
-                }
-            }
+            request.SelectedChecksum = coreChecksumAlgoritm;
 
             if (request.UseChunkEncoding || (request.DisablePayloadSigning ?? false))
             {
@@ -81,12 +150,22 @@ namespace Amazon.Runtime.Internal.Util
                 // the wrapper stream, which we need to send as the Content-Length header
                 // before the wrapper stream is transmitted.
                 request.TrailingHeaders[checksumHeaderKey] = string.Empty;
-                request.SelectedChecksum = coreChecksumAlgoritm;
             }
             else // calculate and set the checksum in the request headers
             {
                 request.Headers[checksumHeaderKey] = CalculateChecksumForRequest(CryptoUtilFactory.GetChecksumInstance(coreChecksumAlgoritm), request);
             }
+
+            // If the service model specifies a header with the algorithm used to calculate the checksum should be included, we'll add it here.
+            // We also only add it if the header is not populated already (which will be the case when customers set a checksum explicitly;
+            // in that case, the header will be set during by the marshaller that runs prior to this step).
+            var headerName = request.ChecksumData.HeaderName;
+            if (string.IsNullOrEmpty(headerName) || request.Headers.TryGetValue(headerName, out var _))
+            {
+                return;
+            }
+
+            request.Headers[headerName] = coreChecksumAlgoritm.ToString();
         }
 
         /// <remarks> 
@@ -161,16 +240,7 @@ namespace Amazon.Runtime.Internal.Util
                 return CoreChecksumAlgorithm.NONE;
             }
 
-            // Checksums to use for validation in order of speed (via CRT profiling)
-            CoreChecksumAlgorithm[] checksumsInPriorityOrder =
-            {
-                CoreChecksumAlgorithm.CRC32C,
-                CoreChecksumAlgorithm.CRC32,
-                CoreChecksumAlgorithm.SHA1,
-                CoreChecksumAlgorithm.SHA256
-            };
-
-            foreach (var algorithm in checksumsInPriorityOrder)
+            foreach (var algorithm in _responseChecksumsInPriorityOrder)
             {
                 if (operationSupportedChecksums.Contains(algorithm))
                 {
@@ -245,16 +315,62 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Set checksum data in marshaller in order to call method <see cref="SetRequestChecksum"/> 
-        /// after compressing request payload in <see cref="CompressionHandler"/> class
+        /// Set checksum data in marshaller after compressing request payload.
         /// </summary>
-        /// <param name="request">Request to calculate the checksum for </param>
+        /// <param name="request">Request to calculate the checksum for</param>
         /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
-        /// <param name="fallbackToMD5">If checksumAlgorithm is <see cref="CoreChecksumAlgorithm.NONE"/>,
-        /// this flag controls whether or not to fallback to using a MD5 to generate a checksum. </param>
+        /// <param name="fallbackToMD5">This flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
+        [Obsolete("This overload is deprecated in favor of the options that accept whether the checksum is required for the given request")]
         public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5 = true)
         {
-            request.ChecksumData = new ChecksumData(checksumAlgorithm, false, fallbackToMD5);
+            // This overload will only be invoked from older service packages (i.e. not updated for the latest flexible checksums specification).
+            // We need to maintain the previous behavior (of only setting a checksum if provided) to account for edge cases in multipart uploads (S3 was
+            // the only service using the checksum trait in the initial revision of the specification).
+
+            // The specific scenario we're concerned about is:
+            // - Customer is using multiple SDK packages
+            // - Customer updates one of their dependencies (let's say SQS), which brings the latest version of Core as well
+            // - Previous version of S3 will still compile successfully since it specifies "AWSSDK.Core(>= 3.7.x && < 4.0.0)" as a dependency
+            // - Large object is uploaded using the TransferUtility, and setting the checksum automatically for the individual parts will
+            // cause the CompleteMPU call to fail (as our SDK will add the part checksums via CompleteMultipartUploadRequest.AddPartETags - which
+            // S3 does not support).
+
+            // TODO: Similar to "SetRequestChecksum", this method should be removed in V4.
+            if (!string.IsNullOrEmpty(checksumAlgorithm))
+            {
+                SetChecksumData(request, checksumAlgorithm, fallbackToMD5, isRequestChecksumRequired: true);
+            }
+            else
+            {
+                // Important: We can't set ChecksumData to null as previous versions of the S3 package assume it'll be present.
+                // The SkipChecksum flag is then used in the pipeline handler to determine whether the calculation should be performed.
+                request.ChecksumData = new ChecksumData { SkipChecksum = true };
+            }
+        }
+
+        /// <summary>
+        /// Set checksum data in marshaller after compressing request payload.
+        /// </summary>
+        /// <param name="request">Request to calculate the checksum for</param>
+        /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
+        /// <param name="fallbackToMD5">This flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
+        /// <param name="isRequestChecksumRequired">This flag indicates whether an operation requires a checksum in its request</param>
+        public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5, bool isRequestChecksumRequired)
+        {
+            SetChecksumData(request, checksumAlgorithm, fallbackToMD5, isRequestChecksumRequired, headerName: null);
+        }
+
+        /// <summary>
+        /// Set checksum data in marshaller after compressing request payload.
+        /// </summary>
+        /// <param name="request">Request to calculate the checksum for</param>
+        /// <param name="checksumAlgorithm">Checksum algorithm to use, specified on the request using a service-specific enum</param>
+        /// <param name="fallbackToMD5">This flag controls whether or not to fallback to using a MD5 to generate a checksum</param>
+        /// <param name="isRequestChecksumRequired">This flag indicates whether an operation requires a checksum in its request</param>
+        /// <param name="headerName">Name of the header that indicates which algorithm was used to calculate the checksum</param>
+        public static void SetChecksumData(IRequest request, string checksumAlgorithm, bool fallbackToMD5, bool isRequestChecksumRequired, string headerName)
+        {
+            request.ChecksumData = new ChecksumData(checksumAlgorithm, MD5Checksum: false, fallbackToMD5, isRequestChecksumRequired, headerName);
         }
 
         /// <summary>
@@ -264,7 +380,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="request">Request to calculate the checksum for</param>
         public static void SetChecksumData(IRequest request)
         {
-            request.ChecksumData = new ChecksumData(null, true, null);
+            request.ChecksumData = new ChecksumData(null, MD5Checksum: true, fallbackToMD5: null, isRequestChecksumRequired: true, headerName: null);
         }
     }
 
@@ -277,21 +393,42 @@ namespace Amazon.Runtime.Internal.Util
         /// Checksum algorithm to use, specified on the request using a service-specific enum
         /// </summary>
         public string SelectedChecksum { get; set; }
+
         /// <summary>
         /// Flag to check if we want to call method <see cref="ChecksumUtils.SetRequestChecksumMD5"/>
         /// </summary>
         public bool IsMD5Checksum { get; set; }
-        /// <summary>
-        /// This flag controls whether or not to fallback to using a MD5 to generate a checksum if
-        /// <see cref="SelectedChecksum"/> is not set to NONE
-        /// </summary>
-        public bool? FallbackToMD5 { get; set;  }
 
-        public ChecksumData(string selectedChecksum, bool MD5Checksum, bool? fallbackToMD5)
+        /// <summary>
+        /// This flag controls whether or not to fallback to using a MD5 to generate a checksum
+        /// </summary>
+        public bool? FallbackToMD5 { get; set; }
+
+        /// <summary>
+        /// Indicates whether the operation requires a request checksum to be included
+        /// </summary>
+        public bool IsRequestChecksumRequired { get; set; }
+
+        /// <summary>
+        /// Optional: Name of the header that indicates which algorithm was used to calculate the checksum.
+        /// </summary>
+        public string HeaderName { get; set; }
+
+        /// <summary>
+        /// TODO: This property is only used to handle the mismatch of older service packages and newer Core.
+        /// It should also be removed in V4 (same comment applies to the internal parameterless constructor) .
+        /// </summary>
+        internal bool SkipChecksum { get; set; }
+
+        internal ChecksumData() { }
+
+        public ChecksumData(string selectedChecksum, bool MD5Checksum, bool? fallbackToMD5, bool isRequestChecksumRequired, string headerName)
         {
             this.SelectedChecksum = selectedChecksum;
             this.IsMD5Checksum = MD5Checksum;
             this.FallbackToMD5 = fallbackToMD5;
+            this.IsRequestChecksumRequired = isRequestChecksumRequired;
+            this.HeaderName = headerName;
         }
     }
 }

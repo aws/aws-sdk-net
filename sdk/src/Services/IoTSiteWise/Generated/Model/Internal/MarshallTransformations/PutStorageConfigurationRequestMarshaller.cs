@@ -63,7 +63,27 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.ResourcePath = "/configuration/account/storage";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDisassociatedDataStorage())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDisallowIngestNullNaN())
+                {
+                    context.Writer.WritePropertyName("disallowIngestNullNaN");
+                    context.Writer.Write(publicRequest.DisallowIngestNullNaN);
+                }
+
+                if(publicRequest.IsSetDisassociatedDataStorage())
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

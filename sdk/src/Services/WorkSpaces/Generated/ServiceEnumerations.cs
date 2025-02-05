@@ -965,6 +965,14 @@ namespace Amazon.WorkSpaces
     {
 
         /// <summary>
+        /// Constant GENERALPURPOSE_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GENERALPURPOSE_4XLARGE = new Compute("GENERALPURPOSE_4XLARGE");
+        /// <summary>
+        /// Constant GENERALPURPOSE_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GENERALPURPOSE_8XLARGE = new Compute("GENERALPURPOSE_8XLARGE");
+        /// <summary>
         /// Constant GRAPHICS for Compute
         /// </summary>
         public static readonly Compute GRAPHICS = new Compute("GRAPHICS");

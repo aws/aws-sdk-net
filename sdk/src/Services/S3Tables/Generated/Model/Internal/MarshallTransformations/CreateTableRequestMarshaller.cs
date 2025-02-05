@@ -81,6 +81,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Format);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
@@ -88,6 +89,28 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+=======
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TableMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Metadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
                 }
 
                 request.Content = memoryStream.ToArray();

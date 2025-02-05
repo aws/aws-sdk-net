@@ -35,12 +35,33 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// </summary>
     public partial class UpdateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
     {
+        private int? _allocatedStorage;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
+        private DbStorageType _dbStorageType;
         private DeploymentType _deploymentType;
         private string _identifier;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private int? _port;
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage to allocate for your DB storage type (in gibibytes).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=16384)]
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DbInstanceType. 
@@ -79,6 +100,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetDbParameterGroupIdentifier()
         {
             return this._dbParameterGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbStorageType. 
+        /// <para>
+        /// The Timestream for InfluxDB DB storage type that InfluxDB stores data on.
+        /// </para>
+        /// </summary>
+        public DbStorageType DbStorageType
+        {
+            get { return this._dbStorageType; }
+            set { this._dbStorageType = value; }
+        }
+
+        // Check to see if DbStorageType property is set
+        internal bool IsSetDbStorageType()
+        {
+            return this._dbStorageType != null;
         }
 
         /// <summary>

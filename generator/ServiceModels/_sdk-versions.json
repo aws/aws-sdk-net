@@ -1075,22 +1075,6 @@
             },
             "InPreview"               : false
         },
-        "IoT1ClickDevicesService"         : {
-            "Version" : "4.0.0.0",
-            "AssemblyVersionOverride" : "4.0",
-            "Dependencies"            : {
-                "Core" : "4.0.0.0"
-            },
-            "InPreview"               : false
-        },
-        "IoT1ClickProjects"               : {
-            "Version" : "4.0.0.0",
-            "AssemblyVersionOverride" : "4.0",
-            "Dependencies"            : {
-                "Core" : "4.0.0.0"
-            },
-            "InPreview"               : false
-        },
         "PI"                              : {
             "Version" : "4.0.0.0",
             "AssemblyVersionOverride" : "4.0",

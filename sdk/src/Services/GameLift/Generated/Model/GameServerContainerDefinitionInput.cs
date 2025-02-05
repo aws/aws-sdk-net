@@ -33,13 +33,14 @@ namespace Amazon.GameLift.Model
     /// Describes the configuration for a container that runs your game server executable.
     /// This definition includes container configuration, resources, and start instructions.
     /// Use this data type when creating or updating a game server container group definition.
-    /// For properties of a deployed container, see <a>GameServerContainerDefinition</a>.
+    /// For properties of a deployed container, see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>.
     /// A game server container is automatically considered essential; if an essential container
     /// fails, the entire container group restarts.
     /// 
     ///  
     /// <para>
-    ///  <b>Use with: </b> <a>CreateContainerGroupDefinition</a>, <a>UpdateContainerGroupDefinition</a>
+    ///  <b>Use with: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
     /// 
     /// </para>
     /// </summary>

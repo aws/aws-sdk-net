@@ -59,6 +59,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNodeInputName())
+            {
+                context.Writer.WritePropertyName("nodeInputName");
+                context.Writer.Write(requestObject.NodeInputName);
+            }
+
             if(requestObject.IsSetNodeName())
             {
                 context.Writer.WritePropertyName("nodeName");

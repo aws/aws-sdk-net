@@ -198,6 +198,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.UnknownConnectionTargetInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unknownNodeInput", targetDepth))
+                {
+                    var unmarshaller = UnknownNodeInputFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.UnknownNodeInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("unknownNodeOutput", targetDepth))
+                {
+                    var unmarshaller = UnknownNodeOutputFlowValidationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.UnknownNodeOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("unreachableNode", targetDepth))
                 {
                     var unmarshaller = UnreachableNodeFlowValidationDetailsUnmarshaller.Instance;

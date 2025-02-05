@@ -80,8 +80,33 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                         var marshaller = WaypointOptimizationAvoidanceOptionsMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Avoid, context);
 
+<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDepartureTime())
+                {
+                    context.Writer.WritePropertyName("DepartureTime");
+                    context.Writer.Write(publicRequest.DepartureTime);
+                }
+=======
+                if(publicRequest.IsSetClustering())
+                {
+                    context.Writer.WritePropertyName("Clustering");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WaypointOptimizationClusteringOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Clustering, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDepartureTime())
+                {
+                    context.Writer.WritePropertyName("DepartureTime");
+                    context.Writer.Write(publicRequest.DepartureTime);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     if(publicRequest.IsSetDepartureTime())
                     {

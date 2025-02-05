@@ -31,7 +31,7 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEngagements operation.
-    /// This action allows users to retrieve a list of engagement records from Partner Central.
+    /// This action allows users to retrieve a list of Engagement records from Partner Central.
     /// This action can be used to manage and track various engagements across different stages
     /// of the partner selling process.
     /// </summary>
@@ -88,7 +88,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementIdentifier. 
         /// <para>
-        ///  An array of strings representing engagement identifiers to retrieve. 
+        /// An array of strings representing engagement identifiers to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -107,7 +107,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ExcludeCreatedBy. 
         /// <para>
-        ///  An array of strings representing AWS Account IDs. Use this to exclude engagements
+        /// An array of strings representing AWS Account IDs. Use this to exclude engagements
         /// created by specific users. 
         /// </para>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results to return in a single call. 
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -146,8 +146,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token for the next set of results. This value is returned from a previous call.
-        /// 
+        /// The token for the next set of results. This value is returned from a previous call.
         /// </para>
         /// </summary>
         public string NextToken

@@ -39,7 +39,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN used to update the NotificationConfiguration.
+        /// The ARN used to update the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

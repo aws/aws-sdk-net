@@ -2383,6 +2383,12 @@
         "ClusterNodeDetails$PrivatePrimaryIp": "<p>The private primary IP address of the SageMaker HyperPod cluster node.</p>"
       }
     },
+    "ClusterPrivatePrimaryIpv6": {
+      "base": null,
+      "refs": {
+        "ClusterNodeDetails$PrivatePrimaryIpv6": "<p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>"
+      }
+    },
     "ClusterSchedulerConfigArn": {
       "base": null,
       "refs": {
@@ -2829,7 +2835,7 @@
         "DeployedImage$SpecifiedImage": "<p>The image path you specified when you created the model.</p>",
         "DeployedImage$ResolvedImage": "<p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>",
         "InferenceComponentContainerSpecification$Image": "<p>The Amazon Elastic Container Registry (Amazon ECR) path where the Docker image for the model is stored.</p>",
-        "ModelPackageContainerDefinition$Image": "<p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>",
+        "ModelPackageContainerDefinition$Image": "<p>The Amazon Elastic Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>",
         "TrainingSpecification$TrainingImage": "<p>The Amazon ECR registry path of the Docker image that contains the training algorithm.</p>"
       }
     },
@@ -7925,7 +7931,7 @@
         "CreateImageVersionResponse$ImageVersionArn": "<p>The ARN of the image version.</p>",
         "DescribeImageVersionResponse$ImageVersionArn": "<p>The ARN of the version.</p>",
         "ImageVersion$ImageVersionArn": "<p>The ARN of the version.</p>",
-        "ResourceSpec$SageMakerImageVersionArn": "<p>The ARN of the image version created on the instance.</p>",
+        "ResourceSpec$SageMakerImageVersionArn": "<p>The ARN of the image version created on the instance. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>",
         "UpdateImageVersionResponse$ImageVersionArn": "<p>The ARN of the image version.</p>"
       }
     },
@@ -14202,7 +14208,7 @@
       }
     },
     "ResourceSpec": {
-      "base": "<p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>",
+      "base": "<p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p> <note> <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p> </note>",
       "refs": {
         "AppDetails$ResourceSpec": null,
         "CodeEditorAppSettings$DefaultResourceSpec": null,
@@ -14412,7 +14418,7 @@
     "S3DataType": {
       "base": null,
       "refs": {
-        "S3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>",
+        "S3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>",
         "TransformS3DataSource$S3DataType": "<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform. </p> <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code> </p> <p>The following value is not compatible: <code>AugmentedManifestFile</code> </p>"
       }
     },
@@ -15500,6 +15506,7 @@
     "String": {
       "base": null,
       "refs": {
+        "AdditionalS3DataSource$ETag": "<p>The ETag associated with S3 URI.</p>",
         "AlgorithmStatusItem$FailureReason": "<p>if the overall status is <code>Failed</code>, the reason for the failure.</p>",
         "BatchDeleteClusterNodesError$Message": "<p>A message describing the error encountered when deleting a node.</p>",
         "BatchDescribeModelPackageError$ErrorCode": "<p/>",
@@ -15554,6 +15561,7 @@
         "ModelPackage$SamplePayloadUrl": "<p>The Amazon Simple Storage Service path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>",
         "ModelPackageContainerDefinition$Framework": "<p>The machine learning framework of the model package container image.</p>",
         "ModelPackageContainerDefinition$NearestModelName": "<p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference Recommender model that matches your model. You can find a list of benchmarked models by calling <code>ListModelMetadata</code>.</p>",
+        "ModelPackageContainerDefinition$ModelDataETag": "<p>The ETag associated with Model Data URL.</p>",
         "ModelPackageStatusItem$FailureReason": "<p>if the overall status is <code>Failed</code>, the reason for the failure.</p>",
         "PredefinedMetricSpecification$PredefinedMetricType": "<p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>",
         "ProcessingInput$InputName": "<p>The name for the processing job input.</p>",
@@ -15572,8 +15580,11 @@
         "RenderUiTemplateResponse$RenderedContent": "<p>A Liquid template that renders the HTML for the worker UI.</p>",
         "RenderingError$Code": "<p>A unique identifier for a specific class of errors.</p>",
         "RenderingError$Message": "<p>A human-readable message describing the error.</p>",
+        "S3ModelDataSource$ETag": "<p>The ETag associated with S3 URI.</p>",
+        "S3ModelDataSource$ManifestEtag": "<p>The ETag associated with Manifest S3 URI.</p>",
         "ScheduleConfig$DataAnalysisStartTime": "<p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>\"-PT5H\"</code>.</p> <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p> <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>",
         "ScheduleConfig$DataAnalysisEndTime": "<p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>\"-PT1H\"</code>.</p> <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p> <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>",
+        "SourceAlgorithm$ModelDataETag": "<p>The ETag associated with Model Data URL.</p>",
         "SubscribedWorkteam$SellerName": "<p>The name of the vendor in the Amazon Marketplace.</p>",
         "SubscribedWorkteam$ListingId": "<p>Marketplace product listing ID.</p>",
         "UserContext$UserProfileArn": "<p>The Amazon Resource Name (ARN) of the user's profile.</p>",
@@ -18243,10 +18254,10 @@
       "base": "<p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html\">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>",
       "refs": {
         "AutoMLSecurityConfig$VpcConfig": "<p>The VPC configuration.</p>",
-        "ClusterInstanceGroupDetails$OverrideVpcConfig": null,
-        "ClusterInstanceGroupSpecification$OverrideVpcConfig": null,
-        "ClusterNodeDetails$OverrideVpcConfig": null,
-        "CreateClusterRequest$VpcConfig": null,
+        "ClusterInstanceGroupDetails$OverrideVpcConfig": "<p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>",
+        "ClusterInstanceGroupSpecification$OverrideVpcConfig": "<p>To configure multi-AZ deployments, customize the VPC configuration at the instance group level. You can specify different subnets and security groups across different AZs in the instance group specification to override a SageMaker HyperPod cluster's default VPC configuration. For more information about deploying a cluster in multiple AZs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones\">Setting up SageMaker HyperPod clusters across multiple AZs</a>.</p> <note> <p> If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing enabled in your instance group VPC configuration, the nodes automatically use IPv6 addressing for network communication.</p> <p> For information about adding IPv6 support for your VPC, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html\">IPv6 support for your VPC</a>.</p> <p> For information about creating a new VPC for use with IPv6, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html\">Create a VPC</a>.</p> </note>",
+        "ClusterNodeDetails$OverrideVpcConfig": "<p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>",
+        "CreateClusterRequest$VpcConfig": "<p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html\">Give SageMaker access to resources in your Amazon VPC</a>.</p> <note> <p> If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing enabled in your VPC configuration, the cluster automatically uses IPv6 addressing for network communication.</p> <p> For information about adding IPv6 support for your VPC, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html\">IPv6 support for your VPC</a>.</p> <p> For information about creating a new VPC for use with IPv6, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html\">Create a VPC</a>.</p> </note>",
         "CreateEndpointConfigInput$VpcConfig": null,
         "CreateModelInput$VpcConfig": "<p>A <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html\">VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html\">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html\">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>",
         "CreateTrainingJobRequest$VpcConfig": "<p>A <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html\">VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html\">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>",

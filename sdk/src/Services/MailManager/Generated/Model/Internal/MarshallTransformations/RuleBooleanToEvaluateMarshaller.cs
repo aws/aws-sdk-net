@@ -54,6 +54,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Attribute);
             }
 
+            if(requestObject.IsSetIsInAddressList())
+            {
+                context.Writer.WritePropertyName("IsInAddressList");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RuleIsInAddressListMarshaller.Instance;
+                marshaller.Marshall(requestObject.IsInAddressList, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

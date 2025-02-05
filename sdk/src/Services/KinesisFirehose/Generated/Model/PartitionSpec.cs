@@ -30,6 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// Represents how to produce partition data for a table. Partition data is produced by
+    /// transforming columns in a table. Each column transform is represented by a named <c>PartitionField</c>.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Here is an example of the schema in JSON. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>"partitionSpec": { "identity": [ {"sourceName": "column1"}, {"sourceName": "column2"},
+    /// {"sourceName": "column3"} ] }</c> 
+    /// </para>
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -41,7 +55,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        ///  
+        ///  List of identity <a href="https://iceberg.apache.org/spec/#partition-transforms">transforms</a>
+        /// that performs an identity transformation. The transform takes the source value, and
+        /// does not modify it. Result type is the source type.
         /// </para>
         ///  
         /// <para>

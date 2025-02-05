@@ -90,6 +90,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaseDirectory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDirectories", targetDepth))
+                {
+                    var unmarshaller = CustomDirectoriesTypeUnmarshaller.Instance;
+                    unmarshalledObject.CustomDirectories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

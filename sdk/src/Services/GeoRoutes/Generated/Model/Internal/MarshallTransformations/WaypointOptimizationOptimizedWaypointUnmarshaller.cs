@@ -72,6 +72,12 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArrivalTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterIndex", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ClusterIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DepartureTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

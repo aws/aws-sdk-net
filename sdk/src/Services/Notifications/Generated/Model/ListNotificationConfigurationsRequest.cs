@@ -31,8 +31,8 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotificationConfigurations operation.
-    /// Returns a list of abbreviated NotificationConfigurations according to specified filters,
-    /// in reverse chronological order (newest first).
+    /// Returns a list of abbreviated <c>NotificationConfigurations</c> according to specified
+    /// filters, in reverse chronological order (newest first).
     /// </summary>
     public partial class ListNotificationConfigurationsRequest : AmazonNotificationsRequest
     {
@@ -67,10 +67,10 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Must match one of the valid EventBridge sources. Only AWS service sourced events are
-        /// supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// Must match one of the valid EventBridge sources. Only Amazon Web Services service
+        /// sourced events are supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -108,7 +108,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The start token for paginated calls. Retrieved from the response of a previous ListEventRules
+        /// The start token for paginated calls. Retrieved from the response of a previous <c>ListEventRules</c>
         /// call. Next token uses Base64 encoding.
         /// </para>
         /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The NotificationConfiguration status to match.
+        /// The <c>NotificationConfiguration</c> status to match.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -140,7 +140,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
+        /// All <c>EventRules</c> are <c>ACTIVE</c> and any call can be run.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -148,7 +148,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
+        /// Some <c>EventRules</c> are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can
+        /// be run.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -160,7 +161,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>INACTIVE</c> and any call can be run.
+        /// All <c>EventRules</c> are <c>INACTIVE</c> and any call can be run.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -168,7 +169,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This NotificationConfiguration is being deleted.
+        /// This <c>NotificationConfiguration</c> is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>

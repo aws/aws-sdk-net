@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Details about the Amazon MSK cluster used as the source for a Firehose Firehose stream.
+    /// Details about the Amazon MSK cluster used as the source for a Firehose stream.
     /// </summary>
     public partial class MSKSourceDescription
     {

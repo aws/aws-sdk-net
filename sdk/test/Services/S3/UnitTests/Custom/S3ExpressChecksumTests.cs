@@ -40,7 +40,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_DeleteObjectsRequest_RegularBucket_Should_Use_MD5Checksum()
+        public void TestS3_DeleteObjectsRequest_RegularBucket_Should_Use_ChecksumHeader()
         {
             var request = new DeleteObjectsRequest
             {
@@ -48,7 +48,9 @@ namespace AWSSDK.UnitTests
             };
 
             var internalRequest = RunMockRequest(request, DeleteObjectsRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("MD5")));
+            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
+            Assert.IsTrue(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
         }
 
         [TestMethod]
@@ -128,7 +130,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_PutObjectRequest_RegularBucket_Should_Use_MD5Stream_And_No_ChecksumHeader()
+        public void TestS3_PutObjectRequest_RegularBucket_Shouldnt_Use_MD5Stream()
         {
             var request = new PutObjectRequest
             {
@@ -138,8 +140,8 @@ namespace AWSSDK.UnitTests
             };
 
             var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
         }
 
         [TestMethod]
@@ -172,7 +174,7 @@ namespace AWSSDK.UnitTests
 
             var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
             Assert.IsTrue(internalRequest.TrailingHeaders.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
         }
 
@@ -196,7 +198,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_PutObjectRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
+        public void TestS3_PutObjectRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream()
         {
             var request = new PutObjectRequest
             {
@@ -208,7 +210,7 @@ namespace AWSSDK.UnitTests
 
             var internalRequest = RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
         }
 
         [TestMethod]
@@ -247,7 +249,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_RegularBucket_Should_Use_MD5Stream_And_No_ChecksumHeader()
+        public void TestS3_UploadPartRequest_RegularBucket_Should_Use_ChecksumHeader()
         {
             var request = new UploadPartRequest
             {
@@ -257,8 +259,9 @@ namespace AWSSDK.UnitTests
             };
 
             var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
+            Assert.IsTrue(internalRequest.TrailingHeaders.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
         }
 
         [TestMethod]
@@ -281,7 +284,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_S3ExpressBucket_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
+        public void TestS3_UploadPartRequest_S3ExpressBucket_Should_Use_ChecksumHeader()
         {
             var request = new UploadPartRequest
             {
@@ -292,12 +295,13 @@ namespace AWSSDK.UnitTests
 
             var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
+            Assert.IsTrue(internalRequest.TrailingHeaders.Keys.Any(k => k.ToUpper().Contains("CHECKSUM")));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void TestS3_UploadPartRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream_Nor_ChecksumHeader()
+        public void TestS3_UploadPartRequest_S3ExpressBucket_CalculateContentMD5Header_Shouldnt_Use_MD5Stream()
         {
             var request = new UploadPartRequest
             {
@@ -309,7 +313,7 @@ namespace AWSSDK.UnitTests
 
             var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
-            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
+            Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k == HeaderKeys.ContentMD5Header));
         }
 
         [TestMethod]
@@ -339,7 +343,6 @@ namespace AWSSDK.UnitTests
             var internalRequest = RunMockRequest(request, CompleteMultipartUploadRequestMarshaller.Instance);
             Assert.IsFalse(internalRequest.Headers.Keys.Any(k => k.ToUpper().Contains("CHECKSUM") || k == HeaderKeys.ContentMD5Header));
         }
-
 
         private IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller)
         {

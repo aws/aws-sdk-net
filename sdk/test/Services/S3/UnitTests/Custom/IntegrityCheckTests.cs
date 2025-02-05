@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
             };
 
             var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
+            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
         }
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace AWSSDK.UnitTests
             };
 
             var internalRequest = RunMockRequest(request, UploadPartRequestMarshaller.Instance);
-            Assert.IsTrue(internalRequest.ContentStream is MD5Stream);
+            Assert.IsFalse(internalRequest.ContentStream is MD5Stream);
             Assert.IsFalse(internalRequest.UseChunkEncoding);
             Assert.IsTrue(internalRequest.DisablePayloadSigning.Value);
         }

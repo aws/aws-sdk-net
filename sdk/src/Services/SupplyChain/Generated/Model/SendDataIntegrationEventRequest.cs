@@ -70,7 +70,7 @@ namespace Amazon.SupplyChain.Model
         /// <para>
         /// The data payload of the event. For more information on the data schema to use, see
         /// <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data
-        /// entities supported in AWS Supply Chain </a>.
+        /// entities supported in AWS Supply Chain</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]

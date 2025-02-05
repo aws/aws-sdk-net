@@ -120,7 +120,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property TableARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the table.
+        /// The Amazon Resource Name (ARN) of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

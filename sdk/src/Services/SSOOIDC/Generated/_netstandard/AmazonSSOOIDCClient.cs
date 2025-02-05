@@ -45,13 +45,18 @@ namespace Amazon.SSOOIDC
     /// also enables the client to fetch the user’s access token upon successful authentication
     /// and authorization with IAM Identity Center.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
+    ///  <b>API namespaces</b> 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    ///  <b>Considerations for Using This Guide</b> 
+    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces. IAM
+    /// Identity Center OpenID Connect uses the <c>sso-oidc</c> namespace.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Considerations for using this guide</b> 
     /// </para>
     ///  
     /// <para>
@@ -316,8 +321,8 @@ namespace Amazon.SSOOIDC
 
         /// <summary>
         /// Creates and returns access and refresh tokens for clients that are authenticated using
-        /// client secrets. The access token can be used to fetch short-term credentials for the
-        /// assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
+        /// client secrets. The access token can be used to fetch short-lived credentials for
+        /// the assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
         /// <param name="cancellationToken">
@@ -392,7 +397,7 @@ namespace Amazon.SSOOIDC
 
         /// <summary>
         /// Creates and returns access and refresh tokens for clients and applications that are
-        /// authenticated using IAM entities. The access token can be used to fetch short-term
+        /// authenticated using IAM entities. The access token can be used to fetch short-lived
         /// credentials for the assigned Amazon Web Services accounts or to access application
         /// APIs using <c>bearer</c> authentication.
         /// </summary>
@@ -472,9 +477,9 @@ namespace Amazon.SSOOIDC
 
 
         /// <summary>
-        /// Registers a client with IAM Identity Center. This allows clients to initiate device
-        /// authorization. The output should be persisted for reuse through many authentication
-        /// requests.
+        /// Registers a public client with IAM Identity Center. This allows clients to perform
+        /// authorization using the authorization code grant with Proof Key for Code Exchange
+        /// (PKCE) or the device code grant.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterClient service method.</param>
         /// <param name="cancellationToken">

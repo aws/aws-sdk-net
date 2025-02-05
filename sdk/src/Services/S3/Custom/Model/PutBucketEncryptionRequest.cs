@@ -149,7 +149,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ContentMD5. 
         /// <para>
-        /// The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.
+        /// The Base64 encoded 128-bit <c>MD5</c> digest of the server-side encryption configuration.
         /// </para>
         ///  
         /// <para>

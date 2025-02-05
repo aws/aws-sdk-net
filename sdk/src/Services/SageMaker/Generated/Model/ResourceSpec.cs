@@ -32,6 +32,16 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the
     /// instance type that the version runs on.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When both <c>SageMakerImageVersionArn</c> and <c>SageMakerImageArn</c> are passed,
+    /// <c>SageMakerImageVersionArn</c> is used. Any updates to <c>SageMakerImageArn</c> will
+    /// not take effect if <c>SageMakerImageVersionArn</c> already exists in the <c>ResourceSpec</c>
+    /// because <c>SageMakerImageVersionArn</c> always takes precedence. To clear the value
+    /// set for <c>SageMakerImageVersionArn</c>, pass <c>None</c> as the value.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ResourceSpec
     {
@@ -130,7 +140,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SageMakerImageVersionArn. 
         /// <para>
-        /// The ARN of the image version created on the instance.
+        /// The ARN of the image version created on the instance. To clear the value set for <c>SageMakerImageVersionArn</c>,
+        /// pass <c>None</c> as the value.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

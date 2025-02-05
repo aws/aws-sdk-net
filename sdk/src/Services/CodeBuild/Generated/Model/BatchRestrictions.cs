@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     public partial class BatchRestrictions
     {
         private List<string> _computeTypesAllowed = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _fleetsAllowed = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumBuildsAllowed;
 
         /// <summary>
@@ -56,6 +57,27 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetComputeTypesAllowed()
         {
             return this._computeTypesAllowed != null && (this._computeTypesAllowed.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetsAllowed. 
+        /// <para>
+        /// An array of strings that specify the fleets that are allowed for the batch build.
+        /// See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/fleets.html">Run
+        /// builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for more
+        /// information. 
+        /// </para>
+        /// </summary>
+        public List<string> FleetsAllowed
+        {
+            get { return this._fleetsAllowed; }
+            set { this._fleetsAllowed = value; }
+        }
+
+        // Check to see if FleetsAllowed property is set
+        internal bool IsSetFleetsAllowed()
+        {
+            return this._fleetsAllowed != null && (this._fleetsAllowed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

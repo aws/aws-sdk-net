@@ -88,7 +88,7 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    /// For FIFO queues, there can be a maximum of 20,000 in flight messages (received from
+    /// For FIFO queues, there can be a maximum of 120,000 in flight messages (received from
     /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
     /// Amazon SQS returns no error messages.
     /// </para>

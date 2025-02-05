@@ -34,10 +34,16 @@ namespace Amazon.SimpleEmail
     public partial class AmazonSimpleEmailServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SES", "4.0.0.0");
 
         private static readonly AmazonSimpleEmailServiceEndpointResolver EndpointResolver =
             new AmazonSimpleEmailServiceEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("SES", "3.7.402.13");
+=======
+            InternalSDKUtils.BuildUserAgentString("SES", "3.7.402.31");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

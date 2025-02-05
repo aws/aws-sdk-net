@@ -70,6 +70,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("orchestrationConfiguration", targetDepth))
+                {
+                    var unmarshaller = AppliedOrchestrationConfigurationUnmarshaller.Instance;
+                    response.OrchestrationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("responseScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

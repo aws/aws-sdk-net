@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the UpdateContainerFleet operation.
     /// Updates the properties of a managed container fleet. Depending on the properties being
     /// updated, this operation might initiate a fleet deployment. You can track deployments
-    /// for a fleet using <a>DescribeFleetDeployment</a>.
+    /// for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.
     /// 
     ///  
     /// <para>
@@ -189,9 +189,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// Update a container group definition by calling <a>UpdateContainerGroupDefinition</a>.
-        /// This operation creates a <a>ContainerGroupDefinition</a> resource with an incremented
-        /// version. 
+        /// Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>.
+        /// This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+        /// resource with an incremented version. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -374,9 +374,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// Update a container group definition by calling <a>UpdateContainerGroupDefinition</a>.
-        /// This operation creates a <a>ContainerGroupDefinition</a> resource with an incremented
-        /// version. 
+        /// Update a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>.
+        /// This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+        /// resource with an incremented version. 
         /// </para>
         ///  
         /// <para>

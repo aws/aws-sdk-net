@@ -35,8 +35,27 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class TextPromptTemplateConfiguration
     {
+        private CachePointBlock _cachePoint;
         private List<PromptInputVariable> _inputVariables = AWSConfigs.InitializeCollections ? new List<PromptInputVariable>() : null;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property CachePoint. 
+        /// <para>
+        /// A cache checkpoint within a template configuration.
+        /// </para>
+        /// </summary>
+        public CachePointBlock CachePoint
+        {
+            get { return this._cachePoint; }
+            set { this._cachePoint = value; }
+        }
+
+        // Check to see if CachePoint property is set
+        internal bool IsSetCachePoint()
+        {
+            return this._cachePoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputVariables. 
@@ -44,7 +63,7 @@ namespace Amazon.BedrockAgent.Model
         /// An array of the variables in the prompt template.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=5)]
+        [AWSProperty(Sensitive=true, Min=0, Max=10)]
         public List<PromptInputVariable> InputVariables
         {
             get { return this._inputVariables; }

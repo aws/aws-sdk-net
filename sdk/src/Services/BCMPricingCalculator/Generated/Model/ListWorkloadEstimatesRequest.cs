@@ -44,7 +44,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property CreatedAtFilter. 
         /// <para>
-        ///  Filter workload estimates based on their creation date. 
+        ///  Filter workload estimates based on the creation date. 
         /// </para>
         /// </summary>
         public FilterTimestamp CreatedAtFilter
@@ -62,7 +62,7 @@ namespace Amazon.BCMPricingCalculator.Model
         /// <summary>
         /// Gets and sets the property ExpiresAtFilter. 
         /// <para>
-        ///  Filter workload estimates based on their expiration date. 
+        ///  Filter workload estimates based on the expiration date. 
         /// </para>
         /// </summary>
         public FilterTimestamp ExpiresAtFilter

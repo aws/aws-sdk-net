@@ -48,6 +48,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _inferenceParams;
         private string _modelIdentifier;
+        private PerformanceConfiguration _performanceConfig;
 
         /// <summary>
         /// Gets and sets the property InferenceParams. 
@@ -86,6 +87,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelIdentifier()
         {
             return this._modelIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// Specifies performance settings for the model or inference profile.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
     }

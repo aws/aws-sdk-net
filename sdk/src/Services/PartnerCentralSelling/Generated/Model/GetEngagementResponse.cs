@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the engagement retrieved. 
+        /// The Amazon Resource Name (ARN) of the engagement retrieved.
         /// </para>
         /// </summary>
         public string Arn
@@ -64,8 +64,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Contexts. 
         /// <para>
-        ///  A list of context objects associated with the engagement. Each context provides additional
-        /// information related to the Engagement, such as customer projects or documents. 
+        /// A list of context objects associated with the engagement. Each context provides additional
+        /// information related to the Engagement, such as customer projects or documents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -84,9 +84,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  The date and time when the Engagement was created, presented in ISO 8601 format (UTC).
+        /// The date and time when the Engagement was created, presented in ISO 8601 format (UTC).
         /// For example: "2023-05-01T20:37:46Z". This timestamp helps track the lifecycle of the
-        /// Engagement. 
+        /// Engagement.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -104,8 +104,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The AWS account ID of the user who originally created the engagement. This field
-        /// helps in tracking the origin of the engagement. 
+        /// The AWS account ID of the user who originally created the engagement. This field helps
+        /// in tracking the origin of the engagement.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -124,8 +124,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A more detailed description of the engagement. This provides additional context or
-        /// information about the engagement's purpose or scope. 
+        /// A more detailed description of the engagement. This provides additional context or
+        /// information about the engagement's purpose or scope.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -144,7 +144,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique resource identifier of the engagement retrieved. 
+        /// The unique resource identifier of the engagement retrieved.
         /// </para>
         /// </summary>
         public string Id
@@ -162,9 +162,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property MemberCount. 
         /// <para>
-        ///  Specifies the current count of members participating in the Engagement. This count
+        /// Specifies the current count of members participating in the Engagement. This count
         /// includes all active members regardless of their roles or permissions within the Engagement.
-        /// 
         /// </para>
         /// </summary>
         public int? MemberCount
@@ -182,8 +181,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        ///  The title of the engagement. It provides a brief, descriptive name for the engagement
-        /// that is meaningful and easily recognizable. 
+        /// The title of the engagement. It provides a brief, descriptive name for the engagement
+        /// that is meaningful and easily recognizable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

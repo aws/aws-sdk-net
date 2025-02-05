@@ -81,15 +81,19 @@ namespace Amazon.S3.Internal
             typeof(GetBucketWebsiteRequest),
             typeof(GetCORSConfigurationRequest),
             typeof(GetLifecycleConfigurationRequest),
+<<<<<<< HEAD
             typeof(GetObjectRequest),
             typeof(GetObjectAclRequest),
+||||||| Commit version number update changes
+            typeof(GetObjectRequest),
+=======
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             typeof(GetObjectAttributesRequest),
             typeof(GetObjectLegalHoldRequest),
             typeof(GetObjectLockConfigurationRequest),
             typeof(GetObjectMetadataRequest),
             typeof(GetObjectRetentionRequest),
             typeof(GetObjectTaggingRequest),
-            typeof(GetObjectTorrentRequest),
             typeof(GetPublicAccessBlockRequest),
             typeof(HeadBucketRequest),
             typeof(InitiateMultipartUploadRequest),
@@ -123,7 +127,12 @@ namespace Amazon.S3.Internal
             typeof(PutBucketWebsiteRequest),
             typeof(PutCORSConfigurationRequest),
             typeof(PutLifecycleConfigurationRequest),
+<<<<<<< HEAD
             typeof(PutObjectAclRequest),
+||||||| Commit version number update changes
+=======
+            typeof(PutObjectRequest),
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             typeof(PutObjectLegalHoldRequest),
             typeof(PutObjectLockConfigurationRequest),
             typeof(PutObjectRetentionRequest),
@@ -131,6 +140,8 @@ namespace Amazon.S3.Internal
             typeof(PutPublicAccessBlockRequest),
             typeof(RestoreObjectRequest),
             typeof(SelectObjectContentRequest),
+            typeof(UploadPartRequest),
+            typeof(WriteGetObjectResponseRequest),
         };
     }
 }

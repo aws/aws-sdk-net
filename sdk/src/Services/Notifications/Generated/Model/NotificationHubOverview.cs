@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Describes an overview of a NotificationHub.
+    /// Describes an overview of a <c>NotificationHub</c>.
     /// 
     ///  
     /// <para>
-    /// A NotificationHub is an account-level setting used to select the Regions where you
-    /// want to store, process and replicate your notifications.
+    /// A <c>NotificationConfiguration</c> is an account-level setting used to select the
+    /// Regions where you want to store, process and replicate your notifications.
     /// </para>
     /// </summary>
     public partial class NotificationHubOverview
@@ -48,7 +48,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date and time the resource was created.
+        /// The date and time the <c>NotificationHubOverview</c> was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +67,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property LastActivationTime. 
         /// <para>
-        /// The most recent time this NotificationHub had an ACTIVE status.
+        /// The most recent time this <c>NotificationHub</c> had an <c>ACTIVE</c> status.
         /// </para>
         /// </summary>
         public DateTime? LastActivationTime

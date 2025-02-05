@@ -65,9 +65,49 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class CreateSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
+        private string _addPrivateKey;
+        private AssertionEncryptionModeType _assertionEncryptionMode;
         private string _name;
         private string _samlMetadataDocument;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AddPrivateKey. 
+        /// <para>
+        /// The private key generated from your external identity provider. The private key must
+        /// be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML assertions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=16384)]
+        public string AddPrivateKey
+        {
+            get { return this._addPrivateKey; }
+            set { this._addPrivateKey = value; }
+        }
+
+        // Check to see if AddPrivateKey property is set
+        internal bool IsSetAddPrivateKey()
+        {
+            return this._addPrivateKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssertionEncryptionMode. 
+        /// <para>
+        /// Specifies the encryption setting for the SAML provider.
+        /// </para>
+        /// </summary>
+        public AssertionEncryptionModeType AssertionEncryptionMode
+        {
+            get { return this._assertionEncryptionMode; }
+            set { this._assertionEncryptionMode = value; }
+        }
+
+        // Check to see if AssertionEncryptionMode property is set
+        internal bool IsSetAssertionEncryptionMode()
+        {
+            return this._assertionEncryptionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

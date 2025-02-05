@@ -30,6 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The top level object for database source description. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -52,7 +55,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Columns. 
         /// <para>
-        ///  
+        ///  The list of column patterns in source database endpoint for Firehose to read from.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -74,7 +78,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Databases. 
         /// <para>
-        ///  
+        ///  The list of database patterns in source database endpoint for Firehose to read from.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -96,7 +101,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DatabaseSourceAuthenticationConfiguration. 
         /// <para>
-        ///  
+        ///  The structure to configure the authentication methods for Firehose to connect to
+        /// source database endpoint. 
         /// </para>
         ///  
         /// <para>
@@ -118,7 +124,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DatabaseSourceVPCConfiguration. 
         /// <para>
-        ///  
+        ///  The details of the VPC Endpoint Service which Firehose uses to create a PrivateLink
+        /// to the database. 
         /// </para>
         ///  
         /// <para>
@@ -140,7 +147,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        ///  
+        ///  The endpoint of the database server. 
         /// </para>
         ///  
         /// <para>
@@ -163,9 +170,17 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  
+        /// The port of the database. This can be one of the following values.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// 3306 for MySQL database type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 5432 for PostgreSQL database type
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>
@@ -186,7 +201,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SnapshotInfo. 
         /// <para>
-        ///  
+        ///  The structure that describes the snapshot information of a table in source database
+        /// endpoint that Firehose reads. 
         /// </para>
         ///  
         /// <para>
@@ -208,7 +224,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SnapshotWatermarkTable. 
         /// <para>
-        ///  
+        ///  The fully qualified name of the table in source database endpoint that Firehose uses
+        /// to track snapshot progress. 
         /// </para>
         ///  
         /// <para>
@@ -231,7 +248,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SSLMode. 
         /// <para>
-        ///  
+        ///  The mode to enable or disable SSL when Firehose connects to the database endpoint.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -253,7 +271,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SurrogateKeys. 
         /// <para>
-        ///  
+        ///  The optional list of table and column names used as unique key columns when taking
+        /// snapshot if the tables don’t have primary keys configured. 
         /// </para>
         ///  
         /// <para>
@@ -275,7 +294,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Tables. 
         /// <para>
-        ///  
+        ///  The list of table patterns in source database endpoint for Firehose to read from.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -297,9 +317,17 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  
+        /// The type of database engine. This can be one of the following values. 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// MySQL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PostgreSQL
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>

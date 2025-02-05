@@ -176,4 +176,35 @@ namespace Amazon.Runtime
         /// </summary>
         DISABLED
     }
+
+    /// <summary>
+    /// RequestChecksumCalculation determines the behavior for calculating checksums for request payloads.
+    /// </summary>
+    public enum RequestChecksumCalculation
+    {
+        /// <summary>
+        /// Calculate checksum for all request payloads of operations that supports checksum.
+        /// </summary>
+        WHEN_SUPPORTED,
+        /// <summary>
+        /// Calculate checksum for request payloads of operations that requires checksum.
+        /// </summary>
+        WHEN_REQUIRED,
+    }
+
+    /// <summary>
+    /// ResponseChecksumValidation determines the behavior for validating checksums on response payloads.
+    /// </summary>
+    public enum ResponseChecksumValidation
+    {
+        /// <summary>
+        /// Perform checksum validation for all response payloads of operations that supports checksum.
+        /// </summary>
+        WHEN_SUPPORTED,
+        /// <summary>
+        /// Perform checksum validation for response payloads of operations that supports checksum
+        /// and request validation is set to ENABLED.
+        /// </summary>
+        WHEN_REQUIRED,
+    }
 }

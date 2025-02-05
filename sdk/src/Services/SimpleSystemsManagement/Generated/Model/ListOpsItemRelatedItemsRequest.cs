@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the ListOpsItemRelatedItems operation.
     /// Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem.
-    /// OpsCenter is a capability of Amazon Web Services Systems Manager.
+    /// OpsCenter is a tool in Amazon Web Services Systems Manager.
     /// </summary>
     public partial class ListOpsItemRelatedItemsRequest : AmazonSimpleSystemsManagementRequest
     {

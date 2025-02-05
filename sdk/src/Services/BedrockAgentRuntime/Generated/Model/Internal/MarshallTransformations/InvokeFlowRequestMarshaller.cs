@@ -81,7 +81,27 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.EnableTrace.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetInputs())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetInputs())
+                {
+                    context.Writer.WritePropertyName("inputs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+=======
+                if(publicRequest.IsSetExecutionId())
+                {
+                    context.Writer.WritePropertyName("executionId");
+                    context.Writer.Write(publicRequest.ExecutionId);
+                }
+
+                if(publicRequest.IsSetInputs())
+                {
+                    context.Writer.WritePropertyName("inputs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
                     {
                         context.Writer.WritePropertyName("inputs");
                         context.Writer.WriteArrayStart();

@@ -132,6 +132,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceSetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceTagLogicalOperator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceTagLogicalOperator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceTags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);

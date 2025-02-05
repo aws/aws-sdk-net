@@ -32,7 +32,15 @@ namespace Amazon.S3Tables.Model
     /// <summary>
     /// Container for the parameters to the PutTableBucketMaintenanceConfiguration operation.
     /// Creates a new maintenance configuration or replaces an existing maintenance configuration
-    /// for a table bucket.
+    /// for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+    /// S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:PutTableBucketMaintenanceConfiguration</c> permission
+    /// to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class PutTableBucketMaintenanceConfigurationRequest : AmazonS3TablesRequest
     {

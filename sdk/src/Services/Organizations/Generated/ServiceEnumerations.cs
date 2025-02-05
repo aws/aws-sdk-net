@@ -313,6 +313,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant CANNOT_CLOSE_MANAGEMENT_ACCOUNT for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_CLOSE_MANAGEMENT_ACCOUNT = new ConstraintViolationExceptionReason("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");

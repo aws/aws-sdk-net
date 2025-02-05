@@ -31,7 +31,30 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceSnapshots operation.
-    /// Retrieves a list of resource view snapshots based on specified criteria.
+    /// Retrieves a list of resource view snapshots based on specified criteria. This operation
+    /// supports various use cases, including: 
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Fetching all snapshots associated with an engagement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Retrieving snapshots of a specific resource type within an engagement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Obtaining snapshots for a particular resource using a specified template.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Accessing the latest snapshot of a resource within an engagement.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Filtering snapshots by resource owner.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListResourceSnapshotsRequest : AmazonPartnerCentralSellingRequest
     {
@@ -66,7 +89,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  Filters the response to include only snapshots of resources created by the specified
+        /// Filters the response to include only snapshots of resources owned by the specified
         /// AWS account. 
         /// </para>
         /// </summary>
@@ -160,8 +183,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotTemplateIdentifier. 
         /// <para>
-        ///  Filters the response to include only snapshots created using the specified template.
-        /// 
+        /// Filters the response to include only snapshots created using the specified template.
         /// </para>
         /// </summary>
         public string ResourceSnapshotTemplateIdentifier

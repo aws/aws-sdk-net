@@ -713,6 +713,11 @@ namespace Amazon.Glue.Model
         /// to 7 days. For instance if you have specified a timeout of 20 days for a batch job,
         /// it will be stopped on the 7th day.
         /// </para>
+        ///  
+        /// <para>
+        /// For streaming jobs, if you have set up a maintenance window, it will be restarted
+        /// during the maintenance window after 7 days.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int? Timeout

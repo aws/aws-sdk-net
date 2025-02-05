@@ -82,17 +82,80 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDomain())
                     {
                         context.Writer.WritePropertyName("Domain");
                         context.Writer.Write(publicRequest.Domain);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+=======
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("AuthenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
 
+                if(publicRequest.IsSetDnsIpAddresses())
+                {
+                    context.Writer.WritePropertyName("DnsIpAddresses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDnsIpAddressesListValue in publicRequest.DnsIpAddresses)
+                    {
+                            context.Writer.Write(publicRequestDnsIpAddressesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
+
+<<<<<<< HEAD
                     if(publicRequest.IsSetLocationArn())
                     {
                         context.Writer.WritePropertyName("LocationArn");
                         context.Writer.Write(publicRequest.LocationArn);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WritePropertyName("LocationArn");
+                    context.Writer.Write(publicRequest.LocationArn);
+                }
+=======
+                if(publicRequest.IsSetKerberosKeytab())
+                {
+                    context.Writer.WritePropertyName("KerberosKeytab");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
+                }
+
+                if(publicRequest.IsSetKerberosKrb5Conf())
+                {
+                    context.Writer.WritePropertyName("KerberosKrb5Conf");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
+                }
+
+                if(publicRequest.IsSetKerberosPrincipal())
+                {
+                    context.Writer.WritePropertyName("KerberosPrincipal");
+                    context.Writer.Write(publicRequest.KerberosPrincipal);
+                }
+
+                if(publicRequest.IsSetLocationArn())
+                {
+                    context.Writer.WritePropertyName("LocationArn");
+                    context.Writer.Write(publicRequest.LocationArn);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     if(publicRequest.IsSetMountOptions())
                     {

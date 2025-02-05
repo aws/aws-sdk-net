@@ -44,7 +44,7 @@ namespace Amazon.EMRServerless.Model
         /// The entry point for the Spark submit job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string EntryPoint
         {
             get { return this._entryPoint; }

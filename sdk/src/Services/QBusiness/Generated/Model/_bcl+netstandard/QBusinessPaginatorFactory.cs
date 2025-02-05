@@ -165,6 +165,14 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListSubscriptions operation
+        ///</summary>
+        public IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request) 
+        {
+            return new ListSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWebExperiences operation
         ///</summary>
         public IListWebExperiencesPaginator ListWebExperiences(ListWebExperiencesRequest request) 

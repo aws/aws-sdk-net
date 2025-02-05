@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cachePoint", targetDepth))
+                {
+                    var unmarshaller = CachePointBlockUnmarshaller.Instance;
+                    unmarshalledObject.CachePoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("toolSpec", targetDepth))
                 {
                     var unmarshaller = ToolSpecificationUnmarshaller.Instance;

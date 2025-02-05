@@ -60,7 +60,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of a NotificationConfiguration.
+        /// The ARN of a <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property StatusSummaryByRegion. 
         /// <para>
-        /// A list of an EventRule's status by Region. Regions are mapped to EventRuleStatusSummary.
+        /// A list of an <c>EventRule</c>'s status by Region. Regions are mapped to <c>EventRuleStatusSummary</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

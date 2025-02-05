@@ -43,7 +43,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property BusinessProblem. 
         /// <para>
-        ///  A description of the business problem the project aims to solve. 
+        /// A description of the business problem the project aims to solve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=20, Max=255)]
@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TargetCompletionDate. 
         /// <para>
-        ///  The target completion date for the customer's project. 
+        /// The target completion date for the customer's project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        ///  The title of the project. 
+        /// The title of the project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

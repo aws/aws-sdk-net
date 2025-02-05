@@ -48,8 +48,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementId. 
         /// <para>
-        ///  The identifier of the newly created engagement. Only populated if TaskStatus is COMPLETE.
-        /// 
+        /// The identifier of the newly created Engagement. Only populated if TaskStatus is COMPLETE.
         /// </para>
         /// </summary>
         public string EngagementId
@@ -67,8 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementInvitationId. 
         /// <para>
-        ///  The identifier of the new engagement invitation. Only populated if TaskStatus is
-        /// COMPLETE. 
+        /// The identifier of the new Engagement invitation. Only populated if TaskStatus is COMPLETE.
         /// </para>
         /// </summary>
         public string EngagementInvitationId
@@ -142,8 +140,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobId. 
         /// <para>
-        ///  The identifier of the resource snapshot job created to add the opportunity resource
-        /// snapshot to the Engagement. Only populated if TaskStatus is COMPLETE. 
+        /// The identifier of the resource snapshot job created to add the opportunity resource
+        /// snapshot to the Engagement. Only populated if TaskStatus is COMPLETE
         /// </para>
         /// </summary>
         public string ResourceSnapshotJobId

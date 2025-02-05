@@ -32,7 +32,7 @@ namespace Amazon.SSOOIDC.Model
     /// <summary>
     /// Container for the parameters to the CreateTokenWithIAM operation.
     /// Creates and returns access and refresh tokens for clients and applications that are
-    /// authenticated using IAM entities. The access token can be used to fetch short-term
+    /// authenticated using IAM entities. The access token can be used to fetch short-lived
     /// credentials for the assigned Amazon Web Services accounts or to access application
     /// APIs using <c>bearer</c> authentication.
     /// </summary>
@@ -94,7 +94,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Used only when calling this API for the Authorization Code grant type. This short-term
+        /// Used only when calling this API for the Authorization Code grant type. This short-lived
         /// code is used to identify this authorization request. The code is obtained through
         /// a redirect from IAM Identity Center to a redirect URI persisted in the Authorization
         /// Code GrantOptions for the application.
@@ -194,7 +194,7 @@ namespace Amazon.SSOOIDC.Model
         /// Gets and sets the property RefreshToken. 
         /// <para>
         /// Used only when calling this API for the Refresh Token grant type. This token is used
-        /// to refresh short-term tokens, such as the access token, that might expire.
+        /// to refresh short-lived tokens, such as the access token, that might expire.
         /// </para>
         ///  
         /// <para>

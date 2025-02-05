@@ -85,7 +85,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time when prefetched ads are considered for use in an ad break. If you don't specify
-        /// <c>StartTime</c>, the prefetched ads are available after MediaTailor retrives them
+        /// <c>StartTime</c>, the prefetched ads are available after MediaTailor retrieves them
         /// from the ad decision server.
         /// </para>
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventRules. 
         /// <para>
-        /// A list of EventRules.
+        /// A list of <c>EventRules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

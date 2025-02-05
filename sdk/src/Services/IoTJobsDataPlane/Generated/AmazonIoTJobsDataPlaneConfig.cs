@@ -34,10 +34,16 @@ namespace Amazon.IoTJobsDataPlane
     public partial class AmazonIoTJobsDataPlaneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "4.0.0.0");
 
         private static readonly AmazonIoTJobsDataPlaneEndpointResolver EndpointResolver =
             new AmazonIoTJobsDataPlaneEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "3.7.401.14");
+=======
+            InternalSDKUtils.BuildUserAgentString("IoT Jobs Data Plane", "3.7.401.32");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

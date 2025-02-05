@@ -572,7 +572,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Set to true to report to your source provider the status of a build's start and completion.
         /// If you use this option with a source provider other than GitHub, GitHub Enterprise,
-        /// or Bitbucket, an <c>invalidInputException</c> is thrown. 
+        /// GitLab, GitLab Self Managed, or Bitbucket, an <c>invalidInputException</c> is thrown.
+        /// 
         /// </para>
         ///  
         /// <para>

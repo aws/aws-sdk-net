@@ -30,6 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The configuration to enable schema evolution.
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -41,7 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  
+        ///  Specify whether you want to enable schema evolution. 
         /// </para>
         ///  
         /// <para>

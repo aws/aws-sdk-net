@@ -31,8 +31,8 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the SubmitOpportunity operation.
-    /// Use this action to submit an opportunity that was previously created by partner for
-    /// AWS review. After you perform this action, the opportunity becomes non-editable until
+    /// Use this action to submit an Opportunity that was previously created by partner for
+    /// AWS review. After you perform this action, the Opportunity becomes non-editable until
     /// it is reviewed by AWS and has <c> LifeCycle.ReviewStatus </c> as either <c>Approved</c>
     /// or <c>Action Required</c>.
     /// </summary>
@@ -46,8 +46,18 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the request. 
+        /// Specifies the catalog related to the request. Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS: Submits the opportunity request from the production AWS environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sandbox: Submits the opportunity request from a sandbox environment used for testing
+        /// or development purposes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Catalog
@@ -65,8 +75,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  The identifier of the opportunity previously created by partner and needs to be submitted.
-        /// 
+        /// The identifier of the Opportunity previously created by partner and needs to be submitted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +94,20 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvolvementType. 
         /// <para>
-        ///  Specifies the level of AWS sellers' involvement on the opportunity. 
+        /// Specifies the level of AWS sellers' involvement on the opportunity. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Co-sell</c>: Indicates the user wants to co-sell with AWS. Share the opportunity
+        /// with AWS to receive deal assistance and support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>For Visibility Only</c>: Indicates that the user does not need support from AWS
+        /// Sales Rep. Share this opportunity with AWS for visibility only, you will not receive
+        /// deal assistance and support.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public SalesInvolvementType InvolvementType
@@ -104,9 +125,18 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        ///  Determines whether to restrict visibility of the opportunity from AWS sales. Default
-        /// value is Full. 
+        /// Determines whether to restrict visibility of the opportunity from AWS sales. Default
+        /// value is Full. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Full</c>: The opportunity is fully visible to AWS sales.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Limited</c>: The opportunity has restricted visibility to AWS sales.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Visibility Visibility
         {

@@ -40,6 +40,7 @@ namespace Amazon.CloudHSMV2.Model
         private string _eniIp;
         private string _eniIpV6;
         private string _hsmId;
+        private string _hsmType;
         private HsmState _state;
         private string _stateMessage;
         private string _subnetId;
@@ -152,6 +153,25 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetHsmId()
         {
             return this._hsmId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HsmType. 
+        /// <para>
+        /// The type of HSM.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string HsmType
+        {
+            get { return this._hsmType; }
+            set { this._hsmType = value; }
+        }
+
+        // Check to see if HsmType property is set
+        internal bool IsSetHsmType()
+        {
+            return this._hsmType != null;
         }
 
         /// <summary>

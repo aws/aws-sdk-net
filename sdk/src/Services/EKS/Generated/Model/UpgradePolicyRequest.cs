@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-    /// more about EKS Extended Support in the EKS User Guide.</a> 
+    /// more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> 
     /// </para>
     /// </summary>
     public partial class UpgradePolicyRequest
@@ -55,7 +55,7 @@ namespace Amazon.EKS.Model
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-        /// more about EKS Extended Support in the EKS User Guide.</a> 
+        /// more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> 
         /// </para>
         /// </summary>
         public SupportType SupportType

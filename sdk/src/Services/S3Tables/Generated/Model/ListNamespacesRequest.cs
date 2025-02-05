@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
-    /// Lists the namespaces within a table bucket.
+    /// Lists the namespaces within a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+    /// namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:ListNamespaces</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class ListNamespacesRequest : AmazonS3TablesRequest
     {

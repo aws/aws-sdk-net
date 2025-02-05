@@ -84,6 +84,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PointInTimeRecoveryStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecoveryPeriodInDays", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RecoveryPeriodInDays = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

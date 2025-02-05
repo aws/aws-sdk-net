@@ -33,7 +33,7 @@ namespace Amazon.QBusiness.Model
     /// Container for the parameters to the GetDataAccessor operation.
     /// Retrieves information about a specified data accessor. This operation returns details
     /// about the data accessor, including its display name, unique identifier, Amazon Resource
-    /// Name (ARN), the associated Q Business application and AWS IAM Identity Center application,
+    /// Name (ARN), the associated Amazon Q Business application and IAM Identity Center application,
     /// the IAM role for the ISV, the action configurations, and the timestamps for when the
     /// data accessor was created and last updated.
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

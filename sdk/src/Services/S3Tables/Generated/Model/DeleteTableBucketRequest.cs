@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTableBucket operation.
-    /// Deletes a table bucket.
+    /// Deletes a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html">Deleting
+    /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:DeleteTableBucket</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class DeleteTableBucketRequest : AmazonS3TablesRequest
     {

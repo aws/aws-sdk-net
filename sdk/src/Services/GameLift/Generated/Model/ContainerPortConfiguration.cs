@@ -36,8 +36,11 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Part of:</b> <a>GameServerContainerDefinition</a>, <a>GameServerContainerDefinitionInput</a>,
-    /// <a>SupportContainerDefinition</a>, <a>SupportContainerDefinitionInput</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerPortConfiguration

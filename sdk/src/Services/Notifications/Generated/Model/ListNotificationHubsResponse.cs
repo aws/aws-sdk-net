@@ -60,7 +60,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationHubs. 
         /// <para>
-        /// The NotificationHubs in the account.
+        /// The <c>NotificationHubs</c> in the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

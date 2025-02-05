@@ -78,6 +78,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxUnavailablePercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("updateStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

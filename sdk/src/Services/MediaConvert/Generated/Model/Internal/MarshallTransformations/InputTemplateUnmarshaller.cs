@@ -120,6 +120,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DolbyVisionMetadataXml = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamicAudioSelectors", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, DynamicAudioSelector, StringUnmarshaller, DynamicAudioSelectorUnmarshaller>(StringUnmarshaller.Instance, DynamicAudioSelectorUnmarshaller.Instance);
+                    unmarshalledObject.DynamicAudioSelectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterEnable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -135,7 +135,7 @@ namespace Amazon.SupplyChain.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// The custom schema of the data lake dataset and is only required when the name space
-        /// is <i>default</i>.
+        /// is <b>default</b>.
         /// </para>
         /// </summary>
         public DataLakeDatasetSchema Schema

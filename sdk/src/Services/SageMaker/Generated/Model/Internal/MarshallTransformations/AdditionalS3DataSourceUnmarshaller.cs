@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ETag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3DataType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

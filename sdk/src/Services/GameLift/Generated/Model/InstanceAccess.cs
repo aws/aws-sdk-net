@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Information and credentials that you can use to remotely connect to an instance in
-    /// an EC2 managed fleet. This data type is returned in response to a call to <a>GetInstanceAccess</a>.
+    /// an EC2 managed fleet. This data type is returned in response to a call to <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>.
     /// </summary>
     public partial class InstanceAccess
     {

@@ -115,7 +115,103 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetEngagementIdentifier())
+                {
+                    context.Writer.WritePropertyName("EngagementIdentifier");
+                    context.Writer.Write(publicRequest.EngagementIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceSnapshotTemplateIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceSnapshotTemplateIdentifier");
+                    context.Writer.Write(publicRequest.ResourceSnapshotTemplateIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WritePropertyName("ResourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetEngagementIdentifier())
+                {
+                    context.Writer.WritePropertyName("EngagementIdentifier");
+                    context.Writer.Write(publicRequest.EngagementIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceIdentifier");
+                    context.Writer.Write(publicRequest.ResourceIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceSnapshotTemplateIdentifier())
+                {
+                    context.Writer.WritePropertyName("ResourceSnapshotTemplateIdentifier");
+                    context.Writer.Write(publicRequest.ResourceSnapshotTemplateIdentifier);
+                }
+
+                if(publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WritePropertyName("ResourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
 

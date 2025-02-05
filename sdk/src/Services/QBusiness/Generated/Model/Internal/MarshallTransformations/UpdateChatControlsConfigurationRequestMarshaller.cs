@@ -83,11 +83,36 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetClientToken())
                     {
                         context.Writer.WritePropertyName("clientToken");
                         context.Writer.Write(publicRequest.ClientToken);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetResponseScope())
+                {
+                    context.Writer.WritePropertyName("responseScope");
+                    context.Writer.Write(publicRequest.ResponseScope);
+                }
+=======
+                if(publicRequest.IsSetOrchestrationConfiguration())
+                {
+                    context.Writer.WritePropertyName("orchestrationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrchestrationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrchestrationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResponseScope())
+                {
+                    context.Writer.WritePropertyName("responseScope");
+                    context.Writer.Write(publicRequest.ResponseScope);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     else if(!(publicRequest.IsSetClientToken()))
                     {

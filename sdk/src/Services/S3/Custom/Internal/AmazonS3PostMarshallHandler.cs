@@ -70,7 +70,6 @@ namespace Amazon.S3.Internal
             if (SetStreamChecksum(originalRequest, executionContext.RequestContext.Request))
                 return;
 
-
             var checksumData = executionContext.RequestContext.Request.ChecksumData;
             var isRequestDefaultsToMD5 = checksumData != null && (checksumData.IsMD5Checksum || checksumData.FallbackToMD5.GetValueOrDefault());
             var userSelectedChecksumAlgorithm = checksumData != null && checksumData.SelectedChecksum != null;
@@ -81,19 +80,22 @@ namespace Amazon.S3.Internal
                 // The following requests shouldn't use checksum for directory buckets
                 if (executionContext.RequestContext.OriginalRequest is InitiateMultipartUploadRequest ||
                     executionContext.RequestContext.OriginalRequest is CompleteMultipartUploadRequest)
-                    executionContext.RequestContext.Request.ChecksumData.SelectedChecksum = null;
+                {
+                    executionContext.RequestContext.Request.ChecksumData = null;
+                }
                 else
+                {
                     executionContext.RequestContext.Request.ChecksumData.SelectedChecksum = ChecksumAlgorithm.CRC32;
-
-                executionContext.RequestContext.Request.ChecksumData.IsMD5Checksum = false;
-                executionContext.RequestContext.Request.ChecksumData.FallbackToMD5 = false;
+                    executionContext.RequestContext.Request.ChecksumData.IsMD5Checksum = false;
+                    executionContext.RequestContext.Request.ChecksumData.FallbackToMD5 = false;
+                }
             }
         }
+
         /// <summary>
         /// Sets the checksum data for streams, chunked encoding, wrap the input stream, and calculate content length.
         /// </summary>
         /// <returns>True if the request has a stream that and it was handled, otherwise false</returns>
-
         private static bool SetStreamChecksum(AmazonWebServiceRequest originalRequest, IRequest request)
         {
             var putObjectRequest = originalRequest as PutObjectRequest;
@@ -129,22 +131,17 @@ namespace Amazon.S3.Internal
 
                 request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
 
-                // Calculate Content-MD5 if not already set
+#pragma warning disable CS0618 // Type or member is obsolete
                 if (!uploadPartRequest.IsSetMD5Digest() && uploadPartRequest.CalculateContentMD5Header && !request.IsDirectoryBucket())
+#pragma warning restore CS0618 // Type or member is obsolete
                 {
+                    // Calculate Content-MD5 if not already set and customer opted in
                     string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(partialStream);
                     if (!string.IsNullOrEmpty(md5))
                     {
                         request.Headers[HeaderKeys.ContentMD5Header] = md5;
                     }
-                }
 
-
-                var defaultChecksumValidationDisabled = uploadPartRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
-
-                if (!defaultChecksumValidationDisabled
-                    && !request.IsDirectoryBucket()) // No checksum should be used for directory buckets
-                {
                     // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
                     var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
                     uploadPartRequest.InputStream = hashStream;
@@ -155,8 +152,19 @@ namespace Amazon.S3.Internal
                 }
             }
 
+            var defaultChecksumValidationDisabled = uploadPartRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
+            if (!defaultChecksumValidationDisabled)
+            {
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    uploadPartRequest.ChecksumAlgorithm, 
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: false,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
+            }
+
             request.ContentStream = uploadPartRequest.InputStream;
-            ChecksumUtils.SetChecksumData(request, uploadPartRequest.ChecksumAlgorithm, fallbackToMD5: false);
         }
 
         /// <summary>
@@ -165,8 +173,6 @@ namespace Amazon.S3.Internal
         /// <returns>True if the request has a stream that and it was handled, otherwise false</returns>
         private static void SetStreamChecksum(PutObjectRequest putObjectRequest, IRequest request)
         {
-            ChecksumUtils.SetChecksumData(request, putObjectRequest.ChecksumAlgorithm, fallbackToMD5: false);
-
             if (putObjectRequest.InputStream != null)
             {
                 // Wrap the stream in a stream that has a length
@@ -179,34 +185,20 @@ namespace Amazon.S3.Internal
 
                 request.DisablePayloadSigning = putObjectRequest.DisablePayloadSigning;
 
-                // Calculate Content-MD5 if not already set
+#pragma warning disable CS0618 // Type or member is obsolete
                 if (!putObjectRequest.IsSetMD5Digest() && putObjectRequest.CalculateContentMD5Header && !request.IsDirectoryBucket())
+#pragma warning restore CS0618 // Type or member is obsolete
                 {
+                    // Calculate Content-MD5 if not already set and customer opted in
                     string md5 = AmazonS3Util.GenerateMD5ChecksumForStream(putObjectRequest.InputStream);
-
                     if (!string.IsNullOrEmpty(md5))
                     {
                         request.Headers[HeaderKeys.ContentMD5Header] = md5;
                     }
-                }
 
-              
-                var defaultChecksumValidationDisabled = putObjectRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
-
-                if (!defaultChecksumValidationDisabled
-                    && !request.IsDirectoryBucket())
-                {
                     // Wrap input stream in MD5Stream
                     var hashStream = new MD5Stream(streamWithLength, null, length);
                     putObjectRequest.InputStream = hashStream;
-                }
-                else if (request.IsDirectoryBucket() && request.ChecksumData.SelectedChecksum == null
-                    && !defaultChecksumValidationDisabled)
-                {
-                    // If using S3 express AND the user didn't specify their own checksum algorithm,
-                    // we want to default to CRC32 to preserve the existing durability 
-                    // validation we do for plain S3 via the MD5Stream handling above
-                    request.ChecksumData.SelectedChecksum = ChecksumAlgorithm.CRC32;
                 }
                 else
                 {
@@ -214,9 +206,20 @@ namespace Amazon.S3.Internal
                 }
             }
 
+            var defaultChecksumValidationDisabled = putObjectRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
+            if (!defaultChecksumValidationDisabled)
+            {
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    putObjectRequest.ChecksumAlgorithm, 
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: false, 
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
+            }
+
             request.ContentStream = putObjectRequest.InputStream;
         }
-
 
         /// <summary>
         /// Returns a stream that has a length.

@@ -630,7 +630,7 @@
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.SparkSubmit.EntryPoint</property>
     <min>1</min>
-    <max>256</max>
+    <max>4096</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

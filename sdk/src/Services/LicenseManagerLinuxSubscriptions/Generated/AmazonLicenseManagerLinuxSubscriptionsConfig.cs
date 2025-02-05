@@ -34,10 +34,16 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
     public partial class AmazonLicenseManagerLinuxSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("License Manager Linux Subscriptions", "4.0.0.0");
 
         private static readonly AmazonLicenseManagerLinuxSubscriptionsEndpointResolver EndpointResolver =
             new AmazonLicenseManagerLinuxSubscriptionsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("License Manager Linux Subscriptions", "3.7.400.70");
+=======
+            InternalSDKUtils.BuildUserAgentString("License Manager Linux Subscriptions", "3.7.400.88");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

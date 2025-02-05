@@ -186,7 +186,7 @@ namespace Amazon.GameLift.Model
         /// up an IAM service role</a>. This fleet property can't be changed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Min=1, Max=256)]
         public string FleetRoleArn
         {
             get { return this._fleetRoleArn; }

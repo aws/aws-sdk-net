@@ -54,6 +54,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlgorithmName);
             }
 
+            if(requestObject.IsSetModelDataETag())
+            {
+                context.Writer.WritePropertyName("ModelDataETag");
+                context.Writer.Write(requestObject.ModelDataETag);
+            }
+
             if(requestObject.IsSetModelDataSource())
             {
                 context.Writer.WritePropertyName("ModelDataSource");

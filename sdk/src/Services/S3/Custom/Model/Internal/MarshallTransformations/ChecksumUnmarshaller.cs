@@ -76,6 +76,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ChecksumSHA256 = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumCRC64NVME", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumCRC64NVME = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

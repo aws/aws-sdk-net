@@ -96,11 +96,31 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetPriority())
                     {
                         context.Writer.WritePropertyName("priority");
                         context.Writer.Write(publicRequest.Priority.Value);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPriority())
+                {
+                    context.Writer.WritePropertyName("priority");
+                    context.Writer.Write(publicRequest.Priority);
+                }
+=======
+                if(publicRequest.IsSetMaxWorkerCount())
+                {
+                    context.Writer.WritePropertyName("maxWorkerCount");
+                    context.Writer.Write(publicRequest.MaxWorkerCount);
+                }
+
+                if(publicRequest.IsSetPriority())
+                {
+                    context.Writer.WritePropertyName("priority");
+                    context.Writer.Write(publicRequest.Priority);
+                }
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                     if(publicRequest.IsSetTargetTaskRunStatus())
                     {

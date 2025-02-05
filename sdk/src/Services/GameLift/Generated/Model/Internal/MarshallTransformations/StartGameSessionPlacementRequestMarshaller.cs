@@ -152,7 +152,28 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetPriorityConfigurationOverride())
+                {
+                    context.Writer.WritePropertyName("PriorityConfigurationOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PriorityConfigurationOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PriorityConfigurationOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
 

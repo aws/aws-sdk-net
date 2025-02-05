@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTableBucketPolicy operation.
-    /// Deletes a table bucket policy.
+    /// Deletes a table bucket policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete">Deleting
+    /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:DeleteTableBucketPolicy</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class DeleteTableBucketPolicyRequest : AmazonS3TablesRequest
     {
@@ -40,7 +48,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property TableBucketARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the table bucket.
+        /// The Amazon Resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

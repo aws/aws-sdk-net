@@ -97,10 +97,33 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetScrapeConfiguration())
                     {
                         context.Writer.WritePropertyName("scrapeConfiguration");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetScrapeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scrapeConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetRoleConfiguration())
+                {
+                    context.Writer.WritePropertyName("roleConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RoleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RoleConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScrapeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scrapeConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
                         var marshaller = ScrapeConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ScrapeConfiguration, context);

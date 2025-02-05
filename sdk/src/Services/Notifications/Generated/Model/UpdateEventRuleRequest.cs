@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventRule operation.
-    /// Updates an existing EventRule.
+    /// Updates an existing <c>EventRule</c>.
     /// </summary>
     public partial class UpdateEventRuleRequest : AmazonNotificationsRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) to use to update the EventRule.
+        /// The Amazon Resource Name (ARN) to use to update the <c>EventRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// An additional event pattern used to further filter the events this EventRule receives.
+        /// An additional event pattern used to further filter the events this <c>EventRule</c>
+        /// receives.
         /// </para>
         ///  
         /// <para>
@@ -85,7 +86,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS Regions that sends events to this EventRule.
+        /// A list of Amazon Web Services Regions that sends events to this <c>EventRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

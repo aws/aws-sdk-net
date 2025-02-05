@@ -78,8 +78,14 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Scooter. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Scooter"
+        /// Travel mode options when the provided travel mode is <c>Scooter</c> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When travel mode is set to <c>Scooter</c>, then the avoidance option <c>ControlledAccessHighways</c>
+        /// defaults to <c>true</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public RouteScooterOptions Scooter
         {

@@ -82,6 +82,11 @@ namespace Amazon.Deadline.Model
         IListLicenseEndpointsPaginator ListLicenseEndpoints(ListLicenseEndpointsRequest request);
 
         /// <summary>
+        /// Paginator for ListLimits operation
+        ///</summary>
+        IListLimitsPaginator ListLimits(ListLimitsRequest request);
+
+        /// <summary>
         /// Paginator for ListMeteredProducts operation
         ///</summary>
         IListMeteredProductsPaginator ListMeteredProducts(ListMeteredProductsRequest request);
@@ -100,6 +105,11 @@ namespace Amazon.Deadline.Model
         /// Paginator for ListQueueFleetAssociations operation
         ///</summary>
         IListQueueFleetAssociationsPaginator ListQueueFleetAssociations(ListQueueFleetAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQueueLimitAssociations operation
+        ///</summary>
+        IListQueueLimitAssociationsPaginator ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListQueueMembers operation

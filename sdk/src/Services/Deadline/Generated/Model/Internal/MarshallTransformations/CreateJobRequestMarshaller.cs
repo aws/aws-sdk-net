@@ -92,7 +92,27 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxFailedTasksCount.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMaxRetriesPerTask())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("parameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+=======
+                if(publicRequest.IsSetMaxWorkerCount())
+                {
+                    context.Writer.WritePropertyName("maxWorkerCount");
+                    context.Writer.Write(publicRequest.MaxWorkerCount);
+                }
+
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("parameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
                     {
                         context.Writer.WritePropertyName("maxRetriesPerTask");
                         context.Writer.Write(publicRequest.MaxRetriesPerTask.Value);

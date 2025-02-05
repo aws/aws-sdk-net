@@ -108,6 +108,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.HsmType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HsmTypeRollbackExpiration", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.HsmTypeRollbackExpiration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

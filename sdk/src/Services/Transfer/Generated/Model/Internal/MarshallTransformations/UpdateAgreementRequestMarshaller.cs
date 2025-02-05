@@ -134,7 +134,136 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetAgreementId())
+                {
+                    context.Writer.WritePropertyName("AgreementId");
+                    context.Writer.Write(publicRequest.AgreementId);
+                }
+
+                if(publicRequest.IsSetBaseDirectory())
+                {
+                    context.Writer.WritePropertyName("BaseDirectory");
+                    context.Writer.Write(publicRequest.BaseDirectory);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetEnforceMessageSigning())
+                {
+                    context.Writer.WritePropertyName("EnforceMessageSigning");
+                    context.Writer.Write(publicRequest.EnforceMessageSigning);
+                }
+
+                if(publicRequest.IsSetLocalProfileId())
+                {
+                    context.Writer.WritePropertyName("LocalProfileId");
+                    context.Writer.Write(publicRequest.LocalProfileId);
+                }
+
+                if(publicRequest.IsSetPartnerProfileId())
+                {
+                    context.Writer.WritePropertyName("PartnerProfileId");
+                    context.Writer.Write(publicRequest.PartnerProfileId);
+                }
+
+                if(publicRequest.IsSetPreserveFilename())
+                {
+                    context.Writer.WritePropertyName("PreserveFilename");
+                    context.Writer.Write(publicRequest.PreserveFilename);
+                }
+
+                if(publicRequest.IsSetServerId())
+                {
+                    context.Writer.WritePropertyName("ServerId");
+                    context.Writer.Write(publicRequest.ServerId);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetAgreementId())
+                {
+                    context.Writer.WritePropertyName("AgreementId");
+                    context.Writer.Write(publicRequest.AgreementId);
+                }
+
+                if(publicRequest.IsSetBaseDirectory())
+                {
+                    context.Writer.WritePropertyName("BaseDirectory");
+                    context.Writer.Write(publicRequest.BaseDirectory);
+                }
+
+                if(publicRequest.IsSetCustomDirectories())
+                {
+                    context.Writer.WritePropertyName("CustomDirectories");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDirectoriesTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDirectories, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetEnforceMessageSigning())
+                {
+                    context.Writer.WritePropertyName("EnforceMessageSigning");
+                    context.Writer.Write(publicRequest.EnforceMessageSigning);
+                }
+
+                if(publicRequest.IsSetLocalProfileId())
+                {
+                    context.Writer.WritePropertyName("LocalProfileId");
+                    context.Writer.Write(publicRequest.LocalProfileId);
+                }
+
+                if(publicRequest.IsSetPartnerProfileId())
+                {
+                    context.Writer.WritePropertyName("PartnerProfileId");
+                    context.Writer.Write(publicRequest.PartnerProfileId);
+                }
+
+                if(publicRequest.IsSetPreserveFilename())
+                {
+                    context.Writer.WritePropertyName("PreserveFilename");
+                    context.Writer.Write(publicRequest.PreserveFilename);
+                }
+
+                if(publicRequest.IsSetServerId())
+                {
+                    context.Writer.WritePropertyName("ServerId");
+                    context.Writer.Write(publicRequest.ServerId);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
 

@@ -32,7 +32,16 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdateBillScenarioUsageModification operation.
     /// Update a newly added or existing usage lines. You can update the usage amounts, usage
-    /// hour, and usage group based on a usage ID and a Bill scenario ID.
+    /// hour, and usage group based on a usage ID and a Bill scenario ID. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchUpdateBillScenarioUsageModification</c> operation doesn't have its own
+    /// IAM permission. To authorize this operation for Amazon Web Services principals, include
+    /// the permission <c>bcm-pricing-calculator:UpdateBillScenarioUsageModification</c> in
+    /// your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchUpdateBillScenarioUsageModificationRequest : AmazonBCMPricingCalculatorRequest
     {

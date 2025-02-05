@@ -31,7 +31,8 @@ namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
     /// Container for the parameters to the CalculateRoutes operation.
-    /// Calculates a route given the following required parameters: <c>Origin</c> and <c>Destination</c>.
+    /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
+    /// and <c>Destination</c>.
     /// </summary>
     public partial class CalculateRoutesRequest : AmazonGeoRoutesRequest
     {
@@ -64,7 +65,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Features that are allowed while calculating. a route
+        /// Features that are allowed while calculating a route.
         /// </para>
         /// </summary>
         public RouteAllowOptions Allow
@@ -590,7 +591,7 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Type of step returned by the response. Default provides basic steps intended for web
         /// based applications. TurnByTurn provides detailed instructions with more granularity
-        /// intended for a turn based naviagtion system.
+        /// intended for a turn based navigation system.
         /// </para>
         /// </summary>
         public RouteTravelStepType TravelStepType

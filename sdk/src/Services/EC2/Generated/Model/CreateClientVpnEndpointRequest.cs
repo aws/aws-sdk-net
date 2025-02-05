@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
+        private bool? _disconnectOnSessionTimeout;
         private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SelfServicePortal _selfServicePortal;
@@ -211,6 +212,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisconnectOnSessionTimeout. 
+        /// <para>
+        /// Indicates whether the client VPN session is disconnected after the maximum timeout
+        /// specified in <c>SessionTimeoutHours</c> is reached. If <c>true</c>, users are prompted
+        /// to reconnect client VPN. If <c>false</c>, client VPN attempts to reconnect automatically.
+        /// The default value is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool DisconnectOnSessionTimeout
+        {
+            get { return this._disconnectOnSessionTimeout.GetValueOrDefault(); }
+            set { this._disconnectOnSessionTimeout = value; }
+        }
+
+        // Check to see if DisconnectOnSessionTimeout property is set
+        internal bool IsSetDisconnectOnSessionTimeout()
+        {
+            return this._disconnectOnSessionTimeout.HasValue; 
         }
 
         /// <summary>

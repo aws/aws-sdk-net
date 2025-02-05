@@ -34,10 +34,16 @@ namespace Amazon.CodeConnections
     public partial class AmazonCodeConnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CodeConnections", "4.0.0.0");
 
         private static readonly AmazonCodeConnectionsEndpointResolver EndpointResolver =
             new AmazonCodeConnectionsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CodeConnections", "3.7.401.49");
+=======
+            InternalSDKUtils.BuildUserAgentString("CodeConnections", "3.7.401.67");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -34,10 +34,16 @@ namespace Amazon.Route53Domains
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Route 53 Domains", "4.0.0.0");
 
         private static readonly AmazonRoute53DomainsEndpointResolver EndpointResolver =
             new AmazonRoute53DomainsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Route 53 Domains", "3.7.401.7");
+=======
+            InternalSDKUtils.BuildUserAgentString("Route 53 Domains", "3.7.401.25");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

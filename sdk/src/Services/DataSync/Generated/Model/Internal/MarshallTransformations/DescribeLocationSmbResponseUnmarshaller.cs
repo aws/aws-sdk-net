@@ -58,16 +58,34 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.AgentArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AuthenticationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthenticationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsIpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DnsIpAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KerberosPrincipal", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KerberosPrincipal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LocationArn", targetDepth))

@@ -188,7 +188,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PerInstanceBinaryArn. 
         /// <para>
         /// The unique identifier for the version of the per-instance container group definition
-        /// that is being deployed.
+        /// that is being deployed. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -208,7 +208,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RollbackGameServerBinaryArn. 
         /// <para>
         /// The unique identifier for the version of the game server container group definition
-        /// to roll back to if deployment fails.
+        /// to roll back to if deployment fails. Amazon GameLift sets this property to the container
+        /// group definition version that the fleet used when it was last active.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -228,7 +229,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RollbackPerInstanceBinaryArn. 
         /// <para>
         /// The unique identifier for the version of the per-instance container group definition
-        /// to roll back to if deployment fails.
+        /// to roll back to if deployment fails. Amazon GameLift sets this property to the container
+        /// group definition version that the fleet used when it was last active.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

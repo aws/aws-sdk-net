@@ -35,6 +35,8 @@ namespace Amazon.MediaLive.Model
     public partial class CmafIngestGroupSettings
     {
         private OutputLocationRef _destination;
+        private CmafId3Behavior _id3Behavior;
+        private string _id3NameModifier;
         private CmafKLVBehavior _klvBehavior;
         private string _klvNameModifier;
         private CmafNielsenId3Behavior _nielsenId3Behavior;
@@ -59,6 +61,43 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id3Behavior. Set to ENABLED to enable ID3 metadata insertion.
+        /// To include metadata, you configure other parameters in the output group, or you add
+        /// an ID3 action to the channel schedule.
+        /// </summary>
+        public CmafId3Behavior Id3Behavior
+        {
+            get { return this._id3Behavior; }
+            set { this._id3Behavior = value; }
+        }
+
+        // Check to see if Id3Behavior property is set
+        internal bool IsSetId3Behavior()
+        {
+            return this._id3Behavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id3NameModifier. Change the modifier that MediaLive automatically
+        /// adds to the Streams() name that identifies an ID3 track. The default is "id3", which
+        /// means the default name will be Streams(id3.cmfm). Any string you enter here will replace
+        /// the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
+        /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string Id3NameModifier
+        {
+            get { return this._id3NameModifier; }
+            set { this._id3NameModifier = value; }
+        }
+
+        // Check to see if Id3NameModifier property is set
+        internal bool IsSetId3NameModifier()
+        {
+            return this._id3NameModifier != null;
         }
 
         /// <summary>

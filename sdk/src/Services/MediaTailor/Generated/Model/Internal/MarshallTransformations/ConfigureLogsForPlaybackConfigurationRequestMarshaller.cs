@@ -63,7 +63,32 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.ResourcePath = "/configureLogs/playbackConfiguration";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPercentEnabled())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnabledLoggingStrategies())
+                {
+                    context.Writer.WritePropertyName("EnabledLoggingStrategies");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEnabledLoggingStrategiesListValue in publicRequest.EnabledLoggingStrategies)
+                    {
+                            context.Writer.Write(publicRequestEnabledLoggingStrategiesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPercentEnabled())
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

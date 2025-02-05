@@ -36,7 +36,26 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class Tool
     {
+        private CachePointBlock _cachePoint;
         private ToolSpecification _toolSpec;
+
+        /// <summary>
+        /// Gets and sets the property CachePoint. 
+        /// <para>
+        /// Creates a cache checkpoint within a tool designation
+        /// </para>
+        /// </summary>
+        public CachePointBlock CachePoint
+        {
+            get { return this._cachePoint; }
+            set { this._cachePoint = value; }
+        }
+
+        // Check to see if CachePoint property is set
+        internal bool IsSetCachePoint()
+        {
+            return this._cachePoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ToolSpec. 

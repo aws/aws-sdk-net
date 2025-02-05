@@ -56,6 +56,8 @@ namespace Amazon.BedrockAgent.Model
         private UnknownConnectionSourceOutputFlowValidationDetails _unknownConnectionSourceOutput;
         private UnknownConnectionTargetFlowValidationDetails _unknownConnectionTarget;
         private UnknownConnectionTargetInputFlowValidationDetails _unknownConnectionTargetInput;
+        private UnknownNodeInputFlowValidationDetails _unknownNodeInput;
+        private UnknownNodeOutputFlowValidationDetails _unknownNodeOutput;
         private UnreachableNodeFlowValidationDetails _unreachableNode;
         private UnsatisfiedConnectionConditionsFlowValidationDetails _unsatisfiedConnectionConditions;
         private UnspecifiedFlowValidationDetails _unspecified;
@@ -454,6 +456,42 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetUnknownConnectionTargetInput()
         {
             return this._unknownConnectionTargetInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnknownNodeInput. 
+        /// <para>
+        /// Details about an unknown input for a node.
+        /// </para>
+        /// </summary>
+        public UnknownNodeInputFlowValidationDetails UnknownNodeInput
+        {
+            get { return this._unknownNodeInput; }
+            set { this._unknownNodeInput = value; }
+        }
+
+        // Check to see if UnknownNodeInput property is set
+        internal bool IsSetUnknownNodeInput()
+        {
+            return this._unknownNodeInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnknownNodeOutput. 
+        /// <para>
+        /// Details about an unknown output for a node.
+        /// </para>
+        /// </summary>
+        public UnknownNodeOutputFlowValidationDetails UnknownNodeOutput
+        {
+            get { return this._unknownNodeOutput; }
+            set { this._unknownNodeOutput = value; }
+        }
+
+        // Check to see if UnknownNodeOutput property is set
+        internal bool IsSetUnknownNodeOutput()
+        {
+            return this._unknownNodeOutput != null;
         }
 
         /// <summary>

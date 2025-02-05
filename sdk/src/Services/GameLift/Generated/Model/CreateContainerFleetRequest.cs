@@ -215,7 +215,7 @@ namespace Amazon.GameLift.Model
         /// account]:role/[role name]</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FleetRoleArn
         {
             get { return this._fleetRoleArn; }
@@ -238,8 +238,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// Create a container group definition by calling <a>CreateContainerGroupDefinition</a>.
-        /// This operation creates a <a>ContainerGroupDefinition</a> resource. 
+        /// Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>.
+        /// This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+        /// resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -564,8 +565,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// Create a container group definition by calling <a>CreateContainerGroupDefinition</a>.
-        /// This operation creates a <a>ContainerGroupDefinition</a> resource.
+        /// Create a container group definition by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>.
+        /// This operation creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a>
+        /// resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

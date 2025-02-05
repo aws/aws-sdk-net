@@ -4636,6 +4636,10 @@
         "CompressionType":{
           "shape":"CompressionType",
           "documentation":"<p>The type of compression used for an additional data source used in inference or training. Specify <code>None</code> if your additional data source is not compressed.</p>"
+        },
+        "ETag":{
+          "shape":"String",
+          "documentation":"<p>The ETag associated with S3 URI.</p>"
         }
       },
       "documentation":"<p>A data source used for training or inference that is in addition to the input dataset or model data.</p>"
@@ -7651,7 +7655,10 @@
           "shape":"InstanceGroupTrainingPlanStatus",
           "documentation":"<p>The current status of the training plan associated with this cluster instance group.</p>"
         },
-        "OverrideVpcConfig":{"shape":"VpcConfig"}
+        "OverrideVpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>"
+        }
       },
       "documentation":"<p>Details of an instance group in a SageMaker HyperPod cluster.</p>"
     },
@@ -7711,7 +7718,10 @@
           "shape":"TrainingPlanArn",
           "documentation":"<p>The Amazon Resource Name (ARN); of the training plan to use for this cluster instance group.</p> <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html\">CreateTrainingPlan</a> </code>.</p>"
         },
-        "OverrideVpcConfig":{"shape":"VpcConfig"}
+        "OverrideVpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>To configure multi-AZ deployments, customize the VPC configuration at the instance group level. You can specify different subnets and security groups across different AZs in the instance group specification to override a SageMaker HyperPod cluster's default VPC configuration. For more information about deploying a cluster in multiple AZs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones\">Setting up SageMaker HyperPod clusters across multiple AZs</a>.</p> <note> <p> If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing enabled in your instance group VPC configuration, the nodes automatically use IPv6 addressing for network communication.</p> <p> For information about adding IPv6 support for your VPC, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html\">IPv6 support for your VPC</a>.</p> <p> For information about creating a new VPC for use with IPv6, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html\">Create a VPC</a>.</p> </note>"
+        }
       },
       "documentation":"<p>The specifications of an instance group that you need to define.</p>"
     },
@@ -7930,7 +7940,10 @@
           "shape":"ClusterLifeCycleConfig",
           "documentation":"<p>The LifeCycle configuration applied to the instance.</p>"
         },
-        "OverrideVpcConfig":{"shape":"VpcConfig"},
+        "OverrideVpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>"
+        },
         "ThreadsPerCore":{
           "shape":"ClusterThreadsPerCore",
           "documentation":"<p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>"
@@ -7942,6 +7955,10 @@
         "PrivatePrimaryIp":{
           "shape":"ClusterPrivatePrimaryIp",
           "documentation":"<p>The private primary IP address of the SageMaker HyperPod cluster node.</p>"
+        },
+        "PrivatePrimaryIpv6":{
+          "shape":"ClusterPrivatePrimaryIpv6",
+          "documentation":"<p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>"
         },
         "PrivateDnsHostname":{
           "shape":"ClusterPrivateDnsHostname",
@@ -8044,6 +8061,7 @@
       "type":"string",
       "pattern":"^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$"
     },
+    "ClusterPrivatePrimaryIpv6":{"type":"string"},
     "ClusterSchedulerConfigArn":{
       "type":"string",
       "max":256,
@@ -9302,7 +9320,10 @@
           "shape":"ClusterInstanceGroupSpecifications",
           "documentation":"<p>The instance groups to be created in the SageMaker HyperPod cluster.</p>"
         },
-        "VpcConfig":{"shape":"VpcConfig"},
+        "VpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html\">Give SageMaker access to resources in your Amazon VPC</a>.</p> <note> <p> If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing enabled in your VPC configuration, the cluster automatically uses IPv6 addressing for network communication.</p> <p> For information about adding IPv6 support for your VPC, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html\">IPv6 support for your VPC</a>.</p> <p> For information about creating a new VPC for use with IPv6, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html\">Create a VPC</a>.</p> </note>"
+        },
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Custom tags for managing the SageMaker HyperPod cluster as an Amazon Web Services resource. You can add tags to your cluster in the same way you add them in other Amazon Web Services services that support tagging. To learn more about tagging Amazon Web Services resources in general, see <a href=\"https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html\">Tagging Amazon Web Services Resources User Guide</a>.</p>"
@@ -29894,7 +29915,7 @@
         },
         "Image":{
           "shape":"ContainerImage",
-          "documentation":"<p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>"
+          "documentation":"<p>The Amazon Elastic Container Registry (Amazon ECR) path where inference code is stored.</p> <p>If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html\">Using Your Own Algorithms with Amazon SageMaker</a>.</p>"
         },
         "ImageDigest":{
           "shape":"ImageDigest",
@@ -29935,6 +29956,10 @@
         "AdditionalS3DataSource":{
           "shape":"AdditionalS3DataSource",
           "documentation":"<p>The additional data source that is used during inference in the Docker container for your model package.</p>"
+        },
+        "ModelDataETag":{
+          "shape":"String",
+          "documentation":"<p>The ETag associated with Model Data URL.</p>"
         }
       },
       "documentation":"<p>Describes the Docker container for the model package.</p>"
@@ -33811,6 +33836,7 @@
         "ml.inf2.48xlarge",
         "ml.p5.48xlarge",
         "ml.p5e.48xlarge",
+        "ml.p5en.48xlarge",
         "ml.m7i.large",
         "ml.m7i.xlarge",
         "ml.m7i.2xlarge",
@@ -35312,6 +35338,7 @@
         "ml.p5.48xlarge",
         "ml.p5e.48xlarge",
         "ml.p5en.48xlarge",
+        "ml.trn1.32xlarge",
         "ml.trn2.48xlarge"
       ]
     },
@@ -35638,7 +35665,7 @@
         },
         "SageMakerImageVersionArn":{
           "shape":"ImageVersionArn",
-          "documentation":"<p>The ARN of the image version created on the instance.</p>"
+          "documentation":"<p>The ARN of the image version created on the instance. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>"
         },
         "SageMakerImageVersionAlias":{
           "shape":"ImageVersionAlias",
@@ -35653,7 +35680,7 @@
           "documentation":"<p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>"
         }
       },
-      "documentation":"<p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>"
+      "documentation":"<p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p> <note> <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p> </note>"
     },
     "ResourceType":{
       "type":"string",
@@ -35831,7 +35858,7 @@
       "members":{
         "S3DataType":{
           "shape":"S3DataType",
-          "documentation":"<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>"
+          "documentation":"<p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p> <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p> <p>If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>"
         },
         "S3Uri":{
           "shape":"S3Uri",
@@ -35891,6 +35918,14 @@
         "ManifestS3Uri":{
           "shape":"S3ModelUri",
           "documentation":"<p>The Amazon S3 URI of the manifest file. The manifest file is a CSV file that stores the artifact locations.</p>"
+        },
+        "ETag":{
+          "shape":"String",
+          "documentation":"<p>The ETag associated with S3 URI.</p>"
+        },
+        "ManifestEtag":{
+          "shape":"String",
+          "documentation":"<p>The ETag associated with Manifest S3 URI.</p>"
         }
       },
       "documentation":"<p>Specifies the S3 location of ML model data to deploy.</p>"
@@ -36768,6 +36803,10 @@
         "ModelDataSource":{
           "shape":"ModelDataSource",
           "documentation":"<p>Specifies the location of ML model data to deploy during endpoint creation.</p>"
+        },
+        "ModelDataETag":{
+          "shape":"String",
+          "documentation":"<p>The ETag associated with Model Data URL.</p>"
         },
         "AlgorithmName":{
           "shape":"ArnOrName",

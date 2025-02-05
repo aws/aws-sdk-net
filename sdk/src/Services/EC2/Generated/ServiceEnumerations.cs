@@ -673,6 +673,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Future for AllocationType
+        /// </summary>
+        public static readonly AllocationType Future = new AllocationType("future");
+        /// <summary>
         /// Constant Used for AllocationType
         /// </summary>
         public static readonly AllocationType Used = new AllocationType("used");
@@ -9323,6 +9327,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType F14xlarge = new InstanceType("f1.4xlarge");
         /// <summary>
+        /// Constant F212xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType F212xlarge = new InstanceType("f2.12xlarge");
+        /// <summary>
+        /// Constant F248xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType F248xlarge = new InstanceType("f2.48xlarge");
+        /// <summary>
         /// Constant G22xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G22xlarge = new InstanceType("g2.2xlarge");
@@ -10747,6 +10759,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType P548xlarge = new InstanceType("p5.48xlarge");
         /// <summary>
+        /// Constant P5e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P5e48xlarge = new InstanceType("p5e.48xlarge");
+        /// <summary>
+        /// Constant P5en48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P5en48xlarge = new InstanceType("p5en.48xlarge");
+        /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R32xlarge = new InstanceType("r3.2xlarge");
@@ -11691,6 +11711,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Trn1n32xlarge = new InstanceType("trn1n.32xlarge");
         /// <summary>
+        /// Constant Trn248xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn248xlarge = new InstanceType("trn2.48xlarge");
+        /// <summary>
         /// Constant U12tb1112xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U12tb1112xlarge = new InstanceType("u-12tb1.112xlarge");
@@ -11735,6 +11759,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType U7i12tb224xlarge = new InstanceType("u7i-12tb.224xlarge");
         /// <summary>
+        /// Constant U7i6tb112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7i6tb112xlarge = new InstanceType("u7i-6tb.112xlarge");
+        /// <summary>
+        /// Constant U7i8tb112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7i8tb112xlarge = new InstanceType("u7i-8tb.112xlarge");
+        /// <summary>
         /// Constant U7ib12tb224xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U7ib12tb224xlarge = new InstanceType("u7ib-12tb.224xlarge");
@@ -11750,6 +11782,10 @@ namespace Amazon.EC2
         /// Constant U7in32tb224xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U7in32tb224xlarge = new InstanceType("u7in-32tb.224xlarge");
+        /// <summary>
+        /// Constant U7inh32tb480xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U7inh32tb480xlarge = new InstanceType("u7inh-32tb.480xlarge");
         /// <summary>
         /// Constant U9tb1112xlarge for InstanceType
         /// </summary>

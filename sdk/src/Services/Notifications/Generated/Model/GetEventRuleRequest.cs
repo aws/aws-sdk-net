@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEventRule operation.
-    /// Returns a specified EventRule.
+    /// Returns a specified <c>EventRule</c>.
     /// </summary>
     public partial class GetEventRuleRequest : AmazonNotificationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the EventRule to return.
+        /// The Amazon Resource Name (ARN) of the <c>EventRule</c> to return.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

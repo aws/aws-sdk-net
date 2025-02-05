@@ -102,6 +102,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deblocking", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Deblocking = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dynamicSubGop", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

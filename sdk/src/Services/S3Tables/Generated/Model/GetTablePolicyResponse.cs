@@ -39,7 +39,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// The name of the resource policy.
+        /// The <c>JSON</c> that defines the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20480)]

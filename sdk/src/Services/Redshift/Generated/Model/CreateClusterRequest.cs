@@ -571,11 +571,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// If <c>true</c>, the data in the cluster is encrypted at rest. 
+        /// If <c>true</c>, the data in the cluster is encrypted at rest. If you set the value
+        /// on this parameter to <c>false</c>, the request will fail.
         /// </para>
         ///  
         /// <para>
-        /// Default: false
+        /// Default: true
         /// </para>
         /// </summary>
         public bool? Encrypted
@@ -1096,6 +1097,10 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// If <c>true</c>, the cluster can be accessed from a public network. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
         /// </para>
         /// </summary>
         public bool? PubliclyAccessible

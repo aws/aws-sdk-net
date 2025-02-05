@@ -31,9 +31,9 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPolicy operation.
-    /// Retrieves the current permission policy for a Q Business application. The policy is
-    /// returned as a JSON-formatted string and defines the IAM actions that are allowed or
-    /// denied for the application's resources.
+    /// Retrieves the current permission policy for a Amazon Q Business application. The policy
+    /// is returned as a JSON-formatted string and defines the IAM actions that are allowed
+    /// or denied for the application's resources.
     /// </summary>
     public partial class GetPolicyRequest : AmazonQBusinessRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

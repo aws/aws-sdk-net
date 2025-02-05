@@ -685,11 +685,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// Aurora MySQL - <c>audit | error | general | instance | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// Aurora PostgreSQL - <c>instance | postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -769,18 +769,6 @@ namespace Amazon.RDS.Model
         /// inside the RDS console with the RDS query editor.
         /// </para>
         ///  
-        /// <para>
-        /// RDS Data API is supported with the following DB clusters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Aurora PostgreSQL Serverless v2 and provisioned
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora PostgreSQL and Aurora MySQL Serverless v1
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
         /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.

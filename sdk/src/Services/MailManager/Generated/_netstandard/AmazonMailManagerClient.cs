@@ -376,6 +376,103 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  CreateAddressList
+
+        internal virtual CreateAddressListResponse CreateAddressList(CreateAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressList">REST API Reference for CreateAddressList Operation</seealso>
+        public virtual Task<CreateAddressListResponse> CreateAddressListAsync(CreateAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAddressListImportJob
+
+        internal virtual CreateAddressListImportJobResponse CreateAddressListImportJob(CreateAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressListImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/CreateAddressListImportJob">REST API Reference for CreateAddressListImportJob Operation</seealso>
+        public virtual Task<CreateAddressListImportJobResponse> CreateAddressListImportJobAsync(CreateAddressListImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddressListImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAddressListImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateArchive
 
         internal virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
@@ -679,6 +776,50 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeleteAddressList
+
+        internal virtual DeleteAddressListResponse DeleteAddressList(DeleteAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
+        public virtual Task<DeleteAddressListResponse> DeleteAddressListAsync(DeleteAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteArchive
 
         internal virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
@@ -899,6 +1040,53 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  DeregisterMemberFromAddressList
+
+        internal virtual DeregisterMemberFromAddressListResponse DeregisterMemberFromAddressList(DeregisterMemberFromAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMemberFromAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMemberFromAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterMemberFromAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a member from an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMemberFromAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterMemberFromAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeregisterMemberFromAddressList">REST API Reference for DeregisterMemberFromAddressList Operation</seealso>
+        public virtual Task<DeregisterMemberFromAddressListResponse> DeregisterMemberFromAddressListAsync(DeregisterMemberFromAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterMemberFromAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterMemberFromAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterMemberFromAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAddonInstance
 
         internal virtual GetAddonInstanceResponse GetAddonInstance(GetAddonInstanceRequest request)
@@ -975,6 +1163,100 @@ namespace Amazon.MailManager
             options.ResponseUnmarshaller = GetAddonSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAddonSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAddressList
+
+        internal virtual GetAddressListResponse GetAddressList(GetAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetch attributes of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressList">REST API Reference for GetAddressList Operation</seealso>
+        public virtual Task<GetAddressListResponse> GetAddressListAsync(GetAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAddressListImportJob
+
+        internal virtual GetAddressListImportJobResponse GetAddressListImportJob(GetAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressListImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetch attributes of an import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetAddressListImportJob">REST API Reference for GetAddressListImportJob Operation</seealso>
+        public virtual Task<GetAddressListImportJobResponse> GetAddressListImportJobAsync(GetAddressListImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAddressListImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAddressListImportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1291,6 +1573,53 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  GetMemberOfAddressList
+
+        internal virtual GetMemberOfAddressListResponse GetMemberOfAddressList(GetMemberOfAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberOfAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<GetMemberOfAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetch attributes of a member in an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMemberOfAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMemberOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/GetMemberOfAddressList">REST API Reference for GetMemberOfAddressList Operation</seealso>
+        public virtual Task<GetMemberOfAddressListResponse> GetMemberOfAddressListAsync(GetMemberOfAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMemberOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMemberOfAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMemberOfAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRelay
 
         internal virtual GetRelayResponse GetRelay(GetRelayRequest request)
@@ -1485,6 +1814,97 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  ListAddressListImportJobs
+
+        internal virtual ListAddressListImportJobsResponse ListAddressListImportJobs(ListAddressListImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAddressListImportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists jobs for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressListImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAddressListImportJobs service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressListImportJobs">REST API Reference for ListAddressListImportJobs Operation</seealso>
+        public virtual Task<ListAddressListImportJobsResponse> ListAddressListImportJobsAsync(ListAddressListImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAddressListImportJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAddressLists
+
+        internal virtual ListAddressListsResponse ListAddressLists(ListAddressListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAddressListsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists address lists for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddressLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAddressLists service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListAddressLists">REST API Reference for ListAddressLists Operation</seealso>
+        public virtual Task<ListAddressListsResponse> ListAddressListsAsync(ListAddressListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddressListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddressListsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAddressListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListArchiveExports
 
         internal virtual ListArchiveExportsResponse ListArchiveExports(ListArchiveExportsRequest request)
@@ -1660,6 +2080,53 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  ListMembersOfAddressList
+
+        internal virtual ListMembersOfAddressListResponse ListMembersOfAddressList(ListMembersOfAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersOfAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<ListMembersOfAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists members of an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMembersOfAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMembersOfAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/ListMembersOfAddressList">REST API Reference for ListMembersOfAddressList Operation</seealso>
+        public virtual Task<ListMembersOfAddressListResponse> ListMembersOfAddressListAsync(ListMembersOfAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMembersOfAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMembersOfAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMembersOfAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRelays
 
         internal virtual ListRelaysResponse ListRelays(ListRelaysRequest request)
@@ -1811,6 +2278,109 @@ namespace Amazon.MailManager
 
         #endregion
         
+        #region  RegisterMemberToAddressList
+
+        internal virtual RegisterMemberToAddressListResponse RegisterMemberToAddressList(RegisterMemberToAddressListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMemberToAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMemberToAddressListResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterMemberToAddressListResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a member to an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMemberToAddressList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterMemberToAddressList service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/RegisterMemberToAddressList">REST API Reference for RegisterMemberToAddressList Operation</seealso>
+        public virtual Task<RegisterMemberToAddressListResponse> RegisterMemberToAddressListAsync(RegisterMemberToAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterMemberToAddressListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterMemberToAddressListResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterMemberToAddressListResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAddressListImportJob
+
+        internal virtual StartAddressListImportJobResponse StartAddressListImportJob(StartAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartAddressListImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
+        /// Occurs when an operation exceeds a predefined service quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StartAddressListImportJob">REST API Reference for StartAddressListImportJob Operation</seealso>
+        public virtual Task<StartAddressListImportJobResponse> StartAddressListImportJobAsync(StartAddressListImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAddressListImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAddressListImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartArchiveExport
 
         internal virtual StartArchiveExportResponse StartArchiveExport(StartArchiveExportRequest request)
@@ -1910,6 +2480,56 @@ namespace Amazon.MailManager
             options.ResponseUnmarshaller = StartArchiveSearchResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartArchiveSearchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAddressListImportJob
+
+        internal virtual StopAddressListImportJobResponse StopAddressListImportJob(StopAddressListImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAddressListImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopAddressListImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops an ongoing import job for an address list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAddressListImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAddressListImportJob service method, as returned by MailManager.</returns>
+        /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
+        /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
+        /// Occurs when a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/StopAddressListImportJob">REST API Reference for StopAddressListImportJob Operation</seealso>
+        public virtual Task<StopAddressListImportJobResponse> StopAddressListImportJobAsync(StopAddressListImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopAddressListImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAddressListImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopAddressListImportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -66,10 +66,28 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioMonitoringSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AudioMonitoringSetting, AudioMonitoringSettingUnmarshaller>(AudioMonitoringSettingUnmarshaller.Instance);
+                    unmarshalledObject.AudioMonitoringSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("contentQualityAnalysisState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContentQualityAnalysisState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("thumbnailState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoMonitoringSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VideoMonitoringSetting, VideoMonitoringSettingUnmarshaller>(VideoMonitoringSettingUnmarshaller.Instance);
+                    unmarshalledObject.VideoMonitoringSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -34,10 +34,16 @@ namespace Amazon.Keyspaces
     public partial class AmazonKeyspacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Keyspaces", "4.0.0.0");
 
         private static readonly AmazonKeyspacesEndpointResolver EndpointResolver =
             new AmazonKeyspacesEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Keyspaces", "3.7.402.16");
+=======
+            InternalSDKUtils.BuildUserAgentString("Keyspaces", "3.7.402.34");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

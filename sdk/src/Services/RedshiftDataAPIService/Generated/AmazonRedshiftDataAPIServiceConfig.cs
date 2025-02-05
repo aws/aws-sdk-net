@@ -34,10 +34,16 @@ namespace Amazon.RedshiftDataAPIService
     public partial class AmazonRedshiftDataAPIServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Redshift Data", "4.0.0.0");
 
         private static readonly AmazonRedshiftDataAPIServiceEndpointResolver EndpointResolver =
             new AmazonRedshiftDataAPIServiceEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Redshift Data", "3.7.402.28");
+=======
+            InternalSDKUtils.BuildUserAgentString("Redshift Data", "3.7.402.46");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

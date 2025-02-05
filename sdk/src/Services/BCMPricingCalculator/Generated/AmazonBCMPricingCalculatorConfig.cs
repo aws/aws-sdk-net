@@ -34,10 +34,16 @@ namespace Amazon.BCMPricingCalculator
     public partial class AmazonBCMPricingCalculatorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "4.0.0.0");
 
         private static readonly AmazonBCMPricingCalculatorEndpointResolver EndpointResolver =
             new AmazonBCMPricingCalculatorEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "3.7.402.0");
+=======
+            InternalSDKUtils.BuildUserAgentString("BCM Pricing Calculator", "3.7.403.3");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

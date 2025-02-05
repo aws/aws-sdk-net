@@ -32,8 +32,8 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the DeleteDataAccessor operation.
     /// Deletes a specified data accessor. This operation permanently removes the data accessor
-    /// and its associated AWS IAM Identity Center application. Any access granted to the
-    /// ISV through this data accessor will be revoked
+    /// and its associated IAM Identity Center application. Any access granted to the ISV
+    /// through this data accessor will be revoked.
     /// </summary>
     public partial class DeleteDataAccessorRequest : AmazonQBusinessRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

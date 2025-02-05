@@ -216,6 +216,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
+        /// Validates when a pre-calculated checksum is provided, it's used instead of calculating a new value.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestPrecalculatedHeaderIsUsed()
+        {
+            var response = Client.PutObject(new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = "test-file.txt",
+                ContentBody = "Hello world",
+                ChecksumSHA256 = "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuyjfzw="
+            });
+
+            Assert.IsNotNull(response.ChecksumSHA256);
+            Assert.IsNull(response.ChecksumCRC32);
+        }
+
+        /// <summary>
         /// Puts and gets an object using a flexible checksum
         /// </summary>
         /// <param name="algorithm">Checksum algorithm to use</param>
@@ -382,7 +401,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Key = copiedKey,
                     UploadId = initResponse.UploadId
                 };
-                completeRequest.AddPartETags(copyResponses);
+                completeRequest.AddPartETagsAndChecksums(copyResponses);
 
                 // Complete the copy.
                 CompleteMultipartUploadResponse completeUploadResponse = Client.CompleteMultipartUpload(completeRequest);
@@ -503,7 +522,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Key = key,
                     UploadId = initResponse.UploadId
                 };
-                compRequest.AddPartETags(up1Response, up2Response, up3Response);
+                compRequest.AddPartETagsAndChecksums(up1Response, up2Response, up3Response);
 
                 CompleteMultipartUploadResponse compResponse = Client.CompleteMultipartUpload(compRequest);
                 Assert.IsNotNull(compResponse.ETag);
@@ -720,6 +739,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     File.Delete(filePath);
                 if (File.Exists(retrievedFilepath))
                     File.Delete(retrievedFilepath);
+            }
+        }
+
+        // When the user sets ResponseChecksumValidation to WHEN_SUPPORTED, and the user has set the requestValidationModeMember to ENABLED, assert that the response checksum is validated.
+        [DataRow(ResponseChecksumValidation.WHEN_SUPPORTED, true, true)]
+        // When the user sets ResponseChecksumValidation to WHEN_SUPPORTED, and the user has NOT set the requestValidationModeMember to ENABLED, assert that the response checksum is validated.
+        [DataRow(ResponseChecksumValidation.WHEN_SUPPORTED, false, true)]
+        // When the user sets ResponseChecksumValidation to WHEN_REQUIRED, and the user has set the requestValidationModeMember to ENABLED, assert that the response checksum is validated.
+        [DataRow(ResponseChecksumValidation.WHEN_REQUIRED, true, true)]
+        // When the user sets ResponseChecksumValidation to WHEN_REQUIRED, and the user has NOT set the requestValidationModeMember to ENABLED, assert that the response checksum is NOT validated.
+        [DataRow(ResponseChecksumValidation.WHEN_REQUIRED, false, false)]
+        [DataTestMethod]
+        public void TestResponseChecksumValidation(ResponseChecksumValidation responseChecksumValidation, bool enableChecksumMode, bool isChecksumAlgorithmSet)
+        {
+            var s3Config = new AmazonS3Config
+            {
+                ResponseChecksumValidation = responseChecksumValidation,
+            };
+
+            using (var s3Client = new AmazonS3Client(s3Config))
+            {
+                var key = UtilityMethods.GenerateName(nameof(ChecksumTests));
+                var putRequest = new PutObjectRequest()
+                {
+                    BucketName = _bucketName,
+                    Key = key,
+                    ContentBody = _testContent,
+                };
+
+                s3Client.PutObject(putRequest);
+
+                var getRequest = new GetObjectRequest
+                {
+                    BucketName = putRequest.BucketName,
+                    Key = putRequest.Key,
+                };
+                if (enableChecksumMode)
+                    getRequest.ChecksumMode = ChecksumMode.ENABLED;
+
+                var response = s3Client.GetObject(getRequest);
+
+                Assert.AreEqual(response.ResponseMetadata.ChecksumAlgorithm == CoreChecksumAlgorithm.NONE, !isChecksumAlgorithmSet);
             }
         }
     }

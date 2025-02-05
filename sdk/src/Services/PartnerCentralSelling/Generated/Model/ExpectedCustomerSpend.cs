@@ -85,7 +85,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EstimationUrl. 
         /// <para>
-        ///  A URL providing additional information or context about the spend estimation. 
+        /// A URL providing additional information or context about the spend estimation.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=4, Max=255)]

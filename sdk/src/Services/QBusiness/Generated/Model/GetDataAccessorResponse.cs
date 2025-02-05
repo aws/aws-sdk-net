@@ -67,7 +67,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application associated with this data accessor.
+        /// The unique identifier of the Amazon Q Business application associated with this data
+        /// accessor.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -161,8 +162,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IdcApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS IAM Identity Center application associated
-        /// with this data accessor.
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center application associated with
+        /// this data accessor.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]

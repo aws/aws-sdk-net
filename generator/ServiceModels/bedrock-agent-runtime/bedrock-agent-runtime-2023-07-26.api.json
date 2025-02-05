@@ -602,7 +602,13 @@
     "CitationEvent":{
       "type":"structure",
       "members":{
-        "citation":{"shape":"Citation"}
+        "citation":{
+          "shape":"Citation",
+          "deprecated":true,
+          "deprecatedMessage":"Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event."
+        },
+        "generatedResponsePart":{"shape":"GeneratedResponsePart"},
+        "retrievedReferences":{"shape":"RetrievedReferences"}
       },
       "event":true
     },
@@ -945,7 +951,16 @@
     },
     "FlowCompletionReason":{
       "type":"string",
-      "enum":["SUCCESS"]
+      "enum":[
+        "SUCCESS",
+        "INPUT_REQUIRED"
+      ]
+    },
+    "FlowExecutionId":{
+      "type":"string",
+      "max":100,
+      "min":2,
+      "pattern":"^[0-9a-zA-Z._:-]+$"
     },
     "FlowIdentifier":{
       "type":"string",
@@ -957,11 +972,11 @@
       "type":"structure",
       "required":[
         "content",
-        "nodeName",
-        "nodeOutputName"
+        "nodeName"
       ],
       "members":{
         "content":{"shape":"FlowInputContent"},
+        "nodeInputName":{"shape":"NodeInputName"},
         "nodeName":{"shape":"NodeName"},
         "nodeOutputName":{"shape":"NodeOutputName"}
       }
@@ -979,6 +994,28 @@
       "member":{"shape":"FlowInput"},
       "max":1,
       "min":1
+    },
+    "FlowMultiTurnInputContent":{
+      "type":"structure",
+      "members":{
+        "document":{"shape":"Document"}
+      },
+      "union":true
+    },
+    "FlowMultiTurnInputRequestEvent":{
+      "type":"structure",
+      "required":[
+        "content",
+        "nodeName",
+        "nodeType"
+      ],
+      "members":{
+        "content":{"shape":"FlowMultiTurnInputContent"},
+        "nodeName":{"shape":"NodeName"},
+        "nodeType":{"shape":"NodeType"}
+      },
+      "event":true,
+      "sensitive":true
     },
     "FlowOutputContent":{
       "type":"structure",
@@ -1010,6 +1047,7 @@
         "conflictException":{"shape":"ConflictException"},
         "dependencyFailedException":{"shape":"DependencyFailedException"},
         "flowCompletionEvent":{"shape":"FlowCompletionEvent"},
+        "flowMultiTurnInputRequestEvent":{"shape":"FlowMultiTurnInputRequestEvent"},
         "flowOutputEvent":{"shape":"FlowOutputEvent"},
         "flowTraceEvent":{"shape":"FlowTraceEvent"},
         "internalServerException":{"shape":"InternalServerException"},
@@ -1745,7 +1783,8 @@
     "InternalServerException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"NonBlankString"}
+        "message":{"shape":"NonBlankString"},
+        "reason":{"shape":"String"}
       },
       "error":{"httpStatusCode":500},
       "exception":true,
@@ -1868,6 +1907,7 @@
       ],
       "members":{
         "enableTrace":{"shape":"Boolean"},
+        "executionId":{"shape":"FlowExecutionId"},
         "flowAliasIdentifier":{
           "shape":"FlowAliasIdentifier",
           "location":"uri",
@@ -1886,6 +1926,11 @@
       "type":"structure",
       "required":["responseStream"],
       "members":{
+        "executionId":{
+          "shape":"FlowExecutionId",
+          "location":"header",
+          "locationName":"x-amz-bedrock-flow-execution-id"
+        },
         "responseStream":{"shape":"FlowResponseStream"}
       },
       "payload":"responseStream"
@@ -1915,7 +1960,8 @@
           "shape":"SessionId",
           "location":"uri",
           "locationName":"sessionId"
-        }
+        },
+        "streamingConfigurations":{"shape":"StreamingConfigurations"}
       }
     },
     "InvokeInlineAgentResponse":{

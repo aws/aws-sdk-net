@@ -60,6 +60,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelIdentifier);
             }
 
+            if(requestObject.IsSetPerformanceConfig())
+            {
+                context.Writer.WritePropertyName("performanceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PerformanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerformanceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

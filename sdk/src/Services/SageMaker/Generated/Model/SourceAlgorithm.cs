@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class SourceAlgorithm
     {
         private string _algorithmName;
+        private string _modelDataETag;
         private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
 
@@ -59,6 +60,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmName()
         {
             return this._algorithmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataETag. 
+        /// <para>
+        /// The ETag associated with Model Data URL.
+        /// </para>
+        /// </summary>
+        public string ModelDataETag
+        {
+            get { return this._modelDataETag; }
+            set { this._modelDataETag = value; }
+        }
+
+        // Check to see if ModelDataETag property is set
+        internal bool IsSetModelDataETag()
+        {
+            return this._modelDataETag != null;
         }
 
         /// <summary>

@@ -34,10 +34,16 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SecurityHub", "4.0.0.0");
 
         private static readonly AmazonSecurityHubEndpointResolver EndpointResolver =
             new AmazonSecurityHubEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("SecurityHub", "3.7.402.12");
+=======
+            InternalSDKUtils.BuildUserAgentString("SecurityHub", "3.7.402.30");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

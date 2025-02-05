@@ -34,10 +34,16 @@ namespace Amazon.ChimeSDKMeetings
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "4.0.0.0");
 
         private static readonly AmazonChimeSDKMeetingsEndpointResolver EndpointResolver =
             new AmazonChimeSDKMeetingsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "3.7.400.70");
+=======
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Meetings", "3.7.400.88");
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
 
         private string _userAgent = UserAgentString;
         ///<summary>

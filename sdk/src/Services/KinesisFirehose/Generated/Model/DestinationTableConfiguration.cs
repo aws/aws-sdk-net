@@ -81,7 +81,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property PartitionSpec. 
         /// <para>
-        ///  
+        /// The partition spec configuration for a table that is used by automatic table creation.
         /// </para>
         ///  
         /// <para>

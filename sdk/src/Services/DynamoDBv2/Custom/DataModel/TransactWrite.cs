@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Linq;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
@@ -227,11 +228,8 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
-            {
-                ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
-            });
+            AddDocumentTransaction(storage, conditionExpression);
+            
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
             {
                 OriginalObject = item,
@@ -433,6 +431,45 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.Conversion,
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
+        }
+        
+
+        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
+        {
+            var hashKeyPropertyNames = storage.Config.HashKeyPropertyNames;
+            var rangeKeyPropertyNames = storage.Config.RangeKeyPropertyNames;
+
+            var attributeNames = storage.Document.Keys.ToList();
+
+            foreach (var keyPropertyName in hashKeyPropertyNames)
+            {
+                attributeNames.Remove(keyPropertyName);
+            }
+
+            foreach (var rangeKeyPropertyName in rangeKeyPropertyNames)
+            {
+                attributeNames.Remove(rangeKeyPropertyName);
+            }
+
+            // If there are no attributes left, we need to use PutItem
+            // as UpdateItem requires at least one data attribute
+            if (attributeNames.Any())
+            {
+                DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
+            else
+            {
+
+                DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
         }
 
         private void SetNewVersion(ItemStorage storage)

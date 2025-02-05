@@ -34,7 +34,7 @@ namespace Amazon.EC2
     /// pay only for capacity that you actually use. Amazon EC2 provides developers the tools to build failure resilient applications and isolate
     /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
     /// </summary>
-    public partial class AmazonEC2Client
+    public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
         #region DryRun
 
@@ -110,7 +110,7 @@ namespace Amazon.EC2
                     _methodCache = new Dictionary<Type, DryRunInfo>();
 
                     var ec2RequestType = typeof(AmazonEC2Request);
-                    var allMembers = typeof(AmazonEC2Client).GetMembers();
+                    var allMembers = typeof(AmazonEC2Client).GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
                     foreach (var member in allMembers)
                     {
                         MethodInfo method = member as MethodInfo;

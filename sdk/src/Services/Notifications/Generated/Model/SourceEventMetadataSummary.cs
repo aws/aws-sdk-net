@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Contains metadata about the event that caused the NotificationEvent. For other specific
-    /// values, see sourceEventMetadata.
+    /// Contains metadata about the event that caused the <c>NotificationEvent</c>. For other
+    /// specific values, see <c>sourceEventMetadata</c>.
     /// </summary>
     public partial class SourceEventMetadataSummary
     {
@@ -70,9 +70,9 @@ namespace Amazon.Notifications.Model
         ///  
         /// <para>
         /// Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance
-        /// State-change Notification and AWS CloudWatch Alarm State Change. For more information,
+        /// State-change Notification and Amazon CloudWatch Alarm State Change. For more information,
         /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -95,10 +95,10 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Must match one of the valid EventBridge sources. Only AWS service sourced events are
-        /// supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// Must match one of the valid EventBridge sources. Only Amazon Web Services service
+        /// sourced events are supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

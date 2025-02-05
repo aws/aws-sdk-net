@@ -115,7 +115,23 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetWebAppDnsDomain())
+                {
+                    context.Writer.WritePropertyName("webAppDnsDomain");
+                    context.Writer.Write(publicRequest.WebAppDnsDomain);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
 

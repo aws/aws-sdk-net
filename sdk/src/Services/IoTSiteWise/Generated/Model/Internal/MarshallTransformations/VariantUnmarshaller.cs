@@ -84,6 +84,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nullValue", targetDepth))
+                {
+                    var unmarshaller = PropertyValueNullValueUnmarshaller.Instance;
+                    unmarshalledObject.NullValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stringValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

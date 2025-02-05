@@ -31,7 +31,17 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTableMetadataLocation operation.
-    /// Updates the metadata location for a table.
+    /// Updates the metadata location for a table. The metadata location of a table must be
+    /// an S3 URI that begins with the table's warehouse location. The metadata location for
+    /// an Apache Iceberg table must end with <c>.metadata.json</c>, or if the metadata file
+    /// is Gzip-compressed, <c>.metadata.json.gz</c>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:UpdateTableMetadataLocation</c> permission to use this
+    /// operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class UpdateTableMetadataLocationRequest : AmazonS3TablesRequest
     {

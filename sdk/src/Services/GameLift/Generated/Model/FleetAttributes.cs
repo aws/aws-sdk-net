@@ -47,7 +47,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Returned by:</b> <a>DescribeFleetAttributes</a> 
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class FleetAttributes
@@ -82,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AnywhereConfiguration. 
         /// <para>
-        /// Amazon GameLift Anywhere configuration options.
+        /// A set of attributes that are specific to an Anywhere fleet.
         /// </para>
         /// </summary>
         public AnywhereConfiguration AnywhereConfiguration
@@ -287,7 +288,7 @@ namespace Amazon.GameLift.Model
         /// Services Management Console. Learn more about using on-box credentials for your game
         /// servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>. This attribute is used with fleets
-        /// where <c>ComputeType</c> is "EC2".
+        /// where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -313,7 +314,7 @@ namespace Amazon.GameLift.Model
         /// server SDK version 5.x. For more information about using shared credentials, see <a
         /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Communicate with other Amazon Web Services resources from your fleets</a>. This attribute
-        /// is used with fleets where <c>ComputeType</c> is "EC2".
+        /// is used with fleets where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         /// </summary>
         public InstanceRoleCredentialsProvider InstanceRoleCredentialsProvider
@@ -335,7 +336,7 @@ namespace Amazon.GameLift.Model
         /// resources of each instance in the fleet, including CPU, memory, storage, and networking
         /// capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute
         /// Cloud Instance Types</a> for detailed descriptions. This attribute is used with fleets
-        /// where <c>ComputeType</c> is "EC2".
+        /// where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType
@@ -377,7 +378,7 @@ namespace Amazon.GameLift.Model
         /// Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch,
         /// you can view aggregated metrics for fleets that are in a metric group. A fleet can
         /// be included in only one metric group at a time. This attribute is used with fleets
-        /// where <c>ComputeType</c> is "EC2".
+        /// where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -417,7 +418,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NewGameSessionProtectionPolicy. 
         /// <para>
         /// The type of game session protection to set on all new instances that are started in
-        /// the fleet. This attribute is used with fleets where <c>ComputeType</c> is "EC2".
+        /// the fleet. This attribute is used with fleets where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -447,13 +448,13 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The operating system of the fleet's computing resources. A fleet's operating system
         /// is determined by the OS of the build or script that is deployed on this fleet. This
-        /// attribute is used with fleets where <c>ComputeType</c> is "EC2".
+        /// attribute is used with fleets where <c>ComputeType</c> is <c>EC2</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
         /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first
+        /// game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first
         /// update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
         /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to Amazon GameLift server SDK version 5.</a> 
@@ -625,7 +626,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A list of fleet activity that has been suspended using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
         /// This includes fleet auto-scaling. This attribute is used with fleets where <c>ComputeType</c>
-        /// is "EC2".
+        /// is <c>EC2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

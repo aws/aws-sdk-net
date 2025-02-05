@@ -32,7 +32,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeCompute operation.
     /// Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a
-    /// list of all computes in a fleet, call <a>ListCompute</a>. 
+    /// list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.
+    /// 
     /// 
     ///  
     /// <para>

@@ -70,6 +70,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetId3SegmentTaggingSettings())
+            {
+                context.Writer.WritePropertyName("id3SegmentTaggingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Id3SegmentTaggingScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Id3SegmentTaggingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputPrepareSettings())
             {
                 context.Writer.WritePropertyName("inputPrepareSettings");
@@ -209,6 +220,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = StaticImageOutputDeactivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticImageOutputDeactivateSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTimedMetadataSettings())
+            {
+                context.Writer.WritePropertyName("timedMetadataSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimedMetadataScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimedMetadataSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

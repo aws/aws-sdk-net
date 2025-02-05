@@ -41,8 +41,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the engagement request. Valid values are <c>AWS</c>
-        /// and <c>Sandbox</c>. 
+        /// Specifies the catalog related to the engagement request. Valid values are <c>AWS</c>
+        /// and <c>Sandbox</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  Specifies the identifier of the Engagement record to retrieve. 
+        /// Specifies the identifier of the Engagement record to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

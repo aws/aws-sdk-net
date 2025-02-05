@@ -31,7 +31,14 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNamespace operation.
-    /// Gets details about a namespace.
+    /// Gets details about a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+    /// namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetNamespace</c> permission to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetNamespaceRequest : AmazonS3TablesRequest
     {

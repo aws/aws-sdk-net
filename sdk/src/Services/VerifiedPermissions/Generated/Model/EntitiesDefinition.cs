@@ -43,7 +43,33 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class EntitiesDefinition
     {
+        private string _cedarJson;
         private List<EntityItem> _entityList = AWSConfigs.InitializeCollections ? new List<EntityItem>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CedarJson. 
+        /// <para>
+        /// A Cedar JSON string representation of the entities needed to successfully evaluate
+        /// an authorization request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"cedarJson": "[{\"uid\":{\"type\":\"Photo\",\"id\":\"VacationPhoto94.jpg\"},\"attrs\":{\"accessLevel\":\"public\"},\"parents\":[]}]"}</c>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string CedarJson
+        {
+            get { return this._cedarJson; }
+            set { this._cedarJson = value; }
+        }
+
+        // Check to see if CedarJson property is set
+        internal bool IsSetCedarJson()
+        {
+            return this._cedarJson != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EntityList. 
@@ -52,6 +78,12 @@ namespace Amazon.VerifiedPermissions.Model
         /// Each entity in this array must include an identifier for the entity, the attributes
         /// of the entity, and a list of any parent entities.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you include multiple entities with the same <c>identifier</c>, only the last one
+        /// is processed in the request.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<EntityItem> EntityList
         {

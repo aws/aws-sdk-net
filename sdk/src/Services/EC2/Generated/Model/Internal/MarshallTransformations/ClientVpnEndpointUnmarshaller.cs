@@ -125,6 +125,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("disconnectOnSessionTimeout", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisconnectOnSessionTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("dnsName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

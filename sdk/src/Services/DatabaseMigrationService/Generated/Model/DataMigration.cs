@@ -50,6 +50,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serviceAccessRoleArn;
         private List<SourceDataSetting> _sourceDataSettings = AWSConfigs.InitializeCollections ? new List<SourceDataSetting>() : null;
         private string _stopReason;
+        private List<TargetDataSetting> _targetDataSettings = AWSConfigs.InitializeCollections ? new List<TargetDataSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property DataMigrationArn. 
@@ -340,6 +341,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetStopReason()
         {
             return this._stopReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDataSettings. 
+        /// <para>
+        /// Specifies information about the data migration's target data provider.
+        /// </para>
+        /// </summary>
+        public List<TargetDataSetting> TargetDataSettings
+        {
+            get { return this._targetDataSettings; }
+            set { this._targetDataSettings = value; }
+        }
+
+        // Check to see if TargetDataSettings property is set
+        internal bool IsSetTargetDataSettings()
+        {
+            return this._targetDataSettings != null && (this._targetDataSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

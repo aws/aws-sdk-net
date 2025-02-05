@@ -66,6 +66,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GroupingStyle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GroupingStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Symbol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

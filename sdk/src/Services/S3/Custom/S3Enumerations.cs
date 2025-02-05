@@ -2944,6 +2944,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ChecksumAlgorithm CRC32C = new ChecksumAlgorithm("CRC32C");
         /// <summary>
+        /// Constant CRC64NVME for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm CRC64NVME = new ChecksumAlgorithm("CRC64NVME");
+        /// <summary>
         /// Constant SHA1 for ChecksumAlgorithm
         /// </summary>
         public static readonly ChecksumAlgorithm SHA1 = new ChecksumAlgorithm("SHA1");
@@ -3025,6 +3029,56 @@ namespace Amazon.S3
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChecksumMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChecksumType.
+    /// </summary>
+    public class ChecksumType : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPOSITE for ChecksumType
+        /// </summary>
+        public static readonly ChecksumType COMPOSITE = new ChecksumType("COMPOSITE");
+
+        /// <summary>
+        /// Constant FULL_OBJECT for ChecksumType
+        /// </summary>
+        public static readonly ChecksumType FULL_OBJECT = new ChecksumType("FULL_OBJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChecksumType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChecksumType FindValue(string value)
+        {
+            return FindValue<ChecksumType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChecksumType(string value)
         {
             return FindValue(value);
         }

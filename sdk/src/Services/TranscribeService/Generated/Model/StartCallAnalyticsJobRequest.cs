@@ -106,6 +106,7 @@ namespace Amazon.TranscribeService.Model
         private string _outputEncryptionKMSKeyId;
         private string _outputLocation;
         private CallAnalyticsJobSettings _settings;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
@@ -341,6 +342,31 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more custom tags, each in the form of a key:value pair, to a new call
+        /// analytics job at the time you start this new job.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+        /// resources</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

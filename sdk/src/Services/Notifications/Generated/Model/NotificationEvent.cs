@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// A NotificationEvent is a notification-focused representation of an event. They contain
-    /// semantic information used by Channels to create end-user notifications.
+    /// A <c>NotificationEvent</c> is a notification-focused representation of an event. They
+    /// contain semantic information used by Channels to create end-user notifications.
     /// </summary>
     public partial class NotificationEvent
     {
         private string _aggregateNotificationEventArn;
         private AggregationEventType _aggregationEventType;
+        private AggregationSummary _aggregationSummary;
         private DateTime? _endTime;
         private EventStatus _eventStatus;
         private string _id;
@@ -53,8 +54,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregateNotificationEventArn. 
         /// <para>
-        /// If the value of aggregationEventType is not <c>NONE</c>, this is the Amazon Resource
-        /// Event (ARN) of the parent aggregate notification.
+        /// If the value of <c>aggregationEventType</c> is not <c>NONE</c>, this is the Amazon
+        /// Resource Event (ARN) of the parent aggregate notification.
         /// </para>
         ///  
         /// <para>
@@ -76,7 +77,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregationEventType. 
         /// <para>
-        /// The NotificationConfiguration's aggregation type.
+        /// The aggregation type of the <c>NotificationConfiguration</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -97,7 +98,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
+        /// Some <c>EventRules</c> are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can
+        /// be run.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -122,6 +124,24 @@ namespace Amazon.Notifications.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AggregationSummary. 
+        /// <para>
+        /// Provides additional information about how multiple notifications are grouped.
+        /// </para>
+        /// </summary>
+        public AggregationSummary AggregationSummary
+        {
+            get { return this._aggregationSummary; }
+            set { this._aggregationSummary = value; }
+        }
+
+        // Check to see if AggregationSummary property is set
+        internal bool IsSetAggregationSummary()
+        {
+            return this._aggregationSummary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end time of the event.
@@ -142,7 +162,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventStatus. 
         /// <para>
-        /// The assesed nature of the event.
+        /// The assessed nature of the event.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -154,7 +174,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
+        /// All <c>EventRules</c> are <c>ACTIVE</c> and any call can be run.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -162,7 +182,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
+        /// Some <c>EventRules</c> are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can
+        /// be run.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
@@ -181,7 +202,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for a NotificationEvent.
+        /// The unique identifier for a <c>NotificationEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

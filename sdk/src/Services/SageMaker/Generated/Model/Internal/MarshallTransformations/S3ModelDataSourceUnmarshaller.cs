@@ -72,10 +72,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ETag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ETag = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HubAccessConfig", targetDepth))
                 {
                     var unmarshaller = InferenceHubAccessConfigUnmarshaller.Instance;
                     unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ManifestEtag", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestEtag = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ManifestS3Uri", targetDepth))

@@ -32,8 +32,8 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Container for the parameters to the AssociateChannel operation.
     /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-    /// with a particular NotificationConfiguration. Supported Channels include AWS Chatbot,
-    /// the AWS Console Mobile Application, and emails (notifications-contacts).
+    /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
+    /// the Console Mobile Application, and emails (notifications-contacts).
     /// </summary>
     public partial class AssociateChannelRequest : AmazonNotificationsRequest
     {
@@ -43,11 +43,11 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Channel to associate with the NotificationConfiguration.
+        /// The Amazon Resource Name (ARN) of the Channel to associate with the <c>NotificationConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// Supported ARNs include AWS Chatbot, the Console Mobile Application, and notifications-contacts.
+        /// Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the NotificationConfiguration to associate with the Channel.
+        /// The ARN of the <c>NotificationConfiguration</c> to associate with the Channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

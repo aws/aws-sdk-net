@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The destination description in Amazon ES.
+    /// The destination description in Amazon OpenSearch Service.
     /// </summary>
     public partial class ElasticsearchDestinationDescription
     {
@@ -89,7 +89,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ClusterEndpoint. 
         /// <para>
         /// The endpoint to use when communicating with the cluster. Firehose uses either this
-        /// <c>ClusterEndpoint</c> or the <c>DomainARN</c> field to send data to Amazon ES.
+        /// <c>ClusterEndpoint</c> or the <c>DomainARN</c> field to send data to Amazon OpenSearch
+        /// Service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -127,13 +128,13 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DomainARN. 
         /// <para>
-        /// The ARN of the Amazon ES domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// The ARN of the Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         ///  
         /// <para>
         /// Firehose uses either <c>ClusterEndpoint</c> or <c>DomainARN</c> to send data to Amazon
-        /// ES.
+        /// OpenSearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -207,7 +208,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The Amazon ES retry options.
+        /// The Amazon OpenSearch Service retry options.
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions

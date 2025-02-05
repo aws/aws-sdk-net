@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the configuration of a destination in Amazon ES.
+    /// Describes the configuration of a destination in Amazon OpenSearch Service.
     /// </summary>
     public partial class ElasticsearchDestinationConfiguration
     {
@@ -128,9 +128,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DomainARN. 
         /// <para>
-        /// The ARN of the Amazon ES domain. The IAM role must have permissions for <c>DescribeDomain</c>,
-        /// <c>DescribeDomains</c>, and <c>DescribeDomainConfig</c> after assuming the role specified
-        /// in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions
+        /// for <c>DescribeDomain</c>, <c>DescribeDomains</c>, and <c>DescribeDomainConfig</c> after
+        /// assuming the role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         ///  
@@ -176,7 +176,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The Elasticsearch index rotation period. Index rotation appends a timestamp to the
         /// <c>IndexName</c> to facilitate the expiration of old data. For more information, see
         /// <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
-        /// Rotation for the Amazon ES Destination</a>. The default value is <c>OneDay</c>.
+        /// Rotation for the Amazon OpenSearch Service Destination</a>. The default value is <c>OneDay</c>.
         /// </para>
         /// </summary>
         public ElasticsearchIndexRotationPeriod IndexRotationPeriod
@@ -212,8 +212,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The
-        /// default value is 300 (5 minutes).
+        /// The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch
+        /// Service. The default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions
@@ -232,8 +232,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling
-        /// the Amazon ES Configuration API and for indexing documents. For more information,
-        /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+        /// the Amazon OpenSearch Service Configuration API and for indexing documents. For more
+        /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
         /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
@@ -260,7 +260,7 @@ namespace Amazon.KinesisFirehose.Model
         /// When set to <c>AllDocuments</c>, Firehose delivers all incoming records to Amazon
         /// S3, and also writes failed documents with <c>AmazonOpenSearchService-failed/</c> appended
         /// to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
-        /// S3 Backup for the Amazon ES Destination</a>. Default value is <c>FailedDocumentsOnly</c>.
+        /// S3 Backup for the Amazon OpenSearch Service Destination</a>. Default value is <c>FailedDocumentsOnly</c>.
         /// </para>
         ///  
         /// <para>

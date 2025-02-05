@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that identifies the engagement. 
+        /// The Amazon Resource Name (ARN) that identifies the engagement.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,7 +58,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  Unique identifier assigned to the newly created engagement. 
+        /// Unique identifier assigned to the newly created engagement.
         /// </para>
         /// </summary>
         public string Id

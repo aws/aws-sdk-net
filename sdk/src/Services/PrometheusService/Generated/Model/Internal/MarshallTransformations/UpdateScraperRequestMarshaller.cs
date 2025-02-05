@@ -114,7 +114,94 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDestination())
+                {
+                    context.Writer.WritePropertyName("destination");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Destination, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScrapeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scrapeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScrapeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDestination())
+                {
+                    context.Writer.WritePropertyName("destination");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Destination, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleConfiguration())
+                {
+                    context.Writer.WritePropertyName("roleConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RoleConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RoleConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScrapeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scrapeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScrapeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
 

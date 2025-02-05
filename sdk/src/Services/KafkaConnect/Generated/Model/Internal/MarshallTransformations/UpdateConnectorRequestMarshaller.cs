@@ -89,7 +89,31 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetConnectorConfiguration())
+                {
+                    context.Writer.WritePropertyName("connectorConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestConnectorConfigurationKvp in publicRequest.ConnectorConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestConnectorConfigurationKvp.Key);
+                        var publicRequestConnectorConfigurationValue = publicRequestConnectorConfigurationKvp.Value;
+
+                            context.Writer.Write(publicRequestConnectorConfigurationValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> 155cf7e693f514d013f0b7a90cc36b7db1c33d52
             }
 
             request.UseQueryString = true;

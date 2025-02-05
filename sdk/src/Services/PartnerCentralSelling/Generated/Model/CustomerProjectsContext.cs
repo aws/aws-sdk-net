@@ -67,7 +67,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
-        ///  Information about the customer project associated with the Engagement. 
+        /// Information about the customer project associated with the Engagement.
         /// </para>
         /// </summary>
         public EngagementCustomerProjectDetails Project

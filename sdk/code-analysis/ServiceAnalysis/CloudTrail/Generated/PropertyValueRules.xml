@@ -709,6 +709,29 @@
     <max>3653</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.SearchPhrase</property>
+    <min>2</min>
+    <max>1000</max>
+    <pattern>^[ -~\n]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesResponse.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartDashboardRefreshRequest.DashboardId</property>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>

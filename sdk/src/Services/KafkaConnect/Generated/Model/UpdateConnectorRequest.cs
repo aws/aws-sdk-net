@@ -37,6 +37,7 @@ namespace Amazon.KafkaConnect.Model
     {
         private CapacityUpdate _capacity;
         private string _connectorArn;
+        private Dictionary<string, string> _connectorConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _currentVersion;
 
         /// <summary>
@@ -45,7 +46,6 @@ namespace Amazon.KafkaConnect.Model
         /// The target capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CapacityUpdate Capacity
         {
             get { return this._capacity; }
@@ -75,6 +75,25 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetConnectorArn()
         {
             return this._connectorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorConfiguration. 
+        /// <para>
+        /// A map of keys to values that represent the configuration for the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, string> ConnectorConfiguration
+        {
+            get { return this._connectorConfiguration; }
+            set { this._connectorConfiguration = value; }
+        }
+
+        // Check to see if ConnectorConfiguration property is set
+        internal bool IsSetConnectorConfiguration()
+        {
+            return this._connectorConfiguration != null && (this._connectorConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

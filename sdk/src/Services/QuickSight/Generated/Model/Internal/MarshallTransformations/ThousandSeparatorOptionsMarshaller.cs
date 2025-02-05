@@ -48,6 +48,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGroupingStyle())
+            {
+                context.Writer.WritePropertyName("GroupingStyle");
+                context.Writer.Write(requestObject.GroupingStyle);
+            }
+
             if(requestObject.IsSetSymbol())
             {
                 context.Writer.WritePropertyName("Symbol");

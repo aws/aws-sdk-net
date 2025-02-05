@@ -96,7 +96,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to pass to a container. This parameter maps to Env inthe
+        /// The environment variables to pass to a container. This parameter maps to Env in the
         /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
         /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
         /// and the <c>--env</c> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
