@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdminScope Object
     /// </summary>  
-    public class AdminScopeUnmarshaller : IUnmarshaller<AdminScope, XmlUnmarshallerContext>, IUnmarshaller<AdminScope, JsonUnmarshallerContext>
+    public class AdminScopeUnmarshaller : IJsonUnmarshaller<AdminScope, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AdminScope IUnmarshaller<AdminScope, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdminScope Unmarshall(JsonUnmarshallerContext context)
+        public AdminScope Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AdminScope unmarshalledObject = new AdminScope();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountScope", targetDepth))
                 {
                     var unmarshaller = AccountScopeUnmarshaller.Instance;
-                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationalUnitScope", targetDepth))
                 {
                     var unmarshaller = OrganizationalUnitScopeUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationalUnitScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationalUnitScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PolicyTypeScope", targetDepth))
                 {
                     var unmarshaller = PolicyTypeScopeUnmarshaller.Instance;
-                    unmarshalledObject.PolicyTypeScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyTypeScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegionScope", targetDepth))
                 {
                     var unmarshaller = RegionScopeUnmarshaller.Instance;
-                    unmarshalledObject.RegionScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegionScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

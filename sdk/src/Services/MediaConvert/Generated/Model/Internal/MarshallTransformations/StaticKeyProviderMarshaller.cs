@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyFormat())
             {
                 context.Writer.WritePropertyName("keyFormat");
-                context.Writer.Write(requestObject.KeyFormat);
+                context.Writer.WriteStringValue(requestObject.KeyFormat);
             }
 
             if(requestObject.IsSetKeyFormatVersions())
             {
                 context.Writer.WritePropertyName("keyFormatVersions");
-                context.Writer.Write(requestObject.KeyFormatVersions);
+                context.Writer.WriteStringValue(requestObject.KeyFormatVersions);
             }
 
             if(requestObject.IsSetStaticKeyValue())
             {
                 context.Writer.WritePropertyName("staticKeyValue");
-                context.Writer.Write(requestObject.StaticKeyValue);
+                context.Writer.WriteStringValue(requestObject.StaticKeyValue);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

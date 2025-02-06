@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalysis())
             {
                 context.Writer.WritePropertyName("Analysis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.Analysis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttribute())
             {
                 context.Writer.WritePropertyName("Attribute");
-                context.Writer.Write(requestObject.Attribute);
+                context.Writer.WriteStringValue(requestObject.Attribute);
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RoutingClassifierTrace Object
     /// </summary>  
-    public class RoutingClassifierTraceUnmarshaller : IUnmarshaller<RoutingClassifierTrace, XmlUnmarshallerContext>, IUnmarshaller<RoutingClassifierTrace, JsonUnmarshallerContext>
+    public class RoutingClassifierTraceUnmarshaller : IJsonUnmarshaller<RoutingClassifierTrace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RoutingClassifierTrace IUnmarshaller<RoutingClassifierTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RoutingClassifierTrace Unmarshall(JsonUnmarshallerContext context)
+        public RoutingClassifierTrace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RoutingClassifierTrace unmarshalledObject = new RoutingClassifierTrace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("invocationInput", targetDepth))
                 {
                     var unmarshaller = InvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.InvocationInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelInvocationInput", targetDepth))
                 {
                     var unmarshaller = ModelInvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelInvocationOutput", targetDepth))
                 {
                     var unmarshaller = RoutingClassifierModelInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("observation", targetDepth))
                 {
                     var unmarshaller = ObservationUnmarshaller.Instance;
-                    unmarshalledObject.Observation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Observation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

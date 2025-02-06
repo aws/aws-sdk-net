@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarketo())
             {
                 context.Writer.WritePropertyName("Marketo");
-                context.Writer.Write(requestObject.Marketo);
+                context.Writer.WriteStringValue(requestObject.Marketo);
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");
-                context.Writer.Write(requestObject.S3);
+                context.Writer.WriteStringValue(requestObject.S3);
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("Salesforce");
-                context.Writer.Write(requestObject.Salesforce);
+                context.Writer.WriteStringValue(requestObject.Salesforce);
             }
 
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");
-                context.Writer.Write(requestObject.ServiceNow);
+                context.Writer.WriteStringValue(requestObject.ServiceNow);
             }
 
             if(requestObject.IsSetZendesk())
             {
                 context.Writer.WritePropertyName("Zendesk");
-                context.Writer.Write(requestObject.Zendesk);
+                context.Writer.WriteStringValue(requestObject.Zendesk);
             }
 
         }

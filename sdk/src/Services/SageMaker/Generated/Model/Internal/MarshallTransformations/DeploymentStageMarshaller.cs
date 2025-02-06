@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentConfig())
             {
                 context.Writer.WritePropertyName("DeploymentConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EdgeDeploymentConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeploymentConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceSelectionConfig())
             {
                 context.Writer.WritePropertyName("DeviceSelectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeviceSelectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeviceSelectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStageName())
             {
                 context.Writer.WritePropertyName("StageName");
-                context.Writer.Write(requestObject.StageName);
+                context.Writer.WriteStringValue(requestObject.StageName);
             }
 
         }

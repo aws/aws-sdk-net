@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyPlatformsException operation
     /// </summary>  
-    public class TooManyPlatformsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyPlatformsException, XmlUnmarshallerContext>
+    public class TooManyPlatformsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyPlatformsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

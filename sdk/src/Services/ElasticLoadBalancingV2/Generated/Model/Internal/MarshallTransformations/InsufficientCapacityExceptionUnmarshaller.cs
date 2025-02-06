@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientCapacityException operation
     /// </summary>  
-    public class InsufficientCapacityExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientCapacityException, XmlUnmarshallerContext>
+    public class InsufficientCapacityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientCapacityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

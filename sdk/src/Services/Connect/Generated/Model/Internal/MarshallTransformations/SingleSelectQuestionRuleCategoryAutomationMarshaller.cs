@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.Write(requestObject.Category);
+                context.Writer.WriteStringValue(requestObject.Category);
             }
 
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("Condition");
-                context.Writer.Write(requestObject.Condition);
+                context.Writer.WriteStringValue(requestObject.Condition);
             }
 
             if(requestObject.IsSetOptionRefId())
             {
                 context.Writer.WritePropertyName("OptionRefId");
-                context.Writer.Write(requestObject.OptionRefId);
+                context.Writer.WriteStringValue(requestObject.OptionRefId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnName())
             {
                 context.Writer.WritePropertyName("columnName");
-                context.Writer.Write(requestObject.ColumnName);
+                context.Writer.WriteStringValue(requestObject.ColumnName);
             }
 
             if(requestObject.IsSetColumnTypes())
             {
                 context.Writer.WritePropertyName("columnTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnTypesListValue in requestObject.ColumnTypes)
                 {
-                        context.Writer.Write(requestObjectColumnTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectColumnTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

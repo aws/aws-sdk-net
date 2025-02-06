@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudFormation())
             {
                 context.Writer.WritePropertyName("cloudFormation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudFormationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudFormation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetM2ManagedApplication())
             {
                 context.Writer.WritePropertyName("m2ManagedApplication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M2ManagedApplicationMarshaller.Instance;
                 marshaller.Marshall(requestObject.M2ManagedApplication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetM2NonManagedApplication())
             {
                 context.Writer.WritePropertyName("m2NonManagedApplication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M2NonManagedApplicationMarshaller.Instance;
                 marshaller.Marshall(requestObject.M2NonManagedApplication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

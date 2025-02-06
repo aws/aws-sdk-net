@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,101 +66,106 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlias())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlias())
-                    {
-                        context.Writer.WritePropertyName("Alias");
-                        context.Writer.Write(publicRequest.Alias);
-                    }
-
-                    if(publicRequest.IsSetAliasesToAdd())
-                    {
-                        context.Writer.WritePropertyName("AliasesToAdd");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAliasesToAddListValue in publicRequest.AliasesToAdd)
-                        {
-                                context.Writer.Write(publicRequestAliasesToAddListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAliasesToDelete())
-                    {
-                        context.Writer.WritePropertyName("AliasesToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAliasesToDeleteListValue in publicRequest.AliasesToDelete)
-                        {
-                                context.Writer.Write(publicRequestAliasesToDeleteListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetHorovod())
-                    {
-                        context.Writer.WritePropertyName("Horovod");
-                        context.Writer.Write(publicRequest.Horovod.Value);
-                    }
-
-                    if(publicRequest.IsSetImageName())
-                    {
-                        context.Writer.WritePropertyName("ImageName");
-                        context.Writer.Write(publicRequest.ImageName);
-                    }
-
-                    if(publicRequest.IsSetJobType())
-                    {
-                        context.Writer.WritePropertyName("JobType");
-                        context.Writer.Write(publicRequest.JobType);
-                    }
-
-                    if(publicRequest.IsSetMLFramework())
-                    {
-                        context.Writer.WritePropertyName("MLFramework");
-                        context.Writer.Write(publicRequest.MLFramework);
-                    }
-
-                    if(publicRequest.IsSetProcessor())
-                    {
-                        context.Writer.WritePropertyName("Processor");
-                        context.Writer.Write(publicRequest.Processor);
-                    }
-
-                    if(publicRequest.IsSetProgrammingLang())
-                    {
-                        context.Writer.WritePropertyName("ProgrammingLang");
-                        context.Writer.Write(publicRequest.ProgrammingLang);
-                    }
-
-                    if(publicRequest.IsSetReleaseNotes())
-                    {
-                        context.Writer.WritePropertyName("ReleaseNotes");
-                        context.Writer.Write(publicRequest.ReleaseNotes);
-                    }
-
-                    if(publicRequest.IsSetVendorGuidance())
-                    {
-                        context.Writer.WritePropertyName("VendorGuidance");
-                        context.Writer.Write(publicRequest.VendorGuidance);
-                    }
-
-                    if(publicRequest.IsSetVersion())
-                    {
-                        context.Writer.WritePropertyName("Version");
-                        context.Writer.Write(publicRequest.Version.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Alias");
+                context.Writer.WriteStringValue(publicRequest.Alias);
             }
+
+            if(publicRequest.IsSetAliasesToAdd())
+            {
+                context.Writer.WritePropertyName("AliasesToAdd");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAliasesToAddListValue in publicRequest.AliasesToAdd)
+                {
+                        context.Writer.WriteStringValue(publicRequestAliasesToAddListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAliasesToDelete())
+            {
+                context.Writer.WritePropertyName("AliasesToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAliasesToDeleteListValue in publicRequest.AliasesToDelete)
+                {
+                        context.Writer.WriteStringValue(publicRequestAliasesToDeleteListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetHorovod())
+            {
+                context.Writer.WritePropertyName("Horovod");
+                context.Writer.WriteBooleanValue(publicRequest.Horovod.Value);
+            }
+
+            if(publicRequest.IsSetImageName())
+            {
+                context.Writer.WritePropertyName("ImageName");
+                context.Writer.WriteStringValue(publicRequest.ImageName);
+            }
+
+            if(publicRequest.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("JobType");
+                context.Writer.WriteStringValue(publicRequest.JobType);
+            }
+
+            if(publicRequest.IsSetMLFramework())
+            {
+                context.Writer.WritePropertyName("MLFramework");
+                context.Writer.WriteStringValue(publicRequest.MLFramework);
+            }
+
+            if(publicRequest.IsSetProcessor())
+            {
+                context.Writer.WritePropertyName("Processor");
+                context.Writer.WriteStringValue(publicRequest.Processor);
+            }
+
+            if(publicRequest.IsSetProgrammingLang())
+            {
+                context.Writer.WritePropertyName("ProgrammingLang");
+                context.Writer.WriteStringValue(publicRequest.ProgrammingLang);
+            }
+
+            if(publicRequest.IsSetReleaseNotes())
+            {
+                context.Writer.WritePropertyName("ReleaseNotes");
+                context.Writer.WriteStringValue(publicRequest.ReleaseNotes);
+            }
+
+            if(publicRequest.IsSetVendorGuidance())
+            {
+                context.Writer.WritePropertyName("VendorGuidance");
+                context.Writer.WriteStringValue(publicRequest.VendorGuidance);
+            }
+
+            if(publicRequest.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("Version");
+                context.Writer.WriteNumberValue(publicRequest.Version.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GeospatialPolygonSymbolStyle Object
     /// </summary>  
-    public class GeospatialPolygonSymbolStyleUnmarshaller : IUnmarshaller<GeospatialPolygonSymbolStyle, XmlUnmarshallerContext>, IUnmarshaller<GeospatialPolygonSymbolStyle, JsonUnmarshallerContext>
+    public class GeospatialPolygonSymbolStyleUnmarshaller : IJsonUnmarshaller<GeospatialPolygonSymbolStyle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GeospatialPolygonSymbolStyle IUnmarshaller<GeospatialPolygonSymbolStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GeospatialPolygonSymbolStyle Unmarshall(JsonUnmarshallerContext context)
+        public GeospatialPolygonSymbolStyle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GeospatialPolygonSymbolStyle unmarshalledObject = new GeospatialPolygonSymbolStyle();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FillColor", targetDepth))
                 {
                     var unmarshaller = GeospatialColorUnmarshaller.Instance;
-                    unmarshalledObject.FillColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FillColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StrokeColor", targetDepth))
                 {
                     var unmarshaller = GeospatialColorUnmarshaller.Instance;
-                    unmarshalledObject.StrokeColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StrokeColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StrokeWidth", targetDepth))
                 {
                     var unmarshaller = GeospatialLineWidthUnmarshaller.Instance;
-                    unmarshalledObject.StrokeWidth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StrokeWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("executionRole");
-                context.Writer.Write(requestObject.ExecutionRole);
+                context.Writer.WriteStringValue(requestObject.ExecutionRole);
             }
 
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("initialInstanceCount");
-                context.Writer.Write(requestObject.InitialInstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InitialInstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetKmsEncryptionKey())
             {
                 context.Writer.WritePropertyName("kmsEncryptionKey");
-                context.Writer.Write(requestObject.KmsEncryptionKey);
+                context.Writer.WriteStringValue(requestObject.KmsEncryptionKey);
             }
 
             if(requestObject.IsSetVpc())
             {
                 context.Writer.WritePropertyName("vpc");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vpc, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -30,6 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// Represents a single field in a <c>PartitionSpec</c>. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -41,7 +44,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        ///  
+        ///  The column name to be configured in partition spec. 
         /// </para>
         ///  
         /// <para>

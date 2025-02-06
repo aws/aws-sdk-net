@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CSVOutput Object
     /// </summary>  
-    public class CSVOutputUnmarshaller : IUnmarshaller<CSVOutput, XmlUnmarshallerContext>, IUnmarshaller<CSVOutput, JsonUnmarshallerContext>
+    public class CSVOutputUnmarshaller : IJsonUnmarshaller<CSVOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CSVOutput IUnmarshaller<CSVOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CSVOutput Unmarshall(JsonUnmarshallerContext context)
+        public CSVOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CSVOutput unmarshalledObject = new CSVOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FieldDelimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldDelimiter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuoteCharacter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuoteCharacter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuoteCharacter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuoteEscapeCharacter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuoteEscapeCharacter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuoteEscapeCharacter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuoteFields", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuoteFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuoteFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordDelimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordDelimiter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

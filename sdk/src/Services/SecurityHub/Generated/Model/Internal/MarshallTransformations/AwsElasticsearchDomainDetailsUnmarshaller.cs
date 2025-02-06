@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsElasticsearchDomainDetails Object
     /// </summary>  
-    public class AwsElasticsearchDomainDetailsUnmarshaller : IUnmarshaller<AwsElasticsearchDomainDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsElasticsearchDomainDetails, JsonUnmarshallerContext>
+    public class AwsElasticsearchDomainDetailsUnmarshaller : IJsonUnmarshaller<AwsElasticsearchDomainDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsElasticsearchDomainDetails IUnmarshaller<AwsElasticsearchDomainDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsElasticsearchDomainDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsElasticsearchDomainDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsElasticsearchDomainDetails unmarshalledObject = new AwsElasticsearchDomainDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessPolicies", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainDomainEndpointOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElasticsearchClusterConfig", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainElasticsearchClusterConfigDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElasticsearchVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainEncryptionAtRestOptionsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoints", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsUnmarshaller.Instance;
-                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainNodeToNodeEncryptionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainServiceSoftwareOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainVPCOptionsUnmarshaller.Instance;
-                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

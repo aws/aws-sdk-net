@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -63,92 +66,97 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributeFilter())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributeFilter())
-                    {
-                        context.Writer.WritePropertyName("AttributeFilter");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AttributeFilter");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AttributeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AttributeFilter, context);
+                var marshaller = AttributeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AttributeFilter, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
-                    {
-                        context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDocumentRelevanceOverrideConfigurationsListValue in publicRequest.DocumentRelevanceOverrideConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DocumentRelevanceConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDocumentRelevanceOverrideConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIndexId())
-                    {
-                        context.Writer.WritePropertyName("IndexId");
-                        context.Writer.Write(publicRequest.IndexId);
-                    }
-
-                    if(publicRequest.IsSetPageNumber())
-                    {
-                        context.Writer.WritePropertyName("PageNumber");
-                        context.Writer.Write(publicRequest.PageNumber.Value);
-                    }
-
-                    if(publicRequest.IsSetPageSize())
-                    {
-                        context.Writer.WritePropertyName("PageSize");
-                        context.Writer.Write(publicRequest.PageSize.Value);
-                    }
-
-                    if(publicRequest.IsSetQueryText())
-                    {
-                        context.Writer.WritePropertyName("QueryText");
-                        context.Writer.Write(publicRequest.QueryText);
-                    }
-
-                    if(publicRequest.IsSetRequestedDocumentAttributes())
-                    {
-                        context.Writer.WritePropertyName("RequestedDocumentAttributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRequestedDocumentAttributesListValue in publicRequest.RequestedDocumentAttributes)
-                        {
-                                context.Writer.Write(publicRequestRequestedDocumentAttributesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserContext())
-                    {
-                        context.Writer.WritePropertyName("UserContext");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.UserContext, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDocumentRelevanceOverrideConfigurations())
+            {
+                context.Writer.WritePropertyName("DocumentRelevanceOverrideConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDocumentRelevanceOverrideConfigurationsListValue in publicRequest.DocumentRelevanceOverrideConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DocumentRelevanceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDocumentRelevanceOverrideConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIndexId())
+            {
+                context.Writer.WritePropertyName("IndexId");
+                context.Writer.WriteStringValue(publicRequest.IndexId);
+            }
+
+            if(publicRequest.IsSetPageNumber())
+            {
+                context.Writer.WritePropertyName("PageNumber");
+                context.Writer.WriteNumberValue(publicRequest.PageNumber.Value);
+            }
+
+            if(publicRequest.IsSetPageSize())
+            {
+                context.Writer.WritePropertyName("PageSize");
+                context.Writer.WriteNumberValue(publicRequest.PageSize.Value);
+            }
+
+            if(publicRequest.IsSetQueryText())
+            {
+                context.Writer.WritePropertyName("QueryText");
+                context.Writer.WriteStringValue(publicRequest.QueryText);
+            }
+
+            if(publicRequest.IsSetRequestedDocumentAttributes())
+            {
+                context.Writer.WritePropertyName("RequestedDocumentAttributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestedDocumentAttributesListValue in publicRequest.RequestedDocumentAttributes)
+                {
+                        context.Writer.WriteStringValue(publicRequestRequestedDocumentAttributesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserContext())
+            {
+                context.Writer.WritePropertyName("UserContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

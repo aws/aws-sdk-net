@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceLinkedRoleNotFoundException operation
     /// </summary>  
-    public class ServiceLinkedRoleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceLinkedRoleNotFoundException, XmlUnmarshallerContext>
+    public class ServiceLinkedRoleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceLinkedRoleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

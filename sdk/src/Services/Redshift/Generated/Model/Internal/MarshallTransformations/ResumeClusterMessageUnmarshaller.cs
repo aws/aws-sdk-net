@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResumeClusterMessage Object
     /// </summary>  
-    public class ResumeClusterMessageUnmarshaller : IUnmarshaller<ResumeClusterMessage, XmlUnmarshallerContext>, IUnmarshaller<ResumeClusterMessage, JsonUnmarshallerContext>
+    public class ResumeClusterMessageUnmarshaller : IXmlUnmarshaller<ResumeClusterMessage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResumeClusterMessage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResumeClusterMessageUnmarshaller _instance = new ResumeClusterMessageUnmarshaller();        
 

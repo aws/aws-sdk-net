@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,189 +49,189 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityArn())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityArn");
-                context.Writer.Write(requestObject.CertificateAuthorityArn);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityArn);
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WriteStringValue(requestObject.CreatedAt);
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetDomainValidationOptions())
             {
                 context.Writer.WritePropertyName("DomainValidationOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainValidationOptionsListValue in requestObject.DomainValidationOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCertificateManagerCertificateDomainValidationOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDomainValidationOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExtendedKeyUsages())
             {
                 context.Writer.WritePropertyName("ExtendedKeyUsages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExtendedKeyUsagesListValue in requestObject.ExtendedKeyUsages)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCertificateManagerCertificateExtendedKeyUsageMarshaller.Instance;
                     marshaller.Marshall(requestObjectExtendedKeyUsagesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFailureReason())
             {
                 context.Writer.WritePropertyName("FailureReason");
-                context.Writer.Write(requestObject.FailureReason);
+                context.Writer.WriteStringValue(requestObject.FailureReason);
             }
 
             if(requestObject.IsSetImportedAt())
             {
                 context.Writer.WritePropertyName("ImportedAt");
-                context.Writer.Write(requestObject.ImportedAt);
+                context.Writer.WriteStringValue(requestObject.ImportedAt);
             }
 
             if(requestObject.IsSetInUseBy())
             {
                 context.Writer.WritePropertyName("InUseBy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInUseByListValue in requestObject.InUseBy)
                 {
-                        context.Writer.Write(requestObjectInUseByListValue);
+                        context.Writer.WriteStringValue(requestObjectInUseByListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIssuedAt())
             {
                 context.Writer.WritePropertyName("IssuedAt");
-                context.Writer.Write(requestObject.IssuedAt);
+                context.Writer.WriteStringValue(requestObject.IssuedAt);
             }
 
             if(requestObject.IsSetIssuer())
             {
                 context.Writer.WritePropertyName("Issuer");
-                context.Writer.Write(requestObject.Issuer);
+                context.Writer.WriteStringValue(requestObject.Issuer);
             }
 
             if(requestObject.IsSetKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.Write(requestObject.KeyAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyAlgorithm);
             }
 
             if(requestObject.IsSetKeyUsages())
             {
                 context.Writer.WritePropertyName("KeyUsages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeyUsagesListValue in requestObject.KeyUsages)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCertificateManagerCertificateKeyUsageMarshaller.Instance;
                     marshaller.Marshall(requestObjectKeyUsagesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotAfter())
             {
                 context.Writer.WritePropertyName("NotAfter");
-                context.Writer.Write(requestObject.NotAfter);
+                context.Writer.WriteStringValue(requestObject.NotAfter);
             }
 
             if(requestObject.IsSetNotBefore())
             {
                 context.Writer.WritePropertyName("NotBefore");
-                context.Writer.Write(requestObject.NotBefore);
+                context.Writer.WriteStringValue(requestObject.NotBefore);
             }
 
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCertificateManagerCertificateOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Options, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRenewalEligibility())
             {
                 context.Writer.WritePropertyName("RenewalEligibility");
-                context.Writer.Write(requestObject.RenewalEligibility);
+                context.Writer.WriteStringValue(requestObject.RenewalEligibility);
             }
 
             if(requestObject.IsSetRenewalSummary())
             {
                 context.Writer.WritePropertyName("RenewalSummary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCertificateManagerCertificateRenewalSummaryMarshaller.Instance;
                 marshaller.Marshall(requestObject.RenewalSummary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSerial())
             {
                 context.Writer.WritePropertyName("Serial");
-                context.Writer.Write(requestObject.Serial);
+                context.Writer.WriteStringValue(requestObject.Serial);
             }
 
             if(requestObject.IsSetSignatureAlgorithm())
             {
                 context.Writer.WritePropertyName("SignatureAlgorithm");
-                context.Writer.Write(requestObject.SignatureAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SignatureAlgorithm);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");
-                context.Writer.Write(requestObject.Subject);
+                context.Writer.WriteStringValue(requestObject.Subject);
             }
 
             if(requestObject.IsSetSubjectAlternativeNames())
             {
                 context.Writer.WritePropertyName("SubjectAlternativeNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubjectAlternativeNamesListValue in requestObject.SubjectAlternativeNames)
                 {
-                        context.Writer.Write(requestObjectSubjectAlternativeNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectSubjectAlternativeNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

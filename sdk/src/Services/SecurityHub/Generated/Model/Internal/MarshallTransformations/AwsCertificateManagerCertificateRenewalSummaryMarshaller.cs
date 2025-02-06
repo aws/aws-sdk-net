@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainValidationOptions())
             {
                 context.Writer.WritePropertyName("DomainValidationOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainValidationOptionsListValue in requestObject.DomainValidationOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCertificateManagerCertificateDomainValidationOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDomainValidationOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRenewalStatus())
             {
                 context.Writer.WritePropertyName("RenewalStatus");
-                context.Writer.Write(requestObject.RenewalStatus);
+                context.Writer.WriteStringValue(requestObject.RenewalStatus);
             }
 
             if(requestObject.IsSetRenewalStatusReason())
             {
                 context.Writer.WritePropertyName("RenewalStatusReason");
-                context.Writer.Write(requestObject.RenewalStatusReason);
+                context.Writer.WriteStringValue(requestObject.RenewalStatusReason);
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("UpdatedAt");
-                context.Writer.Write(requestObject.UpdatedAt);
+                context.Writer.WriteStringValue(requestObject.UpdatedAt);
             }
 
         }

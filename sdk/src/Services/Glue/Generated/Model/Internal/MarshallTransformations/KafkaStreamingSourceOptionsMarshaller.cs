@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,115 +49,115 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddRecordTimestamp())
             {
                 context.Writer.WritePropertyName("AddRecordTimestamp");
-                context.Writer.Write(requestObject.AddRecordTimestamp);
+                context.Writer.WriteStringValue(requestObject.AddRecordTimestamp);
             }
 
             if(requestObject.IsSetAssign())
             {
                 context.Writer.WritePropertyName("Assign");
-                context.Writer.Write(requestObject.Assign);
+                context.Writer.WriteStringValue(requestObject.Assign);
             }
 
             if(requestObject.IsSetBootstrapServers())
             {
                 context.Writer.WritePropertyName("BootstrapServers");
-                context.Writer.Write(requestObject.BootstrapServers);
+                context.Writer.WriteStringValue(requestObject.BootstrapServers);
             }
 
             if(requestObject.IsSetClassification())
             {
                 context.Writer.WritePropertyName("Classification");
-                context.Writer.Write(requestObject.Classification);
+                context.Writer.WriteStringValue(requestObject.Classification);
             }
 
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
-                context.Writer.Write(requestObject.Delimiter);
+                context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
             if(requestObject.IsSetEmitConsumerLagMetrics())
             {
                 context.Writer.WritePropertyName("EmitConsumerLagMetrics");
-                context.Writer.Write(requestObject.EmitConsumerLagMetrics);
+                context.Writer.WriteStringValue(requestObject.EmitConsumerLagMetrics);
             }
 
             if(requestObject.IsSetEndingOffsets())
             {
                 context.Writer.WritePropertyName("EndingOffsets");
-                context.Writer.Write(requestObject.EndingOffsets);
+                context.Writer.WriteStringValue(requestObject.EndingOffsets);
             }
 
             if(requestObject.IsSetIncludeHeaders())
             {
                 context.Writer.WritePropertyName("IncludeHeaders");
-                context.Writer.Write(requestObject.IncludeHeaders.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeHeaders.Value);
             }
 
             if(requestObject.IsSetMaxOffsetsPerTrigger())
             {
                 context.Writer.WritePropertyName("MaxOffsetsPerTrigger");
-                context.Writer.Write(requestObject.MaxOffsetsPerTrigger.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxOffsetsPerTrigger.Value);
             }
 
             if(requestObject.IsSetMinPartitions())
             {
                 context.Writer.WritePropertyName("MinPartitions");
-                context.Writer.Write(requestObject.MinPartitions.Value);
+                context.Writer.WriteNumberValue(requestObject.MinPartitions.Value);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("NumRetries");
-                context.Writer.Write(requestObject.NumRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetPollTimeoutMs())
             {
                 context.Writer.WritePropertyName("PollTimeoutMs");
-                context.Writer.Write(requestObject.PollTimeoutMs.Value);
+                context.Writer.WriteNumberValue(requestObject.PollTimeoutMs.Value);
             }
 
             if(requestObject.IsSetRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("RetryIntervalMs");
-                context.Writer.Write(requestObject.RetryIntervalMs.Value);
+                context.Writer.WriteNumberValue(requestObject.RetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetSecurityProtocol())
             {
                 context.Writer.WritePropertyName("SecurityProtocol");
-                context.Writer.Write(requestObject.SecurityProtocol);
+                context.Writer.WriteStringValue(requestObject.SecurityProtocol);
             }
 
             if(requestObject.IsSetStartingOffsets())
             {
                 context.Writer.WritePropertyName("StartingOffsets");
-                context.Writer.Write(requestObject.StartingOffsets);
+                context.Writer.WriteStringValue(requestObject.StartingOffsets);
             }
 
             if(requestObject.IsSetStartingTimestamp())
             {
                 context.Writer.WritePropertyName("StartingTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
             }
 
             if(requestObject.IsSetSubscribePattern())
             {
                 context.Writer.WritePropertyName("SubscribePattern");
-                context.Writer.Write(requestObject.SubscribePattern);
+                context.Writer.WriteStringValue(requestObject.SubscribePattern);
             }
 
             if(requestObject.IsSetTopicName())
             {
                 context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WriteStringValue(requestObject.TopicName);
             }
 
         }

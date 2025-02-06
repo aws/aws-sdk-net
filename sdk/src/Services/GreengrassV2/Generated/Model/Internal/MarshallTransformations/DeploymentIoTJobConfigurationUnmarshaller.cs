@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentIoTJobConfiguration Object
     /// </summary>  
-    public class DeploymentIoTJobConfigurationUnmarshaller : IUnmarshaller<DeploymentIoTJobConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeploymentIoTJobConfiguration, JsonUnmarshallerContext>
+    public class DeploymentIoTJobConfigurationUnmarshaller : IJsonUnmarshaller<DeploymentIoTJobConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentIoTJobConfiguration IUnmarshaller<DeploymentIoTJobConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentIoTJobConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentIoTJobConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentIoTJobConfiguration unmarshalledObject = new DeploymentIoTJobConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("abortConfig", targetDepth))
                 {
                     var unmarshaller = IoTJobAbortConfigUnmarshaller.Instance;
-                    unmarshalledObject.AbortConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AbortConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth))
                 {
                     var unmarshaller = IoTJobExecutionsRolloutConfigUnmarshaller.Instance;
-                    unmarshalledObject.JobExecutionsRolloutConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobExecutionsRolloutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutConfig", targetDepth))
                 {
                     var unmarshaller = IoTJobTimeoutConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

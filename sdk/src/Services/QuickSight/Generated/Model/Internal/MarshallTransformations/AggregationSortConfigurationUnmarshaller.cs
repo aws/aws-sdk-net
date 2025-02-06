@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AggregationSortConfiguration Object
     /// </summary>  
-    public class AggregationSortConfigurationUnmarshaller : IUnmarshaller<AggregationSortConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AggregationSortConfiguration, JsonUnmarshallerContext>
+    public class AggregationSortConfigurationUnmarshaller : IJsonUnmarshaller<AggregationSortConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AggregationSortConfiguration IUnmarshaller<AggregationSortConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AggregationSortConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AggregationSortConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AggregationSortConfiguration unmarshalledObject = new AggregationSortConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AggregationFunction", targetDepth))
                 {
                     var unmarshaller = AggregationFunctionUnmarshaller.Instance;
-                    unmarshalledObject.AggregationFunction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Column", targetDepth))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.Column = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortDirection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

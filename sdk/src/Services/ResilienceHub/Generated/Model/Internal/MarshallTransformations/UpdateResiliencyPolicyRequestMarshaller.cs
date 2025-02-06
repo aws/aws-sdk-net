@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -61,68 +64,73 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-resiliency-policy";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataLocationConstraint())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataLocationConstraint())
-                    {
-                        context.Writer.WritePropertyName("dataLocationConstraint");
-                        context.Writer.Write(publicRequest.DataLocationConstraint);
-                    }
-
-                    if(publicRequest.IsSetPolicy())
-                    {
-                        context.Writer.WritePropertyName("policy");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPolicyKvp in publicRequest.Policy)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPolicyKvp.Key);
-                            var publicRequestPolicyValue = publicRequestPolicyKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FailurePolicyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPolicyValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPolicyArn())
-                    {
-                        context.Writer.WritePropertyName("policyArn");
-                        context.Writer.Write(publicRequest.PolicyArn);
-                    }
-
-                    if(publicRequest.IsSetPolicyDescription())
-                    {
-                        context.Writer.WritePropertyName("policyDescription");
-                        context.Writer.Write(publicRequest.PolicyDescription);
-                    }
-
-                    if(publicRequest.IsSetPolicyName())
-                    {
-                        context.Writer.WritePropertyName("policyName");
-                        context.Writer.Write(publicRequest.PolicyName);
-                    }
-
-                    if(publicRequest.IsSetTier())
-                    {
-                        context.Writer.WritePropertyName("tier");
-                        context.Writer.Write(publicRequest.Tier);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("dataLocationConstraint");
+                context.Writer.WriteStringValue(publicRequest.DataLocationConstraint);
             }
+
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPolicyKvp in publicRequest.Policy)
+                {
+                    context.Writer.WritePropertyName(publicRequestPolicyKvp.Key);
+                    var publicRequestPolicyValue = publicRequestPolicyKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FailurePolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPolicyValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPolicyArn())
+            {
+                context.Writer.WritePropertyName("policyArn");
+                context.Writer.WriteStringValue(publicRequest.PolicyArn);
+            }
+
+            if(publicRequest.IsSetPolicyDescription())
+            {
+                context.Writer.WritePropertyName("policyDescription");
+                context.Writer.WriteStringValue(publicRequest.PolicyDescription);
+            }
+
+            if(publicRequest.IsSetPolicyName())
+            {
+                context.Writer.WritePropertyName("policyName");
+                context.Writer.WriteStringValue(publicRequest.PolicyName);
+            }
+
+            if(publicRequest.IsSetTier())
+            {
+                context.Writer.WritePropertyName("tier");
+                context.Writer.WriteStringValue(publicRequest.Tier);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

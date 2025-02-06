@@ -213,20 +213,6 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Container group events:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// CONTAINER_GROUP_REGISTRATION_FAILED – A game server container group started, but timed
-        /// out before calling <c>RegisterCompute</c>. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// CONTAINER_GROUP_CRASHED A game server container group started and terminated without
-        /// calling <c>RegisterCompute</c>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         ///  <b>Spot instance events:</b> 
         /// </para>
         ///  <ul> <li> 

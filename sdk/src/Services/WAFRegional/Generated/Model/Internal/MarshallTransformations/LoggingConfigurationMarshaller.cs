@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogDestinationConfigs())
             {
                 context.Writer.WritePropertyName("LogDestinationConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLogDestinationConfigsListValue in requestObject.LogDestinationConfigs)
                 {
-                        context.Writer.Write(requestObjectLogDestinationConfigsListValue);
+                        context.Writer.WriteStringValue(requestObjectLogDestinationConfigsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRedactedFields())
             {
                 context.Writer.WritePropertyName("RedactedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRedactedFieldsListValue in requestObject.RedactedFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldToMatchMarshaller.Instance;
                     marshaller.Marshall(requestObjectRedactedFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
         }

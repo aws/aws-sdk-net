@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 {
@@ -51,117 +49,117 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("accountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.Write(requestObjectAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetActionTypes())
             {
                 context.Writer.WritePropertyName("actionTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionTypesListValue in requestObject.ActionTypes)
                 {
-                        context.Writer.Write(requestObjectActionTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectActionTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImplementationEfforts())
             {
                 context.Writer.WritePropertyName("implementationEfforts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectImplementationEffortsListValue in requestObject.ImplementationEfforts)
                 {
-                        context.Writer.Write(requestObjectImplementationEffortsListValue);
+                        context.Writer.WriteStringValue(requestObjectImplementationEffortsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecommendationIds())
             {
                 context.Writer.WritePropertyName("recommendationIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecommendationIdsListValue in requestObject.RecommendationIds)
                 {
-                        context.Writer.Write(requestObjectRecommendationIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectRecommendationIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceArnsListValue in requestObject.ResourceArns)
                 {
-                        context.Writer.Write(requestObjectResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceIds())
             {
                 context.Writer.WritePropertyName("resourceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceIdsListValue in requestObject.ResourceIds)
                 {
-                        context.Writer.Write(requestObjectResourceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("resourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRestartNeeded())
             {
                 context.Writer.WritePropertyName("restartNeeded");
-                context.Writer.Write(requestObject.RestartNeeded.Value);
+                context.Writer.WriteBooleanValue(requestObject.RestartNeeded.Value);
             }
 
             if(requestObject.IsSetRollbackPossible())
             {
                 context.Writer.WritePropertyName("rollbackPossible");
-                context.Writer.Write(requestObject.RollbackPossible.Value);
+                context.Writer.WriteBooleanValue(requestObject.RollbackPossible.Value);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StorageFlowNodeS3Configuration Object
     /// </summary>  
-    public class StorageFlowNodeS3ConfigurationUnmarshaller : IUnmarshaller<StorageFlowNodeS3Configuration, XmlUnmarshallerContext>, IUnmarshaller<StorageFlowNodeS3Configuration, JsonUnmarshallerContext>
+    public class StorageFlowNodeS3ConfigurationUnmarshaller : IJsonUnmarshaller<StorageFlowNodeS3Configuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StorageFlowNodeS3Configuration IUnmarshaller<StorageFlowNodeS3Configuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StorageFlowNodeS3Configuration Unmarshall(JsonUnmarshallerContext context)
+        public StorageFlowNodeS3Configuration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StorageFlowNodeS3Configuration unmarshalledObject = new StorageFlowNodeS3Configuration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

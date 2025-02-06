@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseModelName())
             {
                 context.Writer.WritePropertyName("BaseModelName");
-                context.Writer.Write(requestObject.BaseModelName);
+                context.Writer.WriteStringValue(requestObject.BaseModelName);
             }
 
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLJobCompletionCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompletionCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelAccessConfig())
             {
                 context.Writer.WritePropertyName("ModelAccessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelAccessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelAccessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextGenerationHyperParameters())
             {
                 context.Writer.WritePropertyName("TextGenerationHyperParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTextGenerationHyperParametersKvp in requestObject.TextGenerationHyperParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectTextGenerationHyperParametersKvp.Key);
                     var requestObjectTextGenerationHyperParametersValue = requestObjectTextGenerationHyperParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectTextGenerationHyperParametersValue);
+                        context.Writer.WriteStringValue(requestObjectTextGenerationHyperParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

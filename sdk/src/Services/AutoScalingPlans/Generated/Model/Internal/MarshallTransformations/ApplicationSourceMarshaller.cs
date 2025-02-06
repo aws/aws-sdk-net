@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudFormationStackARN())
             {
                 context.Writer.WritePropertyName("CloudFormationStackARN");
-                context.Writer.Write(requestObject.CloudFormationStackARN);
+                context.Writer.WriteStringValue(requestObject.CloudFormationStackARN);
             }
 
             if(requestObject.IsSetTagFilters())
             {
                 context.Writer.WritePropertyName("TagFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagFiltersListValue in requestObject.TagFilters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

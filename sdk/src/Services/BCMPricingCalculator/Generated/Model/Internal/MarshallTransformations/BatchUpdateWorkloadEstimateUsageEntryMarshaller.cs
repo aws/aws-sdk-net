@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -53,24 +51,24 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("amount");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Amount.Value);
+                    context.Writer.WriteNumberValue(requestObject.Amount.Value);
                 }
             }
 
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("group");
-                context.Writer.Write(requestObject.Group);
+                context.Writer.WriteStringValue(requestObject.Group);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
         }

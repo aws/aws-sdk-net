@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Filter Object
     /// </summary>  
-    public class FilterUnmarshaller : IUnmarshaller<Filter, XmlUnmarshallerContext>, IUnmarshaller<Filter, JsonUnmarshallerContext>
+    public class FilterUnmarshaller : IJsonUnmarshaller<Filter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Filter IUnmarshaller<Filter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Filter Unmarshall(JsonUnmarshallerContext context)
+        public Filter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Filter unmarshalledObject = new Filter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryFilter", targetDepth))
                 {
                     var unmarshaller = CategoryFilterUnmarshaller.Instance;
-                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NestedFilter", targetDepth))
                 {
                     var unmarshaller = NestedFilterUnmarshaller.Instance;
-                    unmarshalledObject.NestedFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NestedFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))
                 {
                     var unmarshaller = NumericEqualityFilterUnmarshaller.Instance;
-                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericRangeFilter", targetDepth))
                 {
                     var unmarshaller = NumericRangeFilterUnmarshaller.Instance;
-                    unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RelativeDatesFilter", targetDepth))
                 {
                     var unmarshaller = RelativeDatesFilterUnmarshaller.Instance;
-                    unmarshalledObject.RelativeDatesFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelativeDatesFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeEqualityFilter", targetDepth))
                 {
                     var unmarshaller = TimeEqualityFilterUnmarshaller.Instance;
-                    unmarshalledObject.TimeEqualityFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeRangeFilter", targetDepth))
                 {
                     var unmarshaller = TimeRangeFilterUnmarshaller.Instance;
-                    unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopBottomFilter", targetDepth))
                 {
                     var unmarshaller = TopBottomFilterUnmarshaller.Instance;
-                    unmarshalledObject.TopBottomFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopBottomFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

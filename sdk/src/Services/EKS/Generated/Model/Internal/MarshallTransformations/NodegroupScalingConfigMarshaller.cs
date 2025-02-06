@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredSize())
             {
                 context.Writer.WritePropertyName("desiredSize");
-                context.Writer.Write(requestObject.DesiredSize.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredSize.Value);
             }
 
             if(requestObject.IsSetMaxSize())
             {
                 context.Writer.WritePropertyName("maxSize");
-                context.Writer.Write(requestObject.MaxSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSize.Value);
             }
 
             if(requestObject.IsSetMinSize())
             {
                 context.Writer.WritePropertyName("minSize");
-                context.Writer.Write(requestObject.MinSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MinSize.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplications())
             {
                 context.Writer.WritePropertyName("Applications");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApplicationsListValue in requestObject.Applications)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ApplicationConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectApplicationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetClockSync())
             {
                 context.Writer.WritePropertyName("ClockSync");
-                context.Writer.Write(requestObject.ClockSync.Value);
+                context.Writer.WriteNumberValue(requestObject.ClockSync.Value);
             }
 
             if(requestObject.IsSetFuota())
             {
                 context.Writer.WritePropertyName("Fuota");
-                context.Writer.Write(requestObject.Fuota.Value);
+                context.Writer.WriteNumberValue(requestObject.Fuota.Value);
             }
 
             if(requestObject.IsSetMulticast())
             {
                 context.Writer.WritePropertyName("Multicast");
-                context.Writer.Write(requestObject.Multicast.Value);
+                context.Writer.WriteNumberValue(requestObject.Multicast.Value);
             }
 
             if(requestObject.IsSetPositioning())
             {
                 context.Writer.WritePropertyName("Positioning");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PositioningMarshaller.Instance;
                 marshaller.Marshall(requestObject.Positioning, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

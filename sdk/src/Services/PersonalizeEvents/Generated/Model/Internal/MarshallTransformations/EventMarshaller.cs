@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventId())
             {
                 context.Writer.WritePropertyName("eventId");
-                context.Writer.Write(requestObject.EventId);
+                context.Writer.WriteStringValue(requestObject.EventId);
             }
 
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetEventValue())
@@ -65,58 +63,58 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("eventValue");
                 if(StringUtils.IsSpecialFloatValue(requestObject.EventValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.EventValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.EventValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.EventValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.EventValue.Value);
                 }
             }
 
             if(requestObject.IsSetImpression())
             {
                 context.Writer.WritePropertyName("impression");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectImpressionListValue in requestObject.Impression)
                 {
-                        context.Writer.Write(requestObjectImpressionListValue);
+                        context.Writer.WriteStringValue(requestObjectImpressionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetItemId())
             {
                 context.Writer.WritePropertyName("itemId");
-                context.Writer.Write(requestObject.ItemId);
+                context.Writer.WriteStringValue(requestObject.ItemId);
             }
 
             if(requestObject.IsSetMetricAttribution())
             {
                 context.Writer.WritePropertyName("metricAttribution");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricAttributionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricAttribution, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.Write(requestObject.Properties);
+                context.Writer.WriteStringValue(requestObject.Properties);
             }
 
             if(requestObject.IsSetRecommendationId())
             {
                 context.Writer.WritePropertyName("recommendationId");
-                context.Writer.Write(requestObject.RecommendationId);
+                context.Writer.WriteStringValue(requestObject.RecommendationId);
             }
 
             if(requestObject.IsSetSentAt())
             {
                 context.Writer.WritePropertyName("sentAt");
-                context.Writer.Write(requestObject.SentAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SentAt.Value)));
             }
 
         }

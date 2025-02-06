@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggressiveMode())
             {
                 context.Writer.WritePropertyName("aggressiveMode");
-                context.Writer.Write(requestObject.AggressiveMode.Value);
+                context.Writer.WriteNumberValue(requestObject.AggressiveMode.Value);
             }
 
             if(requestObject.IsSetPostTemporalSharpening())
             {
                 context.Writer.WritePropertyName("postTemporalSharpening");
-                context.Writer.Write(requestObject.PostTemporalSharpening);
+                context.Writer.WriteStringValue(requestObject.PostTemporalSharpening);
             }
 
             if(requestObject.IsSetPostTemporalSharpeningStrength())
             {
                 context.Writer.WritePropertyName("postTemporalSharpeningStrength");
-                context.Writer.Write(requestObject.PostTemporalSharpeningStrength);
+                context.Writer.WriteStringValue(requestObject.PostTemporalSharpeningStrength);
             }
 
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("speed");
-                context.Writer.Write(requestObject.Speed.Value);
+                context.Writer.WriteNumberValue(requestObject.Speed.Value);
             }
 
             if(requestObject.IsSetStrength())
             {
                 context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength.Value);
+                context.Writer.WriteNumberValue(requestObject.Strength.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableResourceNameDnsAAAARecord())
             {
                 context.Writer.WritePropertyName("EnableResourceNameDnsAAAARecord");
-                context.Writer.Write(requestObject.EnableResourceNameDnsAAAARecord.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableResourceNameDnsAAAARecord.Value);
             }
 
             if(requestObject.IsSetEnableResourceNameDnsARecord())
             {
                 context.Writer.WritePropertyName("EnableResourceNameDnsARecord");
-                context.Writer.Write(requestObject.EnableResourceNameDnsARecord.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableResourceNameDnsARecord.Value);
             }
 
             if(requestObject.IsSetHostnameType())
             {
                 context.Writer.WritePropertyName("HostnameType");
-                context.Writer.Write(requestObject.HostnameType);
+                context.Writer.WriteStringValue(requestObject.HostnameType);
             }
 
         }

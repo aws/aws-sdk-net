@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchLoadProgressReport Object
     /// </summary>  
-    public class BatchLoadProgressReportUnmarshaller : IUnmarshaller<BatchLoadProgressReport, XmlUnmarshallerContext>, IUnmarshaller<BatchLoadProgressReport, JsonUnmarshallerContext>
+    public class BatchLoadProgressReportUnmarshaller : IJsonUnmarshaller<BatchLoadProgressReport, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchLoadProgressReport IUnmarshaller<BatchLoadProgressReport, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchLoadProgressReport Unmarshall(JsonUnmarshallerContext context)
+        public BatchLoadProgressReport Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchLoadProgressReport unmarshalledObject = new BatchLoadProgressReport();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BytesMetered", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FileFailures", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FileFailures = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParseFailures", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ParseFailures = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParseFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordIngestionFailures", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordIngestionFailures = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordIngestionFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordsIngested", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordsIngested = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordsIngested = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordsProcessed", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

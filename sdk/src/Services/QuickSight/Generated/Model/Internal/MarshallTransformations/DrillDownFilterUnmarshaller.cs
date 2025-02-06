@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DrillDownFilter Object
     /// </summary>  
-    public class DrillDownFilterUnmarshaller : IUnmarshaller<DrillDownFilter, XmlUnmarshallerContext>, IUnmarshaller<DrillDownFilter, JsonUnmarshallerContext>
+    public class DrillDownFilterUnmarshaller : IJsonUnmarshaller<DrillDownFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DrillDownFilter IUnmarshaller<DrillDownFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DrillDownFilter Unmarshall(JsonUnmarshallerContext context)
+        public DrillDownFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DrillDownFilter unmarshalledObject = new DrillDownFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryFilter", targetDepth))
                 {
                     var unmarshaller = CategoryDrillDownFilterUnmarshaller.Instance;
-                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))
                 {
                     var unmarshaller = NumericEqualityDrillDownFilterUnmarshaller.Instance;
-                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeRangeFilter", targetDepth))
                 {
                     var unmarshaller = TimeRangeDrillDownFilterUnmarshaller.Instance;
-                    unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

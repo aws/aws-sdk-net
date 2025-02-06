@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecuteCommandConfiguration())
             {
                 context.Writer.WritePropertyName("executeCommandConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExecuteCommandConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExecuteCommandConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManagedStorageConfiguration())
             {
                 context.Writer.WritePropertyName("managedStorageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ManagedStorageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedStorageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

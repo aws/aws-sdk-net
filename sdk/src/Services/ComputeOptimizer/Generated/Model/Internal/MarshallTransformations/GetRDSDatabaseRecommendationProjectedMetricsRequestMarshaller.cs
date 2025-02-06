@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -63,60 +66,65 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetPeriod())
-                    {
-                        context.Writer.WritePropertyName("period");
-                        context.Writer.Write(publicRequest.Period.Value);
-                    }
-
-                    if(publicRequest.IsSetRecommendationPreferences())
-                    {
-                        context.Writer.WritePropertyName("recommendationPreferences");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecommendationPreferencesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RecommendationPreferences, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetStat())
-                    {
-                        context.Writer.WritePropertyName("stat");
-                        context.Writer.Write(publicRequest.Stat);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
             }
+
+            if(publicRequest.IsSetPeriod())
+            {
+                context.Writer.WritePropertyName("period");
+                context.Writer.WriteNumberValue(publicRequest.Period.Value);
+            }
+
+            if(publicRequest.IsSetRecommendationPreferences())
+            {
+                context.Writer.WritePropertyName("recommendationPreferences");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecommendationPreferencesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecommendationPreferences, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            if(publicRequest.IsSetStat())
+            {
+                context.Writer.WritePropertyName("stat");
+                context.Writer.WriteStringValue(publicRequest.Stat);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

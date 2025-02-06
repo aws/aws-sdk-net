@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MalformedConditionExpressionFlowValidationDetails Object
     /// </summary>  
-    public class MalformedConditionExpressionFlowValidationDetailsUnmarshaller : IUnmarshaller<MalformedConditionExpressionFlowValidationDetails, XmlUnmarshallerContext>, IUnmarshaller<MalformedConditionExpressionFlowValidationDetails, JsonUnmarshallerContext>
+    public class MalformedConditionExpressionFlowValidationDetailsUnmarshaller : IJsonUnmarshaller<MalformedConditionExpressionFlowValidationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MalformedConditionExpressionFlowValidationDetails IUnmarshaller<MalformedConditionExpressionFlowValidationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MalformedConditionExpressionFlowValidationDetails Unmarshall(JsonUnmarshallerContext context)
+        public MalformedConditionExpressionFlowValidationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MalformedConditionExpressionFlowValidationDetails unmarshalledObject = new MalformedConditionExpressionFlowValidationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cause", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("condition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("node", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Node = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Node = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

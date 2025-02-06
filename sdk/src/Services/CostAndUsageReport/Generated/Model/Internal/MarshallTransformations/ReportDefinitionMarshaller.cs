@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalArtifacts())
             {
                 context.Writer.WritePropertyName("AdditionalArtifacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalArtifactsListValue in requestObject.AdditionalArtifacts)
                 {
-                        context.Writer.Write(requestObjectAdditionalArtifactsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalArtifactsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAdditionalSchemaElements())
             {
                 context.Writer.WritePropertyName("AdditionalSchemaElements");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalSchemaElementsListValue in requestObject.AdditionalSchemaElements)
                 {
-                        context.Writer.Write(requestObjectAdditionalSchemaElementsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalSchemaElementsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBillingViewArn())
             {
                 context.Writer.WritePropertyName("BillingViewArn");
-                context.Writer.Write(requestObject.BillingViewArn);
+                context.Writer.WriteStringValue(requestObject.BillingViewArn);
             }
 
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
-                context.Writer.Write(requestObject.Compression);
+                context.Writer.WriteStringValue(requestObject.Compression);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetRefreshClosedReports())
             {
                 context.Writer.WritePropertyName("RefreshClosedReports");
-                context.Writer.Write(requestObject.RefreshClosedReports.Value);
+                context.Writer.WriteBooleanValue(requestObject.RefreshClosedReports.Value);
             }
 
             if(requestObject.IsSetReportName())
             {
                 context.Writer.WritePropertyName("ReportName");
-                context.Writer.Write(requestObject.ReportName);
+                context.Writer.WriteStringValue(requestObject.ReportName);
             }
 
             if(requestObject.IsSetReportStatus())
             {
                 context.Writer.WritePropertyName("ReportStatus");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReportStatusMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReportStatus, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReportVersioning())
             {
                 context.Writer.WritePropertyName("ReportVersioning");
-                context.Writer.Write(requestObject.ReportVersioning);
+                context.Writer.WriteStringValue(requestObject.ReportVersioning);
             }
 
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Prefix())
             {
                 context.Writer.WritePropertyName("S3Prefix");
-                context.Writer.Write(requestObject.S3Prefix);
+                context.Writer.WriteStringValue(requestObject.S3Prefix);
             }
 
             if(requestObject.IsSetS3Region())
             {
                 context.Writer.WritePropertyName("S3Region");
-                context.Writer.Write(requestObject.S3Region);
+                context.Writer.WriteStringValue(requestObject.S3Region);
             }
 
             if(requestObject.IsSetTimeUnit())
             {
                 context.Writer.WritePropertyName("TimeUnit");
-                context.Writer.Write(requestObject.TimeUnit);
+                context.Writer.WriteStringValue(requestObject.TimeUnit);
             }
 
         }

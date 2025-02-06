@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEwsEndpoint())
             {
                 context.Writer.WritePropertyName("EwsEndpoint");
-                context.Writer.Write(requestObject.EwsEndpoint);
+                context.Writer.WriteStringValue(requestObject.EwsEndpoint);
             }
 
             if(requestObject.IsSetEwsPassword())
             {
                 context.Writer.WritePropertyName("EwsPassword");
-                context.Writer.Write(requestObject.EwsPassword);
+                context.Writer.WriteStringValue(requestObject.EwsPassword);
             }
 
             if(requestObject.IsSetEwsUsername())
             {
                 context.Writer.WritePropertyName("EwsUsername");
-                context.Writer.Write(requestObject.EwsUsername);
+                context.Writer.WriteStringValue(requestObject.EwsUsername);
             }
 
         }

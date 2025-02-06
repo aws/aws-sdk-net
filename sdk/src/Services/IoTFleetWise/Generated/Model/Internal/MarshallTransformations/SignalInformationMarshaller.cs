@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataPartitionId())
             {
                 context.Writer.WritePropertyName("dataPartitionId");
-                context.Writer.Write(requestObject.DataPartitionId);
+                context.Writer.WriteStringValue(requestObject.DataPartitionId);
             }
 
             if(requestObject.IsSetMaxSampleCount())
             {
                 context.Writer.WritePropertyName("maxSampleCount");
-                context.Writer.Write(requestObject.MaxSampleCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSampleCount.Value);
             }
 
             if(requestObject.IsSetMinimumSamplingIntervalMs())
             {
                 context.Writer.WritePropertyName("minimumSamplingIntervalMs");
-                context.Writer.Write(requestObject.MinimumSamplingIntervalMs.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumSamplingIntervalMs.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

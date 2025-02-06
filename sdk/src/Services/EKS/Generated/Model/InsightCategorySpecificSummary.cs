@@ -41,7 +41,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddonCompatibilityDetails. 
         /// <para>
-        /// A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.
+        /// A list of <c>AddonCompatibilityDetail</c> objects for Amazon EKS add-ons.
         /// </para>
         /// </summary>
         public List<AddonCompatibilityDetail> AddonCompatibilityDetails

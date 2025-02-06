@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TargetTrackingConfiguration Object
     /// </summary>  
-    public class TargetTrackingConfigurationUnmarshaller : IUnmarshaller<TargetTrackingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TargetTrackingConfiguration, JsonUnmarshallerContext>
+    public class TargetTrackingConfigurationUnmarshaller : IJsonUnmarshaller<TargetTrackingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TargetTrackingConfiguration IUnmarshaller<TargetTrackingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TargetTrackingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TargetTrackingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TargetTrackingConfiguration unmarshalledObject = new TargetTrackingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth))
                 {
                     var unmarshaller = CustomizedScalingMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisableScaleIn", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedInstanceWarmup", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedInstanceWarmup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedInstanceWarmup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredefinedScalingMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScaleInCooldown", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScaleOutCooldown", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetValue", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -47,147 +47,147 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetKxClusterResponse response = new GetKxClusterResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("autoScalingConfiguration", targetDepth))
                 {
                     var unmarshaller = AutoScalingConfigurationUnmarshaller.Instance;
-                    response.AutoScalingConfiguration = unmarshaller.Unmarshall(context);
+                    response.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("availabilityZoneId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    response.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("azMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AzMode = unmarshaller.Unmarshall(context);
+                    response.AzMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cacheStorageConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KxCacheStorageConfiguration, KxCacheStorageConfigurationUnmarshaller>(KxCacheStorageConfigurationUnmarshaller.Instance);
-                    response.CacheStorageConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KxCacheStorageConfiguration, KxCacheStorageConfigurationUnmarshaller>(KxCacheStorageConfigurationUnmarshaller.Instance);
+                    response.CacheStorageConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("capacityConfiguration", targetDepth))
                 {
                     var unmarshaller = CapacityConfigurationUnmarshaller.Instance;
-                    response.CapacityConfiguration = unmarshaller.Unmarshall(context);
+                    response.CapacityConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClusterDescription = unmarshaller.Unmarshall(context);
+                    response.ClusterDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClusterName = unmarshaller.Unmarshall(context);
+                    response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClusterType = unmarshaller.Unmarshall(context);
+                    response.ClusterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = CodeConfigurationUnmarshaller.Instance;
-                    response.Code = unmarshaller.Unmarshall(context);
+                    response.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("commandLineArguments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KxCommandLineArgument, KxCommandLineArgumentUnmarshaller>(KxCommandLineArgumentUnmarshaller.Instance);
-                    response.CommandLineArguments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KxCommandLineArgument, KxCommandLineArgumentUnmarshaller>(KxCommandLineArgumentUnmarshaller.Instance);
+                    response.CommandLineArguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createdTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedTimestamp = unmarshaller.Unmarshall(context);
+                    response.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("databases", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KxDatabaseConfiguration, KxDatabaseConfigurationUnmarshaller>(KxDatabaseConfigurationUnmarshaller.Instance);
-                    response.Databases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KxDatabaseConfiguration, KxDatabaseConfigurationUnmarshaller>(KxDatabaseConfigurationUnmarshaller.Instance);
+                    response.Databases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExecutionRole = unmarshaller.Unmarshall(context);
+                    response.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("initializationScript", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InitializationScript = unmarshaller.Unmarshall(context);
+                    response.InitializationScript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastModifiedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
+                    response.LastModifiedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("releaseLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReleaseLabel = unmarshaller.Unmarshall(context);
+                    response.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("savedownStorageConfiguration", targetDepth))
                 {
                     var unmarshaller = KxSavedownStorageConfigurationUnmarshaller.Instance;
-                    response.SavedownStorageConfiguration = unmarshaller.Unmarshall(context);
+                    response.SavedownStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scalingGroupConfiguration", targetDepth))
                 {
                     var unmarshaller = KxScalingGroupConfigurationUnmarshaller.Instance;
-                    response.ScalingGroupConfiguration = unmarshaller.Unmarshall(context);
+                    response.ScalingGroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("statusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusReason = unmarshaller.Unmarshall(context);
+                    response.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tickerplantLogConfiguration", targetDepth))
                 {
                     var unmarshaller = TickerplantLogConfigurationUnmarshaller.Instance;
-                    response.TickerplantLogConfiguration = unmarshaller.Unmarshall(context);
+                    response.TickerplantLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
-                    response.Volumes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Volume, VolumeUnmarshaller>(VolumeUnmarshaller.Instance);
+                    response.Volumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcConfiguration", targetDepth))
                 {
                     var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    response.VpcConfiguration = unmarshaller.Unmarshall(context);
+                    response.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -204,42 +204,44 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonFinspaceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

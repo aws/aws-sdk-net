@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentEndTime())
             {
                 context.Writer.WritePropertyName("DeploymentEndTime");
-                context.Writer.Write(requestObject.DeploymentEndTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeploymentEndTime.Value)));
             }
 
             if(requestObject.IsSetDeploymentModels())
             {
                 context.Writer.WritePropertyName("DeploymentModels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDeploymentModelsListValue in requestObject.DeploymentModels)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DeploymentModelMarshaller.Instance;
                     marshaller.Marshall(requestObjectDeploymentModelsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeploymentName())
             {
                 context.Writer.WritePropertyName("DeploymentName");
-                context.Writer.Write(requestObject.DeploymentName);
+                context.Writer.WriteStringValue(requestObject.DeploymentName);
             }
 
             if(requestObject.IsSetDeploymentStartTime())
             {
                 context.Writer.WritePropertyName("DeploymentStartTime");
-                context.Writer.Write(requestObject.DeploymentStartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeploymentStartTime.Value)));
             }
 
             if(requestObject.IsSetDeploymentStatus())
             {
                 context.Writer.WritePropertyName("DeploymentStatus");
-                context.Writer.Write(requestObject.DeploymentStatus);
+                context.Writer.WriteStringValue(requestObject.DeploymentStatus);
             }
 
             if(requestObject.IsSetDeploymentStatusMessage())
             {
                 context.Writer.WritePropertyName("DeploymentStatusMessage");
-                context.Writer.Write(requestObject.DeploymentStatusMessage);
+                context.Writer.WriteStringValue(requestObject.DeploymentStatusMessage);
             }
 
         }

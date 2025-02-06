@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthStrategy())
             {
                 context.Writer.WritePropertyName("AuthStrategy");
-                context.Writer.Write(requestObject.AuthStrategy);
+                context.Writer.WriteStringValue(requestObject.AuthStrategy);
             }
 
             if(requestObject.IsSetAuthToken())
             {
                 context.Writer.WritePropertyName("AuthToken");
-                context.Writer.Write(requestObject.AuthToken);
+                context.Writer.WriteStringValue(requestObject.AuthToken);
             }
 
             if(requestObject.IsSetBranch())
             {
                 context.Writer.WritePropertyName("Branch");
-                context.Writer.Write(requestObject.Branch);
+                context.Writer.WriteStringValue(requestObject.Branch);
             }
 
             if(requestObject.IsSetFolder())
             {
                 context.Writer.WritePropertyName("Folder");
-                context.Writer.Write(requestObject.Folder);
+                context.Writer.WriteStringValue(requestObject.Folder);
             }
 
             if(requestObject.IsSetLastCommitId())
             {
                 context.Writer.WritePropertyName("LastCommitId");
-                context.Writer.Write(requestObject.LastCommitId);
+                context.Writer.WriteStringValue(requestObject.LastCommitId);
             }
 
             if(requestObject.IsSetOwner())
             {
                 context.Writer.WritePropertyName("Owner");
-                context.Writer.Write(requestObject.Owner);
+                context.Writer.WriteStringValue(requestObject.Owner);
             }
 
             if(requestObject.IsSetProvider())
             {
                 context.Writer.WritePropertyName("Provider");
-                context.Writer.Write(requestObject.Provider);
+                context.Writer.WriteStringValue(requestObject.Provider);
             }
 
             if(requestObject.IsSetRepository())
             {
                 context.Writer.WritePropertyName("Repository");
-                context.Writer.Write(requestObject.Repository);
+                context.Writer.WriteStringValue(requestObject.Repository);
             }
 
         }

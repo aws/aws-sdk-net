@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DashPlaylistSettings Object
     /// </summary>  
-    public class DashPlaylistSettingsUnmarshaller : IUnmarshaller<DashPlaylistSettings, XmlUnmarshallerContext>, IUnmarshaller<DashPlaylistSettings, JsonUnmarshallerContext>
+    public class DashPlaylistSettingsUnmarshaller : IJsonUnmarshaller<DashPlaylistSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DashPlaylistSettings IUnmarshaller<DashPlaylistSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DashPlaylistSettings Unmarshall(JsonUnmarshallerContext context)
+        public DashPlaylistSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DashPlaylistSettings unmarshalledObject = new DashPlaylistSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ManifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinBufferTimeSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinUpdatePeriodSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinUpdatePeriodSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinUpdatePeriodSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SuggestedPresentationDelaySeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SuggestedPresentationDelaySeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuggestedPresentationDelaySeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

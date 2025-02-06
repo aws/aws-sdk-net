@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceTypeAndroid())
             {
                 context.Writer.WritePropertyName("DeviceTypeAndroid");
-                context.Writer.Write(requestObject.DeviceTypeAndroid);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeAndroid);
             }
 
             if(requestObject.IsSetDeviceTypeChromeOs())
             {
                 context.Writer.WritePropertyName("DeviceTypeChromeOs");
-                context.Writer.Write(requestObject.DeviceTypeChromeOs);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeChromeOs);
             }
 
             if(requestObject.IsSetDeviceTypeIos())
             {
                 context.Writer.WritePropertyName("DeviceTypeIos");
-                context.Writer.Write(requestObject.DeviceTypeIos);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeIos);
             }
 
             if(requestObject.IsSetDeviceTypeLinux())
             {
                 context.Writer.WritePropertyName("DeviceTypeLinux");
-                context.Writer.Write(requestObject.DeviceTypeLinux);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeLinux);
             }
 
             if(requestObject.IsSetDeviceTypeOsx())
             {
                 context.Writer.WritePropertyName("DeviceTypeOsx");
-                context.Writer.Write(requestObject.DeviceTypeOsx);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeOsx);
             }
 
             if(requestObject.IsSetDeviceTypeWeb())
             {
                 context.Writer.WritePropertyName("DeviceTypeWeb");
-                context.Writer.Write(requestObject.DeviceTypeWeb);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeWeb);
             }
 
             if(requestObject.IsSetDeviceTypeWindows())
             {
                 context.Writer.WritePropertyName("DeviceTypeWindows");
-                context.Writer.Write(requestObject.DeviceTypeWindows);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeWindows);
             }
 
             if(requestObject.IsSetDeviceTypeZeroClient())
             {
                 context.Writer.WritePropertyName("DeviceTypeZeroClient");
-                context.Writer.Write(requestObject.DeviceTypeZeroClient);
+                context.Writer.WriteStringValue(requestObject.DeviceTypeZeroClient);
             }
 
         }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HyperParameterTuningJobConfig Object
     /// </summary>  
-    public class HyperParameterTuningJobConfigUnmarshaller : IUnmarshaller<HyperParameterTuningJobConfig, XmlUnmarshallerContext>, IUnmarshaller<HyperParameterTuningJobConfig, JsonUnmarshallerContext>
+    public class HyperParameterTuningJobConfigUnmarshaller : IJsonUnmarshaller<HyperParameterTuningJobConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HyperParameterTuningJobConfig IUnmarshaller<HyperParameterTuningJobConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HyperParameterTuningJobConfig Unmarshall(JsonUnmarshallerContext context)
+        public HyperParameterTuningJobConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HyperParameterTuningJobConfig unmarshalledObject = new HyperParameterTuningJobConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("HyperParameterTuningJobObjective", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobObjectiveUnmarshaller.Instance;
-                    unmarshalledObject.HyperParameterTuningJobObjective = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HyperParameterTuningJobObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParameterRanges", targetDepth))
                 {
                     var unmarshaller = ParameterRangesUnmarshaller.Instance;
-                    unmarshalledObject.ParameterRanges = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RandomSeed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RandomSeed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RandomSeed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceLimits", targetDepth))
                 {
                     var unmarshaller = ResourceLimitsUnmarshaller.Instance;
-                    unmarshalledObject.ResourceLimits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Strategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Strategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Strategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StrategyConfig", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobStrategyConfigUnmarshaller.Instance;
-                    unmarshalledObject.StrategyConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StrategyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJobEarlyStoppingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingJobEarlyStoppingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingJobEarlyStoppingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TuningJobCompletionCriteria", targetDepth))
                 {
                     var unmarshaller = TuningJobCompletionCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.TuningJobCompletionCriteria = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TuningJobCompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidOperationException operation
     /// </summary>  
-    public class InvalidOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidOperationException, XmlUnmarshallerContext>
+    public class InvalidOperationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidOperationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MetricResultV2 Object
     /// </summary>  
-    public class MetricResultV2Unmarshaller : IUnmarshaller<MetricResultV2, XmlUnmarshallerContext>, IUnmarshaller<MetricResultV2, JsonUnmarshallerContext>
+    public class MetricResultV2Unmarshaller : IJsonUnmarshaller<MetricResultV2, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MetricResultV2 IUnmarshaller<MetricResultV2, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MetricResultV2 Unmarshall(JsonUnmarshallerContext context)
+        public MetricResultV2 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MetricResultV2 unmarshalledObject = new MetricResultV2();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Collections", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricDataV2, MetricDataV2Unmarshaller>(MetricDataV2Unmarshaller.Instance);
-                    unmarshalledObject.Collections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MetricDataV2, MetricDataV2Unmarshaller>(MetricDataV2Unmarshaller.Instance);
+                    unmarshalledObject.Collections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dimensions", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricInterval", targetDepth))
                 {
                     var unmarshaller = MetricIntervalUnmarshaller.Instance;
-                    unmarshalledObject.MetricInterval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpuVendorArchitectures())
             {
                 context.Writer.WritePropertyName("cpuVendorArchitectures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCpuVendorArchitecturesListValue in requestObject.CpuVendorArchitectures)
                 {
-                        context.Writer.Write(requestObjectCpuVendorArchitecturesListValue);
+                        context.Writer.WriteStringValue(requestObjectCpuVendorArchitecturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

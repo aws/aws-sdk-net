@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OnPremisesTagSet Object
     /// </summary>  
-    public class OnPremisesTagSetUnmarshaller : IUnmarshaller<OnPremisesTagSet, XmlUnmarshallerContext>, IUnmarshaller<OnPremisesTagSet, JsonUnmarshallerContext>
+    public class OnPremisesTagSetUnmarshaller : IJsonUnmarshaller<OnPremisesTagSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OnPremisesTagSet IUnmarshaller<OnPremisesTagSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context)
+        public OnPremisesTagSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OnPremisesTagSet unmarshalledObject = new OnPremisesTagSet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("onPremisesTagSetList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<TagFilter>, ListUnmarshaller<TagFilter, TagFilterUnmarshaller>>(new ListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance));
-                    unmarshalledObject.OnPremisesTagSetList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<List<TagFilter>, JsonListUnmarshaller<TagFilter,TagFilterUnmarshaller>>(new JsonListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance));
+                    unmarshalledObject.OnPremisesTagSetList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

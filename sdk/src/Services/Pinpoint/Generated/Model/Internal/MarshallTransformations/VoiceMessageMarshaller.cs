@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,44 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetOriginationNumber())
             {
                 context.Writer.WritePropertyName("OriginationNumber");
-                context.Writer.Write(requestObject.OriginationNumber);
+                context.Writer.WriteStringValue(requestObject.OriginationNumber);
             }
 
             if(requestObject.IsSetSubstitutions())
             {
                 context.Writer.WritePropertyName("Substitutions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
                     var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
                     {
-                            context.Writer.Write(requestObjectSubstitutionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVoiceId())
             {
                 context.Writer.WritePropertyName("VoiceId");
-                context.Writer.Write(requestObject.VoiceId);
+                context.Writer.WriteStringValue(requestObject.VoiceId);
             }
 
         }

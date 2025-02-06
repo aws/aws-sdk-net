@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTenantDisplayName())
             {
                 context.Writer.WritePropertyName("tenantDisplayName");
-                context.Writer.Write(requestObject.TenantDisplayName);
+                context.Writer.WriteStringValue(requestObject.TenantDisplayName);
             }
 
             if(requestObject.IsSetTenantIdentifier())
             {
                 context.Writer.WritePropertyName("tenantIdentifier");
-                context.Writer.Write(requestObject.TenantIdentifier);
+                context.Writer.WriteStringValue(requestObject.TenantIdentifier);
             }
 
         }

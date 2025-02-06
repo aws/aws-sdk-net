@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetResourceRecord())
             {
                 context.Writer.WritePropertyName("ResourceRecord");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCertificateManagerCertificateResourceRecordMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceRecord, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidationDomain())
             {
                 context.Writer.WritePropertyName("ValidationDomain");
-                context.Writer.Write(requestObject.ValidationDomain);
+                context.Writer.WriteStringValue(requestObject.ValidationDomain);
             }
 
             if(requestObject.IsSetValidationEmails())
             {
                 context.Writer.WritePropertyName("ValidationEmails");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValidationEmailsListValue in requestObject.ValidationEmails)
                 {
-                        context.Writer.Write(requestObjectValidationEmailsListValue);
+                        context.Writer.WriteStringValue(requestObjectValidationEmailsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetValidationMethod())
             {
                 context.Writer.WritePropertyName("ValidationMethod");
-                context.Writer.Write(requestObject.ValidationMethod);
+                context.Writer.WriteStringValue(requestObject.ValidationMethod);
             }
 
             if(requestObject.IsSetValidationStatus())
             {
                 context.Writer.WritePropertyName("ValidationStatus");
-                context.Writer.Write(requestObject.ValidationStatus);
+                context.Writer.WriteStringValue(requestObject.ValidationStatus);
             }
 
         }

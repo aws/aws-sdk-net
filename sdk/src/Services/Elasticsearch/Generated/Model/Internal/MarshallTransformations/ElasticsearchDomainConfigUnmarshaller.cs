@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ElasticsearchDomainConfig Object
     /// </summary>  
-    public class ElasticsearchDomainConfigUnmarshaller : IUnmarshaller<ElasticsearchDomainConfig, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchDomainConfig, JsonUnmarshallerContext>
+    public class ElasticsearchDomainConfigUnmarshaller : IJsonUnmarshaller<ElasticsearchDomainConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ElasticsearchDomainConfig IUnmarshaller<ElasticsearchDomainConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ElasticsearchDomainConfig Unmarshall(JsonUnmarshallerContext context)
+        public ElasticsearchDomainConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ElasticsearchDomainConfig unmarshalledObject = new ElasticsearchDomainConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessPolicies", targetDepth))
                 {
                     var unmarshaller = AccessPoliciesStatusUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdvancedOptions", targetDepth))
                 {
                     var unmarshaller = AdvancedOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdvancedSecurityOptions", targetDepth))
                 {
                     var unmarshaller = AdvancedSecurityOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoTuneOptions", targetDepth))
                 {
                     var unmarshaller = AutoTuneOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChangeProgressDetails", targetDepth))
                 {
                     var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ChangeProgressDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChangeProgressDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CognitoOptions", targetDepth))
                 {
                     var unmarshaller = CognitoOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.CognitoOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CognitoOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = DomainEndpointOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EBSOptions", targetDepth))
                 {
                     var unmarshaller = EBSOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.EBSOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EBSOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElasticsearchClusterConfig", targetDepth))
                 {
                     var unmarshaller = ElasticsearchClusterConfigStatusUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElasticsearchVersion", targetDepth))
                 {
                     var unmarshaller = ElasticsearchVersionStatusUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
                 {
                     var unmarshaller = EncryptionAtRestOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = LogPublishingOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModifyingProperties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ModifyingProperties, ModifyingPropertiesUnmarshaller>(ModifyingPropertiesUnmarshaller.Instance);
-                    unmarshalledObject.ModifyingProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ModifyingProperties, ModifyingPropertiesUnmarshaller>(ModifyingPropertiesUnmarshaller.Instance);
+                    unmarshalledObject.ModifyingProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
                 {
                     var unmarshaller = NodeToNodeEncryptionOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnapshotOptions", targetDepth))
                 {
                     var unmarshaller = SnapshotOptionsStatusUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth))
                 {
                     var unmarshaller = VPCDerivedInfoStatusUnmarshaller.Instance;
-                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

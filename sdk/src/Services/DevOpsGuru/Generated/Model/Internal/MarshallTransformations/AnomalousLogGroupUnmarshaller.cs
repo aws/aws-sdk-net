@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnomalousLogGroup Object
     /// </summary>  
-    public class AnomalousLogGroupUnmarshaller : IUnmarshaller<AnomalousLogGroup, XmlUnmarshallerContext>, IUnmarshaller<AnomalousLogGroup, JsonUnmarshallerContext>
+    public class AnomalousLogGroupUnmarshaller : IJsonUnmarshaller<AnomalousLogGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnomalousLogGroup IUnmarshaller<AnomalousLogGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnomalousLogGroup Unmarshall(JsonUnmarshallerContext context)
+        public AnomalousLogGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnomalousLogGroup unmarshalledObject = new AnomalousLogGroup();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ImpactEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ImpactEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImpactEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImpactStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ImpactStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImpactStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogAnomalyShowcases", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LogAnomalyShowcase, LogAnomalyShowcaseUnmarshaller>(LogAnomalyShowcaseUnmarshaller.Instance);
-                    unmarshalledObject.LogAnomalyShowcases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LogAnomalyShowcase, LogAnomalyShowcaseUnmarshaller>(LogAnomalyShowcaseUnmarshaller.Instance);
+                    unmarshalledObject.LogAnomalyShowcases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfLogLinesScanned", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfLogLinesScanned = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfLogLinesScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

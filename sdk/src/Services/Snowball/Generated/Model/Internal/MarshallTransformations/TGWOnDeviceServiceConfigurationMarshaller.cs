@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
-                context.Writer.Write(requestObject.StorageLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageLimit.Value);
             }
 
             if(requestObject.IsSetStorageUnit())
             {
                 context.Writer.WritePropertyName("StorageUnit");
-                context.Writer.Write(requestObject.StorageUnit);
+                context.Writer.WriteStringValue(requestObject.StorageUnit);
             }
 
         }

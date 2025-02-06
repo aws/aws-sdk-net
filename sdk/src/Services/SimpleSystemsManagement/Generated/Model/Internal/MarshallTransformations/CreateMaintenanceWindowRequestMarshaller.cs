@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,106 +66,111 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowUnassociatedTargets())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowUnassociatedTargets())
-                    {
-                        context.Writer.WritePropertyName("AllowUnassociatedTargets");
-                        context.Writer.Write(publicRequest.AllowUnassociatedTargets.Value);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCutoff())
-                    {
-                        context.Writer.WritePropertyName("Cutoff");
-                        context.Writer.Write(publicRequest.Cutoff.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDuration())
-                    {
-                        context.Writer.WritePropertyName("Duration");
-                        context.Writer.Write(publicRequest.Duration.Value);
-                    }
-
-                    if(publicRequest.IsSetEndDate())
-                    {
-                        context.Writer.WritePropertyName("EndDate");
-                        context.Writer.Write(publicRequest.EndDate);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("Schedule");
-                        context.Writer.Write(publicRequest.Schedule);
-                    }
-
-                    if(publicRequest.IsSetScheduleOffset())
-                    {
-                        context.Writer.WritePropertyName("ScheduleOffset");
-                        context.Writer.Write(publicRequest.ScheduleOffset.Value);
-                    }
-
-                    if(publicRequest.IsSetScheduleTimezone())
-                    {
-                        context.Writer.WritePropertyName("ScheduleTimezone");
-                        context.Writer.Write(publicRequest.ScheduleTimezone);
-                    }
-
-                    if(publicRequest.IsSetStartDate())
-                    {
-                        context.Writer.WritePropertyName("StartDate");
-                        context.Writer.Write(publicRequest.StartDate);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AllowUnassociatedTargets");
+                context.Writer.WriteBooleanValue(publicRequest.AllowUnassociatedTargets.Value);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCutoff())
+            {
+                context.Writer.WritePropertyName("Cutoff");
+                context.Writer.WriteNumberValue(publicRequest.Cutoff.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDuration())
+            {
+                context.Writer.WritePropertyName("Duration");
+                context.Writer.WriteNumberValue(publicRequest.Duration.Value);
+            }
+
+            if(publicRequest.IsSetEndDate())
+            {
+                context.Writer.WritePropertyName("EndDate");
+                context.Writer.WriteStringValue(publicRequest.EndDate);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("Schedule");
+                context.Writer.WriteStringValue(publicRequest.Schedule);
+            }
+
+            if(publicRequest.IsSetScheduleOffset())
+            {
+                context.Writer.WritePropertyName("ScheduleOffset");
+                context.Writer.WriteNumberValue(publicRequest.ScheduleOffset.Value);
+            }
+
+            if(publicRequest.IsSetScheduleTimezone())
+            {
+                context.Writer.WritePropertyName("ScheduleTimezone");
+                context.Writer.WriteStringValue(publicRequest.ScheduleTimezone);
+            }
+
+            if(publicRequest.IsSetStartDate())
+            {
+                context.Writer.WritePropertyName("StartDate");
+                context.Writer.WriteStringValue(publicRequest.StartDate);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

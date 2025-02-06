@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlueRunConfiguration())
             {
                 context.Writer.WritePropertyName("glueRunConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GlueRunConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlueRunConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftRunConfiguration())
             {
                 context.Writer.WritePropertyName("redshiftRunConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftRunConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftRunConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSageMakerRunConfiguration())
             {
                 context.Writer.WritePropertyName("sageMakerRunConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SageMakerRunConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SageMakerRunConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

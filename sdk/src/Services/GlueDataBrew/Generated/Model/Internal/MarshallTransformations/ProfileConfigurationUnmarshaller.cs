@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProfileConfiguration Object
     /// </summary>  
-    public class ProfileConfigurationUnmarshaller : IUnmarshaller<ProfileConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ProfileConfiguration, JsonUnmarshallerContext>
+    public class ProfileConfigurationUnmarshaller : IJsonUnmarshaller<ProfileConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProfileConfiguration IUnmarshaller<ProfileConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProfileConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ProfileConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProfileConfiguration unmarshalledObject = new ProfileConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColumnStatisticsConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnStatisticsConfiguration, ColumnStatisticsConfigurationUnmarshaller>(ColumnStatisticsConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ColumnStatisticsConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnStatisticsConfiguration, ColumnStatisticsConfigurationUnmarshaller>(ColumnStatisticsConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ColumnStatisticsConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetStatisticsConfiguration", targetDepth))
                 {
                     var unmarshaller = StatisticsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DatasetStatisticsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatasetStatisticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntityDetectorConfiguration", targetDepth))
                 {
                     var unmarshaller = EntityDetectorConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EntityDetectorConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntityDetectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProfileColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnSelector, ColumnSelectorUnmarshaller>(ColumnSelectorUnmarshaller.Instance);
-                    unmarshalledObject.ProfileColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnSelector, ColumnSelectorUnmarshaller>(ColumnSelectorUnmarshaller.Instance);
+                    unmarshalledObject.ProfileColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

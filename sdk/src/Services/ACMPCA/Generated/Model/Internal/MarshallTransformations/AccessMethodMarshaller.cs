@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessMethodType())
             {
                 context.Writer.WritePropertyName("AccessMethodType");
-                context.Writer.Write(requestObject.AccessMethodType);
+                context.Writer.WriteStringValue(requestObject.AccessMethodType);
             }
 
             if(requestObject.IsSetCustomObjectIdentifier())
             {
                 context.Writer.WritePropertyName("CustomObjectIdentifier");
-                context.Writer.Write(requestObject.CustomObjectIdentifier);
+                context.Writer.WriteStringValue(requestObject.CustomObjectIdentifier);
             }
 
         }

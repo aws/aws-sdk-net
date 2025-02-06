@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDnsRecords())
             {
                 context.Writer.WritePropertyName("DnsRecords");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsRecordsListValue in requestObject.DnsRecords)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DnsRecordMarshaller.Instance;
                     marshaller.Marshall(requestObjectDnsRecordsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNamespaceId())
             {
                 context.Writer.WritePropertyName("NamespaceId");
-                context.Writer.Write(requestObject.NamespaceId);
+                context.Writer.WriteStringValue(requestObject.NamespaceId);
             }
 
             if(requestObject.IsSetRoutingPolicy())
             {
                 context.Writer.WritePropertyName("RoutingPolicy");
-                context.Writer.Write(requestObject.RoutingPolicy);
+                context.Writer.WriteStringValue(requestObject.RoutingPolicy);
             }
 
         }

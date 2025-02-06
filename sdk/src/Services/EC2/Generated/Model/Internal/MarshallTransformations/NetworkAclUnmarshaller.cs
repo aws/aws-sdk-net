@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkAcl Object
     /// </summary>  
-    public class NetworkAclUnmarshaller : IUnmarshaller<NetworkAcl, XmlUnmarshallerContext>, IUnmarshaller<NetworkAcl, JsonUnmarshallerContext>
+    public class NetworkAclUnmarshaller : IXmlUnmarshaller<NetworkAcl, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -121,17 +121,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkAcl Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkAclUnmarshaller _instance = new NetworkAclUnmarshaller();        
 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -63,79 +66,95 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessRole())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessRole())
-                    {
-                        context.Writer.WritePropertyName("AccessRole");
-                        context.Writer.Write(publicRequest.AccessRole);
-                    }
-
-                    if(publicRequest.IsSetAgreementId())
-                    {
-                        context.Writer.WritePropertyName("AgreementId");
-                        context.Writer.Write(publicRequest.AgreementId);
-                    }
-
-                    if(publicRequest.IsSetBaseDirectory())
-                    {
-                        context.Writer.WritePropertyName("BaseDirectory");
-                        context.Writer.Write(publicRequest.BaseDirectory);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEnforceMessageSigning())
-                    {
-                        context.Writer.WritePropertyName("EnforceMessageSigning");
-                        context.Writer.Write(publicRequest.EnforceMessageSigning);
-                    }
-
-                    if(publicRequest.IsSetLocalProfileId())
-                    {
-                        context.Writer.WritePropertyName("LocalProfileId");
-                        context.Writer.Write(publicRequest.LocalProfileId);
-                    }
-
-                    if(publicRequest.IsSetPartnerProfileId())
-                    {
-                        context.Writer.WritePropertyName("PartnerProfileId");
-                        context.Writer.Write(publicRequest.PartnerProfileId);
-                    }
-
-                    if(publicRequest.IsSetPreserveFilename())
-                    {
-                        context.Writer.WritePropertyName("PreserveFilename");
-                        context.Writer.Write(publicRequest.PreserveFilename);
-                    }
-
-                    if(publicRequest.IsSetServerId())
-                    {
-                        context.Writer.WritePropertyName("ServerId");
-                        context.Writer.Write(publicRequest.ServerId);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessRole");
+                context.Writer.WriteStringValue(publicRequest.AccessRole);
             }
+
+            if(publicRequest.IsSetAgreementId())
+            {
+                context.Writer.WritePropertyName("AgreementId");
+                context.Writer.WriteStringValue(publicRequest.AgreementId);
+            }
+
+            if(publicRequest.IsSetBaseDirectory())
+            {
+                context.Writer.WritePropertyName("BaseDirectory");
+                context.Writer.WriteStringValue(publicRequest.BaseDirectory);
+            }
+
+            if(publicRequest.IsSetCustomDirectories())
+            {
+                context.Writer.WritePropertyName("CustomDirectories");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomDirectoriesTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomDirectories, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnforceMessageSigning())
+            {
+                context.Writer.WritePropertyName("EnforceMessageSigning");
+                context.Writer.WriteStringValue(publicRequest.EnforceMessageSigning);
+            }
+
+            if(publicRequest.IsSetLocalProfileId())
+            {
+                context.Writer.WritePropertyName("LocalProfileId");
+                context.Writer.WriteStringValue(publicRequest.LocalProfileId);
+            }
+
+            if(publicRequest.IsSetPartnerProfileId())
+            {
+                context.Writer.WritePropertyName("PartnerProfileId");
+                context.Writer.WriteStringValue(publicRequest.PartnerProfileId);
+            }
+
+            if(publicRequest.IsSetPreserveFilename())
+            {
+                context.Writer.WritePropertyName("PreserveFilename");
+                context.Writer.WriteStringValue(publicRequest.PreserveFilename);
+            }
+
+            if(publicRequest.IsSetServerId())
+            {
+                context.Writer.WritePropertyName("ServerId");
+                context.Writer.WriteStringValue(publicRequest.ServerId);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccount())
             {
                 context.Writer.WritePropertyName("account");
-                context.Writer.Write(requestObject.Account);
+                context.Writer.WriteStringValue(requestObject.Account);
             }
 
             if(requestObject.IsSetCaCertificateId())
             {
                 context.Writer.WritePropertyName("caCertificateId");
-                context.Writer.Write(requestObject.CaCertificateId);
+                context.Writer.WriteStringValue(requestObject.CaCertificateId);
             }
 
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetCognitoIdentityPoolId())
             {
                 context.Writer.WritePropertyName("cognitoIdentityPoolId");
-                context.Writer.Write(requestObject.CognitoIdentityPoolId);
+                context.Writer.WriteStringValue(requestObject.CognitoIdentityPoolId);
             }
 
             if(requestObject.IsSetDeviceCertificateArn())
             {
                 context.Writer.WritePropertyName("deviceCertificateArn");
-                context.Writer.Write(requestObject.DeviceCertificateArn);
+                context.Writer.WriteStringValue(requestObject.DeviceCertificateArn);
             }
 
             if(requestObject.IsSetDeviceCertificateId())
             {
                 context.Writer.WritePropertyName("deviceCertificateId");
-                context.Writer.Write(requestObject.DeviceCertificateId);
+                context.Writer.WriteStringValue(requestObject.DeviceCertificateId);
             }
 
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("iamRoleArn");
-                context.Writer.Write(requestObject.IamRoleArn);
+                context.Writer.WriteStringValue(requestObject.IamRoleArn);
             }
 
             if(requestObject.IsSetIssuerCertificateIdentifier())
             {
                 context.Writer.WritePropertyName("issuerCertificateIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IssuerCertificateIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.IssuerCertificateIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolicyVersionIdentifier())
             {
                 context.Writer.WritePropertyName("policyVersionIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PolicyVersionIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyVersionIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleAliasArn())
             {
                 context.Writer.WritePropertyName("roleAliasArn");
-                context.Writer.Write(requestObject.RoleAliasArn);
+                context.Writer.WriteStringValue(requestObject.RoleAliasArn);
             }
 
         }

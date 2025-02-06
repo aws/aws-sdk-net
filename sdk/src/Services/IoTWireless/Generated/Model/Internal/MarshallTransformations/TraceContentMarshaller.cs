@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("LogLevel");
-                context.Writer.Write(requestObject.LogLevel);
+                context.Writer.WriteStringValue(requestObject.LogLevel);
             }
 
             if(requestObject.IsSetMulticastFrameInfo())
             {
                 context.Writer.WritePropertyName("MulticastFrameInfo");
-                context.Writer.Write(requestObject.MulticastFrameInfo);
+                context.Writer.WriteStringValue(requestObject.MulticastFrameInfo);
             }
 
             if(requestObject.IsSetWirelessDeviceFrameInfo())
             {
                 context.Writer.WritePropertyName("WirelessDeviceFrameInfo");
-                context.Writer.Write(requestObject.WirelessDeviceFrameInfo);
+                context.Writer.WriteStringValue(requestObject.WirelessDeviceFrameInfo);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableUseAsDirectQuerySource())
             {
                 context.Writer.WritePropertyName("DisableUseAsDirectQuerySource");
-                context.Writer.Write(requestObject.DisableUseAsDirectQuerySource.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableUseAsDirectQuerySource.Value);
             }
 
             if(requestObject.IsSetDisableUseAsImportedSource())
             {
                 context.Writer.WritePropertyName("DisableUseAsImportedSource");
-                context.Writer.Write(requestObject.DisableUseAsImportedSource.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableUseAsImportedSource.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");
-                context.Writer.Write(requestObject.LowerInclusive.Value);
+                context.Writer.WriteNumberValue(requestObject.LowerInclusive.Value);
             }
 
             if(requestObject.IsSetUpperInclusive())
             {
                 context.Writer.WritePropertyName("upperInclusive");
-                context.Writer.Write(requestObject.UpperInclusive.Value);
+                context.Writer.WriteNumberValue(requestObject.UpperInclusive.Value);
             }
 
         }

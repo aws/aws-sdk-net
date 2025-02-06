@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EBSItemFilter Object
     /// </summary>  
-    public class EBSItemFilterUnmarshaller : IUnmarshaller<EBSItemFilter, XmlUnmarshallerContext>, IUnmarshaller<EBSItemFilter, JsonUnmarshallerContext>
+    public class EBSItemFilterUnmarshaller : IJsonUnmarshaller<EBSItemFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EBSItemFilter IUnmarshaller<EBSItemFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EBSItemFilter Unmarshall(JsonUnmarshallerContext context)
+        public EBSItemFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EBSItemFilter unmarshalledObject = new EBSItemFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTimes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
-                    unmarshalledObject.CreationTimes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
+                    unmarshalledObject.CreationTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilePaths", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
-                    unmarshalledObject.FilePaths = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
+                    unmarshalledObject.FilePaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModificationTimes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
-                    unmarshalledObject.LastModificationTimes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
+                    unmarshalledObject.LastModificationTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sizes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LongCondition, LongConditionUnmarshaller>(LongConditionUnmarshaller.Instance);
-                    unmarshalledObject.Sizes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LongCondition, LongConditionUnmarshaller>(LongConditionUnmarshaller.Instance);
+                    unmarshalledObject.Sizes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

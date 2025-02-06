@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRenditions())
             {
                 context.Writer.WritePropertyName("renditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRenditionsListValue in requestObject.Renditions)
                 {
-                        context.Writer.Write(requestObjectRenditionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRenditionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRenditionSelection())
             {
                 context.Writer.WritePropertyName("renditionSelection");
-                context.Writer.Write(requestObject.RenditionSelection);
+                context.Writer.WriteStringValue(requestObject.RenditionSelection);
             }
 
         }

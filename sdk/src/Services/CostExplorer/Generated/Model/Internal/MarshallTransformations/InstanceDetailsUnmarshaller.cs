@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InstanceDetails Object
     /// </summary>  
-    public class InstanceDetailsUnmarshaller : IUnmarshaller<InstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceDetails, JsonUnmarshallerContext>
+    public class InstanceDetailsUnmarshaller : IJsonUnmarshaller<InstanceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InstanceDetails IUnmarshaller<InstanceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceDetails Unmarshall(JsonUnmarshallerContext context)
+        public InstanceDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InstanceDetails unmarshalledObject = new InstanceDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EC2InstanceDetails", targetDepth))
                 {
                     var unmarshaller = EC2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElastiCacheInstanceDetails", targetDepth))
                 {
                     var unmarshaller = ElastiCacheInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ElastiCacheInstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElastiCacheInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ESInstanceDetails", targetDepth))
                 {
                     var unmarshaller = ESInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MemoryDBInstanceDetails", targetDepth))
                 {
                     var unmarshaller = MemoryDBInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.MemoryDBInstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemoryDBInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RDSInstanceDetails", targetDepth))
                 {
                     var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftInstanceDetails", targetDepth))
                 {
                     var unmarshaller = RedshiftInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftInstanceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

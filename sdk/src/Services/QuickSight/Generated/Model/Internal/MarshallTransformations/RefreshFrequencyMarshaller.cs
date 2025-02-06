@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.WriteStringValue(requestObject.Interval);
             }
 
             if(requestObject.IsSetRefreshOnDay())
             {
                 context.Writer.WritePropertyName("RefreshOnDay");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleRefreshOnEntityMarshaller.Instance;
                 marshaller.Marshall(requestObject.RefreshOnDay, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeOfTheDay())
             {
                 context.Writer.WritePropertyName("TimeOfTheDay");
-                context.Writer.Write(requestObject.TimeOfTheDay);
+                context.Writer.WriteStringValue(requestObject.TimeOfTheDay);
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

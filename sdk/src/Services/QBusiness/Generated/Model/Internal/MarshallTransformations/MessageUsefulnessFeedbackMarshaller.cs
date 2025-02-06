@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetReason())
             {
                 context.Writer.WritePropertyName("reason");
-                context.Writer.Write(requestObject.Reason);
+                context.Writer.WriteStringValue(requestObject.Reason);
             }
 
             if(requestObject.IsSetSubmittedAt())
             {
                 context.Writer.WritePropertyName("submittedAt");
-                context.Writer.Write(requestObject.SubmittedAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmittedAt.Value)));
             }
 
             if(requestObject.IsSetUsefulness())
             {
                 context.Writer.WritePropertyName("usefulness");
-                context.Writer.Write(requestObject.Usefulness);
+                context.Writer.WriteStringValue(requestObject.Usefulness);
             }
 
         }

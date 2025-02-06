@@ -139,6 +139,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly AgentAliasStatus DELETING = new AgentAliasStatus("DELETING");
         /// <summary>
+        /// Constant DISSOCIATED for AgentAliasStatus
+        /// </summary>
+        public static readonly AgentAliasStatus DISSOCIATED = new AgentAliasStatus("DISSOCIATED");
+        /// <summary>
         /// Constant FAILED for AgentAliasStatus
         /// </summary>
         public static readonly AgentAliasStatus FAILED = new AgentAliasStatus("FAILED");
@@ -308,6 +312,52 @@ namespace Amazon.BedrockAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CachePointType.
+    /// </summary>
+    public class CachePointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for CachePointType
+        /// </summary>
+        public static readonly CachePointType Default = new CachePointType("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CachePointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CachePointType FindValue(string value)
+        {
+            return FindValue<CachePointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CachePointType(string value)
         {
             return FindValue(value);
         }
@@ -1478,6 +1528,14 @@ namespace Amazon.BedrockAgent
         /// Constant UnknownConnectionTargetInput for FlowValidationType
         /// </summary>
         public static readonly FlowValidationType UnknownConnectionTargetInput = new FlowValidationType("UnknownConnectionTargetInput");
+        /// <summary>
+        /// Constant UnknownNodeInput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownNodeInput = new FlowValidationType("UnknownNodeInput");
+        /// <summary>
+        /// Constant UnknownNodeOutput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownNodeOutput = new FlowValidationType("UnknownNodeOutput");
         /// <summary>
         /// Constant UnreachableNode for FlowValidationType
         /// </summary>

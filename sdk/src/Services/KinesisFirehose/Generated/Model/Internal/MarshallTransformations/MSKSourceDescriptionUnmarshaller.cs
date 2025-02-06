@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MSKSourceDescription Object
     /// </summary>  
-    public class MSKSourceDescriptionUnmarshaller : IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<MSKSourceDescription, JsonUnmarshallerContext>
+    public class MSKSourceDescriptionUnmarshaller : IJsonUnmarshaller<MSKSourceDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MSKSourceDescription IUnmarshaller<MSKSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MSKSourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public MSKSourceDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MSKSourceDescription unmarshalledObject = new MSKSourceDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthenticationConfiguration", targetDepth))
                 {
                     var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeliveryStartTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeliveryStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MSKClusterARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MSKClusterARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReadFromTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReadFromTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReadFromTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopicName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultGid())
             {
                 context.Writer.WritePropertyName("DefaultGid");
-                context.Writer.Write(requestObject.DefaultGid.Value);
+                context.Writer.WriteNumberValue(requestObject.DefaultGid.Value);
             }
 
             if(requestObject.IsSetDefaultUid())
             {
                 context.Writer.WritePropertyName("DefaultUid");
-                context.Writer.Write(requestObject.DefaultUid.Value);
+                context.Writer.WriteNumberValue(requestObject.DefaultUid.Value);
             }
 
             if(requestObject.IsSetMountPath())
             {
                 context.Writer.WritePropertyName("MountPath");
-                context.Writer.Write(requestObject.MountPath);
+                context.Writer.WriteStringValue(requestObject.MountPath);
             }
 
         }

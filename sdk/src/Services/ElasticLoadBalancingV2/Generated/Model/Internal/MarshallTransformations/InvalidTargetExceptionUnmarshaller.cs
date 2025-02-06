@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTargetException operation
     /// </summary>  
-    public class InvalidTargetExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTargetException, XmlUnmarshallerContext>
+    public class InvalidTargetExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTargetException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

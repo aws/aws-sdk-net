@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeDataType())
             {
                 context.Writer.WritePropertyName("AttributeDataType");
-                context.Writer.Write(requestObject.AttributeDataType);
+                context.Writer.WriteStringValue(requestObject.AttributeDataType);
             }
 
             if(requestObject.IsSetDeveloperOnlyAttribute())
             {
                 context.Writer.WritePropertyName("DeveloperOnlyAttribute");
-                context.Writer.Write(requestObject.DeveloperOnlyAttribute.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeveloperOnlyAttribute.Value);
             }
 
             if(requestObject.IsSetMutable())
             {
                 context.Writer.WritePropertyName("Mutable");
-                context.Writer.Write(requestObject.Mutable.Value);
+                context.Writer.WriteBooleanValue(requestObject.Mutable.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNumberAttributeConstraints())
             {
                 context.Writer.WritePropertyName("NumberAttributeConstraints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumberAttributeConstraintsTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumberAttributeConstraints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("Required");
-                context.Writer.Write(requestObject.Required.Value);
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetStringAttributeConstraints())
             {
                 context.Writer.WritePropertyName("StringAttributeConstraints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringAttributeConstraintsTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringAttributeConstraints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

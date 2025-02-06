@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,166 +49,166 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddFacetToObject())
             {
                 context.Writer.WritePropertyName("AddFacetToObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchAddFacetToObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddFacetToObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttachObject())
             {
                 context.Writer.WritePropertyName("AttachObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchAttachObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttachObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttachPolicy())
             {
                 context.Writer.WritePropertyName("AttachPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchAttachPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttachPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttachToIndex())
             {
                 context.Writer.WritePropertyName("AttachToIndex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchAttachToIndexMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttachToIndex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttachTypedLink())
             {
                 context.Writer.WritePropertyName("AttachTypedLink");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchAttachTypedLinkMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttachTypedLink, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateIndex())
             {
                 context.Writer.WritePropertyName("CreateIndex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchCreateIndexMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateIndex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateObject())
             {
                 context.Writer.WritePropertyName("CreateObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchCreateObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeleteObject())
             {
                 context.Writer.WritePropertyName("DeleteObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchDeleteObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeleteObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetachFromIndex())
             {
                 context.Writer.WritePropertyName("DetachFromIndex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchDetachFromIndexMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetachFromIndex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetachObject())
             {
                 context.Writer.WritePropertyName("DetachObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchDetachObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetachObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetachPolicy())
             {
                 context.Writer.WritePropertyName("DetachPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchDetachPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetachPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetachTypedLink())
             {
                 context.Writer.WritePropertyName("DetachTypedLink");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchDetachTypedLinkMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetachTypedLink, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRemoveFacetFromObject())
             {
                 context.Writer.WritePropertyName("RemoveFacetFromObject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchRemoveFacetFromObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemoveFacetFromObject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateLinkAttributes())
             {
                 context.Writer.WritePropertyName("UpdateLinkAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchUpdateLinkAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateLinkAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateObjectAttributes())
             {
                 context.Writer.WritePropertyName("UpdateObjectAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchUpdateObjectAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateObjectAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

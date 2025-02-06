@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssignIpv6AddressOnCreation())
             {
                 context.Writer.WritePropertyName("AssignIpv6AddressOnCreation");
-                context.Writer.Write(requestObject.AssignIpv6AddressOnCreation.Value);
+                context.Writer.WriteBooleanValue(requestObject.AssignIpv6AddressOnCreation.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetAvailabilityZoneId())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneId");
-                context.Writer.Write(requestObject.AvailabilityZoneId);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZoneId);
             }
 
             if(requestObject.IsSetAvailableIpAddressCount())
             {
                 context.Writer.WritePropertyName("AvailableIpAddressCount");
-                context.Writer.Write(requestObject.AvailableIpAddressCount.Value);
+                context.Writer.WriteNumberValue(requestObject.AvailableIpAddressCount.Value);
             }
 
             if(requestObject.IsSetCidrBlock())
             {
                 context.Writer.WritePropertyName("CidrBlock");
-                context.Writer.Write(requestObject.CidrBlock);
+                context.Writer.WriteStringValue(requestObject.CidrBlock);
             }
 
             if(requestObject.IsSetDefaultForAz())
             {
                 context.Writer.WritePropertyName("DefaultForAz");
-                context.Writer.Write(requestObject.DefaultForAz.Value);
+                context.Writer.WriteBooleanValue(requestObject.DefaultForAz.Value);
             }
 
             if(requestObject.IsSetIpv6CidrBlockAssociationSet())
             {
                 context.Writer.WritePropertyName("Ipv6CidrBlockAssociationSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpv6CidrBlockAssociationSetListValue in requestObject.Ipv6CidrBlockAssociationSet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = Ipv6CidrBlockAssociationMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6CidrBlockAssociationSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMapPublicIpOnLaunch())
             {
                 context.Writer.WritePropertyName("MapPublicIpOnLaunch");
-                context.Writer.Write(requestObject.MapPublicIpOnLaunch.Value);
+                context.Writer.WriteBooleanValue(requestObject.MapPublicIpOnLaunch.Value);
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WriteStringValue(requestObject.OwnerId);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetSubnetArn())
             {
                 context.Writer.WritePropertyName("SubnetArn");
-                context.Writer.Write(requestObject.SubnetArn);
+                context.Writer.WriteStringValue(requestObject.SubnetArn);
             }
 
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");
-                context.Writer.Write(requestObject.SubnetId);
+                context.Writer.WriteStringValue(requestObject.SubnetId);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

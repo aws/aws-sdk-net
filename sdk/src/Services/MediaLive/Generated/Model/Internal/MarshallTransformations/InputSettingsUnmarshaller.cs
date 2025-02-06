@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InputSettings Object
     /// </summary>  
-    public class InputSettingsUnmarshaller : IUnmarshaller<InputSettings, XmlUnmarshallerContext>, IUnmarshaller<InputSettings, JsonUnmarshallerContext>
+    public class InputSettingsUnmarshaller : IJsonUnmarshaller<InputSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InputSettings IUnmarshaller<InputSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputSettings Unmarshall(JsonUnmarshallerContext context)
+        public InputSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InputSettings unmarshalledObject = new InputSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioSelectors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioSelector, AudioSelectorUnmarshaller>(AudioSelectorUnmarshaller.Instance);
-                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AudioSelector, AudioSelectorUnmarshaller>(AudioSelectorUnmarshaller.Instance);
+                    unmarshalledObject.AudioSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("captionSelectors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CaptionSelector, CaptionSelectorUnmarshaller>(CaptionSelectorUnmarshaller.Instance);
-                    unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CaptionSelector, CaptionSelectorUnmarshaller>(CaptionSelectorUnmarshaller.Instance);
+                    unmarshalledObject.CaptionSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deblockFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("denoiseFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filterStrength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkInputSettings", targetDepth))
                 {
                     var unmarshaller = NetworkInputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.NetworkInputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35Pid", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Scte35Pid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Pid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("smpte2038DataPreference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Smpte2038DataPreference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Smpte2038DataPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceEndBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceEndBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceEndBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoSelector", targetDepth))
                 {
                     var unmarshaller = VideoSelectorUnmarshaller.Instance;
-                    unmarshalledObject.VideoSelector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSelector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

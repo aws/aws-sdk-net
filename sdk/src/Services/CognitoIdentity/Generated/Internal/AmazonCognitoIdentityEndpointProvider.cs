@@ -72,6 +72,22 @@ namespace Amazon.CognitoIdentity.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
+                            if (Equals(refs["Region"], "us-east-1"))
+                            {
+                                return new Endpoint("https://cognito-identity-fips.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["Region"], "us-east-2"))
+                            {
+                                return new Endpoint("https://cognito-identity-fips.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["Region"], "us-west-1"))
+                            {
+                                return new Endpoint("https://cognito-identity-fips.us-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["Region"], "us-west-2"))
+                            {
+                                return new Endpoint("https://cognito-identity-fips.us-west-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://cognito-identity-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
@@ -88,6 +104,10 @@ namespace Amazon.CognitoIdentity.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
+                            if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://cognito-identity.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://cognito-identity.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");

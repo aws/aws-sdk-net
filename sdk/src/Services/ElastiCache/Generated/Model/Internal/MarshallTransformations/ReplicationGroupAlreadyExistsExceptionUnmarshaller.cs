@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationGroupAlreadyExistsException operation
     /// </summary>  
-    public class ReplicationGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ReplicationGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class ReplicationGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReplicationGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

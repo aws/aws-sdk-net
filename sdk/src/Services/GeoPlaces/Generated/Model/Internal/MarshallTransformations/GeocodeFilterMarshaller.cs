@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeCountries())
             {
                 context.Writer.WritePropertyName("IncludeCountries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeCountriesListValue in requestObject.IncludeCountries)
                 {
-                        context.Writer.Write(requestObjectIncludeCountriesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeCountriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludePlaceTypes())
             {
                 context.Writer.WritePropertyName("IncludePlaceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludePlaceTypesListValue in requestObject.IncludePlaceTypes)
                 {
-                        context.Writer.Write(requestObjectIncludePlaceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludePlaceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

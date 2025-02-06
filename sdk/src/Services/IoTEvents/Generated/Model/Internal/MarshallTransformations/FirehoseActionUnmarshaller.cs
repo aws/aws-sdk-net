@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FirehoseAction Object
     /// </summary>  
-    public class FirehoseActionUnmarshaller : IUnmarshaller<FirehoseAction, XmlUnmarshallerContext>, IUnmarshaller<FirehoseAction, JsonUnmarshallerContext>
+    public class FirehoseActionUnmarshaller : IJsonUnmarshaller<FirehoseAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FirehoseAction IUnmarshaller<FirehoseAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FirehoseAction Unmarshall(JsonUnmarshallerContext context)
+        public FirehoseAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FirehoseAction unmarshalledObject = new FirehoseAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("deliveryStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeliveryStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("payload", targetDepth))
                 {
                     var unmarshaller = PayloadUnmarshaller.Instance;
-                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("separator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Separator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Separator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

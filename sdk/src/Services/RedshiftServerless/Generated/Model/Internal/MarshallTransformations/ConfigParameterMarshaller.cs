@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParameterKey())
             {
                 context.Writer.WritePropertyName("parameterKey");
-                context.Writer.Write(requestObject.ParameterKey);
+                context.Writer.WriteStringValue(requestObject.ParameterKey);
             }
 
             if(requestObject.IsSetParameterValue())
             {
                 context.Writer.WritePropertyName("parameterValue");
-                context.Writer.Write(requestObject.ParameterValue);
+                context.Writer.WriteStringValue(requestObject.ParameterValue);
             }
 
         }

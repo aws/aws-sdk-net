@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionList Object
     /// </summary>  
-    public class FunctionListUnmarshaller : IUnmarshaller<FunctionList, XmlUnmarshallerContext>, IUnmarshaller<FunctionList, JsonUnmarshallerContext>
+    public class FunctionListUnmarshaller : IXmlUnmarshaller<FunctionList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FunctionList Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static FunctionListUnmarshaller _instance = new FunctionListUnmarshaller();        
 
         /// <summary>

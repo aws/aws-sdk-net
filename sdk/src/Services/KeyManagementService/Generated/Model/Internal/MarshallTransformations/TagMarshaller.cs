@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("TagKey");
-                context.Writer.Write(requestObject.TagKey);
+                context.Writer.WriteStringValue(requestObject.TagKey);
             }
 
             if(requestObject.IsSetTagValue())
             {
                 context.Writer.WritePropertyName("TagValue");
-                context.Writer.Write(requestObject.TagValue);
+                context.Writer.WriteStringValue(requestObject.TagValue);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNielsenCbetSettings())
             {
                 context.Writer.WritePropertyName("nielsenCbetSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NielsenCBETMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenCbetSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNielsenDistributionType())
             {
                 context.Writer.WritePropertyName("nielsenDistributionType");
-                context.Writer.Write(requestObject.NielsenDistributionType);
+                context.Writer.WriteStringValue(requestObject.NielsenDistributionType);
             }
 
             if(requestObject.IsSetNielsenNaesIiNwSettings())
             {
                 context.Writer.WritePropertyName("nielsenNaesIiNwSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NielsenNaesIiNwMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenNaesIiNwSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

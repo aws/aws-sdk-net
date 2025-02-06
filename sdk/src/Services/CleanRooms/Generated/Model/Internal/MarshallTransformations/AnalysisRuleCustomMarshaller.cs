@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAnalyses())
             {
                 context.Writer.WritePropertyName("additionalAnalyses");
-                context.Writer.Write(requestObject.AdditionalAnalyses);
+                context.Writer.WriteStringValue(requestObject.AdditionalAnalyses);
             }
 
             if(requestObject.IsSetAllowedAnalyses())
             {
                 context.Writer.WritePropertyName("allowedAnalyses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedAnalysesListValue in requestObject.AllowedAnalyses)
                 {
-                        context.Writer.Write(requestObjectAllowedAnalysesListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedAnalysesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowedAnalysisProviders())
             {
                 context.Writer.WritePropertyName("allowedAnalysisProviders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedAnalysisProvidersListValue in requestObject.AllowedAnalysisProviders)
                 {
-                        context.Writer.Write(requestObjectAllowedAnalysisProvidersListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedAnalysisProvidersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDifferentialPrivacy())
             {
                 context.Writer.WritePropertyName("differentialPrivacy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DifferentialPrivacyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DifferentialPrivacy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisallowedOutputColumns())
             {
                 context.Writer.WritePropertyName("disallowedOutputColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDisallowedOutputColumnsListValue in requestObject.DisallowedOutputColumns)
                 {
-                        context.Writer.Write(requestObjectDisallowedOutputColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectDisallowedOutputColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

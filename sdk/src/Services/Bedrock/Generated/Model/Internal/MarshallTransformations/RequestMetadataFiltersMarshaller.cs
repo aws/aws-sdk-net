@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAndAll())
             {
                 context.Writer.WritePropertyName("andAll");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAndAllListValue in requestObject.AndAll)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RequestMetadataBaseFiltersMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndAllListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEquals())
             {
                 context.Writer.WritePropertyName("equals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEqualsKvp in requestObject.Equals)
                 {
                     context.Writer.WritePropertyName(requestObjectEqualsKvp.Key);
                     var requestObjectEqualsValue = requestObjectEqualsKvp.Value;
 
-                        context.Writer.Write(requestObjectEqualsValue);
+                        context.Writer.WriteStringValue(requestObjectEqualsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("notEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectNotEqualsKvp in requestObject.NotEquals)
                 {
                     context.Writer.WritePropertyName(requestObjectNotEqualsKvp.Key);
                     var requestObjectNotEqualsValue = requestObjectNotEqualsKvp.Value;
 
-                        context.Writer.Write(requestObjectNotEqualsValue);
+                        context.Writer.WriteStringValue(requestObjectNotEqualsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrAll())
             {
                 context.Writer.WritePropertyName("orAll");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrAllListValue in requestObject.OrAll)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RequestMetadataBaseFiltersMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrAllListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

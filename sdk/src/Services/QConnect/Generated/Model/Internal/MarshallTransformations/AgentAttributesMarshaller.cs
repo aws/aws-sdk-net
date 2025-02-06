@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("firstName");
-                context.Writer.Write(requestObject.FirstName);
+                context.Writer.WriteStringValue(requestObject.FirstName);
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("lastName");
-                context.Writer.Write(requestObject.LastName);
+                context.Writer.WriteStringValue(requestObject.LastName);
             }
 
         }

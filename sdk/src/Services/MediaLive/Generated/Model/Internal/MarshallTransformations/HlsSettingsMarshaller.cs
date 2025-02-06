@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioOnlyHlsSettings())
             {
                 context.Writer.WritePropertyName("audioOnlyHlsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioOnlyHlsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioOnlyHlsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFmp4HlsSettings())
             {
                 context.Writer.WritePropertyName("fmp4HlsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Fmp4HlsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Fmp4HlsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrameCaptureHlsSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureHlsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrameCaptureHlsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrameCaptureHlsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStandardHlsSettings())
             {
                 context.Writer.WritePropertyName("standardHlsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StandardHlsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StandardHlsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

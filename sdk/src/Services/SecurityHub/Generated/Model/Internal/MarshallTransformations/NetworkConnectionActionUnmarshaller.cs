@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkConnectionAction Object
     /// </summary>  
-    public class NetworkConnectionActionUnmarshaller : IUnmarshaller<NetworkConnectionAction, XmlUnmarshallerContext>, IUnmarshaller<NetworkConnectionAction, JsonUnmarshallerContext>
+    public class NetworkConnectionActionUnmarshaller : IJsonUnmarshaller<NetworkConnectionAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NetworkConnectionAction IUnmarshaller<NetworkConnectionAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkConnectionAction Unmarshall(JsonUnmarshallerContext context)
+        public NetworkConnectionAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NetworkConnectionAction unmarshalledObject = new NetworkConnectionAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Blocked", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Blocked = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Blocked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionDirection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionDirection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalPortDetails", targetDepth))
                 {
                     var unmarshaller = ActionLocalPortDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemoteIpDetails", targetDepth))
                 {
                     var unmarshaller = ActionRemoteIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemotePortDetails", targetDepth))
                 {
                     var unmarshaller = ActionRemotePortDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RemotePortDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemotePortDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

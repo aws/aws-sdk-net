@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogDestination())
             {
                 context.Writer.WritePropertyName("LogDestination");
-                context.Writer.Write(requestObject.LogDestination);
+                context.Writer.WriteStringValue(requestObject.LogDestination);
             }
 
             if(requestObject.IsSetLogGroupArn())
             {
                 context.Writer.WritePropertyName("LogGroupArn");
-                context.Writer.Write(requestObject.LogGroupArn);
+                context.Writer.WriteStringValue(requestObject.LogGroupArn);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
         }

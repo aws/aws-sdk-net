@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordColumns())
             {
                 context.Writer.WritePropertyName("RecordColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecordColumnsListValue in requestObject.RecordColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RecordColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecordColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecordEncoding())
             {
                 context.Writer.WritePropertyName("RecordEncoding");
-                context.Writer.Write(requestObject.RecordEncoding);
+                context.Writer.WriteStringValue(requestObject.RecordEncoding);
             }
 
             if(requestObject.IsSetRecordFormat())
             {
                 context.Writer.WritePropertyName("RecordFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

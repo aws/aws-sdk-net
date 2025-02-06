@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedDBInstanceNotFoundException operation
     /// </summary>  
-    public class ReservedDBInstanceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedDBInstanceNotFoundException, XmlUnmarshallerContext>
+    public class ReservedDBInstanceNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedDBInstanceNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

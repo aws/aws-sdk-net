@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnDescription())
             {
                 context.Writer.WritePropertyName("ColumnDescription");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnDescriptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColumnDescription, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumnGeographicRole())
             {
                 context.Writer.WritePropertyName("ColumnGeographicRole");
-                context.Writer.Write(requestObject.ColumnGeographicRole);
+                context.Writer.WriteStringValue(requestObject.ColumnGeographicRole);
             }
 
         }

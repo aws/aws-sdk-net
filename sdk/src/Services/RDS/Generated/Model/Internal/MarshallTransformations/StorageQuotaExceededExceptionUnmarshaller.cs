@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageQuotaExceededException operation
     /// </summary>  
-    public class StorageQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<StorageQuotaExceededException, XmlUnmarshallerContext>
+    public class StorageQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StorageQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ECSServiceRecommendedOptionProjectedMetric Object
     /// </summary>  
-    public class ECSServiceRecommendedOptionProjectedMetricUnmarshaller : IUnmarshaller<ECSServiceRecommendedOptionProjectedMetric, XmlUnmarshallerContext>, IUnmarshaller<ECSServiceRecommendedOptionProjectedMetric, JsonUnmarshallerContext>
+    public class ECSServiceRecommendedOptionProjectedMetricUnmarshaller : IJsonUnmarshaller<ECSServiceRecommendedOptionProjectedMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ECSServiceRecommendedOptionProjectedMetric IUnmarshaller<ECSServiceRecommendedOptionProjectedMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ECSServiceRecommendedOptionProjectedMetric Unmarshall(JsonUnmarshallerContext context)
+        public ECSServiceRecommendedOptionProjectedMetric Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ECSServiceRecommendedOptionProjectedMetric unmarshalledObject = new ECSServiceRecommendedOptionProjectedMetric();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("projectedMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ECSServiceProjectedMetric, ECSServiceProjectedMetricUnmarshaller>(ECSServiceProjectedMetricUnmarshaller.Instance);
-                    unmarshalledObject.ProjectedMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ECSServiceProjectedMetric, ECSServiceProjectedMetricUnmarshaller>(ECSServiceProjectedMetricUnmarshaller.Instance);
+                    unmarshalledObject.ProjectedMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendedCpuUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedCpuUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecommendedCpuUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendedMemorySize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedMemorySize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecommendedMemorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

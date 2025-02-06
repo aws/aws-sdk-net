@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Region Object
     /// </summary>  
-    public class RegionUnmarshaller : IUnmarshaller<Region, XmlUnmarshallerContext>, IUnmarshaller<Region, JsonUnmarshallerContext>
+    public class RegionUnmarshaller : IXmlUnmarshaller<Region, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Region Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static RegionUnmarshaller _instance = new RegionUnmarshaller();        
 
         /// <summary>

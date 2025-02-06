@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecoveryInstanceDataReplicationInfoReplicatedDisk Object
     /// </summary>  
-    public class RecoveryInstanceDataReplicationInfoReplicatedDiskUnmarshaller : IUnmarshaller<RecoveryInstanceDataReplicationInfoReplicatedDisk, XmlUnmarshallerContext>, IUnmarshaller<RecoveryInstanceDataReplicationInfoReplicatedDisk, JsonUnmarshallerContext>
+    public class RecoveryInstanceDataReplicationInfoReplicatedDiskUnmarshaller : IJsonUnmarshaller<RecoveryInstanceDataReplicationInfoReplicatedDisk, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecoveryInstanceDataReplicationInfoReplicatedDisk IUnmarshaller<RecoveryInstanceDataReplicationInfoReplicatedDisk, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecoveryInstanceDataReplicationInfoReplicatedDisk Unmarshall(JsonUnmarshallerContext context)
+        public RecoveryInstanceDataReplicationInfoReplicatedDisk Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecoveryInstanceDataReplicationInfoReplicatedDisk unmarshalledObject = new RecoveryInstanceDataReplicationInfoReplicatedDisk();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("backloggedStorageBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BackloggedStorageBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackloggedStorageBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("replicatedStorageBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ReplicatedStorageBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplicatedStorageBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rescannedStorageBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RescannedStorageBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RescannedStorageBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalStorageBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalStorageBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalStorageBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

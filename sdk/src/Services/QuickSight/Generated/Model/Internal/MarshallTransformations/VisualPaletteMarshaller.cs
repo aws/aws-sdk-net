@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChartColor())
             {
                 context.Writer.WritePropertyName("ChartColor");
-                context.Writer.Write(requestObject.ChartColor);
+                context.Writer.WriteStringValue(requestObject.ChartColor);
             }
 
             if(requestObject.IsSetColorMap())
             {
                 context.Writer.WritePropertyName("ColorMap");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColorMapListValue in requestObject.ColorMap)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataPathColorMarshaller.Instance;
                     marshaller.Marshall(requestObjectColorMapListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnforceHTTPS())
             {
                 context.Writer.WritePropertyName("EnforceHTTPS");
-                context.Writer.Write(requestObject.EnforceHTTPS.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnforceHTTPS.Value);
             }
 
             if(requestObject.IsSetTLSSecurityPolicy())
             {
                 context.Writer.WritePropertyName("TLSSecurityPolicy");
-                context.Writer.Write(requestObject.TLSSecurityPolicy);
+                context.Writer.WriteStringValue(requestObject.TLSSecurityPolicy);
             }
 
         }

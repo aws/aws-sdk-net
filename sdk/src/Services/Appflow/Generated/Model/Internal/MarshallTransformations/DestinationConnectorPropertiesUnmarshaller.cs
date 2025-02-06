@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DestinationConnectorProperties Object
     /// </summary>  
-    public class DestinationConnectorPropertiesUnmarshaller : IUnmarshaller<DestinationConnectorProperties, XmlUnmarshallerContext>, IUnmarshaller<DestinationConnectorProperties, JsonUnmarshallerContext>
+    public class DestinationConnectorPropertiesUnmarshaller : IJsonUnmarshaller<DestinationConnectorProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DestinationConnectorProperties IUnmarshaller<DestinationConnectorProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DestinationConnectorProperties Unmarshall(JsonUnmarshallerContext context)
+        public DestinationConnectorProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DestinationConnectorProperties unmarshalledObject = new DestinationConnectorProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomConnector", targetDepth))
                 {
                     var unmarshaller = CustomConnectorDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomerProfiles", targetDepth))
                 {
                     var unmarshaller = CustomerProfilesDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventBridge", targetDepth))
                 {
                     var unmarshaller = EventBridgeDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.EventBridge = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventBridge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Honeycode", targetDepth))
                 {
                     var unmarshaller = HoneycodeDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Honeycode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LookoutMetrics", targetDepth))
                 {
                     var unmarshaller = LookoutMetricsDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Marketo", targetDepth))
                 {
                     var unmarshaller = MarketoDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Marketo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Marketo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Redshift", targetDepth))
                 {
                     var unmarshaller = RedshiftDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Redshift = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Redshift = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3", targetDepth))
                 {
                     var unmarshaller = S3DestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Salesforce", targetDepth))
                 {
                     var unmarshaller = SalesforceDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Salesforce = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SAPOData", targetDepth))
                 {
                     var unmarshaller = SAPODataDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.SAPOData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SAPOData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Snowflake", targetDepth))
                 {
                     var unmarshaller = SnowflakeDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Upsolver", targetDepth))
                 {
                     var unmarshaller = UpsolverDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Zendesk", targetDepth))
                 {
                     var unmarshaller = ZendeskDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Zendesk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Zendesk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

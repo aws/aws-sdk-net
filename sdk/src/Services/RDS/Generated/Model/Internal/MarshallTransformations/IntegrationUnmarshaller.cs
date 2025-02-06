@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Integration Object
     /// </summary>  
-    public class IntegrationUnmarshaller : IUnmarshaller<Integration, XmlUnmarshallerContext>, IUnmarshaller<Integration, JsonUnmarshallerContext>
+    public class IntegrationUnmarshaller : IXmlUnmarshaller<Integration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.AdditionalEncryptionContext == null)
                         {
                             unmarshalledObject.AdditionalEncryptionContext = new Dictionary<string, string>();
@@ -151,17 +151,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Integration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IntegrationUnmarshaller _instance = new IntegrationUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,129 +49,129 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBindingProperties())
             {
                 context.Writer.WritePropertyName("bindingProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyBindingPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.BindingProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBindings())
             {
                 context.Writer.WritePropertyName("bindings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBindingsKvp in requestObject.Bindings)
                 {
                     context.Writer.WritePropertyName(requestObjectBindingsKvp.Key);
                     var requestObjectBindingsValue = requestObjectBindingsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FormBindingElementMarshaller.Instance;
                     marshaller.Marshall(requestObjectBindingsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCollectionBindingProperties())
             {
                 context.Writer.WritePropertyName("collectionBindingProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyBindingPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CollectionBindingProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetConcat())
             {
                 context.Writer.WritePropertyName("concat");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConcatListValue in requestObject.Concat)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectConcatListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("condition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentConditionPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Condition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigured())
             {
                 context.Writer.WritePropertyName("configured");
-                context.Writer.Write(requestObject.Configured.Value);
+                context.Writer.WriteBooleanValue(requestObject.Configured.Value);
             }
 
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                context.Writer.WriteStringValue(requestObject.DefaultValue);
             }
 
             if(requestObject.IsSetEvent())
             {
                 context.Writer.WritePropertyName("event");
-                context.Writer.Write(requestObject.Event);
+                context.Writer.WriteStringValue(requestObject.Event);
             }
 
             if(requestObject.IsSetImportedValue())
             {
                 context.Writer.WritePropertyName("importedValue");
-                context.Writer.Write(requestObject.ImportedValue);
+                context.Writer.WriteStringValue(requestObject.ImportedValue);
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("model");
-                context.Writer.Write(requestObject.Model);
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetProperty())
             {
                 context.Writer.WritePropertyName("property");
-                context.Writer.Write(requestObject.Property);
+                context.Writer.WriteStringValue(requestObject.Property);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetUserAttribute())
             {
                 context.Writer.WritePropertyName("userAttribute");
-                context.Writer.Write(requestObject.UserAttribute);
+                context.Writer.WriteStringValue(requestObject.UserAttribute);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

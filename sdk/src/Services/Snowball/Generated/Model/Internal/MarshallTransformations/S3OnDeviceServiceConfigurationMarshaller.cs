@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFaultTolerance())
             {
                 context.Writer.WritePropertyName("FaultTolerance");
-                context.Writer.Write(requestObject.FaultTolerance.Value);
+                context.Writer.WriteNumberValue(requestObject.FaultTolerance.Value);
             }
 
             if(requestObject.IsSetServiceSize())
             {
                 context.Writer.WritePropertyName("ServiceSize");
-                context.Writer.Write(requestObject.ServiceSize.Value);
+                context.Writer.WriteNumberValue(requestObject.ServiceSize.Value);
             }
 
             if(requestObject.IsSetStorageLimit())
@@ -65,18 +63,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StorageLimit");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StorageLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StorageLimit.Value);
+                    context.Writer.WriteNumberValue(requestObject.StorageLimit.Value);
                 }
             }
 
             if(requestObject.IsSetStorageUnit())
             {
                 context.Writer.WritePropertyName("StorageUnit");
-                context.Writer.Write(requestObject.StorageUnit);
+                context.Writer.WriteStringValue(requestObject.StorageUnit);
             }
 
         }

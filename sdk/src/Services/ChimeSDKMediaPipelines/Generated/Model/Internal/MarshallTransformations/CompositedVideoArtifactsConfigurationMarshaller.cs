@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGridViewConfiguration())
             {
                 context.Writer.WritePropertyName("GridViewConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GridViewConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GridViewConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLayout())
             {
                 context.Writer.WritePropertyName("Layout");
-                context.Writer.Write(requestObject.Layout);
+                context.Writer.WriteStringValue(requestObject.Layout);
             }
 
             if(requestObject.IsSetResolution())
             {
                 context.Writer.WritePropertyName("Resolution");
-                context.Writer.Write(requestObject.Resolution);
+                context.Writer.WriteStringValue(requestObject.Resolution);
             }
 
         }

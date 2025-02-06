@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
@@ -63,87 +66,92 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExcludeCompliantResources())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExcludeCompliantResources())
-                    {
-                        context.Writer.WritePropertyName("ExcludeCompliantResources");
-                        context.Writer.Write(publicRequest.ExcludeCompliantResources.Value);
-                    }
-
-                    if(publicRequest.IsSetIncludeComplianceDetails())
-                    {
-                        context.Writer.WritePropertyName("IncludeComplianceDetails");
-                        context.Writer.Write(publicRequest.IncludeComplianceDetails.Value);
-                    }
-
-                    if(publicRequest.IsSetPaginationToken())
-                    {
-                        context.Writer.WritePropertyName("PaginationToken");
-                        context.Writer.Write(publicRequest.PaginationToken);
-                    }
-
-                    if(publicRequest.IsSetResourceARNList())
-                    {
-                        context.Writer.WritePropertyName("ResourceARNList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
-                        {
-                                context.Writer.Write(publicRequestResourceARNListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourcesPerPage())
-                    {
-                        context.Writer.WritePropertyName("ResourcesPerPage");
-                        context.Writer.Write(publicRequest.ResourcesPerPage.Value);
-                    }
-
-                    if(publicRequest.IsSetResourceTypeFilters())
-                    {
-                        context.Writer.WritePropertyName("ResourceTypeFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
-                        {
-                                context.Writer.Write(publicRequestResourceTypeFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagFilters())
-                    {
-                        context.Writer.WritePropertyName("TagFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagsPerPage())
-                    {
-                        context.Writer.WritePropertyName("TagsPerPage");
-                        context.Writer.Write(publicRequest.TagsPerPage.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ExcludeCompliantResources");
+                context.Writer.WriteBooleanValue(publicRequest.ExcludeCompliantResources.Value);
             }
+
+            if(publicRequest.IsSetIncludeComplianceDetails())
+            {
+                context.Writer.WritePropertyName("IncludeComplianceDetails");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeComplianceDetails.Value);
+            }
+
+            if(publicRequest.IsSetPaginationToken())
+            {
+                context.Writer.WritePropertyName("PaginationToken");
+                context.Writer.WriteStringValue(publicRequest.PaginationToken);
+            }
+
+            if(publicRequest.IsSetResourceARNList())
+            {
+                context.Writer.WritePropertyName("ResourceARNList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceARNListListValue in publicRequest.ResourceARNList)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceARNListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourcesPerPage())
+            {
+                context.Writer.WritePropertyName("ResourcesPerPage");
+                context.Writer.WriteNumberValue(publicRequest.ResourcesPerPage.Value);
+            }
+
+            if(publicRequest.IsSetResourceTypeFilters())
+            {
+                context.Writer.WritePropertyName("ResourceTypeFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceTypeFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagFilters())
+            {
+                context.Writer.WritePropertyName("TagFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagsPerPage())
+            {
+                context.Writer.WritePropertyName("TagsPerPage");
+                context.Writer.WriteNumberValue(publicRequest.TagsPerPage.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

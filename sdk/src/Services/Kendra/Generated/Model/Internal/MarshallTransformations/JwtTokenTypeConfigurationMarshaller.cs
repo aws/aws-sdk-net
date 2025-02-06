@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClaimRegex())
             {
                 context.Writer.WritePropertyName("ClaimRegex");
-                context.Writer.Write(requestObject.ClaimRegex);
+                context.Writer.WriteStringValue(requestObject.ClaimRegex);
             }
 
             if(requestObject.IsSetGroupAttributeField())
             {
                 context.Writer.WritePropertyName("GroupAttributeField");
-                context.Writer.Write(requestObject.GroupAttributeField);
+                context.Writer.WriteStringValue(requestObject.GroupAttributeField);
             }
 
             if(requestObject.IsSetIssuer())
             {
                 context.Writer.WritePropertyName("Issuer");
-                context.Writer.Write(requestObject.Issuer);
+                context.Writer.WriteStringValue(requestObject.Issuer);
             }
 
             if(requestObject.IsSetKeyLocation())
             {
                 context.Writer.WritePropertyName("KeyLocation");
-                context.Writer.Write(requestObject.KeyLocation);
+                context.Writer.WriteStringValue(requestObject.KeyLocation);
             }
 
             if(requestObject.IsSetSecretManagerArn())
             {
                 context.Writer.WritePropertyName("SecretManagerArn");
-                context.Writer.Write(requestObject.SecretManagerArn);
+                context.Writer.WriteStringValue(requestObject.SecretManagerArn);
             }
 
             if(requestObject.IsSetURL())
             {
                 context.Writer.WritePropertyName("URL");
-                context.Writer.Write(requestObject.URL);
+                context.Writer.WriteStringValue(requestObject.URL);
             }
 
             if(requestObject.IsSetUserNameAttributeField())
             {
                 context.Writer.WritePropertyName("UserNameAttributeField");
-                context.Writer.Write(requestObject.UserNameAttributeField);
+                context.Writer.WriteStringValue(requestObject.UserNameAttributeField);
             }
 
         }

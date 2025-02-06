@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -70,76 +73,81 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentRuntimeException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/agents/{agentId}/agentAliases/{agentAliasId}/sessions/{sessionId}/text";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBedrockModelConfigurations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBedrockModelConfigurations())
-                    {
-                        context.Writer.WritePropertyName("bedrockModelConfigurations");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("bedrockModelConfigurations");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BedrockModelConfigurationsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
+                var marshaller = BedrockModelConfigurationsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BedrockModelConfigurations, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableTrace())
-                    {
-                        context.Writer.WritePropertyName("enableTrace");
-                        context.Writer.Write(publicRequest.EnableTrace.Value);
-                    }
-
-                    if(publicRequest.IsSetEndSession())
-                    {
-                        context.Writer.WritePropertyName("endSession");
-                        context.Writer.Write(publicRequest.EndSession.Value);
-                    }
-
-                    if(publicRequest.IsSetInputText())
-                    {
-                        context.Writer.WritePropertyName("inputText");
-                        context.Writer.Write(publicRequest.InputText);
-                    }
-
-                    if(publicRequest.IsSetMemoryId())
-                    {
-                        context.Writer.WritePropertyName("memoryId");
-                        context.Writer.Write(publicRequest.MemoryId);
-                    }
-
-                    if(publicRequest.IsSetSessionState())
-                    {
-                        context.Writer.WritePropertyName("sessionState");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SessionStateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SessionState, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStreamingConfigurations())
-                    {
-                        context.Writer.WritePropertyName("streamingConfigurations");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StreamingConfigurationsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StreamingConfigurations, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEnableTrace())
+            {
+                context.Writer.WritePropertyName("enableTrace");
+                context.Writer.WriteBooleanValue(publicRequest.EnableTrace.Value);
+            }
+
+            if(publicRequest.IsSetEndSession())
+            {
+                context.Writer.WritePropertyName("endSession");
+                context.Writer.WriteBooleanValue(publicRequest.EndSession.Value);
+            }
+
+            if(publicRequest.IsSetInputText())
+            {
+                context.Writer.WritePropertyName("inputText");
+                context.Writer.WriteStringValue(publicRequest.InputText);
+            }
+
+            if(publicRequest.IsSetMemoryId())
+            {
+                context.Writer.WritePropertyName("memoryId");
+                context.Writer.WriteStringValue(publicRequest.MemoryId);
+            }
+
+            if(publicRequest.IsSetSessionState())
+            {
+                context.Writer.WritePropertyName("sessionState");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionStateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SessionState, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStreamingConfigurations())
+            {
+                context.Writer.WritePropertyName("streamingConfigurations");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamingConfigurationsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamingConfigurations, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetSourceArn()) 

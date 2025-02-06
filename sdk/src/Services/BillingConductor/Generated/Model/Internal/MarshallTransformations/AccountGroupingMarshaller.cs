@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoAssociate())
             {
                 context.Writer.WritePropertyName("AutoAssociate");
-                context.Writer.Write(requestObject.AutoAssociate.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoAssociate.Value);
             }
 
             if(requestObject.IsSetLinkedAccountIds())
             {
                 context.Writer.WritePropertyName("LinkedAccountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLinkedAccountIdsListValue in requestObject.LinkedAccountIds)
                 {
-                        context.Writer.Write(requestObjectLinkedAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectLinkedAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UniqueProblem Object
     /// </summary>  
-    public class UniqueProblemUnmarshaller : IUnmarshaller<UniqueProblem, XmlUnmarshallerContext>, IUnmarshaller<UniqueProblem, JsonUnmarshallerContext>
+    public class UniqueProblemUnmarshaller : IJsonUnmarshaller<UniqueProblem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UniqueProblem IUnmarshaller<UniqueProblem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UniqueProblem Unmarshall(JsonUnmarshallerContext context)
+        public UniqueProblem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UniqueProblem unmarshalledObject = new UniqueProblem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("problems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Problem, ProblemUnmarshaller>(ProblemUnmarshaller.Instance);
-                    unmarshalledObject.Problems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Problem, ProblemUnmarshaller>(ProblemUnmarshaller.Instance);
+                    unmarshalledObject.Problems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

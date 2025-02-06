@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
@@ -63,103 +66,108 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdaptersConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdaptersConfig())
-                    {
-                        context.Writer.WritePropertyName("AdaptersConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AdaptersConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AdaptersConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AdaptersConfig, context);
+                var marshaller = AdaptersConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdaptersConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    if(publicRequest.IsSetDocumentLocation())
-                    {
-                        context.Writer.WritePropertyName("DocumentLocation");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentLocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DocumentLocation, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFeatureTypes())
-                    {
-                        context.Writer.WritePropertyName("FeatureTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
-                        {
-                                context.Writer.Write(publicRequestFeatureTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetJobTag())
-                    {
-                        context.Writer.WritePropertyName("JobTag");
-                        context.Writer.Write(publicRequest.JobTag);
-                    }
-
-                    if(publicRequest.IsSetKMSKeyId())
-                    {
-                        context.Writer.WritePropertyName("KMSKeyId");
-                        context.Writer.Write(publicRequest.KMSKeyId);
-                    }
-
-                    if(publicRequest.IsSetNotificationChannel())
-                    {
-                        context.Writer.WritePropertyName("NotificationChannel");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationChannelMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueriesConfig())
-                    {
-                        context.Writer.WritePropertyName("QueriesConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QueriesConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.QueriesConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            if(publicRequest.IsSetDocumentLocation())
+            {
+                context.Writer.WritePropertyName("DocumentLocation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentLocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DocumentLocation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFeatureTypes())
+            {
+                context.Writer.WritePropertyName("FeatureTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestFeatureTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetJobTag())
+            {
+                context.Writer.WritePropertyName("JobTag");
+                context.Writer.WriteStringValue(publicRequest.JobTag);
+            }
+
+            if(publicRequest.IsSetKMSKeyId())
+            {
+                context.Writer.WritePropertyName("KMSKeyId");
+                context.Writer.WriteStringValue(publicRequest.KMSKeyId);
+            }
+
+            if(publicRequest.IsSetNotificationChannel())
+            {
+                context.Writer.WritePropertyName("NotificationChannel");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NotificationChannelMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NotificationChannel, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("OutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueriesConfig())
+            {
+                context.Writer.WritePropertyName("QueriesConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QueriesConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QueriesConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

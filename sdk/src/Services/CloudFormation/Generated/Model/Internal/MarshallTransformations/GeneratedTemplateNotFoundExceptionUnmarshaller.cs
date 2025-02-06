@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeneratedTemplateNotFoundException operation
     /// </summary>  
-    public class GeneratedTemplateNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<GeneratedTemplateNotFoundException, XmlUnmarshallerContext>
+    public class GeneratedTemplateNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<GeneratedTemplateNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

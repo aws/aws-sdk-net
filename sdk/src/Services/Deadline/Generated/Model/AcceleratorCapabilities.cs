@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// Provides information about the GPU accelerators and drivers for the instance types
-    /// in a fleet. If you include the <c>acceleratorCapabilities</c> property in the <a href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a>
-    /// object, all of the Amazon EC2 instances will have at least one accelerator.
+    /// Provides information about the GPU accelerators used for jobs processed by a fleet.
     /// </summary>
     public partial class AcceleratorCapabilities
     {
@@ -42,7 +40,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of GPUs on each worker. The default is 1.
+        /// The number of GPU accelerators specified for worker hosts in this fleet. 
         /// </para>
         /// </summary>
         public AcceleratorCountRange Count
@@ -60,8 +58,10 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Selections. 
         /// <para>
-        /// A list of objects that contain the GPU name of the accelerator and driver for the
-        /// instance types that support the accelerator.
+        /// A list of accelerator capabilities requested for this fleet. Only Amazon Elastic Compute
+        /// Cloud instances that provide these capabilities will be used. For example, if you
+        /// specify both L4 and T4 chips, Deadline Cloud will use Amazon EC2 instances that have
+        /// either the L4 or the T4 chip installed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

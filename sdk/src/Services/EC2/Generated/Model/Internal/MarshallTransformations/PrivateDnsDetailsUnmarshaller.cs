@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PrivateDnsDetails Object
     /// </summary>  
-    public class PrivateDnsDetailsUnmarshaller : IUnmarshaller<PrivateDnsDetails, XmlUnmarshallerContext>, IUnmarshaller<PrivateDnsDetails, JsonUnmarshallerContext>
+    public class PrivateDnsDetailsUnmarshaller : IXmlUnmarshaller<PrivateDnsDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PrivateDnsDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PrivateDnsDetailsUnmarshaller _instance = new PrivateDnsDetailsUnmarshaller();        
 

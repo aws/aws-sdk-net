@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetMetrics())
             {
                 context.Writer.WritePropertyName("metrics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMetricsKvp in requestObject.Metrics)
                 {
                     context.Writer.WritePropertyName(requestObjectMetricsKvp.Key);
                     var requestObjectMetricsValue = requestObjectMetricsKvp.Value;
 
-                        context.Writer.Write(requestObjectMetricsValue);
+                        context.Writer.WriteNumberValue(requestObjectMetricsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSession())
             {
                 context.Writer.WritePropertyName("session");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SessionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Session, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.Timestamp));
+                context.Writer.WriteStringValue(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.Timestamp));
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

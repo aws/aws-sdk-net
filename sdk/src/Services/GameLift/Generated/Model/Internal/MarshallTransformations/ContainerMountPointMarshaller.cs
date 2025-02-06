@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessLevel())
             {
                 context.Writer.WritePropertyName("AccessLevel");
-                context.Writer.Write(requestObject.AccessLevel);
+                context.Writer.WriteStringValue(requestObject.AccessLevel);
             }
 
             if(requestObject.IsSetContainerPath())
             {
                 context.Writer.WritePropertyName("ContainerPath");
-                context.Writer.Write(requestObject.ContainerPath);
+                context.Writer.WriteStringValue(requestObject.ContainerPath);
             }
 
             if(requestObject.IsSetInstancePath())
             {
                 context.Writer.WritePropertyName("InstancePath");
-                context.Writer.Write(requestObject.InstancePath);
+                context.Writer.WriteStringValue(requestObject.InstancePath);
             }
 
         }

@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OntapFileSystemConfiguration Object
     /// </summary>  
-    public class OntapFileSystemConfigurationUnmarshaller : IUnmarshaller<OntapFileSystemConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OntapFileSystemConfiguration, JsonUnmarshallerContext>
+    public class OntapFileSystemConfigurationUnmarshaller : IJsonUnmarshaller<OntapFileSystemConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OntapFileSystemConfiguration IUnmarshaller<OntapFileSystemConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OntapFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OntapFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OntapFileSystemConfiguration unmarshalledObject = new OntapFileSystemConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DiskIopsConfiguration", targetDepth))
                 {
                     var unmarshaller = DiskIopsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointIpAddressRange", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointIpAddressRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointIpAddressRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoints", targetDepth))
                 {
                     var unmarshaller = FileSystemEndpointsUnmarshaller.Instance;
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FsxAdminPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FsxAdminPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FsxAdminPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HAPairs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HAPairs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HAPairs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreferredSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RouteTableIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.RouteTableIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RouteTableIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputCapacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputCapacityPerHAPair", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputCapacityPerHAPair = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputCapacityPerHAPair = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

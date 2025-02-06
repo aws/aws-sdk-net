@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArguments())
             {
                 context.Writer.WritePropertyName("arguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgumentsListValue in requestObject.Arguments)
                 {
-                        context.Writer.Write(requestObjectArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntrypoint())
             {
                 context.Writer.WritePropertyName("entrypoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntrypointListValue in requestObject.Entrypoint)
                 {
-                        context.Writer.Write(requestObjectEntrypointListValue);
+                        context.Writer.WriteStringValue(requestObjectEntrypointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("imageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
             if(requestObject.IsSetMetricDefinitions())
             {
                 context.Writer.WritePropertyName("metricDefinitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricDefinitionsListValue in requestObject.MetricDefinitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricDefinitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

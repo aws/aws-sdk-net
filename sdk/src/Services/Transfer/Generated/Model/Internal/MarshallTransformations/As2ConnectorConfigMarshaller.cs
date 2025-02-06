@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasicAuthSecretId())
             {
                 context.Writer.WritePropertyName("BasicAuthSecretId");
-                context.Writer.Write(requestObject.BasicAuthSecretId);
+                context.Writer.WriteStringValue(requestObject.BasicAuthSecretId);
             }
 
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
-                context.Writer.Write(requestObject.Compression);
+                context.Writer.WriteStringValue(requestObject.Compression);
             }
 
             if(requestObject.IsSetEncryptionAlgorithm())
             {
                 context.Writer.WritePropertyName("EncryptionAlgorithm");
-                context.Writer.Write(requestObject.EncryptionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.EncryptionAlgorithm);
             }
 
             if(requestObject.IsSetLocalProfileId())
             {
                 context.Writer.WritePropertyName("LocalProfileId");
-                context.Writer.Write(requestObject.LocalProfileId);
+                context.Writer.WriteStringValue(requestObject.LocalProfileId);
             }
 
             if(requestObject.IsSetMdnResponse())
             {
                 context.Writer.WritePropertyName("MdnResponse");
-                context.Writer.Write(requestObject.MdnResponse);
+                context.Writer.WriteStringValue(requestObject.MdnResponse);
             }
 
             if(requestObject.IsSetMdnSigningAlgorithm())
             {
                 context.Writer.WritePropertyName("MdnSigningAlgorithm");
-                context.Writer.Write(requestObject.MdnSigningAlgorithm);
+                context.Writer.WriteStringValue(requestObject.MdnSigningAlgorithm);
             }
 
             if(requestObject.IsSetMessageSubject())
             {
                 context.Writer.WritePropertyName("MessageSubject");
-                context.Writer.Write(requestObject.MessageSubject);
+                context.Writer.WriteStringValue(requestObject.MessageSubject);
             }
 
             if(requestObject.IsSetPartnerProfileId())
             {
                 context.Writer.WritePropertyName("PartnerProfileId");
-                context.Writer.Write(requestObject.PartnerProfileId);
+                context.Writer.WriteStringValue(requestObject.PartnerProfileId);
             }
 
             if(requestObject.IsSetPreserveContentType())
             {
                 context.Writer.WritePropertyName("PreserveContentType");
-                context.Writer.Write(requestObject.PreserveContentType);
+                context.Writer.WriteStringValue(requestObject.PreserveContentType);
             }
 
             if(requestObject.IsSetSigningAlgorithm())
             {
                 context.Writer.WritePropertyName("SigningAlgorithm");
-                context.Writer.Write(requestObject.SigningAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SigningAlgorithm);
             }
 
         }

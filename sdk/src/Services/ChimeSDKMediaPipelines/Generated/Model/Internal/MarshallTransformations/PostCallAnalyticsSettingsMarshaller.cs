@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentRedactionOutput())
             {
                 context.Writer.WritePropertyName("ContentRedactionOutput");
-                context.Writer.Write(requestObject.ContentRedactionOutput);
+                context.Writer.WriteStringValue(requestObject.ContentRedactionOutput);
             }
 
             if(requestObject.IsSetDataAccessRoleArn())
             {
                 context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.Write(requestObject.DataAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
             }
 
             if(requestObject.IsSetOutputEncryptionKMSKeyId())
             {
                 context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
-                context.Writer.Write(requestObject.OutputEncryptionKMSKeyId);
+                context.Writer.WriteStringValue(requestObject.OutputEncryptionKMSKeyId);
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
-                context.Writer.Write(requestObject.OutputLocation);
+                context.Writer.WriteStringValue(requestObject.OutputLocation);
             }
 
         }

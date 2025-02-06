@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
-                context.Writer.Write(requestObject.Filter);
+                context.Writer.WriteStringValue(requestObject.Filter);
             }
 
             if(requestObject.IsSetFilterType())
             {
                 context.Writer.WritePropertyName("filterType");
-                context.Writer.Write(requestObject.FilterType);
+                context.Writer.WriteStringValue(requestObject.FilterType);
             }
 
         }

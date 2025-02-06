@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -63,85 +66,90 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddPrincipals())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AddPrincipals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddPrincipalsListValue in publicRequest.AddPrincipals)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddPrincipals())
-                    {
-                        context.Writer.WritePropertyName("AddPrincipals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddPrincipalsListValue in publicRequest.AddPrincipals)
-                        {
-                                context.Writer.Write(publicRequestAddPrincipalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAddResources())
-                    {
-                        context.Writer.WritePropertyName("AddResources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddResourcesListValue in publicRequest.AddResources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAddResourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAttachmentArn())
-                    {
-                        context.Writer.WritePropertyName("AttachmentArn");
-                        context.Writer.Write(publicRequest.AttachmentArn);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRemovePrincipals())
-                    {
-                        context.Writer.WritePropertyName("RemovePrincipals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemovePrincipalsListValue in publicRequest.RemovePrincipals)
-                        {
-                                context.Writer.Write(publicRequestRemovePrincipalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoveResources())
-                    {
-                        context.Writer.WritePropertyName("RemoveResources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemoveResourcesListValue in publicRequest.RemoveResources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRemoveResourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAddPrincipalsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAddResources())
+            {
+                context.Writer.WritePropertyName("AddResources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddResourcesListValue in publicRequest.AddResources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAttachmentArn())
+            {
+                context.Writer.WritePropertyName("AttachmentArn");
+                context.Writer.WriteStringValue(publicRequest.AttachmentArn);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRemovePrincipals())
+            {
+                context.Writer.WritePropertyName("RemovePrincipals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemovePrincipalsListValue in publicRequest.RemovePrincipals)
+                {
+                        context.Writer.WriteStringValue(publicRequestRemovePrincipalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRemoveResources())
+            {
+                context.Writer.WritePropertyName("RemoveResources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoveResourcesListValue in publicRequest.RemoveResources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRemoveResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

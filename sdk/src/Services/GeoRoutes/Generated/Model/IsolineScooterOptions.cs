@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options for the property.
+    /// Travel mode options when the provided travel mode is <c>Scooter</c>
     /// </summary>
     public partial class IsolineScooterOptions
     {

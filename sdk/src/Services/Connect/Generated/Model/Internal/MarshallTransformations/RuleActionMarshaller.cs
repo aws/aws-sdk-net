@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("ActionType");
-                context.Writer.Write(requestObject.ActionType);
+                context.Writer.WriteStringValue(requestObject.ActionType);
             }
 
             if(requestObject.IsSetAssignContactCategoryAction())
             {
                 context.Writer.WritePropertyName("AssignContactCategoryAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssignContactCategoryActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssignContactCategoryAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateCaseAction())
             {
                 context.Writer.WritePropertyName("CreateCaseAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateCaseActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateCaseAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndAssociatedTasksAction())
             {
                 context.Writer.WritePropertyName("EndAssociatedTasksAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndAssociatedTasksActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EndAssociatedTasksAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventBridgeAction())
             {
                 context.Writer.WritePropertyName("EventBridgeAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventBridgeActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridgeAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSendNotificationAction())
             {
                 context.Writer.WritePropertyName("SendNotificationAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SendNotificationActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SendNotificationAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubmitAutoEvaluationAction())
             {
                 context.Writer.WritePropertyName("SubmitAutoEvaluationAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SubmitAutoEvaluationActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SubmitAutoEvaluationAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskAction())
             {
                 context.Writer.WritePropertyName("TaskAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TaskActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TaskAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateCaseAction())
             {
                 context.Writer.WritePropertyName("UpdateCaseAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateCaseActionDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateCaseAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

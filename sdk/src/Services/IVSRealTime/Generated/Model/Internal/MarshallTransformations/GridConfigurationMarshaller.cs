@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFeaturedParticipantAttribute())
             {
                 context.Writer.WritePropertyName("featuredParticipantAttribute");
-                context.Writer.Write(requestObject.FeaturedParticipantAttribute);
+                context.Writer.WriteStringValue(requestObject.FeaturedParticipantAttribute);
             }
 
             if(requestObject.IsSetGridGap())
             {
                 context.Writer.WritePropertyName("gridGap");
-                context.Writer.Write(requestObject.GridGap.Value);
+                context.Writer.WriteNumberValue(requestObject.GridGap.Value);
             }
 
             if(requestObject.IsSetOmitStoppedVideo())
             {
                 context.Writer.WritePropertyName("omitStoppedVideo");
-                context.Writer.Write(requestObject.OmitStoppedVideo.Value);
+                context.Writer.WriteBooleanValue(requestObject.OmitStoppedVideo.Value);
             }
 
             if(requestObject.IsSetVideoAspectRatio())
             {
                 context.Writer.WritePropertyName("videoAspectRatio");
-                context.Writer.Write(requestObject.VideoAspectRatio);
+                context.Writer.WriteStringValue(requestObject.VideoAspectRatio);
             }
 
             if(requestObject.IsSetVideoFillMode())
             {
                 context.Writer.WritePropertyName("videoFillMode");
-                context.Writer.Write(requestObject.VideoFillMode);
+                context.Writer.WriteStringValue(requestObject.VideoFillMode);
             }
 
         }

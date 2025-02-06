@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class AdditionalS3DataSource
     {
         private CompressionType _compressionType;
+        private string _eTag;
         private AdditionalS3DataSourceDataType _s3DataType;
         private string _s3Uri;
 
@@ -56,6 +57,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompressionType()
         {
             return this._compressionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The ETag associated with S3 URI.
+        /// </para>
+        /// </summary>
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
         }
 
         /// <summary>

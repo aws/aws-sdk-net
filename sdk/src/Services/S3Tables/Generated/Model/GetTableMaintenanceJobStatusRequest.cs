@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTableMaintenanceJobStatus operation.
-    /// Gets the status of a maintenance job for a table.
+    /// Gets the status of a maintenance job for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+    /// Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTableMaintenanceJobStatus</c> permission to use this
+    /// operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetTableMaintenanceJobStatusRequest : AmazonS3TablesRequest
     {

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails Object
     /// </summary>  
-    public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsUnmarshaller : IUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails, JsonUnmarshallerContext>
+    public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsUnmarshaller : IJsonUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails IUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails unmarshalledObject = new AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("InstancesDistribution", targetDepth))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstancesDistribution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstancesDistribution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LaunchTemplate", targetDepth))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

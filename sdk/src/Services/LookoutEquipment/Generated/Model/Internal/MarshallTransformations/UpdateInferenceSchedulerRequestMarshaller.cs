@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataDelayOffsetInMinutes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataDelayOffsetInMinutes())
-                    {
-                        context.Writer.WritePropertyName("DataDelayOffsetInMinutes");
-                        context.Writer.Write(publicRequest.DataDelayOffsetInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetDataInputConfiguration())
-                    {
-                        context.Writer.WritePropertyName("DataInputConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceInputConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataInputConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataOutputConfiguration())
-                    {
-                        context.Writer.WritePropertyName("DataOutputConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceOutputConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataOutputConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataUploadFrequency())
-                    {
-                        context.Writer.WritePropertyName("DataUploadFrequency");
-                        context.Writer.Write(publicRequest.DataUploadFrequency);
-                    }
-
-                    if(publicRequest.IsSetInferenceSchedulerName())
-                    {
-                        context.Writer.WritePropertyName("InferenceSchedulerName");
-                        context.Writer.Write(publicRequest.InferenceSchedulerName);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DataDelayOffsetInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.DataDelayOffsetInMinutes.Value);
             }
+
+            if(publicRequest.IsSetDataInputConfiguration())
+            {
+                context.Writer.WritePropertyName("DataInputConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceInputConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataInputConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataOutputConfiguration())
+            {
+                context.Writer.WritePropertyName("DataOutputConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataOutputConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataUploadFrequency())
+            {
+                context.Writer.WritePropertyName("DataUploadFrequency");
+                context.Writer.WriteStringValue(publicRequest.DataUploadFrequency);
+            }
+
+            if(publicRequest.IsSetInferenceSchedulerName())
+            {
+                context.Writer.WritePropertyName("InferenceSchedulerName");
+                context.Writer.WriteStringValue(publicRequest.InferenceSchedulerName);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3BucketConfiguration Object
     /// </summary>  
-    public class S3BucketConfigurationUnmarshaller : IUnmarshaller<S3BucketConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3BucketConfiguration, JsonUnmarshallerContext>
+    public class S3BucketConfigurationUnmarshaller : IJsonUnmarshaller<S3BucketConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        S3BucketConfiguration IUnmarshaller<S3BucketConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3BucketConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public S3BucketConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             S3BucketConfiguration unmarshalledObject = new S3BucketConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accessPoints", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, S3AccessPointConfiguration, StringUnmarshaller, S3AccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3AccessPointConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, S3AccessPointConfiguration, StringUnmarshaller, S3AccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3AccessPointConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bucketAclGrants", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<S3BucketAclGrantConfiguration, S3BucketAclGrantConfigurationUnmarshaller>(S3BucketAclGrantConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.BucketAclGrants = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<S3BucketAclGrantConfiguration, S3BucketAclGrantConfigurationUnmarshaller>(S3BucketAclGrantConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.BucketAclGrants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bucketPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bucketPublicAccessBlock", targetDepth))
                 {
                     var unmarshaller = S3PublicAccessBlockConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BucketPublicAccessBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketPublicAccessBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

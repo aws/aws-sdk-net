@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CrossZoneLoadBalancing Object
     /// </summary>  
-    public class CrossZoneLoadBalancingUnmarshaller : IUnmarshaller<CrossZoneLoadBalancing, XmlUnmarshallerContext>, IUnmarshaller<CrossZoneLoadBalancing, JsonUnmarshallerContext>
+    public class CrossZoneLoadBalancingUnmarshaller : IXmlUnmarshaller<CrossZoneLoadBalancing, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CrossZoneLoadBalancing Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CrossZoneLoadBalancingUnmarshaller _instance = new CrossZoneLoadBalancingUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginRestrictionType())
             {
                 context.Writer.WritePropertyName("originRestrictionType");
-                context.Writer.Write(requestObject.OriginRestrictionType);
+                context.Writer.WriteStringValue(requestObject.OriginRestrictionType);
             }
 
             if(requestObject.IsSetRepositoryName())
             {
                 context.Writer.WritePropertyName("repositoryName");
-                context.Writer.Write(requestObject.RepositoryName);
+                context.Writer.WriteStringValue(requestObject.RepositoryName);
             }
 
         }

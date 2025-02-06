@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 {
@@ -63,47 +66,52 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGroupIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("GroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGroupIdsListValue in publicRequest.GroupIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGroupIds())
-                    {
-                        context.Writer.WritePropertyName("GroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGroupIdsListValue in publicRequest.GroupIds)
-                        {
-                                context.Writer.Write(publicRequestGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentityStoreId())
-                    {
-                        context.Writer.WritePropertyName("IdentityStoreId");
-                        context.Writer.Write(publicRequest.IdentityStoreId);
-                    }
-
-                    if(publicRequest.IsSetMemberId())
-                    {
-                        context.Writer.WritePropertyName("MemberId");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MemberIdMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MemberId, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestGroupIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetIdentityStoreId())
+            {
+                context.Writer.WritePropertyName("IdentityStoreId");
+                context.Writer.WriteStringValue(publicRequest.IdentityStoreId);
+            }
+
+            if(publicRequest.IsSetMemberId())
+            {
+                context.Writer.WritePropertyName("MemberId");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MemberIdMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MemberId, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFields())
             {
                 context.Writer.WritePropertyName("Fields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldsListValue in requestObject.Fields)
                 {
-                        context.Writer.Write(requestObjectFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFilterPredicate())
             {
                 context.Writer.WritePropertyName("FilterPredicate");
-                context.Writer.Write(requestObject.FilterPredicate);
+                context.Writer.WriteStringValue(requestObject.FilterPredicate);
             }
 
             if(requestObject.IsSetPrimaryKey())
             {
                 context.Writer.WritePropertyName("PrimaryKey");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrimaryKeyListValue in requestObject.PrimaryKey)
                 {
-                        context.Writer.Write(requestObjectPrimaryKeyListValue);
+                        context.Writer.WriteStringValue(requestObjectPrimaryKeyListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecordUpdateField())
             {
                 context.Writer.WritePropertyName("RecordUpdateField");
-                context.Writer.Write(requestObject.RecordUpdateField);
+                context.Writer.WriteStringValue(requestObject.RecordUpdateField);
             }
 
         }

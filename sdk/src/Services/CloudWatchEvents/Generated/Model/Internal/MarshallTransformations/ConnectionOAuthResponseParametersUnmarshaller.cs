@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConnectionOAuthResponseParameters Object
     /// </summary>  
-    public class ConnectionOAuthResponseParametersUnmarshaller : IUnmarshaller<ConnectionOAuthResponseParameters, XmlUnmarshallerContext>, IUnmarshaller<ConnectionOAuthResponseParameters, JsonUnmarshallerContext>
+    public class ConnectionOAuthResponseParametersUnmarshaller : IJsonUnmarshaller<ConnectionOAuthResponseParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConnectionOAuthResponseParameters IUnmarshaller<ConnectionOAuthResponseParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectionOAuthResponseParameters Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionOAuthResponseParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConnectionOAuthResponseParameters unmarshalledObject = new ConnectionOAuthResponseParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthorizationEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizationEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientParameters", targetDepth))
                 {
                     var unmarshaller = ConnectionOAuthClientResponseParametersUnmarshaller.Instance;
-                    unmarshalledObject.ClientParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HttpMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OAuthHttpParameters", targetDepth))
                 {
                     var unmarshaller = ConnectionHttpParametersUnmarshaller.Instance;
-                    unmarshalledObject.OAuthHttpParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OAuthHttpParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

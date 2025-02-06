@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeySigningKeyInParentDSRecordException operation
     /// </summary>  
-    public class KeySigningKeyInParentDSRecordExceptionUnmarshaller : IErrorResponseUnmarshaller<KeySigningKeyInParentDSRecordException, XmlUnmarshallerContext>
+    public class KeySigningKeyInParentDSRecordExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KeySigningKeyInParentDSRecordException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

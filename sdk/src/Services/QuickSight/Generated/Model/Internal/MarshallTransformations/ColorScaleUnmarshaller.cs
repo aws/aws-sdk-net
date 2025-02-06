@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ColorScale Object
     /// </summary>  
-    public class ColorScaleUnmarshaller : IUnmarshaller<ColorScale, XmlUnmarshallerContext>, IUnmarshaller<ColorScale, JsonUnmarshallerContext>
+    public class ColorScaleUnmarshaller : IJsonUnmarshaller<ColorScale, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ColorScale IUnmarshaller<ColorScale, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ColorScale Unmarshall(JsonUnmarshallerContext context)
+        public ColorScale Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ColorScale unmarshalledObject = new ColorScale();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColorFillType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorFillType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorFillType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Colors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataColor, DataColorUnmarshaller>(DataColorUnmarshaller.Instance);
-                    unmarshalledObject.Colors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataColor, DataColorUnmarshaller>(DataColorUnmarshaller.Instance);
+                    unmarshalledObject.Colors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullValueColor", targetDepth))
                 {
                     var unmarshaller = DataColorUnmarshaller.Instance;
-                    unmarshalledObject.NullValueColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullValueColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

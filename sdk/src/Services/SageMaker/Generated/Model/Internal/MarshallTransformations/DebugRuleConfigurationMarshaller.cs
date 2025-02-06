@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("LocalPath");
-                context.Writer.Write(requestObject.LocalPath);
+                context.Writer.WriteStringValue(requestObject.LocalPath);
             }
 
             if(requestObject.IsSetRuleConfigurationName())
             {
                 context.Writer.WritePropertyName("RuleConfigurationName");
-                context.Writer.Write(requestObject.RuleConfigurationName);
+                context.Writer.WriteStringValue(requestObject.RuleConfigurationName);
             }
 
             if(requestObject.IsSetRuleEvaluatorImage())
             {
                 context.Writer.WritePropertyName("RuleEvaluatorImage");
-                context.Writer.Write(requestObject.RuleEvaluatorImage);
+                context.Writer.WriteStringValue(requestObject.RuleEvaluatorImage);
             }
 
             if(requestObject.IsSetRuleParameters())
             {
                 context.Writer.WritePropertyName("RuleParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRuleParametersKvp in requestObject.RuleParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectRuleParametersKvp.Key);
                     var requestObjectRuleParametersValue = requestObjectRuleParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectRuleParametersValue);
+                        context.Writer.WriteStringValue(requestObjectRuleParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WriteStringValue(requestObject.S3OutputPath);
             }
 
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
             }
 
         }

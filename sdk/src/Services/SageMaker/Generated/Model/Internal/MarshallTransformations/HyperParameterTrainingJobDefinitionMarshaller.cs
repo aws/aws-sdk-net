@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,185 +49,185 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithmSpecification())
             {
                 context.Writer.WritePropertyName("AlgorithmSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperParameterAlgorithmSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AlgorithmSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCheckpointConfig())
             {
                 context.Writer.WritePropertyName("CheckpointConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CheckpointConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CheckpointConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefinitionName())
             {
                 context.Writer.WritePropertyName("DefinitionName");
-                context.Writer.Write(requestObject.DefinitionName);
+                context.Writer.WriteStringValue(requestObject.DefinitionName);
             }
 
             if(requestObject.IsSetEnableInterContainerTrafficEncryption())
             {
                 context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
-                context.Writer.Write(requestObject.EnableInterContainerTrafficEncryption.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableInterContainerTrafficEncryption.Value);
             }
 
             if(requestObject.IsSetEnableManagedSpotTraining())
             {
                 context.Writer.WritePropertyName("EnableManagedSpotTraining");
-                context.Writer.Write(requestObject.EnableManagedSpotTraining.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableManagedSpotTraining.Value);
             }
 
             if(requestObject.IsSetEnableNetworkIsolation())
             {
                 context.Writer.WritePropertyName("EnableNetworkIsolation");
-                context.Writer.Write(requestObject.EnableNetworkIsolation.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableNetworkIsolation.Value);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHyperParameterRanges())
             {
                 context.Writer.WritePropertyName("HyperParameterRanges");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParameterRangesMarshaller.Instance;
                 marshaller.Marshall(requestObject.HyperParameterRanges, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHyperParameterTuningResourceConfig())
             {
                 context.Writer.WritePropertyName("HyperParameterTuningResourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperParameterTuningResourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HyperParameterTuningResourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputDataConfig())
             {
                 context.Writer.WritePropertyName("InputDataConfig");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputDataConfigListValue in requestObject.InputDataConfig)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ChannelMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputDataConfigListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputDataConfig())
             {
                 context.Writer.WritePropertyName("OutputDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceConfig())
             {
                 context.Writer.WritePropertyName("ResourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryStrategy())
             {
                 context.Writer.WritePropertyName("RetryStrategy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetryStrategyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryStrategy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetStaticHyperParameters())
             {
                 context.Writer.WritePropertyName("StaticHyperParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectStaticHyperParametersKvp in requestObject.StaticHyperParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectStaticHyperParametersKvp.Key);
                     var requestObjectStaticHyperParametersValue = requestObjectStaticHyperParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectStaticHyperParametersValue);
+                        context.Writer.WriteStringValue(requestObjectStaticHyperParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStoppingCondition())
             {
                 context.Writer.WritePropertyName("StoppingCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StoppingConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StoppingCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTuningObjective())
             {
                 context.Writer.WritePropertyName("TuningObjective");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperParameterTuningJobObjectiveMarshaller.Instance;
                 marshaller.Marshall(requestObject.TuningObjective, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

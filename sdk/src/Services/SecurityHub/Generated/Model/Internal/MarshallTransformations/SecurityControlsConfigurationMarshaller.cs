@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisabledSecurityControlIdentifiers())
             {
                 context.Writer.WritePropertyName("DisabledSecurityControlIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDisabledSecurityControlIdentifiersListValue in requestObject.DisabledSecurityControlIdentifiers)
                 {
-                        context.Writer.Write(requestObjectDisabledSecurityControlIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectDisabledSecurityControlIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnabledSecurityControlIdentifiers())
             {
                 context.Writer.WritePropertyName("EnabledSecurityControlIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnabledSecurityControlIdentifiersListValue in requestObject.EnabledSecurityControlIdentifiers)
                 {
-                        context.Writer.Write(requestObjectEnabledSecurityControlIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectEnabledSecurityControlIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityControlCustomParameters())
             {
                 context.Writer.WritePropertyName("SecurityControlCustomParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityControlCustomParametersListValue in requestObject.SecurityControlCustomParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SecurityControlCustomParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecurityControlCustomParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

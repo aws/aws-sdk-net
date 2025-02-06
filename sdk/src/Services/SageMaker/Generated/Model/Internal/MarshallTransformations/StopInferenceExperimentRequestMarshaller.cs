@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDesiredModelVariants())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DesiredModelVariants");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDesiredModelVariantsListValue in publicRequest.DesiredModelVariants)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDesiredModelVariants())
-                    {
-                        context.Writer.WritePropertyName("DesiredModelVariants");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDesiredModelVariantsListValue in publicRequest.DesiredModelVariants)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ModelVariantConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDesiredModelVariantsListValue, context);
+                    var marshaller = ModelVariantConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDesiredModelVariantsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDesiredState())
-                    {
-                        context.Writer.WritePropertyName("DesiredState");
-                        context.Writer.Write(publicRequest.DesiredState);
-                    }
-
-                    if(publicRequest.IsSetModelVariantActions())
-                    {
-                        context.Writer.WritePropertyName("ModelVariantActions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestModelVariantActionsKvp in publicRequest.ModelVariantActions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestModelVariantActionsKvp.Key);
-                            var publicRequestModelVariantActionsValue = publicRequestModelVariantActionsKvp.Value;
-
-                                context.Writer.Write(publicRequestModelVariantActionsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetReason())
-                    {
-                        context.Writer.WritePropertyName("Reason");
-                        context.Writer.Write(publicRequest.Reason);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDesiredState())
+            {
+                context.Writer.WritePropertyName("DesiredState");
+                context.Writer.WriteStringValue(publicRequest.DesiredState);
+            }
+
+            if(publicRequest.IsSetModelVariantActions())
+            {
+                context.Writer.WritePropertyName("ModelVariantActions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestModelVariantActionsKvp in publicRequest.ModelVariantActions)
+                {
+                    context.Writer.WritePropertyName(publicRequestModelVariantActionsKvp.Key);
+                    var publicRequestModelVariantActionsValue = publicRequestModelVariantActionsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestModelVariantActionsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetReason())
+            {
+                context.Writer.WritePropertyName("Reason");
+                context.Writer.WriteStringValue(publicRequest.Reason);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

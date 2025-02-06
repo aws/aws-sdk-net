@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteAnalysisPath Object
     /// </summary>  
-    public class RouteAnalysisPathUnmarshaller : IUnmarshaller<RouteAnalysisPath, XmlUnmarshallerContext>, IUnmarshaller<RouteAnalysisPath, JsonUnmarshallerContext>
+    public class RouteAnalysisPathUnmarshaller : IJsonUnmarshaller<RouteAnalysisPath, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteAnalysisPath IUnmarshaller<RouteAnalysisPath, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteAnalysisPath Unmarshall(JsonUnmarshallerContext context)
+        public RouteAnalysisPath Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteAnalysisPath unmarshalledObject = new RouteAnalysisPath();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CompletionStatus", targetDepth))
                 {
                     var unmarshaller = RouteAnalysisCompletionUnmarshaller.Instance;
-                    unmarshalledObject.CompletionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Path", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PathComponent, PathComponentUnmarshaller>(PathComponentUnmarshaller.Instance);
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PathComponent, PathComponentUnmarshaller>(PathComponentUnmarshaller.Instance);
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

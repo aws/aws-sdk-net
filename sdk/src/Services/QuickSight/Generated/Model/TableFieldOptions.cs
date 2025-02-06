@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// The field options to be configured to a table.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Max=201)]
         public List<TableFieldOption> SelectedFieldOptions
         {
             get { return this._selectedFieldOptions; }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecoveryInstanceIDs())
             {
                 context.Writer.WritePropertyName("recoveryInstanceIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecoveryInstanceIDsListValue in requestObject.RecoveryInstanceIDs)
                 {
-                        context.Writer.Write(requestObjectRecoveryInstanceIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectRecoveryInstanceIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceServerIDs())
             {
                 context.Writer.WritePropertyName("sourceServerIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceServerIDsListValue in requestObject.SourceServerIDs)
                 {
-                        context.Writer.Write(requestObjectSourceServerIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceServerIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

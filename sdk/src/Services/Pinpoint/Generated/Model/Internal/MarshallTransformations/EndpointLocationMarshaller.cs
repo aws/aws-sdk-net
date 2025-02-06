@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetLatitude())
@@ -65,11 +63,11 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Latitude");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Latitude.Value);
+                    context.Writer.WriteNumberValue(requestObject.Latitude.Value);
                 }
             }
 
@@ -78,24 +76,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Longitude");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Longitude.Value);
+                    context.Writer.WriteNumberValue(requestObject.Longitude.Value);
                 }
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
         }

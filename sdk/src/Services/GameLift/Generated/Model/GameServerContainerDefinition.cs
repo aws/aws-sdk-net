@@ -39,16 +39,20 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// You can update a container definition and deploy the updates to an existing fleet.
     /// When creating or updating a game server container group definition, use the property
-    /// <a>GameServerContainerDefinitionInput</a>. 
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput</a>.
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Part of:</b> <a>ContainerGroupDefinition</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Returned by:</b> <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
-    /// <a>UpdateContainerGroupDefinition</a> 
+    ///  <b>Returned by:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class GameServerContainerDefinition

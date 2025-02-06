@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("limits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLimitsKvp in requestObject.Limits)
                 {
                     context.Writer.WritePropertyName(requestObjectLimitsKvp.Key);
                     var requestObjectLimitsValue = requestObjectLimitsKvp.Value;
 
-                        context.Writer.Write(requestObjectLimitsValue);
+                        context.Writer.WriteStringValue(requestObjectLimitsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequests())
             {
                 context.Writer.WritePropertyName("requests");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRequestsKvp in requestObject.Requests)
                 {
                     context.Writer.WritePropertyName(requestObjectRequestsKvp.Key);
                     var requestObjectRequestsValue = requestObjectRequestsKvp.Value;
 
-                        context.Writer.Write(requestObjectRequestsValue);
+                        context.Writer.WriteStringValue(requestObjectRequestsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

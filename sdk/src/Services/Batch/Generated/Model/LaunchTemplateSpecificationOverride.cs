@@ -113,8 +113,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TargetInstanceTypes. 
         /// <para>
-        /// The instance type or family that this this override launch template should be applied
-        /// to.
+        /// The instance type or family that this override launch template should be applied to.
         /// </para>
         ///  
         /// <para>

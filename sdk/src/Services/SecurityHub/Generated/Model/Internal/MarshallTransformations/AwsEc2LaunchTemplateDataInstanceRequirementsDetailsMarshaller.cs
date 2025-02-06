@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,202 +49,202 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceleratorCount())
             {
                 context.Writer.WritePropertyName("AcceleratorCount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AcceleratorCount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAcceleratorManufacturers())
             {
                 context.Writer.WritePropertyName("AcceleratorManufacturers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAcceleratorManufacturersListValue in requestObject.AcceleratorManufacturers)
                 {
-                        context.Writer.Write(requestObjectAcceleratorManufacturersListValue);
+                        context.Writer.WriteStringValue(requestObjectAcceleratorManufacturersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAcceleratorNames())
             {
                 context.Writer.WritePropertyName("AcceleratorNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAcceleratorNamesListValue in requestObject.AcceleratorNames)
                 {
-                        context.Writer.Write(requestObjectAcceleratorNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAcceleratorNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAcceleratorTotalMemoryMiB())
             {
                 context.Writer.WritePropertyName("AcceleratorTotalMemoryMiB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AcceleratorTotalMemoryMiB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAcceleratorTypes())
             {
                 context.Writer.WritePropertyName("AcceleratorTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAcceleratorTypesListValue in requestObject.AcceleratorTypes)
                 {
-                        context.Writer.Write(requestObjectAcceleratorTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectAcceleratorTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBareMetal())
             {
                 context.Writer.WritePropertyName("BareMetal");
-                context.Writer.Write(requestObject.BareMetal);
+                context.Writer.WriteStringValue(requestObject.BareMetal);
             }
 
             if(requestObject.IsSetBaselineEbsBandwidthMbps())
             {
                 context.Writer.WritePropertyName("BaselineEbsBandwidthMbps");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BaselineEbsBandwidthMbps, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBurstablePerformance())
             {
                 context.Writer.WritePropertyName("BurstablePerformance");
-                context.Writer.Write(requestObject.BurstablePerformance);
+                context.Writer.WriteStringValue(requestObject.BurstablePerformance);
             }
 
             if(requestObject.IsSetCpuManufacturers())
             {
                 context.Writer.WritePropertyName("CpuManufacturers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCpuManufacturersListValue in requestObject.CpuManufacturers)
                 {
-                        context.Writer.Write(requestObjectCpuManufacturersListValue);
+                        context.Writer.WriteStringValue(requestObjectCpuManufacturersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludedInstanceTypes())
             {
                 context.Writer.WritePropertyName("ExcludedInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedInstanceTypesListValue in requestObject.ExcludedInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectExcludedInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceGenerations())
             {
                 context.Writer.WritePropertyName("InstanceGenerations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceGenerationsListValue in requestObject.InstanceGenerations)
                 {
-                        context.Writer.Write(requestObjectInstanceGenerationsListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceGenerationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLocalStorage())
             {
                 context.Writer.WritePropertyName("LocalStorage");
-                context.Writer.Write(requestObject.LocalStorage);
+                context.Writer.WriteStringValue(requestObject.LocalStorage);
             }
 
             if(requestObject.IsSetLocalStorageTypes())
             {
                 context.Writer.WritePropertyName("LocalStorageTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLocalStorageTypesListValue in requestObject.LocalStorageTypes)
                 {
-                        context.Writer.Write(requestObjectLocalStorageTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectLocalStorageTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMemoryGiBPerVCpu())
             {
                 context.Writer.WritePropertyName("MemoryGiBPerVCpu");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MemoryGiBPerVCpu, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMemoryMiB())
             {
                 context.Writer.WritePropertyName("MemoryMiB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MemoryMiB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkInterfaceCount())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceCount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkInterfaceCount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOnDemandMaxPricePercentageOverLowestPrice())
             {
                 context.Writer.WritePropertyName("OnDemandMaxPricePercentageOverLowestPrice");
-                context.Writer.Write(requestObject.OnDemandMaxPricePercentageOverLowestPrice.Value);
+                context.Writer.WriteNumberValue(requestObject.OnDemandMaxPricePercentageOverLowestPrice.Value);
             }
 
             if(requestObject.IsSetRequireHibernateSupport())
             {
                 context.Writer.WritePropertyName("RequireHibernateSupport");
-                context.Writer.Write(requestObject.RequireHibernateSupport.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireHibernateSupport.Value);
             }
 
             if(requestObject.IsSetSpotMaxPricePercentageOverLowestPrice())
             {
                 context.Writer.WritePropertyName("SpotMaxPricePercentageOverLowestPrice");
-                context.Writer.Write(requestObject.SpotMaxPricePercentageOverLowestPrice.Value);
+                context.Writer.WriteNumberValue(requestObject.SpotMaxPricePercentageOverLowestPrice.Value);
             }
 
             if(requestObject.IsSetTotalLocalStorageGB())
             {
                 context.Writer.WritePropertyName("TotalLocalStorageGB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGBDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TotalLocalStorageGB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVCpuCount())
             {
                 context.Writer.WritePropertyName("VCpuCount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VCpuCount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

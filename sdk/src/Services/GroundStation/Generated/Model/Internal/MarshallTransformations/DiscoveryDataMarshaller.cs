@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapabilityArns())
             {
                 context.Writer.WritePropertyName("capabilityArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCapabilityArnsListValue in requestObject.CapabilityArns)
                 {
-                        context.Writer.Write(requestObjectCapabilityArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectCapabilityArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrivateIpAddresses())
             {
                 context.Writer.WritePropertyName("privateIpAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrivateIpAddressesListValue in requestObject.PrivateIpAddresses)
                 {
-                        context.Writer.Write(requestObjectPrivateIpAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectPrivateIpAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPublicIpAddresses())
             {
                 context.Writer.WritePropertyName("publicIpAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPublicIpAddressesListValue in requestObject.PublicIpAddresses)
                 {
-                        context.Writer.Write(requestObjectPublicIpAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectPublicIpAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

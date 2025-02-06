@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerProfilesSegmentArn())
             {
                 context.Writer.WritePropertyName("customerProfilesSegmentArn");
-                context.Writer.Write(requestObject.CustomerProfilesSegmentArn);
+                context.Writer.WriteStringValue(requestObject.CustomerProfilesSegmentArn);
             }
 
             if(requestObject.IsSetEventTrigger())
             {
                 context.Writer.WritePropertyName("eventTrigger");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventTriggerMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventTrigger, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CustomValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.CustomValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.CustomValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CustomValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.CustomValue.Value);
                 }
             }
 
             if(requestObject.IsSetValueWhenUnsetOption())
             {
                 context.Writer.WritePropertyName("ValueWhenUnsetOption");
-                context.Writer.Write(requestObject.ValueWhenUnsetOption);
+                context.Writer.WriteStringValue(requestObject.ValueWhenUnsetOption);
             }
 
         }

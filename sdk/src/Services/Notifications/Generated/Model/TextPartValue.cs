@@ -43,7 +43,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property DisplayText. 
         /// <para>
-        /// A short single line description of the link. Must be hyperlinked with the URL itself.
+        /// A short single line description of the link. Must be hyper-linked with the URL itself.
         /// 
         /// </para>
         ///  

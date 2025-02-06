@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -79,56 +82,61 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
             request.ResourcePath = "/v1/package/versions/update_status";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExpectedStatus())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExpectedStatus())
-                    {
-                        context.Writer.WritePropertyName("expectedStatus");
-                        context.Writer.Write(publicRequest.ExpectedStatus);
-                    }
-
-                    if(publicRequest.IsSetTargetStatus())
-                    {
-                        context.Writer.WritePropertyName("targetStatus");
-                        context.Writer.Write(publicRequest.TargetStatus);
-                    }
-
-                    if(publicRequest.IsSetVersionRevisions())
-                    {
-                        context.Writer.WritePropertyName("versionRevisions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestVersionRevisionsKvp in publicRequest.VersionRevisions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestVersionRevisionsKvp.Key);
-                            var publicRequestVersionRevisionsValue = publicRequestVersionRevisionsKvp.Value;
-
-                                context.Writer.Write(publicRequestVersionRevisionsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVersions())
-                    {
-                        context.Writer.WritePropertyName("versions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestVersionsListValue in publicRequest.Versions)
-                        {
-                                context.Writer.Write(publicRequestVersionsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("expectedStatus");
+                context.Writer.WriteStringValue(publicRequest.ExpectedStatus);
             }
+
+            if(publicRequest.IsSetTargetStatus())
+            {
+                context.Writer.WritePropertyName("targetStatus");
+                context.Writer.WriteStringValue(publicRequest.TargetStatus);
+            }
+
+            if(publicRequest.IsSetVersionRevisions())
+            {
+                context.Writer.WritePropertyName("versionRevisions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestVersionRevisionsKvp in publicRequest.VersionRevisions)
+                {
+                    context.Writer.WritePropertyName(publicRequestVersionRevisionsKvp.Key);
+                    var publicRequestVersionRevisionsValue = publicRequestVersionRevisionsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestVersionRevisionsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVersions())
+            {
+                context.Writer.WritePropertyName("versions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVersionsListValue in publicRequest.Versions)
+                {
+                        context.Writer.WriteStringValue(publicRequestVersionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

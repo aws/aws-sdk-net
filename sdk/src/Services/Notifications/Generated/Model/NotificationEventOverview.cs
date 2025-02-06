@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Describes a short summary of a NotificationEvent. This is only used when listing notification
-    /// events.
+    /// Describes a short summary of a <c>NotificationEvent</c>. This is only used when listing
+    /// notification events.
     /// </summary>
     public partial class NotificationEventOverview
     {
         private string _aggregateNotificationEventArn;
         private AggregationEventType _aggregationEventType;
+        private AggregationSummary _aggregationSummary;
         private string _arn;
         private DateTime? _creationTime;
         private string _notificationConfigurationArn;
@@ -46,7 +47,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregateNotificationEventArn. 
         /// <para>
-        /// The ARN of the aggregatedNotificationEventArn to match.
+        /// The ARN of the <c>aggregatedNotificationEventArn</c> to match.
         /// </para>
         /// </summary>
         public string AggregateNotificationEventArn
@@ -64,7 +65,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregationEventType. 
         /// <para>
-        /// The NotificationConfiguration's aggregation type.
+        /// The <c>NotificationConfiguration</c>'s aggregation type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -85,7 +86,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
+        /// Some <c>EventRules</c> are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can
+        /// be run.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -110,6 +112,24 @@ namespace Amazon.Notifications.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AggregationSummary. 
+        /// <para>
+        /// Provides an aggregated summary data for notification events.
+        /// </para>
+        /// </summary>
+        public AggregationSummary AggregationSummary
+        {
+            get { return this._aggregationSummary; }
+            set { this._aggregationSummary = value; }
+        }
+
+        // Check to see if AggregationSummary property is set
+        internal bool IsSetAggregationSummary()
+        {
+            return this._aggregationSummary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource.
@@ -131,7 +151,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the NotificationEvent.
+        /// The creation time of the <c>NotificationEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,7 +170,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the NotificationConfiguration.
+        /// The ARN of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,11 +189,11 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationEvent. 
         /// <para>
-        /// Refers to a NotificationEventSummary object.
+        /// Refers to a <c>NotificationEventSummary</c> object.
         /// </para>
         ///  
         /// <para>
-        /// Similar in structure to <c>content</c> in the GetNotificationEvent response.
+        /// Similar in structure to <c>content</c> in the <c>GetNotificationEvent</c> response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,7 +212,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property RelatedAccount. 
         /// <para>
-        /// The account name containing the NotificationHub.
+        /// The account name containing the <c>NotificationHub</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,72 +49,72 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatedStandards())
             {
                 context.Writer.WritePropertyName("AssociatedStandards");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssociatedStandardsListValue in requestObject.AssociatedStandards)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssociatedStandardMarshaller.Instance;
                     marshaller.Marshall(requestObjectAssociatedStandardsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRelatedRequirements())
             {
                 context.Writer.WritePropertyName("RelatedRequirements");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelatedRequirementsListValue in requestObject.RelatedRequirements)
                 {
-                        context.Writer.Write(requestObjectRelatedRequirementsListValue);
+                        context.Writer.WriteStringValue(requestObjectRelatedRequirementsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityControlId())
             {
                 context.Writer.WritePropertyName("SecurityControlId");
-                context.Writer.Write(requestObject.SecurityControlId);
+                context.Writer.WriteStringValue(requestObject.SecurityControlId);
             }
 
             if(requestObject.IsSetSecurityControlParameters())
             {
                 context.Writer.WritePropertyName("SecurityControlParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityControlParametersListValue in requestObject.SecurityControlParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SecurityControlParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecurityControlParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStatusReasons())
             {
                 context.Writer.WritePropertyName("StatusReasons");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusReasonsListValue in requestObject.StatusReasons)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StatusReasonMarshaller.Instance;
                     marshaller.Marshall(requestObjectStatusReasonsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

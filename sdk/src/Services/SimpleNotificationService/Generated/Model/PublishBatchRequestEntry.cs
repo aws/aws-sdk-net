@@ -116,14 +116,31 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// This parameter applies only to FIFO (first-in-first-out) topics.
         /// </para>
-        ///  
-        /// <para>
-        /// The token used for deduplication of messages within a 5-minute minimum deduplication
-        /// interval. If a message with a particular <c>MessageDeduplicationId</c> is sent successfully,
-        /// subsequent messages with the same <c>MessageDeduplicationId</c> are accepted successfully
-        /// but aren't delivered.
-        /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) topics. The <c>MessageDeduplicationId</c>
+        /// can contain up to 128 alphanumeric characters <c>(a-z, A-Z, 0-9)</c> and punctuation
+        /// <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Every message must have a unique <c>MessageDeduplicationId</c>, which is a token used
+        /// for deduplication of sent messages within the 5 minute minimum deduplication interval.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The scope of deduplication depends on the <c>FifoThroughputScope</c> attribute, when
+        /// set to <c>Topic</c> the message deduplication scope is across the entire topic, when
+        /// set to <c>MessageGroup</c> the message deduplication scope is within each individual
+        /// message group. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a message with a particular <c>MessageDeduplicationId</c> is sent successfully,
+        /// subsequent messages within the deduplication scope and interval, with the same <c>MessageDeduplicationId</c>,
+        /// are accepted successfully but aren't delivered.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// Every message must have a unique <c>MessageDeduplicationId</c>.
         /// </para>
@@ -150,15 +167,16 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// When <c>ContentBasedDeduplication</c> is in effect, messages with identical content
-        /// sent within the deduplication interval are treated as duplicates and only one copy
-        /// of the message is delivered.
+        /// sent within the deduplication scope and interval are treated as duplicates and only
+        /// one copy of the message is delivered.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you send one message with <c>ContentBasedDeduplication</c> enabled, and then another
         /// message with a <c>MessageDeduplicationId</c> that is the same as the one generated
-        /// for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates
-        /// and only one copy of the message is delivered. 
+        /// for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates,
+        /// within the deduplication scope and interval, and only one copy of the message is delivered.
+        /// 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -176,15 +194,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Amazon SNS continues to keep track of the message deduplication ID even after the
         /// message is received and deleted. 
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// The length of <c>MessageDeduplicationId</c> is 128 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>MessageDeduplicationId</c> can contain alphanumeric characters <c>(a-z, A-Z, 0-9)</c>
-        /// and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
-        /// </para>
+        ///  </note>
         /// </summary>
         public string MessageDeduplicationId
         {

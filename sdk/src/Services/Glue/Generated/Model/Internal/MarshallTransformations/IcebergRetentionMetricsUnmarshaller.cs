@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IcebergRetentionMetrics Object
     /// </summary>  
-    public class IcebergRetentionMetricsUnmarshaller : IUnmarshaller<IcebergRetentionMetrics, XmlUnmarshallerContext>, IUnmarshaller<IcebergRetentionMetrics, JsonUnmarshallerContext>
+    public class IcebergRetentionMetricsUnmarshaller : IJsonUnmarshaller<IcebergRetentionMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IcebergRetentionMetrics IUnmarshaller<IcebergRetentionMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IcebergRetentionMetrics Unmarshall(JsonUnmarshallerContext context)
+        public IcebergRetentionMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IcebergRetentionMetrics unmarshalledObject = new IcebergRetentionMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("JobDurationInHour", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.JobDurationInHour = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobDurationInHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDataFilesDeleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDataFilesDeleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfDataFilesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDpus", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDpus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfDpus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfManifestFilesDeleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfManifestFilesDeleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfManifestFilesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfManifestListsDeleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfManifestListsDeleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfManifestListsDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

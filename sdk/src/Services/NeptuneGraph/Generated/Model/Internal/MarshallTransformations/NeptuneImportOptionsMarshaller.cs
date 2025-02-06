@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreserveDefaultVertexLabels())
             {
                 context.Writer.WritePropertyName("preserveDefaultVertexLabels");
-                context.Writer.Write(requestObject.PreserveDefaultVertexLabels.Value);
+                context.Writer.WriteBooleanValue(requestObject.PreserveDefaultVertexLabels.Value);
             }
 
             if(requestObject.IsSetPreserveEdgeIds())
             {
                 context.Writer.WritePropertyName("preserveEdgeIds");
-                context.Writer.Write(requestObject.PreserveEdgeIds.Value);
+                context.Writer.WriteBooleanValue(requestObject.PreserveEdgeIds.Value);
             }
 
             if(requestObject.IsSetS3ExportKmsKeyId())
             {
                 context.Writer.WritePropertyName("s3ExportKmsKeyId");
-                context.Writer.Write(requestObject.S3ExportKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.S3ExportKmsKeyId);
             }
 
             if(requestObject.IsSetS3ExportPath())
             {
                 context.Writer.WritePropertyName("s3ExportPath");
-                context.Writer.Write(requestObject.S3ExportPath);
+                context.Writer.WriteStringValue(requestObject.S3ExportPath);
             }
 
         }

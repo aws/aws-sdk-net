@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoCreateDatabaseUser())
             {
                 context.Writer.WritePropertyName("AutoCreateDatabaseUser");
-                context.Writer.Write(requestObject.AutoCreateDatabaseUser.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoCreateDatabaseUser.Value);
             }
 
             if(requestObject.IsSetDatabaseGroups())
             {
                 context.Writer.WritePropertyName("DatabaseGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDatabaseGroupsListValue in requestObject.DatabaseGroups)
                 {
-                        context.Writer.Write(requestObjectDatabaseGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectDatabaseGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDatabaseUser())
             {
                 context.Writer.WritePropertyName("DatabaseUser");
-                context.Writer.Write(requestObject.DatabaseUser);
+                context.Writer.WriteStringValue(requestObject.DatabaseUser);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

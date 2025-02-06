@@ -156,6 +156,11 @@
     <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.ModifyClusterRequest.HsmType</property>
+    <max>32</max>
+    <pattern>((p|)hsm[0-9][a-z.]*\.[a-zA-Z]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.PutResourcePolicyRequest.Policy</property>
     <min>1</min>
     <max>20000</max>
@@ -311,6 +316,11 @@
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.HsmId</property>
     <pattern>hsm-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Hsm.HsmType</property>
+    <max>32</max>
+    <pattern>((p|)hsm[0-9][a-z.]*\.[a-zA-Z]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.SubnetId</property>

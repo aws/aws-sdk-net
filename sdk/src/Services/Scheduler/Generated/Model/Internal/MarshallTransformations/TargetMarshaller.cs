@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 {
@@ -51,96 +49,96 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetDeadLetterConfig())
             {
                 context.Writer.WritePropertyName("DeadLetterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeadLetterConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeadLetterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEcsParameters())
             {
                 context.Writer.WritePropertyName("EcsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EcsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventBridgeParameters())
             {
                 context.Writer.WritePropertyName("EventBridgeParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventBridgeParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridgeParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("Input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetKinesisParameters())
             {
                 context.Writer.WritePropertyName("KinesisParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryPolicy())
             {
                 context.Writer.WritePropertyName("RetryPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetryPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSageMakerPipelineParameters())
             {
                 context.Writer.WritePropertyName("SageMakerPipelineParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SageMakerPipelineParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SageMakerPipelineParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqsParameters())
             {
                 context.Writer.WritePropertyName("SqsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

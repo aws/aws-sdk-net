@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,83 +49,83 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");
-                context.Writer.Write(requestObject.FromPort.Value);
+                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetIpProtocol())
             {
                 context.Writer.WritePropertyName("IpProtocol");
-                context.Writer.Write(requestObject.IpProtocol);
+                context.Writer.WriteStringValue(requestObject.IpProtocol);
             }
 
             if(requestObject.IsSetIpRanges())
             {
                 context.Writer.WritePropertyName("IpRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpRangesListValue in requestObject.IpRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2SecurityGroupIpRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpv6Ranges())
             {
                 context.Writer.WritePropertyName("Ipv6Ranges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpv6RangesListValue in requestObject.Ipv6Ranges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2SecurityGroupIpv6RangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6RangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrefixListIds())
             {
                 context.Writer.WritePropertyName("PrefixListIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrefixListIdsListValue in requestObject.PrefixListIds)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2SecurityGroupPrefixListIdMarshaller.Instance;
                     marshaller.Marshall(requestObjectPrefixListIdsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("ToPort");
-                context.Writer.Write(requestObject.ToPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
             }
 
             if(requestObject.IsSetUserIdGroupPairs())
             {
                 context.Writer.WritePropertyName("UserIdGroupPairs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserIdGroupPairsListValue in requestObject.UserIdGroupPairs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2SecurityGroupUserIdGroupPairMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserIdGroupPairsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

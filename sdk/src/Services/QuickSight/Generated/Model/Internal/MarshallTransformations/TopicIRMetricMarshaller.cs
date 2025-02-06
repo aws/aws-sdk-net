@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCalculatedFieldReferences())
             {
                 context.Writer.WritePropertyName("CalculatedFieldReferences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCalculatedFieldReferencesListValue in requestObject.CalculatedFieldReferences)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IdentifierMarshaller.Instance;
                     marshaller.Marshall(requestObjectCalculatedFieldReferencesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComparisonMethod())
             {
                 context.Writer.WritePropertyName("ComparisonMethod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicIRComparisonMethodMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComparisonMethod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisplayFormat())
             {
                 context.Writer.WritePropertyName("DisplayFormat");
-                context.Writer.Write(requestObject.DisplayFormat);
+                context.Writer.WriteStringValue(requestObject.DisplayFormat);
             }
 
             if(requestObject.IsSetDisplayFormatOptions())
             {
                 context.Writer.WritePropertyName("DisplayFormatOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DisplayFormatOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayFormatOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("Function");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AggFunctionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Function, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricId())
             {
                 context.Writer.WritePropertyName("MetricId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamedEntity())
             {
                 context.Writer.WritePropertyName("NamedEntity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NamedEntityRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.NamedEntity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOperands())
             {
                 context.Writer.WritePropertyName("Operands");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperandsListValue in requestObject.Operands)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IdentifierMarshaller.Instance;
                     marshaller.Marshall(requestObjectOperandsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

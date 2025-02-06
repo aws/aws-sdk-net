@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSecurityGroup Object
     /// </summary>  
-    public class DBSecurityGroupUnmarshaller : IUnmarshaller<DBSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<DBSecurityGroup, JsonUnmarshallerContext>
+    public class DBSecurityGroupUnmarshaller : IXmlUnmarshaller<DBSecurityGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -116,17 +116,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBSecurityGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBSecurityGroupUnmarshaller _instance = new DBSecurityGroupUnmarshaller();        
 

@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ElasticsearchClusterConfig Object
     /// </summary>  
-    public class ElasticsearchClusterConfigUnmarshaller : IUnmarshaller<ElasticsearchClusterConfig, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchClusterConfig, JsonUnmarshallerContext>
+    public class ElasticsearchClusterConfigUnmarshaller : IJsonUnmarshaller<ElasticsearchClusterConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ElasticsearchClusterConfig IUnmarshaller<ElasticsearchClusterConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ElasticsearchClusterConfig Unmarshall(JsonUnmarshallerContext context)
+        public ElasticsearchClusterConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ElasticsearchClusterConfig unmarshalledObject = new ElasticsearchClusterConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColdStorageOptions", targetDepth))
                 {
                     var unmarshaller = ColdStorageOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColdStorageOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColdStorageOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMasterCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMasterEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMasterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarmCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.WarmCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarmCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarmEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.WarmEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarmEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarmType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WarmType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarmType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZoneAwarenessConfig", targetDepth))
                 {
                     var unmarshaller = ZoneAwarenessConfigUnmarshaller.Instance;
-                    unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZoneAwarenessEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ZoneAwarenessEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZoneAwarenessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

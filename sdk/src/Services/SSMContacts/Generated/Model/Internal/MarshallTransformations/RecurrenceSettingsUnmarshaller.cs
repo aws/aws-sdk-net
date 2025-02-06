@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecurrenceSettings Object
     /// </summary>  
-    public class RecurrenceSettingsUnmarshaller : IUnmarshaller<RecurrenceSettings, XmlUnmarshallerContext>, IUnmarshaller<RecurrenceSettings, JsonUnmarshallerContext>
+    public class RecurrenceSettingsUnmarshaller : IJsonUnmarshaller<RecurrenceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecurrenceSettings IUnmarshaller<RecurrenceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecurrenceSettings Unmarshall(JsonUnmarshallerContext context)
+        public RecurrenceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecurrenceSettings unmarshalledObject = new RecurrenceSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DailySettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HandOffTime, HandOffTimeUnmarshaller>(HandOffTimeUnmarshaller.Instance);
-                    unmarshalledObject.DailySettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HandOffTime, HandOffTimeUnmarshaller>(HandOffTimeUnmarshaller.Instance);
+                    unmarshalledObject.DailySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonthlySettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MonthlySetting, MonthlySettingUnmarshaller>(MonthlySettingUnmarshaller.Instance);
-                    unmarshalledObject.MonthlySettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MonthlySetting, MonthlySettingUnmarshaller>(MonthlySettingUnmarshaller.Instance);
+                    unmarshalledObject.MonthlySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfOnCalls", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfOnCalls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfOnCalls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecurrenceMultiplier", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecurrenceMultiplier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecurrenceMultiplier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ShiftCoverages", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<CoverageTime>, StringUnmarshaller, ListUnmarshaller<CoverageTime, CoverageTimeUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<CoverageTime, CoverageTimeUnmarshaller>(CoverageTimeUnmarshaller.Instance));
-                    unmarshalledObject.ShiftCoverages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<CoverageTime>, StringUnmarshaller, JsonListUnmarshaller<CoverageTime,CoverageTimeUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<CoverageTime, CoverageTimeUnmarshaller>(CoverageTimeUnmarshaller.Instance));
+                    unmarshalledObject.ShiftCoverages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WeeklySettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<WeeklySetting, WeeklySettingUnmarshaller>(WeeklySettingUnmarshaller.Instance);
-                    unmarshalledObject.WeeklySettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<WeeklySetting, WeeklySettingUnmarshaller>(WeeklySettingUnmarshaller.Instance);
+                    unmarshalledObject.WeeklySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceScanInProgressException operation
     /// </summary>  
-    public class ResourceScanInProgressExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceScanInProgressException, XmlUnmarshallerContext>
+    public class ResourceScanInProgressExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceScanInProgressException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

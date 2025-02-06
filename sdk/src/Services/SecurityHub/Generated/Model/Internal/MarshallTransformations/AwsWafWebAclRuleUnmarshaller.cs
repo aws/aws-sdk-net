@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsWafWebAclRule Object
     /// </summary>  
-    public class AwsWafWebAclRuleUnmarshaller : IUnmarshaller<AwsWafWebAclRule, XmlUnmarshallerContext>, IUnmarshaller<AwsWafWebAclRule, JsonUnmarshallerContext>
+    public class AwsWafWebAclRuleUnmarshaller : IJsonUnmarshaller<AwsWafWebAclRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsWafWebAclRule IUnmarshaller<AwsWafWebAclRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsWafWebAclRule Unmarshall(JsonUnmarshallerContext context)
+        public AwsWafWebAclRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsWafWebAclRule unmarshalledObject = new AwsWafWebAclRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = WafActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExcludedRules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<WafExcludedRule, WafExcludedRuleUnmarshaller>(WafExcludedRuleUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<WafExcludedRule, WafExcludedRuleUnmarshaller>(WafExcludedRuleUnmarshaller.Instance);
+                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OverrideAction", targetDepth))
                 {
                     var unmarshaller = WafOverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Priority", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

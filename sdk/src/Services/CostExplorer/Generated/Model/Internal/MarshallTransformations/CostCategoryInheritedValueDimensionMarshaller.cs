@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionKey())
             {
                 context.Writer.WritePropertyName("DimensionKey");
-                context.Writer.Write(requestObject.DimensionKey);
+                context.Writer.WriteStringValue(requestObject.DimensionKey);
             }
 
             if(requestObject.IsSetDimensionName())
             {
                 context.Writer.WritePropertyName("DimensionName");
-                context.Writer.Write(requestObject.DimensionName);
+                context.Writer.WriteStringValue(requestObject.DimensionName);
             }
 
         }

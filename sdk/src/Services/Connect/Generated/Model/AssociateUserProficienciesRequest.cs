@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateUserProficiencies operation.
-    /// &gt;Associates a set of proficiencies with a user.
+    /// Associates a set of proficiencies with a user.
     /// </summary>
     public partial class AssociateUserProficienciesRequest : AmazonConnectRequest
     {

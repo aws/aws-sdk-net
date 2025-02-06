@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,175 +49,175 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDescriptions())
             {
                 context.Writer.WritePropertyName("audioDescriptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioDescriptionsListValue in requestObject.AudioDescriptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioDescriptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAvailBlanking())
             {
                 context.Writer.WritePropertyName("availBlanking");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AvailBlankingMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailBlanking, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAvailConfiguration())
             {
                 context.Writer.WritePropertyName("availConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AvailConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBlackoutSlate())
             {
                 context.Writer.WritePropertyName("blackoutSlate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BlackoutSlateMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlackoutSlate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCaptionDescriptions())
             {
                 context.Writer.WritePropertyName("captionDescriptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionDescriptionsListValue in requestObject.CaptionDescriptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionDescriptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColorCorrectionSettings())
             {
                 context.Writer.WritePropertyName("colorCorrectionSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColorCorrectionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorCorrectionSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFeatureActivations())
             {
                 context.Writer.WritePropertyName("featureActivations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FeatureActivationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FeatureActivations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlobalConfiguration())
             {
                 context.Writer.WritePropertyName("globalConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GlobalConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlobalConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMotionGraphicsConfiguration())
             {
                 context.Writer.WritePropertyName("motionGraphicsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionGraphicsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MotionGraphicsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNielsenConfiguration())
             {
                 context.Writer.WritePropertyName("nielsenConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NielsenConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputGroups())
             {
                 context.Writer.WritePropertyName("outputGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputGroupsListValue in requestObject.OutputGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OutputGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThumbnailConfiguration())
             {
                 context.Writer.WritePropertyName("thumbnailConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThumbnailConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThumbnailConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimecodeConfig())
             {
                 context.Writer.WritePropertyName("timecodeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimecodeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimecodeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoDescriptions())
             {
                 context.Writer.WritePropertyName("videoDescriptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVideoDescriptionsListValue in requestObject.VideoDescriptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VideoDescriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectVideoDescriptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

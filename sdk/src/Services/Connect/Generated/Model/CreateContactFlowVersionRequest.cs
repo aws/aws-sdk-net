@@ -32,15 +32,14 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the CreateContactFlowVersion operation.
     /// Publishes a new version of the flow provided. Versions are immutable and monotonically
-    /// increasing. If a version of the same flow content already exists, no new version is
-    /// created and instead the existing version number is returned. If the <c>FlowContentSha256</c>
-    /// provided is different from the <c>FlowContentSha256</c> of the <c>$LATEST</c> published
-    /// flow content, then an error is returned. This API only supports creating versions
-    /// for flows of type <c>Campaign</c>.
+    /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+    /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+    /// only supports creating versions for flows of type <c>Campaign</c>.
     /// </summary>
     public partial class CreateContactFlowVersionRequest : AmazonConnectRequest
     {
         private string _contactFlowId;
+        private long? _contactFlowVersion;
         private string _description;
         private string _flowContentSha256;
         private string _instanceId;
@@ -64,6 +63,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactFlowId()
         {
             return this._contactFlowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactFlowVersion. 
+        /// <para>
+        /// The identifier of the flow version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? ContactFlowVersion
+        {
+            get { return this._contactFlowVersion; }
+            set { this._contactFlowVersion = value; }
+        }
+
+        // Check to see if ContactFlowVersion property is set
+        internal bool IsSetContactFlowVersion()
+        {
+            return this._contactFlowVersion.HasValue; 
         }
 
         /// <summary>

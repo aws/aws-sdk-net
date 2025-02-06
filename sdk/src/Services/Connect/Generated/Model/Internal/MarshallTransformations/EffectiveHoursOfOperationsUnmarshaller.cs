@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EffectiveHoursOfOperations Object
     /// </summary>  
-    public class EffectiveHoursOfOperationsUnmarshaller : IUnmarshaller<EffectiveHoursOfOperations, XmlUnmarshallerContext>, IUnmarshaller<EffectiveHoursOfOperations, JsonUnmarshallerContext>
+    public class EffectiveHoursOfOperationsUnmarshaller : IJsonUnmarshaller<EffectiveHoursOfOperations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EffectiveHoursOfOperations IUnmarshaller<EffectiveHoursOfOperations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EffectiveHoursOfOperations Unmarshall(JsonUnmarshallerContext context)
+        public EffectiveHoursOfOperations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EffectiveHoursOfOperations unmarshalledObject = new EffectiveHoursOfOperations();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Date", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Date = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OperationalHours", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OperationalHour, OperationalHourUnmarshaller>(OperationalHourUnmarshaller.Instance);
-                    unmarshalledObject.OperationalHours = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OperationalHour, OperationalHourUnmarshaller>(OperationalHourUnmarshaller.Instance);
+                    unmarshalledObject.OperationalHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

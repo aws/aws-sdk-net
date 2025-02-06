@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             if(requestObject.IsSetDataAutomationArn())
             {
                 context.Writer.WritePropertyName("dataAutomationArn");
-                context.Writer.Write(requestObject.DataAutomationArn);
+                context.Writer.WriteStringValue(requestObject.DataAutomationArn);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
         }

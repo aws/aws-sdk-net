@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("Aggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAggregationKvp in requestObject.Aggregation)
                 {
                     context.Writer.WritePropertyName(requestObjectAggregationKvp.Key);
                     var requestObjectAggregationValue = requestObjectAggregationKvp.Value;
 
-                        context.Writer.Write(requestObjectAggregationValue);
+                        context.Writer.WriteStringValue(requestObjectAggregationValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilling())
             {
                 context.Writer.WritePropertyName("Filling");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFillingKvp in requestObject.Filling)
                 {
                     context.Writer.WritePropertyName(requestObjectFillingKvp.Key);
                     var requestObjectFillingValue = requestObjectFillingKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectFillingValueKvp in requestObjectFillingValue)
                     {
                         context.Writer.WritePropertyName(requestObjectFillingValueKvp.Key);
                         var requestObjectFillingValueValue = requestObjectFillingValueKvp.Value;
 
-                            context.Writer.Write(requestObjectFillingValueValue);
+                            context.Writer.WriteStringValue(requestObjectFillingValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,132 +49,132 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchiveRule())
             {
                 context.Writer.WritePropertyName("ArchiveRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArchiveRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArchiveRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetCreateRule())
             {
                 context.Writer.WritePropertyName("CreateRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrossRegionCopyRules())
             {
                 context.Writer.WritePropertyName("CrossRegionCopyRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCrossRegionCopyRulesListValue in requestObject.CrossRegionCopyRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CrossRegionCopyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectCrossRegionCopyRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeprecateRule())
             {
                 context.Writer.WritePropertyName("DeprecateRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeprecateRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeprecateRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFastRestoreRule())
             {
                 context.Writer.WritePropertyName("FastRestoreRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FastRestoreRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.FastRestoreRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRetainRule())
             {
                 context.Writer.WritePropertyName("RetainRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetainRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetainRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetShareRules())
             {
                 context.Writer.WritePropertyName("ShareRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectShareRulesListValue in requestObject.ShareRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ShareRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectShareRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTagsToAdd())
             {
                 context.Writer.WritePropertyName("TagsToAdd");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsToAddListValue in requestObject.TagsToAdd)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsToAddListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVariableTags())
             {
                 context.Writer.WritePropertyName("VariableTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVariableTagsListValue in requestObject.VariableTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectVariableTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("RegionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetReplicaGlobalSecondaryIndexUpdates())
             {
                 context.Writer.WritePropertyName("ReplicaGlobalSecondaryIndexUpdates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReplicaGlobalSecondaryIndexUpdatesListValue in requestObject.ReplicaGlobalSecondaryIndexUpdates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ReplicaGlobalSecondaryIndexAutoScalingUpdateMarshaller.Instance;
                     marshaller.Marshall(requestObjectReplicaGlobalSecondaryIndexUpdatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReplicaProvisionedReadCapacityAutoScalingUpdate())
             {
                 context.Writer.WritePropertyName("ReplicaProvisionedReadCapacityAutoScalingUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplicaProvisionedReadCapacityAutoScalingUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

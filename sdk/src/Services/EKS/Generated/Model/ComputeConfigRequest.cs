@@ -32,7 +32,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Request to update the configuration of the compute capability of your EKS Auto Mode
     /// cluster. For example, enable the capability. For more information, see EKS Auto Mode
-    /// compute capability in the EKS User Guide.
+    /// compute capability in the <i>Amazon EKS User Guide</i>.
     /// </summary>
     public partial class ComputeConfigRequest
     {
@@ -64,7 +64,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property NodePools. 
         /// <para>
         /// Configuration for node pools that defines the compute resources for your EKS Auto
-        /// Mode cluster. For more information, see EKS Auto Mode Node Pools in the EKS User Guide.
+        /// Mode cluster. For more information, see EKS Auto Mode Node Pools in the <i>Amazon
+        /// EKS User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NodePools
@@ -84,7 +85,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The ARN of the IAM Role EKS will assign to EC2 Managed Instances in your EKS Auto
         /// Mode cluster. This value cannot be changed after the compute capability of EKS Auto
-        /// Mode is enabled. For more information, see the IAM Reference in the EKS User Guide.
+        /// Mode is enabled. For more information, see the IAM Reference in the <i>Amazon EKS
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string NodeRoleArn

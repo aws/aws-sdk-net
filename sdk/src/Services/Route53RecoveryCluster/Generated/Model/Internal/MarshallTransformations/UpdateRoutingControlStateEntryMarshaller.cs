@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoutingControlArn())
             {
                 context.Writer.WritePropertyName("RoutingControlArn");
-                context.Writer.Write(requestObject.RoutingControlArn);
+                context.Writer.WriteStringValue(requestObject.RoutingControlArn);
             }
 
             if(requestObject.IsSetRoutingControlState())
             {
                 context.Writer.WritePropertyName("RoutingControlState");
-                context.Writer.Write(requestObject.RoutingControlState);
+                context.Writer.WriteStringValue(requestObject.RoutingControlState);
             }
 
         }

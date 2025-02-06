@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldToMatch())
             {
                 context.Writer.WritePropertyName("FieldToMatch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldToMatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldToMatch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegexPatternSetId())
             {
                 context.Writer.WritePropertyName("RegexPatternSetId");
-                context.Writer.Write(requestObject.RegexPatternSetId);
+                context.Writer.WriteStringValue(requestObject.RegexPatternSetId);
             }
 
             if(requestObject.IsSetTextTransformation())
             {
                 context.Writer.WritePropertyName("TextTransformation");
-                context.Writer.Write(requestObject.TextTransformation);
+                context.Writer.WriteStringValue(requestObject.TextTransformation);
             }
 
         }

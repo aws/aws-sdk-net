@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataAttributes())
             {
                 context.Writer.WritePropertyName("DataAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HumanLoopDataAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFlowDefinitionArn())
             {
                 context.Writer.WritePropertyName("FlowDefinitionArn");
-                context.Writer.Write(requestObject.FlowDefinitionArn);
+                context.Writer.WriteStringValue(requestObject.FlowDefinitionArn);
             }
 
             if(requestObject.IsSetHumanLoopName())
             {
                 context.Writer.WritePropertyName("HumanLoopName");
-                context.Writer.Write(requestObject.HumanLoopName);
+                context.Writer.WriteStringValue(requestObject.HumanLoopName);
             }
 
         }

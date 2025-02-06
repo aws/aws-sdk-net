@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeywordInputType())
             {
                 context.Writer.WritePropertyName("keywordInputType");
-                context.Writer.Write(requestObject.KeywordInputType);
+                context.Writer.WriteStringValue(requestObject.KeywordInputType);
             }
 
             if(requestObject.IsSetKeywordValue())
             {
                 context.Writer.WritePropertyName("keywordValue");
-                context.Writer.Write(requestObject.KeywordValue);
+                context.Writer.WriteStringValue(requestObject.KeywordValue);
             }
 
         }

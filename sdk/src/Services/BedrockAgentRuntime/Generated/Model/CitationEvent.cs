@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
@@ -40,6 +41,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         : IEventStreamEvent
     {
         private Citation _citation;
+        private GeneratedResponsePart _generatedResponsePart;
+        private List<RetrievedReference> _retrievedReferences = AWSConfigs.InitializeCollections ? new List<RetrievedReference>() : null;
 
         /// <summary>
         /// Gets and sets the property Citation. 
@@ -47,6 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The citation.
         /// </para>
         /// </summary>
+        [Obsolete("Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.")]
         public Citation Citation
         {
             get { return this._citation; }
@@ -57,6 +61,42 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetCitation()
         {
             return this._citation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeneratedResponsePart. 
+        /// <para>
+        /// The generated response to the citation event.
+        /// </para>
+        /// </summary>
+        public GeneratedResponsePart GeneratedResponsePart
+        {
+            get { return this._generatedResponsePart; }
+            set { this._generatedResponsePart = value; }
+        }
+
+        // Check to see if GeneratedResponsePart property is set
+        internal bool IsSetGeneratedResponsePart()
+        {
+            return this._generatedResponsePart != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrievedReferences. 
+        /// <para>
+        /// The retrieved references of the citation event.
+        /// </para>
+        /// </summary>
+        public List<RetrievedReference> RetrievedReferences
+        {
+            get { return this._retrievedReferences; }
+            set { this._retrievedReferences = value; }
+        }
+
+        // Check to see if RetrievedReferences property is set
+        internal bool IsSetRetrievedReferences()
+        {
+            return this._retrievedReferences != null && (this._retrievedReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

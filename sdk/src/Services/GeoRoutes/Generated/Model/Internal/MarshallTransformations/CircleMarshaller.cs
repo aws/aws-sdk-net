@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCenter())
             {
                 context.Writer.WritePropertyName("Center");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCenterListValue in requestObject.Center)
                 {
-                        context.Writer.Write(requestObjectCenterListValue);
+                        context.Writer.WriteNumberValue(requestObjectCenterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRadius())
@@ -64,11 +62,11 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Radius");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Radius.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Radius.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Radius.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Radius.Value);
+                    context.Writer.WriteNumberValue(requestObject.Radius.Value);
                 }
             }
 

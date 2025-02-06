@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReferenceSets())
             {
                 context.Writer.WritePropertyName("ReferenceSets");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReferenceSetsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReferenceSets, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRulesSource())
             {
                 context.Writer.WritePropertyName("RulesSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RulesSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.RulesSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleVariables())
             {
                 context.Writer.WritePropertyName("RuleVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleVariablesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleVariables, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatefulRuleOptions())
             {
                 context.Writer.WritePropertyName("StatefulRuleOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatefulRuleOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatefulRuleOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

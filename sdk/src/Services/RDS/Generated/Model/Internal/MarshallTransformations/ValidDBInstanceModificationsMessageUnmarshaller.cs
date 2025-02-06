@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ValidDBInstanceModificationsMessage Object
     /// </summary>  
-    public class ValidDBInstanceModificationsMessageUnmarshaller : IUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidDBInstanceModificationsMessage, JsonUnmarshallerContext>
+    public class ValidDBInstanceModificationsMessageUnmarshaller : IXmlUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ValidDBInstanceModificationsMessageUnmarshaller _instance = new ValidDBInstanceModificationsMessageUnmarshaller();        
 

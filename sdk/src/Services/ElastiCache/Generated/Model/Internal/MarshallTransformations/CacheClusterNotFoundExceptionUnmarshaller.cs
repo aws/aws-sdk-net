@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheClusterNotFoundException operation
     /// </summary>  
-    public class CacheClusterNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CacheClusterNotFoundException, XmlUnmarshallerContext>
+    public class CacheClusterNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CacheClusterNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

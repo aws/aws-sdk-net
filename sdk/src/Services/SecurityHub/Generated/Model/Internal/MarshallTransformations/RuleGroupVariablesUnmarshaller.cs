@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleGroupVariables Object
     /// </summary>  
-    public class RuleGroupVariablesUnmarshaller : IUnmarshaller<RuleGroupVariables, XmlUnmarshallerContext>, IUnmarshaller<RuleGroupVariables, JsonUnmarshallerContext>
+    public class RuleGroupVariablesUnmarshaller : IJsonUnmarshaller<RuleGroupVariables, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuleGroupVariables IUnmarshaller<RuleGroupVariables, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleGroupVariables Unmarshall(JsonUnmarshallerContext context)
+        public RuleGroupVariables Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuleGroupVariables unmarshalledObject = new RuleGroupVariables();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IpSets", targetDepth))
                 {
                     var unmarshaller = RuleGroupVariablesIpSetsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.IpSets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PortSets", targetDepth))
                 {
                     var unmarshaller = RuleGroupVariablesPortSetsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.PortSets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

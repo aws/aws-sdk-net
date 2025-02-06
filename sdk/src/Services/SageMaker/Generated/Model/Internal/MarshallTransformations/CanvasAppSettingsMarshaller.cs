@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectDeploySettings())
             {
                 context.Writer.WritePropertyName("DirectDeploySettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DirectDeploySettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DirectDeploySettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmrServerlessSettings())
             {
                 context.Writer.WritePropertyName("EmrServerlessSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmrServerlessSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmrServerlessSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGenerativeAiSettings())
             {
                 context.Writer.WritePropertyName("GenerativeAiSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GenerativeAiSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenerativeAiSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdentityProviderOAuthSettings())
             {
                 context.Writer.WritePropertyName("IdentityProviderOAuthSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIdentityProviderOAuthSettingsListValue in requestObject.IdentityProviderOAuthSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IdentityProviderOAuthSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectIdentityProviderOAuthSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKendraSettings())
             {
                 context.Writer.WritePropertyName("KendraSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KendraSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KendraSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelRegisterSettings())
             {
                 context.Writer.WritePropertyName("ModelRegisterSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelRegisterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelRegisterSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeSeriesForecastingSettings())
             {
                 context.Writer.WritePropertyName("TimeSeriesForecastingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSeriesForecastingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeSeriesForecastingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkspaceSettings())
             {
                 context.Writer.WritePropertyName("WorkspaceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WorkspaceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WorkspaceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputRectangle())
             {
                 context.Writer.WritePropertyName("outputRectangle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptionRectangleMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputRectangle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPageNumber())
             {
                 context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.WriteStringValue(requestObject.PageNumber);
             }
 
         }

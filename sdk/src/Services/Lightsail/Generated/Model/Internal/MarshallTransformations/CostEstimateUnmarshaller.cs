@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CostEstimate Object
     /// </summary>  
-    public class CostEstimateUnmarshaller : IUnmarshaller<CostEstimate, XmlUnmarshallerContext>, IUnmarshaller<CostEstimate, JsonUnmarshallerContext>
+    public class CostEstimateUnmarshaller : IJsonUnmarshaller<CostEstimate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CostEstimate IUnmarshaller<CostEstimate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CostEstimate Unmarshall(JsonUnmarshallerContext context)
+        public CostEstimate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CostEstimate unmarshalledObject = new CostEstimate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("resultsByTime", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EstimateByTime, EstimateByTimeUnmarshaller>(EstimateByTimeUnmarshaller.Instance);
-                    unmarshalledObject.ResultsByTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EstimateByTime, EstimateByTimeUnmarshaller>(EstimateByTimeUnmarshaller.Instance);
+                    unmarshalledObject.ResultsByTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

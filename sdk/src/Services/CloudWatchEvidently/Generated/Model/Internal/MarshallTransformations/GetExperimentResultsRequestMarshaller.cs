@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -67,87 +70,92 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/experiments/{experiment}/results";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBaseStat())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBaseStat())
-                    {
-                        context.Writer.WritePropertyName("baseStat");
-                        context.Writer.Write(publicRequest.BaseStat);
-                    }
-
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetMetricNames())
-                    {
-                        context.Writer.WritePropertyName("metricNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetricNamesListValue in publicRequest.MetricNames)
-                        {
-                                context.Writer.Write(publicRequestMetricNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPeriod())
-                    {
-                        context.Writer.WritePropertyName("period");
-                        context.Writer.Write(publicRequest.Period.Value);
-                    }
-
-                    if(publicRequest.IsSetReportNames())
-                    {
-                        context.Writer.WritePropertyName("reportNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReportNamesListValue in publicRequest.ReportNames)
-                        {
-                                context.Writer.Write(publicRequestReportNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResultStats())
-                    {
-                        context.Writer.WritePropertyName("resultStats");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResultStatsListValue in publicRequest.ResultStats)
-                        {
-                                context.Writer.Write(publicRequestResultStatsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetTreatmentNames())
-                    {
-                        context.Writer.WritePropertyName("treatmentNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTreatmentNamesListValue in publicRequest.TreatmentNames)
-                        {
-                                context.Writer.Write(publicRequestTreatmentNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("baseStat");
+                context.Writer.WriteStringValue(publicRequest.BaseStat);
             }
+
+            if(publicRequest.IsSetEndTime())
+            {
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
+            }
+
+            if(publicRequest.IsSetMetricNames())
+            {
+                context.Writer.WritePropertyName("metricNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricNamesListValue in publicRequest.MetricNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestMetricNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPeriod())
+            {
+                context.Writer.WritePropertyName("period");
+                context.Writer.WriteNumberValue(publicRequest.Period.Value);
+            }
+
+            if(publicRequest.IsSetReportNames())
+            {
+                context.Writer.WritePropertyName("reportNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReportNamesListValue in publicRequest.ReportNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestReportNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResultStats())
+            {
+                context.Writer.WritePropertyName("resultStats");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResultStatsListValue in publicRequest.ResultStats)
+                {
+                        context.Writer.WriteStringValue(publicRequestResultStatsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            if(publicRequest.IsSetTreatmentNames())
+            {
+                context.Writer.WritePropertyName("treatmentNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTreatmentNamesListValue in publicRequest.TreatmentNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestTreatmentNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PartnerNotFoundException operation
     /// </summary>  
-    public class PartnerNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<PartnerNotFoundException, XmlUnmarshallerContext>
+    public class PartnerNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PartnerNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

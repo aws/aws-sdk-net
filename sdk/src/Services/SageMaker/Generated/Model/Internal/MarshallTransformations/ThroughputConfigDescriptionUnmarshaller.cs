@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThroughputConfigDescription Object
     /// </summary>  
-    public class ThroughputConfigDescriptionUnmarshaller : IUnmarshaller<ThroughputConfigDescription, XmlUnmarshallerContext>, IUnmarshaller<ThroughputConfigDescription, JsonUnmarshallerContext>
+    public class ThroughputConfigDescriptionUnmarshaller : IJsonUnmarshaller<ThroughputConfigDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThroughputConfigDescription IUnmarshaller<ThroughputConfigDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThroughputConfigDescription Unmarshall(JsonUnmarshallerContext context)
+        public ThroughputConfigDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThroughputConfigDescription unmarshalledObject = new ThroughputConfigDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

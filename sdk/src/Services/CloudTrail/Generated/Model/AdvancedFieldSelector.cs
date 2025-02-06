@@ -94,8 +94,15 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>
-        /// in the <i>CloudTrailUser Guide</i>.
+        /// in the <i>CloudTrail API Reference</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Selectors don't support the use of wildcards like <c>*</c> . To match multiple values
+        /// with a single condition, you may use <c>StartsWith</c>, <c>EndsWith</c>, <c>NotStartsWith</c>,
+        /// or <c>NotEndsWith</c> to explicitly match the beginning or end of the event field.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Field

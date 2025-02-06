@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsCognitoIdentityPoolId())
             {
                 context.Writer.WritePropertyName("aws_cognito_identity_pool_id");
-                context.Writer.Write(requestObject.AwsCognitoIdentityPoolId);
+                context.Writer.WriteStringValue(requestObject.AwsCognitoIdentityPoolId);
             }
 
             if(requestObject.IsSetAwsCognitoRegion())
             {
                 context.Writer.WritePropertyName("aws_cognito_region");
-                context.Writer.Write(requestObject.AwsCognitoRegion);
+                context.Writer.WriteStringValue(requestObject.AwsCognitoRegion);
             }
 
             if(requestObject.IsSetAwsUserPoolsId())
             {
                 context.Writer.WritePropertyName("aws_user_pools_id");
-                context.Writer.Write(requestObject.AwsUserPoolsId);
+                context.Writer.WriteStringValue(requestObject.AwsUserPoolsId);
             }
 
             if(requestObject.IsSetAwsUserPoolsWebClientId())
             {
                 context.Writer.WritePropertyName("aws_user_pools_web_client_id");
-                context.Writer.Write(requestObject.AwsUserPoolsWebClientId);
+                context.Writer.WriteStringValue(requestObject.AwsUserPoolsWebClientId);
             }
 
         }

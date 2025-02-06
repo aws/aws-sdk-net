@@ -29,42 +29,32 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IteratorFlowNodeConfiguration Object
     /// </summary>  
-    public class IteratorFlowNodeConfigurationUnmarshaller : IUnmarshaller<IteratorFlowNodeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<IteratorFlowNodeConfiguration, JsonUnmarshallerContext>
+    public class IteratorFlowNodeConfigurationUnmarshaller : IJsonUnmarshaller<IteratorFlowNodeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IteratorFlowNodeConfiguration IUnmarshaller<IteratorFlowNodeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IteratorFlowNodeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public IteratorFlowNodeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IteratorFlowNodeConfiguration unmarshalledObject = new IteratorFlowNodeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
             }
             return unmarshalledObject;

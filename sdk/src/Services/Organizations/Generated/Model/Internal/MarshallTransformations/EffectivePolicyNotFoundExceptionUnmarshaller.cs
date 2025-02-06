@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EffectivePolicyNotFoundException Object
     /// </summary>  
-    public class EffectivePolicyNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<EffectivePolicyNotFoundException, JsonUnmarshallerContext>
+    public class EffectivePolicyNotFoundExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<EffectivePolicyNotFoundException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public EffectivePolicyNotFoundException Unmarshall(JsonUnmarshallerContext context)
+        public EffectivePolicyNotFoundException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,17 +55,24 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public EffectivePolicyNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public EffectivePolicyNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             EffectivePolicyNotFoundException unmarshalledObject = new EffectivePolicyNotFoundException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                }
             }
           
             return unmarshalledObject;

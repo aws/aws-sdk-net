@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RepositoryAggregationResponse Object
     /// </summary>  
-    public class RepositoryAggregationResponseUnmarshaller : IUnmarshaller<RepositoryAggregationResponse, XmlUnmarshallerContext>, IUnmarshaller<RepositoryAggregationResponse, JsonUnmarshallerContext>
+    public class RepositoryAggregationResponseUnmarshaller : IJsonUnmarshaller<RepositoryAggregationResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RepositoryAggregationResponse IUnmarshaller<RepositoryAggregationResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RepositoryAggregationResponse Unmarshall(JsonUnmarshallerContext context)
+        public RepositoryAggregationResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RepositoryAggregationResponse unmarshalledObject = new RepositoryAggregationResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("affectedImages", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AffectedImages = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AffectedImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repository", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Repository = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Repository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("severityCounts", targetDepth))
                 {
                     var unmarshaller = SeverityCountsUnmarshaller.Instance;
-                    unmarshalledObject.SeverityCounts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SeverityCounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

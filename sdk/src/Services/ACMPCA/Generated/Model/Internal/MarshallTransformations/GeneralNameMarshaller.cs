@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectoryName())
             {
                 context.Writer.WritePropertyName("DirectoryName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ASN1SubjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.DirectoryName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDnsName())
             {
                 context.Writer.WritePropertyName("DnsName");
-                context.Writer.Write(requestObject.DnsName);
+                context.Writer.WriteStringValue(requestObject.DnsName);
             }
 
             if(requestObject.IsSetEdiPartyName())
             {
                 context.Writer.WritePropertyName("EdiPartyName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EdiPartyNameMarshaller.Instance;
                 marshaller.Marshall(requestObject.EdiPartyName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("IpAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetOtherName())
             {
                 context.Writer.WritePropertyName("OtherName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OtherNameMarshaller.Instance;
                 marshaller.Marshall(requestObject.OtherName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegisteredId())
             {
                 context.Writer.WritePropertyName("RegisteredId");
-                context.Writer.Write(requestObject.RegisteredId);
+                context.Writer.WriteStringValue(requestObject.RegisteredId);
             }
 
             if(requestObject.IsSetRfc822Name())
             {
                 context.Writer.WritePropertyName("Rfc822Name");
-                context.Writer.Write(requestObject.Rfc822Name);
+                context.Writer.WriteStringValue(requestObject.Rfc822Name);
             }
 
             if(requestObject.IsSetUniformResourceIdentifier())
             {
                 context.Writer.WritePropertyName("UniformResourceIdentifier");
-                context.Writer.Write(requestObject.UniformResourceIdentifier);
+                context.Writer.WriteStringValue(requestObject.UniformResourceIdentifier);
             }
 
         }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options related to the origin.
+    /// Origin related options.
     /// </summary>
     public partial class WaypointOptimizationOriginOptions
     {

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,62 +66,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActionName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActionName())
-                    {
-                        context.Writer.WritePropertyName("ActionName");
-                        context.Writer.Write(publicRequest.ActionName);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetProperties())
-                    {
-                        context.Writer.WritePropertyName("Properties");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
-                            var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
-
-                                context.Writer.Write(publicRequestPropertiesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPropertiesToRemove())
-                    {
-                        context.Writer.WritePropertyName("PropertiesToRemove");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPropertiesToRemoveListValue in publicRequest.PropertiesToRemove)
-                        {
-                                context.Writer.Write(publicRequestPropertiesToRemoveListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ActionName");
+                context.Writer.WriteStringValue(publicRequest.ActionName);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetProperties())
+            {
+                context.Writer.WritePropertyName("Properties");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                {
+                    context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
+                    var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPropertiesToRemove())
+            {
+                context.Writer.WritePropertyName("PropertiesToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPropertiesToRemoveListValue in publicRequest.PropertiesToRemove)
+                {
+                        context.Writer.WriteStringValue(publicRequestPropertiesToRemoveListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

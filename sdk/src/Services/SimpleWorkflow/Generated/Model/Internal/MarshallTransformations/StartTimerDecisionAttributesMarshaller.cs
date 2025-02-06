@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetControl())
             {
                 context.Writer.WritePropertyName("control");
-                context.Writer.Write(requestObject.Control);
+                context.Writer.WriteStringValue(requestObject.Control);
             }
 
             if(requestObject.IsSetStartToFireTimeout())
             {
                 context.Writer.WritePropertyName("startToFireTimeout");
-                context.Writer.Write(requestObject.StartToFireTimeout);
+                context.Writer.WriteStringValue(requestObject.StartToFireTimeout);
             }
 
             if(requestObject.IsSetTimerId())
             {
                 context.Writer.WritePropertyName("timerId");
-                context.Writer.Write(requestObject.TimerId);
+                context.Writer.WriteStringValue(requestObject.TimerId);
             }
 
         }

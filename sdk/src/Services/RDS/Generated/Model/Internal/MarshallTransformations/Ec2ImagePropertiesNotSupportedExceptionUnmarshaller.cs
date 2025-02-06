@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ec2ImagePropertiesNotSupportedException operation
     /// </summary>  
-    public class Ec2ImagePropertiesNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<Ec2ImagePropertiesNotSupportedException, XmlUnmarshallerContext>
+    public class Ec2ImagePropertiesNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<Ec2ImagePropertiesNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

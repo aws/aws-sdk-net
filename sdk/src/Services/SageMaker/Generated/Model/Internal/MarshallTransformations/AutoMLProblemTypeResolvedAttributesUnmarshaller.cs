@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoMLProblemTypeResolvedAttributes Object
     /// </summary>  
-    public class AutoMLProblemTypeResolvedAttributesUnmarshaller : IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeResolvedAttributes, JsonUnmarshallerContext>
+    public class AutoMLProblemTypeResolvedAttributesUnmarshaller : IJsonUnmarshaller<AutoMLProblemTypeResolvedAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoMLProblemTypeResolvedAttributes IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoMLProblemTypeResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLProblemTypeResolvedAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoMLProblemTypeResolvedAttributes unmarshalledObject = new AutoMLProblemTypeResolvedAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TabularResolvedAttributes", targetDepth))
                 {
                     var unmarshaller = TabularResolvedAttributesUnmarshaller.Instance;
-                    unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextGenerationResolvedAttributes", targetDepth))
                 {
                     var unmarshaller = TextGenerationResolvedAttributesUnmarshaller.Instance;
-                    unmarshalledObject.TextGenerationResolvedAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextGenerationResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

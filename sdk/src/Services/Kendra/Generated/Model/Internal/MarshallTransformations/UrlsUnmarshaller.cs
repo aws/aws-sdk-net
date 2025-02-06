@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Urls Object
     /// </summary>  
-    public class UrlsUnmarshaller : IUnmarshaller<Urls, XmlUnmarshallerContext>, IUnmarshaller<Urls, JsonUnmarshallerContext>
+    public class UrlsUnmarshaller : IJsonUnmarshaller<Urls, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Urls IUnmarshaller<Urls, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Urls Unmarshall(JsonUnmarshallerContext context)
+        public Urls Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Urls unmarshalledObject = new Urls();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SeedUrlConfiguration", targetDepth))
                 {
                     var unmarshaller = SeedUrlConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SeedUrlConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SeedUrlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SiteMapsConfiguration", targetDepth))
                 {
                     var unmarshaller = SiteMapsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SiteMapsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SiteMapsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

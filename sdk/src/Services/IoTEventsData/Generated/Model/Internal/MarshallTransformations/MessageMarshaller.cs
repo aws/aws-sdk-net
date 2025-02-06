@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputName())
             {
                 context.Writer.WritePropertyName("inputName");
-                context.Writer.Write(requestObject.InputName);
+                context.Writer.WriteStringValue(requestObject.InputName);
             }
 
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("messageId");
-                context.Writer.Write(requestObject.MessageId);
+                context.Writer.WriteStringValue(requestObject.MessageId);
             }
 
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Payload));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Payload));
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestampValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Timestamp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

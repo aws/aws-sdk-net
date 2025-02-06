@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSubscriptionStateException operation
     /// </summary>  
-    public class InvalidSubscriptionStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSubscriptionStateException, XmlUnmarshallerContext>
+    public class InvalidSubscriptionStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSubscriptionStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

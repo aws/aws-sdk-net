@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAll())
             {
                 context.Writer.WritePropertyName("All");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AllMarshaller.Instance;
                 marshaller.Marshall(requestObject.All, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExcludedCookies())
             {
                 context.Writer.WritePropertyName("ExcludedCookies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedCookiesListValue in requestObject.ExcludedCookies)
                 {
-                        context.Writer.Write(requestObjectExcludedCookiesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedCookiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludedCookies())
             {
                 context.Writer.WritePropertyName("IncludedCookies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludedCookiesListValue in requestObject.IncludedCookies)
                 {
-                        context.Writer.Write(requestObjectIncludedCookiesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludedCookiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

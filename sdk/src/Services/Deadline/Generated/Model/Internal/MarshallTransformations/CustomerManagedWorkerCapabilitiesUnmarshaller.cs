@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerManagedWorkerCapabilities Object
     /// </summary>  
-    public class CustomerManagedWorkerCapabilitiesUnmarshaller : IUnmarshaller<CustomerManagedWorkerCapabilities, XmlUnmarshallerContext>, IUnmarshaller<CustomerManagedWorkerCapabilities, JsonUnmarshallerContext>
+    public class CustomerManagedWorkerCapabilitiesUnmarshaller : IJsonUnmarshaller<CustomerManagedWorkerCapabilities, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerManagedWorkerCapabilities IUnmarshaller<CustomerManagedWorkerCapabilities, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerManagedWorkerCapabilities Unmarshall(JsonUnmarshallerContext context)
+        public CustomerManagedWorkerCapabilities Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerManagedWorkerCapabilities unmarshalledObject = new CustomerManagedWorkerCapabilities();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("acceleratorCount", targetDepth))
                 {
                     var unmarshaller = AcceleratorCountRangeUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcceleratorCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("acceleratorTotalMemoryMiB", targetDepth))
                 {
                     var unmarshaller = AcceleratorTotalMemoryMiBRangeUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorTotalMemoryMiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcceleratorTotalMemoryMiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("acceleratorTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AcceleratorTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AcceleratorTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cpuArchitectureType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CpuArchitectureType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuArchitectureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customAmounts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FleetAmountCapability, FleetAmountCapabilityUnmarshaller>(FleetAmountCapabilityUnmarshaller.Instance);
-                    unmarshalledObject.CustomAmounts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FleetAmountCapability, FleetAmountCapabilityUnmarshaller>(FleetAmountCapabilityUnmarshaller.Instance);
+                    unmarshalledObject.CustomAmounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FleetAttributeCapability, FleetAttributeCapabilityUnmarshaller>(FleetAttributeCapabilityUnmarshaller.Instance);
-                    unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FleetAttributeCapability, FleetAttributeCapabilityUnmarshaller>(FleetAttributeCapabilityUnmarshaller.Instance);
+                    unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memoryMiB", targetDepth))
                 {
                     var unmarshaller = MemoryMiBRangeUnmarshaller.Instance;
-                    unmarshalledObject.MemoryMiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemoryMiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("osFamily", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OsFamily = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OsFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vCpuCount", targetDepth))
                 {
                     var unmarshaller = VCpuCountRangeUnmarshaller.Instance;
-                    unmarshalledObject.VCpuCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VCpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

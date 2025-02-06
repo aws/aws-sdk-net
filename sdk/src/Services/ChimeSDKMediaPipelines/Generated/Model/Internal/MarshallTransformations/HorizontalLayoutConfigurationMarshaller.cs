@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTileAspectRatio())
             {
                 context.Writer.WritePropertyName("TileAspectRatio");
-                context.Writer.Write(requestObject.TileAspectRatio);
+                context.Writer.WriteStringValue(requestObject.TileAspectRatio);
             }
 
             if(requestObject.IsSetTileCount())
             {
                 context.Writer.WritePropertyName("TileCount");
-                context.Writer.Write(requestObject.TileCount.Value);
+                context.Writer.WriteNumberValue(requestObject.TileCount.Value);
             }
 
             if(requestObject.IsSetTileOrder())
             {
                 context.Writer.WritePropertyName("TileOrder");
-                context.Writer.Write(requestObject.TileOrder);
+                context.Writer.WriteStringValue(requestObject.TileOrder);
             }
 
             if(requestObject.IsSetTilePosition())
             {
                 context.Writer.WritePropertyName("TilePosition");
-                context.Writer.Write(requestObject.TilePosition);
+                context.Writer.WriteStringValue(requestObject.TilePosition);
             }
 
         }

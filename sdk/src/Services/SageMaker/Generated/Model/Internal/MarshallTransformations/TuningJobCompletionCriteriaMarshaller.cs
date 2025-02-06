@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBestObjectiveNotImproving())
             {
                 context.Writer.WritePropertyName("BestObjectiveNotImproving");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BestObjectiveNotImprovingMarshaller.Instance;
                 marshaller.Marshall(requestObject.BestObjectiveNotImproving, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConvergenceDetected())
             {
                 context.Writer.WritePropertyName("ConvergenceDetected");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConvergenceDetectedMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConvergenceDetected, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetObjectiveMetricValue())
@@ -75,11 +73,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("TargetObjectiveMetricValue");
                 if(StringUtils.IsSpecialFloatValue(requestObject.TargetObjectiveMetricValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TargetObjectiveMetricValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.TargetObjectiveMetricValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetObjectiveMetricValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetObjectiveMetricValue.Value);
                 }
             }
 

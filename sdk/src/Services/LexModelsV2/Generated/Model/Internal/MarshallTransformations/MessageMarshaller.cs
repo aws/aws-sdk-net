@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomPayload())
             {
                 context.Writer.WritePropertyName("customPayload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomPayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomPayload, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageResponseCard())
             {
                 context.Writer.WritePropertyName("imageResponseCard");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageResponseCardMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageResponseCard, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlainTextMessage())
             {
                 context.Writer.WritePropertyName("plainTextMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlainTextMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.PlainTextMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSsmlMessage())
             {
                 context.Writer.WritePropertyName("ssmlMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SSMLMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.SsmlMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

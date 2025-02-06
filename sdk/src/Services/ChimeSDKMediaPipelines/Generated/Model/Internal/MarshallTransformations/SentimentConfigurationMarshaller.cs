@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetSentimentType())
             {
                 context.Writer.WritePropertyName("SentimentType");
-                context.Writer.Write(requestObject.SentimentType);
+                context.Writer.WriteStringValue(requestObject.SentimentType);
             }
 
             if(requestObject.IsSetTimePeriod())
             {
                 context.Writer.WritePropertyName("TimePeriod");
-                context.Writer.Write(requestObject.TimePeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.TimePeriod.Value);
             }
 
         }

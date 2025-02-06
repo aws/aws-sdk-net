@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogsConfiguration())
             {
                 context.Writer.WritePropertyName("cloudWatchLogsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExperimentTemplateCloudWatchLogsLogConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLogsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogSchemaVersion())
             {
                 context.Writer.WritePropertyName("logSchemaVersion");
-                context.Writer.Write(requestObject.LogSchemaVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.LogSchemaVersion.Value);
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("s3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExperimentTemplateS3LogConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetMetricThreshold())
@@ -59,23 +57,23 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MetricThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MetricThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MetricThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.MetricThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetSliMetricConfig())
             {
                 context.Writer.WritePropertyName("SliMetricConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceLevelIndicatorMetricConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SliMetricConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

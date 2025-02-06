@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumEventAgeInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
-                context.Writer.Write(requestObject.MaximumEventAgeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumEventAgeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRetryAttempts())
             {
                 context.Writer.WritePropertyName("MaximumRetryAttempts");
-                context.Writer.Write(requestObject.MaximumRetryAttempts.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumRetryAttempts.Value);
             }
 
         }

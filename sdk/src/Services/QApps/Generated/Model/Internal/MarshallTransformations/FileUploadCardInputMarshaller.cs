@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowOverride())
             {
                 context.Writer.WritePropertyName("allowOverride");
-                context.Writer.Write(requestObject.AllowOverride.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowOverride.Value);
             }
 
             if(requestObject.IsSetFileId())
             {
                 context.Writer.WritePropertyName("fileId");
-                context.Writer.Write(requestObject.FileId);
+                context.Writer.WriteStringValue(requestObject.FileId);
             }
 
             if(requestObject.IsSetFilename())
             {
                 context.Writer.WritePropertyName("filename");
-                context.Writer.Write(requestObject.Filename);
+                context.Writer.WriteStringValue(requestObject.Filename);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

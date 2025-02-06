@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyCacheSecretIamArn())
             {
                 context.Writer.WritePropertyName("KeyCacheSecretIamArn");
-                context.Writer.Write(requestObject.KeyCacheSecretIamArn);
+                context.Writer.WriteStringValue(requestObject.KeyCacheSecretIamArn);
             }
 
             if(requestObject.IsSetKeyCacheSecretId())
             {
                 context.Writer.WritePropertyName("KeyCacheSecretId");
-                context.Writer.Write(requestObject.KeyCacheSecretId);
+                context.Writer.WriteStringValue(requestObject.KeyCacheSecretId);
             }
 
             if(requestObject.IsSetKrb5FileContents())
             {
                 context.Writer.WritePropertyName("Krb5FileContents");
-                context.Writer.Write(requestObject.Krb5FileContents);
+                context.Writer.WriteStringValue(requestObject.Krb5FileContents);
             }
 
         }

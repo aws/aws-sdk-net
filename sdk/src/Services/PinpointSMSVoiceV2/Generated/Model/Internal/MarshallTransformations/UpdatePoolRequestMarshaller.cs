@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeletionProtectionEnabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeletionProtectionEnabled())
-                    {
-                        context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                        context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetOptOutListName())
-                    {
-                        context.Writer.WritePropertyName("OptOutListName");
-                        context.Writer.Write(publicRequest.OptOutListName);
-                    }
-
-                    if(publicRequest.IsSetPoolId())
-                    {
-                        context.Writer.WritePropertyName("PoolId");
-                        context.Writer.Write(publicRequest.PoolId);
-                    }
-
-                    if(publicRequest.IsSetSelfManagedOptOutsEnabled())
-                    {
-                        context.Writer.WritePropertyName("SelfManagedOptOutsEnabled");
-                        context.Writer.Write(publicRequest.SelfManagedOptOutsEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetSharedRoutesEnabled())
-                    {
-                        context.Writer.WritePropertyName("SharedRoutesEnabled");
-                        context.Writer.Write(publicRequest.SharedRoutesEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetTwoWayChannelArn())
-                    {
-                        context.Writer.WritePropertyName("TwoWayChannelArn");
-                        context.Writer.Write(publicRequest.TwoWayChannelArn);
-                    }
-
-                    if(publicRequest.IsSetTwoWayChannelRole())
-                    {
-                        context.Writer.WritePropertyName("TwoWayChannelRole");
-                        context.Writer.Write(publicRequest.TwoWayChannelRole);
-                    }
-
-                    if(publicRequest.IsSetTwoWayEnabled())
-                    {
-                        context.Writer.WritePropertyName("TwoWayEnabled");
-                        context.Writer.Write(publicRequest.TwoWayEnabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
+
+            if(publicRequest.IsSetOptOutListName())
+            {
+                context.Writer.WritePropertyName("OptOutListName");
+                context.Writer.WriteStringValue(publicRequest.OptOutListName);
+            }
+
+            if(publicRequest.IsSetPoolId())
+            {
+                context.Writer.WritePropertyName("PoolId");
+                context.Writer.WriteStringValue(publicRequest.PoolId);
+            }
+
+            if(publicRequest.IsSetSelfManagedOptOutsEnabled())
+            {
+                context.Writer.WritePropertyName("SelfManagedOptOutsEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SelfManagedOptOutsEnabled.Value);
+            }
+
+            if(publicRequest.IsSetSharedRoutesEnabled())
+            {
+                context.Writer.WritePropertyName("SharedRoutesEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SharedRoutesEnabled.Value);
+            }
+
+            if(publicRequest.IsSetTwoWayChannelArn())
+            {
+                context.Writer.WritePropertyName("TwoWayChannelArn");
+                context.Writer.WriteStringValue(publicRequest.TwoWayChannelArn);
+            }
+
+            if(publicRequest.IsSetTwoWayChannelRole())
+            {
+                context.Writer.WritePropertyName("TwoWayChannelRole");
+                context.Writer.WriteStringValue(publicRequest.TwoWayChannelRole);
+            }
+
+            if(publicRequest.IsSetTwoWayEnabled())
+            {
+                context.Writer.WritePropertyName("TwoWayEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.TwoWayEnabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

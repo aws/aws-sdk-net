@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AuthenticationResultType Object
     /// </summary>  
-    public class AuthenticationResultTypeUnmarshaller : IUnmarshaller<AuthenticationResultType, XmlUnmarshallerContext>, IUnmarshaller<AuthenticationResultType, JsonUnmarshallerContext>
+    public class AuthenticationResultTypeUnmarshaller : IJsonUnmarshaller<AuthenticationResultType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AuthenticationResultType IUnmarshaller<AuthenticationResultType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthenticationResultType Unmarshall(JsonUnmarshallerContext context)
+        public AuthenticationResultType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AuthenticationResultType unmarshalledObject = new AuthenticationResultType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExpiresIn", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ExpiresIn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpiresIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NewDeviceMetadata", targetDepth))
                 {
                     var unmarshaller = NewDeviceMetadataTypeUnmarshaller.Instance;
-                    unmarshalledObject.NewDeviceMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NewDeviceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RefreshToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TokenType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TokenType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TokenType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

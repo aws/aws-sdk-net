@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCronExpressionForRecurrence())
             {
                 context.Writer.WritePropertyName("CronExpressionForRecurrence");
-                context.Writer.Write(requestObject.CronExpressionForRecurrence);
+                context.Writer.WriteStringValue(requestObject.CronExpressionForRecurrence);
             }
 
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("Duration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Duration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartAt())
             {
                 context.Writer.WritePropertyName("StartAt");
-                context.Writer.Write(requestObject.StartAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartAt.Value)));
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCmkArn())
             {
                 context.Writer.WritePropertyName("CmkArn");
-                context.Writer.Write(requestObject.CmkArn);
+                context.Writer.WriteStringValue(requestObject.CmkArn);
             }
 
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetDeprecateRule())
             {
                 context.Writer.WritePropertyName("DeprecateRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CrossRegionCopyDeprecateRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeprecateRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetRetainRule())
             {
                 context.Writer.WritePropertyName("RetainRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CrossRegionCopyRetainRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetainRule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("Target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteStringValue(requestObject.Target);
             }
 
             if(requestObject.IsSetTargetRegion())
             {
                 context.Writer.WritePropertyName("TargetRegion");
-                context.Writer.Write(requestObject.TargetRegion);
+                context.Writer.WriteStringValue(requestObject.TargetRegion);
             }
 
         }

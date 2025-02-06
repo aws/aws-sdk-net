@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLaunchedAt())
             {
                 context.Writer.WritePropertyName("LaunchedAt");
-                context.Writer.Write(requestObject.LaunchedAt);
+                context.Writer.WriteStringValue(requestObject.LaunchedAt);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetParentPid())
             {
                 context.Writer.WritePropertyName("ParentPid");
-                context.Writer.Write(requestObject.ParentPid.Value);
+                context.Writer.WriteNumberValue(requestObject.ParentPid.Value);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("Pid");
-                context.Writer.Write(requestObject.Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetTerminatedAt())
             {
                 context.Writer.WritePropertyName("TerminatedAt");
-                context.Writer.Write(requestObject.TerminatedAt);
+                context.Writer.WriteStringValue(requestObject.TerminatedAt);
             }
 
         }

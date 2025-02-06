@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientCacheClusterCapacityException operation
     /// </summary>  
-    public class InsufficientCacheClusterCapacityExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientCacheClusterCapacityException, XmlUnmarshallerContext>
+    public class InsufficientCacheClusterCapacityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientCacheClusterCapacityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

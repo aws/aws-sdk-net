@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntegrationStatus())
             {
                 context.Writer.WritePropertyName("IntegrationStatus");
-                context.Writer.Write(requestObject.IntegrationStatus);
+                context.Writer.WriteStringValue(requestObject.IntegrationStatus);
             }
 
             if(requestObject.IsSetIssueManagementStatus())
             {
                 context.Writer.WritePropertyName("IssueManagementStatus");
-                context.Writer.Write(requestObject.IssueManagementStatus);
+                context.Writer.WriteStringValue(requestObject.IssueManagementStatus);
             }
 
             if(requestObject.IsSetIssueManagementType())
             {
                 context.Writer.WritePropertyName("IssueManagementType");
-                context.Writer.Write(requestObject.IssueManagementType);
+                context.Writer.WriteStringValue(requestObject.IssueManagementType);
             }
 
             if(requestObject.IsSetJiraProjectKey())
             {
                 context.Writer.WritePropertyName("JiraProjectKey");
-                context.Writer.Write(requestObject.JiraProjectKey);
+                context.Writer.WriteStringValue(requestObject.JiraProjectKey);
             }
 
         }

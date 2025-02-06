@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizerResultTtlInSeconds())
             {
                 context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
-                context.Writer.Write(requestObject.AuthorizerResultTtlInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.AuthorizerResultTtlInSeconds.Value);
             }
 
             if(requestObject.IsSetAuthorizerUri())
             {
                 context.Writer.WritePropertyName("authorizerUri");
-                context.Writer.Write(requestObject.AuthorizerUri);
+                context.Writer.WriteStringValue(requestObject.AuthorizerUri);
             }
 
             if(requestObject.IsSetIdentityValidationExpression())
             {
                 context.Writer.WritePropertyName("identityValidationExpression");
-                context.Writer.Write(requestObject.IdentityValidationExpression);
+                context.Writer.WriteStringValue(requestObject.IdentityValidationExpression);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacityReservationId())
             {
                 context.Writer.WritePropertyName("CapacityReservationId");
-                context.Writer.Write(requestObject.CapacityReservationId);
+                context.Writer.WriteStringValue(requestObject.CapacityReservationId);
             }
 
             if(requestObject.IsSetCapacityReservationResourceGroupArn())
             {
                 context.Writer.WritePropertyName("CapacityReservationResourceGroupArn");
-                context.Writer.Write(requestObject.CapacityReservationResourceGroupArn);
+                context.Writer.WriteStringValue(requestObject.CapacityReservationResourceGroupArn);
             }
 
         }

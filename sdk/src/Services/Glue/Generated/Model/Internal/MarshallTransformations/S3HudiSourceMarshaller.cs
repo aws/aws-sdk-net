@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalHudiOptions())
             {
                 context.Writer.WritePropertyName("AdditionalHudiOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalHudiOptionsKvp in requestObject.AdditionalHudiOptions)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalHudiOptionsKvp.Key);
                     var requestObjectAdditionalHudiOptionsValue = requestObjectAdditionalHudiOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalHudiOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalHudiOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAdditionalOptions())
             {
                 context.Writer.WritePropertyName("AdditionalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DirectSourceAdditionalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputSchemas())
             {
                 context.Writer.WritePropertyName("OutputSchemas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GlueSchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputSchemasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPaths())
             {
                 context.Writer.WritePropertyName("Paths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPathsListValue in requestObject.Paths)
                 {
-                        context.Writer.Write(requestObjectPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

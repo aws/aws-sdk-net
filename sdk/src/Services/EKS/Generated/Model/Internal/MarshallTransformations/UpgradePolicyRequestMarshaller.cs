@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSupportType())
             {
                 context.Writer.WritePropertyName("supportType");
-                context.Writer.Write(requestObject.SupportType);
+                context.Writer.WriteStringValue(requestObject.SupportType);
             }
 
         }

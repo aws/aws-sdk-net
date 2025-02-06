@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransitionToArchive())
             {
                 context.Writer.WritePropertyName("TransitionToArchive");
-                context.Writer.Write(requestObject.TransitionToArchive);
+                context.Writer.WriteStringValue(requestObject.TransitionToArchive);
             }
 
             if(requestObject.IsSetTransitionToIA())
             {
                 context.Writer.WritePropertyName("TransitionToIA");
-                context.Writer.Write(requestObject.TransitionToIA);
+                context.Writer.WriteStringValue(requestObject.TransitionToIA);
             }
 
             if(requestObject.IsSetTransitionToPrimaryStorageClass())
             {
                 context.Writer.WritePropertyName("TransitionToPrimaryStorageClass");
-                context.Writer.Write(requestObject.TransitionToPrimaryStorageClass);
+                context.Writer.WriteStringValue(requestObject.TransitionToPrimaryStorageClass);
             }
 
         }

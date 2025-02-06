@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("client_id");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("key_id");
-                context.Writer.Write(requestObject.KeyId);
+                context.Writer.WriteStringValue(requestObject.KeyId);
             }
 
             if(requestObject.IsSetPrivateKey())
             {
                 context.Writer.WritePropertyName("private_key");
-                context.Writer.Write(requestObject.PrivateKey);
+                context.Writer.WriteStringValue(requestObject.PrivateKey);
             }
 
             if(requestObject.IsSetTeamId())
             {
                 context.Writer.WritePropertyName("team_id");
-                context.Writer.Write(requestObject.TeamId);
+                context.Writer.WriteStringValue(requestObject.TeamId);
             }
 
         }

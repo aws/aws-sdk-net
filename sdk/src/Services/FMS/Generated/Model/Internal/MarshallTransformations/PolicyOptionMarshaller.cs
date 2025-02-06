@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkAclCommonPolicy())
             {
                 context.Writer.WritePropertyName("NetworkAclCommonPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkFirewallPolicy())
             {
                 context.Writer.WritePropertyName("NetworkFirewallPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkFirewallPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkFirewallPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThirdPartyFirewallPolicy())
             {
                 context.Writer.WritePropertyName("ThirdPartyFirewallPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThirdPartyFirewallPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThirdPartyFirewallPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

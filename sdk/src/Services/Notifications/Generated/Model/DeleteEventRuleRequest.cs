@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventRule operation.
-    /// Deletes an EventRule.
+    /// Deletes an <c>EventRule</c>.
     /// </summary>
     public partial class DeleteEventRuleRequest : AmazonNotificationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the EventRule to delete.
+        /// The Amazon Resource Name (ARN) of the <c>EventRule</c> to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

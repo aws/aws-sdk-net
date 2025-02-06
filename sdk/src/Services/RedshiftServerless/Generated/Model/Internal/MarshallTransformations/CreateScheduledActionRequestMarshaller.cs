@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -63,83 +66,88 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetNamespaceName())
-                    {
-                        context.Writer.WritePropertyName("namespaceName");
-                        context.Writer.Write(publicRequest.NamespaceName);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("schedule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScheduleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Schedule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScheduledActionDescription())
-                    {
-                        context.Writer.WritePropertyName("scheduledActionDescription");
-                        context.Writer.Write(publicRequest.ScheduledActionDescription);
-                    }
-
-                    if(publicRequest.IsSetScheduledActionName())
-                    {
-                        context.Writer.WritePropertyName("scheduledActionName");
-                        context.Writer.Write(publicRequest.ScheduledActionName);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetTargetAction())
-                    {
-                        context.Writer.WritePropertyName("targetAction");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetActionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TargetAction, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
             }
+
+            if(publicRequest.IsSetEndTime())
+            {
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
+            }
+
+            if(publicRequest.IsSetNamespaceName())
+            {
+                context.Writer.WritePropertyName("namespaceName");
+                context.Writer.WriteStringValue(publicRequest.NamespaceName);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("schedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScheduleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScheduledActionDescription())
+            {
+                context.Writer.WritePropertyName("scheduledActionDescription");
+                context.Writer.WriteStringValue(publicRequest.ScheduledActionDescription);
+            }
+
+            if(publicRequest.IsSetScheduledActionName())
+            {
+                context.Writer.WritePropertyName("scheduledActionName");
+                context.Writer.WriteStringValue(publicRequest.ScheduledActionName);
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            if(publicRequest.IsSetTargetAction())
+            {
+                context.Writer.WritePropertyName("targetAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetActionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

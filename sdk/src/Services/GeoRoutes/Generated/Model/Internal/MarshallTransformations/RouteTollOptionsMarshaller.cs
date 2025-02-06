@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllTransponders())
             {
                 context.Writer.WritePropertyName("AllTransponders");
-                context.Writer.Write(requestObject.AllTransponders.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllTransponders.Value);
             }
 
             if(requestObject.IsSetAllVignettes())
             {
                 context.Writer.WritePropertyName("AllVignettes");
-                context.Writer.Write(requestObject.AllVignettes.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllVignettes.Value);
             }
 
             if(requestObject.IsSetCurrency())
             {
                 context.Writer.WritePropertyName("Currency");
-                context.Writer.Write(requestObject.Currency);
+                context.Writer.WriteStringValue(requestObject.Currency);
             }
 
             if(requestObject.IsSetEmissionType())
             {
                 context.Writer.WritePropertyName("EmissionType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RouteEmissionTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmissionType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVehicleCategory())
             {
                 context.Writer.WritePropertyName("VehicleCategory");
-                context.Writer.Write(requestObject.VehicleCategory);
+                context.Writer.WriteStringValue(requestObject.VehicleCategory);
             }
 
         }

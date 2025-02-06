@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePermission operation.
-    /// Removes a permission policy from a Q Business application, revoking the cross-account
+    /// Removes a permission policy from a Amazon Q Business application, revoking the cross-account
     /// access that was previously granted to an ISV. This operation deletes the specified
     /// policy statement from the application's permission policy.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

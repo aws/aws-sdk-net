@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPolicy())
             {
                 context.Writer.WritePropertyName("AccessPolicy");
-                context.Writer.Write(requestObject.AccessPolicy);
+                context.Writer.WriteStringValue(requestObject.AccessPolicy);
             }
 
             if(requestObject.IsSetBackupVaultArn())
             {
                 context.Writer.WritePropertyName("BackupVaultArn");
-                context.Writer.Write(requestObject.BackupVaultArn);
+                context.Writer.WriteStringValue(requestObject.BackupVaultArn);
             }
 
             if(requestObject.IsSetBackupVaultName())
             {
                 context.Writer.WritePropertyName("BackupVaultName");
-                context.Writer.Write(requestObject.BackupVaultName);
+                context.Writer.WriteStringValue(requestObject.BackupVaultName);
             }
 
             if(requestObject.IsSetEncryptionKeyArn())
             {
                 context.Writer.WritePropertyName("EncryptionKeyArn");
-                context.Writer.Write(requestObject.EncryptionKeyArn);
+                context.Writer.WriteStringValue(requestObject.EncryptionKeyArn);
             }
 
             if(requestObject.IsSetNotifications())
             {
                 context.Writer.WritePropertyName("Notifications");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsBackupBackupVaultNotificationsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Notifications, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

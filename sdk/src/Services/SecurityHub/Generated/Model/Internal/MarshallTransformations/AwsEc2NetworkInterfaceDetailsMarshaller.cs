@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,84 +49,84 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachment())
             {
                 context.Writer.WritePropertyName("Attachment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2NetworkInterfaceAttachmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Attachment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIpV6Addresses())
             {
                 context.Writer.WritePropertyName("IpV6Addresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpV6AddressesListValue in requestObject.IpV6Addresses)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2NetworkInterfaceIpV6AddressDetailMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpV6AddressesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNetworkInterfaceId())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceId");
-                context.Writer.Write(requestObject.NetworkInterfaceId);
+                context.Writer.WriteStringValue(requestObject.NetworkInterfaceId);
             }
 
             if(requestObject.IsSetPrivateIpAddresses())
             {
                 context.Writer.WritePropertyName("PrivateIpAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrivateIpAddressesListValue in requestObject.PrivateIpAddresses)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2NetworkInterfacePrivateIpAddressDetailMarshaller.Instance;
                     marshaller.Marshall(requestObjectPrivateIpAddressesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPublicDnsName())
             {
                 context.Writer.WritePropertyName("PublicDnsName");
-                context.Writer.Write(requestObject.PublicDnsName);
+                context.Writer.WriteStringValue(requestObject.PublicDnsName);
             }
 
             if(requestObject.IsSetPublicIp())
             {
                 context.Writer.WritePropertyName("PublicIp");
-                context.Writer.Write(requestObject.PublicIp);
+                context.Writer.WriteStringValue(requestObject.PublicIp);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2NetworkInterfaceSecurityGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecurityGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceDestCheck())
             {
                 context.Writer.WritePropertyName("SourceDestCheck");
-                context.Writer.Write(requestObject.SourceDestCheck.Value);
+                context.Writer.WriteBooleanValue(requestObject.SourceDestCheck.Value);
             }
 
         }

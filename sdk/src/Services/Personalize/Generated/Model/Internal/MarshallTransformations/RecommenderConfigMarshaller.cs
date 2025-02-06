@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMetadataWithRecommendations())
             {
                 context.Writer.WritePropertyName("enableMetadataWithRecommendations");
-                context.Writer.Write(requestObject.EnableMetadataWithRecommendations.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMetadataWithRecommendations.Value);
             }
 
             if(requestObject.IsSetItemExplorationConfig())
             {
                 context.Writer.WritePropertyName("itemExplorationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectItemExplorationConfigKvp in requestObject.ItemExplorationConfig)
                 {
                     context.Writer.WritePropertyName(requestObjectItemExplorationConfigKvp.Key);
                     var requestObjectItemExplorationConfigValue = requestObjectItemExplorationConfigKvp.Value;
 
-                        context.Writer.Write(requestObjectItemExplorationConfigValue);
+                        context.Writer.WriteStringValue(requestObjectItemExplorationConfigValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinRecommendationRequestsPerSecond())
             {
                 context.Writer.WritePropertyName("minRecommendationRequestsPerSecond");
-                context.Writer.Write(requestObject.MinRecommendationRequestsPerSecond.Value);
+                context.Writer.WriteNumberValue(requestObject.MinRecommendationRequestsPerSecond.Value);
             }
 
             if(requestObject.IsSetTrainingDataConfig())
             {
                 context.Writer.WritePropertyName("trainingDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainingDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainingDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

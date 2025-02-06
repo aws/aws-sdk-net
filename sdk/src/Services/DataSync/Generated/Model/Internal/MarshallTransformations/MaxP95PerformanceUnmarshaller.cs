@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MaxP95Performance Object
     /// </summary>  
-    public class MaxP95PerformanceUnmarshaller : IUnmarshaller<MaxP95Performance, XmlUnmarshallerContext>, IUnmarshaller<MaxP95Performance, JsonUnmarshallerContext>
+    public class MaxP95PerformanceUnmarshaller : IJsonUnmarshaller<MaxP95Performance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MaxP95Performance IUnmarshaller<MaxP95Performance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MaxP95Performance Unmarshall(JsonUnmarshallerContext context)
+        public MaxP95Performance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MaxP95Performance unmarshalledObject = new MaxP95Performance();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IopsOther", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.IopsOther = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IopsOther = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IopsRead", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.IopsRead = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IopsRead = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IopsTotal", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.IopsTotal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IopsTotal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IopsWrite", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.IopsWrite = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IopsWrite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatencyOther", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LatencyOther = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatencyOther = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatencyRead", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LatencyRead = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatencyRead = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatencyWrite", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LatencyWrite = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatencyWrite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputOther", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputOther = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputOther = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputRead", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputRead = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputRead = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputTotal", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputTotal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputTotal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThroughputWrite", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThroughputWrite = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThroughputWrite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

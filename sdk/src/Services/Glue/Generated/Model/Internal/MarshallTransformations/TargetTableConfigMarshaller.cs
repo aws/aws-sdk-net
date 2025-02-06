@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPartitionSpec())
             {
                 context.Writer.WritePropertyName("PartitionSpec");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPartitionSpecListValue in requestObject.PartitionSpec)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IntegrationPartitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectPartitionSpecListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetTableName())
             {
                 context.Writer.WritePropertyName("TargetTableName");
-                context.Writer.Write(requestObject.TargetTableName);
+                context.Writer.WriteStringValue(requestObject.TargetTableName);
             }
 
             if(requestObject.IsSetUnnestSpec())
             {
                 context.Writer.WritePropertyName("UnnestSpec");
-                context.Writer.Write(requestObject.UnnestSpec);
+                context.Writer.WriteStringValue(requestObject.UnnestSpec);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsIamPermissionsBoundary Object
     /// </summary>  
-    public class AwsIamPermissionsBoundaryUnmarshaller : IUnmarshaller<AwsIamPermissionsBoundary, XmlUnmarshallerContext>, IUnmarshaller<AwsIamPermissionsBoundary, JsonUnmarshallerContext>
+    public class AwsIamPermissionsBoundaryUnmarshaller : IJsonUnmarshaller<AwsIamPermissionsBoundary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsIamPermissionsBoundary IUnmarshaller<AwsIamPermissionsBoundary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsIamPermissionsBoundary Unmarshall(JsonUnmarshallerContext context)
+        public AwsIamPermissionsBoundary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsIamPermissionsBoundary unmarshalledObject = new AwsIamPermissionsBoundary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PermissionsBoundaryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PermissionsBoundaryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PermissionsBoundaryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PermissionsBoundaryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PermissionsBoundaryType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PermissionsBoundaryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

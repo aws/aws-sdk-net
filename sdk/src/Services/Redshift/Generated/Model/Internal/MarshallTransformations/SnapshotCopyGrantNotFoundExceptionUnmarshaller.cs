@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyGrantNotFoundException operation
     /// </summary>  
-    public class SnapshotCopyGrantNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotCopyGrantNotFoundException, XmlUnmarshallerContext>
+    public class SnapshotCopyGrantNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotCopyGrantNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

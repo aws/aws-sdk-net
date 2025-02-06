@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServerCertificateConfiguration Object
     /// </summary>  
-    public class ServerCertificateConfigurationUnmarshaller : IUnmarshaller<ServerCertificateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateConfiguration, JsonUnmarshallerContext>
+    public class ServerCertificateConfigurationUnmarshaller : IJsonUnmarshaller<ServerCertificateConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServerCertificateConfiguration IUnmarshaller<ServerCertificateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServerCertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ServerCertificateConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServerCertificateConfiguration unmarshalledObject = new ServerCertificateConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CertificateAuthorityArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CheckCertificateRevocationStatus", targetDepth))
                 {
                     var unmarshaller = CheckCertificateRevocationStatusActionsUnmarshaller.Instance;
-                    unmarshalledObject.CheckCertificateRevocationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CheckCertificateRevocationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Scopes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance);
-                    unmarshalledObject.Scopes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ServerCertificateScope, ServerCertificateScopeUnmarshaller>(ServerCertificateScopeUnmarshaller.Instance);
+                    unmarshalledObject.Scopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerCertificates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance);
-                    unmarshalledObject.ServerCertificates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ServerCertificate, ServerCertificateUnmarshaller>(ServerCertificateUnmarshaller.Instance);
+                    unmarshalledObject.ServerCertificates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

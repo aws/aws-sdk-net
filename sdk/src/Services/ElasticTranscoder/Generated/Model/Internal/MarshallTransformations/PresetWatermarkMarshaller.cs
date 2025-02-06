@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHorizontalAlign())
             {
                 context.Writer.WritePropertyName("HorizontalAlign");
-                context.Writer.Write(requestObject.HorizontalAlign);
+                context.Writer.WriteStringValue(requestObject.HorizontalAlign);
             }
 
             if(requestObject.IsSetHorizontalOffset())
             {
                 context.Writer.WritePropertyName("HorizontalOffset");
-                context.Writer.Write(requestObject.HorizontalOffset);
+                context.Writer.WriteStringValue(requestObject.HorizontalOffset);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMaxHeight())
             {
                 context.Writer.WritePropertyName("MaxHeight");
-                context.Writer.Write(requestObject.MaxHeight);
+                context.Writer.WriteStringValue(requestObject.MaxHeight);
             }
 
             if(requestObject.IsSetMaxWidth())
             {
                 context.Writer.WritePropertyName("MaxWidth");
-                context.Writer.Write(requestObject.MaxWidth);
+                context.Writer.WriteStringValue(requestObject.MaxWidth);
             }
 
             if(requestObject.IsSetOpacity())
             {
                 context.Writer.WritePropertyName("Opacity");
-                context.Writer.Write(requestObject.Opacity);
+                context.Writer.WriteStringValue(requestObject.Opacity);
             }
 
             if(requestObject.IsSetSizingPolicy())
             {
                 context.Writer.WritePropertyName("SizingPolicy");
-                context.Writer.Write(requestObject.SizingPolicy);
+                context.Writer.WriteStringValue(requestObject.SizingPolicy);
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("Target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteStringValue(requestObject.Target);
             }
 
             if(requestObject.IsSetVerticalAlign())
             {
                 context.Writer.WritePropertyName("VerticalAlign");
-                context.Writer.Write(requestObject.VerticalAlign);
+                context.Writer.WriteStringValue(requestObject.VerticalAlign);
             }
 
             if(requestObject.IsSetVerticalOffset())
             {
                 context.Writer.WritePropertyName("VerticalOffset");
-                context.Writer.Write(requestObject.VerticalOffset);
+                context.Writer.WriteStringValue(requestObject.VerticalOffset);
             }
 
         }

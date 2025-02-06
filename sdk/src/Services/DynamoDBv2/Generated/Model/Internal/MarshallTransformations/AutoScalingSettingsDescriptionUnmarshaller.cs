@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingSettingsDescription Object
     /// </summary>  
-    public class AutoScalingSettingsDescriptionUnmarshaller : IUnmarshaller<AutoScalingSettingsDescription, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingSettingsDescription, JsonUnmarshallerContext>
+    public class AutoScalingSettingsDescriptionUnmarshaller : IJsonUnmarshaller<AutoScalingSettingsDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoScalingSettingsDescription IUnmarshaller<AutoScalingSettingsDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingSettingsDescription Unmarshall(JsonUnmarshallerContext context)
+        public AutoScalingSettingsDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoScalingSettingsDescription unmarshalledObject = new AutoScalingSettingsDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoScalingDisabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoScalingRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumUnits", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinimumUnits", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingPolicies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoScalingPolicyDescription, AutoScalingPolicyDescriptionUnmarshaller>(AutoScalingPolicyDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AutoScalingPolicyDescription, AutoScalingPolicyDescriptionUnmarshaller>(AutoScalingPolicyDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

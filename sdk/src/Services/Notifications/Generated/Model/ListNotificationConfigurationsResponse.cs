@@ -60,7 +60,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurations. 
         /// <para>
-        /// The NotificationConfigurations in the account.
+        /// The <c>NotificationConfigurations</c> in the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

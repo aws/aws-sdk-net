@@ -53,6 +53,7 @@ namespace Amazon.SupplyChain.Model
         private string _instanceName;
         private string _kmsKeyArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _webAppDnsDomain;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -150,6 +151,26 @@ namespace Amazon.SupplyChain.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAppDnsDomain. 
+        /// <para>
+        /// The DNS subdomain of the web app. This would be "example" in the URL "example.scn.global.on.aws".
+        /// You can set this to a custom value, as long as the domain isn't already being used
+        /// by someone else. The name may only include alphanumeric characters and hyphens.
+        /// </para>
+        /// </summary>
+        public string WebAppDnsDomain
+        {
+            get { return this._webAppDnsDomain; }
+            set { this._webAppDnsDomain = value; }
+        }
+
+        // Check to see if WebAppDnsDomain property is set
+        internal bool IsSetWebAppDnsDomain()
+        {
+            return this._webAppDnsDomain != null;
         }
 
     }

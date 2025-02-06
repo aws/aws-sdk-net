@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectKeyAttributesKvp in requestObject.KeyAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectKeyAttributesKvp.Key);
                     var requestObjectKeyAttributesValue = requestObjectKeyAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectKeyAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectKeyAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricType())
             {
                 context.Writer.WritePropertyName("MetricType");
-                context.Writer.Write(requestObject.MetricType);
+                context.Writer.WriteStringValue(requestObject.MetricType);
             }
 
             if(requestObject.IsSetMonitoredRequestCountMetric())
             {
                 context.Writer.WritePropertyName("MonitoredRequestCountMetric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MonitoredRequestCountMetricDataQueriesMarshaller.Instance;
                 marshaller.Marshall(requestObject.MonitoredRequestCountMetric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOperationName())
             {
                 context.Writer.WritePropertyName("OperationName");
-                context.Writer.Write(requestObject.OperationName);
+                context.Writer.WriteStringValue(requestObject.OperationName);
             }
 
             if(requestObject.IsSetTotalRequestCountMetric())
             {
                 context.Writer.WritePropertyName("TotalRequestCountMetric");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTotalRequestCountMetricListValue in requestObject.TotalRequestCountMetric)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDataQueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectTotalRequestCountMetricListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

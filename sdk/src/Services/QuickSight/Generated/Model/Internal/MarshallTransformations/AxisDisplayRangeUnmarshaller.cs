@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AxisDisplayRange Object
     /// </summary>  
-    public class AxisDisplayRangeUnmarshaller : IUnmarshaller<AxisDisplayRange, XmlUnmarshallerContext>, IUnmarshaller<AxisDisplayRange, JsonUnmarshallerContext>
+    public class AxisDisplayRangeUnmarshaller : IJsonUnmarshaller<AxisDisplayRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AxisDisplayRange IUnmarshaller<AxisDisplayRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AxisDisplayRange Unmarshall(JsonUnmarshallerContext context)
+        public AxisDisplayRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AxisDisplayRange unmarshalledObject = new AxisDisplayRange();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataDriven", targetDepth))
                 {
                     var unmarshaller = AxisDisplayDataDrivenRangeUnmarshaller.Instance;
-                    unmarshalledObject.DataDriven = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataDriven = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinMax", targetDepth))
                 {
                     var unmarshaller = AxisDisplayMinMaxRangeUnmarshaller.Instance;
-                    unmarshalledObject.MinMax = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinMax = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

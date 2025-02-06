@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchGetAssetPropertyAggregatesSuccessEntry Object
     /// </summary>  
-    public class BatchGetAssetPropertyAggregatesSuccessEntryUnmarshaller : IUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry, JsonUnmarshallerContext>
+    public class BatchGetAssetPropertyAggregatesSuccessEntryUnmarshaller : IJsonUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchGetAssetPropertyAggregatesSuccessEntry IUnmarshaller<BatchGetAssetPropertyAggregatesSuccessEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchGetAssetPropertyAggregatesSuccessEntry Unmarshall(JsonUnmarshallerContext context)
+        public BatchGetAssetPropertyAggregatesSuccessEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchGetAssetPropertyAggregatesSuccessEntry unmarshalledObject = new BatchGetAssetPropertyAggregatesSuccessEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregatedValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregatedValue, AggregatedValueUnmarshaller>(AggregatedValueUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AggregatedValue, AggregatedValueUnmarshaller>(AggregatedValueUnmarshaller.Instance);
+                    unmarshalledObject.AggregatedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("entryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

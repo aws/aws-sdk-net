@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationSuccessFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("ApplicationSuccessFeedbackRoleArn");
-                context.Writer.Write(requestObject.ApplicationSuccessFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.ApplicationSuccessFeedbackRoleArn);
             }
 
             if(requestObject.IsSetFirehoseFailureFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("FirehoseFailureFeedbackRoleArn");
-                context.Writer.Write(requestObject.FirehoseFailureFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.FirehoseFailureFeedbackRoleArn);
             }
 
             if(requestObject.IsSetFirehoseSuccessFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("FirehoseSuccessFeedbackRoleArn");
-                context.Writer.Write(requestObject.FirehoseSuccessFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.FirehoseSuccessFeedbackRoleArn);
             }
 
             if(requestObject.IsSetHttpFailureFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("HttpFailureFeedbackRoleArn");
-                context.Writer.Write(requestObject.HttpFailureFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.HttpFailureFeedbackRoleArn);
             }
 
             if(requestObject.IsSetHttpSuccessFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("HttpSuccessFeedbackRoleArn");
-                context.Writer.Write(requestObject.HttpSuccessFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.HttpSuccessFeedbackRoleArn);
             }
 
             if(requestObject.IsSetKmsMasterKeyId())
             {
                 context.Writer.WritePropertyName("KmsMasterKeyId");
-                context.Writer.Write(requestObject.KmsMasterKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsMasterKeyId);
             }
 
             if(requestObject.IsSetOwner())
             {
                 context.Writer.WritePropertyName("Owner");
-                context.Writer.Write(requestObject.Owner);
+                context.Writer.WriteStringValue(requestObject.Owner);
             }
 
             if(requestObject.IsSetSqsFailureFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("SqsFailureFeedbackRoleArn");
-                context.Writer.Write(requestObject.SqsFailureFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.SqsFailureFeedbackRoleArn);
             }
 
             if(requestObject.IsSetSqsSuccessFeedbackRoleArn())
             {
                 context.Writer.WritePropertyName("SqsSuccessFeedbackRoleArn");
-                context.Writer.Write(requestObject.SqsSuccessFeedbackRoleArn);
+                context.Writer.WriteStringValue(requestObject.SqsSuccessFeedbackRoleArn);
             }
 
             if(requestObject.IsSetSubscription())
             {
                 context.Writer.WritePropertyName("Subscription");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubscriptionListValue in requestObject.Subscription)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsSnsTopicSubscriptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubscriptionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTopicName())
             {
                 context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WriteStringValue(requestObject.TopicName);
             }
 
         }

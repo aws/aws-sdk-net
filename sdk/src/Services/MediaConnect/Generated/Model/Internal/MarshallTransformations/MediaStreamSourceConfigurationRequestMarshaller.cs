@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncodingName())
             {
                 context.Writer.WritePropertyName("encodingName");
-                context.Writer.Write(requestObject.EncodingName);
+                context.Writer.WriteStringValue(requestObject.EncodingName);
             }
 
             if(requestObject.IsSetInputConfigurations())
             {
                 context.Writer.WritePropertyName("inputConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputConfigurationsListValue in requestObject.InputConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMediaStreamName())
             {
                 context.Writer.WritePropertyName("mediaStreamName");
-                context.Writer.Write(requestObject.MediaStreamName);
+                context.Writer.WriteStringValue(requestObject.MediaStreamName);
             }
 
         }

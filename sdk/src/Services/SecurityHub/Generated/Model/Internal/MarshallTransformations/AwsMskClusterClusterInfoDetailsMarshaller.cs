@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientAuthentication())
             {
                 context.Writer.WritePropertyName("ClientAuthentication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsMskClusterClusterInfoClientAuthenticationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientAuthentication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClusterName())
             {
                 context.Writer.WritePropertyName("ClusterName");
-                context.Writer.Write(requestObject.ClusterName);
+                context.Writer.WriteStringValue(requestObject.ClusterName);
             }
 
             if(requestObject.IsSetCurrentVersion())
             {
                 context.Writer.WritePropertyName("CurrentVersion");
-                context.Writer.Write(requestObject.CurrentVersion);
+                context.Writer.WriteStringValue(requestObject.CurrentVersion);
             }
 
             if(requestObject.IsSetEncryptionInfo())
             {
                 context.Writer.WritePropertyName("EncryptionInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsMskClusterClusterInfoEncryptionInfoDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnhancedMonitoring())
             {
                 context.Writer.WritePropertyName("EnhancedMonitoring");
-                context.Writer.Write(requestObject.EnhancedMonitoring);
+                context.Writer.WriteStringValue(requestObject.EnhancedMonitoring);
             }
 
             if(requestObject.IsSetNumberOfBrokerNodes())
             {
                 context.Writer.WritePropertyName("NumberOfBrokerNodes");
-                context.Writer.Write(requestObject.NumberOfBrokerNodes.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfBrokerNodes.Value);
             }
 
         }

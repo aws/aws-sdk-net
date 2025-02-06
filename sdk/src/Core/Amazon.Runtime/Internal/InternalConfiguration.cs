@@ -107,6 +107,16 @@ namespace Amazon.Runtime.Internal
         /// complexity in the routing layer.
         /// </summary>
         public AccountIdEndpointMode? AccountIdEndpointMode { get; set; }
+
+        /// <summary>
+        /// Determines the behavior for calculating checksums for request payloads.
+        /// </summary>
+        public RequestChecksumCalculation? RequestChecksumCalculation { get; set; }
+        
+        /// <summary>
+        /// Determines the behavior for validating checksums on response payloads.
+        /// </summary>
+        public ResponseChecksumValidation? ResponseChecksumValidation { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -132,6 +142,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
         public const string ENVIRONMENT_VARIABLE_AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
         public const string ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
+        public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION = "AWS_REQUEST_CHECKSUM_CALCULATION";
+        public const string ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION = "AWS_RESPONSE_CHECKSUM_VALIDATION";
         public const int AWS_SDK_UA_APP_ID_MAX_LENGTH = 50;
 
         /// <summary>
@@ -155,6 +167,8 @@ namespace Amazon.Runtime.Internal
             DisableRequestCompression = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION);
             RequestMinCompressionSizeBytes = GetEnvironmentVariable<long>(ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES);
             AccountIdEndpointMode = GetEnvironmentVariable<AccountIdEndpointMode>(ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE);
+            RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
+            ResponseChecksumValidation = GetEnvironmentVariable<ResponseChecksumValidation>(ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION);
             ClientAppId = GetClientAppIdEnvironmentVariable();
         }
 
@@ -330,6 +344,8 @@ namespace Amazon.Runtime.Internal
                 RequestMinCompressionSizeBytes = profile.RequestMinCompressionSizeBytes;
                 ClientAppId = profile.ClientAppId;
                 AccountIdEndpointMode = profile.AccountIdEndpointMode;
+                RequestChecksumCalculation = profile.RequestChecksumCalculation;
+                ResponseChecksumValidation = profile.ResponseChecksumValidation;
             }
             else
             {
@@ -353,7 +369,9 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("disable_request_compression", profile.DisableRequestCompression),
                 new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes),
                 new KeyValuePair<string, object>("sdk_ua_app_id", profile.ClientAppId),
-                new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode)
+                new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode),
+                new KeyValuePair<string, object>("request_checksum_calculation", profile.RequestChecksumCalculation),
+                new KeyValuePair<string, object>("response_checksum_validation", profile.ResponseChecksumValidation),
             };
 
             foreach(var item in items)
@@ -424,6 +442,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.RequestMinCompressionSizeBytes = SeekValue(standardGenerators, (c) => c.RequestMinCompressionSizeBytes);
             _cachedConfiguration.ClientAppId = SeekString(standardGenerators, (c) => c.ClientAppId, defaultValue: null);
             _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators,(c) => c.AccountIdEndpointMode);
+            _cachedConfiguration.RequestChecksumCalculation = SeekValue(standardGenerators, (c) => c.RequestChecksumCalculation);
+            _cachedConfiguration.ResponseChecksumValidation = SeekValue(standardGenerators, (c) => c.ResponseChecksumValidation);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -615,6 +635,22 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.AccountIdEndpointMode;
+            }
+        }
+
+        public static RequestChecksumCalculation? RequestChecksumCalculation
+        {
+            get
+            {
+                return _cachedConfiguration.RequestChecksumCalculation;
+            }
+        }
+
+        public static ResponseChecksumValidation? ResponseChecksumValidation
+        {
+            get
+            {
+                return _cachedConfiguration.ResponseChecksumValidation;
             }
         }
     }

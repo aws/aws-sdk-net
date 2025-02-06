@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdHocFilteringOption())
             {
                 context.Writer.WritePropertyName("AdHocFilteringOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AdHocFilteringOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdHocFilteringOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataPointDrillUpDownOption())
             {
                 context.Writer.WritePropertyName("DataPointDrillUpDownOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPointDrillUpDownOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPointDrillUpDownOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataPointMenuLabelOption())
             {
                 context.Writer.WritePropertyName("DataPointMenuLabelOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPointMenuLabelOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPointMenuLabelOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataPointTooltipOption())
             {
                 context.Writer.WritePropertyName("DataPointTooltipOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPointTooltipOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPointTooltipOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportToCSVOption())
             {
                 context.Writer.WritePropertyName("ExportToCSVOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportToCSVOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportToCSVOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportWithHiddenFieldsOption())
             {
                 context.Writer.WritePropertyName("ExportWithHiddenFieldsOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportWithHiddenFieldsOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportWithHiddenFieldsOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSheetControlsOption())
             {
                 context.Writer.WritePropertyName("SheetControlsOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SheetControlsOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SheetControlsOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSheetLayoutElementMaximizationOption())
             {
                 context.Writer.WritePropertyName("SheetLayoutElementMaximizationOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SheetLayoutElementMaximizationOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SheetLayoutElementMaximizationOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualAxisSortOption())
             {
                 context.Writer.WritePropertyName("VisualAxisSortOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualAxisSortOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualAxisSortOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualMenuOption())
             {
                 context.Writer.WritePropertyName("VisualMenuOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualMenuOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualMenuOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualPublishOptions())
             {
                 context.Writer.WritePropertyName("VisualPublishOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashboardVisualPublishOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualPublishOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

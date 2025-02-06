@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptedPinBlock())
             {
                 context.Writer.WritePropertyName("EncryptedPinBlock");
-                context.Writer.Write(requestObject.EncryptedPinBlock);
+                context.Writer.WriteStringValue(requestObject.EncryptedPinBlock);
             }
 
             if(requestObject.IsSetPinVerificationKeyIndex())
             {
                 context.Writer.WritePropertyName("PinVerificationKeyIndex");
-                context.Writer.Write(requestObject.PinVerificationKeyIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.PinVerificationKeyIndex.Value);
             }
 
         }

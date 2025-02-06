@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -63,76 +66,81 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributeMapping())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AttributeMapping");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributeMappingKvp in publicRequest.AttributeMapping)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributeMapping())
-                    {
-                        context.Writer.WritePropertyName("AttributeMapping");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAttributeMappingKvp in publicRequest.AttributeMapping)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAttributeMappingKvp.Key);
-                            var publicRequestAttributeMappingValue = publicRequestAttributeMappingKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAttributeMappingKvp.Key);
+                    var publicRequestAttributeMappingValue = publicRequestAttributeMappingKvp.Value;
 
-                                context.Writer.Write(publicRequestAttributeMappingValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIdpIdentifiers())
-                    {
-                        context.Writer.WritePropertyName("IdpIdentifiers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIdpIdentifiersListValue in publicRequest.IdpIdentifiers)
-                        {
-                                context.Writer.Write(publicRequestIdpIdentifiersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetProviderDetails())
-                    {
-                        context.Writer.WritePropertyName("ProviderDetails");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestProviderDetailsKvp in publicRequest.ProviderDetails)
-                        {
-                            context.Writer.WritePropertyName(publicRequestProviderDetailsKvp.Key);
-                            var publicRequestProviderDetailsValue = publicRequestProviderDetailsKvp.Value;
-
-                                context.Writer.Write(publicRequestProviderDetailsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProviderName())
-                    {
-                        context.Writer.WritePropertyName("ProviderName");
-                        context.Writer.Write(publicRequest.ProviderName);
-                    }
-
-                    if(publicRequest.IsSetProviderType())
-                    {
-                        context.Writer.WritePropertyName("ProviderType");
-                        context.Writer.Write(publicRequest.ProviderType);
-                    }
-
-                    if(publicRequest.IsSetUserPoolId())
-                    {
-                        context.Writer.WritePropertyName("UserPoolId");
-                        context.Writer.Write(publicRequest.UserPoolId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAttributeMappingValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetIdpIdentifiers())
+            {
+                context.Writer.WritePropertyName("IdpIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIdpIdentifiersListValue in publicRequest.IdpIdentifiers)
+                {
+                        context.Writer.WriteStringValue(publicRequestIdpIdentifiersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetProviderDetails())
+            {
+                context.Writer.WritePropertyName("ProviderDetails");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestProviderDetailsKvp in publicRequest.ProviderDetails)
+                {
+                    context.Writer.WritePropertyName(publicRequestProviderDetailsKvp.Key);
+                    var publicRequestProviderDetailsValue = publicRequestProviderDetailsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestProviderDetailsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProviderName())
+            {
+                context.Writer.WritePropertyName("ProviderName");
+                context.Writer.WriteStringValue(publicRequest.ProviderName);
+            }
+
+            if(publicRequest.IsSetProviderType())
+            {
+                context.Writer.WritePropertyName("ProviderType");
+                context.Writer.WriteStringValue(publicRequest.ProviderType);
+            }
+
+            if(publicRequest.IsSetUserPoolId())
+            {
+                context.Writer.WritePropertyName("UserPoolId");
+                context.Writer.WriteStringValue(publicRequest.UserPoolId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

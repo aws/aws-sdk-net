@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGenerateAbstractiveSummary())
             {
                 context.Writer.WritePropertyName("GenerateAbstractiveSummary");
-                context.Writer.Write(requestObject.GenerateAbstractiveSummary.Value);
+                context.Writer.WriteBooleanValue(requestObject.GenerateAbstractiveSummary.Value);
             }
 
         }

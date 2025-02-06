@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioRenditionSets())
             {
                 context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
+                context.Writer.WriteStringValue(requestObject.AudioRenditionSets);
             }
 
             if(requestObject.IsSetM3u8Settings())
             {
                 context.Writer.WritePropertyName("m3u8Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M3u8SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.M3u8Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

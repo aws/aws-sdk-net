@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OperationStatusCheckFailedException operation
     /// </summary>  
-    public class OperationStatusCheckFailedExceptionUnmarshaller : IErrorResponseUnmarshaller<OperationStatusCheckFailedException, XmlUnmarshallerContext>
+    public class OperationStatusCheckFailedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OperationStatusCheckFailedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

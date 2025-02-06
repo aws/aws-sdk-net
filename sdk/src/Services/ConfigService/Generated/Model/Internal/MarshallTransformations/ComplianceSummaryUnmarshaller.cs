@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComplianceSummary Object
     /// </summary>  
-    public class ComplianceSummaryUnmarshaller : IUnmarshaller<ComplianceSummary, XmlUnmarshallerContext>, IUnmarshaller<ComplianceSummary, JsonUnmarshallerContext>
+    public class ComplianceSummaryUnmarshaller : IJsonUnmarshaller<ComplianceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComplianceSummary IUnmarshaller<ComplianceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComplianceSummary Unmarshall(JsonUnmarshallerContext context)
+        public ComplianceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComplianceSummary unmarshalledObject = new ComplianceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComplianceSummaryTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceSummaryTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComplianceSummaryTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantResourceCount", targetDepth))
                 {
                     var unmarshaller = ComplianceContributorCountUnmarshaller.Instance;
-                    unmarshalledObject.CompliantResourceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantResourceCount", targetDepth))
                 {
                     var unmarshaller = ComplianceContributorCountUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantResourceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

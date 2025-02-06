@@ -1185,6 +1185,10 @@ namespace Amazon.Redshift.Model
         /// A boolean value that, if <c>true</c>, indicates that the cluster can be accessed from
         /// a public network.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
         /// </summary>
         public bool? PubliclyAccessible
         {

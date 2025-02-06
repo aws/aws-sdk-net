@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityIdPrefix())
             {
                 context.Writer.WritePropertyName("entityIdPrefix");
-                context.Writer.Write(requestObject.EntityIdPrefix);
+                context.Writer.WriteStringValue(requestObject.EntityIdPrefix);
             }
 
             if(requestObject.IsSetGroupConfiguration())
             {
                 context.Writer.WritePropertyName("groupConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenIdConnectGroupConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIssuer())
             {
                 context.Writer.WritePropertyName("issuer");
-                context.Writer.Write(requestObject.Issuer);
+                context.Writer.WriteStringValue(requestObject.Issuer);
             }
 
             if(requestObject.IsSetTokenSelection())
             {
                 context.Writer.WritePropertyName("tokenSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenIdConnectTokenSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TokenSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -249,7 +249,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing automation, use the <a>AddTagsToResource</a> operation.
+        /// The <c>Array Members</c> maximum value is reported as 1000. This number includes capacity
+        /// reserved for internal operations. When calling the <c>StartAutomationExecution</c>
+        /// action, you can specify a maximum of 5 tags. You can, however, use the <a>AddTagsToResource</a>
+        /// action to add up to a total of 50 tags to an existing automation configuration.
         /// </para>
         ///  </note>
         /// </summary>

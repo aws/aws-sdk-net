@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             if(requestObject.IsSetFeatureGroupName())
             {
                 context.Writer.WritePropertyName("FeatureGroupName");
-                context.Writer.Write(requestObject.FeatureGroupName);
+                context.Writer.WriteStringValue(requestObject.FeatureGroupName);
             }
 
             if(requestObject.IsSetFeatureNames())
             {
                 context.Writer.WritePropertyName("FeatureNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeatureNamesListValue in requestObject.FeatureNames)
                 {
-                        context.Writer.Write(requestObjectFeatureNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectFeatureNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecordIdentifiersValueAsString())
             {
                 context.Writer.WritePropertyName("RecordIdentifiersValueAsString");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecordIdentifiersValueAsStringListValue in requestObject.RecordIdentifiersValueAsString)
                 {
-                        context.Writer.Write(requestObjectRecordIdentifiersValueAsStringListValue);
+                        context.Writer.WriteStringValue(requestObjectRecordIdentifiersValueAsStringListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

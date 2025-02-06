@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnswerRecommendationAIAgentConfiguration())
             {
                 context.Writer.WritePropertyName("answerRecommendationAIAgentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnswerRecommendationAIAgentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AnswerRecommendationAIAgentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManualSearchAIAgentConfiguration())
             {
                 context.Writer.WritePropertyName("manualSearchAIAgentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ManualSearchAIAgentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManualSearchAIAgentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelfServiceAIAgentConfiguration())
             {
                 context.Writer.WritePropertyName("selfServiceAIAgentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfServiceAIAgentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelfServiceAIAgentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

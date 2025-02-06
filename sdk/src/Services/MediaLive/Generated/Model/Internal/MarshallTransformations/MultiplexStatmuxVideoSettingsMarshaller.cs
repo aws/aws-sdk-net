@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBitrate())
             {
                 context.Writer.WritePropertyName("maximumBitrate");
-                context.Writer.Write(requestObject.MaximumBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumBitrate.Value);
             }
 
             if(requestObject.IsSetMinimumBitrate())
             {
                 context.Writer.WritePropertyName("minimumBitrate");
-                context.Writer.Write(requestObject.MinimumBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumBitrate.Value);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
         }

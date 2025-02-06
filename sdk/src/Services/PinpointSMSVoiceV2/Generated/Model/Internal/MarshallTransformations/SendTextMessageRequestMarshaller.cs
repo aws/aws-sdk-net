@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
@@ -63,113 +66,118 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationSetName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationSetName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationSetName");
-                        context.Writer.Write(publicRequest.ConfigurationSetName);
-                    }
-
-                    if(publicRequest.IsSetContext())
-                    {
-                        context.Writer.WritePropertyName("Context");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestContextKvp in publicRequest.Context)
-                        {
-                            context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                            var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                                context.Writer.Write(publicRequestContextValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationCountryParameters())
-                    {
-                        context.Writer.WritePropertyName("DestinationCountryParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDestinationCountryParametersKvp in publicRequest.DestinationCountryParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDestinationCountryParametersKvp.Key);
-                            var publicRequestDestinationCountryParametersValue = publicRequestDestinationCountryParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestDestinationCountryParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationPhoneNumber())
-                    {
-                        context.Writer.WritePropertyName("DestinationPhoneNumber");
-                        context.Writer.Write(publicRequest.DestinationPhoneNumber);
-                    }
-
-                    if(publicRequest.IsSetDryRun())
-                    {
-                        context.Writer.WritePropertyName("DryRun");
-                        context.Writer.Write(publicRequest.DryRun.Value);
-                    }
-
-                    if(publicRequest.IsSetKeyword())
-                    {
-                        context.Writer.WritePropertyName("Keyword");
-                        context.Writer.Write(publicRequest.Keyword);
-                    }
-
-                    if(publicRequest.IsSetMaxPrice())
-                    {
-                        context.Writer.WritePropertyName("MaxPrice");
-                        context.Writer.Write(publicRequest.MaxPrice);
-                    }
-
-                    if(publicRequest.IsSetMessageBody())
-                    {
-                        context.Writer.WritePropertyName("MessageBody");
-                        context.Writer.Write(publicRequest.MessageBody);
-                    }
-
-                    if(publicRequest.IsSetMessageFeedbackEnabled())
-                    {
-                        context.Writer.WritePropertyName("MessageFeedbackEnabled");
-                        context.Writer.Write(publicRequest.MessageFeedbackEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetMessageType())
-                    {
-                        context.Writer.WritePropertyName("MessageType");
-                        context.Writer.Write(publicRequest.MessageType);
-                    }
-
-                    if(publicRequest.IsSetOriginationIdentity())
-                    {
-                        context.Writer.WritePropertyName("OriginationIdentity");
-                        context.Writer.Write(publicRequest.OriginationIdentity);
-                    }
-
-                    if(publicRequest.IsSetProtectConfigurationId())
-                    {
-                        context.Writer.WritePropertyName("ProtectConfigurationId");
-                        context.Writer.Write(publicRequest.ProtectConfigurationId);
-                    }
-
-                    if(publicRequest.IsSetTimeToLive())
-                    {
-                        context.Writer.WritePropertyName("TimeToLive");
-                        context.Writer.Write(publicRequest.TimeToLive.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationSetName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationSetName);
             }
+
+            if(publicRequest.IsSetContext())
+            {
+                context.Writer.WritePropertyName("Context");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestContextKvp in publicRequest.Context)
+                {
+                    context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                    var publicRequestContextValue = publicRequestContextKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestContextValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDestinationCountryParameters())
+            {
+                context.Writer.WritePropertyName("DestinationCountryParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDestinationCountryParametersKvp in publicRequest.DestinationCountryParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestDestinationCountryParametersKvp.Key);
+                    var publicRequestDestinationCountryParametersValue = publicRequestDestinationCountryParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDestinationCountryParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDestinationPhoneNumber())
+            {
+                context.Writer.WritePropertyName("DestinationPhoneNumber");
+                context.Writer.WriteStringValue(publicRequest.DestinationPhoneNumber);
+            }
+
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
+            if(publicRequest.IsSetKeyword())
+            {
+                context.Writer.WritePropertyName("Keyword");
+                context.Writer.WriteStringValue(publicRequest.Keyword);
+            }
+
+            if(publicRequest.IsSetMaxPrice())
+            {
+                context.Writer.WritePropertyName("MaxPrice");
+                context.Writer.WriteStringValue(publicRequest.MaxPrice);
+            }
+
+            if(publicRequest.IsSetMessageBody())
+            {
+                context.Writer.WritePropertyName("MessageBody");
+                context.Writer.WriteStringValue(publicRequest.MessageBody);
+            }
+
+            if(publicRequest.IsSetMessageFeedbackEnabled())
+            {
+                context.Writer.WritePropertyName("MessageFeedbackEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.MessageFeedbackEnabled.Value);
+            }
+
+            if(publicRequest.IsSetMessageType())
+            {
+                context.Writer.WritePropertyName("MessageType");
+                context.Writer.WriteStringValue(publicRequest.MessageType);
+            }
+
+            if(publicRequest.IsSetOriginationIdentity())
+            {
+                context.Writer.WritePropertyName("OriginationIdentity");
+                context.Writer.WriteStringValue(publicRequest.OriginationIdentity);
+            }
+
+            if(publicRequest.IsSetProtectConfigurationId())
+            {
+                context.Writer.WritePropertyName("ProtectConfigurationId");
+                context.Writer.WriteStringValue(publicRequest.ProtectConfigurationId);
+            }
+
+            if(publicRequest.IsSetTimeToLive())
+            {
+                context.Writer.WritePropertyName("TimeToLive");
+                context.Writer.WriteNumberValue(publicRequest.TimeToLive.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

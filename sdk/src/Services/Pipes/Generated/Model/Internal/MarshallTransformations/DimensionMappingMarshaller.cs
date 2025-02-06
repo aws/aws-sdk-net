@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionName())
             {
                 context.Writer.WritePropertyName("DimensionName");
-                context.Writer.Write(requestObject.DimensionName);
+                context.Writer.WriteStringValue(requestObject.DimensionName);
             }
 
             if(requestObject.IsSetDimensionValue())
             {
                 context.Writer.WritePropertyName("DimensionValue");
-                context.Writer.Write(requestObject.DimensionValue);
+                context.Writer.WriteStringValue(requestObject.DimensionValue);
             }
 
             if(requestObject.IsSetDimensionValueType())
             {
                 context.Writer.WritePropertyName("DimensionValueType");
-                context.Writer.Write(requestObject.DimensionValueType);
+                context.Writer.WriteStringValue(requestObject.DimensionValueType);
             }
 
         }

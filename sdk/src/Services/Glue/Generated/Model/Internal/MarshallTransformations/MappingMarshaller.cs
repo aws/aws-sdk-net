@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChildren())
             {
                 context.Writer.WritePropertyName("Children");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChildrenListValue in requestObject.Children)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectChildrenListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDropped())
             {
                 context.Writer.WritePropertyName("Dropped");
-                context.Writer.Write(requestObject.Dropped.Value);
+                context.Writer.WriteBooleanValue(requestObject.Dropped.Value);
             }
 
             if(requestObject.IsSetFromPath())
             {
                 context.Writer.WritePropertyName("FromPath");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFromPathListValue in requestObject.FromPath)
                 {
-                        context.Writer.Write(requestObjectFromPathListValue);
+                        context.Writer.WriteStringValue(requestObjectFromPathListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFromType())
             {
                 context.Writer.WritePropertyName("FromType");
-                context.Writer.Write(requestObject.FromType);
+                context.Writer.WriteStringValue(requestObject.FromType);
             }
 
             if(requestObject.IsSetToKey())
             {
                 context.Writer.WritePropertyName("ToKey");
-                context.Writer.Write(requestObject.ToKey);
+                context.Writer.WriteStringValue(requestObject.ToKey);
             }
 
             if(requestObject.IsSetToType())
             {
                 context.Writer.WritePropertyName("ToType");
-                context.Writer.Write(requestObject.ToType);
+                context.Writer.WriteStringValue(requestObject.ToType);
             }
 
         }

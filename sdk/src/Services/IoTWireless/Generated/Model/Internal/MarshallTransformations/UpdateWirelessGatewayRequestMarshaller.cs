@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -64,71 +67,76 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/wireless-gateways/{Id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetJoinEuiFilters())
-                    {
-                        context.Writer.WritePropertyName("JoinEuiFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestJoinEuiFiltersListValue in publicRequest.JoinEuiFilters)
-                        {
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestJoinEuiFiltersListValueListValue in publicRequestJoinEuiFiltersListValue)
-                            {
-                                    context.Writer.Write(publicRequestJoinEuiFiltersListValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxEirp())
-                    {
-                        context.Writer.WritePropertyName("MaxEirp");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.MaxEirp.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNetIdFilters())
-                    {
-                        context.Writer.WritePropertyName("NetIdFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNetIdFiltersListValue in publicRequest.NetIdFilters)
-                        {
-                                context.Writer.Write(publicRequestNetIdFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetJoinEuiFilters())
+            {
+                context.Writer.WritePropertyName("JoinEuiFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestJoinEuiFiltersListValue in publicRequest.JoinEuiFilters)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestJoinEuiFiltersListValueListValue in publicRequestJoinEuiFiltersListValue)
+                    {
+                            context.Writer.WriteStringValue(publicRequestJoinEuiFiltersListValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxEirp())
+            {
+                context.Writer.WritePropertyName("MaxEirp");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.MaxEirp.Value);
+                }
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetIdFilters())
+            {
+                context.Writer.WritePropertyName("NetIdFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNetIdFiltersListValue in publicRequest.NetIdFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestNetIdFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

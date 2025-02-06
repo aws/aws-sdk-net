@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAuthorizerOverride())
             {
                 context.Writer.WritePropertyName("allowAuthorizerOverride");
-                context.Writer.Write(requestObject.AllowAuthorizerOverride.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowAuthorizerOverride.Value);
             }
 
             if(requestObject.IsSetDefaultAuthorizerName())
             {
                 context.Writer.WritePropertyName("defaultAuthorizerName");
-                context.Writer.Write(requestObject.DefaultAuthorizerName);
+                context.Writer.WriteStringValue(requestObject.DefaultAuthorizerName);
             }
 
         }

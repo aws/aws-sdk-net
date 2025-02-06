@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationCodeProperties())
             {
                 context.Writer.WritePropertyName("AuthorizationCodeProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthorizationCodePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthorizationCodeProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuth2ClientApplication())
             {
                 context.Writer.WritePropertyName("OAuth2ClientApplication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2ClientApplicationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2ClientApplication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuth2Credentials())
             {
                 context.Writer.WritePropertyName("OAuth2Credentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2CredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2Credentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuth2GrantType())
             {
                 context.Writer.WritePropertyName("OAuth2GrantType");
-                context.Writer.Write(requestObject.OAuth2GrantType);
+                context.Writer.WriteStringValue(requestObject.OAuth2GrantType);
             }
 
             if(requestObject.IsSetTokenUrl())
             {
                 context.Writer.WritePropertyName("TokenUrl");
-                context.Writer.Write(requestObject.TokenUrl);
+                context.Writer.WriteStringValue(requestObject.TokenUrl);
             }
 
             if(requestObject.IsSetTokenUrlParametersMap())
             {
                 context.Writer.WritePropertyName("TokenUrlParametersMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTokenUrlParametersMapKvp in requestObject.TokenUrlParametersMap)
                 {
                     context.Writer.WritePropertyName(requestObjectTokenUrlParametersMapKvp.Key);
                     var requestObjectTokenUrlParametersMapValue = requestObjectTokenUrlParametersMapKvp.Value;
 
-                        context.Writer.Write(requestObjectTokenUrlParametersMapValue);
+                        context.Writer.WriteStringValue(requestObjectTokenUrlParametersMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

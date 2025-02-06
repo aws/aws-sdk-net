@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalDatasets())
             {
                 context.Writer.WritePropertyName("AdditionalDatasets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalDatasetsListValue in requestObject.AdditionalDatasets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AdditionalDatasetMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalDatasetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributeConfigs())
             {
                 context.Writer.WritePropertyName("AttributeConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributeConfigsListValue in requestObject.AttributeConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributeConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDatasetGroupArn())
             {
                 context.Writer.WritePropertyName("DatasetGroupArn");
-                context.Writer.Write(requestObject.DatasetGroupArn);
+                context.Writer.WriteStringValue(requestObject.DatasetGroupArn);
             }
 
         }

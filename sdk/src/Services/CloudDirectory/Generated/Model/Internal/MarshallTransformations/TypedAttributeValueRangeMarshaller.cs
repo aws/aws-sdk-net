@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndMode())
             {
                 context.Writer.WritePropertyName("EndMode");
-                context.Writer.Write(requestObject.EndMode);
+                context.Writer.WriteStringValue(requestObject.EndMode);
             }
 
             if(requestObject.IsSetEndValue())
             {
                 context.Writer.WritePropertyName("EndValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TypedAttributeValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.EndValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartMode())
             {
                 context.Writer.WritePropertyName("StartMode");
-                context.Writer.Write(requestObject.StartMode);
+                context.Writer.WriteStringValue(requestObject.StartMode);
             }
 
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TypedAttributeValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

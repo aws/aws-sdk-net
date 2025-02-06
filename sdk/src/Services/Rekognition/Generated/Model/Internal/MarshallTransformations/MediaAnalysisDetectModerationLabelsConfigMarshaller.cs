@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinConfidence");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinConfidence.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinConfidence.Value);
                 }
             }
 
             if(requestObject.IsSetProjectVersion())
             {
                 context.Writer.WritePropertyName("ProjectVersion");
-                context.Writer.Write(requestObject.ProjectVersion);
+                context.Writer.WriteStringValue(requestObject.ProjectVersion);
             }
 
         }

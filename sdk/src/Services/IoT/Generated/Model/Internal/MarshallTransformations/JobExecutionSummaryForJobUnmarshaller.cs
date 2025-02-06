@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobExecutionSummaryForJob Object
     /// </summary>  
-    public class JobExecutionSummaryForJobUnmarshaller : IUnmarshaller<JobExecutionSummaryForJob, XmlUnmarshallerContext>, IUnmarshaller<JobExecutionSummaryForJob, JsonUnmarshallerContext>
+    public class JobExecutionSummaryForJobUnmarshaller : IJsonUnmarshaller<JobExecutionSummaryForJob, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JobExecutionSummaryForJob IUnmarshaller<JobExecutionSummaryForJob, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobExecutionSummaryForJob Unmarshall(JsonUnmarshallerContext context)
+        public JobExecutionSummaryForJob Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JobExecutionSummaryForJob unmarshalledObject = new JobExecutionSummaryForJob();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("jobExecutionSummary", targetDepth))
                 {
                     var unmarshaller = JobExecutionSummaryUnmarshaller.Instance;
-                    unmarshalledObject.JobExecutionSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobExecutionSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thingArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

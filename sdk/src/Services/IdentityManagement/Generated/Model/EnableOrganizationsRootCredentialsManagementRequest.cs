@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the EnableOrganizationsRootCredentialsManagement operation.
     /// Enables the management of privileged root user credentials across member accounts
     /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
-    /// root access</a>, the management account and the delegated admininstrator for IAM can
+    /// root access</a>, the management account and the delegated administrator for IAM can
     /// manage root user credentials for member accounts in your organization.
     /// 
     ///  
@@ -48,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
     ///  </li> <li> 
     /// <para>
     /// Enable trusted access for Identity and Access Management in Organizations. For details,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-iam.html">IAM
     /// and Organizations</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul>

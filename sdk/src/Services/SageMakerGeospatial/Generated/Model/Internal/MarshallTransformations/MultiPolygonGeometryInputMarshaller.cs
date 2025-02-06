@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoordinates())
             {
                 context.Writer.WritePropertyName("Coordinates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCoordinatesListValue in requestObject.Coordinates)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectCoordinatesListValueListValue in requestObjectCoordinatesListValue)
                     {
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectCoordinatesListValueListValueListValue in requestObjectCoordinatesListValueListValue)
                         {
-                            context.Writer.WriteArrayStart();
+                            context.Writer.WriteStartArray();
                             foreach(var requestObjectCoordinatesListValueListValueListValueListValue in requestObjectCoordinatesListValueListValueListValue)
                             {
-                                    context.Writer.Write(requestObjectCoordinatesListValueListValueListValueListValue);
+                                    context.Writer.WriteNumberValue(requestObjectCoordinatesListValueListValueListValueListValue);
                             }
-                            context.Writer.WriteArrayEnd();
+                            context.Writer.WriteEndArray();
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionOnTimeout())
             {
                 context.Writer.WritePropertyName("actionOnTimeout");
-                context.Writer.Write(requestObject.ActionOnTimeout);
+                context.Writer.WriteStringValue(requestObject.ActionOnTimeout);
             }
 
             if(requestObject.IsSetWaitTimeInMinutes())
             {
                 context.Writer.WritePropertyName("waitTimeInMinutes");
-                context.Writer.Write(requestObject.WaitTimeInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.WaitTimeInMinutes.Value);
             }
 
         }

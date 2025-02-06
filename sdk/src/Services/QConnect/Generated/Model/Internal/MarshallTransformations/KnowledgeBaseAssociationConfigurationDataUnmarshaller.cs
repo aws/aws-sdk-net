@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KnowledgeBaseAssociationConfigurationData Object
     /// </summary>  
-    public class KnowledgeBaseAssociationConfigurationDataUnmarshaller : IUnmarshaller<KnowledgeBaseAssociationConfigurationData, XmlUnmarshallerContext>, IUnmarshaller<KnowledgeBaseAssociationConfigurationData, JsonUnmarshallerContext>
+    public class KnowledgeBaseAssociationConfigurationDataUnmarshaller : IJsonUnmarshaller<KnowledgeBaseAssociationConfigurationData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KnowledgeBaseAssociationConfigurationData IUnmarshaller<KnowledgeBaseAssociationConfigurationData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KnowledgeBaseAssociationConfigurationData Unmarshall(JsonUnmarshallerContext context)
+        public KnowledgeBaseAssociationConfigurationData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KnowledgeBaseAssociationConfigurationData unmarshalledObject = new KnowledgeBaseAssociationConfigurationData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("contentTagFilter", targetDepth))
                 {
                     var unmarshaller = TagFilterUnmarshaller.Instance;
-                    unmarshalledObject.ContentTagFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentTagFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maxResults", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("overrideKnowledgeBaseSearchType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverrideKnowledgeBaseSearchType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OverrideKnowledgeBaseSearchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

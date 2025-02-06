@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecimalSeparator())
             {
                 context.Writer.WritePropertyName("DecimalSeparator");
-                context.Writer.Write(requestObject.DecimalSeparator);
+                context.Writer.WriteStringValue(requestObject.DecimalSeparator);
             }
 
             if(requestObject.IsSetThousandsSeparator())
             {
                 context.Writer.WritePropertyName("ThousandsSeparator");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThousandSeparatorOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThousandsSeparator, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

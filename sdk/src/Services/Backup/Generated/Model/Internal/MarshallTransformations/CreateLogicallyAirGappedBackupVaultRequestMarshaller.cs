@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -64,51 +67,56 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 throw new AmazonBackupException("Request object does not have required field BackupVaultName set");
             request.AddPathResource("{backupVaultName}", StringUtils.FromString(publicRequest.BackupVaultName));
             request.ResourcePath = "/logically-air-gapped-backup-vaults/{backupVaultName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBackupVaultTags())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("BackupVaultTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestBackupVaultTagsKvp in publicRequest.BackupVaultTags)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBackupVaultTags())
-                    {
-                        context.Writer.WritePropertyName("BackupVaultTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestBackupVaultTagsKvp in publicRequest.BackupVaultTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestBackupVaultTagsKvp.Key);
-                            var publicRequestBackupVaultTagsValue = publicRequestBackupVaultTagsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestBackupVaultTagsKvp.Key);
+                    var publicRequestBackupVaultTagsValue = publicRequestBackupVaultTagsKvp.Value;
 
-                                context.Writer.Write(publicRequestBackupVaultTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCreatorRequestId())
-                    {
-                        context.Writer.WritePropertyName("CreatorRequestId");
-                        context.Writer.Write(publicRequest.CreatorRequestId);
-                    }
-
-                    if(publicRequest.IsSetMaxRetentionDays())
-                    {
-                        context.Writer.WritePropertyName("MaxRetentionDays");
-                        context.Writer.Write(publicRequest.MaxRetentionDays.Value);
-                    }
-
-                    if(publicRequest.IsSetMinRetentionDays())
-                    {
-                        context.Writer.WritePropertyName("MinRetentionDays");
-                        context.Writer.Write(publicRequest.MinRetentionDays.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestBackupVaultTagsValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCreatorRequestId())
+            {
+                context.Writer.WritePropertyName("CreatorRequestId");
+                context.Writer.WriteStringValue(publicRequest.CreatorRequestId);
+            }
+
+            if(publicRequest.IsSetMaxRetentionDays())
+            {
+                context.Writer.WritePropertyName("MaxRetentionDays");
+                context.Writer.WriteNumberValue(publicRequest.MaxRetentionDays.Value);
+            }
+
+            if(publicRequest.IsSetMinRetentionDays())
+            {
+                context.Writer.WritePropertyName("MinRetentionDays");
+                context.Writer.WriteNumberValue(publicRequest.MinRetentionDays.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

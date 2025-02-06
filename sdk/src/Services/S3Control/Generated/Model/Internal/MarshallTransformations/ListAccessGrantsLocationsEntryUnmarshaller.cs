@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListAccessGrantsLocationsEntry Object
     /// </summary>  
-    public class ListAccessGrantsLocationsEntryUnmarshaller : IUnmarshaller<ListAccessGrantsLocationsEntry, XmlUnmarshallerContext>, IUnmarshaller<ListAccessGrantsLocationsEntry, JsonUnmarshallerContext>
+    public class ListAccessGrantsLocationsEntryUnmarshaller : IXmlUnmarshaller<ListAccessGrantsLocationsEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ListAccessGrantsLocationsEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ListAccessGrantsLocationsEntryUnmarshaller _instance = new ListAccessGrantsLocationsEntryUnmarshaller();        
 
         /// <summary>

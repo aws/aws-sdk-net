@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEksSourceName())
             {
                 context.Writer.WritePropertyName("eksSourceName");
-                context.Writer.Write(requestObject.EksSourceName);
+                context.Writer.WriteStringValue(requestObject.EksSourceName);
             }
 
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.Write(requestObject.Identifier);
+                context.Writer.WriteStringValue(requestObject.Identifier);
             }
 
             if(requestObject.IsSetLogicalStackName())
             {
                 context.Writer.WritePropertyName("logicalStackName");
-                context.Writer.Write(requestObject.LogicalStackName);
+                context.Writer.WriteStringValue(requestObject.LogicalStackName);
             }
 
             if(requestObject.IsSetResourceGroupName())
             {
                 context.Writer.WritePropertyName("resourceGroupName");
-                context.Writer.Write(requestObject.ResourceGroupName);
+                context.Writer.WriteStringValue(requestObject.ResourceGroupName);
             }
 
             if(requestObject.IsSetTerraformSourceName())
             {
                 context.Writer.WritePropertyName("terraformSourceName");
-                context.Writer.Write(requestObject.TerraformSourceName);
+                context.Writer.WriteStringValue(requestObject.TerraformSourceName);
             }
 
         }

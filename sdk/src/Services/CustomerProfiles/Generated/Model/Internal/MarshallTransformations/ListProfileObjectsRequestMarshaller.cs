@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -70,42 +73,47 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/domains/{DomainName}/profiles/objects";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetObjectFilter())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetObjectFilter())
-                    {
-                        context.Writer.WritePropertyName("ObjectFilter");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ObjectFilter");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ObjectFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ObjectFilter, context);
+                var marshaller = ObjectFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ObjectFilter, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetObjectTypeName())
-                    {
-                        context.Writer.WritePropertyName("ObjectTypeName");
-                        context.Writer.Write(publicRequest.ObjectTypeName);
-                    }
-
-                    if(publicRequest.IsSetProfileId())
-                    {
-                        context.Writer.WritePropertyName("ProfileId");
-                        context.Writer.Write(publicRequest.ProfileId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetObjectTypeName())
+            {
+                context.Writer.WritePropertyName("ObjectTypeName");
+                context.Writer.WriteStringValue(publicRequest.ObjectTypeName);
+            }
+
+            if(publicRequest.IsSetProfileId())
+            {
+                context.Writer.WritePropertyName("ProfileId");
+                context.Writer.WriteStringValue(publicRequest.ProfileId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

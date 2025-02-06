@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionsListValue in requestObject.Exclusions)
                 {
-                        context.Writer.Write(requestObjectExclusionsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaximumTraversalDepth())
             {
                 context.Writer.WritePropertyName("MaximumTraversalDepth");
-                context.Writer.Write(requestObject.MaximumTraversalDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumTraversalDepth.Value);
             }
 
             if(requestObject.IsSetPaths())
             {
                 context.Writer.WritePropertyName("Paths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPathsListValue in requestObject.Paths)
                 {
-                        context.Writer.Write(requestObjectPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

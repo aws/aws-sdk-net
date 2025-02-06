@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageX())
             {
                 context.Writer.WritePropertyName("imageX");
-                context.Writer.Write(requestObject.ImageX.Value);
+                context.Writer.WriteNumberValue(requestObject.ImageX.Value);
             }
 
             if(requestObject.IsSetImageY())
             {
                 context.Writer.WritePropertyName("imageY");
-                context.Writer.Write(requestObject.ImageY.Value);
+                context.Writer.WriteNumberValue(requestObject.ImageY.Value);
             }
 
         }

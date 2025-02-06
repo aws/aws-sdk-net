@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EphemerisDescription Object
     /// </summary>  
-    public class EphemerisDescriptionUnmarshaller : IUnmarshaller<EphemerisDescription, XmlUnmarshallerContext>, IUnmarshaller<EphemerisDescription, JsonUnmarshallerContext>
+    public class EphemerisDescriptionUnmarshaller : IJsonUnmarshaller<EphemerisDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EphemerisDescription IUnmarshaller<EphemerisDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EphemerisDescription Unmarshall(JsonUnmarshallerContext context)
+        public EphemerisDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EphemerisDescription unmarshalledObject = new EphemerisDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ephemerisData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EphemerisData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EphemerisData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceS3Object", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.SourceS3Object = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceS3Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

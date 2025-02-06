@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -53,34 +51,34 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("capacity");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Capacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Capacity.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Capacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Capacity.Value);
+                    context.Writer.WriteNumberValue(requestObject.Capacity.Value);
                 }
             }
 
             if(requestObject.IsSetDefaultOutboundConfig())
             {
                 context.Writer.WritePropertyName("defaultOutboundConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmsOutboundConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultOutboundConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutboundMode())
             {
                 context.Writer.WritePropertyName("outboundMode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmsOutboundModeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutboundMode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

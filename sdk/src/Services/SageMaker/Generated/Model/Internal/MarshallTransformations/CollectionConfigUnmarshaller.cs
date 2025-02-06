@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CollectionConfig Object
     /// </summary>  
-    public class CollectionConfigUnmarshaller : IUnmarshaller<CollectionConfig, XmlUnmarshallerContext>, IUnmarshaller<CollectionConfig, JsonUnmarshallerContext>
+    public class CollectionConfigUnmarshaller : IJsonUnmarshaller<CollectionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CollectionConfig IUnmarshaller<CollectionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CollectionConfig Unmarshall(JsonUnmarshallerContext context)
+        public CollectionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CollectionConfig unmarshalledObject = new CollectionConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("VectorConfig", targetDepth))
                 {
                     var unmarshaller = VectorConfigUnmarshaller.Instance;
-                    unmarshalledObject.VectorConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VectorConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

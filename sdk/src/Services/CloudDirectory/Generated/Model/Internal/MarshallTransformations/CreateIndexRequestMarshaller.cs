@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -61,58 +64,63 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/index";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIsUnique())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIsUnique())
-                    {
-                        context.Writer.WritePropertyName("IsUnique");
-                        context.Writer.Write(publicRequest.IsUnique.Value);
-                    }
-
-                    if(publicRequest.IsSetLinkName())
-                    {
-                        context.Writer.WritePropertyName("LinkName");
-                        context.Writer.Write(publicRequest.LinkName);
-                    }
-
-                    if(publicRequest.IsSetOrderedIndexedAttributeList())
-                    {
-                        context.Writer.WritePropertyName("OrderedIndexedAttributeList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOrderedIndexedAttributeListListValue in publicRequest.OrderedIndexedAttributeList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttributeKeyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOrderedIndexedAttributeListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetParentReference())
-                    {
-                        context.Writer.WritePropertyName("ParentReference");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObjectReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ParentReference, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("IsUnique");
+                context.Writer.WriteBooleanValue(publicRequest.IsUnique.Value);
             }
+
+            if(publicRequest.IsSetLinkName())
+            {
+                context.Writer.WritePropertyName("LinkName");
+                context.Writer.WriteStringValue(publicRequest.LinkName);
+            }
+
+            if(publicRequest.IsSetOrderedIndexedAttributeList())
+            {
+                context.Writer.WritePropertyName("OrderedIndexedAttributeList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOrderedIndexedAttributeListListValue in publicRequest.OrderedIndexedAttributeList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOrderedIndexedAttributeListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetParentReference())
+            {
+                context.Writer.WritePropertyName("ParentReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ParentReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetDirectoryArn()) 

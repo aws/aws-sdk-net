@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EventInfoMap Object
     /// </summary>  
-    public class EventInfoMapUnmarshaller : IUnmarshaller<EventInfoMap, XmlUnmarshallerContext>, IUnmarshaller<EventInfoMap, JsonUnmarshallerContext>
+    public class EventInfoMapUnmarshaller : IXmlUnmarshaller<EventInfoMap, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,17 +93,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EventInfoMap Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EventInfoMapUnmarshaller _instance = new EventInfoMapUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputAttachmentNameReference())
             {
                 context.Writer.WritePropertyName("inputAttachmentNameReference");
-                context.Writer.Write(requestObject.InputAttachmentNameReference);
+                context.Writer.WriteStringValue(requestObject.InputAttachmentNameReference);
             }
 
             if(requestObject.IsSetInputClippingSettings())
             {
                 context.Writer.WritePropertyName("inputClippingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputClippingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputClippingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUrlPath())
             {
                 context.Writer.WritePropertyName("urlPath");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUrlPathListValue in requestObject.UrlPath)
                 {
-                        context.Writer.Write(requestObjectUrlPathListValue);
+                        context.Writer.WriteStringValue(requestObjectUrlPathListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

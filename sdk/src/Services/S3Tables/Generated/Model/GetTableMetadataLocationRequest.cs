@@ -32,6 +32,13 @@ namespace Amazon.S3Tables.Model
     /// <summary>
     /// Container for the parameters to the GetTableMetadataLocation operation.
     /// Gets the location of the table metadata.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTableMetadataLocation</c> permission to use this
+    /// operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetTableMetadataLocationRequest : AmazonS3TablesRequest
     {

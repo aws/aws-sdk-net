@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBranchDiff())
             {
                 context.Writer.WritePropertyName("BranchDiff");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BranchDiffSourceCodeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.BranchDiff, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCommitDiff())
             {
                 context.Writer.WritePropertyName("CommitDiff");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CommitDiffSourceCodeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CommitDiff, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepositoryHead())
             {
                 context.Writer.WritePropertyName("RepositoryHead");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RepositoryHeadSourceCodeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RepositoryHead, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequestMetadata())
             {
                 context.Writer.WritePropertyName("RequestMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RequestMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestMetadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3BucketRepository())
             {
                 context.Writer.WritePropertyName("S3BucketRepository");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3BucketRepositoryMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3BucketRepository, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

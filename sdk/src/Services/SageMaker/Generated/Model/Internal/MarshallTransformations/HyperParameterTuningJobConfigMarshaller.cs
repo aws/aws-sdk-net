@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,74 +49,74 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHyperParameterTuningJobObjective())
             {
                 context.Writer.WritePropertyName("HyperParameterTuningJobObjective");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperParameterTuningJobObjectiveMarshaller.Instance;
                 marshaller.Marshall(requestObject.HyperParameterTuningJobObjective, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterRanges())
             {
                 context.Writer.WritePropertyName("ParameterRanges");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParameterRangesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParameterRanges, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRandomSeed())
             {
                 context.Writer.WritePropertyName("RandomSeed");
-                context.Writer.Write(requestObject.RandomSeed.Value);
+                context.Writer.WriteNumberValue(requestObject.RandomSeed.Value);
             }
 
             if(requestObject.IsSetResourceLimits())
             {
                 context.Writer.WritePropertyName("ResourceLimits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceLimits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStrategy())
             {
                 context.Writer.WritePropertyName("Strategy");
-                context.Writer.Write(requestObject.Strategy);
+                context.Writer.WriteStringValue(requestObject.Strategy);
             }
 
             if(requestObject.IsSetStrategyConfig())
             {
                 context.Writer.WritePropertyName("StrategyConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HyperParameterTuningJobStrategyConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.StrategyConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainingJobEarlyStoppingType())
             {
                 context.Writer.WritePropertyName("TrainingJobEarlyStoppingType");
-                context.Writer.Write(requestObject.TrainingJobEarlyStoppingType);
+                context.Writer.WriteStringValue(requestObject.TrainingJobEarlyStoppingType);
             }
 
             if(requestObject.IsSetTuningJobCompletionCriteria())
             {
                 context.Writer.WritePropertyName("TuningJobCompletionCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TuningJobCompletionCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.TuningJobCompletionCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

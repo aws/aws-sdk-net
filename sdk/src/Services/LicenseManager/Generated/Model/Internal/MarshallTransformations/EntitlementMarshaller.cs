@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCheckIn())
             {
                 context.Writer.WritePropertyName("AllowCheckIn");
-                context.Writer.Write(requestObject.AllowCheckIn.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowCheckIn.Value);
             }
 
             if(requestObject.IsSetMaxCount())
             {
                 context.Writer.WritePropertyName("MaxCount");
-                context.Writer.Write(requestObject.MaxCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCount.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOverage())
             {
                 context.Writer.WritePropertyName("Overage");
-                context.Writer.Write(requestObject.Overage.Value);
+                context.Writer.WriteBooleanValue(requestObject.Overage.Value);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

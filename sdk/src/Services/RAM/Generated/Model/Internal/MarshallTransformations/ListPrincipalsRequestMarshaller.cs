@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
@@ -61,71 +64,76 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listprincipals";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaxResults())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetPrincipals())
-                    {
-                        context.Writer.WritePropertyName("principals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
-                        {
-                                context.Writer.Write(publicRequestPrincipalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetResourceOwner())
-                    {
-                        context.Writer.WritePropertyName("resourceOwner");
-                        context.Writer.Write(publicRequest.ResourceOwner);
-                    }
-
-                    if(publicRequest.IsSetResourceShareArns())
-                    {
-                        context.Writer.WritePropertyName("resourceShareArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
-                        {
-                                context.Writer.Write(publicRequestResourceShareArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceType())
-                    {
-                        context.Writer.WritePropertyName("resourceType");
-                        context.Writer.Write(publicRequest.ResourceType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetPrincipals())
+            {
+                context.Writer.WritePropertyName("principals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                {
+                        context.Writer.WriteStringValue(publicRequestPrincipalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetResourceOwner())
+            {
+                context.Writer.WritePropertyName("resourceOwner");
+                context.Writer.WriteStringValue(publicRequest.ResourceOwner);
+            }
+
+            if(publicRequest.IsSetResourceShareArns())
+            {
+                context.Writer.WritePropertyName("resourceShareArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceShareArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceType())
+            {
+                context.Writer.WritePropertyName("resourceType");
+                context.Writer.WriteStringValue(publicRequest.ResourceType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -61,43 +64,48 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/billing-groups/removeThingFromBillingGroup";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBillingGroupArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBillingGroupArn())
-                    {
-                        context.Writer.WritePropertyName("billingGroupArn");
-                        context.Writer.Write(publicRequest.BillingGroupArn);
-                    }
-
-                    if(publicRequest.IsSetBillingGroupName())
-                    {
-                        context.Writer.WritePropertyName("billingGroupName");
-                        context.Writer.Write(publicRequest.BillingGroupName);
-                    }
-
-                    if(publicRequest.IsSetThingArn())
-                    {
-                        context.Writer.WritePropertyName("thingArn");
-                        context.Writer.Write(publicRequest.ThingArn);
-                    }
-
-                    if(publicRequest.IsSetThingName())
-                    {
-                        context.Writer.WritePropertyName("thingName");
-                        context.Writer.Write(publicRequest.ThingName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("billingGroupArn");
+                context.Writer.WriteStringValue(publicRequest.BillingGroupArn);
             }
+
+            if(publicRequest.IsSetBillingGroupName())
+            {
+                context.Writer.WritePropertyName("billingGroupName");
+                context.Writer.WriteStringValue(publicRequest.BillingGroupName);
+            }
+
+            if(publicRequest.IsSetThingArn())
+            {
+                context.Writer.WritePropertyName("thingArn");
+                context.Writer.WriteStringValue(publicRequest.ThingArn);
+            }
+
+            if(publicRequest.IsSetThingName())
+            {
+                context.Writer.WritePropertyName("thingName");
+                context.Writer.WriteStringValue(publicRequest.ThingName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

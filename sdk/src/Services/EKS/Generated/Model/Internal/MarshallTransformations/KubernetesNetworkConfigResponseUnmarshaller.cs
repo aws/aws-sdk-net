@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KubernetesNetworkConfigResponse Object
     /// </summary>  
-    public class KubernetesNetworkConfigResponseUnmarshaller : IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<KubernetesNetworkConfigResponse, JsonUnmarshallerContext>
+    public class KubernetesNetworkConfigResponseUnmarshaller : IJsonUnmarshaller<KubernetesNetworkConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KubernetesNetworkConfigResponse IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
+        public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("elasticLoadBalancing", targetDepth))
                 {
                     var unmarshaller = ElasticLoadBalancingUnmarshaller.Instance;
-                    unmarshalledObject.ElasticLoadBalancing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticLoadBalancing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ipFamily", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceIpv4Cidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceIpv6Cidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RevisionLocation Object
     /// </summary>  
-    public class RevisionLocationUnmarshaller : IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>, IUnmarshaller<RevisionLocation, JsonUnmarshallerContext>
+    public class RevisionLocationUnmarshaller : IJsonUnmarshaller<RevisionLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RevisionLocation IUnmarshaller<RevisionLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RevisionLocation Unmarshall(JsonUnmarshallerContext context)
+        public RevisionLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RevisionLocation unmarshalledObject = new RevisionLocation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appSpecContent", targetDepth))
                 {
                     var unmarshaller = AppSpecContentUnmarshaller.Instance;
-                    unmarshalledObject.AppSpecContent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppSpecContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gitHubLocation", targetDepth))
                 {
                     var unmarshaller = GitHubLocationUnmarshaller.Instance;
-                    unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GitHubLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("revisionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("string", targetDepth))
                 {
                     var unmarshaller = RawStringUnmarshaller.Instance;
-                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.String = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

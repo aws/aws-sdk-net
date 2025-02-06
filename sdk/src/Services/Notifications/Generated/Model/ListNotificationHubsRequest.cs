@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotificationHubs operation.
-    /// Returns a list of NotificationHubs.
+    /// Returns a list of <c>NotificationHubs</c>.
     /// </summary>
     public partial class ListNotificationHubsRequest : AmazonNotificationsRequest
     {

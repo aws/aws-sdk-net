@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RepositoryScanningConfiguration Object
     /// </summary>  
-    public class RepositoryScanningConfigurationUnmarshaller : IUnmarshaller<RepositoryScanningConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RepositoryScanningConfiguration, JsonUnmarshallerContext>
+    public class RepositoryScanningConfigurationUnmarshaller : IJsonUnmarshaller<RepositoryScanningConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RepositoryScanningConfiguration IUnmarshaller<RepositoryScanningConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RepositoryScanningConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RepositoryScanningConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RepositoryScanningConfiguration unmarshalledObject = new RepositoryScanningConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appliedScanFilters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ScanningRepositoryFilter, ScanningRepositoryFilterUnmarshaller>(ScanningRepositoryFilterUnmarshaller.Instance);
-                    unmarshalledObject.AppliedScanFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ScanningRepositoryFilter, ScanningRepositoryFilterUnmarshaller>(ScanningRepositoryFilterUnmarshaller.Instance);
+                    unmarshalledObject.AppliedScanFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repositoryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanFrequency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanOnPush", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ScanOnPush = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanOnPush = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

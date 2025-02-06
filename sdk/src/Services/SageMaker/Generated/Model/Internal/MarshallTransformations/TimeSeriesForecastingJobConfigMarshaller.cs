@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,90 +49,90 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCandidateGenerationConfig())
             {
                 context.Writer.WritePropertyName("CandidateGenerationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CandidateGenerationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLJobCompletionCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompletionCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFeatureSpecificationS3Uri())
             {
                 context.Writer.WritePropertyName("FeatureSpecificationS3Uri");
-                context.Writer.Write(requestObject.FeatureSpecificationS3Uri);
+                context.Writer.WriteStringValue(requestObject.FeatureSpecificationS3Uri);
             }
 
             if(requestObject.IsSetForecastFrequency())
             {
                 context.Writer.WritePropertyName("ForecastFrequency");
-                context.Writer.Write(requestObject.ForecastFrequency);
+                context.Writer.WriteStringValue(requestObject.ForecastFrequency);
             }
 
             if(requestObject.IsSetForecastHorizon())
             {
                 context.Writer.WritePropertyName("ForecastHorizon");
-                context.Writer.Write(requestObject.ForecastHorizon.Value);
+                context.Writer.WriteNumberValue(requestObject.ForecastHorizon.Value);
             }
 
             if(requestObject.IsSetForecastQuantiles())
             {
                 context.Writer.WritePropertyName("ForecastQuantiles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectForecastQuantilesListValue in requestObject.ForecastQuantiles)
                 {
-                        context.Writer.Write(requestObjectForecastQuantilesListValue);
+                        context.Writer.WriteStringValue(requestObjectForecastQuantilesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHolidayConfig())
             {
                 context.Writer.WritePropertyName("HolidayConfig");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHolidayConfigListValue in requestObject.HolidayConfig)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HolidayConfigAttributesMarshaller.Instance;
                     marshaller.Marshall(requestObjectHolidayConfigListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimeSeriesConfig())
             {
                 context.Writer.WritePropertyName("TimeSeriesConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSeriesConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeSeriesConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransformations())
             {
                 context.Writer.WritePropertyName("Transformations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSeriesTransformationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Transformations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

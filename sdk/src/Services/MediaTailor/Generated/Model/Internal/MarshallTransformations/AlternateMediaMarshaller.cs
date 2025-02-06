@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdBreaks())
             {
                 context.Writer.WritePropertyName("AdBreaks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdBreaksListValue in requestObject.AdBreaks)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AdBreakMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdBreaksListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetClipRange())
             {
                 context.Writer.WritePropertyName("ClipRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClipRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClipRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetLiveSourceName())
             {
                 context.Writer.WritePropertyName("LiveSourceName");
-                context.Writer.Write(requestObject.LiveSourceName);
+                context.Writer.WriteStringValue(requestObject.LiveSourceName);
             }
 
             if(requestObject.IsSetScheduledStartTimeMillis())
             {
                 context.Writer.WritePropertyName("ScheduledStartTimeMillis");
-                context.Writer.Write(requestObject.ScheduledStartTimeMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduledStartTimeMillis.Value);
             }
 
             if(requestObject.IsSetSourceLocationName())
             {
                 context.Writer.WritePropertyName("SourceLocationName");
-                context.Writer.Write(requestObject.SourceLocationName);
+                context.Writer.WriteStringValue(requestObject.SourceLocationName);
             }
 
             if(requestObject.IsSetVodSourceName())
             {
                 context.Writer.WritePropertyName("VodSourceName");
-                context.Writer.Write(requestObject.VodSourceName);
+                context.Writer.WriteStringValue(requestObject.VodSourceName);
             }
 
         }

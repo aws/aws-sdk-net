@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3BucketAccessRoleArn())
             {
                 context.Writer.WritePropertyName("S3BucketAccessRoleArn");
-                context.Writer.Write(requestObject.S3BucketAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.S3BucketAccessRoleArn);
             }
 
             if(requestObject.IsSetS3BucketRegion())
             {
                 context.Writer.WritePropertyName("S3BucketRegion");
-                context.Writer.Write(requestObject.S3BucketRegion);
+                context.Writer.WriteStringValue(requestObject.S3BucketRegion);
             }
 
             if(requestObject.IsSetS3LocationUri())
             {
                 context.Writer.WritePropertyName("S3LocationUri");
-                context.Writer.Write(requestObject.S3LocationUri);
+                context.Writer.WriteStringValue(requestObject.S3LocationUri);
             }
 
         }

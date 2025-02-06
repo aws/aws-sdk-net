@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
@@ -64,148 +67,153 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field AppId set");
             request.AddPathResource("{appId}", StringUtils.FromString(publicRequest.AppId));
             request.ResourcePath = "/apps/{appId}/branches";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBackend())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBackend())
-                    {
-                        context.Writer.WritePropertyName("backend");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("backend");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BackendMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Backend, context);
+                var marshaller = BackendMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Backend, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBackendEnvironmentArn())
-                    {
-                        context.Writer.WritePropertyName("backendEnvironmentArn");
-                        context.Writer.Write(publicRequest.BackendEnvironmentArn);
-                    }
-
-                    if(publicRequest.IsSetBasicAuthCredentials())
-                    {
-                        context.Writer.WritePropertyName("basicAuthCredentials");
-                        context.Writer.Write(publicRequest.BasicAuthCredentials);
-                    }
-
-                    if(publicRequest.IsSetBranchName())
-                    {
-                        context.Writer.WritePropertyName("branchName");
-                        context.Writer.Write(publicRequest.BranchName);
-                    }
-
-                    if(publicRequest.IsSetBuildSpec())
-                    {
-                        context.Writer.WritePropertyName("buildSpec");
-                        context.Writer.Write(publicRequest.BuildSpec);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("displayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetEnableAutoBuild())
-                    {
-                        context.Writer.WritePropertyName("enableAutoBuild");
-                        context.Writer.Write(publicRequest.EnableAutoBuild.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableBasicAuth())
-                    {
-                        context.Writer.WritePropertyName("enableBasicAuth");
-                        context.Writer.Write(publicRequest.EnableBasicAuth.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableNotification())
-                    {
-                        context.Writer.WritePropertyName("enableNotification");
-                        context.Writer.Write(publicRequest.EnableNotification.Value);
-                    }
-
-                    if(publicRequest.IsSetEnablePerformanceMode())
-                    {
-                        context.Writer.WritePropertyName("enablePerformanceMode");
-                        context.Writer.Write(publicRequest.EnablePerformanceMode.Value);
-                    }
-
-                    if(publicRequest.IsSetEnablePullRequestPreview())
-                    {
-                        context.Writer.WritePropertyName("enablePullRequestPreview");
-                        context.Writer.Write(publicRequest.EnablePullRequestPreview.Value);
-                    }
-
-                    if(publicRequest.IsSetEnvironmentVariables())
-                    {
-                        context.Writer.WritePropertyName("environmentVariables");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
-                        {
-                            context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
-                            var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
-
-                                context.Writer.Write(publicRequestEnvironmentVariablesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFramework())
-                    {
-                        context.Writer.WritePropertyName("framework");
-                        context.Writer.Write(publicRequest.Framework);
-                    }
-
-                    if(publicRequest.IsSetPullRequestEnvironmentName())
-                    {
-                        context.Writer.WritePropertyName("pullRequestEnvironmentName");
-                        context.Writer.Write(publicRequest.PullRequestEnvironmentName);
-                    }
-
-                    if(publicRequest.IsSetStage())
-                    {
-                        context.Writer.WritePropertyName("stage");
-                        context.Writer.Write(publicRequest.Stage);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTtl())
-                    {
-                        context.Writer.WritePropertyName("ttl");
-                        context.Writer.Write(publicRequest.Ttl);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBackendEnvironmentArn())
+            {
+                context.Writer.WritePropertyName("backendEnvironmentArn");
+                context.Writer.WriteStringValue(publicRequest.BackendEnvironmentArn);
+            }
+
+            if(publicRequest.IsSetBasicAuthCredentials())
+            {
+                context.Writer.WritePropertyName("basicAuthCredentials");
+                context.Writer.WriteStringValue(publicRequest.BasicAuthCredentials);
+            }
+
+            if(publicRequest.IsSetBranchName())
+            {
+                context.Writer.WritePropertyName("branchName");
+                context.Writer.WriteStringValue(publicRequest.BranchName);
+            }
+
+            if(publicRequest.IsSetBuildSpec())
+            {
+                context.Writer.WritePropertyName("buildSpec");
+                context.Writer.WriteStringValue(publicRequest.BuildSpec);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetEnableAutoBuild())
+            {
+                context.Writer.WritePropertyName("enableAutoBuild");
+                context.Writer.WriteBooleanValue(publicRequest.EnableAutoBuild.Value);
+            }
+
+            if(publicRequest.IsSetEnableBasicAuth())
+            {
+                context.Writer.WritePropertyName("enableBasicAuth");
+                context.Writer.WriteBooleanValue(publicRequest.EnableBasicAuth.Value);
+            }
+
+            if(publicRequest.IsSetEnableNotification())
+            {
+                context.Writer.WritePropertyName("enableNotification");
+                context.Writer.WriteBooleanValue(publicRequest.EnableNotification.Value);
+            }
+
+            if(publicRequest.IsSetEnablePerformanceMode())
+            {
+                context.Writer.WritePropertyName("enablePerformanceMode");
+                context.Writer.WriteBooleanValue(publicRequest.EnablePerformanceMode.Value);
+            }
+
+            if(publicRequest.IsSetEnablePullRequestPreview())
+            {
+                context.Writer.WritePropertyName("enablePullRequestPreview");
+                context.Writer.WriteBooleanValue(publicRequest.EnablePullRequestPreview.Value);
+            }
+
+            if(publicRequest.IsSetEnvironmentVariables())
+            {
+                context.Writer.WritePropertyName("environmentVariables");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                {
+                    context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                    var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestEnvironmentVariablesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFramework())
+            {
+                context.Writer.WritePropertyName("framework");
+                context.Writer.WriteStringValue(publicRequest.Framework);
+            }
+
+            if(publicRequest.IsSetPullRequestEnvironmentName())
+            {
+                context.Writer.WritePropertyName("pullRequestEnvironmentName");
+                context.Writer.WriteStringValue(publicRequest.PullRequestEnvironmentName);
+            }
+
+            if(publicRequest.IsSetStage())
+            {
+                context.Writer.WritePropertyName("stage");
+                context.Writer.WriteStringValue(publicRequest.Stage);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTtl())
+            {
+                context.Writer.WritePropertyName("ttl");
+                context.Writer.WriteStringValue(publicRequest.Ttl);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

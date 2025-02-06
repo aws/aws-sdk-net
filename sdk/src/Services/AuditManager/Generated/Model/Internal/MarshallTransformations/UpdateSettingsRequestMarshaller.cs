@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -61,86 +64,91 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/settings";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultAssessmentReportsDestination())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultAssessmentReportsDestination())
-                    {
-                        context.Writer.WritePropertyName("defaultAssessmentReportsDestination");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("defaultAssessmentReportsDestination");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AssessmentReportsDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultAssessmentReportsDestination, context);
+                var marshaller = AssessmentReportsDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultAssessmentReportsDestination, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultExportDestination())
-                    {
-                        context.Writer.WritePropertyName("defaultExportDestination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DefaultExportDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultExportDestination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultProcessOwners())
-                    {
-                        context.Writer.WritePropertyName("defaultProcessOwners");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDefaultProcessOwnersListValue in publicRequest.DefaultProcessOwners)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RoleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDefaultProcessOwnersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDeregistrationPolicy())
-                    {
-                        context.Writer.WritePropertyName("deregistrationPolicy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeregistrationPolicyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeregistrationPolicy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEvidenceFinderEnabled())
-                    {
-                        context.Writer.WritePropertyName("evidenceFinderEnabled");
-                        context.Writer.Write(publicRequest.EvidenceFinderEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetKmsKey())
-                    {
-                        context.Writer.WritePropertyName("kmsKey");
-                        context.Writer.Write(publicRequest.KmsKey);
-                    }
-
-                    if(publicRequest.IsSetSnsTopic())
-                    {
-                        context.Writer.WritePropertyName("snsTopic");
-                        context.Writer.Write(publicRequest.SnsTopic);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDefaultExportDestination())
+            {
+                context.Writer.WritePropertyName("defaultExportDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefaultExportDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultExportDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDefaultProcessOwners())
+            {
+                context.Writer.WritePropertyName("defaultProcessOwners");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDefaultProcessOwnersListValue in publicRequest.DefaultProcessOwners)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RoleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDefaultProcessOwnersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDeregistrationPolicy())
+            {
+                context.Writer.WritePropertyName("deregistrationPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeregistrationPolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeregistrationPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEvidenceFinderEnabled())
+            {
+                context.Writer.WritePropertyName("evidenceFinderEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.EvidenceFinderEnabled.Value);
+            }
+
+            if(publicRequest.IsSetKmsKey())
+            {
+                context.Writer.WritePropertyName("kmsKey");
+                context.Writer.WriteStringValue(publicRequest.KmsKey);
+            }
+
+            if(publicRequest.IsSetSnsTopic())
+            {
+                context.Writer.WritePropertyName("snsTopic");
+                context.Writer.WriteStringValue(publicRequest.SnsTopic);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

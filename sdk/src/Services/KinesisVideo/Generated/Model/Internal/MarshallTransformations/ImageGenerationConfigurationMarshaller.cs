@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationConfig())
             {
                 context.Writer.WritePropertyName("DestinationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageGenerationDestinationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetFormatConfig())
             {
                 context.Writer.WritePropertyName("FormatConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFormatConfigKvp in requestObject.FormatConfig)
                 {
                     context.Writer.WritePropertyName(requestObjectFormatConfigKvp.Key);
                     var requestObjectFormatConfigValue = requestObjectFormatConfigKvp.Value;
 
-                        context.Writer.Write(requestObjectFormatConfigValue);
+                        context.Writer.WriteStringValue(requestObjectFormatConfigValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeightPixels())
             {
                 context.Writer.WritePropertyName("HeightPixels");
-                context.Writer.Write(requestObject.HeightPixels.Value);
+                context.Writer.WriteNumberValue(requestObject.HeightPixels.Value);
             }
 
             if(requestObject.IsSetImageSelectorType())
             {
                 context.Writer.WritePropertyName("ImageSelectorType");
-                context.Writer.Write(requestObject.ImageSelectorType);
+                context.Writer.WriteStringValue(requestObject.ImageSelectorType);
             }
 
             if(requestObject.IsSetSamplingInterval())
             {
                 context.Writer.WritePropertyName("SamplingInterval");
-                context.Writer.Write(requestObject.SamplingInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.SamplingInterval.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetWidthPixels())
             {
                 context.Writer.WritePropertyName("WidthPixels");
-                context.Writer.Write(requestObject.WidthPixels.Value);
+                context.Writer.WriteNumberValue(requestObject.WidthPixels.Value);
             }
 
         }

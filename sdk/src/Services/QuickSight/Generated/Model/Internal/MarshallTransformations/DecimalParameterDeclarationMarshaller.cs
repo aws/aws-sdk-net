@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValues())
             {
                 context.Writer.WritePropertyName("DefaultValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalDefaultValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMappedDataSetParameters())
             {
                 context.Writer.WritePropertyName("MappedDataSetParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMappedDataSetParametersListValue in requestObject.MappedDataSetParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MappedDataSetParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectMappedDataSetParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetParameterValueType())
             {
                 context.Writer.WritePropertyName("ParameterValueType");
-                context.Writer.Write(requestObject.ParameterValueType);
+                context.Writer.WriteStringValue(requestObject.ParameterValueType);
             }
 
             if(requestObject.IsSetValueWhenUnset())
             {
                 context.Writer.WritePropertyName("ValueWhenUnset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalValueWhenUnsetConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueWhenUnset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

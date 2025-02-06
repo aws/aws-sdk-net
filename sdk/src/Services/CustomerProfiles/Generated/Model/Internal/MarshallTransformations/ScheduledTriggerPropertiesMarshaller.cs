@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataPullMode())
             {
                 context.Writer.WritePropertyName("DataPullMode");
-                context.Writer.Write(requestObject.DataPullMode);
+                context.Writer.WriteStringValue(requestObject.DataPullMode);
             }
 
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("FirstExecutionFrom");
-                context.Writer.Write(requestObject.FirstExecutionFrom.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FirstExecutionFrom.Value)));
             }
 
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("ScheduleEndTime");
-                context.Writer.Write(requestObject.ScheduleEndTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleEndTime.Value)));
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
             if(requestObject.IsSetScheduleOffset())
             {
                 context.Writer.WritePropertyName("ScheduleOffset");
-                context.Writer.Write(requestObject.ScheduleOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduleOffset.Value);
             }
 
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("ScheduleStartTime");
-                context.Writer.Write(requestObject.ScheduleStartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleStartTime.Value)));
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

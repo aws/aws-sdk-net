@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketAccessRoleArn())
             {
                 context.Writer.WritePropertyName("BucketAccessRoleArn");
-                context.Writer.Write(requestObject.BucketAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.BucketAccessRoleArn);
             }
 
             if(requestObject.IsSetS3BucketArn())
             {
                 context.Writer.WritePropertyName("S3BucketArn");
-                context.Writer.Write(requestObject.S3BucketArn);
+                context.Writer.WriteStringValue(requestObject.S3BucketArn);
             }
 
             if(requestObject.IsSetSubdirectory())
             {
                 context.Writer.WritePropertyName("Subdirectory");
-                context.Writer.Write(requestObject.Subdirectory);
+                context.Writer.WriteStringValue(requestObject.Subdirectory);
             }
 
         }

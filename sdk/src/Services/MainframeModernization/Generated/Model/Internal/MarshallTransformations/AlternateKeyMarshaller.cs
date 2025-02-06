@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowDuplicates())
             {
                 context.Writer.WritePropertyName("allowDuplicates");
-                context.Writer.Write(requestObject.AllowDuplicates.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowDuplicates.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
-                context.Writer.Write(requestObject.Length.Value);
+                context.Writer.WriteNumberValue(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset.Value);
+                context.Writer.WriteNumberValue(requestObject.Offset.Value);
             }
 
         }

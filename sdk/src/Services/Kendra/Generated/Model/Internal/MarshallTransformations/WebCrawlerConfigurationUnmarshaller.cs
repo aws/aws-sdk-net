@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WebCrawlerConfiguration Object
     /// </summary>  
-    public class WebCrawlerConfigurationUnmarshaller : IUnmarshaller<WebCrawlerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WebCrawlerConfiguration, JsonUnmarshallerContext>
+    public class WebCrawlerConfigurationUnmarshaller : IJsonUnmarshaller<WebCrawlerConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WebCrawlerConfiguration IUnmarshaller<WebCrawlerConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WebCrawlerConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WebCrawlerConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WebCrawlerConfiguration unmarshalledObject = new WebCrawlerConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthenticationConfiguration", targetDepth))
                 {
                     var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CrawlDepth", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CrawlDepth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlDepth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxContentSizePerPageInMegaBytes", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MaxContentSizePerPageInMegaBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxContentSizePerPageInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxLinksPerPage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxLinksPerPage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxLinksPerPage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxUrlsPerMinuteCrawlRate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxUrlsPerMinuteCrawlRate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxUrlsPerMinuteCrawlRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProxyConfiguration", targetDepth))
                 {
                     var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UrlExclusionPatterns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.UrlExclusionPatterns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.UrlExclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UrlInclusionPatterns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.UrlInclusionPatterns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.UrlInclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Urls", targetDepth))
                 {
                     var unmarshaller = UrlsUnmarshaller.Instance;
-                    unmarshalledObject.Urls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Urls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

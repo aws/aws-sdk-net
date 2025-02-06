@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSetArn())
             {
                 context.Writer.WritePropertyName("DataSetArn");
-                context.Writer.Write(requestObject.DataSetArn);
+                context.Writer.WriteStringValue(requestObject.DataSetArn);
             }
 
             if(requestObject.IsSetJoinInstruction())
             {
                 context.Writer.WritePropertyName("JoinInstruction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JoinInstructionMarshaller.Instance;
                 marshaller.Marshall(requestObject.JoinInstruction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPhysicalTableId())
             {
                 context.Writer.WritePropertyName("PhysicalTableId");
-                context.Writer.Write(requestObject.PhysicalTableId);
+                context.Writer.WriteStringValue(requestObject.PhysicalTableId);
             }
 
         }

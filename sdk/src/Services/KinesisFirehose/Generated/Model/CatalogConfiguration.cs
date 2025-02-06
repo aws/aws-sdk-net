@@ -61,7 +61,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property WarehouseLocation. 
         /// <para>
-        ///  
+        /// The warehouse location for Apache Iceberg tables. You must configure this when schema
+        /// evolution and table creation is enabled.
         /// </para>
         ///  
         /// <para>

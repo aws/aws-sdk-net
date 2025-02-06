@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGenerationConfiguration())
             {
                 context.Writer.WritePropertyName("generationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GenerationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenerationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");
-                context.Writer.Write(requestObject.KnowledgeBaseId);
+                context.Writer.WriteStringValue(requestObject.KnowledgeBaseId);
             }
 
             if(requestObject.IsSetModelArn())
             {
                 context.Writer.WritePropertyName("modelArn");
-                context.Writer.Write(requestObject.ModelArn);
+                context.Writer.WriteStringValue(requestObject.ModelArn);
             }
 
             if(requestObject.IsSetOrchestrationConfiguration())
             {
                 context.Writer.WritePropertyName("orchestrationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OrchestrationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OrchestrationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetrievalConfiguration())
             {
                 context.Writer.WritePropertyName("retrievalConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetrievalConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

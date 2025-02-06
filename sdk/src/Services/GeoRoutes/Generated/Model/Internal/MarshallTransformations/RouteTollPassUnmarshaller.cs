@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteTollPass Object
     /// </summary>  
-    public class RouteTollPassUnmarshaller : IUnmarshaller<RouteTollPass, XmlUnmarshallerContext>, IUnmarshaller<RouteTollPass, JsonUnmarshallerContext>
+    public class RouteTollPassUnmarshaller : IJsonUnmarshaller<RouteTollPass, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteTollPass IUnmarshaller<RouteTollPass, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteTollPass Unmarshall(JsonUnmarshallerContext context)
+        public RouteTollPass Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteTollPass unmarshalledObject = new RouteTollPass();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IncludesReturnTrip", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludesReturnTrip = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludesReturnTrip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SeniorPass", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SeniorPass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SeniorPass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransferCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TransferCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransferCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TripCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TripCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TripCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValidityPeriod", targetDepth))
                 {
                     var unmarshaller = RouteTollPassValidityPeriodUnmarshaller.Instance;
-                    unmarshalledObject.ValidityPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValidityPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

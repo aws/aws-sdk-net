@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if(requestObject.IsSetAssertedControls())
             {
                 context.Writer.WritePropertyName("AssertedControls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssertedControlsListValue in requestObject.AssertedControls)
                 {
-                        context.Writer.Write(requestObjectAssertedControlsListValue);
+                        context.Writer.WriteStringValue(requestObjectAssertedControlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetControlPanelArn())
             {
                 context.Writer.WritePropertyName("ControlPanelArn");
-                context.Writer.Write(requestObject.ControlPanelArn);
+                context.Writer.WriteStringValue(requestObject.ControlPanelArn);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRuleConfig())
             {
                 context.Writer.WritePropertyName("RuleConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWaitPeriodMs())
             {
                 context.Writer.WritePropertyName("WaitPeriodMs");
-                context.Writer.Write(requestObject.WaitPeriodMs.Value);
+                context.Writer.WriteNumberValue(requestObject.WaitPeriodMs.Value);
             }
 
         }

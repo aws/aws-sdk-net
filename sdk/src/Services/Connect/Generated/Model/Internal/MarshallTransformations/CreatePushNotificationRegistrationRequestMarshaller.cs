@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -64,59 +67,64 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/push-notification/{InstanceId}/registrations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetContactConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ContactConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ContactConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ContactConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeviceToken())
-                    {
-                        context.Writer.WritePropertyName("DeviceToken");
-                        context.Writer.Write(publicRequest.DeviceToken);
-                    }
-
-                    if(publicRequest.IsSetDeviceType())
-                    {
-                        context.Writer.WritePropertyName("DeviceType");
-                        context.Writer.Write(publicRequest.DeviceType);
-                    }
-
-                    if(publicRequest.IsSetPinpointAppArn())
-                    {
-                        context.Writer.WritePropertyName("PinpointAppArn");
-                        context.Writer.Write(publicRequest.PinpointAppArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetContactConfiguration())
+            {
+                context.Writer.WritePropertyName("ContactConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContactConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContactConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeviceToken())
+            {
+                context.Writer.WritePropertyName("DeviceToken");
+                context.Writer.WriteStringValue(publicRequest.DeviceToken);
+            }
+
+            if(publicRequest.IsSetDeviceType())
+            {
+                context.Writer.WritePropertyName("DeviceType");
+                context.Writer.WriteStringValue(publicRequest.DeviceType);
+            }
+
+            if(publicRequest.IsSetPinpointAppArn())
+            {
+                context.Writer.WritePropertyName("PinpointAppArn");
+                context.Writer.WriteStringValue(publicRequest.PinpointAppArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

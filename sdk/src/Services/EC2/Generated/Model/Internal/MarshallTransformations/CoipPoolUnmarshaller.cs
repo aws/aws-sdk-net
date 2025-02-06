@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CoipPool Object
     /// </summary>  
-    public class CoipPoolUnmarshaller : IUnmarshaller<CoipPool, XmlUnmarshallerContext>, IUnmarshaller<CoipPool, JsonUnmarshallerContext>
+    public class CoipPoolUnmarshaller : IXmlUnmarshaller<CoipPool, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,17 +104,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CoipPool Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CoipPoolUnmarshaller _instance = new CoipPoolUnmarshaller();        
 

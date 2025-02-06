@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ManifestOutputLocation Object
     /// </summary>  
-    public class S3ManifestOutputLocationUnmarshaller : IUnmarshaller<S3ManifestOutputLocation, XmlUnmarshallerContext>, IUnmarshaller<S3ManifestOutputLocation, JsonUnmarshallerContext>
+    public class S3ManifestOutputLocationUnmarshaller : IXmlUnmarshaller<S3ManifestOutputLocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3ManifestOutputLocation Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static S3ManifestOutputLocationUnmarshaller _instance = new S3ManifestOutputLocationUnmarshaller();        
 
         /// <summary>

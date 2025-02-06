@@ -31,7 +31,16 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTableBucketMaintenanceConfiguration operation.
-    /// Gets details about a maintenance configuration for a given table bucket.
+    /// Gets details about a maintenance configuration for a given table bucket. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+    /// S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTableBucketMaintenanceConfiguration</c> permission
+    /// to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetTableBucketMaintenanceConfigurationRequest : AmazonS3TablesRequest
     {

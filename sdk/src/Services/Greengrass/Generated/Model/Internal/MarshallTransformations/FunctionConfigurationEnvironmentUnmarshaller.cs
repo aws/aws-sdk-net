@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FunctionConfigurationEnvironment Object
     /// </summary>  
-    public class FunctionConfigurationEnvironmentUnmarshaller : IUnmarshaller<FunctionConfigurationEnvironment, XmlUnmarshallerContext>, IUnmarshaller<FunctionConfigurationEnvironment, JsonUnmarshallerContext>
+    public class FunctionConfigurationEnvironmentUnmarshaller : IJsonUnmarshaller<FunctionConfigurationEnvironment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FunctionConfigurationEnvironment IUnmarshaller<FunctionConfigurationEnvironment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionConfigurationEnvironment Unmarshall(JsonUnmarshallerContext context)
+        public FunctionConfigurationEnvironment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FunctionConfigurationEnvironment unmarshalledObject = new FunctionConfigurationEnvironment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessSysfs", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Execution", targetDepth))
                 {
                     var unmarshaller = FunctionExecutionConfigUnmarshaller.Instance;
-                    unmarshalledObject.Execution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Execution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceAccessPolicies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResourceAccessPolicy, ResourceAccessPolicyUnmarshaller>(ResourceAccessPolicyUnmarshaller.Instance);
-                    unmarshalledObject.ResourceAccessPolicies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResourceAccessPolicy, ResourceAccessPolicyUnmarshaller>(ResourceAccessPolicyUnmarshaller.Instance);
+                    unmarshalledObject.ResourceAccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Variables", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

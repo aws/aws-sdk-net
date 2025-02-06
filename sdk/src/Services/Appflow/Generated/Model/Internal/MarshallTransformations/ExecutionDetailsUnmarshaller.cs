@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExecutionDetails Object
     /// </summary>  
-    public class ExecutionDetailsUnmarshaller : IUnmarshaller<ExecutionDetails, XmlUnmarshallerContext>, IUnmarshaller<ExecutionDetails, JsonUnmarshallerContext>
+    public class ExecutionDetailsUnmarshaller : IJsonUnmarshaller<ExecutionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExecutionDetails IUnmarshaller<ExecutionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExecutionDetails Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExecutionDetails unmarshalledObject = new ExecutionDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("mostRecentExecutionMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MostRecentExecutionMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MostRecentExecutionMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mostRecentExecutionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MostRecentExecutionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MostRecentExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mostRecentExecutionTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.MostRecentExecutionTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MostRecentExecutionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

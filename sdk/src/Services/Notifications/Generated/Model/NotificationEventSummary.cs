@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Describes a short summary and metadata for a notification event.
+    /// Describes a short summary and metadata for a <c>NotificationEvent</c>.
     /// </summary>
     public partial class NotificationEventSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventStatus. 
         /// <para>
-        /// The notification event status.
+        /// Provides additional information about the current status of the <c>NotificationEvent</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
+        /// All <c>EventRules</c> are <c>ACTIVE</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>. Any call can be run.
+        /// Some <c>EventRules</c> are <c>ACTIVE</c> and some are <c>INACTIVE</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>

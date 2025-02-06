@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class FlowInput
     {
         private FlowInputContent _content;
+        private string _nodeInputName;
         private string _nodeName;
         private string _nodeOutputName;
 
@@ -55,6 +56,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeInputName. 
+        /// <para>
+        /// The name of the input from the flow input node.
+        /// </para>
+        /// </summary>
+        public string NodeInputName
+        {
+            get { return this._nodeInputName; }
+            set { this._nodeInputName = value; }
+        }
+
+        // Check to see if NodeInputName property is set
+        internal bool IsSetNodeInputName()
+        {
+            return this._nodeInputName != null;
         }
 
         /// <summary>
@@ -82,7 +101,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The name of the output from the flow input node that begins the prompt flow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string NodeOutputName
         {
             get { return this._nodeOutputName; }

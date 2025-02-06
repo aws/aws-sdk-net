@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Deserializer Object
     /// </summary>  
-    public class DeserializerUnmarshaller : IUnmarshaller<Deserializer, XmlUnmarshallerContext>, IUnmarshaller<Deserializer, JsonUnmarshallerContext>
+    public class DeserializerUnmarshaller : IJsonUnmarshaller<Deserializer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Deserializer IUnmarshaller<Deserializer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Deserializer Unmarshall(JsonUnmarshallerContext context)
+        public Deserializer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Deserializer unmarshalledObject = new Deserializer();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("HiveJsonSerDe", targetDepth))
                 {
                     var unmarshaller = HiveJsonSerDeUnmarshaller.Instance;
-                    unmarshalledObject.HiveJsonSerDe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HiveJsonSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpenXJsonSerDe", targetDepth))
                 {
                     var unmarshaller = OpenXJsonSerDeUnmarshaller.Instance;
-                    unmarshalledObject.OpenXJsonSerDe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenXJsonSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

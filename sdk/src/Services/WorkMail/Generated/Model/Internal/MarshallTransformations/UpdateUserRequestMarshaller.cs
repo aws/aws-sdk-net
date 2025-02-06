@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -63,127 +66,132 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCity())
-                    {
-                        context.Writer.WritePropertyName("City");
-                        context.Writer.Write(publicRequest.City);
-                    }
-
-                    if(publicRequest.IsSetCompany())
-                    {
-                        context.Writer.WritePropertyName("Company");
-                        context.Writer.Write(publicRequest.Company);
-                    }
-
-                    if(publicRequest.IsSetCountry())
-                    {
-                        context.Writer.WritePropertyName("Country");
-                        context.Writer.Write(publicRequest.Country);
-                    }
-
-                    if(publicRequest.IsSetDepartment())
-                    {
-                        context.Writer.WritePropertyName("Department");
-                        context.Writer.Write(publicRequest.Department);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("DisplayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetFirstName())
-                    {
-                        context.Writer.WritePropertyName("FirstName");
-                        context.Writer.Write(publicRequest.FirstName);
-                    }
-
-                    if(publicRequest.IsSetHiddenFromGlobalAddressList())
-                    {
-                        context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
-                        context.Writer.Write(publicRequest.HiddenFromGlobalAddressList.Value);
-                    }
-
-                    if(publicRequest.IsSetIdentityProviderUserId())
-                    {
-                        context.Writer.WritePropertyName("IdentityProviderUserId");
-                        context.Writer.Write(publicRequest.IdentityProviderUserId);
-                    }
-
-                    if(publicRequest.IsSetInitials())
-                    {
-                        context.Writer.WritePropertyName("Initials");
-                        context.Writer.Write(publicRequest.Initials);
-                    }
-
-                    if(publicRequest.IsSetJobTitle())
-                    {
-                        context.Writer.WritePropertyName("JobTitle");
-                        context.Writer.Write(publicRequest.JobTitle);
-                    }
-
-                    if(publicRequest.IsSetLastName())
-                    {
-                        context.Writer.WritePropertyName("LastName");
-                        context.Writer.Write(publicRequest.LastName);
-                    }
-
-                    if(publicRequest.IsSetOffice())
-                    {
-                        context.Writer.WritePropertyName("Office");
-                        context.Writer.Write(publicRequest.Office);
-                    }
-
-                    if(publicRequest.IsSetOrganizationId())
-                    {
-                        context.Writer.WritePropertyName("OrganizationId");
-                        context.Writer.Write(publicRequest.OrganizationId);
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    if(publicRequest.IsSetStreet())
-                    {
-                        context.Writer.WritePropertyName("Street");
-                        context.Writer.Write(publicRequest.Street);
-                    }
-
-                    if(publicRequest.IsSetTelephone())
-                    {
-                        context.Writer.WritePropertyName("Telephone");
-                        context.Writer.Write(publicRequest.Telephone);
-                    }
-
-                    if(publicRequest.IsSetUserId())
-                    {
-                        context.Writer.WritePropertyName("UserId");
-                        context.Writer.Write(publicRequest.UserId);
-                    }
-
-                    if(publicRequest.IsSetZipCode())
-                    {
-                        context.Writer.WritePropertyName("ZipCode");
-                        context.Writer.Write(publicRequest.ZipCode);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("City");
+                context.Writer.WriteStringValue(publicRequest.City);
             }
+
+            if(publicRequest.IsSetCompany())
+            {
+                context.Writer.WritePropertyName("Company");
+                context.Writer.WriteStringValue(publicRequest.Company);
+            }
+
+            if(publicRequest.IsSetCountry())
+            {
+                context.Writer.WritePropertyName("Country");
+                context.Writer.WriteStringValue(publicRequest.Country);
+            }
+
+            if(publicRequest.IsSetDepartment())
+            {
+                context.Writer.WritePropertyName("Department");
+                context.Writer.WriteStringValue(publicRequest.Department);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("DisplayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetFirstName())
+            {
+                context.Writer.WritePropertyName("FirstName");
+                context.Writer.WriteStringValue(publicRequest.FirstName);
+            }
+
+            if(publicRequest.IsSetHiddenFromGlobalAddressList())
+            {
+                context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                context.Writer.WriteBooleanValue(publicRequest.HiddenFromGlobalAddressList.Value);
+            }
+
+            if(publicRequest.IsSetIdentityProviderUserId())
+            {
+                context.Writer.WritePropertyName("IdentityProviderUserId");
+                context.Writer.WriteStringValue(publicRequest.IdentityProviderUserId);
+            }
+
+            if(publicRequest.IsSetInitials())
+            {
+                context.Writer.WritePropertyName("Initials");
+                context.Writer.WriteStringValue(publicRequest.Initials);
+            }
+
+            if(publicRequest.IsSetJobTitle())
+            {
+                context.Writer.WritePropertyName("JobTitle");
+                context.Writer.WriteStringValue(publicRequest.JobTitle);
+            }
+
+            if(publicRequest.IsSetLastName())
+            {
+                context.Writer.WritePropertyName("LastName");
+                context.Writer.WriteStringValue(publicRequest.LastName);
+            }
+
+            if(publicRequest.IsSetOffice())
+            {
+                context.Writer.WritePropertyName("Office");
+                context.Writer.WriteStringValue(publicRequest.Office);
+            }
+
+            if(publicRequest.IsSetOrganizationId())
+            {
+                context.Writer.WritePropertyName("OrganizationId");
+                context.Writer.WriteStringValue(publicRequest.OrganizationId);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetStreet())
+            {
+                context.Writer.WritePropertyName("Street");
+                context.Writer.WriteStringValue(publicRequest.Street);
+            }
+
+            if(publicRequest.IsSetTelephone())
+            {
+                context.Writer.WritePropertyName("Telephone");
+                context.Writer.WriteStringValue(publicRequest.Telephone);
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("UserId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            if(publicRequest.IsSetZipCode())
+            {
+                context.Writer.WritePropertyName("ZipCode");
+                context.Writer.WriteStringValue(publicRequest.ZipCode);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

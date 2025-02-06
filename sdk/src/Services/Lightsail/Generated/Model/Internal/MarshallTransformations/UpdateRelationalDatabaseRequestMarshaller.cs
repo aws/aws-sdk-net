@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -63,85 +66,90 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplyImmediately())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplyImmediately())
-                    {
-                        context.Writer.WritePropertyName("applyImmediately");
-                        context.Writer.Write(publicRequest.ApplyImmediately.Value);
-                    }
-
-                    if(publicRequest.IsSetCaCertificateIdentifier())
-                    {
-                        context.Writer.WritePropertyName("caCertificateIdentifier");
-                        context.Writer.Write(publicRequest.CaCertificateIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDisableBackupRetention())
-                    {
-                        context.Writer.WritePropertyName("disableBackupRetention");
-                        context.Writer.Write(publicRequest.DisableBackupRetention.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableBackupRetention())
-                    {
-                        context.Writer.WritePropertyName("enableBackupRetention");
-                        context.Writer.Write(publicRequest.EnableBackupRetention.Value);
-                    }
-
-                    if(publicRequest.IsSetMasterUserPassword())
-                    {
-                        context.Writer.WritePropertyName("masterUserPassword");
-                        context.Writer.Write(publicRequest.MasterUserPassword);
-                    }
-
-                    if(publicRequest.IsSetPreferredBackupWindow())
-                    {
-                        context.Writer.WritePropertyName("preferredBackupWindow");
-                        context.Writer.Write(publicRequest.PreferredBackupWindow);
-                    }
-
-                    if(publicRequest.IsSetPreferredMaintenanceWindow())
-                    {
-                        context.Writer.WritePropertyName("preferredMaintenanceWindow");
-                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                    }
-
-                    if(publicRequest.IsSetPubliclyAccessible())
-                    {
-                        context.Writer.WritePropertyName("publiclyAccessible");
-                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                    }
-
-                    if(publicRequest.IsSetRelationalDatabaseBlueprintId())
-                    {
-                        context.Writer.WritePropertyName("relationalDatabaseBlueprintId");
-                        context.Writer.Write(publicRequest.RelationalDatabaseBlueprintId);
-                    }
-
-                    if(publicRequest.IsSetRelationalDatabaseName())
-                    {
-                        context.Writer.WritePropertyName("relationalDatabaseName");
-                        context.Writer.Write(publicRequest.RelationalDatabaseName);
-                    }
-
-                    if(publicRequest.IsSetRotateMasterUserPassword())
-                    {
-                        context.Writer.WritePropertyName("rotateMasterUserPassword");
-                        context.Writer.Write(publicRequest.RotateMasterUserPassword.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applyImmediately");
+                context.Writer.WriteBooleanValue(publicRequest.ApplyImmediately.Value);
             }
+
+            if(publicRequest.IsSetCaCertificateIdentifier())
+            {
+                context.Writer.WritePropertyName("caCertificateIdentifier");
+                context.Writer.WriteStringValue(publicRequest.CaCertificateIdentifier);
+            }
+
+            if(publicRequest.IsSetDisableBackupRetention())
+            {
+                context.Writer.WritePropertyName("disableBackupRetention");
+                context.Writer.WriteBooleanValue(publicRequest.DisableBackupRetention.Value);
+            }
+
+            if(publicRequest.IsSetEnableBackupRetention())
+            {
+                context.Writer.WritePropertyName("enableBackupRetention");
+                context.Writer.WriteBooleanValue(publicRequest.EnableBackupRetention.Value);
+            }
+
+            if(publicRequest.IsSetMasterUserPassword())
+            {
+                context.Writer.WritePropertyName("masterUserPassword");
+                context.Writer.WriteStringValue(publicRequest.MasterUserPassword);
+            }
+
+            if(publicRequest.IsSetPreferredBackupWindow())
+            {
+                context.Writer.WritePropertyName("preferredBackupWindow");
+                context.Writer.WriteStringValue(publicRequest.PreferredBackupWindow);
+            }
+
+            if(publicRequest.IsSetPreferredMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("preferredMaintenanceWindow");
+                context.Writer.WriteStringValue(publicRequest.PreferredMaintenanceWindow);
+            }
+
+            if(publicRequest.IsSetPubliclyAccessible())
+            {
+                context.Writer.WritePropertyName("publiclyAccessible");
+                context.Writer.WriteBooleanValue(publicRequest.PubliclyAccessible.Value);
+            }
+
+            if(publicRequest.IsSetRelationalDatabaseBlueprintId())
+            {
+                context.Writer.WritePropertyName("relationalDatabaseBlueprintId");
+                context.Writer.WriteStringValue(publicRequest.RelationalDatabaseBlueprintId);
+            }
+
+            if(publicRequest.IsSetRelationalDatabaseName())
+            {
+                context.Writer.WritePropertyName("relationalDatabaseName");
+                context.Writer.WriteStringValue(publicRequest.RelationalDatabaseName);
+            }
+
+            if(publicRequest.IsSetRotateMasterUserPassword())
+            {
+                context.Writer.WritePropertyName("rotateMasterUserPassword");
+                context.Writer.WriteBooleanValue(publicRequest.RotateMasterUserPassword.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

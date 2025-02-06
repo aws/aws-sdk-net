@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContainerPortConfiguration Object
     /// </summary>  
-    public class ContainerPortConfigurationUnmarshaller : IUnmarshaller<ContainerPortConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ContainerPortConfiguration, JsonUnmarshallerContext>
+    public class ContainerPortConfigurationUnmarshaller : IJsonUnmarshaller<ContainerPortConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ContainerPortConfiguration IUnmarshaller<ContainerPortConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerPortConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ContainerPortConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ContainerPortConfiguration unmarshalledObject = new ContainerPortConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContainerPortRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerPortRange, ContainerPortRangeUnmarshaller>(ContainerPortRangeUnmarshaller.Instance);
-                    unmarshalledObject.ContainerPortRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContainerPortRange, ContainerPortRangeUnmarshaller>(ContainerPortRangeUnmarshaller.Instance);
+                    unmarshalledObject.ContainerPortRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

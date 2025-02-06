@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("RegionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetReplicaGlobalSecondaryIndexSettingsUpdate())
             {
                 context.Writer.WritePropertyName("ReplicaGlobalSecondaryIndexSettingsUpdate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReplicaGlobalSecondaryIndexSettingsUpdateListValue in requestObject.ReplicaGlobalSecondaryIndexSettingsUpdate)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller.Instance;
                     marshaller.Marshall(requestObjectReplicaGlobalSecondaryIndexSettingsUpdateListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate())
             {
                 context.Writer.WritePropertyName("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReplicaProvisionedReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("ReplicaProvisionedReadCapacityUnits");
-                context.Writer.Write(requestObject.ReplicaProvisionedReadCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.ReplicaProvisionedReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetReplicaTableClass())
             {
                 context.Writer.WritePropertyName("ReplicaTableClass");
-                context.Writer.Write(requestObject.ReplicaTableClass);
+                context.Writer.WriteStringValue(requestObject.ReplicaTableClass);
             }
 
         }

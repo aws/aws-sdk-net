@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -53,43 +51,43 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("N");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.N.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.N.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.N.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.N.Value);
+                    context.Writer.WriteNumberValue(requestObject.N.Value);
                 }
             }
 
             if(requestObject.IsSetS())
             {
                 context.Writer.WritePropertyName("S");
-                context.Writer.Write(requestObject.S);
+                context.Writer.WriteStringValue(requestObject.S);
             }
 
             if(requestObject.IsSetSDM())
             {
                 context.Writer.WritePropertyName("SDM");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSDMKvp in requestObject.SDM)
                 {
                     context.Writer.WritePropertyName(requestObjectSDMKvp.Key);
                     var requestObjectSDMValue = requestObjectSDMKvp.Value;
 
-                        context.Writer.Write(requestObjectSDMValue);
+                        context.Writer.WriteNumberValue(requestObjectSDMValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSL())
             {
                 context.Writer.WritePropertyName("SL");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSLListValue in requestObject.SL)
                 {
-                        context.Writer.Write(requestObjectSLListValue);
+                        context.Writer.WriteStringValue(requestObjectSLListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

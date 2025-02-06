@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCookies())
             {
                 context.Writer.WritePropertyName("AllowCookies");
-                context.Writer.Write(requestObject.AllowCookies.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowCookies.Value);
             }
 
             if(requestObject.IsSetEnableXRay())
             {
                 context.Writer.WritePropertyName("EnableXRay");
-                context.Writer.Write(requestObject.EnableXRay.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableXRay.Value);
             }
 
             if(requestObject.IsSetExcludedPages())
             {
                 context.Writer.WritePropertyName("ExcludedPages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedPagesListValue in requestObject.ExcludedPages)
                 {
-                        context.Writer.Write(requestObjectExcludedPagesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedPagesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFavoritePages())
             {
                 context.Writer.WritePropertyName("FavoritePages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFavoritePagesListValue in requestObject.FavoritePages)
                 {
-                        context.Writer.Write(requestObjectFavoritePagesListValue);
+                        context.Writer.WriteStringValue(requestObjectFavoritePagesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGuestRoleArn())
             {
                 context.Writer.WritePropertyName("GuestRoleArn");
-                context.Writer.Write(requestObject.GuestRoleArn);
+                context.Writer.WriteStringValue(requestObject.GuestRoleArn);
             }
 
             if(requestObject.IsSetIdentityPoolId())
             {
                 context.Writer.WritePropertyName("IdentityPoolId");
-                context.Writer.Write(requestObject.IdentityPoolId);
+                context.Writer.WriteStringValue(requestObject.IdentityPoolId);
             }
 
             if(requestObject.IsSetIncludedPages())
             {
                 context.Writer.WritePropertyName("IncludedPages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludedPagesListValue in requestObject.IncludedPages)
                 {
-                        context.Writer.Write(requestObjectIncludedPagesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludedPagesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSessionSampleRate())
@@ -110,23 +108,23 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("SessionSampleRate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SessionSampleRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SessionSampleRate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SessionSampleRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SessionSampleRate.Value);
+                    context.Writer.WriteNumberValue(requestObject.SessionSampleRate.Value);
                 }
             }
 
             if(requestObject.IsSetTelemetries())
             {
                 context.Writer.WritePropertyName("Telemetries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTelemetriesListValue in requestObject.Telemetries)
                 {
-                        context.Writer.Write(requestObjectTelemetriesListValue);
+                        context.Writer.WriteStringValue(requestObjectTelemetriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

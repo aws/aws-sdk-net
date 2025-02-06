@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResizeNotFoundException operation
     /// </summary>  
-    public class ResizeNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResizeNotFoundException, XmlUnmarshallerContext>
+    public class ResizeNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResizeNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

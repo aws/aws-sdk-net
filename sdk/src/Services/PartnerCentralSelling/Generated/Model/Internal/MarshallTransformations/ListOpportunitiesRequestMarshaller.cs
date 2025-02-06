@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -63,103 +66,108 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalog())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalog())
-                    {
-                        context.Writer.WritePropertyName("Catalog");
-                        context.Writer.Write(publicRequest.Catalog);
-                    }
-
-                    if(publicRequest.IsSetCustomerCompanyName())
-                    {
-                        context.Writer.WritePropertyName("CustomerCompanyName");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCustomerCompanyNameListValue in publicRequest.CustomerCompanyName)
-                        {
-                                context.Writer.Write(publicRequestCustomerCompanyNameListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentifier())
-                    {
-                        context.Writer.WritePropertyName("Identifier");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIdentifierListValue in publicRequest.Identifier)
-                        {
-                                context.Writer.Write(publicRequestIdentifierListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLastModifiedDate())
-                    {
-                        context.Writer.WritePropertyName("LastModifiedDate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LastModifiedDateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LastModifiedDate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLifeCycleReviewStatus())
-                    {
-                        context.Writer.WritePropertyName("LifeCycleReviewStatus");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLifeCycleReviewStatusListValue in publicRequest.LifeCycleReviewStatus)
-                        {
-                                context.Writer.Write(publicRequestLifeCycleReviewStatusListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLifeCycleStage())
-                    {
-                        context.Writer.WritePropertyName("LifeCycleStage");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLifeCycleStageListValue in publicRequest.LifeCycleStage)
-                        {
-                                context.Writer.Write(publicRequestLifeCycleStageListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSort())
-                    {
-                        context.Writer.WritePropertyName("Sort");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpportunitySortMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Sort, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Catalog");
+                context.Writer.WriteStringValue(publicRequest.Catalog);
             }
+
+            if(publicRequest.IsSetCustomerCompanyName())
+            {
+                context.Writer.WritePropertyName("CustomerCompanyName");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCustomerCompanyNameListValue in publicRequest.CustomerCompanyName)
+                {
+                        context.Writer.WriteStringValue(publicRequestCustomerCompanyNameListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIdentifier())
+            {
+                context.Writer.WritePropertyName("Identifier");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIdentifierListValue in publicRequest.Identifier)
+                {
+                        context.Writer.WriteStringValue(publicRequestIdentifierListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLastModifiedDate())
+            {
+                context.Writer.WritePropertyName("LastModifiedDate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LastModifiedDateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LastModifiedDate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLifeCycleReviewStatus())
+            {
+                context.Writer.WritePropertyName("LifeCycleReviewStatus");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLifeCycleReviewStatusListValue in publicRequest.LifeCycleReviewStatus)
+                {
+                        context.Writer.WriteStringValue(publicRequestLifeCycleReviewStatusListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLifeCycleStage())
+            {
+                context.Writer.WritePropertyName("LifeCycleStage");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLifeCycleStageListValue in publicRequest.LifeCycleStage)
+                {
+                        context.Writer.WriteStringValue(publicRequestLifeCycleStageListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSort())
+            {
+                context.Writer.WritePropertyName("Sort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpportunitySortMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Sort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

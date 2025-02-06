@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionName())
             {
                 context.Writer.WritePropertyName("actionName");
-                context.Writer.Write(requestObject.ActionName);
+                context.Writer.WriteStringValue(requestObject.ActionName);
             }
 
             if(requestObject.IsSetExternalParameters())
             {
                 context.Writer.WritePropertyName("externalParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExternalParametersKvp in requestObject.ExternalParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectExternalParametersKvp.Key);
                     var requestObjectExternalParametersValue = requestObjectExternalParametersKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SsmExternalParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectExternalParametersValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMustSucceedForCutover())
             {
                 context.Writer.WritePropertyName("mustSucceedForCutover");
-                context.Writer.Write(requestObject.MustSucceedForCutover.Value);
+                context.Writer.WriteBooleanValue(requestObject.MustSucceedForCutover.Value);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectParametersValueListValue in requestObjectParametersValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = SsmParameterStoreParameterMarshaller.Instance;
                         marshaller.Marshall(requestObjectParametersValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSsmDocumentName())
             {
                 context.Writer.WritePropertyName("ssmDocumentName");
-                context.Writer.Write(requestObject.SsmDocumentName);
+                context.Writer.WriteStringValue(requestObject.SsmDocumentName);
             }
 
             if(requestObject.IsSetTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("timeoutSeconds");
-                context.Writer.Write(requestObject.TimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutSeconds.Value);
             }
 
         }

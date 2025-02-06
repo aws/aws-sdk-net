@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRetentionPeriodHours())
             {
                 context.Writer.WritePropertyName("RetentionPeriodHours");
-                context.Writer.Write(requestObject.RetentionPeriodHours.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionPeriodHours.Value);
             }
 
             if(requestObject.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");
-                context.Writer.Write(requestObject.ShardCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ShardCount.Value);
             }
 
             if(requestObject.IsSetStreamEncryption())
             {
                 context.Writer.WritePropertyName("StreamEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsKinesisStreamStreamEncryptionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

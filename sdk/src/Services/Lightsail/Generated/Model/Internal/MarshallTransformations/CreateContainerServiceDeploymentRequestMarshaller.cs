@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContainers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("containers");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestContainersKvp in publicRequest.Containers)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContainers())
-                    {
-                        context.Writer.WritePropertyName("containers");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestContainersKvp in publicRequest.Containers)
-                        {
-                            context.Writer.WritePropertyName(publicRequestContainersKvp.Key);
-                            var publicRequestContainersValue = publicRequestContainersKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestContainersKvp.Key);
+                    var publicRequestContainersValue = publicRequestContainersKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ContainerMarshaller.Instance;
-                            marshaller.Marshall(publicRequestContainersValue, context);
+                    var marshaller = ContainerMarshaller.Instance;
+                    marshaller.Marshall(publicRequestContainersValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPublicEndpoint())
-                    {
-                        context.Writer.WritePropertyName("publicEndpoint");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EndpointRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PublicEndpoint, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceName())
-                    {
-                        context.Writer.WritePropertyName("serviceName");
-                        context.Writer.Write(publicRequest.ServiceName);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetPublicEndpoint())
+            {
+                context.Writer.WritePropertyName("publicEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndpointRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PublicEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetServiceName())
+            {
+                context.Writer.WritePropertyName("serviceName");
+                context.Writer.WriteStringValue(publicRequest.ServiceName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

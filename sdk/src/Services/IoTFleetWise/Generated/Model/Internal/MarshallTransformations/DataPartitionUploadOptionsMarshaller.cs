@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionLanguageVersion())
             {
                 context.Writer.WritePropertyName("conditionLanguageVersion");
-                context.Writer.Write(requestObject.ConditionLanguageVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.ConditionLanguageVersion.Value);
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
         }

@@ -44,7 +44,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property AggregationDuration. 
         /// <para>
-        /// The aggregation preference of the NotificationConfiguration.
+        /// The aggregation preference of the <c>NotificationConfiguration</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -73,10 +73,6 @@ namespace Amazon.Notifications.Model
         ///  <ul> <li> 
         /// <para>
         /// Don't aggregate notifications.
-        /// </para>
-        ///  
-        /// <para>
-        /// No delay in delivery.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
@@ -114,7 +110,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the NotificationConfiguration.
+        /// The creation time of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -133,7 +129,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the NotificationConfiguration.
+        /// The description of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -152,7 +148,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the NotificationConfiguration.
+        /// The name of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -171,59 +167,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this NotificationConfiguration.
+        /// The status of this <c>NotificationConfiguration</c>.
         /// </para>
-        ///  
-        /// <para>
-        /// The status should always be <c>INACTIVE</c> when part of the CreateNotificationConfiguration
-        /// response.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>ACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// All EventRules are <c>ACTIVE</c> and any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>PARTIALLY_ACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Some EventRules are <c>ACTIVE</c> and some are <c>INACTIVE</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>INACTIVE</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// All EventRules are <c>INACTIVE</c> and any call can be run.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>DELETING</c> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// This NotificationConfiguration is being deleted. Only <c>GET</c> and <c>LIST</c> calls
-        /// can be run.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only <c>GET</c> and <c>LIST</c> calls can be run.
-        /// </para>
-        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public NotificationConfigurationStatus Status

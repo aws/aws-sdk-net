@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationIDs())
             {
                 context.Writer.WritePropertyName("applicationIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApplicationIDsListValue in requestObject.ApplicationIDs)
                 {
-                        context.Writer.Write(requestObjectApplicationIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectApplicationIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIsArchived())
             {
                 context.Writer.WritePropertyName("isArchived");
-                context.Writer.Write(requestObject.IsArchived.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsArchived.Value);
             }
 
             if(requestObject.IsSetLifeCycleStates())
             {
                 context.Writer.WritePropertyName("lifeCycleStates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLifeCycleStatesListValue in requestObject.LifeCycleStates)
                 {
-                        context.Writer.Write(requestObjectLifeCycleStatesListValue);
+                        context.Writer.WriteStringValue(requestObjectLifeCycleStatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReplicationTypes())
             {
                 context.Writer.WritePropertyName("replicationTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReplicationTypesListValue in requestObject.ReplicationTypes)
                 {
-                        context.Writer.Write(requestObjectReplicationTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectReplicationTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceServerIDs())
             {
                 context.Writer.WritePropertyName("sourceServerIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceServerIDsListValue in requestObject.SourceServerIDs)
                 {
-                        context.Writer.Write(requestObjectSourceServerIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceServerIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

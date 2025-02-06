@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceUtilization Object
     /// </summary>  
-    public class ResourceUtilizationUnmarshaller : IUnmarshaller<ResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<ResourceUtilization, JsonUnmarshallerContext>
+    public class ResourceUtilizationUnmarshaller : IJsonUnmarshaller<ResourceUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceUtilization IUnmarshaller<ResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceUtilization Unmarshall(JsonUnmarshallerContext context)
+        public ResourceUtilization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceUtilization unmarshalledObject = new ResourceUtilization();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EC2ResourceUtilization", targetDepth))
                 {
                     var unmarshaller = EC2ResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.EC2ResourceUtilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EC2ResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

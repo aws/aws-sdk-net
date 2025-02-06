@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointPrivateAccess())
             {
                 context.Writer.WritePropertyName("endpointPrivateAccess");
-                context.Writer.Write(requestObject.EndpointPrivateAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.EndpointPrivateAccess.Value);
             }
 
             if(requestObject.IsSetEndpointPublicAccess())
             {
                 context.Writer.WritePropertyName("endpointPublicAccess");
-                context.Writer.Write(requestObject.EndpointPublicAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.EndpointPublicAccess.Value);
             }
 
             if(requestObject.IsSetPublicAccessCidrs())
             {
                 context.Writer.WritePropertyName("publicAccessCidrs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPublicAccessCidrsListValue in requestObject.PublicAccessCidrs)
                 {
-                        context.Writer.Write(requestObjectPublicAccessCidrsListValue);
+                        context.Writer.WriteStringValue(requestObjectPublicAccessCidrsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("subnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

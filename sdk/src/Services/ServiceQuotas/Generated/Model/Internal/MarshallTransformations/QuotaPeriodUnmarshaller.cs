@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QuotaPeriod Object
     /// </summary>  
-    public class QuotaPeriodUnmarshaller : IUnmarshaller<QuotaPeriod, XmlUnmarshallerContext>, IUnmarshaller<QuotaPeriod, JsonUnmarshallerContext>
+    public class QuotaPeriodUnmarshaller : IJsonUnmarshaller<QuotaPeriod, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QuotaPeriod IUnmarshaller<QuotaPeriod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QuotaPeriod Unmarshall(JsonUnmarshallerContext context)
+        public QuotaPeriod Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QuotaPeriod unmarshalledObject = new QuotaPeriod();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PeriodUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PeriodUnit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeriodUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeriodValue", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PeriodValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeriodValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

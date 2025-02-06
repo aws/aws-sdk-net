@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetMaximumResolution())
             {
                 context.Writer.WritePropertyName("maximumResolution");
-                context.Writer.Write(requestObject.MaximumResolution);
+                context.Writer.WriteStringValue(requestObject.MaximumResolution);
             }
 
             if(requestObject.IsSetPolicy())
             {
                 context.Writer.WritePropertyName("policy");
-                context.Writer.Write(requestObject.Policy);
+                context.Writer.WriteStringValue(requestObject.Policy);
             }
 
         }

@@ -257,9 +257,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ANYWHERE</c> – Your game server and supporting software is deployed to compute
-        /// resources that are provided and managed by you. With this compute type, you can also
-        /// set the <c>AnywhereConfiguration</c> parameter.
+        ///  <c>ANYWHERE</c> – Game servers and supporting software are deployed to compute resources
+        /// that you provide and manage. With this compute type, you can also set the <c>AnywhereConfiguration</c>
+        /// parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -300,10 +300,11 @@ namespace Amazon.GameLift.Model
         /// The IP address ranges and port settings that allow inbound traffic to access game
         /// server processes and other processes on this fleet. Set this parameter for managed
         /// EC2 fleets. You can leave this parameter empty when creating the fleet, but you must
-        /// call <a>UpdateFleetPortSettings</a> to set it before players can connect to game sessions.
-        /// As a best practice, we recommend opening ports for remote access only when you need
-        /// them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift
-        /// automatically sets TCP and UDP ranges.
+        /// call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings">https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings</a>
+        /// to set it before players can connect to game sessions. As a best practice, we recommend
+        /// opening ports for remote access only when you need them and closing them when you're
+        /// finished. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and
+        /// UDP ranges.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

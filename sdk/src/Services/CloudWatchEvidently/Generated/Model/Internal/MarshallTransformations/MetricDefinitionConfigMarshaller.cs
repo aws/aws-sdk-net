@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityIdKey())
             {
                 context.Writer.WritePropertyName("entityIdKey");
-                context.Writer.Write(requestObject.EntityIdKey);
+                context.Writer.WriteStringValue(requestObject.EntityIdKey);
             }
 
             if(requestObject.IsSetEventPattern())
             {
                 context.Writer.WritePropertyName("eventPattern");
-                context.Writer.Write(requestObject.EventPattern);
+                context.Writer.WriteStringValue(requestObject.EventPattern);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetUnitLabel())
             {
                 context.Writer.WritePropertyName("unitLabel");
-                context.Writer.Write(requestObject.UnitLabel);
+                context.Writer.WriteStringValue(requestObject.UnitLabel);
             }
 
             if(requestObject.IsSetValueKey())
             {
                 context.Writer.WritePropertyName("valueKey");
-                context.Writer.Write(requestObject.ValueKey);
+                context.Writer.WriteStringValue(requestObject.ValueKey);
             }
 
         }

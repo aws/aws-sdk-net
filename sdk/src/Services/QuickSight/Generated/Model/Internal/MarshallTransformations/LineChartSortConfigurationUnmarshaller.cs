@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LineChartSortConfiguration Object
     /// </summary>  
-    public class LineChartSortConfigurationUnmarshaller : IUnmarshaller<LineChartSortConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LineChartSortConfiguration, JsonUnmarshallerContext>
+    public class LineChartSortConfigurationUnmarshaller : IJsonUnmarshaller<LineChartSortConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LineChartSortConfiguration IUnmarshaller<LineChartSortConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LineChartSortConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LineChartSortConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LineChartSortConfiguration unmarshalledObject = new LineChartSortConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryItemsLimitConfiguration", targetDepth))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CategoryItemsLimitConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CategorySort", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
-                    unmarshalledObject.CategorySort = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
+                    unmarshalledObject.CategorySort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColorItemsLimitConfiguration", targetDepth))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ColorItemsLimitConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SmallMultiplesLimitConfiguration", targetDepth))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SmallMultiplesLimitConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SmallMultiplesLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SmallMultiplesSort", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
-                    unmarshalledObject.SmallMultiplesSort = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
+                    unmarshalledObject.SmallMultiplesSort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

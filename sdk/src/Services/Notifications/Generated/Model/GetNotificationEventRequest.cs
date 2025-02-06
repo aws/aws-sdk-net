@@ -31,17 +31,17 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNotificationEvent operation.
-    /// Returns a specified NotificationEvent.
+    /// Returns a specified <c>NotificationEvent</c>.
     /// 
     ///  <important> 
     /// <para>
     /// User Notifications stores notifications in the individual Regions you register as
-    /// notification hubs and the Region of the source event rule. GetNotificationEvent only
-    /// returns notifications stored in the same Region in which the action is called. User
-    /// Notifications doesn't backfill notifications to new Regions selected as notification
+    /// notification hubs and the Region of the source event rule. <c>GetNotificationEvent</c>
+    /// only returns notifications stored in the same Region in which the action is called.
+    /// User Notifications doesn't backfill notifications to new Regions selected as notification
     /// hubs. For this reason, we recommend that you make calls in your oldest registered
     /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-    /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+    /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -53,7 +53,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationEvent to return.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationEvent</c> to return.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,8 +72,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale code of the language used for the retrieved NotificationEvent. The default
-        /// locale is English <c>en_US</c>.
+        /// The locale code of the language used for the retrieved <c>NotificationEvent</c>. The
+        /// default locale is English <c>en_US</c>.
         /// </para>
         /// </summary>
         public LocaleCode Locale

@@ -29,173 +29,163 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UtteranceSpecification Object
     /// </summary>  
-    public class UtteranceSpecificationUnmarshaller : IUnmarshaller<UtteranceSpecification, XmlUnmarshallerContext>, IUnmarshaller<UtteranceSpecification, JsonUnmarshallerContext>
+    public class UtteranceSpecificationUnmarshaller : IJsonUnmarshaller<UtteranceSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UtteranceSpecification IUnmarshaller<UtteranceSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UtteranceSpecification Unmarshall(JsonUnmarshallerContext context)
+        public UtteranceSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UtteranceSpecification unmarshalledObject = new UtteranceSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("associatedIntentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedIntentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssociatedIntentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("associatedSlotName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociatedSlotName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssociatedSlotName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioVoiceDurationMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AudioVoiceDurationMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioVoiceDurationMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botAliasId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotAliasId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotAliasId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botResponseAudioVoiceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotResponseAudioVoiceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotResponseAudioVoiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botResponses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UtteranceBotResponse, UtteranceBotResponseUnmarshaller>(UtteranceBotResponseUnmarshaller.Instance);
-                    unmarshalledObject.BotResponses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UtteranceBotResponse, UtteranceBotResponseUnmarshaller>(UtteranceBotResponseUnmarshaller.Instance);
+                    unmarshalledObject.BotResponses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("conversationEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConversationEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConversationEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("conversationStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ConversationStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConversationStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dialogActionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DialogActionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DialogActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("intentState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntentState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntentState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("localeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocaleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotsFilledInSession", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotsFilledInSession = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlotsFilledInSession = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utterance", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Utterance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Utterance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utteranceRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UtteranceRequestId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtteranceRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utteranceTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UtteranceTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtteranceTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utteranceUnderstood", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UtteranceUnderstood = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtteranceUnderstood = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

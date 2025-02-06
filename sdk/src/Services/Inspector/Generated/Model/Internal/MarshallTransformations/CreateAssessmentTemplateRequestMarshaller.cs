@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssessmentTargetArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssessmentTargetArn())
-                    {
-                        context.Writer.WritePropertyName("assessmentTargetArn");
-                        context.Writer.Write(publicRequest.AssessmentTargetArn);
-                    }
-
-                    if(publicRequest.IsSetAssessmentTemplateName())
-                    {
-                        context.Writer.WritePropertyName("assessmentTemplateName");
-                        context.Writer.Write(publicRequest.AssessmentTemplateName);
-                    }
-
-                    if(publicRequest.IsSetDurationInSeconds())
-                    {
-                        context.Writer.WritePropertyName("durationInSeconds");
-                        context.Writer.Write(publicRequest.DurationInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetRulesPackageArns())
-                    {
-                        context.Writer.WritePropertyName("rulesPackageArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRulesPackageArnsListValue in publicRequest.RulesPackageArns)
-                        {
-                                context.Writer.Write(publicRequestRulesPackageArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserAttributesForFindings())
-                    {
-                        context.Writer.WritePropertyName("userAttributesForFindings");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserAttributesForFindingsListValue in publicRequest.UserAttributesForFindings)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttributeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserAttributesForFindingsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("assessmentTargetArn");
+                context.Writer.WriteStringValue(publicRequest.AssessmentTargetArn);
             }
+
+            if(publicRequest.IsSetAssessmentTemplateName())
+            {
+                context.Writer.WritePropertyName("assessmentTemplateName");
+                context.Writer.WriteStringValue(publicRequest.AssessmentTemplateName);
+            }
+
+            if(publicRequest.IsSetDurationInSeconds())
+            {
+                context.Writer.WritePropertyName("durationInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.DurationInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetRulesPackageArns())
+            {
+                context.Writer.WritePropertyName("rulesPackageArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRulesPackageArnsListValue in publicRequest.RulesPackageArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestRulesPackageArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserAttributesForFindings())
+            {
+                context.Writer.WritePropertyName("userAttributesForFindings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserAttributesForFindingsListValue in publicRequest.UserAttributesForFindings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttributeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserAttributesForFindingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SplunkDestinationDescription Object
     /// </summary>  
-    public class SplunkDestinationDescriptionUnmarshaller : IUnmarshaller<SplunkDestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<SplunkDestinationDescription, JsonUnmarshallerContext>
+    public class SplunkDestinationDescriptionUnmarshaller : IJsonUnmarshaller<SplunkDestinationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SplunkDestinationDescription IUnmarshaller<SplunkDestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SplunkDestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public SplunkDestinationDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SplunkDestinationDescription unmarshalledObject = new SplunkDestinationDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BufferingHints", targetDepth))
                 {
                     var unmarshaller = SplunkBufferingHintsUnmarshaller.Instance;
-                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HECAcknowledgmentTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HECAcknowledgmentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HECAcknowledgmentTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HECEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HECEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HECEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HECEndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HECEndpointType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HECEndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HECToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HECToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HECToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProcessingConfiguration", targetDepth))
                 {
                     var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetryOptions", targetDepth))
                 {
                     var unmarshaller = SplunkRetryOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3BackupMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DestinationDescription", targetDepth))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecretsManagerConfiguration", targetDepth))
                 {
                     var unmarshaller = SecretsManagerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

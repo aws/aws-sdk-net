@@ -31,12 +31,12 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterNotificationHub operation.
-    /// Registers a NotificationHub in the specified Region.
+    /// Registers a <c>NotificationConfiguration</c> in the specified Region.
     /// 
     ///  
     /// <para>
-    /// There is a maximum of one NotificationHub per Region. You can have a maximum of 3
-    /// NotificationHubs at a time.
+    /// There is a maximum of one <c>NotificationConfiguration</c> per Region. You can have
+    /// a maximum of 3 <c>NotificationHub</c> resources at a time.
     /// </para>
     /// </summary>
     public partial class RegisterNotificationHubRequest : AmazonNotificationsRequest
@@ -46,7 +46,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationHubRegion. 
         /// <para>
-        /// The Region of the NotificationHub.
+        /// The Region of the <c>NotificationHub</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=25)]

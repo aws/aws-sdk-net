@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
@@ -63,74 +66,79 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdaptersConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdaptersConfig())
-                    {
-                        context.Writer.WritePropertyName("AdaptersConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AdaptersConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AdaptersConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AdaptersConfig, context);
+                var marshaller = AdaptersConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdaptersConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDocument())
-                    {
-                        context.Writer.WritePropertyName("Document");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Document, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFeatureTypes())
-                    {
-                        context.Writer.WritePropertyName("FeatureTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
-                        {
-                                context.Writer.Write(publicRequestFeatureTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetHumanLoopConfig())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HumanLoopConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueriesConfig())
-                    {
-                        context.Writer.WritePropertyName("QueriesConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QueriesConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.QueriesConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDocument())
+            {
+                context.Writer.WritePropertyName("Document");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Document, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFeatureTypes())
+            {
+                context.Writer.WritePropertyName("FeatureTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFeatureTypesListValue in publicRequest.FeatureTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestFeatureTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetHumanLoopConfig())
+            {
+                context.Writer.WritePropertyName("HumanLoopConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HumanLoopConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueriesConfig())
+            {
+                context.Writer.WritePropertyName("QueriesConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QueriesConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QueriesConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

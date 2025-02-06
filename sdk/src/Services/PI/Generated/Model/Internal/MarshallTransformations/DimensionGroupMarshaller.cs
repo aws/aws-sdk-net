@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                        context.Writer.Write(requestObjectDimensionsListValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("Group");
-                context.Writer.Write(requestObject.Group);
+                context.Writer.WriteStringValue(requestObject.Group);
             }
 
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit.Value);
+                context.Writer.WriteNumberValue(requestObject.Limit.Value);
             }
 
         }

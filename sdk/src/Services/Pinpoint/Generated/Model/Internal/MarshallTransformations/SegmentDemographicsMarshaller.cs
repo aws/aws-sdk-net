@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppVersion())
             {
                 context.Writer.WritePropertyName("AppVersion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AppVersion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("Channel");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Channel, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceType())
             {
                 context.Writer.WritePropertyName("DeviceType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeviceType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMake())
             {
                 context.Writer.WritePropertyName("Make");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Make, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("Model");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Model, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlatform())
             {
                 context.Writer.WritePropertyName("Platform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SetDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Platform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

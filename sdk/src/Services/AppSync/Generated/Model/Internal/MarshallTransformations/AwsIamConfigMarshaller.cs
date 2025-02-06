@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSigningRegion())
             {
                 context.Writer.WritePropertyName("signingRegion");
-                context.Writer.Write(requestObject.SigningRegion);
+                context.Writer.WriteStringValue(requestObject.SigningRegion);
             }
 
             if(requestObject.IsSetSigningServiceName())
             {
                 context.Writer.WritePropertyName("signingServiceName");
-                context.Writer.Write(requestObject.SigningServiceName);
+                context.Writer.WriteStringValue(requestObject.SigningServiceName);
             }
 
         }

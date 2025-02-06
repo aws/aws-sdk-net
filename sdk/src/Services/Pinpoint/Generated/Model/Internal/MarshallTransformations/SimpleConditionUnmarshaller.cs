@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SimpleCondition Object
     /// </summary>  
-    public class SimpleConditionUnmarshaller : IUnmarshaller<SimpleCondition, XmlUnmarshallerContext>, IUnmarshaller<SimpleCondition, JsonUnmarshallerContext>
+    public class SimpleConditionUnmarshaller : IJsonUnmarshaller<SimpleCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SimpleCondition IUnmarshaller<SimpleCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SimpleCondition Unmarshall(JsonUnmarshallerContext context)
+        public SimpleCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SimpleCondition unmarshalledObject = new SimpleCondition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EventCondition", targetDepth))
                 {
                     var unmarshaller = EventConditionUnmarshaller.Instance;
-                    unmarshalledObject.EventCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SegmentCondition", targetDepth))
                 {
                     var unmarshaller = SegmentConditionUnmarshaller.Instance;
-                    unmarshalledObject.SegmentCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentDimensions", targetDepth))
                 {
                     var unmarshaller = SegmentDimensionsUnmarshaller.Instance;
-                    unmarshalledObject.SegmentDimensions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

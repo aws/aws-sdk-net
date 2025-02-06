@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalInfo())
             {
                 context.Writer.WritePropertyName("AdditionalInfo");
-                context.Writer.Write(requestObject.AdditionalInfo);
+                context.Writer.WriteStringValue(requestObject.AdditionalInfo);
             }
 
             if(requestObject.IsSetDate())
             {
                 context.Writer.WritePropertyName("Date");
-                context.Writer.Write(requestObject.Date.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Date.Value)));
             }
 
             if(requestObject.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");
-                context.Writer.Write(requestObject.Message);
+                context.Writer.WriteStringValue(requestObject.Message);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

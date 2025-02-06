@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilePaths())
             {
                 context.Writer.WritePropertyName("FilePaths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilePathsListValue in requestObject.FilePaths)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilePathsMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilePathsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetItemCount())
             {
                 context.Writer.WritePropertyName("ItemCount");
-                context.Writer.Write(requestObject.ItemCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ItemCount.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("Severity");
-                context.Writer.Write(requestObject.Severity);
+                context.Writer.WriteStringValue(requestObject.Severity);
             }
 
         }

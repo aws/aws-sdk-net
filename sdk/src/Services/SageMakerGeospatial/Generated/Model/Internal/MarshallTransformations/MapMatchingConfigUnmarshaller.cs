@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MapMatchingConfig Object
     /// </summary>  
-    public class MapMatchingConfigUnmarshaller : IUnmarshaller<MapMatchingConfig, XmlUnmarshallerContext>, IUnmarshaller<MapMatchingConfig, JsonUnmarshallerContext>
+    public class MapMatchingConfigUnmarshaller : IJsonUnmarshaller<MapMatchingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MapMatchingConfig IUnmarshaller<MapMatchingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MapMatchingConfig Unmarshall(JsonUnmarshallerContext context)
+        public MapMatchingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MapMatchingConfig unmarshalledObject = new MapMatchingConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IdAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdAttributeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimestampAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimestampAttributeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimestampAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("XAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XAttributeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("YAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.YAttributeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.YAttributeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

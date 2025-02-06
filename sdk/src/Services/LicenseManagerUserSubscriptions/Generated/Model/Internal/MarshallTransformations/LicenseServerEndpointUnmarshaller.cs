@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LicenseServerEndpoint Object
     /// </summary>  
-    public class LicenseServerEndpointUnmarshaller : IUnmarshaller<LicenseServerEndpoint, XmlUnmarshallerContext>, IUnmarshaller<LicenseServerEndpoint, JsonUnmarshallerContext>
+    public class LicenseServerEndpointUnmarshaller : IJsonUnmarshaller<LicenseServerEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LicenseServerEndpoint IUnmarshaller<LicenseServerEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LicenseServerEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public LicenseServerEndpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LicenseServerEndpoint unmarshalledObject = new LicenseServerEndpoint();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentityProviderArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProviderArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseServerEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseServerEndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseServerEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseServerEndpointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseServerEndpointId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseServerEndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseServerEndpointProvisioningStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseServerEndpointProvisioningStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseServerEndpointProvisioningStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseServers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LicenseServer, LicenseServerUnmarshaller>(LicenseServerUnmarshaller.Instance);
-                    unmarshalledObject.LicenseServers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LicenseServer, LicenseServerUnmarshaller>(LicenseServerUnmarshaller.Instance);
+                    unmarshalledObject.LicenseServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerEndpoint", targetDepth))
                 {
                     var unmarshaller = ServerEndpointUnmarshaller.Instance;
-                    unmarshalledObject.ServerEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

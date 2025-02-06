@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObjectLockEnabled())
             {
                 context.Writer.WritePropertyName("ObjectLockEnabled");
-                context.Writer.Write(requestObject.ObjectLockEnabled);
+                context.Writer.WriteStringValue(requestObject.ObjectLockEnabled);
             }
 
             if(requestObject.IsSetRule())
             {
                 context.Writer.WritePropertyName("Rule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketObjectLockConfigurationRuleDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Rule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

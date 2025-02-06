@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");
-                context.Writer.Write(requestObject.NamespaceName);
+                context.Writer.WriteStringValue(requestObject.NamespaceName);
             }
 
             if(requestObject.IsSetRetentionPeriod())
             {
                 context.Writer.WritePropertyName("retentionPeriod");
-                context.Writer.Write(requestObject.RetentionPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionPeriod.Value);
             }
 
             if(requestObject.IsSetSnapshotNamePrefix())
             {
                 context.Writer.WritePropertyName("snapshotNamePrefix");
-                context.Writer.Write(requestObject.SnapshotNamePrefix);
+                context.Writer.WriteStringValue(requestObject.SnapshotNamePrefix);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

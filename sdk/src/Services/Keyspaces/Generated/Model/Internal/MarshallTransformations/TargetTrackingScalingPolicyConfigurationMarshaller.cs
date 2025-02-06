@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableScaleIn())
             {
                 context.Writer.WritePropertyName("disableScaleIn");
-                context.Writer.Write(requestObject.DisableScaleIn.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableScaleIn.Value);
             }
 
             if(requestObject.IsSetScaleInCooldown())
             {
                 context.Writer.WritePropertyName("scaleInCooldown");
-                context.Writer.Write(requestObject.ScaleInCooldown.Value);
+                context.Writer.WriteNumberValue(requestObject.ScaleInCooldown.Value);
             }
 
             if(requestObject.IsSetScaleOutCooldown())
             {
                 context.Writer.WritePropertyName("scaleOutCooldown");
-                context.Writer.Write(requestObject.ScaleOutCooldown.Value);
+                context.Writer.WriteNumberValue(requestObject.ScaleOutCooldown.Value);
             }
 
             if(requestObject.IsSetTargetValue())
@@ -71,11 +69,11 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("targetValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetValue.Value);
                 }
             }
 

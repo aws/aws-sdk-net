@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyExportability())
             {
                 context.Writer.WritePropertyName("KeyExportability");
-                context.Writer.Write(requestObject.KeyExportability);
+                context.Writer.WriteStringValue(requestObject.KeyExportability);
             }
 
             if(requestObject.IsSetKeyModesOfUse())
             {
                 context.Writer.WritePropertyName("KeyModesOfUse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyModesOfUseMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyModesOfUse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyVersion())
             {
                 context.Writer.WritePropertyName("KeyVersion");
-                context.Writer.Write(requestObject.KeyVersion);
+                context.Writer.WriteStringValue(requestObject.KeyVersion);
             }
 
             if(requestObject.IsSetOptionalBlocks())
             {
                 context.Writer.WritePropertyName("OptionalBlocks");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectOptionalBlocksKvp in requestObject.OptionalBlocks)
                 {
                     context.Writer.WritePropertyName(requestObjectOptionalBlocksKvp.Key);
                     var requestObjectOptionalBlocksValue = requestObjectOptionalBlocksKvp.Value;
 
-                        context.Writer.Write(requestObjectOptionalBlocksValue);
+                        context.Writer.WriteStringValue(requestObjectOptionalBlocksValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

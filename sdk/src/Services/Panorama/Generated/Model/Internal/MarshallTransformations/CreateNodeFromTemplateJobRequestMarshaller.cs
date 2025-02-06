@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -61,79 +64,84 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/packages/template-job";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetJobTags())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("JobTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetJobTags())
-                    {
-                        context.Writer.WritePropertyName("JobTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestJobTagsListValue in publicRequest.JobTags)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = JobResourceTagsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestJobTagsListValue, context);
+                    var marshaller = JobResourceTagsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestJobTagsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNodeDescription())
-                    {
-                        context.Writer.WritePropertyName("NodeDescription");
-                        context.Writer.Write(publicRequest.NodeDescription);
-                    }
-
-                    if(publicRequest.IsSetNodeName())
-                    {
-                        context.Writer.WritePropertyName("NodeName");
-                        context.Writer.Write(publicRequest.NodeName);
-                    }
-
-                    if(publicRequest.IsSetOutputPackageName())
-                    {
-                        context.Writer.WritePropertyName("OutputPackageName");
-                        context.Writer.Write(publicRequest.OutputPackageName);
-                    }
-
-                    if(publicRequest.IsSetOutputPackageVersion())
-                    {
-                        context.Writer.WritePropertyName("OutputPackageVersion");
-                        context.Writer.Write(publicRequest.OutputPackageVersion);
-                    }
-
-                    if(publicRequest.IsSetTemplateParameters())
-                    {
-                        context.Writer.WritePropertyName("TemplateParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTemplateParametersKvp in publicRequest.TemplateParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTemplateParametersKvp.Key);
-                            var publicRequestTemplateParametersValue = publicRequestTemplateParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestTemplateParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTemplateType())
-                    {
-                        context.Writer.WritePropertyName("TemplateType");
-                        context.Writer.Write(publicRequest.TemplateType);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetNodeDescription())
+            {
+                context.Writer.WritePropertyName("NodeDescription");
+                context.Writer.WriteStringValue(publicRequest.NodeDescription);
+            }
+
+            if(publicRequest.IsSetNodeName())
+            {
+                context.Writer.WritePropertyName("NodeName");
+                context.Writer.WriteStringValue(publicRequest.NodeName);
+            }
+
+            if(publicRequest.IsSetOutputPackageName())
+            {
+                context.Writer.WritePropertyName("OutputPackageName");
+                context.Writer.WriteStringValue(publicRequest.OutputPackageName);
+            }
+
+            if(publicRequest.IsSetOutputPackageVersion())
+            {
+                context.Writer.WritePropertyName("OutputPackageVersion");
+                context.Writer.WriteStringValue(publicRequest.OutputPackageVersion);
+            }
+
+            if(publicRequest.IsSetTemplateParameters())
+            {
+                context.Writer.WritePropertyName("TemplateParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTemplateParametersKvp in publicRequest.TemplateParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestTemplateParametersKvp.Key);
+                    var publicRequestTemplateParametersValue = publicRequestTemplateParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTemplateParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTemplateType())
+            {
+                context.Writer.WritePropertyName("TemplateType");
+                context.Writer.WriteStringValue(publicRequest.TemplateType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

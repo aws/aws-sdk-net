@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FindingStatistics Object
     /// </summary>  
-    public class FindingStatisticsUnmarshaller : IUnmarshaller<FindingStatistics, XmlUnmarshallerContext>, IUnmarshaller<FindingStatistics, JsonUnmarshallerContext>
+    public class FindingStatisticsUnmarshaller : IJsonUnmarshaller<FindingStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FindingStatistics IUnmarshaller<FindingStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FindingStatistics Unmarshall(JsonUnmarshallerContext context)
+        public FindingStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FindingStatistics unmarshalledObject = new FindingStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("countBySeverity", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
-                    unmarshalledObject.CountBySeverity = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.CountBySeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupedByAccount", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AccountStatistics, AccountStatisticsUnmarshaller>(AccountStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.GroupedByAccount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AccountStatistics, AccountStatisticsUnmarshaller>(AccountStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupedByDate", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DateStatistics, DateStatisticsUnmarshaller>(DateStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.GroupedByDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DateStatistics, DateStatisticsUnmarshaller>(DateStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupedByFindingType", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FindingTypeStatistics, FindingTypeStatisticsUnmarshaller>(FindingTypeStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.GroupedByFindingType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FindingTypeStatistics, FindingTypeStatisticsUnmarshaller>(FindingTypeStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByFindingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupedByResource", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResourceStatistics, ResourceStatisticsUnmarshaller>(ResourceStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.GroupedByResource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStatistics, ResourceStatisticsUnmarshaller>(ResourceStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupedBySeverity", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SeverityStatistics, SeverityStatisticsUnmarshaller>(SeverityStatisticsUnmarshaller.Instance);
-                    unmarshalledObject.GroupedBySeverity = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SeverityStatistics, SeverityStatisticsUnmarshaller>(SeverityStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedBySeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

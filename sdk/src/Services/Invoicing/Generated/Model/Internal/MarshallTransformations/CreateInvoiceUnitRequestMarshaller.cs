@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
 {
@@ -63,70 +66,75 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetInvoiceReceiver())
-                    {
-                        context.Writer.WritePropertyName("InvoiceReceiver");
-                        context.Writer.Write(publicRequest.InvoiceReceiver);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetResourceTags())
-                    {
-                        context.Writer.WritePropertyName("ResourceTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourceTagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRule())
-                    {
-                        context.Writer.WritePropertyName("Rule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InvoiceUnitRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Rule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaxInheritanceDisabled())
-                    {
-                        context.Writer.WritePropertyName("TaxInheritanceDisabled");
-                        context.Writer.Write(publicRequest.TaxInheritanceDisabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetInvoiceReceiver())
+            {
+                context.Writer.WritePropertyName("InvoiceReceiver");
+                context.Writer.WriteStringValue(publicRequest.InvoiceReceiver);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetResourceTags())
+            {
+                context.Writer.WritePropertyName("ResourceTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceTagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRule())
+            {
+                context.Writer.WritePropertyName("Rule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InvoiceUnitRuleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Rule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaxInheritanceDisabled())
+            {
+                context.Writer.WritePropertyName("TaxInheritanceDisabled");
+                context.Writer.WriteBooleanValue(publicRequest.TaxInheritanceDisabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

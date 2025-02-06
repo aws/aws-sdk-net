@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisabledFeatures())
             {
                 context.Writer.WritePropertyName("DisabledFeatures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDisabledFeaturesListValue in requestObject.DisabledFeatures)
                 {
-                        context.Writer.Write(requestObjectDisabledFeaturesListValue);
+                        context.Writer.WriteStringValue(requestObjectDisabledFeaturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnabledFeatures())
             {
                 context.Writer.WritePropertyName("EnabledFeatures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnabledFeaturesListValue in requestObject.EnabledFeatures)
                 {
-                        context.Writer.Write(requestObjectEnabledFeaturesListValue);
+                        context.Writer.WriteStringValue(requestObjectEnabledFeaturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFeatureConfigurations())
             {
                 context.Writer.WritePropertyName("FeatureConfigurations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnonymousUserDashboardFeatureConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FeatureConfigurations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInitialDashboardId())
             {
                 context.Writer.WritePropertyName("InitialDashboardId");
-                context.Writer.Write(requestObject.InitialDashboardId);
+                context.Writer.WriteStringValue(requestObject.InitialDashboardId);
             }
 
         }

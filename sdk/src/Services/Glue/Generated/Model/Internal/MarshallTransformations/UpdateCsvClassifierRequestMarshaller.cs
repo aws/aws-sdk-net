@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowSingleColumn())
             {
                 context.Writer.WritePropertyName("AllowSingleColumn");
-                context.Writer.Write(requestObject.AllowSingleColumn.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowSingleColumn.Value);
             }
 
             if(requestObject.IsSetContainsHeader())
             {
                 context.Writer.WritePropertyName("ContainsHeader");
-                context.Writer.Write(requestObject.ContainsHeader);
+                context.Writer.WriteStringValue(requestObject.ContainsHeader);
             }
 
             if(requestObject.IsSetCustomDatatypeConfigured())
             {
                 context.Writer.WritePropertyName("CustomDatatypeConfigured");
-                context.Writer.Write(requestObject.CustomDatatypeConfigured.Value);
+                context.Writer.WriteBooleanValue(requestObject.CustomDatatypeConfigured.Value);
             }
 
             if(requestObject.IsSetCustomDatatypes())
             {
                 context.Writer.WritePropertyName("CustomDatatypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomDatatypesListValue in requestObject.CustomDatatypes)
                 {
-                        context.Writer.Write(requestObjectCustomDatatypesListValue);
+                        context.Writer.WriteStringValue(requestObjectCustomDatatypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
-                context.Writer.Write(requestObject.Delimiter);
+                context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
             if(requestObject.IsSetDisableValueTrimming())
             {
                 context.Writer.WritePropertyName("DisableValueTrimming");
-                context.Writer.Write(requestObject.DisableValueTrimming.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableValueTrimming.Value);
             }
 
             if(requestObject.IsSetHeader())
             {
                 context.Writer.WritePropertyName("Header");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeaderListValue in requestObject.Header)
                 {
-                        context.Writer.Write(requestObjectHeaderListValue);
+                        context.Writer.WriteStringValue(requestObjectHeaderListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetQuoteSymbol())
             {
                 context.Writer.WritePropertyName("QuoteSymbol");
-                context.Writer.Write(requestObject.QuoteSymbol);
+                context.Writer.WriteStringValue(requestObject.QuoteSymbol);
             }
 
             if(requestObject.IsSetSerde())
             {
                 context.Writer.WritePropertyName("Serde");
-                context.Writer.Write(requestObject.Serde);
+                context.Writer.WriteStringValue(requestObject.Serde);
             }
 
         }

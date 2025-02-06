@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LimitsExceededException operation
     /// </summary>  
-    public class LimitsExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<LimitsExceededException, XmlUnmarshallerContext>
+    public class LimitsExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<LimitsExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

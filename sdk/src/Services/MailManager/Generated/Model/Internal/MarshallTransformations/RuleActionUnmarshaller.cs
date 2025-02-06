@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleAction Object
     /// </summary>  
-    public class RuleActionUnmarshaller : IUnmarshaller<RuleAction, XmlUnmarshallerContext>, IUnmarshaller<RuleAction, JsonUnmarshallerContext>
+    public class RuleActionUnmarshaller : IJsonUnmarshaller<RuleAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuleAction IUnmarshaller<RuleAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleAction Unmarshall(JsonUnmarshallerContext context)
+        public RuleAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuleAction unmarshalledObject = new RuleAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AddHeader", targetDepth))
                 {
                     var unmarshaller = AddHeaderActionUnmarshaller.Instance;
-                    unmarshalledObject.AddHeader = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Archive", targetDepth))
                 {
                     var unmarshaller = ArchiveActionUnmarshaller.Instance;
-                    unmarshalledObject.Archive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Archive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeliverToMailbox", targetDepth))
                 {
                     var unmarshaller = DeliverToMailboxActionUnmarshaller.Instance;
-                    unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeliverToQBusiness", targetDepth))
                 {
                     var unmarshaller = DeliverToQBusinessActionUnmarshaller.Instance;
-                    unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Drop", targetDepth))
                 {
                     var unmarshaller = DropActionUnmarshaller.Instance;
-                    unmarshalledObject.Drop = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Drop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Relay", targetDepth))
                 {
                     var unmarshaller = RelayActionUnmarshaller.Instance;
-                    unmarshalledObject.Relay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Relay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplaceRecipient", targetDepth))
                 {
                     var unmarshaller = ReplaceRecipientActionUnmarshaller.Instance;
-                    unmarshalledObject.ReplaceRecipient = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplaceRecipient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Send", targetDepth))
                 {
                     var unmarshaller = SendActionUnmarshaller.Instance;
-                    unmarshalledObject.Send = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Send = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WriteToS3", targetDepth))
                 {
                     var unmarshaller = S3ActionUnmarshaller.Instance;
-                    unmarshalledObject.WriteToS3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WriteToS3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

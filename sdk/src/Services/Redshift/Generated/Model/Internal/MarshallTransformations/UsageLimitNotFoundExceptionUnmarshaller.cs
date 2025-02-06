@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UsageLimitNotFoundException operation
     /// </summary>  
-    public class UsageLimitNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<UsageLimitNotFoundException, XmlUnmarshallerContext>
+    public class UsageLimitNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UsageLimitNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

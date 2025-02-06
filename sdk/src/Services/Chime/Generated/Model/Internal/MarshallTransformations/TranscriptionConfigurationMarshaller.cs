@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEngineTranscribeMedicalSettings())
             {
                 context.Writer.WritePropertyName("EngineTranscribeMedicalSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EngineTranscribeMedicalSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EngineTranscribeMedicalSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEngineTranscribeSettings())
             {
                 context.Writer.WritePropertyName("EngineTranscribeSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EngineTranscribeSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EngineTranscribeSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

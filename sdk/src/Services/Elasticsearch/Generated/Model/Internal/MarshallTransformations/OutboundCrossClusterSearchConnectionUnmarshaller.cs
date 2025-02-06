@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OutboundCrossClusterSearchConnection Object
     /// </summary>  
-    public class OutboundCrossClusterSearchConnectionUnmarshaller : IUnmarshaller<OutboundCrossClusterSearchConnection, XmlUnmarshallerContext>, IUnmarshaller<OutboundCrossClusterSearchConnection, JsonUnmarshallerContext>
+    public class OutboundCrossClusterSearchConnectionUnmarshaller : IJsonUnmarshaller<OutboundCrossClusterSearchConnection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OutboundCrossClusterSearchConnection IUnmarshaller<OutboundCrossClusterSearchConnection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutboundCrossClusterSearchConnection Unmarshall(JsonUnmarshallerContext context)
+        public OutboundCrossClusterSearchConnection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OutboundCrossClusterSearchConnection unmarshalledObject = new OutboundCrossClusterSearchConnection();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConnectionAlias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionAlias = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectionStatus", targetDepth))
                 {
                     var unmarshaller = OutboundCrossClusterSearchConnectionStatusUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CrossClusterSearchConnectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrossClusterSearchConnectionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrossClusterSearchConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationDomainInfo", targetDepth))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
-                    unmarshalledObject.DestinationDomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceDomainInfo", targetDepth))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
-                    unmarshalledObject.SourceDomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

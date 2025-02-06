@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionMappings())
             {
                 context.Writer.WritePropertyName("DimensionMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionMappingsListValue in requestObject.DimensionMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEpochTimeUnit())
             {
                 context.Writer.WritePropertyName("EpochTimeUnit");
-                context.Writer.Write(requestObject.EpochTimeUnit);
+                context.Writer.WriteStringValue(requestObject.EpochTimeUnit);
             }
 
             if(requestObject.IsSetMultiMeasureMappings())
             {
                 context.Writer.WritePropertyName("MultiMeasureMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMultiMeasureMappingsListValue in requestObject.MultiMeasureMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MultiMeasureMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectMultiMeasureMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSingleMeasureMappings())
             {
                 context.Writer.WritePropertyName("SingleMeasureMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSingleMeasureMappingsListValue in requestObject.SingleMeasureMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SingleMeasureMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSingleMeasureMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimeFieldType())
             {
                 context.Writer.WritePropertyName("TimeFieldType");
-                context.Writer.Write(requestObject.TimeFieldType);
+                context.Writer.WriteStringValue(requestObject.TimeFieldType);
             }
 
             if(requestObject.IsSetTimestampFormat())
             {
                 context.Writer.WritePropertyName("TimestampFormat");
-                context.Writer.Write(requestObject.TimestampFormat);
+                context.Writer.WriteStringValue(requestObject.TimestampFormat);
             }
 
             if(requestObject.IsSetTimeValue())
             {
                 context.Writer.WritePropertyName("TimeValue");
-                context.Writer.Write(requestObject.TimeValue);
+                context.Writer.WriteStringValue(requestObject.TimeValue);
             }
 
             if(requestObject.IsSetVersionValue())
             {
                 context.Writer.WritePropertyName("VersionValue");
-                context.Writer.Write(requestObject.VersionValue);
+                context.Writer.WriteStringValue(requestObject.VersionValue);
             }
 
         }

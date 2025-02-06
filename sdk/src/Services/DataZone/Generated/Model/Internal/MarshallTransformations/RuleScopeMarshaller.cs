@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetType())
             {
                 context.Writer.WritePropertyName("assetType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetTypesForRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssetType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataProduct())
             {
                 context.Writer.WritePropertyName("dataProduct");
-                context.Writer.Write(requestObject.DataProduct.Value);
+                context.Writer.WriteBooleanValue(requestObject.DataProduct.Value);
             }
 
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("project");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProjectsForRuleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Project, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

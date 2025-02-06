@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -64,41 +67,46 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/external-systems-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContactCenterSystemTypes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ContactCenterSystemTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestContactCenterSystemTypesListValue in publicRequest.ContactCenterSystemTypes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContactCenterSystemTypes())
-                    {
-                        context.Writer.WritePropertyName("ContactCenterSystemTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContactCenterSystemTypesListValue in publicRequest.ContactCenterSystemTypes)
-                        {
-                                context.Writer.Write(publicRequestContactCenterSystemTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSessionBorderControllerTypes())
-                    {
-                        context.Writer.WritePropertyName("SessionBorderControllerTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSessionBorderControllerTypesListValue in publicRequest.SessionBorderControllerTypes)
-                        {
-                                context.Writer.Write(publicRequestSessionBorderControllerTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestContactCenterSystemTypesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetSessionBorderControllerTypes())
+            {
+                context.Writer.WritePropertyName("SessionBorderControllerTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSessionBorderControllerTypesListValue in publicRequest.SessionBorderControllerTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestSessionBorderControllerTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

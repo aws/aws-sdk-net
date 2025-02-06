@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparisonFormat())
             {
                 context.Writer.WritePropertyName("ComparisonFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComparisonFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComparisonFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComparisonMethod())
             {
                 context.Writer.WritePropertyName("ComparisonMethod");
-                context.Writer.Write(requestObject.ComparisonMethod);
+                context.Writer.WriteStringValue(requestObject.ComparisonMethod);
             }
 
         }

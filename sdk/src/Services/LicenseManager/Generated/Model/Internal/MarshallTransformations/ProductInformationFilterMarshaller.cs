@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProductInformationFilterComparator())
             {
                 context.Writer.WritePropertyName("ProductInformationFilterComparator");
-                context.Writer.Write(requestObject.ProductInformationFilterComparator);
+                context.Writer.WriteStringValue(requestObject.ProductInformationFilterComparator);
             }
 
             if(requestObject.IsSetProductInformationFilterName())
             {
                 context.Writer.WritePropertyName("ProductInformationFilterName");
-                context.Writer.Write(requestObject.ProductInformationFilterName);
+                context.Writer.WriteStringValue(requestObject.ProductInformationFilterName);
             }
 
             if(requestObject.IsSetProductInformationFilterValue())
             {
                 context.Writer.WritePropertyName("ProductInformationFilterValue");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProductInformationFilterValueListValue in requestObject.ProductInformationFilterValue)
                 {
-                        context.Writer.Write(requestObjectProductInformationFilterValueListValue);
+                        context.Writer.WriteStringValue(requestObjectProductInformationFilterValueListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

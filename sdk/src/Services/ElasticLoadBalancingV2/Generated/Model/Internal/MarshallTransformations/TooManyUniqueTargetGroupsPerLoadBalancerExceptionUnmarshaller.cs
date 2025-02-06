@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyUniqueTargetGroupsPerLoadBalancerException operation
     /// </summary>  
-    public class TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyUniqueTargetGroupsPerLoadBalancerException, XmlUnmarshallerContext>
+    public class TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyUniqueTargetGroupsPerLoadBalancerException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MembershipQueryComputePaymentConfig Object
     /// </summary>  
-    public class MembershipQueryComputePaymentConfigUnmarshaller : IUnmarshaller<MembershipQueryComputePaymentConfig, XmlUnmarshallerContext>, IUnmarshaller<MembershipQueryComputePaymentConfig, JsonUnmarshallerContext>
+    public class MembershipQueryComputePaymentConfigUnmarshaller : IJsonUnmarshaller<MembershipQueryComputePaymentConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MembershipQueryComputePaymentConfig IUnmarshaller<MembershipQueryComputePaymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MembershipQueryComputePaymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public MembershipQueryComputePaymentConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MembershipQueryComputePaymentConfig unmarshalledObject = new MembershipQueryComputePaymentConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("isResponsible", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

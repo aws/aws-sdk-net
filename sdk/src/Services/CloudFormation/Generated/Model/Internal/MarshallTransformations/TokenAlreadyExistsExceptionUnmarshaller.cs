@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TokenAlreadyExistsException operation
     /// </summary>  
-    public class TokenAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<TokenAlreadyExistsException, XmlUnmarshallerContext>
+    public class TokenAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TokenAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

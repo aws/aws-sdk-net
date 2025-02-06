@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientAvailableIPsInSubnetException operation
     /// </summary>  
-    public class InsufficientAvailableIPsInSubnetExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientAvailableIPsInSubnetException, XmlUnmarshallerContext>
+    public class InsufficientAvailableIPsInSubnetExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientAvailableIPsInSubnetException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsymmetric())
             {
                 context.Writer.WritePropertyName("Asymmetric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AsymmetricEncryptionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Asymmetric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDukpt())
             {
                 context.Writer.WritePropertyName("Dukpt");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DukptEncryptionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dukpt, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmv())
             {
                 context.Writer.WritePropertyName("Emv");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmvEncryptionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Emv, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSymmetric())
             {
                 context.Writer.WritePropertyName("Symmetric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SymmetricEncryptionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Symmetric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

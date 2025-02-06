@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentationEventId())
             {
                 context.Writer.WritePropertyName("SegmentationEventId");
-                context.Writer.Write(requestObject.SegmentationEventId.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationEventId.Value);
             }
 
             if(requestObject.IsSetSegmentationTypeId())
             {
                 context.Writer.WritePropertyName("SegmentationTypeId");
-                context.Writer.Write(requestObject.SegmentationTypeId.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationTypeId.Value);
             }
 
             if(requestObject.IsSetSegmentationUpid())
             {
                 context.Writer.WritePropertyName("SegmentationUpid");
-                context.Writer.Write(requestObject.SegmentationUpid);
+                context.Writer.WriteStringValue(requestObject.SegmentationUpid);
             }
 
             if(requestObject.IsSetSegmentationUpidType())
             {
                 context.Writer.WritePropertyName("SegmentationUpidType");
-                context.Writer.Write(requestObject.SegmentationUpidType.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationUpidType.Value);
             }
 
             if(requestObject.IsSetSegmentNum())
             {
                 context.Writer.WritePropertyName("SegmentNum");
-                context.Writer.Write(requestObject.SegmentNum.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentNum.Value);
             }
 
             if(requestObject.IsSetSegmentsExpected())
             {
                 context.Writer.WritePropertyName("SegmentsExpected");
-                context.Writer.Write(requestObject.SegmentsExpected.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsExpected.Value);
             }
 
             if(requestObject.IsSetSubSegmentNum())
             {
                 context.Writer.WritePropertyName("SubSegmentNum");
-                context.Writer.Write(requestObject.SubSegmentNum.Value);
+                context.Writer.WriteNumberValue(requestObject.SubSegmentNum.Value);
             }
 
             if(requestObject.IsSetSubSegmentsExpected())
             {
                 context.Writer.WritePropertyName("SubSegmentsExpected");
-                context.Writer.Write(requestObject.SubSegmentsExpected.Value);
+                context.Writer.WriteNumberValue(requestObject.SubSegmentsExpected.Value);
             }
 
         }

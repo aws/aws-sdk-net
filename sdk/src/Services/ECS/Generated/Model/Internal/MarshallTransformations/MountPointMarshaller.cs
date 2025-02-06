@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerPath())
             {
                 context.Writer.WritePropertyName("containerPath");
-                context.Writer.Write(requestObject.ContainerPath);
+                context.Writer.WriteStringValue(requestObject.ContainerPath);
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetSourceVolume())
             {
                 context.Writer.WritePropertyName("sourceVolume");
-                context.Writer.Write(requestObject.SourceVolume);
+                context.Writer.WriteStringValue(requestObject.SourceVolume);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQuad())
             {
                 context.Writer.WritePropertyName("Quad");
-                context.Writer.Write(requestObject.Quad.Value);
+                context.Writer.WriteNumberValue(requestObject.Quad.Value);
             }
 
             if(requestObject.IsSetQuint())
             {
                 context.Writer.WritePropertyName("Quint");
-                context.Writer.Write(requestObject.Quint.Value);
+                context.Writer.WriteNumberValue(requestObject.Quint.Value);
             }
 
             if(requestObject.IsSetSingle())
             {
                 context.Writer.WritePropertyName("Single");
-                context.Writer.Write(requestObject.Single.Value);
+                context.Writer.WriteNumberValue(requestObject.Single.Value);
             }
 
             if(requestObject.IsSetTandem())
             {
                 context.Writer.WritePropertyName("Tandem");
-                context.Writer.Write(requestObject.Tandem.Value);
+                context.Writer.WriteNumberValue(requestObject.Tandem.Value);
             }
 
             if(requestObject.IsSetTriple())
             {
                 context.Writer.WritePropertyName("Triple");
-                context.Writer.Write(requestObject.Triple.Value);
+                context.Writer.WriteNumberValue(requestObject.Triple.Value);
             }
 
         }

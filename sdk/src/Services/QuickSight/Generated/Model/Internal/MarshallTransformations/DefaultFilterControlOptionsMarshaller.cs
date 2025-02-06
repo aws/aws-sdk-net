@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultDateTimePickerOptions())
             {
                 context.Writer.WritePropertyName("DefaultDateTimePickerOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultDateTimePickerControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultDateTimePickerOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultDropdownOptions())
             {
                 context.Writer.WritePropertyName("DefaultDropdownOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFilterDropDownControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultDropdownOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultListOptions())
             {
                 context.Writer.WritePropertyName("DefaultListOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFilterListControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultListOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultRelativeDateTimeOptions())
             {
                 context.Writer.WritePropertyName("DefaultRelativeDateTimeOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultRelativeDateTimeControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultRelativeDateTimeOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultSliderOptions())
             {
                 context.Writer.WritePropertyName("DefaultSliderOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultSliderControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultSliderOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultTextAreaOptions())
             {
                 context.Writer.WritePropertyName("DefaultTextAreaOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultTextAreaControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultTextAreaOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultTextFieldOptions())
             {
                 context.Writer.WritePropertyName("DefaultTextFieldOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultTextFieldControlOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultTextFieldOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

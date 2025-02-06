@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpV4Addresses())
             {
                 context.Writer.WritePropertyName("ipV4Addresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpV4AddressesListValue in requestObject.IpV4Addresses)
                 {
-                        context.Writer.Write(requestObjectIpV4AddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectIpV4AddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpV6Addresses())
             {
                 context.Writer.WritePropertyName("ipV6Addresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpV6AddressesListValue in requestObject.IpV6Addresses)
                 {
-                        context.Writer.Write(requestObjectIpV6AddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectIpV6AddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

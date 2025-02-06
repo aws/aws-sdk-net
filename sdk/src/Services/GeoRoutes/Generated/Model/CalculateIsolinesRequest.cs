@@ -58,7 +58,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Features that are allowed while calculating. a route
+        /// Features that are allowed while calculating an isoline.
         /// </para>
         /// </summary>
         public IsolineAllowOptions Allow
@@ -242,7 +242,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property IsolineGranularity. 
         /// <para>
-        /// Defines the granularity of the returned Isoline
+        /// Defines the granularity of the returned Isoline.
         /// </para>
         /// </summary>
         public IsolineGranularityOptions IsolineGranularity
@@ -367,6 +367,12 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// Threshold to be used for the isoline calculation. Up to 3 thresholds per provided
         /// type can be requested.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You incur a calculation charge for each threshold. Using a large amount of thresholds
+        /// in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+        /// Amazon Location's pricing page</a> for more information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

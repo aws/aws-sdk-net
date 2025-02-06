@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("availabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetPortInfoSource())
             {
                 context.Writer.WritePropertyName("portInfoSource");
-                context.Writer.Write(requestObject.PortInfoSource);
+                context.Writer.WriteStringValue(requestObject.PortInfoSource);
             }
 
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
-                context.Writer.Write(requestObject.SourceName);
+                context.Writer.WriteStringValue(requestObject.SourceName);
             }
 
             if(requestObject.IsSetUserData())
             {
                 context.Writer.WritePropertyName("userData");
-                context.Writer.Write(requestObject.UserData);
+                context.Writer.WriteStringValue(requestObject.UserData);
             }
 
         }

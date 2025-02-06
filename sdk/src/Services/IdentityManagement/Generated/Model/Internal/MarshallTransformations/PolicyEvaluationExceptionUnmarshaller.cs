@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PolicyEvaluationException operation
     /// </summary>  
-    public class PolicyEvaluationExceptionUnmarshaller : IErrorResponseUnmarshaller<PolicyEvaluationException, XmlUnmarshallerContext>
+    public class PolicyEvaluationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PolicyEvaluationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

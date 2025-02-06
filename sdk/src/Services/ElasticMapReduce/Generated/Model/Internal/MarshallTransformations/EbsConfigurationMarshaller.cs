@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsBlockDeviceConfigs())
             {
                 context.Writer.WritePropertyName("EbsBlockDeviceConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEbsBlockDeviceConfigsListValue in requestObject.EbsBlockDeviceConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EbsBlockDeviceConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectEbsBlockDeviceConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEbsOptimized())
             {
                 context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.Write(requestObject.EbsOptimized.Value);
+                context.Writer.WriteBooleanValue(requestObject.EbsOptimized.Value);
             }
 
         }

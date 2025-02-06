@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSubnetGroupNotFoundException operation
     /// </summary>  
-    public class DBSubnetGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSubnetGroupNotFoundException, XmlUnmarshallerContext>
+    public class DBSubnetGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSubnetGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

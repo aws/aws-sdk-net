@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataEncipherment())
             {
                 context.Writer.WritePropertyName("DataEncipherment");
-                context.Writer.Write(requestObject.DataEncipherment.Value);
+                context.Writer.WriteBooleanValue(requestObject.DataEncipherment.Value);
             }
 
             if(requestObject.IsSetDigitalSignature())
             {
                 context.Writer.WritePropertyName("DigitalSignature");
-                context.Writer.Write(requestObject.DigitalSignature.Value);
+                context.Writer.WriteBooleanValue(requestObject.DigitalSignature.Value);
             }
 
             if(requestObject.IsSetKeyAgreement())
             {
                 context.Writer.WritePropertyName("KeyAgreement");
-                context.Writer.Write(requestObject.KeyAgreement.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeyAgreement.Value);
             }
 
             if(requestObject.IsSetKeyEncipherment())
             {
                 context.Writer.WritePropertyName("KeyEncipherment");
-                context.Writer.Write(requestObject.KeyEncipherment.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeyEncipherment.Value);
             }
 
             if(requestObject.IsSetNonRepudiation())
             {
                 context.Writer.WritePropertyName("NonRepudiation");
-                context.Writer.Write(requestObject.NonRepudiation.Value);
+                context.Writer.WriteBooleanValue(requestObject.NonRepudiation.Value);
             }
 
         }

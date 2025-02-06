@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCognitoUserPoolId())
             {
                 context.Writer.WritePropertyName("cognitoUserPoolId");
-                context.Writer.Write(requestObject.CognitoUserPoolId);
+                context.Writer.WriteStringValue(requestObject.CognitoUserPoolId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetExpirationTime())
@@ -65,42 +63,42 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("expirationTime");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ExpirationTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ExpirationTime.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ExpirationTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ExpirationTime.Value);
+                    context.Writer.WriteNumberValue(requestObject.ExpirationTime.Value);
                 }
             }
 
             if(requestObject.IsSetOpenIDAuthTTL())
             {
                 context.Writer.WritePropertyName("openIDAuthTTL");
-                context.Writer.Write(requestObject.OpenIDAuthTTL);
+                context.Writer.WriteStringValue(requestObject.OpenIDAuthTTL);
             }
 
             if(requestObject.IsSetOpenIDClientId())
             {
                 context.Writer.WritePropertyName("openIDClientId");
-                context.Writer.Write(requestObject.OpenIDClientId);
+                context.Writer.WriteStringValue(requestObject.OpenIDClientId);
             }
 
             if(requestObject.IsSetOpenIDIatTTL())
             {
                 context.Writer.WritePropertyName("openIDIatTTL");
-                context.Writer.Write(requestObject.OpenIDIatTTL);
+                context.Writer.WriteStringValue(requestObject.OpenIDIatTTL);
             }
 
             if(requestObject.IsSetOpenIDIssueURL())
             {
                 context.Writer.WritePropertyName("openIDIssueURL");
-                context.Writer.Write(requestObject.OpenIDIssueURL);
+                context.Writer.WriteStringValue(requestObject.OpenIDIssueURL);
             }
 
             if(requestObject.IsSetOpenIDProviderName())
             {
                 context.Writer.WritePropertyName("openIDProviderName");
-                context.Writer.Write(requestObject.OpenIDProviderName);
+                context.Writer.WriteStringValue(requestObject.OpenIDProviderName);
             }
 
         }

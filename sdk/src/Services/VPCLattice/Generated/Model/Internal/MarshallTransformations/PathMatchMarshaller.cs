@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseSensitive())
             {
                 context.Writer.WritePropertyName("caseSensitive");
-                context.Writer.Write(requestObject.CaseSensitive.Value);
+                context.Writer.WriteBooleanValue(requestObject.CaseSensitive.Value);
             }
 
             if(requestObject.IsSetMatch())
             {
                 context.Writer.WritePropertyName("match");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PathMatchTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Match, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -308,13 +308,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where
         /// the partner needs RFx support from Amazon Web Services.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support
-        /// from an Amazon Web Services Sales representative. The opportunity is managed solely
-        /// by the partner. It's possible to request coselling support on these opportunities
-        /// at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> PrimaryNeedsFromAws

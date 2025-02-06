@@ -32,8 +32,15 @@ namespace Amazon.S3Tables.Model
     /// <summary>
     /// Container for the parameters to the CreateNamespace operation.
     /// Creates a namespace. A namespace is a logical grouping of tables within your table
-    /// bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
-    /// namespaces</a>.
+    /// bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html">Create
+    /// a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:CreateNamespace</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class CreateNamespaceRequest : AmazonS3TablesRequest
     {

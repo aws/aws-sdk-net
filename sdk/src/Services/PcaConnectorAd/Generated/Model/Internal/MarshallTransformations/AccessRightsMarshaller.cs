@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoEnroll())
             {
                 context.Writer.WritePropertyName("AutoEnroll");
-                context.Writer.Write(requestObject.AutoEnroll);
+                context.Writer.WriteStringValue(requestObject.AutoEnroll);
             }
 
             if(requestObject.IsSetEnroll())
             {
                 context.Writer.WritePropertyName("Enroll");
-                context.Writer.Write(requestObject.Enroll);
+                context.Writer.WriteStringValue(requestObject.Enroll);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -61,48 +64,53 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createSimulationApplicationVersion";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplication())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplication())
-                    {
-                        context.Writer.WritePropertyName("application");
-                        context.Writer.Write(publicRequest.Application);
-                    }
-
-                    if(publicRequest.IsSetCurrentRevisionId())
-                    {
-                        context.Writer.WritePropertyName("currentRevisionId");
-                        context.Writer.Write(publicRequest.CurrentRevisionId);
-                    }
-
-                    if(publicRequest.IsSetImageDigest())
-                    {
-                        context.Writer.WritePropertyName("imageDigest");
-                        context.Writer.Write(publicRequest.ImageDigest);
-                    }
-
-                    if(publicRequest.IsSetS3Etags())
-                    {
-                        context.Writer.WritePropertyName("s3Etags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestS3EtagsListValue in publicRequest.S3Etags)
-                        {
-                                context.Writer.Write(publicRequestS3EtagsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("application");
+                context.Writer.WriteStringValue(publicRequest.Application);
             }
+
+            if(publicRequest.IsSetCurrentRevisionId())
+            {
+                context.Writer.WritePropertyName("currentRevisionId");
+                context.Writer.WriteStringValue(publicRequest.CurrentRevisionId);
+            }
+
+            if(publicRequest.IsSetImageDigest())
+            {
+                context.Writer.WritePropertyName("imageDigest");
+                context.Writer.WriteStringValue(publicRequest.ImageDigest);
+            }
+
+            if(publicRequest.IsSetS3Etags())
+            {
+                context.Writer.WritePropertyName("s3Etags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestS3EtagsListValue in publicRequest.S3Etags)
+                {
+                        context.Writer.WriteStringValue(publicRequestS3EtagsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

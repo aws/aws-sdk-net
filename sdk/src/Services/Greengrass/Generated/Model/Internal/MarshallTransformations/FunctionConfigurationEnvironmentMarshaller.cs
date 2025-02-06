@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessSysfs())
             {
                 context.Writer.WritePropertyName("AccessSysfs");
-                context.Writer.Write(requestObject.AccessSysfs.Value);
+                context.Writer.WriteBooleanValue(requestObject.AccessSysfs.Value);
             }
 
             if(requestObject.IsSetExecution())
             {
                 context.Writer.WritePropertyName("Execution");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FunctionExecutionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Execution, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceAccessPolicies())
             {
                 context.Writer.WritePropertyName("ResourceAccessPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceAccessPoliciesListValue in requestObject.ResourceAccessPolicies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ResourceAccessPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceAccessPoliciesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("Variables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVariablesKvp in requestObject.Variables)
                 {
                     context.Writer.WritePropertyName(requestObjectVariablesKvp.Key);
                     var requestObjectVariablesValue = requestObjectVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

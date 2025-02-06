@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for OptedOutException operation
     /// </summary>  
-    public class OptedOutExceptionUnmarshaller : IErrorResponseUnmarshaller<OptedOutException, XmlUnmarshallerContext>
+    public class OptedOutExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OptedOutException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

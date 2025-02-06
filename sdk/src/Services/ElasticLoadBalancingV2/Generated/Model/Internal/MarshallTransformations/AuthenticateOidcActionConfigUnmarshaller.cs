@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthenticateOidcActionConfig Object
     /// </summary>  
-    public class AuthenticateOidcActionConfigUnmarshaller : IUnmarshaller<AuthenticateOidcActionConfig, XmlUnmarshallerContext>, IUnmarshaller<AuthenticateOidcActionConfig, JsonUnmarshallerContext>
+    public class AuthenticateOidcActionConfigUnmarshaller : IXmlUnmarshaller<AuthenticateOidcActionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AuthenticationRequestExtraParams/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.AuthenticationRequestExtraParams == null)
                         {
                             unmarshalledObject.AuthenticationRequestExtraParams = new Dictionary<string, string>();
@@ -141,17 +141,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AuthenticateOidcActionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AuthenticateOidcActionConfigUnmarshaller _instance = new AuthenticateOidcActionConfigUnmarshaller();        
 

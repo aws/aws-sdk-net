@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnDemandAllocationStrategy())
             {
                 context.Writer.WritePropertyName("OnDemandAllocationStrategy");
-                context.Writer.Write(requestObject.OnDemandAllocationStrategy);
+                context.Writer.WriteStringValue(requestObject.OnDemandAllocationStrategy);
             }
 
             if(requestObject.IsSetOnDemandBaseCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandBaseCapacity");
-                context.Writer.Write(requestObject.OnDemandBaseCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.OnDemandBaseCapacity.Value);
             }
 
             if(requestObject.IsSetOnDemandPercentageAboveBaseCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandPercentageAboveBaseCapacity");
-                context.Writer.Write(requestObject.OnDemandPercentageAboveBaseCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.OnDemandPercentageAboveBaseCapacity.Value);
             }
 
             if(requestObject.IsSetSpotAllocationStrategy())
             {
                 context.Writer.WritePropertyName("SpotAllocationStrategy");
-                context.Writer.Write(requestObject.SpotAllocationStrategy);
+                context.Writer.WriteStringValue(requestObject.SpotAllocationStrategy);
             }
 
             if(requestObject.IsSetSpotInstancePools())
             {
                 context.Writer.WritePropertyName("SpotInstancePools");
-                context.Writer.Write(requestObject.SpotInstancePools.Value);
+                context.Writer.WriteNumberValue(requestObject.SpotInstancePools.Value);
             }
 
             if(requestObject.IsSetSpotMaxPrice())
             {
                 context.Writer.WritePropertyName("SpotMaxPrice");
-                context.Writer.Write(requestObject.SpotMaxPrice);
+                context.Writer.WriteStringValue(requestObject.SpotMaxPrice);
             }
 
         }

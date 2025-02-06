@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
@@ -63,78 +66,83 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAfterTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAfterTime())
-                    {
-                        context.Writer.WritePropertyName("afterTime");
-                        context.Writer.Write(publicRequest.AfterTime);
-                    }
-
-                    if(publicRequest.IsSetBeforeTime())
-                    {
-                        context.Writer.WritePropertyName("beforeTime");
-                        context.Writer.Write(publicRequest.BeforeTime);
-                    }
-
-                    if(publicRequest.IsSetCaseIdList())
-                    {
-                        context.Writer.WritePropertyName("caseIdList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
-                        {
-                                context.Writer.Write(publicRequestCaseIdListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDisplayId())
-                    {
-                        context.Writer.WritePropertyName("displayId");
-                        context.Writer.Write(publicRequest.DisplayId);
-                    }
-
-                    if(publicRequest.IsSetIncludeCommunications())
-                    {
-                        context.Writer.WritePropertyName("includeCommunications");
-                        context.Writer.Write(publicRequest.IncludeCommunications.Value);
-                    }
-
-                    if(publicRequest.IsSetIncludeResolvedCases())
-                    {
-                        context.Writer.WritePropertyName("includeResolvedCases");
-                        context.Writer.Write(publicRequest.IncludeResolvedCases.Value);
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("afterTime");
+                context.Writer.WriteStringValue(publicRequest.AfterTime);
             }
+
+            if(publicRequest.IsSetBeforeTime())
+            {
+                context.Writer.WritePropertyName("beforeTime");
+                context.Writer.WriteStringValue(publicRequest.BeforeTime);
+            }
+
+            if(publicRequest.IsSetCaseIdList())
+            {
+                context.Writer.WritePropertyName("caseIdList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCaseIdListListValue in publicRequest.CaseIdList)
+                {
+                        context.Writer.WriteStringValue(publicRequestCaseIdListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDisplayId())
+            {
+                context.Writer.WritePropertyName("displayId");
+                context.Writer.WriteStringValue(publicRequest.DisplayId);
+            }
+
+            if(publicRequest.IsSetIncludeCommunications())
+            {
+                context.Writer.WritePropertyName("includeCommunications");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeCommunications.Value);
+            }
+
+            if(publicRequest.IsSetIncludeResolvedCases())
+            {
+                context.Writer.WritePropertyName("includeResolvedCases");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeResolvedCases.Value);
+            }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

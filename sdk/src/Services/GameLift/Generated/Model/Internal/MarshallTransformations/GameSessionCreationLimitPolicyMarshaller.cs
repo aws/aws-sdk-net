@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNewGameSessionsPerCreator())
             {
                 context.Writer.WritePropertyName("NewGameSessionsPerCreator");
-                context.Writer.Write(requestObject.NewGameSessionsPerCreator.Value);
+                context.Writer.WriteNumberValue(requestObject.NewGameSessionsPerCreator.Value);
             }
 
             if(requestObject.IsSetPolicyPeriodInMinutes())
             {
                 context.Writer.WritePropertyName("PolicyPeriodInMinutes");
-                context.Writer.Write(requestObject.PolicyPeriodInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.PolicyPeriodInMinutes.Value);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -67,53 +70,58 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}/entitlements/{entitlementArn}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEncryption())
-                    {
-                        context.Writer.WritePropertyName("encryption");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateEncryptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Encryption, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEntitlementStatus())
-                    {
-                        context.Writer.WritePropertyName("entitlementStatus");
-                        context.Writer.Write(publicRequest.EntitlementStatus);
-                    }
-
-                    if(publicRequest.IsSetSubscribers())
-                    {
-                        context.Writer.WritePropertyName("subscribers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
-                        {
-                                context.Writer.Write(publicRequestSubscribersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetEncryption())
+            {
+                context.Writer.WritePropertyName("encryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateEncryptionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Encryption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEntitlementStatus())
+            {
+                context.Writer.WritePropertyName("entitlementStatus");
+                context.Writer.WriteStringValue(publicRequest.EntitlementStatus);
+            }
+
+            if(publicRequest.IsSetSubscribers())
+            {
+                context.Writer.WritePropertyName("subscribers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubscribersListValue in publicRequest.Subscribers)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubscribersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

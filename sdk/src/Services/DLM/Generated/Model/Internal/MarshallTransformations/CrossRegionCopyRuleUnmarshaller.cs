@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CrossRegionCopyRule Object
     /// </summary>  
-    public class CrossRegionCopyRuleUnmarshaller : IUnmarshaller<CrossRegionCopyRule, XmlUnmarshallerContext>, IUnmarshaller<CrossRegionCopyRule, JsonUnmarshallerContext>
+    public class CrossRegionCopyRuleUnmarshaller : IJsonUnmarshaller<CrossRegionCopyRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CrossRegionCopyRule IUnmarshaller<CrossRegionCopyRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CrossRegionCopyRule Unmarshall(JsonUnmarshallerContext context)
+        public CrossRegionCopyRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CrossRegionCopyRule unmarshalledObject = new CrossRegionCopyRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CmkArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CmkArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CmkArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CopyTags", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeprecateRule", targetDepth))
                 {
                     var unmarshaller = CrossRegionCopyDeprecateRuleUnmarshaller.Instance;
-                    unmarshalledObject.DeprecateRule = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeprecateRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Encrypted", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetainRule", targetDepth))
                 {
                     var unmarshaller = CrossRegionCopyRetainRuleUnmarshaller.Instance;
-                    unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Target", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PrivacyConfiguration Object
     /// </summary>  
-    public class PrivacyConfigurationUnmarshaller : IUnmarshaller<PrivacyConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PrivacyConfiguration, JsonUnmarshallerContext>
+    public class PrivacyConfigurationUnmarshaller : IJsonUnmarshaller<PrivacyConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PrivacyConfiguration IUnmarshaller<PrivacyConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrivacyConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PrivacyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PrivacyConfiguration unmarshalledObject = new PrivacyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("policies", targetDepth))
                 {
                     var unmarshaller = PrivacyConfigurationPoliciesUnmarshaller.Instance;
-                    unmarshalledObject.Policies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Policies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCallingRegions())
             {
                 context.Writer.WritePropertyName("CallingRegions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCallingRegionsListValue in requestObject.CallingRegions)
                 {
-                        context.Writer.Write(requestObjectCallingRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectCallingRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCidrAllowedList())
             {
                 context.Writer.WritePropertyName("CidrAllowedList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrAllowedListListValue in requestObject.CidrAllowedList)
                 {
-                        context.Writer.Write(requestObjectCidrAllowedListListValue);
+                        context.Writer.WriteStringValue(requestObjectCidrAllowedListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCpsLimit())
             {
                 context.Writer.WritePropertyName("CpsLimit");
-                context.Writer.Write(requestObject.CpsLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.CpsLimit.Value);
             }
 
             if(requestObject.IsSetDefaultPhoneNumber())
             {
                 context.Writer.WritePropertyName("DefaultPhoneNumber");
-                context.Writer.Write(requestObject.DefaultPhoneNumber);
+                context.Writer.WriteStringValue(requestObject.DefaultPhoneNumber);
             }
 
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Disabled.Value);
             }
 
         }

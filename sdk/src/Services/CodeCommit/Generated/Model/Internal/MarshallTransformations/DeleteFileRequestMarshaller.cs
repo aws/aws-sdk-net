@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBranchName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBranchName())
-                    {
-                        context.Writer.WritePropertyName("branchName");
-                        context.Writer.Write(publicRequest.BranchName);
-                    }
-
-                    if(publicRequest.IsSetCommitMessage())
-                    {
-                        context.Writer.WritePropertyName("commitMessage");
-                        context.Writer.Write(publicRequest.CommitMessage);
-                    }
-
-                    if(publicRequest.IsSetEmail())
-                    {
-                        context.Writer.WritePropertyName("email");
-                        context.Writer.Write(publicRequest.Email);
-                    }
-
-                    if(publicRequest.IsSetFilePath())
-                    {
-                        context.Writer.WritePropertyName("filePath");
-                        context.Writer.Write(publicRequest.FilePath);
-                    }
-
-                    if(publicRequest.IsSetKeepEmptyFolders())
-                    {
-                        context.Writer.WritePropertyName("keepEmptyFolders");
-                        context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetParentCommitId())
-                    {
-                        context.Writer.WritePropertyName("parentCommitId");
-                        context.Writer.Write(publicRequest.ParentCommitId);
-                    }
-
-                    if(publicRequest.IsSetRepositoryName())
-                    {
-                        context.Writer.WritePropertyName("repositoryName");
-                        context.Writer.Write(publicRequest.RepositoryName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("branchName");
+                context.Writer.WriteStringValue(publicRequest.BranchName);
             }
+
+            if(publicRequest.IsSetCommitMessage())
+            {
+                context.Writer.WritePropertyName("commitMessage");
+                context.Writer.WriteStringValue(publicRequest.CommitMessage);
+            }
+
+            if(publicRequest.IsSetEmail())
+            {
+                context.Writer.WritePropertyName("email");
+                context.Writer.WriteStringValue(publicRequest.Email);
+            }
+
+            if(publicRequest.IsSetFilePath())
+            {
+                context.Writer.WritePropertyName("filePath");
+                context.Writer.WriteStringValue(publicRequest.FilePath);
+            }
+
+            if(publicRequest.IsSetKeepEmptyFolders())
+            {
+                context.Writer.WritePropertyName("keepEmptyFolders");
+                context.Writer.WriteBooleanValue(publicRequest.KeepEmptyFolders.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetParentCommitId())
+            {
+                context.Writer.WritePropertyName("parentCommitId");
+                context.Writer.WriteStringValue(publicRequest.ParentCommitId);
+            }
+
+            if(publicRequest.IsSetRepositoryName())
+            {
+                context.Writer.WritePropertyName("repositoryName");
+                context.Writer.WriteStringValue(publicRequest.RepositoryName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

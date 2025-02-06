@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RefreshSchedule Object
     /// </summary>  
-    public class RefreshScheduleUnmarshaller : IUnmarshaller<RefreshSchedule, XmlUnmarshallerContext>, IUnmarshaller<RefreshSchedule, JsonUnmarshallerContext>
+    public class RefreshScheduleUnmarshaller : IJsonUnmarshaller<RefreshSchedule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RefreshSchedule IUnmarshaller<RefreshSchedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RefreshSchedule Unmarshall(JsonUnmarshallerContext context)
+        public RefreshSchedule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RefreshSchedule unmarshalledObject = new RefreshSchedule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RefreshType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RefreshType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RefreshType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleFrequency", targetDepth))
                 {
                     var unmarshaller = RefreshFrequencyUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleFrequency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartAfterDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartAfterDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartAfterDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

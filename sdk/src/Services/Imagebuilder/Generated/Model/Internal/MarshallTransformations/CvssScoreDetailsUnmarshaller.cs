@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CvssScoreDetails Object
     /// </summary>  
-    public class CvssScoreDetailsUnmarshaller : IUnmarshaller<CvssScoreDetails, XmlUnmarshallerContext>, IUnmarshaller<CvssScoreDetails, JsonUnmarshallerContext>
+    public class CvssScoreDetailsUnmarshaller : IJsonUnmarshaller<CvssScoreDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CvssScoreDetails IUnmarshaller<CvssScoreDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CvssScoreDetails Unmarshall(JsonUnmarshallerContext context)
+        public CvssScoreDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CvssScoreDetails unmarshalledObject = new CvssScoreDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("adjustments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CvssScoreAdjustment, CvssScoreAdjustmentUnmarshaller>(CvssScoreAdjustmentUnmarshaller.Instance);
-                    unmarshalledObject.Adjustments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CvssScoreAdjustment, CvssScoreAdjustmentUnmarshaller>(CvssScoreAdjustmentUnmarshaller.Instance);
+                    unmarshalledObject.Adjustments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cvssSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CvssSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CvssSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("score", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Score = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Score = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scoreSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScoreSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScoreSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scoringVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScoringVector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScoringVector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

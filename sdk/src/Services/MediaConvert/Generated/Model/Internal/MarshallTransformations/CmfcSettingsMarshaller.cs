@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,85 +49,85 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDuration())
             {
                 context.Writer.WritePropertyName("audioDuration");
-                context.Writer.Write(requestObject.AudioDuration);
+                context.Writer.WriteStringValue(requestObject.AudioDuration);
             }
 
             if(requestObject.IsSetAudioGroupId())
             {
                 context.Writer.WritePropertyName("audioGroupId");
-                context.Writer.Write(requestObject.AudioGroupId);
+                context.Writer.WriteStringValue(requestObject.AudioGroupId);
             }
 
             if(requestObject.IsSetAudioRenditionSets())
             {
                 context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
+                context.Writer.WriteStringValue(requestObject.AudioRenditionSets);
             }
 
             if(requestObject.IsSetAudioTrackType())
             {
                 context.Writer.WritePropertyName("audioTrackType");
-                context.Writer.Write(requestObject.AudioTrackType);
+                context.Writer.WriteStringValue(requestObject.AudioTrackType);
             }
 
             if(requestObject.IsSetDescriptiveVideoServiceFlag())
             {
                 context.Writer.WritePropertyName("descriptiveVideoServiceFlag");
-                context.Writer.Write(requestObject.DescriptiveVideoServiceFlag);
+                context.Writer.WriteStringValue(requestObject.DescriptiveVideoServiceFlag);
             }
 
             if(requestObject.IsSetIFrameOnlyManifest())
             {
                 context.Writer.WritePropertyName("iFrameOnlyManifest");
-                context.Writer.Write(requestObject.IFrameOnlyManifest);
+                context.Writer.WriteStringValue(requestObject.IFrameOnlyManifest);
             }
 
             if(requestObject.IsSetKlvMetadata())
             {
                 context.Writer.WritePropertyName("klvMetadata");
-                context.Writer.Write(requestObject.KlvMetadata);
+                context.Writer.WriteStringValue(requestObject.KlvMetadata);
             }
 
             if(requestObject.IsSetManifestMetadataSignaling())
             {
                 context.Writer.WritePropertyName("manifestMetadataSignaling");
-                context.Writer.Write(requestObject.ManifestMetadataSignaling);
+                context.Writer.WriteStringValue(requestObject.ManifestMetadataSignaling);
             }
 
             if(requestObject.IsSetScte35Esam())
             {
                 context.Writer.WritePropertyName("scte35Esam");
-                context.Writer.Write(requestObject.Scte35Esam);
+                context.Writer.WriteStringValue(requestObject.Scte35Esam);
             }
 
             if(requestObject.IsSetScte35Source())
             {
                 context.Writer.WritePropertyName("scte35Source");
-                context.Writer.Write(requestObject.Scte35Source);
+                context.Writer.WriteStringValue(requestObject.Scte35Source);
             }
 
             if(requestObject.IsSetTimedMetadata())
             {
                 context.Writer.WritePropertyName("timedMetadata");
-                context.Writer.Write(requestObject.TimedMetadata);
+                context.Writer.WriteStringValue(requestObject.TimedMetadata);
             }
 
             if(requestObject.IsSetTimedMetadataBoxVersion())
             {
                 context.Writer.WritePropertyName("timedMetadataBoxVersion");
-                context.Writer.Write(requestObject.TimedMetadataBoxVersion);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataBoxVersion);
             }
 
             if(requestObject.IsSetTimedMetadataSchemeIdUri())
             {
                 context.Writer.WritePropertyName("timedMetadataSchemeIdUri");
-                context.Writer.Write(requestObject.TimedMetadataSchemeIdUri);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataSchemeIdUri);
             }
 
             if(requestObject.IsSetTimedMetadataValue())
             {
                 context.Writer.WritePropertyName("timedMetadataValue");
-                context.Writer.Write(requestObject.TimedMetadataValue);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataValue);
             }
 
         }

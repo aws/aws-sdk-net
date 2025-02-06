@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress1())
             {
                 context.Writer.WritePropertyName("Address1");
-                context.Writer.Write(requestObject.Address1);
+                context.Writer.WriteStringValue(requestObject.Address1);
             }
 
             if(requestObject.IsSetAddress2())
             {
                 context.Writer.WritePropertyName("Address2");
-                context.Writer.Write(requestObject.Address2);
+                context.Writer.WriteStringValue(requestObject.Address2);
             }
 
             if(requestObject.IsSetAddress3())
             {
                 context.Writer.WritePropertyName("Address3");
-                context.Writer.Write(requestObject.Address3);
+                context.Writer.WriteStringValue(requestObject.Address3);
             }
 
             if(requestObject.IsSetAddress4())
             {
                 context.Writer.WritePropertyName("Address4");
-                context.Writer.Write(requestObject.Address4);
+                context.Writer.WriteStringValue(requestObject.Address4);
             }
 
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetCounty())
             {
                 context.Writer.WritePropertyName("County");
-                context.Writer.Write(requestObject.County);
+                context.Writer.WriteStringValue(requestObject.County);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetProvince())
             {
                 context.Writer.WritePropertyName("Province");
-                context.Writer.Write(requestObject.Province);
+                context.Writer.WriteStringValue(requestObject.Province);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

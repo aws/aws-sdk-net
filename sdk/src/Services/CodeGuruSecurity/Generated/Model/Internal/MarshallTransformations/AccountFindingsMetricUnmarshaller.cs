@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AccountFindingsMetric Object
     /// </summary>  
-    public class AccountFindingsMetricUnmarshaller : IUnmarshaller<AccountFindingsMetric, XmlUnmarshallerContext>, IUnmarshaller<AccountFindingsMetric, JsonUnmarshallerContext>
+    public class AccountFindingsMetricUnmarshaller : IJsonUnmarshaller<AccountFindingsMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AccountFindingsMetric IUnmarshaller<AccountFindingsMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccountFindingsMetric Unmarshall(JsonUnmarshallerContext context)
+        public AccountFindingsMetric Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AccountFindingsMetric unmarshalledObject = new AccountFindingsMetric();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("closedFindings", targetDepth))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
-                    unmarshalledObject.ClosedFindings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClosedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("date", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Date = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("meanTimeToClose", targetDepth))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
-                    unmarshalledObject.MeanTimeToClose = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeanTimeToClose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("newFindings", targetDepth))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
-                    unmarshalledObject.NewFindings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NewFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openFindings", targetDepth))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
-                    unmarshalledObject.OpenFindings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

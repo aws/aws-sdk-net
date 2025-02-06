@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SnaplockConfiguration Object
     /// </summary>  
-    public class SnaplockConfigurationUnmarshaller : IUnmarshaller<SnaplockConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SnaplockConfiguration, JsonUnmarshallerContext>
+    public class SnaplockConfigurationUnmarshaller : IJsonUnmarshaller<SnaplockConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SnaplockConfiguration IUnmarshaller<SnaplockConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SnaplockConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SnaplockConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SnaplockConfiguration unmarshalledObject = new SnaplockConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuditLogVolume", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AuditLogVolume = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuditLogVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutocommitPeriod", targetDepth))
                 {
                     var unmarshaller = AutocommitPeriodUnmarshaller.Instance;
-                    unmarshalledObject.AutocommitPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutocommitPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrivilegedDelete", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivilegedDelete = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivilegedDelete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetentionPeriod", targetDepth))
                 {
                     var unmarshaller = SnaplockRetentionPeriodUnmarshaller.Instance;
-                    unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnaplockType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnaplockType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnaplockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeAppendModeEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.VolumeAppendModeEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeAppendModeEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

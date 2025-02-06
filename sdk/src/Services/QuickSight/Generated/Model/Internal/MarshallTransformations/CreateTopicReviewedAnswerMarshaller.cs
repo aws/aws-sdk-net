@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnswerId())
             {
                 context.Writer.WritePropertyName("AnswerId");
-                context.Writer.Write(requestObject.AnswerId);
+                context.Writer.WriteStringValue(requestObject.AnswerId);
             }
 
             if(requestObject.IsSetDatasetArn())
             {
                 context.Writer.WritePropertyName("DatasetArn");
-                context.Writer.Write(requestObject.DatasetArn);
+                context.Writer.WriteStringValue(requestObject.DatasetArn);
             }
 
             if(requestObject.IsSetMir())
             {
                 context.Writer.WritePropertyName("Mir");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicIRMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mir, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrimaryVisual())
             {
                 context.Writer.WritePropertyName("PrimaryVisual");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicVisualMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryVisual, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuestion())
             {
                 context.Writer.WritePropertyName("Question");
-                context.Writer.Write(requestObject.Question);
+                context.Writer.WriteStringValue(requestObject.Question);
             }
 
             if(requestObject.IsSetTemplate())
             {
                 context.Writer.WritePropertyName("Template");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicTemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Template, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

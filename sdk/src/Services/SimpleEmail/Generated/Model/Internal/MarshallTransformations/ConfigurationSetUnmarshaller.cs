@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConfigurationSet Object
     /// </summary>  
-    public class ConfigurationSetUnmarshaller : IUnmarshaller<ConfigurationSet, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationSet, JsonUnmarshallerContext>
+    public class ConfigurationSetUnmarshaller : IXmlUnmarshaller<ConfigurationSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConfigurationSet Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConfigurationSetUnmarshaller _instance = new ConfigurationSetUnmarshaller();        
 

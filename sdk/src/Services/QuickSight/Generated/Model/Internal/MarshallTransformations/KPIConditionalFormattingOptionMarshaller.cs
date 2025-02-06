@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActualValue())
             {
                 context.Writer.WritePropertyName("ActualValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPIActualValueConditionalFormattingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActualValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComparisonValue())
             {
                 context.Writer.WritePropertyName("ComparisonValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPIComparisonValueConditionalFormattingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComparisonValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrimaryValue())
             {
                 context.Writer.WritePropertyName("PrimaryValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPIPrimaryValueConditionalFormattingMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProgressBar())
             {
                 context.Writer.WritePropertyName("ProgressBar");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPIProgressBarConditionalFormattingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProgressBar, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

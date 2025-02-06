@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabelOptions())
             {
                 context.Writer.WritePropertyName("LabelOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRotationAngle())
@@ -64,11 +62,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("RotationAngle");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.RotationAngle.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RotationAngle.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.RotationAngle.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.RotationAngle.Value);
+                    context.Writer.WriteNumberValue(requestObject.RotationAngle.Value);
                 }
             }
 

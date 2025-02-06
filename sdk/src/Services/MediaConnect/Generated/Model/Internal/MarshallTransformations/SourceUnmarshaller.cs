@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Source Object
     /// </summary>  
-    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
+    public class SourceUnmarshaller : IJsonUnmarshaller<Source, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Source Unmarshall(JsonUnmarshallerContext context)
+        public Source Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Source unmarshalledObject = new Source();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DataTransferSubscriberFeePercent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTransferSubscriberFeePercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("decryption", targetDepth))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Decryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Decryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("entitlementArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gatewayBridgeSource", targetDepth))
                 {
                     var unmarshaller = GatewayBridgeSourceUnmarshaller.Instance;
-                    unmarshalledObject.GatewayBridgeSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayBridgeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ingestIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IngestIp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngestIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ingestPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IngestPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IngestPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaStreamSourceConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MediaStreamSourceConfiguration, MediaStreamSourceConfigurationUnmarshaller>(MediaStreamSourceConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.MediaStreamSourceConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MediaStreamSourceConfiguration, MediaStreamSourceConfigurationUnmarshaller>(MediaStreamSourceConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MediaStreamSourceConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("senderControlPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SenderControlPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SenderControlPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("senderIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transport", targetDepth))
                 {
                     var unmarshaller = TransportUnmarshaller.Instance;
-                    unmarshalledObject.Transport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Transport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcInterfaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcInterfaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcInterfaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("whitelistCidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WhitelistCidr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WhitelistCidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

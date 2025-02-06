@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyHeadersInForwardedValuesException operation
     /// </summary>  
-    public class TooManyHeadersInForwardedValuesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyHeadersInForwardedValuesException, XmlUnmarshallerContext>
+    public class TooManyHeadersInForwardedValuesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyHeadersInForwardedValuesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

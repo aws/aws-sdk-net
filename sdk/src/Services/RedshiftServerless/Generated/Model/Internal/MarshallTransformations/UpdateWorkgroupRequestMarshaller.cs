@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -63,110 +66,115 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBaseCapacity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBaseCapacity())
-                    {
-                        context.Writer.WritePropertyName("baseCapacity");
-                        context.Writer.Write(publicRequest.BaseCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetConfigParameters())
-                    {
-                        context.Writer.WritePropertyName("configParameters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestConfigParametersListValue in publicRequest.ConfigParameters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ConfigParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestConfigParametersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEnhancedVpcRouting())
-                    {
-                        context.Writer.WritePropertyName("enhancedVpcRouting");
-                        context.Writer.Write(publicRequest.EnhancedVpcRouting.Value);
-                    }
-
-                    if(publicRequest.IsSetIpAddressType())
-                    {
-                        context.Writer.WritePropertyName("ipAddressType");
-                        context.Writer.Write(publicRequest.IpAddressType);
-                    }
-
-                    if(publicRequest.IsSetMaxCapacity())
-                    {
-                        context.Writer.WritePropertyName("maxCapacity");
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetPort())
-                    {
-                        context.Writer.WritePropertyName("port");
-                        context.Writer.Write(publicRequest.Port.Value);
-                    }
-
-                    if(publicRequest.IsSetPricePerformanceTarget())
-                    {
-                        context.Writer.WritePropertyName("pricePerformanceTarget");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PerformanceTargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PricePerformanceTarget, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPubliclyAccessible())
-                    {
-                        context.Writer.WritePropertyName("publiclyAccessible");
-                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("securityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("subnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                        {
-                                context.Writer.Write(publicRequestSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkgroupName())
-                    {
-                        context.Writer.WritePropertyName("workgroupName");
-                        context.Writer.Write(publicRequest.WorkgroupName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("baseCapacity");
+                context.Writer.WriteNumberValue(publicRequest.BaseCapacity.Value);
             }
+
+            if(publicRequest.IsSetConfigParameters())
+            {
+                context.Writer.WritePropertyName("configParameters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConfigParametersListValue in publicRequest.ConfigParameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConfigParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConfigParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEnhancedVpcRouting())
+            {
+                context.Writer.WritePropertyName("enhancedVpcRouting");
+                context.Writer.WriteBooleanValue(publicRequest.EnhancedVpcRouting.Value);
+            }
+
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
+            if(publicRequest.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("maxCapacity");
+                context.Writer.WriteNumberValue(publicRequest.MaxCapacity.Value);
+            }
+
+            if(publicRequest.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.WriteNumberValue(publicRequest.Port.Value);
+            }
+
+            if(publicRequest.IsSetPricePerformanceTarget())
+            {
+                context.Writer.WritePropertyName("pricePerformanceTarget");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PerformanceTargetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PricePerformanceTarget, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPubliclyAccessible())
+            {
+                context.Writer.WritePropertyName("publiclyAccessible");
+                context.Writer.WriteBooleanValue(publicRequest.PubliclyAccessible.Value);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("subnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("workgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

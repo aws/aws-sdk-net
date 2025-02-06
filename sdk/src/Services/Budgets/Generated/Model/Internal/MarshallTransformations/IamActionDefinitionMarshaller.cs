@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupsListValue in requestObject.Groups)
                 {
-                        context.Writer.Write(requestObjectGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPolicyArn())
             {
                 context.Writer.WritePropertyName("PolicyArn");
-                context.Writer.Write(requestObject.PolicyArn);
+                context.Writer.WriteStringValue(requestObject.PolicyArn);
             }
 
             if(requestObject.IsSetRoles())
             {
                 context.Writer.WritePropertyName("Roles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRolesListValue in requestObject.Roles)
                 {
-                        context.Writer.Write(requestObjectRolesListValue);
+                        context.Writer.WriteStringValue(requestObjectRolesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUsers())
             {
                 context.Writer.WritePropertyName("Users");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUsersListValue in requestObject.Users)
                 {
-                        context.Writer.Write(requestObjectUsersListValue);
+                        context.Writer.WriteStringValue(requestObjectUsersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

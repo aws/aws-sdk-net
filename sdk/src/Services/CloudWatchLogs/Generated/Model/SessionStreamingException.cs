@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// his exception is returned if an unknown error occurs during a Live Tail session.
+    /// This exception is returned if an unknown error occurs during a Live Tail session.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

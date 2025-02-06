@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClusterPendingUpdates Object
     /// </summary>  
-    public class ClusterPendingUpdatesUnmarshaller : IUnmarshaller<ClusterPendingUpdates, XmlUnmarshallerContext>, IUnmarshaller<ClusterPendingUpdates, JsonUnmarshallerContext>
+    public class ClusterPendingUpdatesUnmarshaller : IJsonUnmarshaller<ClusterPendingUpdates, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClusterPendingUpdates IUnmarshaller<ClusterPendingUpdates, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterPendingUpdates Unmarshall(JsonUnmarshallerContext context)
+        public ClusterPendingUpdates Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClusterPendingUpdates unmarshalledObject = new ClusterPendingUpdates();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ACLs", targetDepth))
                 {
                     var unmarshaller = ACLsUpdateStatusUnmarshaller.Instance;
-                    unmarshalledObject.ACLs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ACLs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Resharding", targetDepth))
                 {
                     var unmarshaller = ReshardingStatusUnmarshaller.Instance;
-                    unmarshalledObject.Resharding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resharding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceUpdates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PendingModifiedServiceUpdate, PendingModifiedServiceUpdateUnmarshaller>(PendingModifiedServiceUpdateUnmarshaller.Instance);
-                    unmarshalledObject.ServiceUpdates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PendingModifiedServiceUpdate, PendingModifiedServiceUpdateUnmarshaller>(PendingModifiedServiceUpdateUnmarshaller.Instance);
+                    unmarshalledObject.ServiceUpdates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

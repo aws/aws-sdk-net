@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BedrockModelSpecification Object
     /// </summary>  
-    public class BedrockModelSpecificationUnmarshaller : IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>, IUnmarshaller<BedrockModelSpecification, JsonUnmarshallerContext>
+    public class BedrockModelSpecificationUnmarshaller : IJsonUnmarshaller<BedrockModelSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BedrockModelSpecification IUnmarshaller<BedrockModelSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockModelSpecification Unmarshall(JsonUnmarshallerContext context)
+        public BedrockModelSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BedrockModelSpecification unmarshalledObject = new BedrockModelSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customPrompt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPrompt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("guardrail", targetDepth))
                 {
                     var unmarshaller = BedrockGuardrailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("traceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TraceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TraceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

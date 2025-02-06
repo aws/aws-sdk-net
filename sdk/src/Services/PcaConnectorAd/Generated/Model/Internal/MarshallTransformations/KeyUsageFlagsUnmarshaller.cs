@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KeyUsageFlags Object
     /// </summary>  
-    public class KeyUsageFlagsUnmarshaller : IUnmarshaller<KeyUsageFlags, XmlUnmarshallerContext>, IUnmarshaller<KeyUsageFlags, JsonUnmarshallerContext>
+    public class KeyUsageFlagsUnmarshaller : IJsonUnmarshaller<KeyUsageFlags, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KeyUsageFlags IUnmarshaller<KeyUsageFlags, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KeyUsageFlags Unmarshall(JsonUnmarshallerContext context)
+        public KeyUsageFlags Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KeyUsageFlags unmarshalledObject = new KeyUsageFlags();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataEncipherment", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DataEncipherment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataEncipherment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DigitalSignature", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DigitalSignature = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DigitalSignature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyAgreement", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyEncipherment", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.KeyEncipherment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyEncipherment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonRepudiation", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NonRepudiation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonRepudiation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

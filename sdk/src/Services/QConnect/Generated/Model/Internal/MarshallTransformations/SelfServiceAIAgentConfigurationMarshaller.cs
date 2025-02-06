@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationConfigurations())
             {
                 context.Writer.WritePropertyName("associationConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssociationConfigurationsListValue in requestObject.AssociationConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssociationConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAssociationConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelfServiceAIGuardrailId())
             {
                 context.Writer.WritePropertyName("selfServiceAIGuardrailId");
-                context.Writer.Write(requestObject.SelfServiceAIGuardrailId);
+                context.Writer.WriteStringValue(requestObject.SelfServiceAIGuardrailId);
             }
 
             if(requestObject.IsSetSelfServiceAnswerGenerationAIPromptId())
             {
                 context.Writer.WritePropertyName("selfServiceAnswerGenerationAIPromptId");
-                context.Writer.Write(requestObject.SelfServiceAnswerGenerationAIPromptId);
+                context.Writer.WriteStringValue(requestObject.SelfServiceAnswerGenerationAIPromptId);
             }
 
             if(requestObject.IsSetSelfServicePreProcessingAIPromptId())
             {
                 context.Writer.WritePropertyName("selfServicePreProcessingAIPromptId");
-                context.Writer.Write(requestObject.SelfServicePreProcessingAIPromptId);
+                context.Writer.WriteStringValue(requestObject.SelfServicePreProcessingAIPromptId);
             }
 
         }

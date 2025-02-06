@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLayout())
             {
                 context.Writer.WritePropertyName("Layout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SectionLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Layout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSectionId())
             {
                 context.Writer.WritePropertyName("SectionId");
-                context.Writer.Write(requestObject.SectionId);
+                context.Writer.WriteStringValue(requestObject.SectionId);
             }
 
             if(requestObject.IsSetStyle())
             {
                 context.Writer.WritePropertyName("Style");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SectionStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Style, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

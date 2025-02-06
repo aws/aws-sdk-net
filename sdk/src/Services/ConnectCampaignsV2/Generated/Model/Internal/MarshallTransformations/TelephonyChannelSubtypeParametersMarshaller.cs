@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnswerMachineDetectionConfig())
             {
                 context.Writer.WritePropertyName("answerMachineDetectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnswerMachineDetectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AnswerMachineDetectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectSourcePhoneNumber())
             {
                 context.Writer.WritePropertyName("connectSourcePhoneNumber");
-                context.Writer.Write(requestObject.ConnectSourcePhoneNumber);
+                context.Writer.WriteStringValue(requestObject.ConnectSourcePhoneNumber);
             }
 
             if(requestObject.IsSetDestinationPhoneNumber())
             {
                 context.Writer.WritePropertyName("destinationPhoneNumber");
-                context.Writer.Write(requestObject.DestinationPhoneNumber);
+                context.Writer.WriteStringValue(requestObject.DestinationPhoneNumber);
             }
 
         }

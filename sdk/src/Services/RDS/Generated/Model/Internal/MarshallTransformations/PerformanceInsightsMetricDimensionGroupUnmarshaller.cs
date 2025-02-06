@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PerformanceInsightsMetricDimensionGroup Object
     /// </summary>  
-    public class PerformanceInsightsMetricDimensionGroupUnmarshaller : IUnmarshaller<PerformanceInsightsMetricDimensionGroup, XmlUnmarshallerContext>, IUnmarshaller<PerformanceInsightsMetricDimensionGroup, JsonUnmarshallerContext>
+    public class PerformanceInsightsMetricDimensionGroupUnmarshaller : IXmlUnmarshaller<PerformanceInsightsMetricDimensionGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PerformanceInsightsMetricDimensionGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PerformanceInsightsMetricDimensionGroupUnmarshaller _instance = new PerformanceInsightsMetricDimensionGroupUnmarshaller();        
 

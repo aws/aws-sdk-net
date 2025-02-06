@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,72 +49,72 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeliveryRestrictions())
             {
                 context.Writer.WritePropertyName("deliveryRestrictions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35DeliveryRestrictionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeliveryRestrictions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentationCancelIndicator())
             {
                 context.Writer.WritePropertyName("segmentationCancelIndicator");
-                context.Writer.Write(requestObject.SegmentationCancelIndicator);
+                context.Writer.WriteStringValue(requestObject.SegmentationCancelIndicator);
             }
 
             if(requestObject.IsSetSegmentationDuration())
             {
                 context.Writer.WritePropertyName("segmentationDuration");
-                context.Writer.Write(requestObject.SegmentationDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationDuration.Value);
             }
 
             if(requestObject.IsSetSegmentationEventId())
             {
                 context.Writer.WritePropertyName("segmentationEventId");
-                context.Writer.Write(requestObject.SegmentationEventId.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationEventId.Value);
             }
 
             if(requestObject.IsSetSegmentationTypeId())
             {
                 context.Writer.WritePropertyName("segmentationTypeId");
-                context.Writer.Write(requestObject.SegmentationTypeId.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationTypeId.Value);
             }
 
             if(requestObject.IsSetSegmentationUpid())
             {
                 context.Writer.WritePropertyName("segmentationUpid");
-                context.Writer.Write(requestObject.SegmentationUpid);
+                context.Writer.WriteStringValue(requestObject.SegmentationUpid);
             }
 
             if(requestObject.IsSetSegmentationUpidType())
             {
                 context.Writer.WritePropertyName("segmentationUpidType");
-                context.Writer.Write(requestObject.SegmentationUpidType.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentationUpidType.Value);
             }
 
             if(requestObject.IsSetSegmentNum())
             {
                 context.Writer.WritePropertyName("segmentNum");
-                context.Writer.Write(requestObject.SegmentNum.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentNum.Value);
             }
 
             if(requestObject.IsSetSegmentsExpected())
             {
                 context.Writer.WritePropertyName("segmentsExpected");
-                context.Writer.Write(requestObject.SegmentsExpected.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsExpected.Value);
             }
 
             if(requestObject.IsSetSubSegmentNum())
             {
                 context.Writer.WritePropertyName("subSegmentNum");
-                context.Writer.Write(requestObject.SubSegmentNum.Value);
+                context.Writer.WriteNumberValue(requestObject.SubSegmentNum.Value);
             }
 
             if(requestObject.IsSetSubSegmentsExpected())
             {
                 context.Writer.WritePropertyName("subSegmentsExpected");
-                context.Writer.Write(requestObject.SubSegmentsExpected.Value);
+                context.Writer.WriteNumberValue(requestObject.SubSegmentsExpected.Value);
             }
 
         }

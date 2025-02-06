@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProtectiveEquipmentBodyPart Object
     /// </summary>  
-    public class ProtectiveEquipmentBodyPartUnmarshaller : IUnmarshaller<ProtectiveEquipmentBodyPart, XmlUnmarshallerContext>, IUnmarshaller<ProtectiveEquipmentBodyPart, JsonUnmarshallerContext>
+    public class ProtectiveEquipmentBodyPartUnmarshaller : IJsonUnmarshaller<ProtectiveEquipmentBodyPart, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProtectiveEquipmentBodyPart IUnmarshaller<ProtectiveEquipmentBodyPart, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectiveEquipmentBodyPart Unmarshall(JsonUnmarshallerContext context)
+        public ProtectiveEquipmentBodyPart Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProtectiveEquipmentBodyPart unmarshalledObject = new ProtectiveEquipmentBodyPart();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EquipmentDetections", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EquipmentDetection, EquipmentDetectionUnmarshaller>(EquipmentDetectionUnmarshaller.Instance);
-                    unmarshalledObject.EquipmentDetections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EquipmentDetection, EquipmentDetectionUnmarshaller>(EquipmentDetectionUnmarshaller.Instance);
+                    unmarshalledObject.EquipmentDetections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

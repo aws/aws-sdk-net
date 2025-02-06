@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryLabelVisibility())
             {
                 context.Writer.WritePropertyName("CategoryLabelVisibility");
-                context.Writer.Write(requestObject.CategoryLabelVisibility);
+                context.Writer.WriteStringValue(requestObject.CategoryLabelVisibility);
             }
 
             if(requestObject.IsSetDataLabelTypes())
             {
                 context.Writer.WritePropertyName("DataLabelTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataLabelTypesListValue in requestObject.DataLabelTypes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataLabelTypeMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataLabelTypesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelColor())
             {
                 context.Writer.WritePropertyName("LabelColor");
-                context.Writer.Write(requestObject.LabelColor);
+                context.Writer.WriteStringValue(requestObject.LabelColor);
             }
 
             if(requestObject.IsSetLabelContent())
             {
                 context.Writer.WritePropertyName("LabelContent");
-                context.Writer.Write(requestObject.LabelContent);
+                context.Writer.WriteStringValue(requestObject.LabelContent);
             }
 
             if(requestObject.IsSetLabelFontConfiguration())
             {
                 context.Writer.WritePropertyName("LabelFontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelFontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMeasureLabelVisibility())
             {
                 context.Writer.WritePropertyName("MeasureLabelVisibility");
-                context.Writer.Write(requestObject.MeasureLabelVisibility);
+                context.Writer.WriteStringValue(requestObject.MeasureLabelVisibility);
             }
 
             if(requestObject.IsSetOverlap())
             {
                 context.Writer.WritePropertyName("Overlap");
-                context.Writer.Write(requestObject.Overlap);
+                context.Writer.WriteStringValue(requestObject.Overlap);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("Position");
-                context.Writer.Write(requestObject.Position);
+                context.Writer.WriteStringValue(requestObject.Position);
             }
 
             if(requestObject.IsSetTotalsVisibility())
             {
                 context.Writer.WritePropertyName("TotalsVisibility");
-                context.Writer.Write(requestObject.TotalsVisibility);
+                context.Writer.WriteStringValue(requestObject.TotalsVisibility);
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

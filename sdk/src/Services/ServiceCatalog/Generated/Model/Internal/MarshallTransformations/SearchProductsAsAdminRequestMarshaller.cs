@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
@@ -63,80 +66,85 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceptLanguage())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceptLanguage())
-                    {
-                        context.Writer.WritePropertyName("AcceptLanguage");
-                        context.Writer.Write(publicRequest.AcceptLanguage);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("Filters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
-                            {
-                                    context.Writer.Write(publicRequestFiltersValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPageSize())
-                    {
-                        context.Writer.WritePropertyName("PageSize");
-                        context.Writer.Write(publicRequest.PageSize.Value);
-                    }
-
-                    if(publicRequest.IsSetPageToken())
-                    {
-                        context.Writer.WritePropertyName("PageToken");
-                        context.Writer.Write(publicRequest.PageToken);
-                    }
-
-                    if(publicRequest.IsSetPortfolioId())
-                    {
-                        context.Writer.WritePropertyName("PortfolioId");
-                        context.Writer.Write(publicRequest.PortfolioId);
-                    }
-
-                    if(publicRequest.IsSetProductSource())
-                    {
-                        context.Writer.WritePropertyName("ProductSource");
-                        context.Writer.Write(publicRequest.ProductSource);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("SortBy");
-                        context.Writer.Write(publicRequest.SortBy);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("SortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AcceptLanguage");
+                context.Writer.WriteStringValue(publicRequest.AcceptLanguage);
             }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFiltersKvp in publicRequest.Filters)
+                {
+                    context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                    var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
+                    {
+                            context.Writer.WriteStringValue(publicRequestFiltersValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPageSize())
+            {
+                context.Writer.WritePropertyName("PageSize");
+                context.Writer.WriteNumberValue(publicRequest.PageSize.Value);
+            }
+
+            if(publicRequest.IsSetPageToken())
+            {
+                context.Writer.WritePropertyName("PageToken");
+                context.Writer.WriteStringValue(publicRequest.PageToken);
+            }
+
+            if(publicRequest.IsSetPortfolioId())
+            {
+                context.Writer.WritePropertyName("PortfolioId");
+                context.Writer.WriteStringValue(publicRequest.PortfolioId);
+            }
+
+            if(publicRequest.IsSetProductSource())
+            {
+                context.Writer.WritePropertyName("ProductSource");
+                context.Writer.WriteStringValue(publicRequest.ProductSource);
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("SortBy");
+                context.Writer.WriteStringValue(publicRequest.SortBy);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("SortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

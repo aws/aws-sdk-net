@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLastUpdateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.Write(requestObject.LastUpdateTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdateTime.Value)));
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetResourceSetStatus())
             {
                 context.Writer.WritePropertyName("ResourceSetStatus");
-                context.Writer.Write(requestObject.ResourceSetStatus);
+                context.Writer.WriteStringValue(requestObject.ResourceSetStatus);
             }
 
             if(requestObject.IsSetResourceTypeList())
             {
                 context.Writer.WritePropertyName("ResourceTypeList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypeListListValue in requestObject.ResourceTypeList)
                 {
-                        context.Writer.Write(requestObjectResourceTypeListListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypeListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUpdateToken())
             {
                 context.Writer.WritePropertyName("UpdateToken");
-                context.Writer.Write(requestObject.UpdateToken);
+                context.Writer.WriteStringValue(requestObject.UpdateToken);
             }
 
         }

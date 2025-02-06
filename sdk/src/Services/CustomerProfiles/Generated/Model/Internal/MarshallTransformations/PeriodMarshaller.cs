@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInvocationsPerProfile())
             {
                 context.Writer.WritePropertyName("MaxInvocationsPerProfile");
-                context.Writer.Write(requestObject.MaxInvocationsPerProfile.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxInvocationsPerProfile.Value);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("Unlimited");
-                context.Writer.Write(requestObject.Unlimited.Value);
+                context.Writer.WriteBooleanValue(requestObject.Unlimited.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value.Value);
+                context.Writer.WriteNumberValue(requestObject.Value.Value);
             }
 
         }

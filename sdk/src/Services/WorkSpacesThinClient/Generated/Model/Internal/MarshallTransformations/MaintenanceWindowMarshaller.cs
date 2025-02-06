@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyTimeOf())
             {
                 context.Writer.WritePropertyName("applyTimeOf");
-                context.Writer.Write(requestObject.ApplyTimeOf);
+                context.Writer.WriteStringValue(requestObject.ApplyTimeOf);
             }
 
             if(requestObject.IsSetDaysOfTheWeek())
             {
                 context.Writer.WritePropertyName("daysOfTheWeek");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDaysOfTheWeekListValue in requestObject.DaysOfTheWeek)
                 {
-                        context.Writer.Write(requestObjectDaysOfTheWeekListValue);
+                        context.Writer.WriteStringValue(requestObjectDaysOfTheWeekListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEndTimeHour())
             {
                 context.Writer.WritePropertyName("endTimeHour");
-                context.Writer.Write(requestObject.EndTimeHour.Value);
+                context.Writer.WriteNumberValue(requestObject.EndTimeHour.Value);
             }
 
             if(requestObject.IsSetEndTimeMinute())
             {
                 context.Writer.WritePropertyName("endTimeMinute");
-                context.Writer.Write(requestObject.EndTimeMinute.Value);
+                context.Writer.WriteNumberValue(requestObject.EndTimeMinute.Value);
             }
 
             if(requestObject.IsSetStartTimeHour())
             {
                 context.Writer.WritePropertyName("startTimeHour");
-                context.Writer.Write(requestObject.StartTimeHour.Value);
+                context.Writer.WriteNumberValue(requestObject.StartTimeHour.Value);
             }
 
             if(requestObject.IsSetStartTimeMinute())
             {
                 context.Writer.WritePropertyName("startTimeMinute");
-                context.Writer.Write(requestObject.StartTimeMinute.Value);
+                context.Writer.WriteNumberValue(requestObject.StartTimeMinute.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

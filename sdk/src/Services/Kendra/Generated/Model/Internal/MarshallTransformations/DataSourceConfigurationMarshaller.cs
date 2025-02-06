@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,199 +49,199 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlfrescoConfiguration())
             {
                 context.Writer.WritePropertyName("AlfrescoConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AlfrescoConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AlfrescoConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBoxConfiguration())
             {
                 context.Writer.WritePropertyName("BoxConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BoxConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BoxConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfluenceConfiguration())
             {
                 context.Writer.WritePropertyName("ConfluenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfluenceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfluenceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseConfiguration())
             {
                 context.Writer.WritePropertyName("DatabaseConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFsxConfiguration())
             {
                 context.Writer.WritePropertyName("FsxConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FsxConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FsxConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGitHubConfiguration())
             {
                 context.Writer.WritePropertyName("GitHubConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitHubConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitHubConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGoogleDriveConfiguration())
             {
                 context.Writer.WritePropertyName("GoogleDriveConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GoogleDriveConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GoogleDriveConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJiraConfiguration())
             {
                 context.Writer.WritePropertyName("JiraConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JiraConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.JiraConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOneDriveConfiguration())
             {
                 context.Writer.WritePropertyName("OneDriveConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OneDriveConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OneDriveConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuipConfiguration())
             {
                 context.Writer.WritePropertyName("QuipConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QuipConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuipConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DataSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforceConfiguration())
             {
                 context.Writer.WritePropertyName("SalesforceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SalesforceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceNowConfiguration())
             {
                 context.Writer.WritePropertyName("ServiceNowConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceNowConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSharePointConfiguration())
             {
                 context.Writer.WritePropertyName("SharePointConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SharePointConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SharePointConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSlackConfiguration())
             {
                 context.Writer.WritePropertyName("SlackConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SlackConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SlackConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("TemplateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebCrawlerConfiguration())
             {
                 context.Writer.WritePropertyName("WebCrawlerConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WebCrawlerConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.WebCrawlerConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkDocsConfiguration())
             {
                 context.Writer.WritePropertyName("WorkDocsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WorkDocsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.WorkDocsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

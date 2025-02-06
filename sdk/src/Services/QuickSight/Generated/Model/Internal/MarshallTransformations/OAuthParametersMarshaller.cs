@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentityProviderResourceUri())
             {
                 context.Writer.WritePropertyName("IdentityProviderResourceUri");
-                context.Writer.Write(requestObject.IdentityProviderResourceUri);
+                context.Writer.WriteStringValue(requestObject.IdentityProviderResourceUri);
             }
 
             if(requestObject.IsSetIdentityProviderVpcConnectionProperties())
             {
                 context.Writer.WritePropertyName("IdentityProviderVpcConnectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConnectionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.IdentityProviderVpcConnectionProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuthScope())
             {
                 context.Writer.WritePropertyName("OAuthScope");
-                context.Writer.Write(requestObject.OAuthScope);
+                context.Writer.WriteStringValue(requestObject.OAuthScope);
             }
 
             if(requestObject.IsSetTokenProviderUrl())
             {
                 context.Writer.WritePropertyName("TokenProviderUrl");
-                context.Writer.Write(requestObject.TokenProviderUrl);
+                context.Writer.WriteStringValue(requestObject.TokenProviderUrl);
             }
 
         }

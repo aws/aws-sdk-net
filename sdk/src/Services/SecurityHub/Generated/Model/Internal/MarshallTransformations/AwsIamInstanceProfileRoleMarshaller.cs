@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetAssumeRolePolicyDocument())
             {
                 context.Writer.WritePropertyName("AssumeRolePolicyDocument");
-                context.Writer.Write(requestObject.AssumeRolePolicyDocument);
+                context.Writer.WriteStringValue(requestObject.AssumeRolePolicyDocument);
             }
 
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
-                context.Writer.Write(requestObject.CreateDate);
+                context.Writer.WriteStringValue(requestObject.CreateDate);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetRoleId())
             {
                 context.Writer.WritePropertyName("RoleId");
-                context.Writer.Write(requestObject.RoleId);
+                context.Writer.WriteStringValue(requestObject.RoleId);
             }
 
             if(requestObject.IsSetRoleName())
             {
                 context.Writer.WritePropertyName("RoleName");
-                context.Writer.Write(requestObject.RoleName);
+                context.Writer.WriteStringValue(requestObject.RoleName);
             }
 
         }

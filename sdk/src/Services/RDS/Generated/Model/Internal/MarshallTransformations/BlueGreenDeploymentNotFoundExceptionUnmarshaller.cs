@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BlueGreenDeploymentNotFoundException operation
     /// </summary>  
-    public class BlueGreenDeploymentNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<BlueGreenDeploymentNotFoundException, XmlUnmarshallerContext>
+    public class BlueGreenDeploymentNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BlueGreenDeploymentNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

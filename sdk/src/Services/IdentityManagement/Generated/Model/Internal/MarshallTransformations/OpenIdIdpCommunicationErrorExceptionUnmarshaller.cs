@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OpenIdIdpCommunicationErrorException operation
     /// </summary>  
-    public class OpenIdIdpCommunicationErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<OpenIdIdpCommunicationErrorException, XmlUnmarshallerContext>
+    public class OpenIdIdpCommunicationErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OpenIdIdpCommunicationErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

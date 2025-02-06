@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AvailabilityZone Object
     /// </summary>  
-    public class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZone, JsonUnmarshallerContext>
+    public class AvailabilityZoneUnmarshaller : IXmlUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AvailabilityZone Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AvailabilityZoneUnmarshaller _instance = new AvailabilityZoneUnmarshaller();        
 

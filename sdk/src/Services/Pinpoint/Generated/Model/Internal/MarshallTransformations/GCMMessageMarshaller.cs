@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,130 +49,130 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetCollapseKey())
             {
                 context.Writer.WritePropertyName("CollapseKey");
-                context.Writer.Write(requestObject.CollapseKey);
+                context.Writer.WriteStringValue(requestObject.CollapseKey);
             }
 
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDataKvp in requestObject.Data)
                 {
                     context.Writer.WritePropertyName(requestObjectDataKvp.Key);
                     var requestObjectDataValue = requestObjectDataKvp.Value;
 
-                        context.Writer.Write(requestObjectDataValue);
+                        context.Writer.WriteStringValue(requestObjectDataValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIconReference())
             {
                 context.Writer.WritePropertyName("IconReference");
-                context.Writer.Write(requestObject.IconReference);
+                context.Writer.WriteStringValue(requestObject.IconReference);
             }
 
             if(requestObject.IsSetImageIconUrl())
             {
                 context.Writer.WritePropertyName("ImageIconUrl");
-                context.Writer.Write(requestObject.ImageIconUrl);
+                context.Writer.WriteStringValue(requestObject.ImageIconUrl);
             }
 
             if(requestObject.IsSetImageUrl())
             {
                 context.Writer.WritePropertyName("ImageUrl");
-                context.Writer.Write(requestObject.ImageUrl);
+                context.Writer.WriteStringValue(requestObject.ImageUrl);
             }
 
             if(requestObject.IsSetPreferredAuthenticationMethod())
             {
                 context.Writer.WritePropertyName("PreferredAuthenticationMethod");
-                context.Writer.Write(requestObject.PreferredAuthenticationMethod);
+                context.Writer.WriteStringValue(requestObject.PreferredAuthenticationMethod);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.WriteStringValue(requestObject.Priority);
             }
 
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.Write(requestObject.RawContent);
+                context.Writer.WriteStringValue(requestObject.RawContent);
             }
 
             if(requestObject.IsSetRestrictedPackageName())
             {
                 context.Writer.WritePropertyName("RestrictedPackageName");
-                context.Writer.Write(requestObject.RestrictedPackageName);
+                context.Writer.WriteStringValue(requestObject.RestrictedPackageName);
             }
 
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");
-                context.Writer.Write(requestObject.SilentPush.Value);
+                context.Writer.WriteBooleanValue(requestObject.SilentPush.Value);
             }
 
             if(requestObject.IsSetSmallImageIconUrl())
             {
                 context.Writer.WritePropertyName("SmallImageIconUrl");
-                context.Writer.Write(requestObject.SmallImageIconUrl);
+                context.Writer.WriteStringValue(requestObject.SmallImageIconUrl);
             }
 
             if(requestObject.IsSetSound())
             {
                 context.Writer.WritePropertyName("Sound");
-                context.Writer.Write(requestObject.Sound);
+                context.Writer.WriteStringValue(requestObject.Sound);
             }
 
             if(requestObject.IsSetSubstitutions())
             {
                 context.Writer.WritePropertyName("Substitutions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
                     var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
                     {
-                            context.Writer.Write(requestObjectSubstitutionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeToLive())
             {
                 context.Writer.WritePropertyName("TimeToLive");
-                context.Writer.Write(requestObject.TimeToLive.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeToLive.Value);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

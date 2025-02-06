@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryComputeResponse Object
     /// </summary>  
-    public class QueryComputeResponseUnmarshaller : IUnmarshaller<QueryComputeResponse, XmlUnmarshallerContext>, IUnmarshaller<QueryComputeResponse, JsonUnmarshallerContext>
+    public class QueryComputeResponseUnmarshaller : IJsonUnmarshaller<QueryComputeResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryComputeResponse IUnmarshaller<QueryComputeResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryComputeResponse Unmarshall(JsonUnmarshallerContext context)
+        public QueryComputeResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryComputeResponse unmarshalledObject = new QueryComputeResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComputeMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputeMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputeMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedCapacity", targetDepth))
                 {
                     var unmarshaller = ProvisionedCapacityResponseUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

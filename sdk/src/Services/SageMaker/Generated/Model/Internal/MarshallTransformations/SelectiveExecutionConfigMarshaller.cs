@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSelectedSteps())
             {
                 context.Writer.WritePropertyName("SelectedSteps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedStepsListValue in requestObject.SelectedSteps)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SelectedStepMarshaller.Instance;
                     marshaller.Marshall(requestObjectSelectedStepsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourcePipelineExecutionArn())
             {
                 context.Writer.WritePropertyName("SourcePipelineExecutionArn");
-                context.Writer.Write(requestObject.SourcePipelineExecutionArn);
+                context.Writer.WriteStringValue(requestObject.SourcePipelineExecutionArn);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStateName())
             {
                 context.Writer.WritePropertyName("stateName");
-                context.Writer.Write(requestObject.StateName);
+                context.Writer.WriteStringValue(requestObject.StateName);
             }
 
             if(requestObject.IsSetTimers())
             {
                 context.Writer.WritePropertyName("timers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTimersListValue in requestObject.Timers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TimerDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTimersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("variables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVariablesListValue in requestObject.Variables)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VariableDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectVariablesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LastError Object
     /// </summary>  
-    public class LastErrorUnmarshaller : IUnmarshaller<LastError, XmlUnmarshallerContext>, IUnmarshaller<LastError, JsonUnmarshallerContext>
+    public class LastErrorUnmarshaller : IXmlUnmarshaller<LastError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LastError Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LastErrorUnmarshaller _instance = new LastErrorUnmarshaller();        
 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -61,75 +64,80 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConsistencyLevel())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConsistencyLevel())
-                    {
-                        context.Writer.WritePropertyName("ConsistencyLevel");
-                        context.Writer.Write(publicRequest.ConsistencyLevel);
-                    }
-
-                    if(publicRequest.IsSetFilterAttributeRanges())
-                    {
-                        context.Writer.WritePropertyName("FilterAttributeRanges");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterAttributeRangesListValue in publicRequest.FilterAttributeRanges)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TypedLinkAttributeRangeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFilterAttributeRangesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterTypedLink())
-                    {
-                        context.Writer.WritePropertyName("FilterTypedLink");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FilterTypedLink, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetObjectReference())
-                    {
-                        context.Writer.WritePropertyName("ObjectReference");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObjectReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ObjectReference, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConsistencyLevel");
+                context.Writer.WriteStringValue(publicRequest.ConsistencyLevel);
             }
+
+            if(publicRequest.IsSetFilterAttributeRanges())
+            {
+                context.Writer.WritePropertyName("FilterAttributeRanges");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterAttributeRangesListValue in publicRequest.FilterAttributeRanges)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TypedLinkAttributeRangeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilterAttributeRangesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFilterTypedLink())
+            {
+                context.Writer.WritePropertyName("FilterTypedLink");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterTypedLink, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetObjectReference())
+            {
+                context.Writer.WritePropertyName("ObjectReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ObjectReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetDirectoryArn()) 

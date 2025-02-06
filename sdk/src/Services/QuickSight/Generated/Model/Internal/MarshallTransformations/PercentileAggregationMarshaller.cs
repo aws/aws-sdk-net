@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PercentileValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PercentileValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PercentileValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentileValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.PercentileValue.Value);
                 }
             }
 

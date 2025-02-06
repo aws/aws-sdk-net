@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RevocationContentNotFoundException operation
     /// </summary>  
-    public class RevocationContentNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<RevocationContentNotFoundException, XmlUnmarshallerContext>
+    public class RevocationContentNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RevocationContentNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

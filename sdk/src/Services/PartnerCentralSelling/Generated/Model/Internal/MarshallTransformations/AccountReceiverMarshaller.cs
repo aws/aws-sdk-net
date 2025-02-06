@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlias())
             {
                 context.Writer.WritePropertyName("Alias");
-                context.Writer.Write(requestObject.Alias);
+                context.Writer.WriteStringValue(requestObject.Alias);
             }
 
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("AwsAccountId");
-                context.Writer.Write(requestObject.AwsAccountId);
+                context.Writer.WriteStringValue(requestObject.AwsAccountId);
             }
 
         }

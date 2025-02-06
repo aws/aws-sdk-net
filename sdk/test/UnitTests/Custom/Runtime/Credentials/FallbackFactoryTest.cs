@@ -46,6 +46,8 @@ namespace AWSSDK.UnitTests
         private const string AWS_EC2_METADATA_V1_DISABLED = "AWS_EC2_METADATA_V1_DISABLED";
         private const string AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
         private const string AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
+        private const string AWS_REQUEST_CHECKSUM_CALCULATION = "AWS_REQUEST_CHECKSUM_CALCULATION";
+        private const string AWS_RESPONSE_CHECKSUM_VALIDATION = "AWS_RESPONSE_CHECKSUM_VALIDATION";
         private const string AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE = EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT;
         private const long DefaultMinCompressionSizeBytes = 10240;
 
@@ -98,6 +100,18 @@ namespace AWSSDK.UnitTests
             .AppendLine("account_id_endpoint_mode=disabled")
             .AppendLine("[account_id_endpoint_mode_required]")
             .AppendLine("account_id_endpoint_mode=required")
+            .AppendLine("[request_checksum_calculation_when_supported]")
+            .AppendLine("request_checksum_calculation=when_supported")
+            .AppendLine("[request_checksum_calculation_when_required]")
+            .AppendLine("request_checksum_calculation=when_required")
+            .AppendLine("[request_checksum_calculation_invalid]")
+            .AppendLine("request_checksum_calculation=always")
+            .AppendLine("[response_checksum_validation_when_supported]")
+            .AppendLine("response_checksum_validation=when_supported")
+            .AppendLine("[response_checksum_validation_when_required]")
+            .AppendLine("response_checksum_validation=when_required")
+            .AppendLine("[response_checksum_validation_invalid]")
+            .AppendLine("response_checksum_validation=always")
             .ToString();
 
         [DataTestMethod]
@@ -450,9 +464,65 @@ namespace AWSSDK.UnitTests
             {
                 Assert.AreEqual(expectedAccountIdEndpointMode, config.AccountIdEndpointMode);
             }
-
         }
 
+        [DataTestMethod]
+        [DataRow(RequestChecksumCalculation.WHEN_REQUIRED, RequestChecksumCalculation.WHEN_SUPPORTED, "request_checksum_calculation_when_supported", RequestChecksumCalculation.WHEN_REQUIRED)] // service client should supersede conflicting env var and profile values
+        [DataRow(RequestChecksumCalculation.WHEN_SUPPORTED, RequestChecksumCalculation.WHEN_REQUIRED, "request_checksum_calculation_when_required", RequestChecksumCalculation.WHEN_SUPPORTED)]
+        [DataRow(null, RequestChecksumCalculation.WHEN_REQUIRED, "request_checksum_calculation_when_supported", RequestChecksumCalculation.WHEN_REQUIRED)] // env var should supersede conflicting profile value
+        [DataRow(null, RequestChecksumCalculation.WHEN_SUPPORTED, "request_checksum_calculation_when_required", RequestChecksumCalculation.WHEN_SUPPORTED)]
+        [DataRow(null, null, "request_checksum_calculation_when_required", RequestChecksumCalculation.WHEN_REQUIRED)] // profile should drive value
+        [DataRow(null, null, "request_checksum_calculation_when_supported", RequestChecksumCalculation.WHEN_SUPPORTED)] 
+        [DataRow(null, null, "request_checksum_calculation_invalid", RequestChecksumCalculation.WHEN_SUPPORTED)] // should default to RequestChecksumCalculation.WHEN_SUPPORTED when invalid profile value specified
+        [DataRow(null, null, "default", RequestChecksumCalculation.WHEN_SUPPORTED)] // should default to RequestChecksumCalculation.WHEN_SUPPORTED when no config values specified
+        public void TestRequestChecksumCalculationConfigurationHierarchy(RequestChecksumCalculation? clientConfigValue, RequestChecksumCalculation? envVarValue, string profileName, RequestChecksumCalculation expectedRequestChecksumCalculationValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.RequestChecksumCalculation = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_REQUEST_CHECKSUM_CALCULATION, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedRequestChecksumCalculationValue, config.RequestChecksumCalculation);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(ResponseChecksumValidation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_SUPPORTED, "response_checksum_validation_when_supported", ResponseChecksumValidation.WHEN_REQUIRED)] // service client should supersede conflicting env var and profile values
+        [DataRow(ResponseChecksumValidation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_REQUIRED, "response_checksum_validation_when_required", ResponseChecksumValidation.WHEN_SUPPORTED)]
+        [DataRow(null, ResponseChecksumValidation.WHEN_REQUIRED, "response_checksum_validation_when_supported", ResponseChecksumValidation.WHEN_REQUIRED)] // env var should supersede conflicting profile value
+        [DataRow(null, ResponseChecksumValidation.WHEN_SUPPORTED, "response_checksum_validation_when_required", ResponseChecksumValidation.WHEN_SUPPORTED)]
+        [DataRow(null, null, "response_checksum_validation_when_required", ResponseChecksumValidation.WHEN_REQUIRED)] // profile should drive value
+        [DataRow(null, null, "response_checksum_validation_when_supported", ResponseChecksumValidation.WHEN_SUPPORTED)]
+        [DataRow(null, null, "response_checksum_validation_invalid", ResponseChecksumValidation.WHEN_SUPPORTED)] // should default to ResponseChecksumValidation.WHEN_SUPPORTED when invalid profile value specified
+        [DataRow(null, null, "default", ResponseChecksumValidation.WHEN_SUPPORTED)] // should default to ResponseChecksumValidation.WHEN_SUPPORTED when no config values specified
+        public void TestResponseChecksumValidationConfigurationHierarchy(ResponseChecksumValidation? clientConfigValue, ResponseChecksumValidation? envVarValue, string profileName, ResponseChecksumValidation expectedResponseChecksumValidationValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.ResponseChecksumValidation = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_RESPONSE_CHECKSUM_VALIDATION, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedResponseChecksumValidationValue, config.ResponseChecksumValidation);
+            }
+        }
 
         /// <summary>
         /// Tests that the properties in the AssumeRoleWithWebIdentityCredentialsObject are used for

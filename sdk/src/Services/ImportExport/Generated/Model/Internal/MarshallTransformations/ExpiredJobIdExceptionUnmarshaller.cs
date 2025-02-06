@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExpiredJobIdException operation
     /// </summary>  
-    public class ExpiredJobIdExceptionUnmarshaller : IErrorResponseUnmarshaller<ExpiredJobIdException, XmlUnmarshallerContext>
+    public class ExpiredJobIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ExpiredJobIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

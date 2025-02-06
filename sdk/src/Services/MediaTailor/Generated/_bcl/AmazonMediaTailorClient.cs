@@ -323,7 +323,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Amazon CloudWatch log settings for a playback configuration.
+        /// Defines where AWS Elemental MediaTailor sends logs for the playback configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
         /// 
@@ -340,7 +340,7 @@ namespace Amazon.MediaTailor
 
 
         /// <summary>
-        /// Amazon CloudWatch log settings for a playback configuration.
+        /// Defines where AWS Elemental MediaTailor sends logs for the playback configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
         /// <param name="cancellationToken">

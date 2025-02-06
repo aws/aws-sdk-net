@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionPoolConfigurationInfo Object
     /// </summary>  
-    public class ConnectionPoolConfigurationInfoUnmarshaller : IUnmarshaller<ConnectionPoolConfigurationInfo, XmlUnmarshallerContext>, IUnmarshaller<ConnectionPoolConfigurationInfo, JsonUnmarshallerContext>
+    public class ConnectionPoolConfigurationInfoUnmarshaller : IXmlUnmarshaller<ConnectionPoolConfigurationInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,17 +99,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConnectionPoolConfigurationInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConnectionPoolConfigurationInfoUnmarshaller _instance = new ConnectionPoolConfigurationInfoUnmarshaller();        
 

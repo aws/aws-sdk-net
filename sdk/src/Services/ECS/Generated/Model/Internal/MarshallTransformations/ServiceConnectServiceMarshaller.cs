@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientAliases())
             {
                 context.Writer.WritePropertyName("clientAliases");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClientAliasesListValue in requestObject.ClientAliases)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServiceConnectClientAliasMarshaller.Instance;
                     marshaller.Marshall(requestObjectClientAliasesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDiscoveryName())
             {
                 context.Writer.WritePropertyName("discoveryName");
-                context.Writer.Write(requestObject.DiscoveryName);
+                context.Writer.WriteStringValue(requestObject.DiscoveryName);
             }
 
             if(requestObject.IsSetIngressPortOverride())
             {
                 context.Writer.WritePropertyName("ingressPortOverride");
-                context.Writer.Write(requestObject.IngressPortOverride.Value);
+                context.Writer.WriteNumberValue(requestObject.IngressPortOverride.Value);
             }
 
             if(requestObject.IsSetPortName())
             {
                 context.Writer.WritePropertyName("portName");
-                context.Writer.Write(requestObject.PortName);
+                context.Writer.WriteStringValue(requestObject.PortName);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Timeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTls())
             {
                 context.Writer.WritePropertyName("tls");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceConnectTlsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tls, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

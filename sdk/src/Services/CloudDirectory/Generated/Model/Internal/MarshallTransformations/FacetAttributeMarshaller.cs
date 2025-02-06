@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeDefinition())
             {
                 context.Writer.WritePropertyName("AttributeDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FacetAttributeDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAttributeReference())
             {
                 context.Writer.WritePropertyName("AttributeReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FacetAttributeReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRequiredBehavior())
             {
                 context.Writer.WritePropertyName("RequiredBehavior");
-                context.Writer.Write(requestObject.RequiredBehavior);
+                context.Writer.WriteStringValue(requestObject.RequiredBehavior);
             }
 
         }

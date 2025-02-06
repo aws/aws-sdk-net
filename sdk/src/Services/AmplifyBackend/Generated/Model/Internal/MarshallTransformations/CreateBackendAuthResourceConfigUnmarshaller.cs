@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CreateBackendAuthResourceConfig Object
     /// </summary>  
-    public class CreateBackendAuthResourceConfigUnmarshaller : IUnmarshaller<CreateBackendAuthResourceConfig, XmlUnmarshallerContext>, IUnmarshaller<CreateBackendAuthResourceConfig, JsonUnmarshallerContext>
+    public class CreateBackendAuthResourceConfigUnmarshaller : IJsonUnmarshaller<CreateBackendAuthResourceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CreateBackendAuthResourceConfig IUnmarshaller<CreateBackendAuthResourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CreateBackendAuthResourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public CreateBackendAuthResourceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CreateBackendAuthResourceConfig unmarshalledObject = new CreateBackendAuthResourceConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authResources", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthResources = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("identityPoolConfigs", targetDepth))
                 {
                     var unmarshaller = CreateBackendAuthIdentityPoolConfigUnmarshaller.Instance;
-                    unmarshalledObject.IdentityPoolConfigs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityPoolConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("service", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("userPoolConfigs", targetDepth))
                 {
                     var unmarshaller = CreateBackendAuthUserPoolConfigUnmarshaller.Instance;
-                    unmarshalledObject.UserPoolConfigs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserPoolConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

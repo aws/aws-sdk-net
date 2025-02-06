@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InstanceHardware Object
     /// </summary>  
-    public class InstanceHardwareUnmarshaller : IUnmarshaller<InstanceHardware, XmlUnmarshallerContext>, IUnmarshaller<InstanceHardware, JsonUnmarshallerContext>
+    public class InstanceHardwareUnmarshaller : IJsonUnmarshaller<InstanceHardware, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InstanceHardware IUnmarshaller<InstanceHardware, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceHardware Unmarshall(JsonUnmarshallerContext context)
+        public InstanceHardware Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InstanceHardware unmarshalledObject = new InstanceHardware();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cpuCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("disks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
-                    unmarshalledObject.Disks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
+                    unmarshalledObject.Disks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ramSizeInGb", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubnetArn())
             {
                 context.Writer.WritePropertyName("SubnetArn");
-                context.Writer.Write(requestObject.SubnetArn);
+                context.Writer.WriteStringValue(requestObject.SubnetArn);
             }
 
             if(requestObject.IsSetZone())
             {
                 context.Writer.WritePropertyName("Zone");
-                context.Writer.Write(requestObject.Zone);
+                context.Writer.WriteStringValue(requestObject.Zone);
             }
 
         }

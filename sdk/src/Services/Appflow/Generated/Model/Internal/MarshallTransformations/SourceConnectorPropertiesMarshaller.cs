@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,188 +49,188 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmplitude())
             {
                 context.Writer.WritePropertyName("Amplitude");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmplitudeSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amplitude, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomConnector())
             {
                 context.Writer.WritePropertyName("CustomConnector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomConnectorSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomConnector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatadog())
             {
                 context.Writer.WritePropertyName("Datadog");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatadogSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Datadog, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynatrace())
             {
                 context.Writer.WritePropertyName("Dynatrace");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynatraceSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dynatrace, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGoogleAnalytics())
             {
                 context.Writer.WritePropertyName("GoogleAnalytics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GoogleAnalyticsSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.GoogleAnalytics, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInforNexus())
             {
                 context.Writer.WritePropertyName("InforNexus");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InforNexusSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.InforNexus, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMarketo())
             {
                 context.Writer.WritePropertyName("Marketo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MarketoSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPardot())
             {
                 context.Writer.WritePropertyName("Pardot");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PardotSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Pardot, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3SourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("Salesforce");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSAPOData())
             {
                 context.Writer.WritePropertyName("SAPOData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAPODataSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SAPOData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceNow, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSingular())
             {
                 context.Writer.WritePropertyName("Singular");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SingularSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Singular, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSlack())
             {
                 context.Writer.WritePropertyName("Slack");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SlackSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Slack, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrendmicro())
             {
                 context.Writer.WritePropertyName("Trendmicro");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrendmicroSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Trendmicro, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVeeva())
             {
                 context.Writer.WritePropertyName("Veeva");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VeevaSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Veeva, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZendesk())
             {
                 context.Writer.WritePropertyName("Zendesk");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZendeskSourcePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Zendesk, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

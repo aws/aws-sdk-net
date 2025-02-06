@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotificationConfiguration operation.
-    /// Deletes a NotificationConfiguration.
+    /// Deletes a <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class DeleteNotificationConfigurationRequest : AmazonNotificationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationConfiguration to delete.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c> to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

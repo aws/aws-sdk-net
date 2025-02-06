@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Form Object
     /// </summary>  
-    public class FormUnmarshaller : IUnmarshaller<Form, XmlUnmarshallerContext>, IUnmarshaller<Form, JsonUnmarshallerContext>
+    public class FormUnmarshaller : IJsonUnmarshaller<Form, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Form IUnmarshaller<Form, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Form Unmarshall(JsonUnmarshallerContext context)
+        public Form Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Form unmarshalledObject = new Form();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cta", targetDepth))
                 {
                     var unmarshaller = FormCTAUnmarshaller.Instance;
-                    unmarshalledObject.Cta = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cta = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataType", targetDepth))
                 {
                     var unmarshaller = FormDataTypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fields", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, FieldConfig, StringUnmarshaller, FieldConfigUnmarshaller>(StringUnmarshaller.Instance, FieldConfigUnmarshaller.Instance);
-                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, FieldConfig, StringUnmarshaller, FieldConfigUnmarshaller>(StringUnmarshaller.Instance, FieldConfigUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("formActionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FormActionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FormActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("labelDecorator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelDecorator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelDecorator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sectionalElements", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, SectionalElement, StringUnmarshaller, SectionalElementUnmarshaller>(StringUnmarshaller.Instance, SectionalElementUnmarshaller.Instance);
-                    unmarshalledObject.SectionalElements = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, SectionalElement, StringUnmarshaller, SectionalElementUnmarshaller>(StringUnmarshaller.Instance, SectionalElementUnmarshaller.Instance);
+                    unmarshalledObject.SectionalElements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("style", targetDepth))
                 {
                     var unmarshaller = FormStyleUnmarshaller.Instance;
-                    unmarshalledObject.Style = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Style = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

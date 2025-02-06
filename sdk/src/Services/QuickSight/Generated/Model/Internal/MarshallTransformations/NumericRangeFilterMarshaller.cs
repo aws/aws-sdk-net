@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,86 +49,86 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationFunction())
             {
                 context.Writer.WritePropertyName("AggregationFunction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AggregationFunctionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AggregationFunction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultFilterControlConfiguration())
             {
                 context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");
-                context.Writer.Write(requestObject.FilterId);
+                context.Writer.WriteStringValue(requestObject.FilterId);
             }
 
             if(requestObject.IsSetIncludeMaximum())
             {
                 context.Writer.WritePropertyName("IncludeMaximum");
-                context.Writer.Write(requestObject.IncludeMaximum.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeMaximum.Value);
             }
 
             if(requestObject.IsSetIncludeMinimum())
             {
                 context.Writer.WritePropertyName("IncludeMinimum");
-                context.Writer.Write(requestObject.IncludeMinimum.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeMinimum.Value);
             }
 
             if(requestObject.IsSetNullOption())
             {
                 context.Writer.WritePropertyName("NullOption");
-                context.Writer.Write(requestObject.NullOption);
+                context.Writer.WriteStringValue(requestObject.NullOption);
             }
 
             if(requestObject.IsSetRangeMaximum())
             {
                 context.Writer.WritePropertyName("RangeMaximum");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericRangeFilterValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.RangeMaximum, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRangeMinimum())
             {
                 context.Writer.WritePropertyName("RangeMinimum");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericRangeFilterValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.RangeMinimum, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectAllOptions())
             {
                 context.Writer.WritePropertyName("SelectAllOptions");
-                context.Writer.Write(requestObject.SelectAllOptions);
+                context.Writer.WriteStringValue(requestObject.SelectAllOptions);
             }
 
         }

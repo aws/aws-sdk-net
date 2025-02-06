@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -67,102 +70,107 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/databases/{databaseName}/dataviews";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoUpdate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAutoUpdate())
-                    {
-                        context.Writer.WritePropertyName("autoUpdate");
-                        context.Writer.Write(publicRequest.AutoUpdate.Value);
-                    }
-
-                    if(publicRequest.IsSetAvailabilityZoneId())
-                    {
-                        context.Writer.WritePropertyName("availabilityZoneId");
-                        context.Writer.Write(publicRequest.AvailabilityZoneId);
-                    }
-
-                    if(publicRequest.IsSetAzMode())
-                    {
-                        context.Writer.WritePropertyName("azMode");
-                        context.Writer.Write(publicRequest.AzMode);
-                    }
-
-                    if(publicRequest.IsSetChangesetId())
-                    {
-                        context.Writer.WritePropertyName("changesetId");
-                        context.Writer.Write(publicRequest.ChangesetId);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataviewName())
-                    {
-                        context.Writer.WritePropertyName("dataviewName");
-                        context.Writer.Write(publicRequest.DataviewName);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetReadWrite())
-                    {
-                        context.Writer.WritePropertyName("readWrite");
-                        context.Writer.Write(publicRequest.ReadWrite.Value);
-                    }
-
-                    if(publicRequest.IsSetSegmentConfigurations())
-                    {
-                        context.Writer.WritePropertyName("segmentConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSegmentConfigurationsListValue in publicRequest.SegmentConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = KxDataviewSegmentConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSegmentConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("autoUpdate");
+                context.Writer.WriteBooleanValue(publicRequest.AutoUpdate.Value);
             }
+
+            if(publicRequest.IsSetAvailabilityZoneId())
+            {
+                context.Writer.WritePropertyName("availabilityZoneId");
+                context.Writer.WriteStringValue(publicRequest.AvailabilityZoneId);
+            }
+
+            if(publicRequest.IsSetAzMode())
+            {
+                context.Writer.WritePropertyName("azMode");
+                context.Writer.WriteStringValue(publicRequest.AzMode);
+            }
+
+            if(publicRequest.IsSetChangesetId())
+            {
+                context.Writer.WritePropertyName("changesetId");
+                context.Writer.WriteStringValue(publicRequest.ChangesetId);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataviewName())
+            {
+                context.Writer.WritePropertyName("dataviewName");
+                context.Writer.WriteStringValue(publicRequest.DataviewName);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetReadWrite())
+            {
+                context.Writer.WritePropertyName("readWrite");
+                context.Writer.WriteBooleanValue(publicRequest.ReadWrite.Value);
+            }
+
+            if(publicRequest.IsSetSegmentConfigurations())
+            {
+                context.Writer.WritePropertyName("segmentConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSegmentConfigurationsListValue in publicRequest.SegmentConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = KxDataviewSegmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSegmentConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -64,52 +67,57 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkManagerException("Request object does not have required field AttachmentId set");
             request.AddPathResource("{attachmentId}", StringUtils.FromString(publicRequest.AttachmentId));
             request.ResourcePath = "/vpc-attachments/{attachmentId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddSubnetArns())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AddSubnetArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddSubnetArnsListValue in publicRequest.AddSubnetArns)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddSubnetArns())
-                    {
-                        context.Writer.WritePropertyName("AddSubnetArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddSubnetArnsListValue in publicRequest.AddSubnetArns)
-                        {
-                                context.Writer.Write(publicRequestAddSubnetArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOptions())
-                    {
-                        context.Writer.WritePropertyName("Options");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VpcOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Options, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoveSubnetArns())
-                    {
-                        context.Writer.WritePropertyName("RemoveSubnetArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemoveSubnetArnsListValue in publicRequest.RemoveSubnetArns)
-                        {
-                                context.Writer.Write(publicRequestRemoveSubnetArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAddSubnetArnsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Options, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRemoveSubnetArns())
+            {
+                context.Writer.WritePropertyName("RemoveSubnetArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoveSubnetArnsListValue in publicRequest.RemoveSubnetArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestRemoveSubnetArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

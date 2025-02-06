@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.Write(requestObject.DurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationInSeconds.Value);
             }
 
             if(requestObject.IsSetNumberOfSteps())
             {
                 context.Writer.WritePropertyName("NumberOfSteps");
-                context.Writer.Write(requestObject.NumberOfSteps.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfSteps.Value);
             }
 
             if(requestObject.IsSetUsersPerStep())
             {
                 context.Writer.WritePropertyName("UsersPerStep");
-                context.Writer.Write(requestObject.UsersPerStep.Value);
+                context.Writer.WriteNumberValue(requestObject.UsersPerStep.Value);
             }
 
         }

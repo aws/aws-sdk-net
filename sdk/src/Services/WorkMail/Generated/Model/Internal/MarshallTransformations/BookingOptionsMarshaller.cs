@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoAcceptRequests())
             {
                 context.Writer.WritePropertyName("AutoAcceptRequests");
-                context.Writer.Write(requestObject.AutoAcceptRequests.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoAcceptRequests.Value);
             }
 
             if(requestObject.IsSetAutoDeclineConflictingRequests())
             {
                 context.Writer.WritePropertyName("AutoDeclineConflictingRequests");
-                context.Writer.Write(requestObject.AutoDeclineConflictingRequests.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoDeclineConflictingRequests.Value);
             }
 
             if(requestObject.IsSetAutoDeclineRecurringRequests())
             {
                 context.Writer.WritePropertyName("AutoDeclineRecurringRequests");
-                context.Writer.Write(requestObject.AutoDeclineRecurringRequests.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoDeclineRecurringRequests.Value);
             }
 
         }

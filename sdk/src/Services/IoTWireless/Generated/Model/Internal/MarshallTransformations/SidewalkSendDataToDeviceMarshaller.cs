@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAckModeRetryDurationSecs())
             {
                 context.Writer.WritePropertyName("AckModeRetryDurationSecs");
-                context.Writer.Write(requestObject.AckModeRetryDurationSecs.Value);
+                context.Writer.WriteNumberValue(requestObject.AckModeRetryDurationSecs.Value);
             }
 
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
+                context.Writer.WriteStringValue(requestObject.MessageType);
             }
 
             if(requestObject.IsSetSeq())
             {
                 context.Writer.WritePropertyName("Seq");
-                context.Writer.Write(requestObject.Seq.Value);
+                context.Writer.WriteNumberValue(requestObject.Seq.Value);
             }
 
         }

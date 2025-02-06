@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
@@ -63,144 +66,149 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllocatedStorage())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllocatedStorage())
-                    {
-                        context.Writer.WritePropertyName("allocatedStorage");
-                        context.Writer.Write(publicRequest.AllocatedStorage.Value);
-                    }
-
-                    if(publicRequest.IsSetBucket())
-                    {
-                        context.Writer.WritePropertyName("bucket");
-                        context.Writer.Write(publicRequest.Bucket);
-                    }
-
-                    if(publicRequest.IsSetDbInstanceType())
-                    {
-                        context.Writer.WritePropertyName("dbInstanceType");
-                        context.Writer.Write(publicRequest.DbInstanceType);
-                    }
-
-                    if(publicRequest.IsSetDbParameterGroupIdentifier())
-                    {
-                        context.Writer.WritePropertyName("dbParameterGroupIdentifier");
-                        context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDbStorageType())
-                    {
-                        context.Writer.WritePropertyName("dbStorageType");
-                        context.Writer.Write(publicRequest.DbStorageType);
-                    }
-
-                    if(publicRequest.IsSetDeploymentType())
-                    {
-                        context.Writer.WritePropertyName("deploymentType");
-                        context.Writer.Write(publicRequest.DeploymentType);
-                    }
-
-                    if(publicRequest.IsSetLogDeliveryConfiguration())
-                    {
-                        context.Writer.WritePropertyName("logDeliveryConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogDeliveryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNetworkType())
-                    {
-                        context.Writer.WritePropertyName("networkType");
-                        context.Writer.Write(publicRequest.NetworkType);
-                    }
-
-                    if(publicRequest.IsSetOrganization())
-                    {
-                        context.Writer.WritePropertyName("organization");
-                        context.Writer.Write(publicRequest.Organization);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    if(publicRequest.IsSetPort())
-                    {
-                        context.Writer.WritePropertyName("port");
-                        context.Writer.Write(publicRequest.Port.Value);
-                    }
-
-                    if(publicRequest.IsSetPubliclyAccessible())
-                    {
-                        context.Writer.WritePropertyName("publiclyAccessible");
-                        context.Writer.Write(publicRequest.PubliclyAccessible.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUsername())
-                    {
-                        context.Writer.WritePropertyName("username");
-                        context.Writer.Write(publicRequest.Username);
-                    }
-
-                    if(publicRequest.IsSetVpcSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("vpcSecurityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVpcSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("vpcSubnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestVpcSubnetIdsListValue in publicRequest.VpcSubnetIds)
-                        {
-                                context.Writer.Write(publicRequestVpcSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("allocatedStorage");
+                context.Writer.WriteNumberValue(publicRequest.AllocatedStorage.Value);
             }
+
+            if(publicRequest.IsSetBucket())
+            {
+                context.Writer.WritePropertyName("bucket");
+                context.Writer.WriteStringValue(publicRequest.Bucket);
+            }
+
+            if(publicRequest.IsSetDbInstanceType())
+            {
+                context.Writer.WritePropertyName("dbInstanceType");
+                context.Writer.WriteStringValue(publicRequest.DbInstanceType);
+            }
+
+            if(publicRequest.IsSetDbParameterGroupIdentifier())
+            {
+                context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.DbParameterGroupIdentifier);
+            }
+
+            if(publicRequest.IsSetDbStorageType())
+            {
+                context.Writer.WritePropertyName("dbStorageType");
+                context.Writer.WriteStringValue(publicRequest.DbStorageType);
+            }
+
+            if(publicRequest.IsSetDeploymentType())
+            {
+                context.Writer.WritePropertyName("deploymentType");
+                context.Writer.WriteStringValue(publicRequest.DeploymentType);
+            }
+
+            if(publicRequest.IsSetLogDeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("logDeliveryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("networkType");
+                context.Writer.WriteStringValue(publicRequest.NetworkType);
+            }
+
+            if(publicRequest.IsSetOrganization())
+            {
+                context.Writer.WritePropertyName("organization");
+                context.Writer.WriteStringValue(publicRequest.Organization);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            if(publicRequest.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.WriteNumberValue(publicRequest.Port.Value);
+            }
+
+            if(publicRequest.IsSetPubliclyAccessible())
+            {
+                context.Writer.WritePropertyName("publiclyAccessible");
+                context.Writer.WriteBooleanValue(publicRequest.PubliclyAccessible.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUsername())
+            {
+                context.Writer.WritePropertyName("username");
+                context.Writer.WriteStringValue(publicRequest.Username);
+            }
+
+            if(publicRequest.IsSetVpcSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("vpcSecurityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestVpcSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVpcSubnetIds())
+            {
+                context.Writer.WritePropertyName("vpcSubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVpcSubnetIdsListValue in publicRequest.VpcSubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestVpcSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

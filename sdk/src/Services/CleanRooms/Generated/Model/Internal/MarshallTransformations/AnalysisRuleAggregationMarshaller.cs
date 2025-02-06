@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAnalyses())
             {
                 context.Writer.WritePropertyName("additionalAnalyses");
-                context.Writer.Write(requestObject.AdditionalAnalyses);
+                context.Writer.WriteStringValue(requestObject.AdditionalAnalyses);
             }
 
             if(requestObject.IsSetAggregateColumns())
             {
                 context.Writer.WritePropertyName("aggregateColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregateColumnsListValue in requestObject.AggregateColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AggregateColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectAggregateColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowedJoinOperators())
             {
                 context.Writer.WritePropertyName("allowedJoinOperators");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedJoinOperatorsListValue in requestObject.AllowedJoinOperators)
                 {
-                        context.Writer.Write(requestObjectAllowedJoinOperatorsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedJoinOperatorsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDimensionColumns())
             {
                 context.Writer.WritePropertyName("dimensionColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionColumnsListValue in requestObject.DimensionColumns)
                 {
-                        context.Writer.Write(requestObjectDimensionColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJoinColumns())
             {
                 context.Writer.WritePropertyName("joinColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJoinColumnsListValue in requestObject.JoinColumns)
                 {
-                        context.Writer.Write(requestObjectJoinColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectJoinColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJoinRequired())
             {
                 context.Writer.WritePropertyName("joinRequired");
-                context.Writer.Write(requestObject.JoinRequired);
+                context.Writer.WriteStringValue(requestObject.JoinRequired);
             }
 
             if(requestObject.IsSetOutputConstraints())
             {
                 context.Writer.WritePropertyName("outputConstraints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputConstraintsListValue in requestObject.OutputConstraints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AggregationConstraintMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputConstraintsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScalarFunctions())
             {
                 context.Writer.WritePropertyName("scalarFunctions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectScalarFunctionsListValue in requestObject.ScalarFunctions)
                 {
-                        context.Writer.Write(requestObjectScalarFunctionsListValue);
+                        context.Writer.WriteStringValue(requestObjectScalarFunctionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

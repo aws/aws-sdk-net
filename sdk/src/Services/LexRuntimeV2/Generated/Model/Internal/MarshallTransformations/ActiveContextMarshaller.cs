@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContextAttributes())
             {
                 context.Writer.WritePropertyName("contextAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContextAttributesKvp in requestObject.ContextAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectContextAttributesKvp.Key);
                     var requestObjectContextAttributesValue = requestObjectContextAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectContextAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectContextAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTimeToLive())
             {
                 context.Writer.WritePropertyName("timeToLive");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActiveContextTimeToLiveMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeToLive, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

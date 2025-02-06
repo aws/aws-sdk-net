@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionGroupQuotaExceededException operation
     /// </summary>  
-    public class OptionGroupQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<OptionGroupQuotaExceededException, XmlUnmarshallerContext>
+    public class OptionGroupQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OptionGroupQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

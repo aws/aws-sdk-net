@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -73,59 +76,64 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 throw new AmazonAPIGatewayException("Request object does not have required field StatusCode set");
             request.AddPathResource("{status_code}", StringUtils.FromString(publicRequest.StatusCode));
             request.ResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContentHandling())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContentHandling())
-                    {
-                        context.Writer.WritePropertyName("contentHandling");
-                        context.Writer.Write(publicRequest.ContentHandling);
-                    }
-
-                    if(publicRequest.IsSetResponseParameters())
-                    {
-                        context.Writer.WritePropertyName("responseParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestResponseParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResponseTemplates())
-                    {
-                        context.Writer.WritePropertyName("responseTemplates");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
-                            var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
-
-                                context.Writer.Write(publicRequestResponseTemplatesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSelectionPattern())
-                    {
-                        context.Writer.WritePropertyName("selectionPattern");
-                        context.Writer.Write(publicRequest.SelectionPattern);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("contentHandling");
+                context.Writer.WriteStringValue(publicRequest.ContentHandling);
             }
+
+            if(publicRequest.IsSetResponseParameters())
+            {
+                context.Writer.WritePropertyName("responseParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                    var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestResponseParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResponseTemplates())
+            {
+                context.Writer.WritePropertyName("responseTemplates");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResponseTemplatesKvp in publicRequest.ResponseTemplates)
+                {
+                    context.Writer.WritePropertyName(publicRequestResponseTemplatesKvp.Key);
+                    var publicRequestResponseTemplatesValue = publicRequestResponseTemplatesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestResponseTemplatesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSelectionPattern())
+            {
+                context.Writer.WritePropertyName("selectionPattern");
+                context.Writer.WriteStringValue(publicRequest.SelectionPattern);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryStatement())
             {
                 context.Writer.WritePropertyName("QueryStatement");
-                context.Writer.Write(requestObject.QueryStatement);
+                context.Writer.WriteStringValue(requestObject.QueryStatement);
             }
 
             if(requestObject.IsSetTableConfigurations())
             {
                 context.Writer.WritePropertyName("TableConfigurations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTableConfigurationsKvp in requestObject.TableConfigurations)
                 {
                     context.Writer.WritePropertyName(requestObjectTableConfigurationsKvp.Key);
                     var requestObjectTableConfigurationsValue = requestObjectTableConfigurationsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectTableConfigurationsValueKvp in requestObjectTableConfigurationsValue)
                     {
                         context.Writer.WritePropertyName(requestObjectTableConfigurationsValueKvp.Key);
                         var requestObjectTableConfigurationsValueValue = requestObjectTableConfigurationsValueKvp.Value;
 
-                            context.Writer.Write(requestObjectTableConfigurationsValueValue);
+                            context.Writer.WriteStringValue(requestObjectTableConfigurationsValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

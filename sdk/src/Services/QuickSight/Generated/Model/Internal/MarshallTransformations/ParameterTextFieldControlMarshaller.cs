@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextFieldControlDisplayOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterControlId())
             {
                 context.Writer.WritePropertyName("ParameterControlId");
-                context.Writer.Write(requestObject.ParameterControlId);
+                context.Writer.WriteStringValue(requestObject.ParameterControlId);
             }
 
             if(requestObject.IsSetSourceParameterName())
             {
                 context.Writer.WritePropertyName("SourceParameterName");
-                context.Writer.Write(requestObject.SourceParameterName);
+                context.Writer.WriteStringValue(requestObject.SourceParameterName);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

@@ -66,6 +66,10 @@ namespace Amazon.GeoRoutes.Model
         /// Distance of the computed span. This feature doesn't split a span, but is always computed
         /// on a span split by other properties.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Unit</b>: <c>meters</c> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
         public long? Distance

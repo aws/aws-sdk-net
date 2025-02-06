@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -63,80 +66,85 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("accountIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountIds())
-                    {
-                        context.Writer.WritePropertyName("accountIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
-                        {
-                                context.Writer.Write(publicRequestAccountIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFieldsToExport())
-                    {
-                        context.Writer.WritePropertyName("fieldsToExport");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFieldsToExportListValue in publicRequest.FieldsToExport)
-                        {
-                                context.Writer.Write(publicRequestFieldsToExportListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFileFormat())
-                    {
-                        context.Writer.WritePropertyName("fileFormat");
-                        context.Writer.Write(publicRequest.FileFormat);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("filters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = LambdaFunctionRecommendationFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIncludeMemberAccounts())
-                    {
-                        context.Writer.WritePropertyName("includeMemberAccounts");
-                        context.Writer.Write(publicRequest.IncludeMemberAccounts.Value);
-                    }
-
-                    if(publicRequest.IsSetS3DestinationConfig())
-                    {
-                        context.Writer.WritePropertyName("s3DestinationConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3DestinationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3DestinationConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAccountIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFieldsToExport())
+            {
+                context.Writer.WritePropertyName("fieldsToExport");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFieldsToExportListValue in publicRequest.FieldsToExport)
+                {
+                        context.Writer.WriteStringValue(publicRequestFieldsToExportListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFileFormat())
+            {
+                context.Writer.WritePropertyName("fileFormat");
+                context.Writer.WriteStringValue(publicRequest.FileFormat);
+            }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LambdaFunctionRecommendationFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIncludeMemberAccounts())
+            {
+                context.Writer.WritePropertyName("includeMemberAccounts");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeMemberAccounts.Value);
+            }
+
+            if(publicRequest.IsSetS3DestinationConfig())
+            {
+                context.Writer.WritePropertyName("s3DestinationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3DestinationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3DestinationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

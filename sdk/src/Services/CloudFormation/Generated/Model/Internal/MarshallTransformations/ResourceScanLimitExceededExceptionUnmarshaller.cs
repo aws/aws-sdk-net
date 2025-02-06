@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceScanLimitExceededException operation
     /// </summary>  
-    public class ResourceScanLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceScanLimitExceededException, XmlUnmarshallerContext>
+    public class ResourceScanLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceScanLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

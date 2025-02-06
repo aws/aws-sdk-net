@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPoints())
             {
                 context.Writer.WritePropertyName("MaxPoints");
-                context.Writer.Write(requestObject.MaxPoints.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPoints.Value);
             }
 
             if(requestObject.IsSetMaxResolution())
             {
                 context.Writer.WritePropertyName("MaxResolution");
-                context.Writer.Write(requestObject.MaxResolution.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResolution.Value);
             }
 
         }

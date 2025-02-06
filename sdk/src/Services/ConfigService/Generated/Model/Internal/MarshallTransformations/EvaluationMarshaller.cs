@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnnotation())
             {
                 context.Writer.WritePropertyName("Annotation");
-                context.Writer.Write(requestObject.Annotation);
+                context.Writer.WriteStringValue(requestObject.Annotation);
             }
 
             if(requestObject.IsSetComplianceResourceId())
             {
                 context.Writer.WritePropertyName("ComplianceResourceId");
-                context.Writer.Write(requestObject.ComplianceResourceId);
+                context.Writer.WriteStringValue(requestObject.ComplianceResourceId);
             }
 
             if(requestObject.IsSetComplianceResourceType())
             {
                 context.Writer.WritePropertyName("ComplianceResourceType");
-                context.Writer.Write(requestObject.ComplianceResourceType);
+                context.Writer.WriteStringValue(requestObject.ComplianceResourceType);
             }
 
             if(requestObject.IsSetComplianceType())
             {
                 context.Writer.WritePropertyName("ComplianceType");
-                context.Writer.Write(requestObject.ComplianceType);
+                context.Writer.WriteStringValue(requestObject.ComplianceType);
             }
 
             if(requestObject.IsSetOrderingTimestamp())
             {
                 context.Writer.WritePropertyName("OrderingTimestamp");
-                context.Writer.Write(requestObject.OrderingTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.OrderingTimestamp.Value)));
             }
 
         }

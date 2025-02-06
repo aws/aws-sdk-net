@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetADMMessage())
             {
                 context.Writer.WritePropertyName("ADMMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ADMMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.ADMMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAPNSMessage())
             {
                 context.Writer.WritePropertyName("APNSMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = APNSMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.APNSMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBaiduMessage())
             {
                 context.Writer.WritePropertyName("BaiduMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BaiduMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.BaiduMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultMessage())
             {
                 context.Writer.WritePropertyName("DefaultMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultPushNotificationMessage())
             {
                 context.Writer.WritePropertyName("DefaultPushNotificationMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultPushNotificationMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultPushNotificationMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmailMessage())
             {
                 context.Writer.WritePropertyName("EmailMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmailMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmailMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGCMMessage())
             {
                 context.Writer.WritePropertyName("GCMMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GCMMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.GCMMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSMSMessage())
             {
                 context.Writer.WritePropertyName("SMSMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SMSMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.SMSMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVoiceMessage())
             {
                 context.Writer.WritePropertyName("VoiceMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VoiceMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.VoiceMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

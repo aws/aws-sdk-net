@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAs2Transports())
             {
                 context.Writer.WritePropertyName("As2Transports");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAs2TransportsListValue in requestObject.As2Transports)
                 {
-                        context.Writer.Write(requestObjectAs2TransportsListValue);
+                        context.Writer.WriteStringValue(requestObjectAs2TransportsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPassiveIp())
             {
                 context.Writer.WritePropertyName("PassiveIp");
-                context.Writer.Write(requestObject.PassiveIp);
+                context.Writer.WriteStringValue(requestObject.PassiveIp);
             }
 
             if(requestObject.IsSetSetStatOption())
             {
                 context.Writer.WritePropertyName("SetStatOption");
-                context.Writer.Write(requestObject.SetStatOption);
+                context.Writer.WriteStringValue(requestObject.SetStatOption);
             }
 
             if(requestObject.IsSetTlsSessionResumptionMode())
             {
                 context.Writer.WritePropertyName("TlsSessionResumptionMode");
-                context.Writer.Write(requestObject.TlsSessionResumptionMode);
+                context.Writer.WriteStringValue(requestObject.TlsSessionResumptionMode);
             }
 
         }

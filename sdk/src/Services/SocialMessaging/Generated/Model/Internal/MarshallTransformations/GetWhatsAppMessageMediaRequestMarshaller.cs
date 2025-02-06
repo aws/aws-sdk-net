@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/whatsapp/media/get";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinationS3File())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinationS3File())
-                    {
-                        context.Writer.WritePropertyName("destinationS3File");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("destinationS3File");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = S3FileMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationS3File, context);
+                var marshaller = S3FileMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationS3File, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationS3PresignedUrl())
-                    {
-                        context.Writer.WritePropertyName("destinationS3PresignedUrl");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3PresignedUrlMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationS3PresignedUrl, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMediaId())
-                    {
-                        context.Writer.WritePropertyName("mediaId");
-                        context.Writer.Write(publicRequest.MediaId);
-                    }
-
-                    if(publicRequest.IsSetMetadataOnly())
-                    {
-                        context.Writer.WritePropertyName("metadataOnly");
-                        context.Writer.Write(publicRequest.MetadataOnly.Value);
-                    }
-
-                    if(publicRequest.IsSetOriginationPhoneNumberId())
-                    {
-                        context.Writer.WritePropertyName("originationPhoneNumberId");
-                        context.Writer.Write(publicRequest.OriginationPhoneNumberId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDestinationS3PresignedUrl())
+            {
+                context.Writer.WritePropertyName("destinationS3PresignedUrl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3PresignedUrlMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationS3PresignedUrl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMediaId())
+            {
+                context.Writer.WritePropertyName("mediaId");
+                context.Writer.WriteStringValue(publicRequest.MediaId);
+            }
+
+            if(publicRequest.IsSetMetadataOnly())
+            {
+                context.Writer.WritePropertyName("metadataOnly");
+                context.Writer.WriteBooleanValue(publicRequest.MetadataOnly.Value);
+            }
+
+            if(publicRequest.IsSetOriginationPhoneNumberId())
+            {
+                context.Writer.WritePropertyName("originationPhoneNumberId");
+                context.Writer.WriteStringValue(publicRequest.OriginationPhoneNumberId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

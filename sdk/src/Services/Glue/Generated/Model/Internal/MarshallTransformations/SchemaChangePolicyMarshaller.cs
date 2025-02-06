@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteBehavior())
             {
                 context.Writer.WritePropertyName("DeleteBehavior");
-                context.Writer.Write(requestObject.DeleteBehavior);
+                context.Writer.WriteStringValue(requestObject.DeleteBehavior);
             }
 
             if(requestObject.IsSetUpdateBehavior())
             {
                 context.Writer.WritePropertyName("UpdateBehavior");
-                context.Writer.Write(requestObject.UpdateBehavior);
+                context.Writer.WriteStringValue(requestObject.UpdateBehavior);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("amount");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Amount.Value);
+                    context.Writer.WriteNumberValue(requestObject.Amount.Value);
                 }
             }
 
             if(requestObject.IsSetStartHour())
             {
                 context.Writer.WritePropertyName("startHour");
-                context.Writer.Write(requestObject.StartHour.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartHour.Value)));
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestInference())
             {
                 context.Writer.WritePropertyName("LatestInference");
-                context.Writer.Write(requestObject.LatestInference.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LatestInference.Value)));
             }
 
             if(requestObject.IsSetLatestSampleTime())
             {
                 context.Writer.WritePropertyName("LatestSampleTime");
-                context.Writer.Write(requestObject.LatestSampleTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LatestSampleTime.Value)));
             }
 
             if(requestObject.IsSetModelMetrics())
             {
                 context.Writer.WritePropertyName("ModelMetrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectModelMetricsListValue in requestObject.ModelMetrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EdgeMetricMarshaller.Instance;
                     marshaller.Marshall(requestObjectModelMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
-                context.Writer.Write(requestObject.ModelName);
+                context.Writer.WriteStringValue(requestObject.ModelName);
             }
 
             if(requestObject.IsSetModelVersion())
             {
                 context.Writer.WritePropertyName("ModelVersion");
-                context.Writer.Write(requestObject.ModelVersion);
+                context.Writer.WriteStringValue(requestObject.ModelVersion);
             }
 
         }

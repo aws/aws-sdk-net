@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityTypesToDetect())
             {
                 context.Writer.WritePropertyName("EntityTypesToDetect");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityTypesToDetectListValue in requestObject.EntityTypesToDetect)
                 {
-                        context.Writer.Write(requestObjectEntityTypesToDetectListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityTypesToDetectListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaskValue())
             {
                 context.Writer.WritePropertyName("MaskValue");
-                context.Writer.Write(requestObject.MaskValue);
+                context.Writer.WriteStringValue(requestObject.MaskValue);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputColumnName())
             {
                 context.Writer.WritePropertyName("OutputColumnName");
-                context.Writer.Write(requestObject.OutputColumnName);
+                context.Writer.WriteStringValue(requestObject.OutputColumnName);
             }
 
             if(requestObject.IsSetPiiType())
             {
                 context.Writer.WritePropertyName("PiiType");
-                context.Writer.Write(requestObject.PiiType);
+                context.Writer.WriteStringValue(requestObject.PiiType);
             }
 
             if(requestObject.IsSetSampleFraction())
@@ -99,11 +97,11 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("SampleFraction");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SampleFraction.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleFraction.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SampleFraction.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SampleFraction.Value);
+                    context.Writer.WriteNumberValue(requestObject.SampleFraction.Value);
                 }
             }
 
@@ -112,11 +110,11 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ThresholdFraction");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdFraction.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdFraction.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdFraction.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdFraction.Value);
+                    context.Writer.WriteNumberValue(requestObject.ThresholdFraction.Value);
                 }
             }
 

@@ -29,149 +29,139 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsAmazonMqBrokerDetails Object
     /// </summary>  
-    public class AwsAmazonMqBrokerDetailsUnmarshaller : IUnmarshaller<AwsAmazonMqBrokerDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsAmazonMqBrokerDetails, JsonUnmarshallerContext>
+    public class AwsAmazonMqBrokerDetailsUnmarshaller : IJsonUnmarshaller<AwsAmazonMqBrokerDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsAmazonMqBrokerDetails IUnmarshaller<AwsAmazonMqBrokerDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsAmazonMqBrokerDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsAmazonMqBrokerDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsAmazonMqBrokerDetails unmarshalledObject = new AwsAmazonMqBrokerDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AuthenticationStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BrokerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrokerArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrokerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BrokerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrokerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrokerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BrokerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrokerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrokerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionOptions", targetDepth))
                 {
                     var unmarshaller = AwsAmazonMqBrokerEncryptionOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HostInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostInstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LdapServerMetadata", targetDepth))
                 {
                     var unmarshaller = AwsAmazonMqBrokerLdapServerMetadataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LdapServerMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LdapServerMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Logs", targetDepth))
                 {
                     var unmarshaller = AwsAmazonMqBrokerLogsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Logs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaintenanceWindowStartTime", targetDepth))
                 {
                     var unmarshaller = AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PubliclyAccessible", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecurityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StorageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Users", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsAmazonMqBrokerUsersDetails, AwsAmazonMqBrokerUsersDetailsUnmarshaller>(AwsAmazonMqBrokerUsersDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Users = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsAmazonMqBrokerUsersDetails, AwsAmazonMqBrokerUsersDetailsUnmarshaller>(AwsAmazonMqBrokerUsersDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Users = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundingBox())
             {
                 context.Writer.WritePropertyName("BoundingBox");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBoundingBoxListValue in requestObject.BoundingBox)
                 {
-                        context.Writer.Write(requestObjectBoundingBoxListValue);
+                        context.Writer.WriteNumberValue(requestObjectBoundingBoxListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCircle())
             {
                 context.Writer.WritePropertyName("Circle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterCircleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Circle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeCountries())
             {
                 context.Writer.WritePropertyName("IncludeCountries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeCountriesListValue in requestObject.IncludeCountries)
                 {
-                        context.Writer.Write(requestObjectIncludeCountriesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeCountriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

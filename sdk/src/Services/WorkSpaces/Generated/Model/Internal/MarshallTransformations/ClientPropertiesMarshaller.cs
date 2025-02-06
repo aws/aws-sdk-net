@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogUploadEnabled())
             {
                 context.Writer.WritePropertyName("LogUploadEnabled");
-                context.Writer.Write(requestObject.LogUploadEnabled);
+                context.Writer.WriteStringValue(requestObject.LogUploadEnabled);
             }
 
             if(requestObject.IsSetReconnectEnabled())
             {
                 context.Writer.WritePropertyName("ReconnectEnabled");
-                context.Writer.Write(requestObject.ReconnectEnabled);
+                context.Writer.WriteStringValue(requestObject.ReconnectEnabled);
             }
 
         }

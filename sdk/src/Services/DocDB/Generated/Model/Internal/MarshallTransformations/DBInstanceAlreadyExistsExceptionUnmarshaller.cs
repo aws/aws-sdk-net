@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceAlreadyExistsException operation
     /// </summary>  
-    public class DBInstanceAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBInstanceAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

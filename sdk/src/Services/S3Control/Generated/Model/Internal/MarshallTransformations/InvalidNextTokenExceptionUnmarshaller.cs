@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidNextTokenException operation
     /// </summary>  
-    public class InvalidNextTokenExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidNextTokenException, XmlUnmarshallerContext>
+    public class InvalidNextTokenExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidNextTokenException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

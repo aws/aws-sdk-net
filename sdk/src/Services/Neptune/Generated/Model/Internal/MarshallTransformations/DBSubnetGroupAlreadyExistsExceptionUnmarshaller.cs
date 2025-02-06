@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSubnetGroupAlreadyExistsException operation
     /// </summary>  
-    public class DBSubnetGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSubnetGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBSubnetGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSubnetGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

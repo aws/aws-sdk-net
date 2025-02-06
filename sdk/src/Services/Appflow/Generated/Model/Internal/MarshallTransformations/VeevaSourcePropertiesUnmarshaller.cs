@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VeevaSourceProperties Object
     /// </summary>  
-    public class VeevaSourcePropertiesUnmarshaller : IUnmarshaller<VeevaSourceProperties, XmlUnmarshallerContext>, IUnmarshaller<VeevaSourceProperties, JsonUnmarshallerContext>
+    public class VeevaSourcePropertiesUnmarshaller : IJsonUnmarshaller<VeevaSourceProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VeevaSourceProperties IUnmarshaller<VeevaSourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VeevaSourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public VeevaSourceProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VeevaSourceProperties unmarshalledObject = new VeevaSourceProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("documentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("includeAllVersions", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeAllVersions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeAllVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("includeRenditions", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeRenditions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeRenditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("includeSourceFiles", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeSourceFiles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeSourceFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("object", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Object = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

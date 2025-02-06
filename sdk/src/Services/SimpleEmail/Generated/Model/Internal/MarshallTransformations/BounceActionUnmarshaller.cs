@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BounceAction Object
     /// </summary>  
-    public class BounceActionUnmarshaller : IUnmarshaller<BounceAction, XmlUnmarshallerContext>, IUnmarshaller<BounceAction, JsonUnmarshallerContext>
+    public class BounceActionUnmarshaller : IXmlUnmarshaller<BounceAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BounceAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BounceActionUnmarshaller _instance = new BounceActionUnmarshaller();        
 

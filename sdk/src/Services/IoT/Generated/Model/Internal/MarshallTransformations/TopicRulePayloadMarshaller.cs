@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAwsIotSqlVersion())
             {
                 context.Writer.WritePropertyName("awsIotSqlVersion");
-                context.Writer.Write(requestObject.AwsIotSqlVersion);
+                context.Writer.WriteStringValue(requestObject.AwsIotSqlVersion);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetErrorAction())
             {
                 context.Writer.WritePropertyName("errorAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ErrorAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleDisabled())
             {
                 context.Writer.WritePropertyName("ruleDisabled");
-                context.Writer.Write(requestObject.RuleDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.RuleDisabled.Value);
             }
 
             if(requestObject.IsSetSql())
             {
                 context.Writer.WritePropertyName("sql");
-                context.Writer.Write(requestObject.Sql);
+                context.Writer.WriteStringValue(requestObject.Sql);
             }
 
         }

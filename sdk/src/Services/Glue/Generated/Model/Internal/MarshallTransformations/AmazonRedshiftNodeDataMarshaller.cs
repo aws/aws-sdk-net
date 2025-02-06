@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,217 +49,217 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessType())
             {
                 context.Writer.WritePropertyName("AccessType");
-                context.Writer.Write(requestObject.AccessType);
+                context.Writer.WriteStringValue(requestObject.AccessType);
             }
 
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetAdvancedOptions())
             {
                 context.Writer.WritePropertyName("AdvancedOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdvancedOptionsListValue in requestObject.AdvancedOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AmazonRedshiftAdvancedOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdvancedOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCatalogDatabase())
             {
                 context.Writer.WritePropertyName("CatalogDatabase");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CatalogDatabase, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCatalogRedshiftSchema())
             {
                 context.Writer.WritePropertyName("CatalogRedshiftSchema");
-                context.Writer.Write(requestObject.CatalogRedshiftSchema);
+                context.Writer.WriteStringValue(requestObject.CatalogRedshiftSchema);
             }
 
             if(requestObject.IsSetCatalogRedshiftTable())
             {
                 context.Writer.WritePropertyName("CatalogRedshiftTable");
-                context.Writer.Write(requestObject.CatalogRedshiftTable);
+                context.Writer.WriteStringValue(requestObject.CatalogRedshiftTable);
             }
 
             if(requestObject.IsSetCatalogTable())
             {
                 context.Writer.WritePropertyName("CatalogTable");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CatalogTable, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnection())
             {
                 context.Writer.WritePropertyName("Connection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Connection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrawlerConnection())
             {
                 context.Writer.WritePropertyName("CrawlerConnection");
-                context.Writer.Write(requestObject.CrawlerConnection);
+                context.Writer.WriteStringValue(requestObject.CrawlerConnection);
             }
 
             if(requestObject.IsSetIamRole())
             {
                 context.Writer.WritePropertyName("IamRole");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IamRole, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMergeAction())
             {
                 context.Writer.WritePropertyName("MergeAction");
-                context.Writer.Write(requestObject.MergeAction);
+                context.Writer.WriteStringValue(requestObject.MergeAction);
             }
 
             if(requestObject.IsSetMergeClause())
             {
                 context.Writer.WritePropertyName("MergeClause");
-                context.Writer.Write(requestObject.MergeClause);
+                context.Writer.WriteStringValue(requestObject.MergeClause);
             }
 
             if(requestObject.IsSetMergeWhenMatched())
             {
                 context.Writer.WritePropertyName("MergeWhenMatched");
-                context.Writer.Write(requestObject.MergeWhenMatched);
+                context.Writer.WriteStringValue(requestObject.MergeWhenMatched);
             }
 
             if(requestObject.IsSetMergeWhenNotMatched())
             {
                 context.Writer.WritePropertyName("MergeWhenNotMatched");
-                context.Writer.Write(requestObject.MergeWhenNotMatched);
+                context.Writer.WriteStringValue(requestObject.MergeWhenNotMatched);
             }
 
             if(requestObject.IsSetPostAction())
             {
                 context.Writer.WritePropertyName("PostAction");
-                context.Writer.Write(requestObject.PostAction);
+                context.Writer.WriteStringValue(requestObject.PostAction);
             }
 
             if(requestObject.IsSetPreAction())
             {
                 context.Writer.WritePropertyName("PreAction");
-                context.Writer.Write(requestObject.PreAction);
+                context.Writer.WriteStringValue(requestObject.PreAction);
             }
 
             if(requestObject.IsSetSampleQuery())
             {
                 context.Writer.WritePropertyName("SampleQuery");
-                context.Writer.Write(requestObject.SampleQuery);
+                context.Writer.WriteStringValue(requestObject.SampleQuery);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("Schema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedColumns())
             {
                 context.Writer.WritePropertyName("SelectedColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedColumnsListValue in requestObject.SelectedColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSelectedColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("SourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
             if(requestObject.IsSetStagingTable())
             {
                 context.Writer.WritePropertyName("StagingTable");
-                context.Writer.Write(requestObject.StagingTable);
+                context.Writer.WriteStringValue(requestObject.StagingTable);
             }
 
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Table, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTablePrefix())
             {
                 context.Writer.WritePropertyName("TablePrefix");
-                context.Writer.Write(requestObject.TablePrefix);
+                context.Writer.WriteStringValue(requestObject.TablePrefix);
             }
 
             if(requestObject.IsSetTableSchema())
             {
                 context.Writer.WritePropertyName("TableSchema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTableSchemaListValue in requestObject.TableSchema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTableSchemaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTempDir())
             {
                 context.Writer.WritePropertyName("TempDir");
-                context.Writer.Write(requestObject.TempDir);
+                context.Writer.WriteStringValue(requestObject.TempDir);
             }
 
             if(requestObject.IsSetUpsert())
             {
                 context.Writer.WritePropertyName("Upsert");
-                context.Writer.Write(requestObject.Upsert.Value);
+                context.Writer.WriteBooleanValue(requestObject.Upsert.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectorArn())
             {
                 context.Writer.WritePropertyName("connectorArn");
-                context.Writer.Write(requestObject.ConnectorArn);
+                context.Writer.WriteStringValue(requestObject.ConnectorArn);
             }
 
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");
-                context.Writer.Write(requestObject.CredentialsSecretArn);
+                context.Writer.WriteStringValue(requestObject.CredentialsSecretArn);
             }
 
         }

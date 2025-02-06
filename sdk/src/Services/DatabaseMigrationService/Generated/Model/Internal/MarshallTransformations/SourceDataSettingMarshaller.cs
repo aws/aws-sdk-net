@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCDCStartPosition())
             {
                 context.Writer.WritePropertyName("CDCStartPosition");
-                context.Writer.Write(requestObject.CDCStartPosition);
+                context.Writer.WriteStringValue(requestObject.CDCStartPosition);
             }
 
             if(requestObject.IsSetCDCStartTime())
             {
                 context.Writer.WritePropertyName("CDCStartTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CDCStartTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CDCStartTime));
             }
 
             if(requestObject.IsSetCDCStopTime())
             {
                 context.Writer.WritePropertyName("CDCStopTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CDCStopTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CDCStopTime));
             }
 
             if(requestObject.IsSetSlotName())
             {
                 context.Writer.WritePropertyName("SlotName");
-                context.Writer.Write(requestObject.SlotName);
+                context.Writer.WriteStringValue(requestObject.SlotName);
             }
 
         }

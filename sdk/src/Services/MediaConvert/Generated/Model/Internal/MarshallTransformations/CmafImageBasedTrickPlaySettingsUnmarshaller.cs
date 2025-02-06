@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CmafImageBasedTrickPlaySettings Object
     /// </summary>  
-    public class CmafImageBasedTrickPlaySettingsUnmarshaller : IUnmarshaller<CmafImageBasedTrickPlaySettings, XmlUnmarshallerContext>, IUnmarshaller<CmafImageBasedTrickPlaySettings, JsonUnmarshallerContext>
+    public class CmafImageBasedTrickPlaySettingsUnmarshaller : IJsonUnmarshaller<CmafImageBasedTrickPlaySettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CmafImageBasedTrickPlaySettings IUnmarshaller<CmafImageBasedTrickPlaySettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CmafImageBasedTrickPlaySettings Unmarshall(JsonUnmarshallerContext context)
+        public CmafImageBasedTrickPlaySettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CmafImageBasedTrickPlaySettings unmarshalledObject = new CmafImageBasedTrickPlaySettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("intervalCadence", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntervalCadence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntervalCadence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thumbnailHeight", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailHeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThumbnailHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thumbnailInterval", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailInterval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThumbnailInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("thumbnailWidth", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThumbnailWidth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThumbnailWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tileHeight", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TileHeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TileHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tileWidth", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TileWidth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TileWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -61,90 +64,95 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/automationrules/create";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Actions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionsListValue in publicRequest.Actions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActions())
-                    {
-                        context.Writer.WritePropertyName("Actions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AutomationRulesActionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestActionsListValue, context);
+                    var marshaller = AutomationRulesActionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCriteria())
-                    {
-                        context.Writer.WritePropertyName("Criteria");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutomationRulesFindingFiltersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Criteria, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetIsTerminal())
-                    {
-                        context.Writer.WritePropertyName("IsTerminal");
-                        context.Writer.Write(publicRequest.IsTerminal.Value);
-                    }
-
-                    if(publicRequest.IsSetRuleName())
-                    {
-                        context.Writer.WritePropertyName("RuleName");
-                        context.Writer.Write(publicRequest.RuleName);
-                    }
-
-                    if(publicRequest.IsSetRuleOrder())
-                    {
-                        context.Writer.WritePropertyName("RuleOrder");
-                        context.Writer.Write(publicRequest.RuleOrder.Value);
-                    }
-
-                    if(publicRequest.IsSetRuleStatus())
-                    {
-                        context.Writer.WritePropertyName("RuleStatus");
-                        context.Writer.Write(publicRequest.RuleStatus);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCriteria())
+            {
+                context.Writer.WritePropertyName("Criteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomationRulesFindingFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Criteria, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetIsTerminal())
+            {
+                context.Writer.WritePropertyName("IsTerminal");
+                context.Writer.WriteBooleanValue(publicRequest.IsTerminal.Value);
+            }
+
+            if(publicRequest.IsSetRuleName())
+            {
+                context.Writer.WritePropertyName("RuleName");
+                context.Writer.WriteStringValue(publicRequest.RuleName);
+            }
+
+            if(publicRequest.IsSetRuleOrder())
+            {
+                context.Writer.WritePropertyName("RuleOrder");
+                context.Writer.WriteNumberValue(publicRequest.RuleOrder.Value);
+            }
+
+            if(publicRequest.IsSetRuleStatus())
+            {
+                context.Writer.WritePropertyName("RuleStatus");
+                context.Writer.WriteStringValue(publicRequest.RuleStatus);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

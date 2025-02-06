@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EmailRecipients Object
     /// </summary>  
-    public class EmailRecipientsUnmarshaller : IUnmarshaller<EmailRecipients, XmlUnmarshallerContext>, IUnmarshaller<EmailRecipients, JsonUnmarshallerContext>
+    public class EmailRecipientsUnmarshaller : IJsonUnmarshaller<EmailRecipients, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EmailRecipients IUnmarshaller<EmailRecipients, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EmailRecipients Unmarshall(JsonUnmarshallerContext context)
+        public EmailRecipients Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EmailRecipients unmarshalledObject = new EmailRecipients();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("to", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecipientDetail, RecipientDetailUnmarshaller>(RecipientDetailUnmarshaller.Instance);
-                    unmarshalledObject.To = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecipientDetail, RecipientDetailUnmarshaller>(RecipientDetailUnmarshaller.Instance);
+                    unmarshalledObject.To = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpRequestMethodConditionConfig Object
     /// </summary>  
-    public class HttpRequestMethodConditionConfigUnmarshaller : IUnmarshaller<HttpRequestMethodConditionConfig, XmlUnmarshallerContext>, IUnmarshaller<HttpRequestMethodConditionConfig, JsonUnmarshallerContext>
+    public class HttpRequestMethodConditionConfigUnmarshaller : IXmlUnmarshaller<HttpRequestMethodConditionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HttpRequestMethodConditionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HttpRequestMethodConditionConfigUnmarshaller _instance = new HttpRequestMethodConditionConfigUnmarshaller();        
 

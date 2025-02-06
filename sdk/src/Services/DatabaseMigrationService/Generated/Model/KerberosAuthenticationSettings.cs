@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Specifies using Kerberos authentication settings for use with DMS.
+    /// Specifies the settings required for kerberos authentication when creating the replication
+    /// instance.
     /// </summary>
     public partial class KerberosAuthenticationSettings
     {
@@ -42,7 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KeyCacheSecretIamArn. 
         /// <para>
         /// Specifies the Amazon Resource Name (ARN) of the IAM role that grants Amazon Web Services
-        /// DMS access to the secret containing key cache file for the replication instance.
+        /// DMS access to the secret containing key cache file for the kerberos authentication.
         /// </para>
         /// </summary>
         public string KeyCacheSecretIamArn
@@ -60,7 +61,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KeyCacheSecretId. 
         /// <para>
-        /// Specifies the secret ID of the key cache for the replication instance.
+        /// Specifies the ID of the secret that stores the key cache file required for kerberos
+        /// authentication.
         /// </para>
         /// </summary>
         public string KeyCacheSecretId
@@ -78,8 +80,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Krb5FileContents. 
         /// <para>
-        /// Specifies the ID of the secret that stores the key cache file required for kerberos
-        /// authentication of the replication instance.
+        /// Specifies the contents of krb5 configuration file required for kerberos authentication.
         /// </para>
         /// </summary>
         public string Krb5FileContents

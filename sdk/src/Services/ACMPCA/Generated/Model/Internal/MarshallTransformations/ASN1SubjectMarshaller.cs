@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,101 +49,101 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommonName())
             {
                 context.Writer.WritePropertyName("CommonName");
-                context.Writer.Write(requestObject.CommonName);
+                context.Writer.WriteStringValue(requestObject.CommonName);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetCustomAttributes())
             {
                 context.Writer.WritePropertyName("CustomAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomAttributesListValue in requestObject.CustomAttributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDistinguishedNameQualifier())
             {
                 context.Writer.WritePropertyName("DistinguishedNameQualifier");
-                context.Writer.Write(requestObject.DistinguishedNameQualifier);
+                context.Writer.WriteStringValue(requestObject.DistinguishedNameQualifier);
             }
 
             if(requestObject.IsSetGenerationQualifier())
             {
                 context.Writer.WritePropertyName("GenerationQualifier");
-                context.Writer.Write(requestObject.GenerationQualifier);
+                context.Writer.WriteStringValue(requestObject.GenerationQualifier);
             }
 
             if(requestObject.IsSetGivenName())
             {
                 context.Writer.WritePropertyName("GivenName");
-                context.Writer.Write(requestObject.GivenName);
+                context.Writer.WriteStringValue(requestObject.GivenName);
             }
 
             if(requestObject.IsSetInitials())
             {
                 context.Writer.WritePropertyName("Initials");
-                context.Writer.Write(requestObject.Initials);
+                context.Writer.WriteStringValue(requestObject.Initials);
             }
 
             if(requestObject.IsSetLocality())
             {
                 context.Writer.WritePropertyName("Locality");
-                context.Writer.Write(requestObject.Locality);
+                context.Writer.WriteStringValue(requestObject.Locality);
             }
 
             if(requestObject.IsSetOrganization())
             {
                 context.Writer.WritePropertyName("Organization");
-                context.Writer.Write(requestObject.Organization);
+                context.Writer.WriteStringValue(requestObject.Organization);
             }
 
             if(requestObject.IsSetOrganizationalUnit())
             {
                 context.Writer.WritePropertyName("OrganizationalUnit");
-                context.Writer.Write(requestObject.OrganizationalUnit);
+                context.Writer.WriteStringValue(requestObject.OrganizationalUnit);
             }
 
             if(requestObject.IsSetPseudonym())
             {
                 context.Writer.WritePropertyName("Pseudonym");
-                context.Writer.Write(requestObject.Pseudonym);
+                context.Writer.WriteStringValue(requestObject.Pseudonym);
             }
 
             if(requestObject.IsSetSerialNumber())
             {
                 context.Writer.WritePropertyName("SerialNumber");
-                context.Writer.Write(requestObject.SerialNumber);
+                context.Writer.WriteStringValue(requestObject.SerialNumber);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetSurname())
             {
                 context.Writer.WritePropertyName("Surname");
-                context.Writer.Write(requestObject.Surname);
+                context.Writer.WriteStringValue(requestObject.Surname);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

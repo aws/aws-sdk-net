@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
             }
 
             if(requestObject.IsSetExclude())
             {
                 context.Writer.WritePropertyName("Exclude");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageInsightsFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Exclude, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInclude())
             {
                 context.Writer.WritePropertyName("Include");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageInsightsFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Include, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
-                context.Writer.Write(requestObject.MaxResults.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDate.Value)));
             }
 
         }

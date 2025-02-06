@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MetricReference Object
     /// </summary>  
-    public class MetricReferenceUnmarshaller : IUnmarshaller<MetricReference, XmlUnmarshallerContext>, IUnmarshaller<MetricReference, JsonUnmarshallerContext>
+    public class MetricReferenceUnmarshaller : IXmlUnmarshaller<MetricReference, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MetricReference Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MetricReferenceUnmarshaller _instance = new MetricReferenceUnmarshaller();        
 

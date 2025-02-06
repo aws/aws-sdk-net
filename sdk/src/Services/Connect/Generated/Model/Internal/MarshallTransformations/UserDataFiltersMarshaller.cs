@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgents())
             {
                 context.Writer.WritePropertyName("Agents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentsListValue in requestObject.Agents)
                 {
-                        context.Writer.Write(requestObjectAgentsListValue);
+                        context.Writer.WriteStringValue(requestObjectAgentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContactFilter())
             {
                 context.Writer.WritePropertyName("ContactFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContactFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContactFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueues())
             {
                 context.Writer.WritePropertyName("Queues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueuesListValue in requestObject.Queues)
                 {
-                        context.Writer.Write(requestObjectQueuesListValue);
+                        context.Writer.WriteStringValue(requestObjectQueuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoutingProfiles())
             {
                 context.Writer.WritePropertyName("RoutingProfiles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRoutingProfilesListValue in requestObject.RoutingProfiles)
                 {
-                        context.Writer.Write(requestObjectRoutingProfilesListValue);
+                        context.Writer.WriteStringValue(requestObjectRoutingProfilesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserHierarchyGroups())
             {
                 context.Writer.WritePropertyName("UserHierarchyGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserHierarchyGroupsListValue in requestObject.UserHierarchyGroups)
                 {
-                        context.Writer.Write(requestObjectUserHierarchyGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectUserHierarchyGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

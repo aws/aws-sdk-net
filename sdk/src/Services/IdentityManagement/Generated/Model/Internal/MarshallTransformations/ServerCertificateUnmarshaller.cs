@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerCertificate Object
     /// </summary>  
-    public class ServerCertificateUnmarshaller : IUnmarshaller<ServerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificate, JsonUnmarshallerContext>
+    public class ServerCertificateUnmarshaller : IXmlUnmarshaller<ServerCertificate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,17 +93,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServerCertificate Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServerCertificateUnmarshaller _instance = new ServerCertificateUnmarshaller();        
 

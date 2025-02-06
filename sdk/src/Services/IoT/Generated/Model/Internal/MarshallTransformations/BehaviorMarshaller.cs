@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCriteria())
             {
                 context.Writer.WritePropertyName("criteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BehaviorCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.Criteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportMetric())
             {
                 context.Writer.WritePropertyName("exportMetric");
-                context.Writer.Write(requestObject.ExportMetric.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExportMetric.Value);
             }
 
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("metric");
-                context.Writer.Write(requestObject.Metric);
+                context.Writer.WriteStringValue(requestObject.Metric);
             }
 
             if(requestObject.IsSetMetricDimension())
             {
                 context.Writer.WritePropertyName("metricDimension");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricDimensionMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricDimension, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSuppressAlerts())
             {
                 context.Writer.WritePropertyName("suppressAlerts");
-                context.Writer.Write(requestObject.SuppressAlerts.Value);
+                context.Writer.WriteBooleanValue(requestObject.SuppressAlerts.Value);
             }
 
         }

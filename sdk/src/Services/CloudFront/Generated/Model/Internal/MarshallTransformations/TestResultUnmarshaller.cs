@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestResult Object
     /// </summary>  
-    public class TestResultUnmarshaller : IUnmarshaller<TestResult, XmlUnmarshallerContext>, IUnmarshaller<TestResult, JsonUnmarshallerContext>
+    public class TestResultUnmarshaller : IXmlUnmarshaller<TestResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,17 +98,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TestResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static TestResultUnmarshaller _instance = new TestResultUnmarshaller();        
 
         /// <summary>

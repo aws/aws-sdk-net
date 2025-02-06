@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,93 +49,93 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDurationCorrection())
             {
                 context.Writer.WritePropertyName("audioDurationCorrection");
-                context.Writer.Write(requestObject.AudioDurationCorrection);
+                context.Writer.WriteStringValue(requestObject.AudioDurationCorrection);
             }
 
             if(requestObject.IsSetCustomLanguageCode())
             {
                 context.Writer.WritePropertyName("customLanguageCode");
-                context.Writer.Write(requestObject.CustomLanguageCode);
+                context.Writer.WriteStringValue(requestObject.CustomLanguageCode);
             }
 
             if(requestObject.IsSetDefaultSelection())
             {
                 context.Writer.WritePropertyName("defaultSelection");
-                context.Writer.Write(requestObject.DefaultSelection);
+                context.Writer.WriteStringValue(requestObject.DefaultSelection);
             }
 
             if(requestObject.IsSetExternalAudioFileInput())
             {
                 context.Writer.WritePropertyName("externalAudioFileInput");
-                context.Writer.Write(requestObject.ExternalAudioFileInput);
+                context.Writer.WriteStringValue(requestObject.ExternalAudioFileInput);
             }
 
             if(requestObject.IsSetHlsRenditionGroupSettings())
             {
                 context.Writer.WritePropertyName("hlsRenditionGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsRenditionGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsRenditionGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset.Value);
+                context.Writer.WriteNumberValue(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPids())
             {
                 context.Writer.WritePropertyName("pids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPidsListValue in requestObject.Pids)
                 {
-                        context.Writer.Write(requestObjectPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProgramSelection())
             {
                 context.Writer.WritePropertyName("programSelection");
-                context.Writer.Write(requestObject.ProgramSelection.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramSelection.Value);
             }
 
             if(requestObject.IsSetRemixSettings())
             {
                 context.Writer.WritePropertyName("remixSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RemixSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemixSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectorType())
             {
                 context.Writer.WritePropertyName("selectorType");
-                context.Writer.Write(requestObject.SelectorType);
+                context.Writer.WriteStringValue(requestObject.SelectorType);
             }
 
             if(requestObject.IsSetTracks())
             {
                 context.Writer.WritePropertyName("tracks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTracksListValue in requestObject.Tracks)
                 {
-                        context.Writer.Write(requestObjectTracksListValue);
+                        context.Writer.WriteNumberValue(requestObjectTracksListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

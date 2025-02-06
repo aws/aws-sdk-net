@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("code");
-                context.Writer.Write(requestObject.Code);
+                context.Writer.WriteStringValue(requestObject.Code);
             }
 
             if(requestObject.IsSetRedirectUri())
             {
                 context.Writer.WritePropertyName("redirectUri");
-                context.Writer.Write(requestObject.RedirectUri);
+                context.Writer.WriteStringValue(requestObject.RedirectUri);
             }
 
         }

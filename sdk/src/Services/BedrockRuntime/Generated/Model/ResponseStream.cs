@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.BedrockRuntime.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockRuntime.Model
@@ -47,7 +48,13 @@ namespace Amazon.BedrockRuntime.Model
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
-            {"Chunk", payload => new PayloadPartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"Chunk", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new PayloadPartUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
@@ -55,12 +62,48 @@ namespace Amazon.BedrockRuntime.Model
         protected override IDictionary<string,Func<IEventStreamMessage,BedrockRuntimeEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,BedrockRuntimeEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-            { "InternalServerException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ModelStreamErrorException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelStreamErrorExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ModelTimeoutException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelTimeoutExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ServiceUnavailableException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceUnavailableExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ThrottlingException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ValidationException", payload => new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+                    {"InternalServerException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ModelStreamErrorException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelStreamErrorExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ModelTimeoutException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelTimeoutExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ServiceUnavailableException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceUnavailableExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ThrottlingException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ValidationException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HookResultSummary Object
     /// </summary>  
-    public class HookResultSummaryUnmarshaller : IUnmarshaller<HookResultSummary, XmlUnmarshallerContext>, IUnmarshaller<HookResultSummary, JsonUnmarshallerContext>
+    public class HookResultSummaryUnmarshaller : IXmlUnmarshaller<HookResultSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HookResultSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HookResultSummaryUnmarshaller _instance = new HookResultSummaryUnmarshaller();        
 

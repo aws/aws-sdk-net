@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,134 +49,134 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionsEnabled())
             {
                 context.Writer.WritePropertyName("ActionsEnabled");
-                context.Writer.Write(requestObject.ActionsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ActionsEnabled.Value);
             }
 
             if(requestObject.IsSetAlarmActions())
             {
                 context.Writer.WritePropertyName("AlarmActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlarmActionsListValue in requestObject.AlarmActions)
                 {
-                        context.Writer.Write(requestObjectAlarmActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectAlarmActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAlarmArn())
             {
                 context.Writer.WritePropertyName("AlarmArn");
-                context.Writer.Write(requestObject.AlarmArn);
+                context.Writer.WriteStringValue(requestObject.AlarmArn);
             }
 
             if(requestObject.IsSetAlarmConfigurationUpdatedTimestamp())
             {
                 context.Writer.WritePropertyName("AlarmConfigurationUpdatedTimestamp");
-                context.Writer.Write(requestObject.AlarmConfigurationUpdatedTimestamp);
+                context.Writer.WriteStringValue(requestObject.AlarmConfigurationUpdatedTimestamp);
             }
 
             if(requestObject.IsSetAlarmDescription())
             {
                 context.Writer.WritePropertyName("AlarmDescription");
-                context.Writer.Write(requestObject.AlarmDescription);
+                context.Writer.WriteStringValue(requestObject.AlarmDescription);
             }
 
             if(requestObject.IsSetAlarmName())
             {
                 context.Writer.WritePropertyName("AlarmName");
-                context.Writer.Write(requestObject.AlarmName);
+                context.Writer.WriteStringValue(requestObject.AlarmName);
             }
 
             if(requestObject.IsSetComparisonOperator())
             {
                 context.Writer.WritePropertyName("ComparisonOperator");
-                context.Writer.Write(requestObject.ComparisonOperator);
+                context.Writer.WriteStringValue(requestObject.ComparisonOperator);
             }
 
             if(requestObject.IsSetDatapointsToAlarm())
             {
                 context.Writer.WritePropertyName("DatapointsToAlarm");
-                context.Writer.Write(requestObject.DatapointsToAlarm.Value);
+                context.Writer.WriteNumberValue(requestObject.DatapointsToAlarm.Value);
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCloudWatchAlarmDimensionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEvaluateLowSampleCountPercentile())
             {
                 context.Writer.WritePropertyName("EvaluateLowSampleCountPercentile");
-                context.Writer.Write(requestObject.EvaluateLowSampleCountPercentile);
+                context.Writer.WriteStringValue(requestObject.EvaluateLowSampleCountPercentile);
             }
 
             if(requestObject.IsSetEvaluationPeriods())
             {
                 context.Writer.WritePropertyName("EvaluationPeriods");
-                context.Writer.Write(requestObject.EvaluationPeriods.Value);
+                context.Writer.WriteNumberValue(requestObject.EvaluationPeriods.Value);
             }
 
             if(requestObject.IsSetExtendedStatistic())
             {
                 context.Writer.WritePropertyName("ExtendedStatistic");
-                context.Writer.Write(requestObject.ExtendedStatistic);
+                context.Writer.WriteStringValue(requestObject.ExtendedStatistic);
             }
 
             if(requestObject.IsSetInsufficientDataActions())
             {
                 context.Writer.WritePropertyName("InsufficientDataActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInsufficientDataActionsListValue in requestObject.InsufficientDataActions)
                 {
-                        context.Writer.Write(requestObjectInsufficientDataActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectInsufficientDataActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetOkActions())
             {
                 context.Writer.WritePropertyName("OkActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOkActionsListValue in requestObject.OkActions)
                 {
-                        context.Writer.Write(requestObjectOkActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectOkActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period.Value);
+                context.Writer.WriteNumberValue(requestObject.Period.Value);
             }
 
             if(requestObject.IsSetStatistic())
             {
                 context.Writer.WritePropertyName("Statistic");
-                context.Writer.Write(requestObject.Statistic);
+                context.Writer.WriteStringValue(requestObject.Statistic);
             }
 
             if(requestObject.IsSetThreshold())
@@ -186,30 +184,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Threshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.Threshold.Value);
                 }
             }
 
             if(requestObject.IsSetThresholdMetricId())
             {
                 context.Writer.WritePropertyName("ThresholdMetricId");
-                context.Writer.Write(requestObject.ThresholdMetricId);
+                context.Writer.WriteStringValue(requestObject.ThresholdMetricId);
             }
 
             if(requestObject.IsSetTreatMissingData())
             {
                 context.Writer.WritePropertyName("TreatMissingData");
-                context.Writer.Write(requestObject.TreatMissingData);
+                context.Writer.WriteStringValue(requestObject.TreatMissingData);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

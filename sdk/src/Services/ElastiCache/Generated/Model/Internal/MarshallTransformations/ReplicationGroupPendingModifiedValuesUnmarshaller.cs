@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationGroupPendingModifiedValues Object
     /// </summary>  
-    public class ReplicationGroupPendingModifiedValuesUnmarshaller : IUnmarshaller<ReplicationGroupPendingModifiedValues, XmlUnmarshallerContext>, IUnmarshaller<ReplicationGroupPendingModifiedValues, JsonUnmarshallerContext>
+    public class ReplicationGroupPendingModifiedValuesUnmarshaller : IXmlUnmarshaller<ReplicationGroupPendingModifiedValues, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -123,17 +123,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationGroupPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReplicationGroupPendingModifiedValuesUnmarshaller _instance = new ReplicationGroupPendingModifiedValuesUnmarshaller();        
 

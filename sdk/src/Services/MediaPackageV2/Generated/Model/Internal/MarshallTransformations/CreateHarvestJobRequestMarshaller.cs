@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -70,78 +73,83 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageV2Exception("Request object does not have required field OriginEndpointName set");
             request.AddPathResource("{OriginEndpointName}", StringUtils.FromString(publicRequest.OriginEndpointName));
             request.ResourcePath = "/channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/harvestJob";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("Destination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Destination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHarvestedManifests())
-                    {
-                        context.Writer.WritePropertyName("HarvestedManifests");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HarvestedManifestsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HarvestedManifests, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHarvestJobName())
-                    {
-                        context.Writer.WritePropertyName("HarvestJobName");
-                        context.Writer.Write(publicRequest.HarvestJobName);
-                    }
-
-                    if(publicRequest.IsSetScheduleConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ScheduleConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HarvesterScheduleConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("Destination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Destination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHarvestedManifests())
+            {
+                context.Writer.WritePropertyName("HarvestedManifests");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarvestedManifestsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HarvestedManifests, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHarvestJobName())
+            {
+                context.Writer.WritePropertyName("HarvestJobName");
+                context.Writer.WriteStringValue(publicRequest.HarvestJobName);
+            }
+
+            if(publicRequest.IsSetScheduleConfiguration())
+            {
+                context.Writer.WritePropertyName("ScheduleConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarvesterScheduleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

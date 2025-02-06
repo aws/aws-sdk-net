@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,166 +49,188 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHlsId3SegmentTaggingSettings())
             {
                 context.Writer.WritePropertyName("hlsId3SegmentTaggingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsId3SegmentTaggingScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsId3SegmentTaggingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsTimedMetadataSettings())
             {
                 context.Writer.WritePropertyName("hlsTimedMetadataSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsTimedMetadataScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsTimedMetadataSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetId3SegmentTaggingSettings())
+            {
+                context.Writer.WritePropertyName("id3SegmentTaggingSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Id3SegmentTaggingScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Id3SegmentTaggingSettings, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputPrepareSettings())
             {
                 context.Writer.WritePropertyName("inputPrepareSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputPrepareScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputPrepareSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputSwitchSettings())
             {
                 context.Writer.WritePropertyName("inputSwitchSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputSwitchScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputSwitchSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMotionGraphicsImageActivateSettings())
             {
                 context.Writer.WritePropertyName("motionGraphicsImageActivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionGraphicsActivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MotionGraphicsImageActivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMotionGraphicsImageDeactivateSettings())
             {
                 context.Writer.WritePropertyName("motionGraphicsImageDeactivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionGraphicsDeactivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MotionGraphicsImageDeactivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPauseStateSettings())
             {
                 context.Writer.WritePropertyName("pauseStateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PauseStateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PauseStateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35InputSettings())
             {
                 context.Writer.WritePropertyName("scte35InputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35InputScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35InputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35ReturnToNetworkSettings())
             {
                 context.Writer.WritePropertyName("scte35ReturnToNetworkSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35ReturnToNetworkScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35ReturnToNetworkSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35SpliceInsertSettings())
             {
                 context.Writer.WritePropertyName("scte35SpliceInsertSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35SpliceInsertScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35SpliceInsertSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35TimeSignalSettings())
             {
                 context.Writer.WritePropertyName("scte35TimeSignalSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35TimeSignalScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35TimeSignalSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticImageActivateSettings())
             {
                 context.Writer.WritePropertyName("staticImageActivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StaticImageActivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticImageActivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticImageDeactivateSettings())
             {
                 context.Writer.WritePropertyName("staticImageDeactivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StaticImageDeactivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticImageDeactivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticImageOutputActivateSettings())
             {
                 context.Writer.WritePropertyName("staticImageOutputActivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StaticImageOutputActivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticImageOutputActivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticImageOutputDeactivateSettings())
             {
                 context.Writer.WritePropertyName("staticImageOutputDeactivateSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StaticImageOutputDeactivateScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticImageOutputDeactivateSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTimedMetadataSettings())
+            {
+                context.Writer.WritePropertyName("timedMetadataSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimedMetadataScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimedMetadataSettings, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

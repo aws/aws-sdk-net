@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrentDeploymentPercentage())
             {
                 context.Writer.WritePropertyName("concurrentDeploymentPercentage");
-                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.ConcurrentDeploymentPercentage.Value);
             }
 
             if(requestObject.IsSetDownloadConditionFile())
             {
                 context.Writer.WritePropertyName("downloadConditionFile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.DownloadConditionFile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFailureThresholdPercentage())
             {
                 context.Writer.WritePropertyName("failureThresholdPercentage");
-                context.Writer.Write(requestObject.FailureThresholdPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.FailureThresholdPercentage.Value);
             }
 
             if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
-                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.RobotDeploymentTimeoutInSeconds.Value);
             }
 
         }

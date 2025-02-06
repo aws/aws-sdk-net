@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AppflowIntegrationWorkflowMetrics Object
     /// </summary>  
-    public class AppflowIntegrationWorkflowMetricsUnmarshaller : IUnmarshaller<AppflowIntegrationWorkflowMetrics, XmlUnmarshallerContext>, IUnmarshaller<AppflowIntegrationWorkflowMetrics, JsonUnmarshallerContext>
+    public class AppflowIntegrationWorkflowMetricsUnmarshaller : IJsonUnmarshaller<AppflowIntegrationWorkflowMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AppflowIntegrationWorkflowMetrics IUnmarshaller<AppflowIntegrationWorkflowMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AppflowIntegrationWorkflowMetrics Unmarshall(JsonUnmarshallerContext context)
+        public AppflowIntegrationWorkflowMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AppflowIntegrationWorkflowMetrics unmarshalledObject = new AppflowIntegrationWorkflowMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RecordsProcessed", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StepsCompleted", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.StepsCompleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepsCompleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalSteps", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalSteps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

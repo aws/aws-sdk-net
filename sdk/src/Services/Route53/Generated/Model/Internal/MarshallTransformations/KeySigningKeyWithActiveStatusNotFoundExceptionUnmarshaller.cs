@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeySigningKeyWithActiveStatusNotFoundException operation
     /// </summary>  
-    public class KeySigningKeyWithActiveStatusNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<KeySigningKeyWithActiveStatusNotFoundException, XmlUnmarshallerContext>
+    public class KeySigningKeyWithActiveStatusNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KeySigningKeyWithActiveStatusNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

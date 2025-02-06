@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -61,154 +64,159 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/UpdateReplicationConfiguration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssociateDefaultSecurityGroup())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssociateDefaultSecurityGroup())
-                    {
-                        context.Writer.WritePropertyName("associateDefaultSecurityGroup");
-                        context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup.Value);
-                    }
-
-                    if(publicRequest.IsSetAutoReplicateNewDisks())
-                    {
-                        context.Writer.WritePropertyName("autoReplicateNewDisks");
-                        context.Writer.Write(publicRequest.AutoReplicateNewDisks.Value);
-                    }
-
-                    if(publicRequest.IsSetBandwidthThrottling())
-                    {
-                        context.Writer.WritePropertyName("bandwidthThrottling");
-                        context.Writer.Write(publicRequest.BandwidthThrottling.Value);
-                    }
-
-                    if(publicRequest.IsSetCreatePublicIP())
-                    {
-                        context.Writer.WritePropertyName("createPublicIP");
-                        context.Writer.Write(publicRequest.CreatePublicIP.Value);
-                    }
-
-                    if(publicRequest.IsSetDataPlaneRouting())
-                    {
-                        context.Writer.WritePropertyName("dataPlaneRouting");
-                        context.Writer.Write(publicRequest.DataPlaneRouting);
-                    }
-
-                    if(publicRequest.IsSetDefaultLargeStagingDiskType())
-                    {
-                        context.Writer.WritePropertyName("defaultLargeStagingDiskType");
-                        context.Writer.Write(publicRequest.DefaultLargeStagingDiskType);
-                    }
-
-                    if(publicRequest.IsSetEbsEncryption())
-                    {
-                        context.Writer.WritePropertyName("ebsEncryption");
-                        context.Writer.Write(publicRequest.EbsEncryption);
-                    }
-
-                    if(publicRequest.IsSetEbsEncryptionKeyArn())
-                    {
-                        context.Writer.WritePropertyName("ebsEncryptionKeyArn");
-                        context.Writer.Write(publicRequest.EbsEncryptionKeyArn);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPitPolicy())
-                    {
-                        context.Writer.WritePropertyName("pitPolicy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPitPolicyListValue in publicRequest.PitPolicy)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PITPolicyRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPitPolicyListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicatedDisks())
-                    {
-                        context.Writer.WritePropertyName("replicatedDisks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReplicatedDisksListValue in publicRequest.ReplicatedDisks)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ReplicationConfigurationReplicatedDiskMarshaller.Instance;
-                            marshaller.Marshall(publicRequestReplicatedDisksListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicationServerInstanceType())
-                    {
-                        context.Writer.WritePropertyName("replicationServerInstanceType");
-                        context.Writer.Write(publicRequest.ReplicationServerInstanceType);
-                    }
-
-                    if(publicRequest.IsSetReplicationServersSecurityGroupsIDs())
-                    {
-                        context.Writer.WritePropertyName("replicationServersSecurityGroupsIDs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReplicationServersSecurityGroupsIDsListValue in publicRequest.ReplicationServersSecurityGroupsIDs)
-                        {
-                                context.Writer.Write(publicRequestReplicationServersSecurityGroupsIDsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceServerID())
-                    {
-                        context.Writer.WritePropertyName("sourceServerID");
-                        context.Writer.Write(publicRequest.SourceServerID);
-                    }
-
-                    if(publicRequest.IsSetStagingAreaSubnetId())
-                    {
-                        context.Writer.WritePropertyName("stagingAreaSubnetId");
-                        context.Writer.Write(publicRequest.StagingAreaSubnetId);
-                    }
-
-                    if(publicRequest.IsSetStagingAreaTags())
-                    {
-                        context.Writer.WritePropertyName("stagingAreaTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestStagingAreaTagsKvp in publicRequest.StagingAreaTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestStagingAreaTagsKvp.Key);
-                            var publicRequestStagingAreaTagsValue = publicRequestStagingAreaTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestStagingAreaTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUseDedicatedReplicationServer())
-                    {
-                        context.Writer.WritePropertyName("useDedicatedReplicationServer");
-                        context.Writer.Write(publicRequest.UseDedicatedReplicationServer.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("associateDefaultSecurityGroup");
+                context.Writer.WriteBooleanValue(publicRequest.AssociateDefaultSecurityGroup.Value);
             }
+
+            if(publicRequest.IsSetAutoReplicateNewDisks())
+            {
+                context.Writer.WritePropertyName("autoReplicateNewDisks");
+                context.Writer.WriteBooleanValue(publicRequest.AutoReplicateNewDisks.Value);
+            }
+
+            if(publicRequest.IsSetBandwidthThrottling())
+            {
+                context.Writer.WritePropertyName("bandwidthThrottling");
+                context.Writer.WriteNumberValue(publicRequest.BandwidthThrottling.Value);
+            }
+
+            if(publicRequest.IsSetCreatePublicIP())
+            {
+                context.Writer.WritePropertyName("createPublicIP");
+                context.Writer.WriteBooleanValue(publicRequest.CreatePublicIP.Value);
+            }
+
+            if(publicRequest.IsSetDataPlaneRouting())
+            {
+                context.Writer.WritePropertyName("dataPlaneRouting");
+                context.Writer.WriteStringValue(publicRequest.DataPlaneRouting);
+            }
+
+            if(publicRequest.IsSetDefaultLargeStagingDiskType())
+            {
+                context.Writer.WritePropertyName("defaultLargeStagingDiskType");
+                context.Writer.WriteStringValue(publicRequest.DefaultLargeStagingDiskType);
+            }
+
+            if(publicRequest.IsSetEbsEncryption())
+            {
+                context.Writer.WritePropertyName("ebsEncryption");
+                context.Writer.WriteStringValue(publicRequest.EbsEncryption);
+            }
+
+            if(publicRequest.IsSetEbsEncryptionKeyArn())
+            {
+                context.Writer.WritePropertyName("ebsEncryptionKeyArn");
+                context.Writer.WriteStringValue(publicRequest.EbsEncryptionKeyArn);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPitPolicy())
+            {
+                context.Writer.WritePropertyName("pitPolicy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPitPolicyListValue in publicRequest.PitPolicy)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PITPolicyRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPitPolicyListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReplicatedDisks())
+            {
+                context.Writer.WritePropertyName("replicatedDisks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReplicatedDisksListValue in publicRequest.ReplicatedDisks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReplicationConfigurationReplicatedDiskMarshaller.Instance;
+                    marshaller.Marshall(publicRequestReplicatedDisksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReplicationServerInstanceType())
+            {
+                context.Writer.WritePropertyName("replicationServerInstanceType");
+                context.Writer.WriteStringValue(publicRequest.ReplicationServerInstanceType);
+            }
+
+            if(publicRequest.IsSetReplicationServersSecurityGroupsIDs())
+            {
+                context.Writer.WritePropertyName("replicationServersSecurityGroupsIDs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReplicationServersSecurityGroupsIDsListValue in publicRequest.ReplicationServersSecurityGroupsIDs)
+                {
+                        context.Writer.WriteStringValue(publicRequestReplicationServersSecurityGroupsIDsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSourceServerID())
+            {
+                context.Writer.WritePropertyName("sourceServerID");
+                context.Writer.WriteStringValue(publicRequest.SourceServerID);
+            }
+
+            if(publicRequest.IsSetStagingAreaSubnetId())
+            {
+                context.Writer.WritePropertyName("stagingAreaSubnetId");
+                context.Writer.WriteStringValue(publicRequest.StagingAreaSubnetId);
+            }
+
+            if(publicRequest.IsSetStagingAreaTags())
+            {
+                context.Writer.WritePropertyName("stagingAreaTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestStagingAreaTagsKvp in publicRequest.StagingAreaTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestStagingAreaTagsKvp.Key);
+                    var publicRequestStagingAreaTagsValue = publicRequestStagingAreaTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestStagingAreaTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUseDedicatedReplicationServer())
+            {
+                context.Writer.WritePropertyName("useDedicatedReplicationServer");
+                context.Writer.WriteBooleanValue(publicRequest.UseDedicatedReplicationServer.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

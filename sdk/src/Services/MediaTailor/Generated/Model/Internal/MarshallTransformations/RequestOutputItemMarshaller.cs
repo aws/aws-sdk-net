@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDashPlaylistSettings())
             {
                 context.Writer.WritePropertyName("DashPlaylistSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashPlaylistSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DashPlaylistSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsPlaylistSettings())
             {
                 context.Writer.WritePropertyName("HlsPlaylistSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsPlaylistSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsPlaylistSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("ManifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetSourceGroup())
             {
                 context.Writer.WritePropertyName("SourceGroup");
-                context.Writer.Write(requestObject.SourceGroup);
+                context.Writer.WriteStringValue(requestObject.SourceGroup);
             }
 
         }

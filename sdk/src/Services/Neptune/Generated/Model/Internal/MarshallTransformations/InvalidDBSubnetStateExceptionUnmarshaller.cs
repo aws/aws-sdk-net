@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBSubnetStateException operation
     /// </summary>  
-    public class InvalidDBSubnetStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBSubnetStateException, XmlUnmarshallerContext>
+    public class InvalidDBSubnetStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBSubnetStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

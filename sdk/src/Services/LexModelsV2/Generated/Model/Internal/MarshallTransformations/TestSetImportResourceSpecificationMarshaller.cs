@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetImportInputLocation())
             {
                 context.Writer.WritePropertyName("importInputLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TestSetImportInputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportInputLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModality())
             {
                 context.Writer.WritePropertyName("modality");
-                context.Writer.Write(requestObject.Modality);
+                context.Writer.WriteStringValue(requestObject.Modality);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetStorageLocation())
             {
                 context.Writer.WritePropertyName("storageLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TestSetStorageLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTestSetName())
             {
                 context.Writer.WritePropertyName("testSetName");
-                context.Writer.Write(requestObject.TestSetName);
+                context.Writer.WriteStringValue(requestObject.TestSetName);
             }
 
             if(requestObject.IsSetTestSetTags())
             {
                 context.Writer.WritePropertyName("testSetTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTestSetTagsKvp in requestObject.TestSetTags)
                 {
                     context.Writer.WritePropertyName(requestObjectTestSetTagsKvp.Key);
                     var requestObjectTestSetTagsValue = requestObjectTestSetTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTestSetTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTestSetTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

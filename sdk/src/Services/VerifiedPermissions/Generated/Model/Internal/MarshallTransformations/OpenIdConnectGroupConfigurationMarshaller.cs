@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupClaim())
             {
                 context.Writer.WritePropertyName("groupClaim");
-                context.Writer.Write(requestObject.GroupClaim);
+                context.Writer.WriteStringValue(requestObject.GroupClaim);
             }
 
             if(requestObject.IsSetGroupEntityType())
             {
                 context.Writer.WritePropertyName("groupEntityType");
-                context.Writer.Write(requestObject.GroupEntityType);
+                context.Writer.WriteStringValue(requestObject.GroupEntityType);
             }
 
         }

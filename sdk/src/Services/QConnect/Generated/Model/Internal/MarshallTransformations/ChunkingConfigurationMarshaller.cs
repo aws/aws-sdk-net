@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChunkingStrategy())
             {
                 context.Writer.WritePropertyName("chunkingStrategy");
-                context.Writer.Write(requestObject.ChunkingStrategy);
+                context.Writer.WriteStringValue(requestObject.ChunkingStrategy);
             }
 
             if(requestObject.IsSetFixedSizeChunkingConfiguration())
             {
                 context.Writer.WritePropertyName("fixedSizeChunkingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FixedSizeChunkingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FixedSizeChunkingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHierarchicalChunkingConfiguration())
             {
                 context.Writer.WritePropertyName("hierarchicalChunkingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchicalChunkingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HierarchicalChunkingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSemanticChunkingConfiguration())
             {
                 context.Writer.WritePropertyName("semanticChunkingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SemanticChunkingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SemanticChunkingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllOrganizationalUnitsEnabled())
             {
                 context.Writer.WritePropertyName("AllOrganizationalUnitsEnabled");
-                context.Writer.Write(requestObject.AllOrganizationalUnitsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllOrganizationalUnitsEnabled.Value);
             }
 
             if(requestObject.IsSetExcludeSpecifiedOrganizationalUnits())
             {
                 context.Writer.WritePropertyName("ExcludeSpecifiedOrganizationalUnits");
-                context.Writer.Write(requestObject.ExcludeSpecifiedOrganizationalUnits.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeSpecifiedOrganizationalUnits.Value);
             }
 
             if(requestObject.IsSetOrganizationalUnits())
             {
                 context.Writer.WritePropertyName("OrganizationalUnits");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrganizationalUnitsListValue in requestObject.OrganizationalUnits)
                 {
-                        context.Writer.Write(requestObjectOrganizationalUnitsListValue);
+                        context.Writer.WriteStringValue(requestObjectOrganizationalUnitsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

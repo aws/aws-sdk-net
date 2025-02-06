@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("MaxConcurrency");
-                context.Writer.Write(requestObject.MaxConcurrency.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrency.Value);
             }
 
             if(requestObject.IsSetMemorySizeInMB())
             {
                 context.Writer.WritePropertyName("MemorySizeInMB");
-                context.Writer.Write(requestObject.MemorySizeInMB.Value);
+                context.Writer.WriteNumberValue(requestObject.MemorySizeInMB.Value);
             }
 
             if(requestObject.IsSetProvisionedConcurrency())
             {
                 context.Writer.WritePropertyName("ProvisionedConcurrency");
-                context.Writer.Write(requestObject.ProvisionedConcurrency.Value);
+                context.Writer.WriteNumberValue(requestObject.ProvisionedConcurrency.Value);
             }
 
         }

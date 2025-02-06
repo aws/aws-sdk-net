@@ -61,11 +61,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// The agent instructions will not be honored if your agent has only one knowledge base,
     /// uses default prompts, has no action group, and user input is disabled.
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeInlineAgent</c>.
-    /// </para>
-    ///  </note>
+    ///  </li> </ul> <note> </note>
     /// </summary>
     public partial class InvokeInlineAgentRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -83,6 +79,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private List<KnowledgeBase> _knowledgeBases = AWSConfigs.InitializeCollections ? new List<KnowledgeBase>() : null;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private string _sessionId;
+        private StreamingConfigurations _streamingConfigurations;
 
         /// <summary>
         /// Gets and sets the property ActionGroups. 
@@ -373,6 +370,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingConfigurations. 
+        /// <para>
+        ///  Specifies the configurations for streaming. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use agent streaming, you need permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public StreamingConfigurations StreamingConfigurations
+        {
+            get { return this._streamingConfigurations; }
+            set { this._streamingConfigurations = value; }
+        }
+
+        // Check to see if StreamingConfigurations property is set
+        internal bool IsSetStreamingConfigurations()
+        {
+            return this._streamingConfigurations != null;
         }
 
     }

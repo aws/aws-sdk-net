@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CaCertificatesBundleNotFoundException operation
     /// </summary>  
-    public class CaCertificatesBundleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CaCertificatesBundleNotFoundException, XmlUnmarshallerContext>
+    public class CaCertificatesBundleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CaCertificatesBundleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

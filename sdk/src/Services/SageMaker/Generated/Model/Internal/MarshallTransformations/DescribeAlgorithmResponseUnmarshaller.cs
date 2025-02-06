@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -47,75 +47,75 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeAlgorithmResponse response = new DescribeAlgorithmResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AlgorithmArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AlgorithmArn = unmarshaller.Unmarshall(context);
+                    response.AlgorithmArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlgorithmDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AlgorithmDescription = unmarshaller.Unmarshall(context);
+                    response.AlgorithmDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlgorithmName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AlgorithmName = unmarshaller.Unmarshall(context);
+                    response.AlgorithmName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlgorithmStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AlgorithmStatus = unmarshaller.Unmarshall(context);
+                    response.AlgorithmStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlgorithmStatusDetails", targetDepth))
                 {
                     var unmarshaller = AlgorithmStatusDetailsUnmarshaller.Instance;
-                    response.AlgorithmStatusDetails = unmarshaller.Unmarshall(context);
+                    response.AlgorithmStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CertifyForMarketplace", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.CertifyForMarketplace = unmarshaller.Unmarshall(context);
+                    response.CertifyForMarketplace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InferenceSpecification", targetDepth))
                 {
                     var unmarshaller = InferenceSpecificationUnmarshaller.Instance;
-                    response.InferenceSpecification = unmarshaller.Unmarshall(context);
+                    response.InferenceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProductId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProductId = unmarshaller.Unmarshall(context);
+                    response.ProductId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingSpecification", targetDepth))
                 {
                     var unmarshaller = TrainingSpecificationUnmarshaller.Instance;
-                    response.TrainingSpecification = unmarshaller.Unmarshall(context);
+                    response.TrainingSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValidationSpecification", targetDepth))
                 {
                     var unmarshaller = AlgorithmValidationSpecificationUnmarshaller.Instance;
-                    response.ValidationSpecification = unmarshaller.Unmarshall(context);
+                    response.ValidationSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -132,15 +132,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

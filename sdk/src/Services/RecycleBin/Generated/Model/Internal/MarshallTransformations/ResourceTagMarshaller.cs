@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceTagKey())
             {
                 context.Writer.WritePropertyName("ResourceTagKey");
-                context.Writer.Write(requestObject.ResourceTagKey);
+                context.Writer.WriteStringValue(requestObject.ResourceTagKey);
             }
 
             if(requestObject.IsSetResourceTagValue())
             {
                 context.Writer.WritePropertyName("ResourceTagValue");
-                context.Writer.Write(requestObject.ResourceTagValue);
+                context.Writer.WriteStringValue(requestObject.ResourceTagValue);
             }
 
         }

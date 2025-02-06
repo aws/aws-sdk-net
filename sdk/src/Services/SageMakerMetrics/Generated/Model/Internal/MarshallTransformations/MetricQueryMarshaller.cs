@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End.Value);
+                context.Writer.WriteNumberValue(requestObject.End.Value);
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetMetricStat())
             {
                 context.Writer.WritePropertyName("MetricStat");
-                context.Writer.Write(requestObject.MetricStat);
+                context.Writer.WriteStringValue(requestObject.MetricStat);
             }
 
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.WriteStringValue(requestObject.Period);
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start.Value);
+                context.Writer.WriteNumberValue(requestObject.Start.Value);
             }
 
             if(requestObject.IsSetXAxisType())
             {
                 context.Writer.WritePropertyName("XAxisType");
-                context.Writer.Write(requestObject.XAxisType);
+                context.Writer.WriteStringValue(requestObject.XAxisType);
             }
 
         }

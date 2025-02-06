@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GlobalReplicationGroup Object
     /// </summary>  
-    public class GlobalReplicationGroupUnmarshaller : IUnmarshaller<GlobalReplicationGroup, XmlUnmarshallerContext>, IUnmarshaller<GlobalReplicationGroup, JsonUnmarshallerContext>
+    public class GlobalReplicationGroupUnmarshaller : IXmlUnmarshaller<GlobalReplicationGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -152,17 +152,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GlobalReplicationGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static GlobalReplicationGroupUnmarshaller _instance = new GlobalReplicationGroupUnmarshaller();        
 

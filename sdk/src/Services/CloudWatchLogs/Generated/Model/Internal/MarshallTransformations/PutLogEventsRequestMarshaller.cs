@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEntity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEntity())
-                    {
-                        context.Writer.WritePropertyName("entity");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("entity");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = EntityMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Entity, context);
+                var marshaller = EntityMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Entity, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogEvents())
-                    {
-                        context.Writer.WritePropertyName("logEvents");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogEventsListValue in publicRequest.LogEvents)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputLogEventMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLogEventsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLogGroupName())
-                    {
-                        context.Writer.WritePropertyName("logGroupName");
-                        context.Writer.Write(publicRequest.LogGroupName);
-                    }
-
-                    if(publicRequest.IsSetLogStreamName())
-                    {
-                        context.Writer.WritePropertyName("logStreamName");
-                        context.Writer.Write(publicRequest.LogStreamName);
-                    }
-
-                    if(publicRequest.IsSetSequenceToken())
-                    {
-                        context.Writer.WritePropertyName("sequenceToken");
-                        context.Writer.Write(publicRequest.SequenceToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetLogEvents())
+            {
+                context.Writer.WritePropertyName("logEvents");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogEventsListValue in publicRequest.LogEvents)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputLogEventMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLogEventsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLogGroupName())
+            {
+                context.Writer.WritePropertyName("logGroupName");
+                context.Writer.WriteStringValue(publicRequest.LogGroupName);
+            }
+
+            if(publicRequest.IsSetLogStreamName())
+            {
+                context.Writer.WritePropertyName("logStreamName");
+                context.Writer.WriteStringValue(publicRequest.LogStreamName);
+            }
+
+            if(publicRequest.IsSetSequenceToken())
+            {
+                context.Writer.WritePropertyName("sequenceToken");
+                context.Writer.WriteStringValue(publicRequest.SequenceToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

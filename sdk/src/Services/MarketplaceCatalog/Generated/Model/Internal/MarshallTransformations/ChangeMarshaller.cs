@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChangeName())
             {
                 context.Writer.WritePropertyName("ChangeName");
-                context.Writer.Write(requestObject.ChangeName);
+                context.Writer.WriteStringValue(requestObject.ChangeName);
             }
 
             if(requestObject.IsSetChangeType())
             {
                 context.Writer.WritePropertyName("ChangeType");
-                context.Writer.Write(requestObject.ChangeType);
+                context.Writer.WriteStringValue(requestObject.ChangeType);
             }
 
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");
-                context.Writer.Write(requestObject.Details);
+                context.Writer.WriteStringValue(requestObject.Details);
             }
 
             if(requestObject.IsSetDetailsDocument())
@@ -75,28 +73,28 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntity())
             {
                 context.Writer.WritePropertyName("Entity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Entity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityTags())
             {
                 context.Writer.WritePropertyName("EntityTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityTagsListValue in requestObject.EntityTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectEntityTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

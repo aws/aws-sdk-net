@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcknowledgmentRequestedCode())
             {
                 context.Writer.WritePropertyName("acknowledgmentRequestedCode");
-                context.Writer.Write(requestObject.AcknowledgmentRequestedCode);
+                context.Writer.WriteStringValue(requestObject.AcknowledgmentRequestedCode);
             }
 
             if(requestObject.IsSetReceiverId())
             {
                 context.Writer.WritePropertyName("receiverId");
-                context.Writer.Write(requestObject.ReceiverId);
+                context.Writer.WriteStringValue(requestObject.ReceiverId);
             }
 
             if(requestObject.IsSetReceiverIdQualifier())
             {
                 context.Writer.WritePropertyName("receiverIdQualifier");
-                context.Writer.Write(requestObject.ReceiverIdQualifier);
+                context.Writer.WriteStringValue(requestObject.ReceiverIdQualifier);
             }
 
             if(requestObject.IsSetRepetitionSeparator())
             {
                 context.Writer.WritePropertyName("repetitionSeparator");
-                context.Writer.Write(requestObject.RepetitionSeparator);
+                context.Writer.WriteStringValue(requestObject.RepetitionSeparator);
             }
 
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("senderId");
-                context.Writer.Write(requestObject.SenderId);
+                context.Writer.WriteStringValue(requestObject.SenderId);
             }
 
             if(requestObject.IsSetSenderIdQualifier())
             {
                 context.Writer.WritePropertyName("senderIdQualifier");
-                context.Writer.Write(requestObject.SenderIdQualifier);
+                context.Writer.WriteStringValue(requestObject.SenderIdQualifier);
             }
 
             if(requestObject.IsSetUsageIndicatorCode())
             {
                 context.Writer.WritePropertyName("usageIndicatorCode");
-                context.Writer.Write(requestObject.UsageIndicatorCode);
+                context.Writer.WriteStringValue(requestObject.UsageIndicatorCode);
             }
 
         }

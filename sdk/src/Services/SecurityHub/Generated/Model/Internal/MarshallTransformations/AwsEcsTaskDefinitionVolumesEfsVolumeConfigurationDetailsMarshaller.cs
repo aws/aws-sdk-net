@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationConfig())
             {
                 context.Writer.WritePropertyName("AuthorizationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthorizationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilesystemId())
             {
                 context.Writer.WritePropertyName("FilesystemId");
-                context.Writer.Write(requestObject.FilesystemId);
+                context.Writer.WriteStringValue(requestObject.FilesystemId);
             }
 
             if(requestObject.IsSetRootDirectory())
             {
                 context.Writer.WritePropertyName("RootDirectory");
-                context.Writer.Write(requestObject.RootDirectory);
+                context.Writer.WriteStringValue(requestObject.RootDirectory);
             }
 
             if(requestObject.IsSetTransitEncryption())
             {
                 context.Writer.WritePropertyName("TransitEncryption");
-                context.Writer.Write(requestObject.TransitEncryption);
+                context.Writer.WriteStringValue(requestObject.TransitEncryption);
             }
 
             if(requestObject.IsSetTransitEncryptionPort())
             {
                 context.Writer.WritePropertyName("TransitEncryptionPort");
-                context.Writer.Write(requestObject.TransitEncryptionPort.Value);
+                context.Writer.WriteNumberValue(requestObject.TransitEncryptionPort.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
             if(requestObject.IsSetCryptoProviders())
             {
                 context.Writer.WritePropertyName("CryptoProviders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCryptoProvidersListValue in requestObject.CryptoProviders)
                 {
-                        context.Writer.Write(requestObjectCryptoProvidersListValue);
+                        context.Writer.WriteStringValue(requestObjectCryptoProvidersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeySpec())
             {
                 context.Writer.WritePropertyName("KeySpec");
-                context.Writer.Write(requestObject.KeySpec);
+                context.Writer.WriteStringValue(requestObject.KeySpec);
             }
 
             if(requestObject.IsSetKeyUsageProperty())
             {
                 context.Writer.WritePropertyName("KeyUsageProperty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyUsagePropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyUsageProperty, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinimalKeyLength())
             {
                 context.Writer.WritePropertyName("MinimalKeyLength");
-                context.Writer.Write(requestObject.MinimalKeyLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimalKeyLength.Value);
             }
 
         }

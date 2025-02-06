@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for USD Object
     /// </summary>  
-    public class USDUnmarshaller : IUnmarshaller<USD, XmlUnmarshallerContext>, IUnmarshaller<USD, JsonUnmarshallerContext>
+    public class USDUnmarshaller : IJsonUnmarshaller<USD, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        USD IUnmarshaller<USD, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public USD Unmarshall(JsonUnmarshallerContext context)
+        public USD Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             USD unmarshalledObject = new USD();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Cents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Cents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dollars", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Dollars = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dollars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TenthFractionsOfACent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TenthFractionsOfACent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TenthFractionsOfACent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

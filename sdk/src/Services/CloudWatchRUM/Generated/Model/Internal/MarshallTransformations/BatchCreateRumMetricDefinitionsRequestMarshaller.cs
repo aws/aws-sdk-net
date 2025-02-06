@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
@@ -64,47 +67,52 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchRUMException("Request object does not have required field AppMonitorName set");
             request.AddPathResource("{AppMonitorName}", StringUtils.FromString(publicRequest.AppMonitorName));
             request.ResourcePath = "/rummetrics/{AppMonitorName}/metrics";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestination())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("Destination");
-                        context.Writer.Write(publicRequest.Destination);
-                    }
-
-                    if(publicRequest.IsSetDestinationArn())
-                    {
-                        context.Writer.WritePropertyName("DestinationArn");
-                        context.Writer.Write(publicRequest.DestinationArn);
-                    }
-
-                    if(publicRequest.IsSetMetricDefinitions())
-                    {
-                        context.Writer.WritePropertyName("MetricDefinitions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetricDefinitionsListValue in publicRequest.MetricDefinitions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MetricDefinitionRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMetricDefinitionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Destination");
+                context.Writer.WriteStringValue(publicRequest.Destination);
             }
+
+            if(publicRequest.IsSetDestinationArn())
+            {
+                context.Writer.WritePropertyName("DestinationArn");
+                context.Writer.WriteStringValue(publicRequest.DestinationArn);
+            }
+
+            if(publicRequest.IsSetMetricDefinitions())
+            {
+                context.Writer.WritePropertyName("MetricDefinitions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricDefinitionsListValue in publicRequest.MetricDefinitions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetricDefinitionRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetricDefinitionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

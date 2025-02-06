@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityPublicKeyIdentifier);
             }
 
             if(requestObject.IsSetImportToken())
             {
                 context.Writer.WritePropertyName("ImportToken");
-                context.Writer.Write(requestObject.ImportToken);
+                context.Writer.WriteStringValue(requestObject.ImportToken);
             }
 
             if(requestObject.IsSetKeyBlockFormat())
             {
                 context.Writer.WritePropertyName("KeyBlockFormat");
-                context.Writer.Write(requestObject.KeyBlockFormat);
+                context.Writer.WriteStringValue(requestObject.KeyBlockFormat);
             }
 
             if(requestObject.IsSetRandomNonce())
             {
                 context.Writer.WritePropertyName("RandomNonce");
-                context.Writer.Write(requestObject.RandomNonce);
+                context.Writer.WriteStringValue(requestObject.RandomNonce);
             }
 
             if(requestObject.IsSetSigningKeyCertificate())
             {
                 context.Writer.WritePropertyName("SigningKeyCertificate");
-                context.Writer.Write(requestObject.SigningKeyCertificate);
+                context.Writer.WriteStringValue(requestObject.SigningKeyCertificate);
             }
 
             if(requestObject.IsSetWrappedKeyBlock())
             {
                 context.Writer.WritePropertyName("WrappedKeyBlock");
-                context.Writer.Write(requestObject.WrappedKeyBlock);
+                context.Writer.WriteStringValue(requestObject.WrappedKeyBlock);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBenchmarkProfile())
             {
                 context.Writer.WritePropertyName("benchmarkProfile");
-                context.Writer.Write(requestObject.BenchmarkProfile);
+                context.Writer.WriteStringValue(requestObject.BenchmarkProfile);
             }
 
             if(requestObject.IsSetBenchmarkVersion())
             {
                 context.Writer.WritePropertyName("benchmarkVersion");
-                context.Writer.Write(requestObject.BenchmarkVersion);
+                context.Writer.WriteStringValue(requestObject.BenchmarkVersion);
             }
 
             if(requestObject.IsSetComputePlatform())
             {
                 context.Writer.WritePropertyName("computePlatform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComputePlatformMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComputePlatform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProgress())
             {
                 context.Writer.WritePropertyName("progress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StopCisMessageProgressMarshaller.Instance;
                 marshaller.Marshall(requestObject.Progress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReason())
             {
                 context.Writer.WritePropertyName("reason");
-                context.Writer.Write(requestObject.Reason);
+                context.Writer.WriteStringValue(requestObject.Reason);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

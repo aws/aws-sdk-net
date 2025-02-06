@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreamDescriptionSummary Object
     /// </summary>  
-    public class StreamDescriptionSummaryUnmarshaller : IUnmarshaller<StreamDescriptionSummary, XmlUnmarshallerContext>, IUnmarshaller<StreamDescriptionSummary, JsonUnmarshallerContext>
+    public class StreamDescriptionSummaryUnmarshaller : IJsonUnmarshaller<StreamDescriptionSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StreamDescriptionSummary IUnmarshaller<StreamDescriptionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreamDescriptionSummary Unmarshall(JsonUnmarshallerContext context)
+        public StreamDescriptionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StreamDescriptionSummary unmarshalledObject = new StreamDescriptionSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConsumerCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConsumerCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsumerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnhancedMonitoring", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EnhancedMetrics, EnhancedMetricsUnmarshaller>(EnhancedMetricsUnmarshaller.Instance);
-                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EnhancedMetrics, EnhancedMetricsUnmarshaller>(EnhancedMetricsUnmarshaller.Instance);
+                    unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpenShardCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OpenShardCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenShardCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamCreationTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamModeDetails", targetDepth))
                 {
                     var unmarshaller = StreamModeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.StreamModeDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamModeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StreamStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

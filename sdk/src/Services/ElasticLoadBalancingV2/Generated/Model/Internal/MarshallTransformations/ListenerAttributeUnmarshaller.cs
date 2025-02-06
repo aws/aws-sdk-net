@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListenerAttribute Object
     /// </summary>  
-    public class ListenerAttributeUnmarshaller : IUnmarshaller<ListenerAttribute, XmlUnmarshallerContext>, IUnmarshaller<ListenerAttribute, JsonUnmarshallerContext>
+    public class ListenerAttributeUnmarshaller : IXmlUnmarshaller<ListenerAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ListenerAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ListenerAttributeUnmarshaller _instance = new ListenerAttributeUnmarshaller();        
 

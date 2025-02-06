@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 {
@@ -64,106 +67,111 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 throw new AmazonSchedulerException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/schedules/{Name}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActionAfterCompletion())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActionAfterCompletion())
-                    {
-                        context.Writer.WritePropertyName("ActionAfterCompletion");
-                        context.Writer.Write(publicRequest.ActionAfterCompletion);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEndDate())
-                    {
-                        context.Writer.WritePropertyName("EndDate");
-                        context.Writer.Write(publicRequest.EndDate.Value);
-                    }
-
-                    if(publicRequest.IsSetFlexibleTimeWindow())
-                    {
-                        context.Writer.WritePropertyName("FlexibleTimeWindow");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FlexibleTimeWindowMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FlexibleTimeWindow, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGroupName())
-                    {
-                        context.Writer.WritePropertyName("GroupName");
-                        context.Writer.Write(publicRequest.GroupName);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyArn())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyArn");
-                        context.Writer.Write(publicRequest.KmsKeyArn);
-                    }
-
-                    if(publicRequest.IsSetScheduleExpression())
-                    {
-                        context.Writer.WritePropertyName("ScheduleExpression");
-                        context.Writer.Write(publicRequest.ScheduleExpression);
-                    }
-
-                    if(publicRequest.IsSetScheduleExpressionTimezone())
-                    {
-                        context.Writer.WritePropertyName("ScheduleExpressionTimezone");
-                        context.Writer.Write(publicRequest.ScheduleExpressionTimezone);
-                    }
-
-                    if(publicRequest.IsSetStartDate())
-                    {
-                        context.Writer.WritePropertyName("StartDate");
-                        context.Writer.Write(publicRequest.StartDate.Value);
-                    }
-
-                    if(publicRequest.IsSetState())
-                    {
-                        context.Writer.WritePropertyName("State");
-                        context.Writer.Write(publicRequest.State);
-                    }
-
-                    if(publicRequest.IsSetTarget())
-                    {
-                        context.Writer.WritePropertyName("Target");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Target, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ActionAfterCompletion");
+                context.Writer.WriteStringValue(publicRequest.ActionAfterCompletion);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEndDate())
+            {
+                context.Writer.WritePropertyName("EndDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndDate.Value)));
+            }
+
+            if(publicRequest.IsSetFlexibleTimeWindow())
+            {
+                context.Writer.WritePropertyName("FlexibleTimeWindow");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlexibleTimeWindowMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FlexibleTimeWindow, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGroupName())
+            {
+                context.Writer.WritePropertyName("GroupName");
+                context.Writer.WriteStringValue(publicRequest.GroupName);
+            }
+
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
+            if(publicRequest.IsSetScheduleExpression())
+            {
+                context.Writer.WritePropertyName("ScheduleExpression");
+                context.Writer.WriteStringValue(publicRequest.ScheduleExpression);
+            }
+
+            if(publicRequest.IsSetScheduleExpressionTimezone())
+            {
+                context.Writer.WritePropertyName("ScheduleExpressionTimezone");
+                context.Writer.WriteStringValue(publicRequest.ScheduleExpressionTimezone);
+            }
+
+            if(publicRequest.IsSetStartDate())
+            {
+                context.Writer.WritePropertyName("StartDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartDate.Value)));
+            }
+
+            if(publicRequest.IsSetState())
+            {
+                context.Writer.WritePropertyName("State");
+                context.Writer.WriteStringValue(publicRequest.State);
+            }
+
+            if(publicRequest.IsSetTarget())
+            {
+                context.Writer.WritePropertyName("Target");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Target, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

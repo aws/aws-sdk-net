@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProjectDesignation())
             {
                 context.Writer.WritePropertyName("projectDesignation");
-                context.Writer.Write(requestObject.ProjectDesignation);
+                context.Writer.WriteStringValue(requestObject.ProjectDesignation);
             }
 
             if(requestObject.IsSetProjectGrantFilter())
             {
                 context.Writer.WritePropertyName("projectGrantFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProjectGrantFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProjectGrantFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProjectIdentifier())
             {
                 context.Writer.WritePropertyName("projectIdentifier");
-                context.Writer.Write(requestObject.ProjectIdentifier);
+                context.Writer.WriteStringValue(requestObject.ProjectIdentifier);
             }
 
         }

@@ -78,6 +78,7 @@ namespace Amazon.MediaConvert.Model
         private H264Telecine _telecine;
         private H264TemporalAdaptiveQuantization _temporalAdaptiveQuantization;
         private H264UnregisteredSeiTimecode _unregisteredSeiTimecode;
+        private H264WriteMp4PackagingType _writeMp4PackagingType;
 
         /// <summary>
         /// Gets and sets the property AdaptiveQuantization. Keep the default value, Auto, for
@@ -984,6 +985,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetUnregisteredSeiTimecode()
         {
             return this._unregisteredSeiTimecode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteMp4PackagingType. Specify how SPS and PPS NAL units
+        /// are written in your output MP4 container, according to ISO/IEC 14496-15. If the location
+        /// of these parameters doesn't matter in your workflow: Keep the default value, AVC1.
+        /// MediaConvert writes SPS and PPS NAL units in the sample description ('stsd') box (but
+        /// not into samples directly). To write SPS and PPS NAL units directly into samples (but
+        /// not in the 'stsd' box): Choose AVC3. When you do, note that your output might not
+        /// play properly with some downstream systems or players.
+        /// </summary>
+        public H264WriteMp4PackagingType WriteMp4PackagingType
+        {
+            get { return this._writeMp4PackagingType; }
+            set { this._writeMp4PackagingType = value; }
+        }
+
+        // Check to see if WriteMp4PackagingType property is set
+        internal bool IsSetWriteMp4PackagingType()
+        {
+            return this._writeMp4PackagingType != null;
         }
 
     }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AutomationRulesActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCriteria())
             {
                 context.Writer.WritePropertyName("Criteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutomationRulesFindingFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Criteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetIsTerminal())
             {
                 context.Writer.WritePropertyName("IsTerminal");
-                context.Writer.Write(requestObject.IsTerminal.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsTerminal.Value);
             }
 
             if(requestObject.IsSetRuleArn())
             {
                 context.Writer.WritePropertyName("RuleArn");
-                context.Writer.Write(requestObject.RuleArn);
+                context.Writer.WriteStringValue(requestObject.RuleArn);
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetRuleOrder())
             {
                 context.Writer.WritePropertyName("RuleOrder");
-                context.Writer.Write(requestObject.RuleOrder.Value);
+                context.Writer.WriteNumberValue(requestObject.RuleOrder.Value);
             }
 
             if(requestObject.IsSetRuleStatus())
             {
                 context.Writer.WritePropertyName("RuleStatus");
-                context.Writer.Write(requestObject.RuleStatus);
+                context.Writer.WriteStringValue(requestObject.RuleStatus);
             }
 
         }

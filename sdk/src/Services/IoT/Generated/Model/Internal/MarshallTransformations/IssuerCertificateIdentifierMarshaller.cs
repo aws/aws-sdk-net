@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIssuerCertificateSerialNumber())
             {
                 context.Writer.WritePropertyName("issuerCertificateSerialNumber");
-                context.Writer.Write(requestObject.IssuerCertificateSerialNumber);
+                context.Writer.WriteStringValue(requestObject.IssuerCertificateSerialNumber);
             }
 
             if(requestObject.IsSetIssuerCertificateSubject())
             {
                 context.Writer.WritePropertyName("issuerCertificateSubject");
-                context.Writer.Write(requestObject.IssuerCertificateSubject);
+                context.Writer.WriteStringValue(requestObject.IssuerCertificateSubject);
             }
 
             if(requestObject.IsSetIssuerId())
             {
                 context.Writer.WritePropertyName("issuerId");
-                context.Writer.Write(requestObject.IssuerId);
+                context.Writer.WriteStringValue(requestObject.IssuerId);
             }
 
         }

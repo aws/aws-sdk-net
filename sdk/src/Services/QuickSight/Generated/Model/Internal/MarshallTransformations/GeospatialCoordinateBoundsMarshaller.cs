@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("East");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.East.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.East.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.East.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.East.Value);
+                    context.Writer.WriteNumberValue(requestObject.East.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("North");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.North.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.North.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.North.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.North.Value);
+                    context.Writer.WriteNumberValue(requestObject.North.Value);
                 }
             }
 
@@ -79,11 +77,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("South");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.South.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.South.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.South.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.South.Value);
+                    context.Writer.WriteNumberValue(requestObject.South.Value);
                 }
             }
 
@@ -92,11 +90,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("West");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.West.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.West.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.West.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.West.Value);
+                    context.Writer.WriteNumberValue(requestObject.West.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedIPRange())
             {
                 context.Writer.WritePropertyName("AllowedIPRange");
-                context.Writer.Write(requestObject.AllowedIPRange);
+                context.Writer.WriteStringValue(requestObject.AllowedIPRange);
             }
 
             if(requestObject.IsSetSecretToken())
             {
                 context.Writer.WritePropertyName("SecretToken");
-                context.Writer.Write(requestObject.SecretToken);
+                context.Writer.WriteStringValue(requestObject.SecretToken);
             }
 
         }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// When the request to a queue is not HTTPS and SigV4.
+    /// The request was not made over HTTPS or did not use SigV4 for signing.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

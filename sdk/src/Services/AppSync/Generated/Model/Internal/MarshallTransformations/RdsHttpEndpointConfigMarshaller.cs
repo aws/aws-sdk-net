@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("awsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetAwsSecretStoreArn())
             {
                 context.Writer.WritePropertyName("awsSecretStoreArn");
-                context.Writer.Write(requestObject.AwsSecretStoreArn);
+                context.Writer.WriteStringValue(requestObject.AwsSecretStoreArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDbClusterIdentifier())
             {
                 context.Writer.WritePropertyName("dbClusterIdentifier");
-                context.Writer.Write(requestObject.DbClusterIdentifier);
+                context.Writer.WriteStringValue(requestObject.DbClusterIdentifier);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("schema");
-                context.Writer.Write(requestObject.Schema);
+                context.Writer.WriteStringValue(requestObject.Schema);
             }
 
         }

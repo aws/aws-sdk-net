@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -47,87 +47,87 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeDomainHealthResponse response = new DescribeDomainHealthResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActiveAvailabilityZoneCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActiveAvailabilityZoneCount = unmarshaller.Unmarshall(context);
+                    response.ActiveAvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityZoneCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AvailabilityZoneCount = unmarshaller.Unmarshall(context);
+                    response.AvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClusterHealth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClusterHealth = unmarshaller.Unmarshall(context);
+                    response.ClusterHealth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataNodeCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DataNodeCount = unmarshaller.Unmarshall(context);
+                    response.DataNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMaster", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.DedicatedMaster = unmarshaller.Unmarshall(context);
+                    response.DedicatedMaster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainState = unmarshaller.Unmarshall(context);
+                    response.DomainState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnvironmentInformation", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EnvironmentInfo, EnvironmentInfoUnmarshaller>(EnvironmentInfoUnmarshaller.Instance);
-                    response.EnvironmentInformation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EnvironmentInfo, EnvironmentInfoUnmarshaller>(EnvironmentInfoUnmarshaller.Instance);
+                    response.EnvironmentInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MasterEligibleNodeCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MasterEligibleNodeCount = unmarshaller.Unmarshall(context);
+                    response.MasterEligibleNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MasterNode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.MasterNode = unmarshaller.Unmarshall(context);
+                    response.MasterNode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StandByAvailabilityZoneCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StandByAvailabilityZoneCount = unmarshaller.Unmarshall(context);
+                    response.StandByAvailabilityZoneCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalShards", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TotalShards = unmarshaller.Unmarshall(context);
+                    response.TotalShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalUnAssignedShards", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TotalUnAssignedShards = unmarshaller.Unmarshall(context);
+                    response.TotalUnAssignedShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarmNodeCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WarmNodeCount = unmarshaller.Unmarshall(context);
+                    response.WarmNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -144,34 +144,36 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BaseException"))
                 {
-                    return BaseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BaseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
                 {
-                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
-                    return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonOpenSearchServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

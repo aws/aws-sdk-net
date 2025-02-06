@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AvailabilityZoneInfo Object
     /// </summary>  
-    public class AvailabilityZoneInfoUnmarshaller : IUnmarshaller<AvailabilityZoneInfo, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZoneInfo, JsonUnmarshallerContext>
+    public class AvailabilityZoneInfoUnmarshaller : IJsonUnmarshaller<AvailabilityZoneInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AvailabilityZoneInfo IUnmarshaller<AvailabilityZoneInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AvailabilityZoneInfo Unmarshall(JsonUnmarshallerContext context)
+        public AvailabilityZoneInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AvailabilityZoneInfo unmarshalledObject = new AvailabilityZoneInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailabilityZoneName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZoneName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZoneName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailableDataNodeCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailableDataNodeCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailableDataNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfiguredDataNodeCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfiguredDataNodeCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfiguredDataNodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalShards", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalShards = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalUnAssignedShards", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalUnAssignedShards = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalUnAssignedShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZoneStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ZoneStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZoneStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

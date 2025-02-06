@@ -32,7 +32,7 @@ namespace Amazon.EKS.Model
     /// <summary>
     /// Indicates the current configuration of the load balancing capability on your EKS Auto
     /// Mode cluster. For example, if the capability is enabled or disabled. For more information,
-    /// see EKS Auto Mode load balancing capability in the EKS User Guide.
+    /// see EKS Auto Mode load balancing capability in the <i>Amazon EKS User Guide</i>.
     /// </summary>
     public partial class ElasticLoadBalancing
     {

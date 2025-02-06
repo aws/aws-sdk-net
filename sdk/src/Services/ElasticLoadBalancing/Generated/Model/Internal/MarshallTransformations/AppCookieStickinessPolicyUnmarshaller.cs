@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AppCookieStickinessPolicy Object
     /// </summary>  
-    public class AppCookieStickinessPolicyUnmarshaller : IUnmarshaller<AppCookieStickinessPolicy, XmlUnmarshallerContext>, IUnmarshaller<AppCookieStickinessPolicy, JsonUnmarshallerContext>
+    public class AppCookieStickinessPolicyUnmarshaller : IXmlUnmarshaller<AppCookieStickinessPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AppCookieStickinessPolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AppCookieStickinessPolicyUnmarshaller _instance = new AppCookieStickinessPolicyUnmarshaller();        
 

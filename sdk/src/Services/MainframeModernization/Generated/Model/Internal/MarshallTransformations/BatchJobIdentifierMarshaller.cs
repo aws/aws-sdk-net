@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("fileBatchJobIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileBatchJobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileBatchJobIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRestartBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("restartBatchJobIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RestartBatchJobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.RestartBatchJobIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3BatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("s3BatchJobIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3BatchJobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3BatchJobIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScriptBatchJobIdentifier())
             {
                 context.Writer.WritePropertyName("scriptBatchJobIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScriptBatchJobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScriptBatchJobIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

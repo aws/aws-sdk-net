@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellValue())
             {
                 context.Writer.WritePropertyName("CellValue");
-                context.Writer.Write(requestObject.CellValue);
+                context.Writer.WriteStringValue(requestObject.CellValue);
             }
 
             if(requestObject.IsSetSynonyms())
             {
                 context.Writer.WritePropertyName("Synonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSynonymsListValue in requestObject.Synonyms)
                 {
-                        context.Writer.Write(requestObjectSynonymsListValue);
+                        context.Writer.WriteStringValue(requestObjectSynonymsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

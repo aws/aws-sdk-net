@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RStudioServerProDomainSettings Object
     /// </summary>  
-    public class RStudioServerProDomainSettingsUnmarshaller : IUnmarshaller<RStudioServerProDomainSettings, XmlUnmarshallerContext>, IUnmarshaller<RStudioServerProDomainSettings, JsonUnmarshallerContext>
+    public class RStudioServerProDomainSettingsUnmarshaller : IJsonUnmarshaller<RStudioServerProDomainSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RStudioServerProDomainSettings IUnmarshaller<RStudioServerProDomainSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RStudioServerProDomainSettings Unmarshall(JsonUnmarshallerContext context)
+        public RStudioServerProDomainSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RStudioServerProDomainSettings unmarshalledObject = new RStudioServerProDomainSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DefaultResourceSpec", targetDepth))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
-                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RStudioConnectUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RStudioConnectUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RStudioConnectUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RStudioPackageManagerUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RStudioPackageManagerUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RStudioPackageManagerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

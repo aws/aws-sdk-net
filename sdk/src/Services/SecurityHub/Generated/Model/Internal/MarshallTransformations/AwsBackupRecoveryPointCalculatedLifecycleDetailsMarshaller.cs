@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteAt())
             {
                 context.Writer.WritePropertyName("DeleteAt");
-                context.Writer.Write(requestObject.DeleteAt);
+                context.Writer.WriteStringValue(requestObject.DeleteAt);
             }
 
             if(requestObject.IsSetMoveToColdStorageAt())
             {
                 context.Writer.WritePropertyName("MoveToColdStorageAt");
-                context.Writer.Write(requestObject.MoveToColdStorageAt);
+                context.Writer.WriteStringValue(requestObject.MoveToColdStorageAt);
             }
 
         }

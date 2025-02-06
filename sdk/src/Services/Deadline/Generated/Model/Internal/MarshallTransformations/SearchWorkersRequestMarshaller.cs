@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -64,69 +67,74 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/search/workers";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilterExpressions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilterExpressions())
-                    {
-                        context.Writer.WritePropertyName("filterExpressions");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("filterExpressions");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = SearchGroupedFilterExpressionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FilterExpressions, context);
+                var marshaller = SearchGroupedFilterExpressionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterExpressions, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFleetIds())
-                    {
-                        context.Writer.WritePropertyName("fleetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFleetIdsListValue in publicRequest.FleetIds)
-                        {
-                                context.Writer.Write(publicRequestFleetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetItemOffset())
-                    {
-                        context.Writer.WritePropertyName("itemOffset");
-                        context.Writer.Write(publicRequest.ItemOffset.Value);
-                    }
-
-                    if(publicRequest.IsSetPageSize())
-                    {
-                        context.Writer.WritePropertyName("pageSize");
-                        context.Writer.Write(publicRequest.PageSize.Value);
-                    }
-
-                    if(publicRequest.IsSetSortExpressions())
-                    {
-                        context.Writer.WritePropertyName("sortExpressions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSortExpressionsListValue in publicRequest.SortExpressions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SearchSortExpressionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSortExpressionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetFleetIds())
+            {
+                context.Writer.WritePropertyName("fleetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFleetIdsListValue in publicRequest.FleetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestFleetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetItemOffset())
+            {
+                context.Writer.WritePropertyName("itemOffset");
+                context.Writer.WriteNumberValue(publicRequest.ItemOffset.Value);
+            }
+
+            if(publicRequest.IsSetPageSize())
+            {
+                context.Writer.WritePropertyName("pageSize");
+                context.Writer.WriteNumberValue(publicRequest.PageSize.Value);
+            }
+
+            if(publicRequest.IsSetSortExpressions())
+            {
+                context.Writer.WritePropertyName("sortExpressions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSortExpressionsListValue in publicRequest.SortExpressions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SearchSortExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSortExpressionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"management.";

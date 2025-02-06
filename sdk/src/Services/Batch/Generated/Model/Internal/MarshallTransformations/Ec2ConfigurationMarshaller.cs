@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageIdOverride())
             {
                 context.Writer.WritePropertyName("imageIdOverride");
-                context.Writer.Write(requestObject.ImageIdOverride);
+                context.Writer.WriteStringValue(requestObject.ImageIdOverride);
             }
 
             if(requestObject.IsSetImageKubernetesVersion())
             {
                 context.Writer.WritePropertyName("imageKubernetesVersion");
-                context.Writer.Write(requestObject.ImageKubernetesVersion);
+                context.Writer.WriteStringValue(requestObject.ImageKubernetesVersion);
             }
 
             if(requestObject.IsSetImageType())
             {
                 context.Writer.WritePropertyName("imageType");
-                context.Writer.Write(requestObject.ImageType);
+                context.Writer.WriteStringValue(requestObject.ImageType);
             }
 
         }

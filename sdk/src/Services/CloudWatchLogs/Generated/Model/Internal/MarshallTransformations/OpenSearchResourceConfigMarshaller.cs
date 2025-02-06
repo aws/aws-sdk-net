@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationArn())
             {
                 context.Writer.WritePropertyName("applicationArn");
-                context.Writer.Write(requestObject.ApplicationArn);
+                context.Writer.WriteStringValue(requestObject.ApplicationArn);
             }
 
             if(requestObject.IsSetDashboardViewerPrincipals())
             {
                 context.Writer.WritePropertyName("dashboardViewerPrincipals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDashboardViewerPrincipalsListValue in requestObject.DashboardViewerPrincipals)
                 {
-                        context.Writer.Write(requestObjectDashboardViewerPrincipalsListValue);
+                        context.Writer.WriteStringValue(requestObjectDashboardViewerPrincipalsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSourceRoleArn())
             {
                 context.Writer.WritePropertyName("dataSourceRoleArn");
-                context.Writer.Write(requestObject.DataSourceRoleArn);
+                context.Writer.WriteStringValue(requestObject.DataSourceRoleArn);
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetRetentionDays())
             {
                 context.Writer.WritePropertyName("retentionDays");
-                context.Writer.Write(requestObject.RetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionDays.Value);
             }
 
         }

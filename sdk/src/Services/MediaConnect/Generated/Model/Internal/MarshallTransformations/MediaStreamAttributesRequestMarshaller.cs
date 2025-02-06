@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFmtp())
             {
                 context.Writer.WritePropertyName("fmtp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FmtpRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.Fmtp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLang())
             {
                 context.Writer.WritePropertyName("lang");
-                context.Writer.Write(requestObject.Lang);
+                context.Writer.WriteStringValue(requestObject.Lang);
             }
 
         }

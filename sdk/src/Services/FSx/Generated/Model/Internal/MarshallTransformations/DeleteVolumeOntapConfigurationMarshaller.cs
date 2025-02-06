@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBypassSnaplockEnterpriseRetention())
             {
                 context.Writer.WritePropertyName("BypassSnaplockEnterpriseRetention");
-                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention.Value);
+                context.Writer.WriteBooleanValue(requestObject.BypassSnaplockEnterpriseRetention.Value);
             }
 
             if(requestObject.IsSetFinalBackupTags())
             {
                 context.Writer.WritePropertyName("FinalBackupTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFinalBackupTagsListValue in requestObject.FinalBackupTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectFinalBackupTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSkipFinalBackup())
             {
                 context.Writer.WritePropertyName("SkipFinalBackup");
-                context.Writer.Write(requestObject.SkipFinalBackup.Value);
+                context.Writer.WriteBooleanValue(requestObject.SkipFinalBackup.Value);
             }
 
         }

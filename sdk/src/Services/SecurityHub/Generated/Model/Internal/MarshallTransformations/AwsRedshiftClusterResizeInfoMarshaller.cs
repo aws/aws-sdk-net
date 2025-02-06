@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCancelResize())
             {
                 context.Writer.WritePropertyName("AllowCancelResize");
-                context.Writer.Write(requestObject.AllowCancelResize.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowCancelResize.Value);
             }
 
             if(requestObject.IsSetResizeType())
             {
                 context.Writer.WritePropertyName("ResizeType");
-                context.Writer.Write(requestObject.ResizeType);
+                context.Writer.WriteStringValue(requestObject.ResizeType);
             }
 
         }

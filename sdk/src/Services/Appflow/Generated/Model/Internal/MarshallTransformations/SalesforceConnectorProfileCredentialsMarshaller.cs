@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessToken())
             {
                 context.Writer.WritePropertyName("accessToken");
-                context.Writer.Write(requestObject.AccessToken);
+                context.Writer.WriteStringValue(requestObject.AccessToken);
             }
 
             if(requestObject.IsSetClientCredentialsArn())
             {
                 context.Writer.WritePropertyName("clientCredentialsArn");
-                context.Writer.Write(requestObject.ClientCredentialsArn);
+                context.Writer.WriteStringValue(requestObject.ClientCredentialsArn);
             }
 
             if(requestObject.IsSetJwtToken())
             {
                 context.Writer.WritePropertyName("jwtToken");
-                context.Writer.Write(requestObject.JwtToken);
+                context.Writer.WriteStringValue(requestObject.JwtToken);
             }
 
             if(requestObject.IsSetOAuth2GrantType())
             {
                 context.Writer.WritePropertyName("oAuth2GrantType");
-                context.Writer.Write(requestObject.OAuth2GrantType);
+                context.Writer.WriteStringValue(requestObject.OAuth2GrantType);
             }
 
             if(requestObject.IsSetOAuthRequest())
             {
                 context.Writer.WritePropertyName("oAuthRequest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectorOAuthRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuthRequest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRefreshToken())
             {
                 context.Writer.WritePropertyName("refreshToken");
-                context.Writer.Write(requestObject.RefreshToken);
+                context.Writer.WriteStringValue(requestObject.RefreshToken);
             }
 
         }

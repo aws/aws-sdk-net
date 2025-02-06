@@ -31,9 +31,9 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataAccessors operation.
-    /// Lists the data accessors for a Q Business application. This operation returns a paginated
-    /// list of data accessor summaries, including the friendly name, unique identifier, ARN,
-    /// associated IAM role, and creation/update timestamps for each data accessor.
+    /// Lists the data accessors for a Amazon Q Business application. This operation returns
+    /// a paginated list of data accessor summaries, including the friendly name, unique identifier,
+    /// ARN, associated IAM role, and creation/update timestamps for each data accessor.
     /// </summary>
     public partial class ListDataAccessorsRequest : AmazonQBusinessRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeletionCharacter())
             {
                 context.Writer.WritePropertyName("deletionCharacter");
-                context.Writer.Write(requestObject.DeletionCharacter);
+                context.Writer.WriteStringValue(requestObject.DeletionCharacter);
             }
 
             if(requestObject.IsSetEndCharacter())
             {
                 context.Writer.WritePropertyName("endCharacter");
-                context.Writer.Write(requestObject.EndCharacter);
+                context.Writer.WriteStringValue(requestObject.EndCharacter);
             }
 
             if(requestObject.IsSetEndTimeoutMs())
             {
                 context.Writer.WritePropertyName("endTimeoutMs");
-                context.Writer.Write(requestObject.EndTimeoutMs.Value);
+                context.Writer.WriteNumberValue(requestObject.EndTimeoutMs.Value);
             }
 
             if(requestObject.IsSetMaxLength())
             {
                 context.Writer.WritePropertyName("maxLength");
-                context.Writer.Write(requestObject.MaxLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLength.Value);
             }
 
         }

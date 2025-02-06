@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDisplayName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("DisplayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetFirstName())
-                    {
-                        context.Writer.WritePropertyName("FirstName");
-                        context.Writer.Write(publicRequest.FirstName);
-                    }
-
-                    if(publicRequest.IsSetHiddenFromGlobalAddressList())
-                    {
-                        context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
-                        context.Writer.Write(publicRequest.HiddenFromGlobalAddressList.Value);
-                    }
-
-                    if(publicRequest.IsSetIdentityProviderUserId())
-                    {
-                        context.Writer.WritePropertyName("IdentityProviderUserId");
-                        context.Writer.Write(publicRequest.IdentityProviderUserId);
-                    }
-
-                    if(publicRequest.IsSetLastName())
-                    {
-                        context.Writer.WritePropertyName("LastName");
-                        context.Writer.Write(publicRequest.LastName);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOrganizationId())
-                    {
-                        context.Writer.WritePropertyName("OrganizationId");
-                        context.Writer.Write(publicRequest.OrganizationId);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("Password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DisplayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
             }
+
+            if(publicRequest.IsSetFirstName())
+            {
+                context.Writer.WritePropertyName("FirstName");
+                context.Writer.WriteStringValue(publicRequest.FirstName);
+            }
+
+            if(publicRequest.IsSetHiddenFromGlobalAddressList())
+            {
+                context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                context.Writer.WriteBooleanValue(publicRequest.HiddenFromGlobalAddressList.Value);
+            }
+
+            if(publicRequest.IsSetIdentityProviderUserId())
+            {
+                context.Writer.WritePropertyName("IdentityProviderUserId");
+                context.Writer.WriteStringValue(publicRequest.IdentityProviderUserId);
+            }
+
+            if(publicRequest.IsSetLastName())
+            {
+                context.Writer.WritePropertyName("LastName");
+                context.Writer.WriteStringValue(publicRequest.LastName);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOrganizationId())
+            {
+                context.Writer.WritePropertyName("OrganizationId");
+                context.Writer.WriteStringValue(publicRequest.OrganizationId);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("Password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

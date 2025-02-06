@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchDomainException operation
     /// </summary>  
-    public class NoSuchDomainExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchDomainException, XmlUnmarshallerContext>
+    public class NoSuchDomainExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchDomainException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

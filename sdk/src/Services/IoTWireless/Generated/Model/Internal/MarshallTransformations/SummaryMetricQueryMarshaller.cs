@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationPeriod())
             {
                 context.Writer.WritePropertyName("AggregationPeriod");
-                context.Writer.Write(requestObject.AggregationPeriod);
+                context.Writer.WriteStringValue(requestObject.AggregationPeriod);
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");
-                context.Writer.Write(requestObject.EndTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndTimestamp.Value)));
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetQueryId())
             {
                 context.Writer.WritePropertyName("QueryId");
-                context.Writer.Write(requestObject.QueryId);
+                context.Writer.WriteStringValue(requestObject.QueryId);
             }
 
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.Write(requestObject.StartTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTimestamp.Value)));
             }
 
         }

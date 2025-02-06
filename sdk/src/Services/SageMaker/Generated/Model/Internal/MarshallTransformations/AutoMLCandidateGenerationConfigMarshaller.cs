@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithmsConfig())
             {
                 context.Writer.WritePropertyName("AlgorithmsConfig");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlgorithmsConfigListValue in requestObject.AlgorithmsConfig)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AutoMLAlgorithmConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectAlgorithmsConfigListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFeatureSpecificationS3Uri())
             {
                 context.Writer.WritePropertyName("FeatureSpecificationS3Uri");
-                context.Writer.Write(requestObject.FeatureSpecificationS3Uri);
+                context.Writer.WriteStringValue(requestObject.FeatureSpecificationS3Uri);
             }
 
         }

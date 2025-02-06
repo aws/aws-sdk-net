@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLaunchOrder())
             {
                 context.Writer.WritePropertyName("launchOrder");
-                context.Writer.Write(requestObject.LaunchOrder.Value);
+                context.Writer.WriteNumberValue(requestObject.LaunchOrder.Value);
             }
 
             if(requestObject.IsSetServerGroupId())
             {
                 context.Writer.WritePropertyName("serverGroupId");
-                context.Writer.Write(requestObject.ServerGroupId);
+                context.Writer.WriteStringValue(requestObject.ServerGroupId);
             }
 
             if(requestObject.IsSetServerLaunchConfigurations())
             {
                 context.Writer.WritePropertyName("serverLaunchConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServerLaunchConfigurationsListValue in requestObject.ServerLaunchConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServerLaunchConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerLaunchConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

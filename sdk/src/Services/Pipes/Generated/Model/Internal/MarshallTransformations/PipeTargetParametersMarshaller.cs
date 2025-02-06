@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,139 +49,139 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchJobParameters())
             {
                 context.Writer.WritePropertyName("BatchJobParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetBatchJobParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.BatchJobParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchLogsParameters())
             {
                 context.Writer.WritePropertyName("CloudWatchLogsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetCloudWatchLogsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLogsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEcsTaskParameters())
             {
                 context.Writer.WritePropertyName("EcsTaskParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetEcsTaskParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EcsTaskParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventBridgeEventBusParameters())
             {
                 context.Writer.WritePropertyName("EventBridgeEventBusParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetEventBridgeEventBusParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridgeEventBusParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpParameters())
             {
                 context.Writer.WritePropertyName("HttpParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetHttpParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputTemplate())
             {
                 context.Writer.WritePropertyName("InputTemplate");
-                context.Writer.Write(requestObject.InputTemplate);
+                context.Writer.WriteStringValue(requestObject.InputTemplate);
             }
 
             if(requestObject.IsSetKinesisStreamParameters())
             {
                 context.Writer.WritePropertyName("KinesisStreamParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetKinesisStreamParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisStreamParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaFunctionParameters())
             {
                 context.Writer.WritePropertyName("LambdaFunctionParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetLambdaFunctionParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaFunctionParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftDataParameters())
             {
                 context.Writer.WritePropertyName("RedshiftDataParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetRedshiftDataParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftDataParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSageMakerPipelineParameters())
             {
                 context.Writer.WritePropertyName("SageMakerPipelineParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetSageMakerPipelineParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SageMakerPipelineParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqsQueueParameters())
             {
                 context.Writer.WritePropertyName("SqsQueueParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetSqsQueueParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqsQueueParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStepFunctionStateMachineParameters())
             {
                 context.Writer.WritePropertyName("StepFunctionStateMachineParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetStateMachineParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.StepFunctionStateMachineParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestreamParameters())
             {
                 context.Writer.WritePropertyName("TimestreamParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeTargetTimestreamParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimestreamParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

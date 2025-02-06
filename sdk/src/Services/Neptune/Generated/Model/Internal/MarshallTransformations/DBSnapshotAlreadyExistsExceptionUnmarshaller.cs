@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSnapshotAlreadyExistsException operation
     /// </summary>  
-    public class DBSnapshotAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSnapshotAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBSnapshotAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSnapshotAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

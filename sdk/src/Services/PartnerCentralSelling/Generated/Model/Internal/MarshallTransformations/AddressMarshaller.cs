@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetCountryCode())
             {
                 context.Writer.WritePropertyName("CountryCode");
-                context.Writer.Write(requestObject.CountryCode);
+                context.Writer.WriteStringValue(requestObject.CountryCode);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetStateOrRegion())
             {
                 context.Writer.WritePropertyName("StateOrRegion");
-                context.Writer.Write(requestObject.StateOrRegion);
+                context.Writer.WriteStringValue(requestObject.StateOrRegion);
             }
 
             if(requestObject.IsSetStreetAddress())
             {
                 context.Writer.WritePropertyName("StreetAddress");
-                context.Writer.Write(requestObject.StreetAddress);
+                context.Writer.WriteStringValue(requestObject.StreetAddress);
             }
 
         }

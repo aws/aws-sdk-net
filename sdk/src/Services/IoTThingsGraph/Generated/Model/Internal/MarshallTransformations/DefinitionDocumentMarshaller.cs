@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLanguage())
             {
                 context.Writer.WritePropertyName("language");
-                context.Writer.Write(requestObject.Language);
+                context.Writer.WriteStringValue(requestObject.Language);
             }
 
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteStringValue(requestObject.Text);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerVoiceActivity Object
     /// </summary>  
-    public class CustomerVoiceActivityUnmarshaller : IUnmarshaller<CustomerVoiceActivity, XmlUnmarshallerContext>, IUnmarshaller<CustomerVoiceActivity, JsonUnmarshallerContext>
+    public class CustomerVoiceActivityUnmarshaller : IJsonUnmarshaller<CustomerVoiceActivity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerVoiceActivity IUnmarshaller<CustomerVoiceActivity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerVoiceActivity Unmarshall(JsonUnmarshallerContext context)
+        public CustomerVoiceActivity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerVoiceActivity unmarshalledObject = new CustomerVoiceActivity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("GreetingEndTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.GreetingEndTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GreetingEndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GreetingStartTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.GreetingStartTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GreetingStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

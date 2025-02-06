@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScheduledQueryRunSummary Object
     /// </summary>  
-    public class ScheduledQueryRunSummaryUnmarshaller : IUnmarshaller<ScheduledQueryRunSummary, XmlUnmarshallerContext>, IUnmarshaller<ScheduledQueryRunSummary, JsonUnmarshallerContext>
+    public class ScheduledQueryRunSummaryUnmarshaller : IJsonUnmarshaller<ScheduledQueryRunSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScheduledQueryRunSummary IUnmarshaller<ScheduledQueryRunSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduledQueryRunSummary Unmarshall(JsonUnmarshallerContext context)
+        public ScheduledQueryRunSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScheduledQueryRunSummary unmarshalledObject = new ScheduledQueryRunSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ErrorReportLocation", targetDepth))
                 {
                     var unmarshaller = ErrorReportLocationUnmarshaller.Instance;
-                    unmarshalledObject.ErrorReportLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorReportLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionStats", targetDepth))
                 {
                     var unmarshaller = ExecutionStatsUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionStats = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvocationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryInsightsResponse", targetDepth))
                 {
                     var unmarshaller = ScheduledQueryInsightsResponseUnmarshaller.Instance;
-                    unmarshalledObject.QueryInsightsResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryInsightsResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RunStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TriggerTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TriggerTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TriggerTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

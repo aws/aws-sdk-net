@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property FlowContentSha256. 
         /// <para>
-        /// Indicates the checksum value of the flow content.
+        /// Indicates the checksum value of the latest published flow content.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

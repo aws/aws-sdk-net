@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredential())
             {
                 context.Writer.WritePropertyName("Credential");
-                context.Writer.Write(requestObject.Credential);
+                context.Writer.WriteStringValue(requestObject.Credential);
             }
 
             if(requestObject.IsSetCredentialProvider())
             {
                 context.Writer.WritePropertyName("CredentialProvider");
-                context.Writer.Write(requestObject.CredentialProvider);
+                context.Writer.WriteStringValue(requestObject.CredentialProvider);
             }
 
         }

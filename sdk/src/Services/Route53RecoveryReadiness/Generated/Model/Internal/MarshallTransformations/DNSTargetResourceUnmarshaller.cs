@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DNSTargetResource Object
     /// </summary>  
-    public class DNSTargetResourceUnmarshaller : IUnmarshaller<DNSTargetResource, XmlUnmarshallerContext>, IUnmarshaller<DNSTargetResource, JsonUnmarshallerContext>
+    public class DNSTargetResourceUnmarshaller : IJsonUnmarshaller<DNSTargetResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DNSTargetResource IUnmarshaller<DNSTargetResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DNSTargetResource Unmarshall(JsonUnmarshallerContext context)
+        public DNSTargetResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DNSTargetResource unmarshalledObject = new DNSTargetResource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hostedZoneArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostedZoneArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostedZoneArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetResource", targetDepth))
                 {
                     var unmarshaller = TargetResourceUnmarshaller.Instance;
-                    unmarshalledObject.TargetResource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

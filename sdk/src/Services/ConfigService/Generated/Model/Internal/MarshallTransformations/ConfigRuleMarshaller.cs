@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigRuleArn())
             {
                 context.Writer.WritePropertyName("ConfigRuleArn");
-                context.Writer.Write(requestObject.ConfigRuleArn);
+                context.Writer.WriteStringValue(requestObject.ConfigRuleArn);
             }
 
             if(requestObject.IsSetConfigRuleId())
             {
                 context.Writer.WritePropertyName("ConfigRuleId");
-                context.Writer.Write(requestObject.ConfigRuleId);
+                context.Writer.WriteStringValue(requestObject.ConfigRuleId);
             }
 
             if(requestObject.IsSetConfigRuleName())
             {
                 context.Writer.WritePropertyName("ConfigRuleName");
-                context.Writer.Write(requestObject.ConfigRuleName);
+                context.Writer.WriteStringValue(requestObject.ConfigRuleName);
             }
 
             if(requestObject.IsSetConfigRuleState())
             {
                 context.Writer.WritePropertyName("ConfigRuleState");
-                context.Writer.Write(requestObject.ConfigRuleState);
+                context.Writer.WriteStringValue(requestObject.ConfigRuleState);
             }
 
             if(requestObject.IsSetCreatedBy())
             {
                 context.Writer.WritePropertyName("CreatedBy");
-                context.Writer.Write(requestObject.CreatedBy);
+                context.Writer.WriteStringValue(requestObject.CreatedBy);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEvaluationModes())
             {
                 context.Writer.WritePropertyName("EvaluationModes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEvaluationModesListValue in requestObject.EvaluationModes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EvaluationModeConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectEvaluationModesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputParameters())
             {
                 context.Writer.WritePropertyName("InputParameters");
-                context.Writer.Write(requestObject.InputParameters);
+                context.Writer.WriteStringValue(requestObject.InputParameters);
             }
 
             if(requestObject.IsSetMaximumExecutionFrequency())
             {
                 context.Writer.WritePropertyName("MaximumExecutionFrequency");
-                context.Writer.Write(requestObject.MaximumExecutionFrequency);
+                context.Writer.WriteStringValue(requestObject.MaximumExecutionFrequency);
             }
 
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("Scope");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScopeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scope, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyAlreadyDisabledException operation
     /// </summary>  
-    public class SnapshotCopyAlreadyDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotCopyAlreadyDisabledException, XmlUnmarshallerContext>
+    public class SnapshotCopyAlreadyDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotCopyAlreadyDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

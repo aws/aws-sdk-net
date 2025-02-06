@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultRetention())
             {
                 context.Writer.WritePropertyName("DefaultRetention");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetentionPeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultRetention, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumRetention())
             {
                 context.Writer.WritePropertyName("MaximumRetention");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetentionPeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaximumRetention, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinimumRetention())
             {
                 context.Writer.WritePropertyName("MinimumRetention");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetentionPeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinimumRetention, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

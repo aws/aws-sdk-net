@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndOffsetMillis())
             {
                 context.Writer.WritePropertyName("EndOffsetMillis");
-                context.Writer.Write(requestObject.EndOffsetMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.EndOffsetMillis.Value);
             }
 
             if(requestObject.IsSetStartOffsetMillis())
             {
                 context.Writer.WritePropertyName("StartOffsetMillis");
-                context.Writer.Write(requestObject.StartOffsetMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.StartOffsetMillis.Value);
             }
 
         }

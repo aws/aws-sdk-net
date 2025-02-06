@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BlueGreenDeploymentAlreadyExistsException operation
     /// </summary>  
-    public class BlueGreenDeploymentAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<BlueGreenDeploymentAlreadyExistsException, XmlUnmarshallerContext>
+    public class BlueGreenDeploymentAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BlueGreenDeploymentAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

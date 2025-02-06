@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrateClass())
             {
                 context.Writer.WritePropertyName("bitrateClass");
-                context.Writer.Write(requestObject.BitrateClass);
+                context.Writer.WriteStringValue(requestObject.BitrateClass);
             }
 
             if(requestObject.IsSetCodecProfile())
             {
                 context.Writer.WritePropertyName("codecProfile");
-                context.Writer.Write(requestObject.CodecProfile);
+                context.Writer.WriteStringValue(requestObject.CodecProfile);
             }
 
             if(requestObject.IsSetFlickerAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("flickerAdaptiveQuantization");
-                context.Writer.Write(requestObject.FlickerAdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.FlickerAdaptiveQuantization);
             }
 
             if(requestObject.IsSetGopBReference())
             {
                 context.Writer.WritePropertyName("gopBReference");
-                context.Writer.Write(requestObject.GopBReference);
+                context.Writer.WriteStringValue(requestObject.GopBReference);
             }
 
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
-                context.Writer.Write(requestObject.GopClosedCadence.Value);
+                context.Writer.WriteNumberValue(requestObject.GopClosedCadence.Value);
             }
 
             if(requestObject.IsSetHrdBufferSize())
             {
                 context.Writer.WritePropertyName("hrdBufferSize");
-                context.Writer.Write(requestObject.HrdBufferSize.Value);
+                context.Writer.WriteNumberValue(requestObject.HrdBufferSize.Value);
             }
 
             if(requestObject.IsSetQualityTuningLevel())
             {
                 context.Writer.WritePropertyName("qualityTuningLevel");
-                context.Writer.Write(requestObject.QualityTuningLevel);
+                context.Writer.WriteStringValue(requestObject.QualityTuningLevel);
             }
 
             if(requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
-                context.Writer.Write(requestObject.Slices.Value);
+                context.Writer.WriteNumberValue(requestObject.Slices.Value);
             }
 
         }

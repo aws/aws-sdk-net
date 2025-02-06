@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -63,159 +66,164 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessBasedEnumeration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessBasedEnumeration())
-                    {
-                        context.Writer.WritePropertyName("AccessBasedEnumeration");
-                        context.Writer.Write(publicRequest.AccessBasedEnumeration.Value);
-                    }
-
-                    if(publicRequest.IsSetAdminUserList())
-                    {
-                        context.Writer.WritePropertyName("AdminUserList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdminUserListListValue in publicRequest.AdminUserList)
-                        {
-                                context.Writer.Write(publicRequestAdminUserListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuditDestinationARN())
-                    {
-                        context.Writer.WritePropertyName("AuditDestinationARN");
-                        context.Writer.Write(publicRequest.AuditDestinationARN);
-                    }
-
-                    if(publicRequest.IsSetCacheAttributes())
-                    {
-                        context.Writer.WritePropertyName("CacheAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CacheAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CacheAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCaseSensitivity())
-                    {
-                        context.Writer.WritePropertyName("CaseSensitivity");
-                        context.Writer.Write(publicRequest.CaseSensitivity);
-                    }
-
-                    if(publicRequest.IsSetDefaultStorageClass())
-                    {
-                        context.Writer.WritePropertyName("DefaultStorageClass");
-                        context.Writer.Write(publicRequest.DefaultStorageClass);
-                    }
-
-                    if(publicRequest.IsSetEncryptionType())
-                    {
-                        context.Writer.WritePropertyName("EncryptionType");
-                        context.Writer.Write(publicRequest.EncryptionType);
-                    }
-
-                    if(publicRequest.IsSetFileShareARN())
-                    {
-                        context.Writer.WritePropertyName("FileShareARN");
-                        context.Writer.Write(publicRequest.FileShareARN);
-                    }
-
-                    if(publicRequest.IsSetFileShareName())
-                    {
-                        context.Writer.WritePropertyName("FileShareName");
-                        context.Writer.Write(publicRequest.FileShareName);
-                    }
-
-                    if(publicRequest.IsSetGuessMIMETypeEnabled())
-                    {
-                        context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                        context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetInvalidUserList())
-                    {
-                        context.Writer.WritePropertyName("InvalidUserList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInvalidUserListListValue in publicRequest.InvalidUserList)
-                        {
-                                context.Writer.Write(publicRequestInvalidUserListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKMSEncrypted())
-                    {
-                        context.Writer.WritePropertyName("KMSEncrypted");
-                        context.Writer.Write(publicRequest.KMSEncrypted.Value);
-                    }
-
-                    if(publicRequest.IsSetKMSKey())
-                    {
-                        context.Writer.WritePropertyName("KMSKey");
-                        context.Writer.Write(publicRequest.KMSKey);
-                    }
-
-                    if(publicRequest.IsSetNotificationPolicy())
-                    {
-                        context.Writer.WritePropertyName("NotificationPolicy");
-                        context.Writer.Write(publicRequest.NotificationPolicy);
-                    }
-
-                    if(publicRequest.IsSetObjectACL())
-                    {
-                        context.Writer.WritePropertyName("ObjectACL");
-                        context.Writer.Write(publicRequest.ObjectACL);
-                    }
-
-                    if(publicRequest.IsSetOplocksEnabled())
-                    {
-                        context.Writer.WritePropertyName("OplocksEnabled");
-                        context.Writer.Write(publicRequest.OplocksEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetReadOnly())
-                    {
-                        context.Writer.WritePropertyName("ReadOnly");
-                        context.Writer.Write(publicRequest.ReadOnly.Value);
-                    }
-
-                    if(publicRequest.IsSetRequesterPays())
-                    {
-                        context.Writer.WritePropertyName("RequesterPays");
-                        context.Writer.Write(publicRequest.RequesterPays.Value);
-                    }
-
-                    if(publicRequest.IsSetSMBACLEnabled())
-                    {
-                        context.Writer.WritePropertyName("SMBACLEnabled");
-                        context.Writer.Write(publicRequest.SMBACLEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetValidUserList())
-                    {
-                        context.Writer.WritePropertyName("ValidUserList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestValidUserListListValue in publicRequest.ValidUserList)
-                        {
-                                context.Writer.Write(publicRequestValidUserListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessBasedEnumeration");
+                context.Writer.WriteBooleanValue(publicRequest.AccessBasedEnumeration.Value);
             }
+
+            if(publicRequest.IsSetAdminUserList())
+            {
+                context.Writer.WritePropertyName("AdminUserList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdminUserListListValue in publicRequest.AdminUserList)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdminUserListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAuditDestinationARN())
+            {
+                context.Writer.WritePropertyName("AuditDestinationARN");
+                context.Writer.WriteStringValue(publicRequest.AuditDestinationARN);
+            }
+
+            if(publicRequest.IsSetCacheAttributes())
+            {
+                context.Writer.WritePropertyName("CacheAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CacheAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CacheAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCaseSensitivity())
+            {
+                context.Writer.WritePropertyName("CaseSensitivity");
+                context.Writer.WriteStringValue(publicRequest.CaseSensitivity);
+            }
+
+            if(publicRequest.IsSetDefaultStorageClass())
+            {
+                context.Writer.WritePropertyName("DefaultStorageClass");
+                context.Writer.WriteStringValue(publicRequest.DefaultStorageClass);
+            }
+
+            if(publicRequest.IsSetEncryptionType())
+            {
+                context.Writer.WritePropertyName("EncryptionType");
+                context.Writer.WriteStringValue(publicRequest.EncryptionType);
+            }
+
+            if(publicRequest.IsSetFileShareARN())
+            {
+                context.Writer.WritePropertyName("FileShareARN");
+                context.Writer.WriteStringValue(publicRequest.FileShareARN);
+            }
+
+            if(publicRequest.IsSetFileShareName())
+            {
+                context.Writer.WritePropertyName("FileShareName");
+                context.Writer.WriteStringValue(publicRequest.FileShareName);
+            }
+
+            if(publicRequest.IsSetGuessMIMETypeEnabled())
+            {
+                context.Writer.WritePropertyName("GuessMIMETypeEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.GuessMIMETypeEnabled.Value);
+            }
+
+            if(publicRequest.IsSetInvalidUserList())
+            {
+                context.Writer.WritePropertyName("InvalidUserList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInvalidUserListListValue in publicRequest.InvalidUserList)
+                {
+                        context.Writer.WriteStringValue(publicRequestInvalidUserListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetKMSEncrypted())
+            {
+                context.Writer.WritePropertyName("KMSEncrypted");
+                context.Writer.WriteBooleanValue(publicRequest.KMSEncrypted.Value);
+            }
+
+            if(publicRequest.IsSetKMSKey())
+            {
+                context.Writer.WritePropertyName("KMSKey");
+                context.Writer.WriteStringValue(publicRequest.KMSKey);
+            }
+
+            if(publicRequest.IsSetNotificationPolicy())
+            {
+                context.Writer.WritePropertyName("NotificationPolicy");
+                context.Writer.WriteStringValue(publicRequest.NotificationPolicy);
+            }
+
+            if(publicRequest.IsSetObjectACL())
+            {
+                context.Writer.WritePropertyName("ObjectACL");
+                context.Writer.WriteStringValue(publicRequest.ObjectACL);
+            }
+
+            if(publicRequest.IsSetOplocksEnabled())
+            {
+                context.Writer.WritePropertyName("OplocksEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.OplocksEnabled.Value);
+            }
+
+            if(publicRequest.IsSetReadOnly())
+            {
+                context.Writer.WritePropertyName("ReadOnly");
+                context.Writer.WriteBooleanValue(publicRequest.ReadOnly.Value);
+            }
+
+            if(publicRequest.IsSetRequesterPays())
+            {
+                context.Writer.WritePropertyName("RequesterPays");
+                context.Writer.WriteBooleanValue(publicRequest.RequesterPays.Value);
+            }
+
+            if(publicRequest.IsSetSMBACLEnabled())
+            {
+                context.Writer.WritePropertyName("SMBACLEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SMBACLEnabled.Value);
+            }
+
+            if(publicRequest.IsSetValidUserList())
+            {
+                context.Writer.WritePropertyName("ValidUserList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestValidUserListListValue in publicRequest.ValidUserList)
+                {
+                        context.Writer.WriteStringValue(publicRequestValidUserListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

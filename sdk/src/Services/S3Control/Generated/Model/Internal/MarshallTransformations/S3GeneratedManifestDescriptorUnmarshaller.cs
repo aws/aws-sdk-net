@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3GeneratedManifestDescriptor Object
     /// </summary>  
-    public class S3GeneratedManifestDescriptorUnmarshaller : IUnmarshaller<S3GeneratedManifestDescriptor, XmlUnmarshallerContext>, IUnmarshaller<S3GeneratedManifestDescriptor, JsonUnmarshallerContext>
+    public class S3GeneratedManifestDescriptorUnmarshaller : IXmlUnmarshaller<S3GeneratedManifestDescriptor, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3GeneratedManifestDescriptor Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static S3GeneratedManifestDescriptorUnmarshaller _instance = new S3GeneratedManifestDescriptorUnmarshaller();        
 
         /// <summary>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -53,24 +51,24 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("LatencyInMilliseconds");
                 if(StringUtils.IsSpecialFloatValue(requestObject.LatencyInMilliseconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LatencyInMilliseconds.Value);
+                    context.Writer.WriteNumberValue(requestObject.LatencyInMilliseconds.Value);
                 }
             }
 
             if(requestObject.IsSetPlayerId())
             {
                 context.Writer.WritePropertyName("PlayerId");
-                context.Writer.Write(requestObject.PlayerId);
+                context.Writer.WriteStringValue(requestObject.PlayerId);
             }
 
             if(requestObject.IsSetRegionIdentifier())
             {
                 context.Writer.WritePropertyName("RegionIdentifier");
-                context.Writer.Write(requestObject.RegionIdentifier);
+                context.Writer.WriteStringValue(requestObject.RegionIdentifier);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFirewallPolicy())
             {
                 context.Writer.WritePropertyName("FirewallPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirewallPolicyDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FirewallPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirewallPolicyArn())
             {
                 context.Writer.WritePropertyName("FirewallPolicyArn");
-                context.Writer.Write(requestObject.FirewallPolicyArn);
+                context.Writer.WriteStringValue(requestObject.FirewallPolicyArn);
             }
 
             if(requestObject.IsSetFirewallPolicyId())
             {
                 context.Writer.WritePropertyName("FirewallPolicyId");
-                context.Writer.Write(requestObject.FirewallPolicyId);
+                context.Writer.WriteStringValue(requestObject.FirewallPolicyId);
             }
 
             if(requestObject.IsSetFirewallPolicyName())
             {
                 context.Writer.WritePropertyName("FirewallPolicyName");
-                context.Writer.Write(requestObject.FirewallPolicyName);
+                context.Writer.WriteStringValue(requestObject.FirewallPolicyName);
             }
 
         }

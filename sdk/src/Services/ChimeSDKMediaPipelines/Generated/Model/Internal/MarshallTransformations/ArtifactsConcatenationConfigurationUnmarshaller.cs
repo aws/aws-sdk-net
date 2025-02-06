@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ArtifactsConcatenationConfiguration Object
     /// </summary>  
-    public class ArtifactsConcatenationConfigurationUnmarshaller : IUnmarshaller<ArtifactsConcatenationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ArtifactsConcatenationConfiguration, JsonUnmarshallerContext>
+    public class ArtifactsConcatenationConfigurationUnmarshaller : IJsonUnmarshaller<ArtifactsConcatenationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ArtifactsConcatenationConfiguration IUnmarshaller<ArtifactsConcatenationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ArtifactsConcatenationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ArtifactsConcatenationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ArtifactsConcatenationConfiguration unmarshalledObject = new ArtifactsConcatenationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Audio", targetDepth))
                 {
                     var unmarshaller = AudioConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompositedVideo", targetDepth))
                 {
                     var unmarshaller = CompositedVideoConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CompositedVideo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompositedVideo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = ContentConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataChannel", targetDepth))
                 {
                     var unmarshaller = DataChannelConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataChannel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingEvents", targetDepth))
                 {
                     var unmarshaller = MeetingEventsConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MeetingEvents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TranscriptionMessages", targetDepth))
                 {
                     var unmarshaller = TranscriptionMessagesConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptionMessages = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TranscriptionMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Video", targetDepth))
                 {
                     var unmarshaller = VideoConcatenationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

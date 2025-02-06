@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConnectionPropertiesOutput Object
     /// </summary>  
-    public class ConnectionPropertiesOutputUnmarshaller : IUnmarshaller<ConnectionPropertiesOutput, XmlUnmarshallerContext>, IUnmarshaller<ConnectionPropertiesOutput, JsonUnmarshallerContext>
+    public class ConnectionPropertiesOutputUnmarshaller : IJsonUnmarshaller<ConnectionPropertiesOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConnectionPropertiesOutput IUnmarshaller<ConnectionPropertiesOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectionPropertiesOutput Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionPropertiesOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConnectionPropertiesOutput unmarshalledObject = new ConnectionPropertiesOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("athenaProperties", targetDepth))
                 {
                     var unmarshaller = AthenaPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.AthenaProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AthenaProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("glueProperties", targetDepth))
                 {
                     var unmarshaller = GluePropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.GlueProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlueProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hyperPodProperties", targetDepth))
                 {
                     var unmarshaller = HyperPodPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.HyperPodProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HyperPodProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iamProperties", targetDepth))
                 {
                     var unmarshaller = IamPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.IamProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("redshiftProperties", targetDepth))
                 {
                     var unmarshaller = RedshiftPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sparkEmrProperties", targetDepth))
                 {
                     var unmarshaller = SparkEmrPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.SparkEmrProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SparkEmrProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sparkGlueProperties", targetDepth))
                 {
                     var unmarshaller = SparkGluePropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.SparkGlueProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SparkGlueProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

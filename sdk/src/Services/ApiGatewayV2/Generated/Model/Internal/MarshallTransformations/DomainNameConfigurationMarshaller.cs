@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiGatewayDomainName())
             {
                 context.Writer.WritePropertyName("apiGatewayDomainName");
-                context.Writer.Write(requestObject.ApiGatewayDomainName);
+                context.Writer.WriteStringValue(requestObject.ApiGatewayDomainName);
             }
 
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetCertificateName())
             {
                 context.Writer.WritePropertyName("certificateName");
-                context.Writer.Write(requestObject.CertificateName);
+                context.Writer.WriteStringValue(requestObject.CertificateName);
             }
 
             if(requestObject.IsSetCertificateUploadDate())
             {
                 context.Writer.WritePropertyName("certificateUploadDate");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CertificateUploadDate));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CertificateUploadDate));
             }
 
             if(requestObject.IsSetDomainNameStatus())
             {
                 context.Writer.WritePropertyName("domainNameStatus");
-                context.Writer.Write(requestObject.DomainNameStatus);
+                context.Writer.WriteStringValue(requestObject.DomainNameStatus);
             }
 
             if(requestObject.IsSetDomainNameStatusMessage())
             {
                 context.Writer.WritePropertyName("domainNameStatusMessage");
-                context.Writer.Write(requestObject.DomainNameStatusMessage);
+                context.Writer.WriteStringValue(requestObject.DomainNameStatusMessage);
             }
 
             if(requestObject.IsSetEndpointType())
             {
                 context.Writer.WritePropertyName("endpointType");
-                context.Writer.Write(requestObject.EndpointType);
+                context.Writer.WriteStringValue(requestObject.EndpointType);
             }
 
             if(requestObject.IsSetHostedZoneId())
             {
                 context.Writer.WritePropertyName("hostedZoneId");
-                context.Writer.Write(requestObject.HostedZoneId);
+                context.Writer.WriteStringValue(requestObject.HostedZoneId);
             }
 
             if(requestObject.IsSetOwnershipVerificationCertificateArn())
             {
                 context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
-                context.Writer.Write(requestObject.OwnershipVerificationCertificateArn);
+                context.Writer.WriteStringValue(requestObject.OwnershipVerificationCertificateArn);
             }
 
             if(requestObject.IsSetSecurityPolicy())
             {
                 context.Writer.WritePropertyName("securityPolicy");
-                context.Writer.Write(requestObject.SecurityPolicy);
+                context.Writer.WriteStringValue(requestObject.SecurityPolicy);
             }
 
         }

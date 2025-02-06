@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,106 +49,106 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonTranscribeCallAnalyticsProcessorConfiguration())
             {
                 context.Writer.WritePropertyName("AmazonTranscribeCallAnalyticsProcessorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonTranscribeCallAnalyticsProcessorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonTranscribeCallAnalyticsProcessorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAmazonTranscribeProcessorConfiguration())
             {
                 context.Writer.WritePropertyName("AmazonTranscribeProcessorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonTranscribeProcessorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonTranscribeProcessorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisDataStreamSinkConfiguration())
             {
                 context.Writer.WritePropertyName("KinesisDataStreamSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisDataStreamSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisDataStreamSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaFunctionSinkConfiguration())
             {
                 context.Writer.WritePropertyName("LambdaFunctionSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaFunctionSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaFunctionSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3RecordingSinkConfiguration())
             {
                 context.Writer.WritePropertyName("S3RecordingSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3RecordingSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3RecordingSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnsTopicSinkConfiguration())
             {
                 context.Writer.WritePropertyName("SnsTopicSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnsTopicSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnsTopicSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqsQueueSinkConfiguration())
             {
                 context.Writer.WritePropertyName("SqsQueueSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqsQueueSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqsQueueSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetVoiceAnalyticsProcessorConfiguration())
             {
                 context.Writer.WritePropertyName("VoiceAnalyticsProcessorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VoiceAnalyticsProcessorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VoiceAnalyticsProcessorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVoiceEnhancementSinkConfiguration())
             {
                 context.Writer.WritePropertyName("VoiceEnhancementSinkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VoiceEnhancementSinkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VoiceEnhancementSinkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

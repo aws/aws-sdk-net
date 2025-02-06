@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TemplateConfiguration Object
     /// </summary>  
-    public class TemplateConfigurationUnmarshaller : IUnmarshaller<TemplateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TemplateConfiguration, JsonUnmarshallerContext>
+    public class TemplateConfigurationUnmarshaller : IJsonUnmarshaller<TemplateConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TemplateConfiguration IUnmarshaller<TemplateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TemplateConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TemplateConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TemplateConfiguration unmarshalledObject = new TemplateConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EmailTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
-                    unmarshalledObject.EmailTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InAppTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
-                    unmarshalledObject.InAppTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InAppTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PushTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
-                    unmarshalledObject.PushTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PushTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SMSTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
-                    unmarshalledObject.SMSTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SMSTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VoiceTemplate", targetDepth))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
-                    unmarshalledObject.VoiceTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VoiceTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

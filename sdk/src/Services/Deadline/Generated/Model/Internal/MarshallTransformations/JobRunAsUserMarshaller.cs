@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPosix())
             {
                 context.Writer.WritePropertyName("posix");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PosixUserMarshaller.Instance;
                 marshaller.Marshall(requestObject.Posix, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRunAs())
             {
                 context.Writer.WritePropertyName("runAs");
-                context.Writer.Write(requestObject.RunAs);
+                context.Writer.WriteStringValue(requestObject.RunAs);
             }
 
             if(requestObject.IsSetWindows())
             {
                 context.Writer.WritePropertyName("windows");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WindowsUserMarshaller.Instance;
                 marshaller.Marshall(requestObject.Windows, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

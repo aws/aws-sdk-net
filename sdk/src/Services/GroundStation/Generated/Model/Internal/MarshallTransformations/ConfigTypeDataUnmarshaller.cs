@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigTypeData Object
     /// </summary>  
-    public class ConfigTypeDataUnmarshaller : IUnmarshaller<ConfigTypeData, XmlUnmarshallerContext>, IUnmarshaller<ConfigTypeData, JsonUnmarshallerContext>
+    public class ConfigTypeDataUnmarshaller : IJsonUnmarshaller<ConfigTypeData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigTypeData IUnmarshaller<ConfigTypeData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigTypeData Unmarshall(JsonUnmarshallerContext context)
+        public ConfigTypeData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigTypeData unmarshalledObject = new ConfigTypeData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("antennaDownlinkConfig", targetDepth))
                 {
                     var unmarshaller = AntennaDownlinkConfigUnmarshaller.Instance;
-                    unmarshalledObject.AntennaDownlinkConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntennaDownlinkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("antennaDownlinkDemodDecodeConfig", targetDepth))
                 {
                     var unmarshaller = AntennaDownlinkDemodDecodeConfigUnmarshaller.Instance;
-                    unmarshalledObject.AntennaDownlinkDemodDecodeConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntennaDownlinkDemodDecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("antennaUplinkConfig", targetDepth))
                 {
                     var unmarshaller = AntennaUplinkConfigUnmarshaller.Instance;
-                    unmarshalledObject.AntennaUplinkConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntennaUplinkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataflowEndpointConfig", targetDepth))
                 {
                     var unmarshaller = DataflowEndpointConfigUnmarshaller.Instance;
-                    unmarshalledObject.DataflowEndpointConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataflowEndpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3RecordingConfig", targetDepth))
                 {
                     var unmarshaller = S3RecordingConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3RecordingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3RecordingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trackingConfig", targetDepth))
                 {
                     var unmarshaller = TrackingConfigUnmarshaller.Instance;
-                    unmarshalledObject.TrackingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrackingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("uplinkEchoConfig", targetDepth))
                 {
                     var unmarshaller = UplinkEchoConfigUnmarshaller.Instance;
-                    unmarshalledObject.UplinkEchoConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UplinkEchoConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-custom-line-item";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArn())
-                    {
-                        context.Writer.WritePropertyName("Arn");
-                        context.Writer.Write(publicRequest.Arn);
-                    }
-
-                    if(publicRequest.IsSetBillingPeriodRange())
-                    {
-                        context.Writer.WritePropertyName("BillingPeriodRange");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BillingPeriodRange, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetChargeDetails())
-                    {
-                        context.Writer.WritePropertyName("ChargeDetails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateCustomLineItemChargeDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ChargeDetails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Arn");
+                context.Writer.WriteStringValue(publicRequest.Arn);
             }
+
+            if(publicRequest.IsSetBillingPeriodRange())
+            {
+                context.Writer.WritePropertyName("BillingPeriodRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomLineItemBillingPeriodRangeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BillingPeriodRange, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetChargeDetails())
+            {
+                context.Writer.WritePropertyName("ChargeDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateCustomLineItemChargeDetailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ChargeDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

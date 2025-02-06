@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundColor())
             {
                 context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.Write(requestObject.BackgroundColor);
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
             }
 
             if(requestObject.IsSetBackgroundVisibility())
             {
                 context.Writer.WritePropertyName("BackgroundVisibility");
-                context.Writer.Write(requestObject.BackgroundVisibility);
+                context.Writer.WriteStringValue(requestObject.BackgroundVisibility);
             }
 
             if(requestObject.IsSetBorderColor())
             {
                 context.Writer.WritePropertyName("BorderColor");
-                context.Writer.Write(requestObject.BorderColor);
+                context.Writer.WriteStringValue(requestObject.BorderColor);
             }
 
             if(requestObject.IsSetBorderStyle())
             {
                 context.Writer.WritePropertyName("BorderStyle");
-                context.Writer.Write(requestObject.BorderStyle);
+                context.Writer.WriteStringValue(requestObject.BorderStyle);
             }
 
             if(requestObject.IsSetBorderThickness())
             {
                 context.Writer.WritePropertyName("BorderThickness");
-                context.Writer.Write(requestObject.BorderThickness);
+                context.Writer.WriteStringValue(requestObject.BorderThickness);
             }
 
             if(requestObject.IsSetBorderVisibility())
             {
                 context.Writer.WritePropertyName("BorderVisibility");
-                context.Writer.Write(requestObject.BorderVisibility);
+                context.Writer.WriteStringValue(requestObject.BorderVisibility);
             }
 
             if(requestObject.IsSetGutterSpacing())
             {
                 context.Writer.WritePropertyName("GutterSpacing");
-                context.Writer.Write(requestObject.GutterSpacing);
+                context.Writer.WriteStringValue(requestObject.GutterSpacing);
             }
 
             if(requestObject.IsSetGutterVisibility())
             {
                 context.Writer.WritePropertyName("GutterVisibility");
-                context.Writer.Write(requestObject.GutterVisibility);
+                context.Writer.WriteStringValue(requestObject.GutterVisibility);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PanelTitleOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Title, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

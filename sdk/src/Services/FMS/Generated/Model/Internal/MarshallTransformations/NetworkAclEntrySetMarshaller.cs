@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstEntries())
             {
                 context.Writer.WritePropertyName("FirstEntries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFirstEntriesListValue in requestObject.FirstEntries)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NetworkAclEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectFirstEntriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetForceRemediateForFirstEntries())
             {
                 context.Writer.WritePropertyName("ForceRemediateForFirstEntries");
-                context.Writer.Write(requestObject.ForceRemediateForFirstEntries.Value);
+                context.Writer.WriteBooleanValue(requestObject.ForceRemediateForFirstEntries.Value);
             }
 
             if(requestObject.IsSetForceRemediateForLastEntries())
             {
                 context.Writer.WritePropertyName("ForceRemediateForLastEntries");
-                context.Writer.Write(requestObject.ForceRemediateForLastEntries.Value);
+                context.Writer.WriteBooleanValue(requestObject.ForceRemediateForLastEntries.Value);
             }
 
             if(requestObject.IsSetLastEntries())
             {
                 context.Writer.WritePropertyName("LastEntries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastEntriesListValue in requestObject.LastEntries)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NetworkAclEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastEntriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

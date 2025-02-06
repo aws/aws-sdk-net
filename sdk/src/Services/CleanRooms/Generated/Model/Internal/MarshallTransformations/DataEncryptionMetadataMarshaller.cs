@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCleartext())
             {
                 context.Writer.WritePropertyName("allowCleartext");
-                context.Writer.Write(requestObject.AllowCleartext.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowCleartext.Value);
             }
 
             if(requestObject.IsSetAllowDuplicates())
             {
                 context.Writer.WritePropertyName("allowDuplicates");
-                context.Writer.Write(requestObject.AllowDuplicates.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowDuplicates.Value);
             }
 
             if(requestObject.IsSetAllowJoinsOnColumnsWithDifferentNames())
             {
                 context.Writer.WritePropertyName("allowJoinsOnColumnsWithDifferentNames");
-                context.Writer.Write(requestObject.AllowJoinsOnColumnsWithDifferentNames.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowJoinsOnColumnsWithDifferentNames.Value);
             }
 
             if(requestObject.IsSetPreserveNulls())
             {
                 context.Writer.WritePropertyName("preserveNulls");
-                context.Writer.Write(requestObject.PreserveNulls.Value);
+                context.Writer.WriteBooleanValue(requestObject.PreserveNulls.Value);
             }
 
         }

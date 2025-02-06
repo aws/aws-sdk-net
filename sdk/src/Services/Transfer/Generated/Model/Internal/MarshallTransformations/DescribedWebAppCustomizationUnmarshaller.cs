@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DescribedWebAppCustomization Object
     /// </summary>  
-    public class DescribedWebAppCustomizationUnmarshaller : IUnmarshaller<DescribedWebAppCustomization, XmlUnmarshallerContext>, IUnmarshaller<DescribedWebAppCustomization, JsonUnmarshallerContext>
+    public class DescribedWebAppCustomizationUnmarshaller : IJsonUnmarshaller<DescribedWebAppCustomization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DescribedWebAppCustomization IUnmarshaller<DescribedWebAppCustomization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DescribedWebAppCustomization Unmarshall(JsonUnmarshallerContext context)
+        public DescribedWebAppCustomization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DescribedWebAppCustomization unmarshalledObject = new DescribedWebAppCustomization();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FaviconFile", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.FaviconFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FaviconFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogoFile", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.LogoFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogoFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebAppId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

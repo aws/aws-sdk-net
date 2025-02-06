@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowListIds())
             {
                 context.Writer.WritePropertyName("allowListIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowListIdsListValue in requestObject.AllowListIds)
                 {
-                        context.Writer.Write(requestObjectAllowListIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowListIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomDataIdentifierIds())
             {
                 context.Writer.WritePropertyName("customDataIdentifierIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomDataIdentifierIdsListValue in requestObject.CustomDataIdentifierIds)
                 {
-                        context.Writer.Write(requestObjectCustomDataIdentifierIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectCustomDataIdentifierIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetManagedDataIdentifierIds())
             {
                 context.Writer.WritePropertyName("managedDataIdentifierIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectManagedDataIdentifierIdsListValue in requestObject.ManagedDataIdentifierIds)
                 {
-                        context.Writer.Write(requestObjectManagedDataIdentifierIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectManagedDataIdentifierIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

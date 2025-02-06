@@ -30,6 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The structure for details of the VPC Endpoint Service which Firehose uses to create
+    /// a PrivateLink to the database. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -41,7 +45,11 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointServiceName. 
         /// <para>
-        ///  
+        ///  The VPC endpoint service name which Firehose uses to create a PrivateLink to the
+        /// database. The endpoint service must have the Firehose service principle <c>firehose.amazonaws.com</c>
+        /// as an allowed principal on the VPC endpoint service. The VPC endpoint service name
+        /// is a string that looks like <c>com.amazonaws.vpce.&lt;region&gt;.&lt;vpc-endpoint-service-id&gt;</c>.
+        /// 
         /// </para>
         ///  
         /// <para>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckDigitString())
             {
                 context.Writer.WritePropertyName("checkDigitString");
-                context.Writer.Write(requestObject.CheckDigitString);
+                context.Writer.WriteStringValue(requestObject.CheckDigitString);
             }
 
             if(requestObject.IsSetSid())
@@ -59,18 +57,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("sid");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Sid.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Sid.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Sid.Value);
+                    context.Writer.WriteNumberValue(requestObject.Sid.Value);
                 }
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

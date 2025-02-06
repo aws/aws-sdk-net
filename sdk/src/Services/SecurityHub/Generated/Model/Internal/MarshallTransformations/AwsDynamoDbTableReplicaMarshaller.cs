@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlobalSecondaryIndexesListValue in requestObject.GlobalSecondaryIndexes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsDynamoDbTableReplicaGlobalSecondaryIndexMarshaller.Instance;
                     marshaller.Marshall(requestObjectGlobalSecondaryIndexesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKmsMasterKeyId())
             {
                 context.Writer.WritePropertyName("KmsMasterKeyId");
-                context.Writer.Write(requestObject.KmsMasterKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsMasterKeyId);
             }
 
             if(requestObject.IsSetProvisionedThroughputOverride())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughputOverride");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsDynamoDbTableProvisionedThroughputOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughputOverride, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("RegionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetReplicaStatus())
             {
                 context.Writer.WritePropertyName("ReplicaStatus");
-                context.Writer.Write(requestObject.ReplicaStatus);
+                context.Writer.WriteStringValue(requestObject.ReplicaStatus);
             }
 
             if(requestObject.IsSetReplicaStatusDescription())
             {
                 context.Writer.WritePropertyName("ReplicaStatusDescription");
-                context.Writer.Write(requestObject.ReplicaStatusDescription);
+                context.Writer.WriteStringValue(requestObject.ReplicaStatusDescription);
             }
 
         }

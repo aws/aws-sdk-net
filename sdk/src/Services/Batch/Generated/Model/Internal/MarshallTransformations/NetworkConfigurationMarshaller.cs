@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssignPublicIp())
             {
                 context.Writer.WritePropertyName("assignPublicIp");
-                context.Writer.Write(requestObject.AssignPublicIp);
+                context.Writer.WriteStringValue(requestObject.AssignPublicIp);
             }
 
         }

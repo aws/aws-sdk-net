@@ -31,8 +31,8 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventRule operation.
-    /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">EventRule</a>
-    /// that is associated with a specified Notification Configuration.
+    /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">
+    /// <c>EventRule</c> </a> that is associated with a specified <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class CreateEventRuleRequest : AmazonNotificationsRequest
     {
@@ -45,7 +45,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// An additional event pattern used to further filter the events this EventRule receives.
+        /// An additional event pattern used to further filter the events this <c>EventRule</c>
+        /// receives.
         /// </para>
         ///  
         /// <para>
@@ -74,9 +75,9 @@ namespace Amazon.Notifications.Model
         ///  
         /// <para>
         /// Must match one of the valid Amazon EventBridge event types. For example, EC2 Instance
-        /// State-change Notification and AWS CloudWatch Alarm State Change. For more information,
+        /// State-change Notification and Amazon CloudWatch Alarm State Change. For more information,
         /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -95,8 +96,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationConfiguration associated with this
-        /// EventRule.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c> associated
+        /// with this <c>EventRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -115,7 +116,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS Regions that send events to this EventRule.
+        /// A list of Amazon Web Services Regions that send events to this <c>EventRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -138,10 +139,10 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Must match one of the valid EventBridge sources. Only AWS service sourced events are
-        /// supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
-        /// delivery from AWS services</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// Must match one of the valid EventBridge sources. Only Amazon Web Services service
+        /// sourced events are supported. For example, <c>aws.ec2</c> and <c>aws.cloudwatch</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-delivery-level">Event
+        /// delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

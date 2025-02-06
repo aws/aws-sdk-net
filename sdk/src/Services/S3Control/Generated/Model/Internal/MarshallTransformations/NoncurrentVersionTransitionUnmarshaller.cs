@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoncurrentVersionTransition Object
     /// </summary>  
-    public class NoncurrentVersionTransitionUnmarshaller : IUnmarshaller<NoncurrentVersionTransition, XmlUnmarshallerContext>, IUnmarshaller<NoncurrentVersionTransition, JsonUnmarshallerContext>
+    public class NoncurrentVersionTransitionUnmarshaller : IXmlUnmarshaller<NoncurrentVersionTransition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NoncurrentVersionTransition Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static NoncurrentVersionTransitionUnmarshaller _instance = new NoncurrentVersionTransitionUnmarshaller();        
 
         /// <summary>

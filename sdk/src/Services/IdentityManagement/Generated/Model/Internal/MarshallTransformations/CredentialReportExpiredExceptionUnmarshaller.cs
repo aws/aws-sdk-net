@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CredentialReportExpiredException operation
     /// </summary>  
-    public class CredentialReportExpiredExceptionUnmarshaller : IErrorResponseUnmarshaller<CredentialReportExpiredException, XmlUnmarshallerContext>
+    public class CredentialReportExpiredExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CredentialReportExpiredException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

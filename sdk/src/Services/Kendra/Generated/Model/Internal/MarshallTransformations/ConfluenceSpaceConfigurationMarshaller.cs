@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlArchivedSpaces())
             {
                 context.Writer.WritePropertyName("CrawlArchivedSpaces");
-                context.Writer.Write(requestObject.CrawlArchivedSpaces.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlArchivedSpaces.Value);
             }
 
             if(requestObject.IsSetCrawlPersonalSpaces())
             {
                 context.Writer.WritePropertyName("CrawlPersonalSpaces");
-                context.Writer.Write(requestObject.CrawlPersonalSpaces.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlPersonalSpaces.Value);
             }
 
             if(requestObject.IsSetExcludeSpaces())
             {
                 context.Writer.WritePropertyName("ExcludeSpaces");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeSpacesListValue in requestObject.ExcludeSpaces)
                 {
-                        context.Writer.Write(requestObjectExcludeSpacesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeSpacesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeSpaces())
             {
                 context.Writer.WritePropertyName("IncludeSpaces");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeSpacesListValue in requestObject.IncludeSpaces)
                 {
-                        context.Writer.Write(requestObjectIncludeSpacesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeSpacesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSpaceFieldMappings())
             {
                 context.Writer.WritePropertyName("SpaceFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSpaceFieldMappingsListValue in requestObject.SpaceFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfluenceSpaceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSpaceFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ListingItem Object
     /// </summary>  
-    public class ListingItemUnmarshaller : IUnmarshaller<ListingItem, XmlUnmarshallerContext>, IUnmarshaller<ListingItem, JsonUnmarshallerContext>
+    public class ListingItemUnmarshaller : IJsonUnmarshaller<ListingItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ListingItem IUnmarshaller<ListingItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListingItem Unmarshall(JsonUnmarshallerContext context)
+        public ListingItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ListingItem unmarshalledObject = new ListingItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("assetListing", targetDepth))
                 {
                     var unmarshaller = AssetListingUnmarshaller.Instance;
-                    unmarshalledObject.AssetListing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetListing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataProductListing", targetDepth))
                 {
                     var unmarshaller = DataProductListingUnmarshaller.Instance;
-                    unmarshalledObject.DataProductListing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataProductListing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

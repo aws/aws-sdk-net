@@ -31,19 +31,75 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSAMLProvider operation.
-    /// Updates the metadata document for an existing SAML provider resource object.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4</a>.
-    /// </para>
-    ///  </note>
+    /// Updates the metadata document, SAML encryption settings, and private keys for an existing
+    /// SAML provider. To rotate private keys, add your new private key and then remove the
+    /// old key in a separate request.
     /// </summary>
     public partial class UpdateSAMLProviderRequest : AmazonIdentityManagementServiceRequest
     {
+        private string _addPrivateKey;
+        private AssertionEncryptionModeType _assertionEncryptionMode;
+        private string _removePrivateKey;
         private string _samlMetadataDocument;
         private string _samlProviderArn;
+
+        /// <summary>
+        /// Gets and sets the property AddPrivateKey. 
+        /// <para>
+        /// Specifies the new private key from your external identity provider. The private key
+        /// must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML
+        /// assertions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=16384)]
+        public string AddPrivateKey
+        {
+            get { return this._addPrivateKey; }
+            set { this._addPrivateKey = value; }
+        }
+
+        // Check to see if AddPrivateKey property is set
+        internal bool IsSetAddPrivateKey()
+        {
+            return this._addPrivateKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssertionEncryptionMode. 
+        /// <para>
+        /// Specifies the encryption setting for the SAML provider.
+        /// </para>
+        /// </summary>
+        public AssertionEncryptionModeType AssertionEncryptionMode
+        {
+            get { return this._assertionEncryptionMode; }
+            set { this._assertionEncryptionMode = value; }
+        }
+
+        // Check to see if AssertionEncryptionMode property is set
+        internal bool IsSetAssertionEncryptionMode()
+        {
+            return this._assertionEncryptionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemovePrivateKey. 
+        /// <para>
+        /// The Key ID of the private key to remove.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=22, Max=64)]
+        public string RemovePrivateKey
+        {
+            get { return this._removePrivateKey; }
+            set { this._removePrivateKey = value; }
+        }
+
+        // Check to see if RemovePrivateKey property is set
+        internal bool IsSetRemovePrivateKey()
+        {
+            return this._removePrivateKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SAMLMetadataDocument. 
@@ -52,10 +108,10 @@ namespace Amazon.IdentityManagement.Model
         /// document includes the issuer's name, expiration information, and keys that can be
         /// used to validate the SAML authentication response (assertions) that are received from
         /// the IdP. You must generate the metadata document using the identity management software
-        /// that is used as your organization's IdP.
+        /// that is used as your IdP.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1000, Max=10000000)]
+        [AWSProperty(Min=1000, Max=10000000)]
         public string SAMLMetadataDocument
         {
             get { return this._samlMetadataDocument; }

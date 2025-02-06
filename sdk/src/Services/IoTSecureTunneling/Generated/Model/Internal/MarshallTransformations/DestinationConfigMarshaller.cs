@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServices())
             {
                 context.Writer.WritePropertyName("services");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServicesListValue in requestObject.Services)
                 {
-                        context.Writer.Write(requestObjectServicesListValue);
+                        context.Writer.WriteStringValue(requestObjectServicesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThingName())
             {
                 context.Writer.WritePropertyName("thingName");
-                context.Writer.Write(requestObject.ThingName);
+                context.Writer.WriteStringValue(requestObject.ThingName);
             }
 
         }

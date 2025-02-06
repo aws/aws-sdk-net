@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecise())
             {
                 context.Writer.WritePropertyName("Precise");
-                context.Writer.Write(requestObject.Precise.Value);
+                context.Writer.WriteBooleanValue(requestObject.Precise.Value);
             }
 
             if(requestObject.IsSetTimeOffset())
@@ -59,11 +57,11 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("TimeOffset");
                 if(StringUtils.IsSpecialFloatValue(requestObject.TimeOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TimeOffset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.TimeOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TimeOffset.Value);
+                    context.Writer.WriteNumberValue(requestObject.TimeOffset.Value);
                 }
             }
 

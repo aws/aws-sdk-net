@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacityReservationPreference())
             {
                 context.Writer.WritePropertyName("CapacityReservationPreference");
-                context.Writer.Write(requestObject.CapacityReservationPreference);
+                context.Writer.WriteStringValue(requestObject.CapacityReservationPreference);
             }
 
             if(requestObject.IsSetCapacityReservationTarget())
             {
                 context.Writer.WritePropertyName("CapacityReservationTarget");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CapacityReservationTarget, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

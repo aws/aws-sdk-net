@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHyperParameters())
             {
                 context.Writer.WritePropertyName("HyperParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectHyperParametersKvp in requestObject.HyperParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectHyperParametersKvp.Key);
                     var requestObjectHyperParametersValue = requestObjectHyperParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectHyperParametersValue);
+                        context.Writer.WriteStringValue(requestObjectHyperParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputDataConfig())
             {
                 context.Writer.WritePropertyName("InputDataConfig");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputDataConfigListValue in requestObject.InputDataConfig)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ChannelMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputDataConfigListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputDataConfig())
             {
                 context.Writer.WritePropertyName("OutputDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceConfig())
             {
                 context.Writer.WritePropertyName("ResourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStoppingCondition())
             {
                 context.Writer.WritePropertyName("StoppingCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StoppingConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StoppingCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainingInputMode())
             {
                 context.Writer.WritePropertyName("TrainingInputMode");
-                context.Writer.Write(requestObject.TrainingInputMode);
+                context.Writer.WriteStringValue(requestObject.TrainingInputMode);
             }
 
         }

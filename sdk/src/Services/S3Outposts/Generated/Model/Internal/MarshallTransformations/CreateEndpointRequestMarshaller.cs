@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
 {
@@ -61,49 +64,54 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/S3Outposts/CreateEndpoint";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessType())
-                    {
-                        context.Writer.WritePropertyName("AccessType");
-                        context.Writer.Write(publicRequest.AccessType);
-                    }
-
-                    if(publicRequest.IsSetCustomerOwnedIpv4Pool())
-                    {
-                        context.Writer.WritePropertyName("CustomerOwnedIpv4Pool");
-                        context.Writer.Write(publicRequest.CustomerOwnedIpv4Pool);
-                    }
-
-                    if(publicRequest.IsSetOutpostId())
-                    {
-                        context.Writer.WritePropertyName("OutpostId");
-                        context.Writer.Write(publicRequest.OutpostId);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupId())
-                    {
-                        context.Writer.WritePropertyName("SecurityGroupId");
-                        context.Writer.Write(publicRequest.SecurityGroupId);
-                    }
-
-                    if(publicRequest.IsSetSubnetId())
-                    {
-                        context.Writer.WritePropertyName("SubnetId");
-                        context.Writer.Write(publicRequest.SubnetId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessType");
+                context.Writer.WriteStringValue(publicRequest.AccessType);
             }
+
+            if(publicRequest.IsSetCustomerOwnedIpv4Pool())
+            {
+                context.Writer.WritePropertyName("CustomerOwnedIpv4Pool");
+                context.Writer.WriteStringValue(publicRequest.CustomerOwnedIpv4Pool);
+            }
+
+            if(publicRequest.IsSetOutpostId())
+            {
+                context.Writer.WritePropertyName("OutpostId");
+                context.Writer.WriteStringValue(publicRequest.OutpostId);
+            }
+
+            if(publicRequest.IsSetSecurityGroupId())
+            {
+                context.Writer.WritePropertyName("SecurityGroupId");
+                context.Writer.WriteStringValue(publicRequest.SecurityGroupId);
+            }
+
+            if(publicRequest.IsSetSubnetId())
+            {
+                context.Writer.WritePropertyName("SubnetId");
+                context.Writer.WriteStringValue(publicRequest.SubnetId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

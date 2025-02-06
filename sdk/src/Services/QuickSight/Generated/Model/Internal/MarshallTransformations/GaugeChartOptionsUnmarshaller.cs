@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GaugeChartOptions Object
     /// </summary>  
-    public class GaugeChartOptionsUnmarshaller : IUnmarshaller<GaugeChartOptions, XmlUnmarshallerContext>, IUnmarshaller<GaugeChartOptions, JsonUnmarshallerContext>
+    public class GaugeChartOptionsUnmarshaller : IJsonUnmarshaller<GaugeChartOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GaugeChartOptions IUnmarshaller<GaugeChartOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GaugeChartOptions Unmarshall(JsonUnmarshallerContext context)
+        public GaugeChartOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GaugeChartOptions unmarshalledObject = new GaugeChartOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arc", targetDepth))
                 {
                     var unmarshaller = ArcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Arc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ArcAxis", targetDepth))
                 {
                     var unmarshaller = ArcAxisConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ArcAxis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArcAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Comparison", targetDepth))
                 {
                     var unmarshaller = ComparisonConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Comparison = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Comparison = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryValueDisplayType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryValueDisplayType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimaryValueDisplayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryValueFontConfiguration", targetDepth))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryValueFontConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimaryValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

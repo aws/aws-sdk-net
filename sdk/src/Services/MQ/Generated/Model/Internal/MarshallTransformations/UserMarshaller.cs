@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConsoleAccess())
             {
                 context.Writer.WritePropertyName("consoleAccess");
-                context.Writer.Write(requestObject.ConsoleAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.ConsoleAccess.Value);
             }
 
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("groups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupsListValue in requestObject.Groups)
                 {
-                        context.Writer.Write(requestObjectGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetReplicationUser())
             {
                 context.Writer.WritePropertyName("replicationUser");
-                context.Writer.Write(requestObject.ReplicationUser.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReplicationUser.Value);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

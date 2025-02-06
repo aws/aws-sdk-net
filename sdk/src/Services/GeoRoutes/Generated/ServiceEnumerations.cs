@@ -1041,6 +1041,10 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteFerryNoticeCode Other = new RouteFerryNoticeCode("Other");
         /// <summary>
+        /// Constant SeasonalClosure for RouteFerryNoticeCode
+        /// </summary>
+        public static readonly RouteFerryNoticeCode SeasonalClosure = new RouteFerryNoticeCode("SeasonalClosure");
+        /// <summary>
         /// Constant ViolatedAvoidFerry for RouteFerryNoticeCode
         /// </summary>
         public static readonly RouteFerryNoticeCode ViolatedAvoidFerry = new RouteFerryNoticeCode("ViolatedAvoidFerry");
@@ -1312,6 +1316,10 @@ namespace Amazon.GeoRoutes
         /// Constant Car for RouteLegTravelMode
         /// </summary>
         public static readonly RouteLegTravelMode Car = new RouteLegTravelMode("Car");
+        /// <summary>
+        /// Constant CarShuttleTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode CarShuttleTrain = new RouteLegTravelMode("CarShuttleTrain");
         /// <summary>
         /// Constant Ferry for RouteLegTravelMode
         /// </summary>
@@ -3822,6 +3830,56 @@ namespace Amazon.GeoRoutes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WaypointOptimizationClusteringAlgorithm.
+    /// </summary>
+    public class WaypointOptimizationClusteringAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DrivingDistance for WaypointOptimizationClusteringAlgorithm
+        /// </summary>
+        public static readonly WaypointOptimizationClusteringAlgorithm DrivingDistance = new WaypointOptimizationClusteringAlgorithm("DrivingDistance");
+        /// <summary>
+        /// Constant TopologySegment for WaypointOptimizationClusteringAlgorithm
+        /// </summary>
+        public static readonly WaypointOptimizationClusteringAlgorithm TopologySegment = new WaypointOptimizationClusteringAlgorithm("TopologySegment");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WaypointOptimizationClusteringAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WaypointOptimizationClusteringAlgorithm FindValue(string value)
+        {
+            return FindValue<WaypointOptimizationClusteringAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WaypointOptimizationClusteringAlgorithm(string value)
         {
             return FindValue(value);
         }

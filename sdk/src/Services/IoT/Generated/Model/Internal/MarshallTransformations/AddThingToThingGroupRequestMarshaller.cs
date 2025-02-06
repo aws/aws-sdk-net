@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -61,49 +64,54 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/thing-groups/addThingToThingGroup";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetOverrideDynamicGroups())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetOverrideDynamicGroups())
-                    {
-                        context.Writer.WritePropertyName("overrideDynamicGroups");
-                        context.Writer.Write(publicRequest.OverrideDynamicGroups.Value);
-                    }
-
-                    if(publicRequest.IsSetThingArn())
-                    {
-                        context.Writer.WritePropertyName("thingArn");
-                        context.Writer.Write(publicRequest.ThingArn);
-                    }
-
-                    if(publicRequest.IsSetThingGroupArn())
-                    {
-                        context.Writer.WritePropertyName("thingGroupArn");
-                        context.Writer.Write(publicRequest.ThingGroupArn);
-                    }
-
-                    if(publicRequest.IsSetThingGroupName())
-                    {
-                        context.Writer.WritePropertyName("thingGroupName");
-                        context.Writer.Write(publicRequest.ThingGroupName);
-                    }
-
-                    if(publicRequest.IsSetThingName())
-                    {
-                        context.Writer.WritePropertyName("thingName");
-                        context.Writer.Write(publicRequest.ThingName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("overrideDynamicGroups");
+                context.Writer.WriteBooleanValue(publicRequest.OverrideDynamicGroups.Value);
             }
+
+            if(publicRequest.IsSetThingArn())
+            {
+                context.Writer.WritePropertyName("thingArn");
+                context.Writer.WriteStringValue(publicRequest.ThingArn);
+            }
+
+            if(publicRequest.IsSetThingGroupArn())
+            {
+                context.Writer.WritePropertyName("thingGroupArn");
+                context.Writer.WriteStringValue(publicRequest.ThingGroupArn);
+            }
+
+            if(publicRequest.IsSetThingGroupName())
+            {
+                context.Writer.WritePropertyName("thingGroupName");
+                context.Writer.WriteStringValue(publicRequest.ThingGroupName);
+            }
+
+            if(publicRequest.IsSetThingName())
+            {
+                context.Writer.WritePropertyName("thingName");
+                context.Writer.WriteStringValue(publicRequest.ThingName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

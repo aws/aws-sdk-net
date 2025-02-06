@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,116 +49,116 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapabilities())
             {
                 context.Writer.WritePropertyName("Capabilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCapabilitiesListValue in requestObject.Capabilities)
                 {
-                        context.Writer.Write(requestObjectCapabilitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectCapabilitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreationTime())
             {
                 context.Writer.WritePropertyName("CreationTime");
-                context.Writer.Write(requestObject.CreationTime);
+                context.Writer.WriteStringValue(requestObject.CreationTime);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDisableRollback())
             {
                 context.Writer.WritePropertyName("DisableRollback");
-                context.Writer.Write(requestObject.DisableRollback.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableRollback.Value);
             }
 
             if(requestObject.IsSetDriftInformation())
             {
                 context.Writer.WritePropertyName("DriftInformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFormationStackDriftInformationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DriftInformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnableTerminationProtection())
             {
                 context.Writer.WritePropertyName("EnableTerminationProtection");
-                context.Writer.Write(requestObject.EnableTerminationProtection.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableTerminationProtection.Value);
             }
 
             if(requestObject.IsSetLastUpdatedTime())
             {
                 context.Writer.WritePropertyName("LastUpdatedTime");
-                context.Writer.Write(requestObject.LastUpdatedTime);
+                context.Writer.WriteStringValue(requestObject.LastUpdatedTime);
             }
 
             if(requestObject.IsSetNotificationArns())
             {
                 context.Writer.WritePropertyName("NotificationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotificationArnsListValue in requestObject.NotificationArns)
                 {
-                        context.Writer.Write(requestObjectNotificationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectNotificationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputs())
             {
                 context.Writer.WritePropertyName("Outputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputsListValue in requestObject.Outputs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCloudFormationStackOutputsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetStackId())
             {
                 context.Writer.WritePropertyName("StackId");
-                context.Writer.Write(requestObject.StackId);
+                context.Writer.WriteStringValue(requestObject.StackId);
             }
 
             if(requestObject.IsSetStackName())
             {
                 context.Writer.WritePropertyName("StackName");
-                context.Writer.Write(requestObject.StackName);
+                context.Writer.WriteStringValue(requestObject.StackName);
             }
 
             if(requestObject.IsSetStackStatus())
             {
                 context.Writer.WritePropertyName("StackStatus");
-                context.Writer.Write(requestObject.StackStatus);
+                context.Writer.WriteStringValue(requestObject.StackStatus);
             }
 
             if(requestObject.IsSetStackStatusReason())
             {
                 context.Writer.WritePropertyName("StackStatusReason");
-                context.Writer.Write(requestObject.StackStatusReason);
+                context.Writer.WriteStringValue(requestObject.StackStatusReason);
             }
 
             if(requestObject.IsSetTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("TimeoutInMinutes");
-                context.Writer.Write(requestObject.TimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInMinutes.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnSubtotalOptions())
             {
                 context.Writer.WritePropertyName("ColumnSubtotalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SubtotalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColumnSubtotalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumnTotalOptions())
             {
                 context.Writer.WritePropertyName("ColumnTotalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PivotTotalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColumnTotalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowSubtotalOptions())
             {
                 context.Writer.WritePropertyName("RowSubtotalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SubtotalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowSubtotalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRowTotalOptions())
             {
                 context.Writer.WritePropertyName("RowTotalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PivotTotalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowTotalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

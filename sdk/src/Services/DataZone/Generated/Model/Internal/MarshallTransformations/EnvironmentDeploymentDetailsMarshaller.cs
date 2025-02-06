@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentFailureReasons())
             {
                 context.Writer.WritePropertyName("environmentFailureReasons");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentFailureReasonsKvp in requestObject.EnvironmentFailureReasons)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentFailureReasonsKvp.Key);
                     var requestObjectEnvironmentFailureReasonsValue = requestObjectEnvironmentFailureReasonsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectEnvironmentFailureReasonsValueListValue in requestObjectEnvironmentFailureReasonsValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = EnvironmentErrorMarshaller.Instance;
                         marshaller.Marshall(requestObjectEnvironmentFailureReasonsValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOverallDeploymentStatus())
             {
                 context.Writer.WritePropertyName("overallDeploymentStatus");
-                context.Writer.Write(requestObject.OverallDeploymentStatus);
+                context.Writer.WriteStringValue(requestObject.OverallDeploymentStatus);
             }
 
         }

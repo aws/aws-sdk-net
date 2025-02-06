@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceIdentifierSummary Object
     /// </summary>  
-    public class ResourceIdentifierSummaryUnmarshaller : IUnmarshaller<ResourceIdentifierSummary, XmlUnmarshallerContext>, IUnmarshaller<ResourceIdentifierSummary, JsonUnmarshallerContext>
+    public class ResourceIdentifierSummaryUnmarshaller : IXmlUnmarshaller<ResourceIdentifierSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResourceIdentifierSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResourceIdentifierSummaryUnmarshaller _instance = new ResourceIdentifierSummaryUnmarshaller();        
 

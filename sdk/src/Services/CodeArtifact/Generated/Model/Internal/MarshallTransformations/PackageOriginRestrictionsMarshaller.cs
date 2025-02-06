@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPublish())
             {
                 context.Writer.WritePropertyName("publish");
-                context.Writer.Write(requestObject.Publish);
+                context.Writer.WriteStringValue(requestObject.Publish);
             }
 
             if(requestObject.IsSetUpstream())
             {
                 context.Writer.WritePropertyName("upstream");
-                context.Writer.Write(requestObject.Upstream);
+                context.Writer.WriteStringValue(requestObject.Upstream);
             }
 
         }

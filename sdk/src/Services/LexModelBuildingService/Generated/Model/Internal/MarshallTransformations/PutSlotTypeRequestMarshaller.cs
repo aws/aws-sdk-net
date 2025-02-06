@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
@@ -64,81 +67,86 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/slottypes/{name}/versions/$LATEST";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChecksum())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChecksum())
-                    {
-                        context.Writer.WritePropertyName("checksum");
-                        context.Writer.Write(publicRequest.Checksum);
-                    }
-
-                    if(publicRequest.IsSetCreateVersion())
-                    {
-                        context.Writer.WritePropertyName("createVersion");
-                        context.Writer.Write(publicRequest.CreateVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEnumerationValues())
-                    {
-                        context.Writer.WritePropertyName("enumerationValues");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEnumerationValuesListValue in publicRequest.EnumerationValues)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EnumerationValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEnumerationValuesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetParentSlotTypeSignature())
-                    {
-                        context.Writer.WritePropertyName("parentSlotTypeSignature");
-                        context.Writer.Write(publicRequest.ParentSlotTypeSignature);
-                    }
-
-                    if(publicRequest.IsSetSlotTypeConfigurations())
-                    {
-                        context.Writer.WritePropertyName("slotTypeConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSlotTypeConfigurationsListValue in publicRequest.SlotTypeConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SlotTypeConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSlotTypeConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetValueSelectionStrategy())
-                    {
-                        context.Writer.WritePropertyName("valueSelectionStrategy");
-                        context.Writer.Write(publicRequest.ValueSelectionStrategy);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("checksum");
+                context.Writer.WriteStringValue(publicRequest.Checksum);
             }
+
+            if(publicRequest.IsSetCreateVersion())
+            {
+                context.Writer.WritePropertyName("createVersion");
+                context.Writer.WriteBooleanValue(publicRequest.CreateVersion.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnumerationValues())
+            {
+                context.Writer.WritePropertyName("enumerationValues");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnumerationValuesListValue in publicRequest.EnumerationValues)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EnumerationValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEnumerationValuesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetParentSlotTypeSignature())
+            {
+                context.Writer.WritePropertyName("parentSlotTypeSignature");
+                context.Writer.WriteStringValue(publicRequest.ParentSlotTypeSignature);
+            }
+
+            if(publicRequest.IsSetSlotTypeConfigurations())
+            {
+                context.Writer.WritePropertyName("slotTypeConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSlotTypeConfigurationsListValue in publicRequest.SlotTypeConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SlotTypeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSlotTypeConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetValueSelectionStrategy())
+            {
+                context.Writer.WritePropertyName("valueSelectionStrategy");
+                context.Writer.WriteStringValue(publicRequest.ValueSelectionStrategy);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

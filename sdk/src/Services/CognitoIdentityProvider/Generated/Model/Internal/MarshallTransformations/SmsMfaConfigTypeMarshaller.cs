@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSmsAuthenticationMessage())
             {
                 context.Writer.WritePropertyName("SmsAuthenticationMessage");
-                context.Writer.Write(requestObject.SmsAuthenticationMessage);
+                context.Writer.WriteStringValue(requestObject.SmsAuthenticationMessage);
             }
 
             if(requestObject.IsSetSmsConfiguration())
             {
                 context.Writer.WritePropertyName("SmsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmsConfigurationTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.SmsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LifeCycleLastCutover Object
     /// </summary>  
-    public class LifeCycleLastCutoverUnmarshaller : IUnmarshaller<LifeCycleLastCutover, XmlUnmarshallerContext>, IUnmarshaller<LifeCycleLastCutover, JsonUnmarshallerContext>
+    public class LifeCycleLastCutoverUnmarshaller : IJsonUnmarshaller<LifeCycleLastCutover, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LifeCycleLastCutover IUnmarshaller<LifeCycleLastCutover, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LifeCycleLastCutover Unmarshall(JsonUnmarshallerContext context)
+        public LifeCycleLastCutover Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LifeCycleLastCutover unmarshalledObject = new LifeCycleLastCutover();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("finalized", targetDepth))
                 {
                     var unmarshaller = LifeCycleLastCutoverFinalizedUnmarshaller.Instance;
-                    unmarshalledObject.Finalized = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Finalized = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("initiated", targetDepth))
                 {
                     var unmarshaller = LifeCycleLastCutoverInitiatedUnmarshaller.Instance;
-                    unmarshalledObject.Initiated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Initiated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("reverted", targetDepth))
                 {
                     var unmarshaller = LifeCycleLastCutoverRevertedUnmarshaller.Instance;
-                    unmarshalledObject.Reverted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reverted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccepterVpcInfo())
             {
                 context.Writer.WritePropertyName("AccepterVpcInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2VpcPeeringConnectionVpcInfoDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccepterVpcInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("ExpirationTime");
-                context.Writer.Write(requestObject.ExpirationTime);
+                context.Writer.WriteStringValue(requestObject.ExpirationTime);
             }
 
             if(requestObject.IsSetRequesterVpcInfo())
             {
                 context.Writer.WritePropertyName("RequesterVpcInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2VpcPeeringConnectionVpcInfoDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequesterVpcInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2VpcPeeringConnectionStatusDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Status, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcPeeringConnectionId())
             {
                 context.Writer.WritePropertyName("VpcPeeringConnectionId");
-                context.Writer.Write(requestObject.VpcPeeringConnectionId);
+                context.Writer.WriteStringValue(requestObject.VpcPeeringConnectionId);
             }
 
         }

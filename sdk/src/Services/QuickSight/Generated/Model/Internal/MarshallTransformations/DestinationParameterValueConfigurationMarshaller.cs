@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomValuesConfiguration())
             {
                 context.Writer.WritePropertyName("CustomValuesConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomValuesConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomValuesConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectAllValueOptions())
             {
                 context.Writer.WritePropertyName("SelectAllValueOptions");
-                context.Writer.Write(requestObject.SelectAllValueOptions);
+                context.Writer.WriteStringValue(requestObject.SelectAllValueOptions);
             }
 
             if(requestObject.IsSetSourceColumn())
             {
                 context.Writer.WritePropertyName("SourceColumn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceColumn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceField())
             {
                 context.Writer.WritePropertyName("SourceField");
-                context.Writer.Write(requestObject.SourceField);
+                context.Writer.WriteStringValue(requestObject.SourceField);
             }
 
             if(requestObject.IsSetSourceParameterName())
             {
                 context.Writer.WritePropertyName("SourceParameterName");
-                context.Writer.Write(requestObject.SourceParameterName);
+                context.Writer.WriteStringValue(requestObject.SourceParameterName);
             }
 
         }

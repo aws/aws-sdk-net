@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -63,102 +66,107 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarmName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarmName())
-                    {
-                        context.Writer.WritePropertyName("alarmName");
-                        context.Writer.Write(publicRequest.AlarmName);
-                    }
-
-                    if(publicRequest.IsSetComparisonOperator())
-                    {
-                        context.Writer.WritePropertyName("comparisonOperator");
-                        context.Writer.Write(publicRequest.ComparisonOperator);
-                    }
-
-                    if(publicRequest.IsSetContactProtocols())
-                    {
-                        context.Writer.WritePropertyName("contactProtocols");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContactProtocolsListValue in publicRequest.ContactProtocols)
-                        {
-                                context.Writer.Write(publicRequestContactProtocolsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDatapointsToAlarm())
-                    {
-                        context.Writer.WritePropertyName("datapointsToAlarm");
-                        context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
-                    }
-
-                    if(publicRequest.IsSetEvaluationPeriods())
-                    {
-                        context.Writer.WritePropertyName("evaluationPeriods");
-                        context.Writer.Write(publicRequest.EvaluationPeriods.Value);
-                    }
-
-                    if(publicRequest.IsSetMetricName())
-                    {
-                        context.Writer.WritePropertyName("metricName");
-                        context.Writer.Write(publicRequest.MetricName);
-                    }
-
-                    if(publicRequest.IsSetMonitoredResourceName())
-                    {
-                        context.Writer.WritePropertyName("monitoredResourceName");
-                        context.Writer.Write(publicRequest.MonitoredResourceName);
-                    }
-
-                    if(publicRequest.IsSetNotificationEnabled())
-                    {
-                        context.Writer.WritePropertyName("notificationEnabled");
-                        context.Writer.Write(publicRequest.NotificationEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetNotificationTriggers())
-                    {
-                        context.Writer.WritePropertyName("notificationTriggers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNotificationTriggersListValue in publicRequest.NotificationTriggers)
-                        {
-                                context.Writer.Write(publicRequestNotificationTriggersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetThreshold())
-                    {
-                        context.Writer.WritePropertyName("threshold");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.Threshold.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetTreatMissingData())
-                    {
-                        context.Writer.WritePropertyName("treatMissingData");
-                        context.Writer.Write(publicRequest.TreatMissingData);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("alarmName");
+                context.Writer.WriteStringValue(publicRequest.AlarmName);
             }
+
+            if(publicRequest.IsSetComparisonOperator())
+            {
+                context.Writer.WritePropertyName("comparisonOperator");
+                context.Writer.WriteStringValue(publicRequest.ComparisonOperator);
+            }
+
+            if(publicRequest.IsSetContactProtocols())
+            {
+                context.Writer.WritePropertyName("contactProtocols");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestContactProtocolsListValue in publicRequest.ContactProtocols)
+                {
+                        context.Writer.WriteStringValue(publicRequestContactProtocolsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDatapointsToAlarm())
+            {
+                context.Writer.WritePropertyName("datapointsToAlarm");
+                context.Writer.WriteNumberValue(publicRequest.DatapointsToAlarm.Value);
+            }
+
+            if(publicRequest.IsSetEvaluationPeriods())
+            {
+                context.Writer.WritePropertyName("evaluationPeriods");
+                context.Writer.WriteNumberValue(publicRequest.EvaluationPeriods.Value);
+            }
+
+            if(publicRequest.IsSetMetricName())
+            {
+                context.Writer.WritePropertyName("metricName");
+                context.Writer.WriteStringValue(publicRequest.MetricName);
+            }
+
+            if(publicRequest.IsSetMonitoredResourceName())
+            {
+                context.Writer.WritePropertyName("monitoredResourceName");
+                context.Writer.WriteStringValue(publicRequest.MonitoredResourceName);
+            }
+
+            if(publicRequest.IsSetNotificationEnabled())
+            {
+                context.Writer.WritePropertyName("notificationEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.NotificationEnabled.Value);
+            }
+
+            if(publicRequest.IsSetNotificationTriggers())
+            {
+                context.Writer.WritePropertyName("notificationTriggers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNotificationTriggersListValue in publicRequest.NotificationTriggers)
+                {
+                        context.Writer.WriteStringValue(publicRequestNotificationTriggersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetThreshold())
+            {
+                context.Writer.WritePropertyName("threshold");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.Threshold.Value);
+                }
+            }
+
+            if(publicRequest.IsSetTreatMissingData())
+            {
+                context.Writer.WritePropertyName("treatMissingData");
+                context.Writer.WriteStringValue(publicRequest.TreatMissingData);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

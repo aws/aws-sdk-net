@@ -25,6 +25,106 @@ namespace Amazon.ComputeOptimizer
 {
 
     /// <summary>
+    /// Constants used for properties of type AllocationStrategy.
+    /// </summary>
+    public class AllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("LowestPrice");
+        /// <summary>
+        /// Constant Prioritized for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy Prioritized = new AllocationStrategy("Prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllocationStrategy FindValue(string value)
+        {
+            return FindValue<AllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AsgType.
+    /// </summary>
+    public class AsgType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MixedInstanceTypes for AsgType
+        /// </summary>
+        public static readonly AsgType MixedInstanceTypes = new AsgType("MixedInstanceTypes");
+        /// <summary>
+        /// Constant SingleInstanceType for AsgType
+        /// </summary>
+        public static readonly AsgType SingleInstanceType = new AsgType("SingleInstanceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AsgType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AsgType FindValue(string value)
+        {
+            return FindValue<AsgType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AsgType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoScalingConfiguration.
     /// </summary>
     public class AutoScalingConfiguration : ConstantClass
@@ -1133,6 +1233,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField AutoScalingGroupName = new ExportableAutoScalingGroupField("AutoScalingGroupName");
         /// <summary>
+        /// Constant CurrentConfigurationAllocationStrategy for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationAllocationStrategy = new ExportableAutoScalingGroupField("CurrentConfigurationAllocationStrategy");
+        /// <summary>
         /// Constant CurrentConfigurationDesiredCapacity for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationDesiredCapacity = new ExportableAutoScalingGroupField("CurrentConfigurationDesiredCapacity");
@@ -1148,6 +1252,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant CurrentConfigurationMinSize for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationMinSize = new ExportableAutoScalingGroupField("CurrentConfigurationMinSize");
+        /// <summary>
+        /// Constant CurrentConfigurationMixedInstanceTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationMixedInstanceTypes = new ExportableAutoScalingGroupField("CurrentConfigurationMixedInstanceTypes");
+        /// <summary>
+        /// Constant CurrentConfigurationType for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationType = new ExportableAutoScalingGroupField("CurrentConfigurationType");
         /// <summary>
         /// Constant CurrentInstanceGpuInfo for ExportableAutoScalingGroupField
         /// </summary>
@@ -1225,9 +1337,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField LookbackPeriodInDays = new ExportableAutoScalingGroupField("LookbackPeriodInDays");
         /// <summary>
+        /// Constant RecommendationOptionsConfigurationAllocationStrategy for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationAllocationStrategy = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationAllocationStrategy");
+        /// <summary>
         /// Constant RecommendationOptionsConfigurationDesiredCapacity for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationDesiredCapacity = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationDesiredCapacity");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage");
         /// <summary>
         /// Constant RecommendationOptionsConfigurationInstanceType for ExportableAutoScalingGroupField
         /// </summary>
@@ -1240,6 +1360,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsConfigurationMinSize for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationMinSize = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationMinSize");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationMixedInstanceTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationMixedInstanceTypes = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationMixedInstanceTypes");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationType for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationType = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationType");
         /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableAutoScalingGroupField
         /// </summary>

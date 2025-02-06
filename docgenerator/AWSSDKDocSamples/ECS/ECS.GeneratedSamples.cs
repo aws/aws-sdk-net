@@ -11,6 +11,29 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 {
     class ECSSamples : ISample
     {
+        public void ECSCreateCapacityProvider()
+        {
+            #region to-create-a-capacity-provider--1733861347945
+
+            var client = new AmazonECSClient();
+            var response = client.CreateCapacityProvider(new CreateCapacityProviderRequest 
+            {
+                Name = "MyCapacityProvider",
+                AutoScalingGroupProvider = new AutoScalingGroupProvider {
+                    AutoScalingGroupArn = "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:57ffcb94-11f0-4d6d-bf60-3bac5EXAMPLE:autoScalingGroupName/MyASG",
+                    ManagedScaling = new ManagedScaling {
+                        Status = "ENABLED",
+                        TargetCapacity = 100
+                    },
+                    ManagedTerminationProtection = "ENABLED"
+                }
+            });
+
+            CapacityProvider capacityProvider = response.CapacityProvider;
+
+            #endregion
+        }
+
         public void ECSCreateCluster()
         {
             #region to-create-a-new-cluster-1472514079365
@@ -68,6 +91,31 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSCreateTaskSet()
+        {
+            #region to-create-a-task-set-1733864092815
+
+            var client = new AmazonECSClient();
+            var response = client.CreateTaskSet(new CreateTaskSetRequest 
+            {
+                Cluster = "MyCluster",
+                NetworkConfiguration = new NetworkConfiguration { AwsvpcConfiguration = new AwsVpcConfiguration {
+                    SecurityGroups = new List<string> {
+                        "sg-12344321"
+                    },
+                    Subnets = new List<string> {
+                        "subnet-12344321"
+                    }
+                } },
+                Service = "MyService",
+                TaskDefinition = "MyTaskDefinition:2"
+            });
+
+            TaskSet taskSet = response.TaskSet;
+
+            #endregion
+        }
+
         public void ECSDeleteAccountSetting()
         {
             #region to-delete-the-account-setting-for-your-user-account-1549524548115
@@ -95,6 +143,41 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             Setting setting = response.Setting;
+
+            #endregion
+        }
+
+        public void ECSDeleteAttributes()
+        {
+            #region to-delete-a-custom-attribute-from-an-amazon-ecs-instance-1733867267541
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteAttributes(new DeleteAttributesRequest 
+            {
+                Attributes = new List<Attribute> {
+                    new Attribute {
+                        Name = "stack",
+                        TargetId = "aws:ecs:us-west-2:130757420319:container-instance/1c3be8ed-df30-47b4-8f1e-6e68ebd01f34"
+                    }
+                }
+            });
+
+            List<Attribute> attributes = response.Attributes;
+
+            #endregion
+        }
+
+        public void ECSDeleteCapacityProvider()
+        {
+            #region to-delete-a-specified-capacity-provider-1733868702678
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteCapacityProvider(new DeleteCapacityProviderRequest 
+            {
+                CapacityProvider = "arn:aws:ecs:us-west-2:123456789012:capacity-provider/ExampleCapacityProvider"
+            });
+
+            CapacityProvider capacityProvider = response.CapacityProvider;
 
             #endregion
         }
@@ -128,6 +211,42 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDeleteTaskDefinitions()
+        {
+            #region to-delete-a-task-definition-that-has-been-deregistered-1733940790186
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteTaskDefinitions(new DeleteTaskDefinitionsRequest 
+            {
+                TaskDefinitions = new List<string> {
+                    "Example-task-definition:1"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<TaskDefinition> taskDefinitions = response.TaskDefinitions;
+
+            #endregion
+        }
+
+        public void ECSDeleteTaskSet()
+        {
+            #region to-delete-a-task-set-within-a-service-that-uses-the-external-deployment-controller-type-1733949897807
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteTaskSet(new DeleteTaskSetRequest 
+            {
+                Cluster = "MyCluster",
+                Force = true,
+                Service = "MyService",
+                TaskSet = "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789"
+            });
+
+            TaskSet taskSet = response.TaskSet;
+
+            #endregion
+        }
+
         public void ECSDeregisterContainerInstance()
         {
             #region bf624927-cf64-4f4b-8b7e-c024a4e682f6
@@ -140,6 +259,55 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 Force = true
             });
 
+
+            #endregion
+        }
+
+        public void ECSDeregisterTaskDefinition()
+        {
+            #region to-deregister-a-revision-of-a-task-definition-1733950214421
+
+            var client = new AmazonECSClient();
+            var response = client.DeregisterTaskDefinition(new DeregisterTaskDefinitionRequest 
+            {
+                TaskDefinition = "curler:1"
+            });
+
+            TaskDefinition taskDefinition = response.TaskDefinition;
+
+            #endregion
+        }
+
+        public void ECSDescribeCapacityProviders()
+        {
+            #region to-describe-all-capacity-providers-1733951199913
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
+            {
+            });
+
+            List<CapacityProvider> capacityProviders = response.CapacityProviders;
+
+            #endregion
+        }
+
+        public void ECSDescribeCapacityProviders()
+        {
+            #region to-describe-a-specific-capacity-provider-1733951378688
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
+            {
+                CapacityProviders = new List<string> {
+                    "MyCapacityProvider"
+                },
+                Include = new List<string> {
+                    "TAGS"
+                }
+            });
+
+            List<CapacityProvider> capacityProviders = response.CapacityProviders;
 
             #endregion
         }
@@ -177,6 +345,42 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<ContainerInstance> containerInstances = response.ContainerInstances;
             List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
+        public void ECSDescribeServiceDeployments()
+        {
+            #region to-describe-a-service-deployment--1733954961143
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest 
+            {
+                ServiceDeploymentArns = new List<string> {
+                    "arn:aws:ecs:us-west-2:123456789012:service-deployment/example/sd-example/NCWGC2ZR-taawPAYrIaU5"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ServiceDeployment> serviceDeployments = response.ServiceDeployments;
+
+            #endregion
+        }
+
+        public void ECSDescribeServiceRevisions()
+        {
+            #region to-describe-a-service-revision--1734033215738
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest 
+            {
+                ServiceRevisionArns = new List<string> {
+                    "arn:aws:ecs:us-west-2:123456789012:service-revision/testc/sd1/4980306466373577095"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ServiceRevision> serviceRevisions = response.ServiceRevisions;
 
             #endregion
         }
@@ -232,6 +436,50 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDescribeTaskSets()
+        {
+            #region to-describe-a-task-set--1734035629507
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeTaskSets(new DescribeTaskSetsRequest 
+            {
+                Cluster = "MyCluster",
+                Service = "MyService",
+                TaskSets = new List<string> {
+                    "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<TaskSet> taskSets = response.TaskSets;
+
+            #endregion
+        }
+
+        public void ECSExecuteCommand()
+        {
+            #region to-run-a-command-remotely-on-a-container-in-a-task-1734037663312
+
+            var client = new AmazonECSClient();
+            var response = client.ExecuteCommand(new ExecuteCommandRequest 
+            {
+                Cluster = "MyCluster",
+                Command = "/bin/sh",
+                Container = "MyContainer",
+                Interactive = true,
+                Task = "arn:aws:ecs:us-east-1:123456789012:task/MyCluster/d789e94343414c25b9f6bd59eEXAMPLE"
+            });
+
+            string clusterArn = response.ClusterArn;
+            string containerArn = response.ContainerArn;
+            string containerName = response.ContainerName;
+            bool interactive = response.Interactive;
+            Session session = response.Session;
+            string taskArn = response.TaskArn;
+
+            #endregion
+        }
+
         public void ECSGetTaskProtection()
         {
             #region get-the-protection-status-for-a-single-task-2022-11-02T06:56:32.553Z
@@ -282,6 +530,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSListAttributes()
+        {
+            #region to-list-container-instances-that-have-a-specific-attribute-1734368946577
+
+            var client = new AmazonECSClient();
+            var response = client.ListAttributes(new ListAttributesRequest 
+            {
+                AttributeName = "stack",
+                AttributeValue = "production",
+                Cluster = "MyCluster",
+                TargetType = "container-instance"
+            });
+
+            List<Attribute> attributes = response.Attributes;
+
+            #endregion
+        }
+
         public void ECSListClusters()
         {
             #region e337d059-134f-4125-ba8e-4f499139facf
@@ -307,6 +573,25 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             List<string> containerInstanceArns = response.ContainerInstanceArns;
+
+            #endregion
+        }
+
+        public void ECSListServiceDeployments()
+        {
+            #region to-list-service-deployments-that-meet-the-specified-criteria-1734370445427
+
+            var client = new AmazonECSClient();
+            var response = client.ListServiceDeployments(new ListServiceDeploymentsRequest 
+            {
+                Cluster = "example",
+                Service = "sd-example",
+                Status = new List<string> {
+                    "SUCCESSFUL"
+                }
+            });
+
+            List<ServiceDeploymentBrief> serviceDeployments = response.ServiceDeployments;
 
             #endregion
         }
@@ -478,6 +763,103 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSPutAttributes()
+        {
+            #region to-create-or-update-an-attribute-on-a-resource-1734382423405
+
+            var client = new AmazonECSClient();
+            var response = client.PutAttributes(new PutAttributesRequest 
+            {
+                Attributes = new List<Attribute> {
+                    new Attribute {
+                        Name = "stack",
+                        Value = "production",
+                        TargetId = "arn:aws:ecs:us-west-2:123456789012:container-instance/1c3be8ed-df30-47b4-8f1e-6e68ebd01f34"
+                    }
+                },
+                Cluster = "MyCluster"
+            });
+
+            List<Attribute> attributes = response.Attributes;
+
+            #endregion
+        }
+
+        public void ECSPutClusterCapacityProviders()
+        {
+            #region to-add-an-existing-capacity-provider-to-a-cluster-1734385195698
+
+            var client = new AmazonECSClient();
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            {
+                CapacityProviders = new List<string> {
+                    "MyCapacityProvider1",
+                    "MyCapacityProvider2"
+                },
+                Cluster = "MyCluster",
+                DefaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem> {
+                    new CapacityProviderStrategyItem {
+                        CapacityProvider = "MyCapacityProvider1",
+                        Weight = 1
+                    },
+                    new CapacityProviderStrategyItem {
+                        CapacityProvider = "MyCapacityProvider2",
+                        Weight = 1
+                    }
+                }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSPutClusterCapacityProviders()
+        {
+            #region to-remove-a-capacity-provider-from-a-cluster-1734386641517
+
+            var client = new AmazonECSClient();
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            {
+                CapacityProviders = new List<string> {
+                    "MyCapacityProvider1"
+                },
+                Cluster = "MyCluster",
+                DefaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem> {
+                    new CapacityProviderStrategyItem {
+                        Base = 0,
+                        CapacityProvider = "MyCapacityProvider1",
+                        Weight = 1
+                    }
+                }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSPutClusterCapacityProviders()
+        {
+            #region to-remove-all-capacity-providers-from-a-cluster-1734387170874
+
+            var client = new AmazonECSClient();
+            var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
+            {
+                CapacityProviders = new List<string> {
+                    
+                },
+                Cluster = "MyCluster",
+                DefaultCapacityProviderStrategy = new List<CapacityProviderStrategyItem> {
+                    
+                }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
         public void ECSRegisterTaskDefinition()
         {
             #region to-register-a-task-definition-1470764550877
@@ -526,6 +908,43 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSStartTask()
+        {
+            #region to-start-a-new-task-1734455482966
+
+            var client = new AmazonECSClient();
+            var response = client.StartTask(new StartTaskRequest 
+            {
+                Cluster = "MyCluster",
+                ContainerInstances = new List<string> {
+                    "4c543eed-f83f-47da-b1d8-3d23f1da4c64"
+                },
+                TaskDefinition = "hello-world"
+            });
+
+            List<Failure> failures = response.Failures;
+            List<Task> tasks = response.Tasks;
+
+            #endregion
+        }
+
+        public void ECSStopTask()
+        {
+            #region to-stop-a-task-1734457210346
+
+            var client = new AmazonECSClient();
+            var response = client.StopTask(new StopTaskRequest 
+            {
+                Cluster = "MyCluster",
+                Reason = "testing stop task.",
+                Task = "1dc5c17a-422b-4dc4-b493-371970c6c4d6"
+            });
+
+            Task task = response.Task;
+
+            #endregion
+        }
+
         public void ECSTagResource()
         {
             #region to-tag-a-cluster-1540581863751
@@ -563,6 +982,120 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSUpdateCapacityProvider()
+        {
+            #region to-update-a-capacity-providers-parameters-1734557290198
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateCapacityProvider(new UpdateCapacityProviderRequest 
+            {
+                Name = "MyCapacityProvider",
+                AutoScalingGroupProvider = new AutoScalingGroupProviderUpdate { ManagedScaling = new ManagedScaling {
+                    InstanceWarmupPeriod = 150,
+                    Status = "ENABLED",
+                    TargetCapacity = 90
+                } }
+            });
+
+            CapacityProvider capacityProvider = response.CapacityProvider;
+
+            #endregion
+        }
+
+        public void ECSUpdateCluster()
+        {
+            #region to-update-a-clusters-observability-settings-1734626018966
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateCluster(new UpdateClusterRequest 
+            {
+                Cluster = "ECS-project-update-cluster",
+                Settings = new List<ClusterSetting> {
+                    new ClusterSetting {
+                        Name = "containerInsights",
+                        Value = "enhanced"
+                    }
+                }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSUpdateCluster()
+        {
+            #region to-update-a-clusters-service-connect-defaults-1734626891648
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateCluster(new UpdateClusterRequest 
+            {
+                Cluster = "ECS-project-update-cluster",
+                ServiceConnectDefaults = new ClusterServiceConnectDefaultsRequest { Namespace = "test" }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSUpdateClusterSettings()
+        {
+            #region to-update-a-clusters-settings-1734628004887
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateClusterSettings(new UpdateClusterSettingsRequest 
+            {
+                Cluster = "default",
+                Settings = new List<ClusterSetting> {
+                    new ClusterSetting {
+                        Name = "containerInsights",
+                        Value = "enabled"
+                    }
+                }
+            });
+
+            Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSUpdateContainerAgent()
+        {
+            #region to-update-the-container-agent-version-on-a-container-instance-1734628653210
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateContainerAgent(new UpdateContainerAgentRequest 
+            {
+                Cluster = "MyCluster",
+                ContainerInstance = "53ac7152-dcd1-4102-81f5-208962864132"
+            });
+
+            ContainerInstance containerInstance = response.ContainerInstance;
+
+            #endregion
+        }
+
+        public void ECSUpdateContainerInstancesState()
+        {
+            #region to-update-the-state-of-a-container-instance-1734630991280
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateContainerInstancesState(new UpdateContainerInstancesStateRequest 
+            {
+                Cluster = "default",
+                ContainerInstances = new List<string> {
+                    "1c3be8ed-df30-47b4-8f1e-6e68ebd01f34"
+                },
+                Status = "DRAINING"
+            });
+
+            List<ContainerInstance> containerInstances = response.ContainerInstances;
+            List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
         public void ECSUpdateService()
         {
             #region cc9e8900-0cc2-44d2-8491-64d1d3d37887
@@ -589,6 +1122,23 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 Service = "my-http-service"
             });
 
+
+            #endregion
+        }
+
+        public void ECSUpdateServicePrimaryTaskSet()
+        {
+            #region to-update-the-primary-task-set-for-a-service-1734637150370
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateServicePrimaryTaskSet(new UpdateServicePrimaryTaskSetRequest 
+            {
+                Cluster = "MyCluster",
+                PrimaryTaskSet = "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789",
+                Service = "MyService"
+            });
+
+            TaskSet taskSet = response.TaskSet;
 
             #endregion
         }
@@ -650,6 +1200,27 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<Failure> failures = response.Failures;
             List<ProtectedTask> protectedTasks = response.ProtectedTasks;
+
+            #endregion
+        }
+
+        public void ECSUpdateTaskSet()
+        {
+            #region to-update-a-task-set-1734638754368
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateTaskSet(new UpdateTaskSetRequest 
+            {
+                Cluster = "MyCluster",
+                Scale = new Scale {
+                    Value = 50,
+                    Unit = "PERCENT"
+                },
+                Service = "MyService",
+                TaskSet = "arn:aws:ecs:us-west-2:123456789012:task-set/MyCluster/MyService/ecs-svc/1234567890123456789"
+            });
+
+            TaskSet taskSet = response.TaskSet;
 
             #endregion
         }

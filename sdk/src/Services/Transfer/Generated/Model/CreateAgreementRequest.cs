@@ -42,11 +42,18 @@ namespace Amazon.Transfer.Model
     /// The partner is identified with the <c>PartnerProfileId</c>, and the AS2 process is
     /// identified with the <c>LocalProfileId</c>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Specify <i>either</i> <c>BaseDirectory</c> or <c>CustomDirectories</c>, but not both.
+    /// Specifying both causes the command to fail.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateAgreementRequest : AmazonTransferRequest
     {
         private string _accessRole;
         private string _baseDirectory;
+        private CustomDirectoriesType _customDirectories;
         private string _description;
         private EnforceMessageSigningType _enforceMessageSigning;
         private string _localProfileId;
@@ -122,7 +129,7 @@ namespace Amazon.Transfer.Model
         /// A <c>BaseDirectory</c> example is <c>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string BaseDirectory
         {
             get { return this._baseDirectory; }
@@ -133,6 +140,47 @@ namespace Amazon.Transfer.Model
         internal bool IsSetBaseDirectory()
         {
             return this._baseDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDirectories. 
+        /// <para>
+        /// A <c>CustomDirectoriesType</c> structure. This structure specifies custom directories
+        /// for storing various AS2 message files. You can specify directories for the following
+        /// types of files.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Failed files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MDN files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Payload files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Status files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary files
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomDirectoriesType CustomDirectories
+        {
+            get { return this._customDirectories; }
+            set { this._customDirectories = value; }
+        }
+
+        // Check to see if CustomDirectories property is set
+        internal bool IsSetCustomDirectories()
+        {
+            return this._customDirectories != null;
         }
 
         /// <summary>

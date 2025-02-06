@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BackendServerDescription Object
     /// </summary>  
-    public class BackendServerDescriptionUnmarshaller : IUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>, IUnmarshaller<BackendServerDescription, JsonUnmarshallerContext>
+    public class BackendServerDescriptionUnmarshaller : IXmlUnmarshaller<BackendServerDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BackendServerDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BackendServerDescriptionUnmarshaller _instance = new BackendServerDescriptionUnmarshaller();        
 

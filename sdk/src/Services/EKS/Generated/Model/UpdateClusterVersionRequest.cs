@@ -45,8 +45,8 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
-    /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
-    /// versions must match the cluster’s Kubernetes version in order to update the cluster
+    /// If your cluster has managed node groups attached to it, all of your node groups' Kubernetes
+    /// versions must match the cluster's Kubernetes version in order to update the cluster
     /// to a new Kubernetes version.
     /// </para>
     /// </summary>

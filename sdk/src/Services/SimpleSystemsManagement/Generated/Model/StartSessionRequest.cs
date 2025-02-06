@@ -84,6 +84,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The values you want to specify for the parameters defined in the Session document.
+        /// For more information about these parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-preferences-cli.html">Create
+        /// a Session Manager preferences document</a> in the <i>Amazon Web Services Systems Manager
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters

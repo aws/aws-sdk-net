@@ -771,7 +771,7 @@ namespace Amazon.EKS
         /// <para>
         /// The Fargate profile allows an administrator to declare which pods run on Fargate and
         /// specify which pods run on which Fargate profile. This declaration is done through
-        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// the profile's selectors. Each profile can have up to five selectors that contain a
         /// namespace and labels. A namespace is required for every selector. The label field
         /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
         /// on Fargate. If a to-be-scheduled pod matches any of the selectors in the Fargate profile,
@@ -847,7 +847,7 @@ namespace Amazon.EKS
         /// <para>
         /// The Fargate profile allows an administrator to declare which pods run on Fargate and
         /// specify which pods run on which Fargate profile. This declaration is done through
-        /// the profile’s selectors. Each profile can have up to five selectors that contain a
+        /// the profile's selectors. Each profile can have up to five selectors that contain a
         /// namespace and labels. A namespace is required for every selector. The label field
         /// consists of multiple optional key-value pairs. Pods that match the selectors are scheduled
         /// on Fargate. If a to-be-scheduled pod matches any of the selectors in the Fargate profile,
@@ -4098,8 +4098,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
-        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// If your cluster has managed node groups attached to it, all of your node groups' Kubernetes
+        /// versions must match the cluster's Kubernetes version in order to update the cluster
         /// to a new Kubernetes version.
         /// </para>
         /// </summary>
@@ -4150,8 +4150,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
-        /// versions must match the cluster’s Kubernetes version in order to update the cluster
+        /// If your cluster has managed node groups attached to it, all of your node groups' Kubernetes
+        /// versions must match the cluster's Kubernetes version in order to update the cluster
         /// to a new Kubernetes version.
         /// </para>
         /// </summary>
@@ -4269,8 +4269,8 @@ namespace Amazon.EKS
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
         /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. Currently you can update the Kubernetes labels for a node group or
-        /// the scaling configuration.
+        /// API operation. You can update the Kubernetes labels and taints for a node group and
+        /// the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// 
@@ -4308,8 +4308,8 @@ namespace Amazon.EKS
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
         /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. Currently you can update the Kubernetes labels for a node group or
-        /// the scaling configuration.
+        /// API operation. You can update the Kubernetes labels and taints for a node group and
+        /// the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// <param name="cancellationToken">

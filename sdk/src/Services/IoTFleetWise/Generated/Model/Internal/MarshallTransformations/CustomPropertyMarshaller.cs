@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetDataEncoding())
             {
                 context.Writer.WritePropertyName("dataEncoding");
-                context.Writer.Write(requestObject.DataEncoding);
+                context.Writer.WriteStringValue(requestObject.DataEncoding);
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetDeprecationMessage())
             {
                 context.Writer.WritePropertyName("deprecationMessage");
-                context.Writer.Write(requestObject.DeprecationMessage);
+                context.Writer.WriteStringValue(requestObject.DeprecationMessage);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.FullyQualifiedName);
             }
 
             if(requestObject.IsSetStructFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("structFullyQualifiedName");
-                context.Writer.Write(requestObject.StructFullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.StructFullyQualifiedName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaintenanceDay())
             {
                 context.Writer.WritePropertyName("maintenanceDay");
-                context.Writer.Write(requestObject.MaintenanceDay);
+                context.Writer.WriteStringValue(requestObject.MaintenanceDay);
             }
 
             if(requestObject.IsSetMaintenanceScheduledDate())
             {
                 context.Writer.WritePropertyName("maintenanceScheduledDate");
-                context.Writer.Write(requestObject.MaintenanceScheduledDate);
+                context.Writer.WriteStringValue(requestObject.MaintenanceScheduledDate);
             }
 
             if(requestObject.IsSetMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("maintenanceStartTime");
-                context.Writer.Write(requestObject.MaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.MaintenanceStartTime);
             }
 
         }

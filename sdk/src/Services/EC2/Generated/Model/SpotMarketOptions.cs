@@ -107,6 +107,11 @@ namespace Amazon.EC2.Model
         /// If you specify a maximum price, your Spot Instances will be interrupted more frequently
         /// than if you do not specify this parameter.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify a maximum price, it must be more than USD $0.001. Specifying a value
+        /// below USD $0.001 will result in an <c>InvalidParameterValue</c> error message.
+        /// </para>
         ///  </important>
         /// </summary>
         public string MaxPrice

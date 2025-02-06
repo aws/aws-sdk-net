@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecuteCommandSessionConfiguration())
             {
                 context.Writer.WritePropertyName("executeCommandSessionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExecuteCommandSessionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExecuteCommandSessionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSessionType())
             {
                 context.Writer.WritePropertyName("sessionType");
-                context.Writer.Write(requestObject.SessionType);
+                context.Writer.WriteStringValue(requestObject.SessionType);
             }
 
         }

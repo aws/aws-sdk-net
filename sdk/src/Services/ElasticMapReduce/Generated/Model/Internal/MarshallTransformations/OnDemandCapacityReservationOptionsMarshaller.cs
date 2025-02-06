@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacityReservationPreference())
             {
                 context.Writer.WritePropertyName("CapacityReservationPreference");
-                context.Writer.Write(requestObject.CapacityReservationPreference);
+                context.Writer.WriteStringValue(requestObject.CapacityReservationPreference);
             }
 
             if(requestObject.IsSetCapacityReservationResourceGroupArn())
             {
                 context.Writer.WritePropertyName("CapacityReservationResourceGroupArn");
-                context.Writer.Write(requestObject.CapacityReservationResourceGroupArn);
+                context.Writer.WriteStringValue(requestObject.CapacityReservationResourceGroupArn);
             }
 
             if(requestObject.IsSetUsageStrategy())
             {
                 context.Writer.WritePropertyName("UsageStrategy");
-                context.Writer.Write(requestObject.UsageStrategy);
+                context.Writer.WriteStringValue(requestObject.UsageStrategy);
             }
 
         }

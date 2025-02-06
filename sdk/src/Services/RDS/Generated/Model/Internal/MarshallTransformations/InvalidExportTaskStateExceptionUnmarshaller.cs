@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidExportTaskStateException operation
     /// </summary>  
-    public class InvalidExportTaskStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidExportTaskStateException, XmlUnmarshallerContext>
+    public class InvalidExportTaskStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidExportTaskStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

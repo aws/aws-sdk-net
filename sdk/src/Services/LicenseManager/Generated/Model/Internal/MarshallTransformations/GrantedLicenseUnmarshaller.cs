@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GrantedLicense Object
     /// </summary>  
-    public class GrantedLicenseUnmarshaller : IUnmarshaller<GrantedLicense, XmlUnmarshallerContext>, IUnmarshaller<GrantedLicense, JsonUnmarshallerContext>
+    public class GrantedLicenseUnmarshaller : IJsonUnmarshaller<GrantedLicense, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GrantedLicense IUnmarshaller<GrantedLicense, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GrantedLicense Unmarshall(JsonUnmarshallerContext context)
+        public GrantedLicense Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GrantedLicense unmarshalledObject = new GrantedLicense();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Beneficiary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Beneficiary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Beneficiary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConsumptionConfiguration", targetDepth))
                 {
                     var unmarshaller = ConsumptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ConsumptionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsumptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Entitlements", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);
-                    unmarshalledObject.Entitlements = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);
+                    unmarshalledObject.Entitlements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HomeRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HomeRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Issuer", targetDepth))
                 {
                     var unmarshaller = IssuerDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseMetadata", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Metadata, MetadataUnmarshaller>(MetadataUnmarshaller.Instance);
-                    unmarshalledObject.LicenseMetadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Metadata, MetadataUnmarshaller>(MetadataUnmarshaller.Instance);
+                    unmarshalledObject.LicenseMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LicenseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LicenseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProductName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProductName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProductSKU", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProductSKU = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProductSKU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReceivedMetadata", targetDepth))
                 {
                     var unmarshaller = ReceivedMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ReceivedMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReceivedMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Validity", targetDepth))
                 {
                     var unmarshaller = DatetimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.Validity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Validity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

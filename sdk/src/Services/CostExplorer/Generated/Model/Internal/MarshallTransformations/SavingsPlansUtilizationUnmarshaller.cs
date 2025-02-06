@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SavingsPlansUtilization Object
     /// </summary>  
-    public class SavingsPlansUtilizationUnmarshaller : IUnmarshaller<SavingsPlansUtilization, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansUtilization, JsonUnmarshallerContext>
+    public class SavingsPlansUtilizationUnmarshaller : IJsonUnmarshaller<SavingsPlansUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SavingsPlansUtilization IUnmarshaller<SavingsPlansUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SavingsPlansUtilization Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansUtilization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SavingsPlansUtilization unmarshalledObject = new SavingsPlansUtilization();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TotalCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TotalCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UnusedCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UnusedCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnusedCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UsedCommitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsedCommitment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsedCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UtilizationPercentage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UtilizationPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtilizationPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

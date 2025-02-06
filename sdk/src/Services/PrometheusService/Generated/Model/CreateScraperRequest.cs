@@ -63,6 +63,7 @@ namespace Amazon.PrometheusService.Model
         private string _alias;
         private string _clientToken;
         private Destination _destination;
+        private RoleConfiguration _roleConfiguration;
         private ScrapeConfiguration _scrapeConfiguration;
         private Source _source;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -124,6 +125,24 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleConfiguration. 
+        /// <para>
+        /// The scraper role configuration for the workspace.
+        /// </para>
+        /// </summary>
+        public RoleConfiguration RoleConfiguration
+        {
+            get { return this._roleConfiguration; }
+            set { this._roleConfiguration = value; }
+        }
+
+        // Check to see if RoleConfiguration property is set
+        internal bool IsSetRoleConfiguration()
+        {
+            return this._roleConfiguration != null;
         }
 
         /// <summary>

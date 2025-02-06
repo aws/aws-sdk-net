@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -51,116 +49,116 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAncestorIds())
             {
                 context.Writer.WritePropertyName("AncestorIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAncestorIdsListValue in requestObject.AncestorIds)
                 {
-                        context.Writer.Write(requestObjectAncestorIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAncestorIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContentCategories())
             {
                 context.Writer.WritePropertyName("ContentCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContentCategoriesListValue in requestObject.ContentCategories)
                 {
-                        context.Writer.Write(requestObjectContentCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectContentCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreatedRange())
             {
                 context.Writer.WritePropertyName("CreatedRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateRangeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreatedRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabels())
             {
                 context.Writer.WritePropertyName("Labels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelsListValue in requestObject.Labels)
                 {
-                        context.Writer.Write(requestObjectLabelsListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetModifiedRange())
             {
                 context.Writer.WritePropertyName("ModifiedRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateRangeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModifiedRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrincipals())
             {
                 context.Writer.WritePropertyName("Principals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrincipalsListValue in requestObject.Principals)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SearchPrincipalTypeMarshaller.Instance;
                     marshaller.Marshall(requestObjectPrincipalsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSearchCollectionTypes())
             {
                 context.Writer.WritePropertyName("SearchCollectionTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSearchCollectionTypesListValue in requestObject.SearchCollectionTypes)
                 {
-                        context.Writer.Write(requestObjectSearchCollectionTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSearchCollectionTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSizeRange())
             {
                 context.Writer.WritePropertyName("SizeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LongRangeTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.SizeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextLocales())
             {
                 context.Writer.WritePropertyName("TextLocales");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTextLocalesListValue in requestObject.TextLocales)
                 {
-                        context.Writer.Write(requestObjectTextLocalesListValue);
+                        context.Writer.WriteStringValue(requestObjectTextLocalesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

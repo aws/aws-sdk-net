@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteProtection())
             {
                 context.Writer.WritePropertyName("DeleteProtection");
-                context.Writer.Write(requestObject.DeleteProtection.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeleteProtection.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFirewallArn())
             {
                 context.Writer.WritePropertyName("FirewallArn");
-                context.Writer.Write(requestObject.FirewallArn);
+                context.Writer.WriteStringValue(requestObject.FirewallArn);
             }
 
             if(requestObject.IsSetFirewallId())
             {
                 context.Writer.WritePropertyName("FirewallId");
-                context.Writer.Write(requestObject.FirewallId);
+                context.Writer.WriteStringValue(requestObject.FirewallId);
             }
 
             if(requestObject.IsSetFirewallName())
             {
                 context.Writer.WritePropertyName("FirewallName");
-                context.Writer.Write(requestObject.FirewallName);
+                context.Writer.WriteStringValue(requestObject.FirewallName);
             }
 
             if(requestObject.IsSetFirewallPolicyArn())
             {
                 context.Writer.WritePropertyName("FirewallPolicyArn");
-                context.Writer.Write(requestObject.FirewallPolicyArn);
+                context.Writer.WriteStringValue(requestObject.FirewallPolicyArn);
             }
 
             if(requestObject.IsSetFirewallPolicyChangeProtection())
             {
                 context.Writer.WritePropertyName("FirewallPolicyChangeProtection");
-                context.Writer.Write(requestObject.FirewallPolicyChangeProtection.Value);
+                context.Writer.WriteBooleanValue(requestObject.FirewallPolicyChangeProtection.Value);
             }
 
             if(requestObject.IsSetSubnetChangeProtection())
             {
                 context.Writer.WritePropertyName("SubnetChangeProtection");
-                context.Writer.Write(requestObject.SubnetChangeProtection.Value);
+                context.Writer.WriteBooleanValue(requestObject.SubnetChangeProtection.Value);
             }
 
             if(requestObject.IsSetSubnetMappings())
             {
                 context.Writer.WritePropertyName("SubnetMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetMappingsListValue in requestObject.SubnetMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsNetworkFirewallFirewallSubnetMappingsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubnetMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

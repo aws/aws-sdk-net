@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumVideoBufferDelayMilliseconds())
             {
                 context.Writer.WritePropertyName("maximumVideoBufferDelayMilliseconds");
-                context.Writer.Write(requestObject.MaximumVideoBufferDelayMilliseconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumVideoBufferDelayMilliseconds.Value);
             }
 
             if(requestObject.IsSetTransportStreamBitrate())
             {
                 context.Writer.WritePropertyName("transportStreamBitrate");
-                context.Writer.Write(requestObject.TransportStreamBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.TransportStreamBitrate.Value);
             }
 
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId.Value);
+                context.Writer.WriteNumberValue(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetTransportStreamReservedBitrate())
             {
                 context.Writer.WritePropertyName("transportStreamReservedBitrate");
-                context.Writer.Write(requestObject.TransportStreamReservedBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.TransportStreamReservedBitrate.Value);
             }
 
         }

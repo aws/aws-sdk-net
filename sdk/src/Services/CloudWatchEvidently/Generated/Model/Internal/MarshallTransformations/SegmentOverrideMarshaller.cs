@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvaluationOrder())
             {
                 context.Writer.WritePropertyName("evaluationOrder");
-                context.Writer.Write(requestObject.EvaluationOrder.Value);
+                context.Writer.WriteNumberValue(requestObject.EvaluationOrder.Value);
             }
 
             if(requestObject.IsSetSegment())
             {
                 context.Writer.WritePropertyName("segment");
-                context.Writer.Write(requestObject.Segment);
+                context.Writer.WriteStringValue(requestObject.Segment);
             }
 
             if(requestObject.IsSetWeights())
             {
                 context.Writer.WritePropertyName("weights");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectWeightsKvp in requestObject.Weights)
                 {
                     context.Writer.WritePropertyName(requestObjectWeightsKvp.Key);
                     var requestObjectWeightsValue = requestObjectWeightsKvp.Value;
 
-                        context.Writer.Write(requestObjectWeightsValue);
+                        context.Writer.WriteNumberValue(requestObjectWeightsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

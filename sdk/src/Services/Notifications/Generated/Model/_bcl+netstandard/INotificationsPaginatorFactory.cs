@@ -37,6 +37,26 @@ namespace Amazon.Notifications.Model
         IListEventRulesPaginator ListEventRules(ListEventRulesRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedNotificationChannelAssociations operation
+        ///</summary>
+        IListManagedNotificationChannelAssociationsPaginator ListManagedNotificationChannelAssociations(ListManagedNotificationChannelAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListManagedNotificationChildEvents operation
+        ///</summary>
+        IListManagedNotificationChildEventsPaginator ListManagedNotificationChildEvents(ListManagedNotificationChildEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListManagedNotificationConfigurations operation
+        ///</summary>
+        IListManagedNotificationConfigurationsPaginator ListManagedNotificationConfigurations(ListManagedNotificationConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListManagedNotificationEvents operation
+        ///</summary>
+        IListManagedNotificationEventsPaginator ListManagedNotificationEvents(ListManagedNotificationEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotificationConfigurations operation
         ///</summary>
         IListNotificationConfigurationsPaginator ListNotificationConfigurations(ListNotificationConfigurationsRequest request);

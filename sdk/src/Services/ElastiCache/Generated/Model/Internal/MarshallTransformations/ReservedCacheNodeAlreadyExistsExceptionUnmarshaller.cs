@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedCacheNodeAlreadyExistsException operation
     /// </summary>  
-    public class ReservedCacheNodeAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedCacheNodeAlreadyExistsException, XmlUnmarshallerContext>
+    public class ReservedCacheNodeAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedCacheNodeAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

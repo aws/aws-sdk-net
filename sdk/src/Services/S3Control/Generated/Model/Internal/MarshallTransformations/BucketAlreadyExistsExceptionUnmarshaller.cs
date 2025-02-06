@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketAlreadyExistsException operation
     /// </summary>  
-    public class BucketAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketAlreadyExistsException, XmlUnmarshallerContext>
+    public class BucketAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BucketAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

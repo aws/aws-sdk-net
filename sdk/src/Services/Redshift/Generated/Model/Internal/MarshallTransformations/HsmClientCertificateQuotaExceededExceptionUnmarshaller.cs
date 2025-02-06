@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HsmClientCertificateQuotaExceededException operation
     /// </summary>  
-    public class HsmClientCertificateQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<HsmClientCertificateQuotaExceededException, XmlUnmarshallerContext>
+    public class HsmClientCertificateQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HsmClientCertificateQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

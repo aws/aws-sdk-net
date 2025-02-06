@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OriginApprovalRuleTemplate Object
     /// </summary>  
-    public class OriginApprovalRuleTemplateUnmarshaller : IUnmarshaller<OriginApprovalRuleTemplate, XmlUnmarshallerContext>, IUnmarshaller<OriginApprovalRuleTemplate, JsonUnmarshallerContext>
+    public class OriginApprovalRuleTemplateUnmarshaller : IJsonUnmarshaller<OriginApprovalRuleTemplate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OriginApprovalRuleTemplate IUnmarshaller<OriginApprovalRuleTemplate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OriginApprovalRuleTemplate Unmarshall(JsonUnmarshallerContext context)
+        public OriginApprovalRuleTemplate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OriginApprovalRuleTemplate unmarshalledObject = new OriginApprovalRuleTemplate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("approvalRuleTemplateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApprovalRuleTemplateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApprovalRuleTemplateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("approvalRuleTemplateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApprovalRuleTemplateName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApprovalRuleTemplateName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

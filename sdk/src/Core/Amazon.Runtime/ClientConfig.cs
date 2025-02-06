@@ -91,6 +91,8 @@ namespace Amazon.Runtime
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
         private AccountIdEndpointMode? accountIdEndpointMode = null;
+        private RequestChecksumCalculation? requestChecksumCalculation = null;
+        private ResponseChecksumValidation? responseChecksumValidation = null;
 
         private CredentialProfileStoreChain credentialProfileStoreChain;
 #if BCL
@@ -1169,6 +1171,38 @@ namespace Amazon.Runtime
         {
             get { return this.telemetryProvider; }
             set { this.telemetryProvider = value; }
+        }
+
+        /// <summary>
+        /// Determines the behavior for calculating checksums for request payloads.
+        /// By default it is set to <see cref="RequestChecksumCalculation.WHEN_SUPPORTED"/>.
+        /// </summary>
+        public RequestChecksumCalculation RequestChecksumCalculation
+        {
+            get
+            {
+                if (!this.requestChecksumCalculation.HasValue)
+                    return FallbackInternalConfigurationFactory.RequestChecksumCalculation ?? RequestChecksumCalculation.WHEN_SUPPORTED;
+
+                return this.requestChecksumCalculation.Value;
+            }
+            set { requestChecksumCalculation = value; }
+        }
+
+        /// <summary>
+        /// Determines the behavior for validating checksums on response payloads.
+        /// By default it is set to <see cref="ResponseChecksumValidation.WHEN_SUPPORTED"/>.
+        /// </summary>
+        public ResponseChecksumValidation ResponseChecksumValidation
+        {
+            get
+            {
+                if (!this.responseChecksumValidation.HasValue)
+                    return FallbackInternalConfigurationFactory.ResponseChecksumValidation ?? ResponseChecksumValidation.WHEN_SUPPORTED;
+
+                return this.responseChecksumValidation.Value;
+            }
+            set { responseChecksumValidation = value; }
         }
     }
 }

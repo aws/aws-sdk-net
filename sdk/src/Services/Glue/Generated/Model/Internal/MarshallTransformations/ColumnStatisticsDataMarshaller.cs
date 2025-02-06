@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,84 +49,84 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinaryColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("BinaryColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BinaryColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.BinaryColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBooleanColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("BooleanColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BooleanColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.BooleanColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDateColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("DateColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecimalColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("DecimalColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecimalColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDoubleColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("DoubleColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DoubleColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.DoubleColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLongColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("LongColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LongColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.LongColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringColumnStatisticsData())
             {
                 context.Writer.WritePropertyName("StringColumnStatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringColumnStatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubnetNotFoundException operation
     /// </summary>  
-    public class SubnetNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SubnetNotFoundException, XmlUnmarshallerContext>
+    public class SubnetNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubnetNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

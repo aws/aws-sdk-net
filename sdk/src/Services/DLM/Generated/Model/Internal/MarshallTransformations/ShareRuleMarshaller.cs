@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetAccounts())
             {
                 context.Writer.WritePropertyName("TargetAccounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetAccountsListValue in requestObject.TargetAccounts)
                 {
-                        context.Writer.Write(requestObjectTargetAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUnshareInterval())
             {
                 context.Writer.WritePropertyName("UnshareInterval");
-                context.Writer.Write(requestObject.UnshareInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.UnshareInterval.Value);
             }
 
             if(requestObject.IsSetUnshareIntervalUnit())
             {
                 context.Writer.WritePropertyName("UnshareIntervalUnit");
-                context.Writer.Write(requestObject.UnshareIntervalUnit);
+                context.Writer.WriteStringValue(requestObject.UnshareIntervalUnit);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddOnType())
             {
                 context.Writer.WritePropertyName("addOnType");
-                context.Writer.Write(requestObject.AddOnType);
+                context.Writer.WriteStringValue(requestObject.AddOnType);
             }
 
             if(requestObject.IsSetAutoSnapshotAddOnRequest())
             {
                 context.Writer.WritePropertyName("autoSnapshotAddOnRequest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoSnapshotAddOnRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoSnapshotAddOnRequest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStopInstanceOnIdleRequest())
             {
                 context.Writer.WritePropertyName("stopInstanceOnIdleRequest");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StopInstanceOnIdleRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.StopInstanceOnIdleRequest, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

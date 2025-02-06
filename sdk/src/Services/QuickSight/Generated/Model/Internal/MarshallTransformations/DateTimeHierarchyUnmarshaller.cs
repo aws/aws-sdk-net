@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DateTimeHierarchy Object
     /// </summary>  
-    public class DateTimeHierarchyUnmarshaller : IUnmarshaller<DateTimeHierarchy, XmlUnmarshallerContext>, IUnmarshaller<DateTimeHierarchy, JsonUnmarshallerContext>
+    public class DateTimeHierarchyUnmarshaller : IJsonUnmarshaller<DateTimeHierarchy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DateTimeHierarchy IUnmarshaller<DateTimeHierarchy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DateTimeHierarchy Unmarshall(JsonUnmarshallerContext context)
+        public DateTimeHierarchy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DateTimeHierarchy unmarshalledObject = new DateTimeHierarchy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DrillDownFilters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DrillDownFilter, DrillDownFilterUnmarshaller>(DrillDownFilterUnmarshaller.Instance);
-                    unmarshalledObject.DrillDownFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DrillDownFilter, DrillDownFilterUnmarshaller>(DrillDownFilterUnmarshaller.Instance);
+                    unmarshalledObject.DrillDownFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HierarchyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HierarchyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HierarchyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

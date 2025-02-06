@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,105 +66,110 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuditContext())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuditContext())
-                    {
-                        context.Writer.WritePropertyName("AuditContext");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AuditContext");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AuditContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AuditContext, context);
+                var marshaller = AuditContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuditContext, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCatalogId())
-                    {
-                        context.Writer.WritePropertyName("CatalogId");
-                        context.Writer.Write(publicRequest.CatalogId);
-                    }
-
-                    if(publicRequest.IsSetDatabaseName())
-                    {
-                        context.Writer.WritePropertyName("DatabaseName");
-                        context.Writer.Write(publicRequest.DatabaseName);
-                    }
-
-                    if(publicRequest.IsSetExpression())
-                    {
-                        context.Writer.WritePropertyName("Expression");
-                        context.Writer.Write(publicRequest.Expression);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetQuerySessionContext())
-                    {
-                        context.Writer.WritePropertyName("QuerySessionContext");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QuerySessionContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.QuerySessionContext, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRegion())
-                    {
-                        context.Writer.WritePropertyName("Region");
-                        context.Writer.Write(publicRequest.Region);
-                    }
-
-                    if(publicRequest.IsSetSegment())
-                    {
-                        context.Writer.WritePropertyName("Segment");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SegmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Segment, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSupportedPermissionTypes())
-                    {
-                        context.Writer.WritePropertyName("SupportedPermissionTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
-                        {
-                                context.Writer.Write(publicRequestSupportedPermissionTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTableName())
-                    {
-                        context.Writer.WritePropertyName("TableName");
-                        context.Writer.Write(publicRequest.TableName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCatalogId())
+            {
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.WriteStringValue(publicRequest.CatalogId);
+            }
+
+            if(publicRequest.IsSetDatabaseName())
+            {
+                context.Writer.WritePropertyName("DatabaseName");
+                context.Writer.WriteStringValue(publicRequest.DatabaseName);
+            }
+
+            if(publicRequest.IsSetExpression())
+            {
+                context.Writer.WritePropertyName("Expression");
+                context.Writer.WriteStringValue(publicRequest.Expression);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetQuerySessionContext())
+            {
+                context.Writer.WritePropertyName("QuerySessionContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuerySessionContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.WriteStringValue(publicRequest.Region);
+            }
+
+            if(publicRequest.IsSetSegment())
+            {
+                context.Writer.WritePropertyName("Segment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SegmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Segment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSupportedPermissionTypes())
+            {
+                context.Writer.WritePropertyName("SupportedPermissionTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportedPermissionTypesListValue in publicRequest.SupportedPermissionTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestSupportedPermissionTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTableName())
+            {
+                context.Writer.WritePropertyName("TableName");
+                context.Writer.WriteStringValue(publicRequest.TableName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

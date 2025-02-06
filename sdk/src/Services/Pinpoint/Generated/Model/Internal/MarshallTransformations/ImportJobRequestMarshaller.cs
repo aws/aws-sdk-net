@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefineSegment())
             {
                 context.Writer.WritePropertyName("DefineSegment");
-                context.Writer.Write(requestObject.DefineSegment.Value);
+                context.Writer.WriteBooleanValue(requestObject.DefineSegment.Value);
             }
 
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");
-                context.Writer.Write(requestObject.ExternalId);
+                context.Writer.WriteStringValue(requestObject.ExternalId);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetRegisterEndpoints())
             {
                 context.Writer.WritePropertyName("RegisterEndpoints");
-                context.Writer.Write(requestObject.RegisterEndpoints.Value);
+                context.Writer.WriteBooleanValue(requestObject.RegisterEndpoints.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetS3Url())
             {
                 context.Writer.WritePropertyName("S3Url");
-                context.Writer.Write(requestObject.S3Url);
+                context.Writer.WriteStringValue(requestObject.S3Url);
             }
 
             if(requestObject.IsSetSegmentId())
             {
                 context.Writer.WritePropertyName("SegmentId");
-                context.Writer.Write(requestObject.SegmentId);
+                context.Writer.WriteStringValue(requestObject.SegmentId);
             }
 
             if(requestObject.IsSetSegmentName())
             {
                 context.Writer.WritePropertyName("SegmentName");
-                context.Writer.Write(requestObject.SegmentName);
+                context.Writer.WriteStringValue(requestObject.SegmentName);
             }
 
         }

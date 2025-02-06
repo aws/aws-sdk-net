@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnIndex())
             {
                 context.Writer.WritePropertyName("ColumnIndex");
-                context.Writer.Write(requestObject.ColumnIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.ColumnIndex.Value);
             }
 
             if(requestObject.IsSetColumnSpan())
             {
                 context.Writer.WritePropertyName("ColumnSpan");
-                context.Writer.Write(requestObject.ColumnSpan.Value);
+                context.Writer.WriteNumberValue(requestObject.ColumnSpan.Value);
             }
 
             if(requestObject.IsSetElementId())
             {
                 context.Writer.WritePropertyName("ElementId");
-                context.Writer.Write(requestObject.ElementId);
+                context.Writer.WriteStringValue(requestObject.ElementId);
             }
 
             if(requestObject.IsSetElementType())
             {
                 context.Writer.WritePropertyName("ElementType");
-                context.Writer.Write(requestObject.ElementType);
+                context.Writer.WriteStringValue(requestObject.ElementType);
             }
 
             if(requestObject.IsSetRowIndex())
             {
                 context.Writer.WritePropertyName("RowIndex");
-                context.Writer.Write(requestObject.RowIndex.Value);
+                context.Writer.WriteNumberValue(requestObject.RowIndex.Value);
             }
 
             if(requestObject.IsSetRowSpan())
             {
                 context.Writer.WritePropertyName("RowSpan");
-                context.Writer.Write(requestObject.RowSpan.Value);
+                context.Writer.WriteNumberValue(requestObject.RowSpan.Value);
             }
 
         }

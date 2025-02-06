@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FeatureGroupSummary Object
     /// </summary>  
-    public class FeatureGroupSummaryUnmarshaller : IUnmarshaller<FeatureGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<FeatureGroupSummary, JsonUnmarshallerContext>
+    public class FeatureGroupSummaryUnmarshaller : IJsonUnmarshaller<FeatureGroupSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FeatureGroupSummary IUnmarshaller<FeatureGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FeatureGroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public FeatureGroupSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FeatureGroupSummary unmarshalledObject = new FeatureGroupSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureGroupStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureGroupStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureGroupStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OfflineStoreStatus", targetDepth))
                 {
                     var unmarshaller = OfflineStoreStatusUnmarshaller.Instance;
-                    unmarshalledObject.OfflineStoreStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OfflineStoreStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("Capacity");
-                context.Writer.Write(requestObject.Capacity.Value);
+                context.Writer.WriteNumberValue(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetRuleGroup())
             {
                 context.Writer.WritePropertyName("RuleGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleGroupDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleGroupArn())
             {
                 context.Writer.WritePropertyName("RuleGroupArn");
-                context.Writer.Write(requestObject.RuleGroupArn);
+                context.Writer.WriteStringValue(requestObject.RuleGroupArn);
             }
 
             if(requestObject.IsSetRuleGroupId())
             {
                 context.Writer.WritePropertyName("RuleGroupId");
-                context.Writer.Write(requestObject.RuleGroupId);
+                context.Writer.WriteStringValue(requestObject.RuleGroupId);
             }
 
             if(requestObject.IsSetRuleGroupName())
             {
                 context.Writer.WritePropertyName("RuleGroupName");
-                context.Writer.Write(requestObject.RuleGroupName);
+                context.Writer.WriteStringValue(requestObject.RuleGroupName);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

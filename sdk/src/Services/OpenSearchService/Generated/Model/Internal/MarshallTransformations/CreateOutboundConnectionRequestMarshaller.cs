@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -61,64 +64,69 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/cc/outboundConnection";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConnectionAlias())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConnectionAlias())
-                    {
-                        context.Writer.WritePropertyName("ConnectionAlias");
-                        context.Writer.Write(publicRequest.ConnectionAlias);
-                    }
-
-                    if(publicRequest.IsSetConnectionMode())
-                    {
-                        context.Writer.WritePropertyName("ConnectionMode");
-                        context.Writer.Write(publicRequest.ConnectionMode);
-                    }
-
-                    if(publicRequest.IsSetConnectionProperties())
-                    {
-                        context.Writer.WritePropertyName("ConnectionProperties");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConnectionPropertiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConnectionProperties, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLocalDomainInfo())
-                    {
-                        context.Writer.WritePropertyName("LocalDomainInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainInformationContainerMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LocalDomainInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoteDomainInfo())
-                    {
-                        context.Writer.WritePropertyName("RemoteDomainInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainInformationContainerMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RemoteDomainInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConnectionAlias");
+                context.Writer.WriteStringValue(publicRequest.ConnectionAlias);
             }
+
+            if(publicRequest.IsSetConnectionMode())
+            {
+                context.Writer.WritePropertyName("ConnectionMode");
+                context.Writer.WriteStringValue(publicRequest.ConnectionMode);
+            }
+
+            if(publicRequest.IsSetConnectionProperties())
+            {
+                context.Writer.WritePropertyName("ConnectionProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectionPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConnectionProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLocalDomainInfo())
+            {
+                context.Writer.WritePropertyName("LocalDomainInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainInformationContainerMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LocalDomainInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRemoteDomainInfo())
+            {
+                context.Writer.WritePropertyName("RemoteDomainInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainInformationContainerMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RemoteDomainInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

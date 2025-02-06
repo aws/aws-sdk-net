@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCreatedAtEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCreatedAtEndTime())
-                    {
-                        context.Writer.WritePropertyName("CreatedAtEndTime");
-                        context.Writer.Write(publicRequest.CreatedAtEndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetCreatedAtStartTime())
-                    {
-                        context.Writer.WritePropertyName("CreatedAtStartTime");
-                        context.Writer.Write(publicRequest.CreatedAtStartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxModelVersion())
-                    {
-                        context.Writer.WritePropertyName("MaxModelVersion");
-                        context.Writer.Write(publicRequest.MaxModelVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMinModelVersion())
-                    {
-                        context.Writer.WritePropertyName("MinModelVersion");
-                        context.Writer.Write(publicRequest.MinModelVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetModelName())
-                    {
-                        context.Writer.WritePropertyName("ModelName");
-                        context.Writer.Write(publicRequest.ModelName);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSourceType())
-                    {
-                        context.Writer.WritePropertyName("SourceType");
-                        context.Writer.Write(publicRequest.SourceType);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CreatedAtEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAtEndTime.Value)));
             }
+
+            if(publicRequest.IsSetCreatedAtStartTime())
+            {
+                context.Writer.WritePropertyName("CreatedAtStartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAtStartTime.Value)));
+            }
+
+            if(publicRequest.IsSetMaxModelVersion())
+            {
+                context.Writer.WritePropertyName("MaxModelVersion");
+                context.Writer.WriteNumberValue(publicRequest.MaxModelVersion.Value);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetMinModelVersion())
+            {
+                context.Writer.WritePropertyName("MinModelVersion");
+                context.Writer.WriteNumberValue(publicRequest.MinModelVersion.Value);
+            }
+
+            if(publicRequest.IsSetModelName())
+            {
+                context.Writer.WritePropertyName("ModelName");
+                context.Writer.WriteStringValue(publicRequest.ModelName);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSourceType())
+            {
+                context.Writer.WritePropertyName("SourceType");
+                context.Writer.WriteStringValue(publicRequest.SourceType);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

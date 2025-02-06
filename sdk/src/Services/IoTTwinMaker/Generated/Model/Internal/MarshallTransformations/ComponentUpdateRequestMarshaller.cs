@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentTypeId())
             {
                 context.Writer.WritePropertyName("componentTypeId");
-                context.Writer.Write(requestObject.ComponentTypeId);
+                context.Writer.WriteStringValue(requestObject.ComponentTypeId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetPropertyGroupUpdates())
             {
                 context.Writer.WritePropertyName("propertyGroupUpdates");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertyGroupUpdatesKvp in requestObject.PropertyGroupUpdates)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertyGroupUpdatesKvp.Key);
                     var requestObjectPropertyGroupUpdatesValue = requestObjectPropertyGroupUpdatesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPropertyGroupRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertyGroupUpdatesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPropertyUpdates())
             {
                 context.Writer.WritePropertyName("propertyUpdates");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertyUpdatesKvp in requestObject.PropertyUpdates)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertyUpdatesKvp.Key);
                     var requestObjectPropertyUpdatesValue = requestObjectPropertyUpdatesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PropertyRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertyUpdatesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateType())
             {
                 context.Writer.WritePropertyName("updateType");
-                context.Writer.Write(requestObject.UpdateType);
+                context.Writer.WriteStringValue(requestObject.UpdateType);
             }
 
         }

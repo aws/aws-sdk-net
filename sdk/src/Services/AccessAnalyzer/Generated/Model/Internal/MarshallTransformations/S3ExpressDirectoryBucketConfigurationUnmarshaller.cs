@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3ExpressDirectoryBucketConfiguration Object
     /// </summary>  
-    public class S3ExpressDirectoryBucketConfigurationUnmarshaller : IUnmarshaller<S3ExpressDirectoryBucketConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3ExpressDirectoryBucketConfiguration, JsonUnmarshallerContext>
+    public class S3ExpressDirectoryBucketConfigurationUnmarshaller : IJsonUnmarshaller<S3ExpressDirectoryBucketConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        S3ExpressDirectoryBucketConfiguration IUnmarshaller<S3ExpressDirectoryBucketConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3ExpressDirectoryBucketConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public S3ExpressDirectoryBucketConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             S3ExpressDirectoryBucketConfiguration unmarshalledObject = new S3ExpressDirectoryBucketConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bucketPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

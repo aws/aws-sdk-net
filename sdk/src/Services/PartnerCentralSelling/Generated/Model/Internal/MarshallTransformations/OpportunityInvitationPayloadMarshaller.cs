@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomer())
             {
                 context.Writer.WritePropertyName("Customer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EngagementCustomerMarshaller.Instance;
                 marshaller.Marshall(requestObject.Customer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("Project");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProjectDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Project, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReceiverResponsibilities())
             {
                 context.Writer.WritePropertyName("ReceiverResponsibilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReceiverResponsibilitiesListValue in requestObject.ReceiverResponsibilities)
                 {
-                        context.Writer.Write(requestObjectReceiverResponsibilitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectReceiverResponsibilitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSenderContacts())
             {
                 context.Writer.WritePropertyName("SenderContacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSenderContactsListValue in requestObject.SenderContacts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SenderContactMarshaller.Instance;
                     marshaller.Marshall(requestObjectSenderContactsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

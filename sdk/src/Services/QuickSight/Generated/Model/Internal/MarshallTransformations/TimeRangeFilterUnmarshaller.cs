@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeRangeFilter Object
     /// </summary>  
-    public class TimeRangeFilterUnmarshaller : IUnmarshaller<TimeRangeFilter, XmlUnmarshallerContext>, IUnmarshaller<TimeRangeFilter, JsonUnmarshallerContext>
+    public class TimeRangeFilterUnmarshaller : IJsonUnmarshaller<TimeRangeFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeRangeFilter IUnmarshaller<TimeRangeFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeRangeFilter Unmarshall(JsonUnmarshallerContext context)
+        public TimeRangeFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeRangeFilter unmarshalledObject = new TimeRangeFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Column", targetDepth))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.Column = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth))
                 {
                     var unmarshaller = DefaultFilterControlConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExcludePeriodConfiguration", targetDepth))
                 {
                     var unmarshaller = ExcludePeriodConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ExcludePeriodConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExcludePeriodConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeMaximum", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeMaximum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeMaximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeMinimum", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeMinimum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeMinimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NullOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RangeMaximumValue", targetDepth))
                 {
                     var unmarshaller = TimeRangeFilterValueUnmarshaller.Instance;
-                    unmarshalledObject.RangeMaximumValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RangeMaximumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RangeMinimumValue", targetDepth))
                 {
                     var unmarshaller = TimeRangeFilterValueUnmarshaller.Instance;
-                    unmarshalledObject.RangeMinimumValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RangeMinimumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

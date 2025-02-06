@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessLog Object
     /// </summary>  
-    public class AccessLogUnmarshaller : IUnmarshaller<AccessLog, XmlUnmarshallerContext>, IUnmarshaller<AccessLog, JsonUnmarshallerContext>
+    public class AccessLogUnmarshaller : IXmlUnmarshaller<AccessLog, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AccessLog Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AccessLogUnmarshaller _instance = new AccessLogUnmarshaller();        
 

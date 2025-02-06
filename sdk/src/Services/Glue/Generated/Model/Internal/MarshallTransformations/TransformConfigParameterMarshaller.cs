@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsOptional())
             {
                 context.Writer.WritePropertyName("IsOptional");
-                context.Writer.Write(requestObject.IsOptional.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsOptional.Value);
             }
 
             if(requestObject.IsSetListType())
             {
                 context.Writer.WritePropertyName("ListType");
-                context.Writer.Write(requestObject.ListType);
+                context.Writer.WriteStringValue(requestObject.ListType);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetValidationMessage())
             {
                 context.Writer.WritePropertyName("ValidationMessage");
-                context.Writer.Write(requestObject.ValidationMessage);
+                context.Writer.WriteStringValue(requestObject.ValidationMessage);
             }
 
             if(requestObject.IsSetValidationRule())
             {
                 context.Writer.WritePropertyName("ValidationRule");
-                context.Writer.Write(requestObject.ValidationRule);
+                context.Writer.WriteStringValue(requestObject.ValidationRule);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValueListValue in requestObject.Value)
                 {
-                        context.Writer.Write(requestObjectValueListValue);
+                        context.Writer.WriteStringValue(requestObjectValueListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

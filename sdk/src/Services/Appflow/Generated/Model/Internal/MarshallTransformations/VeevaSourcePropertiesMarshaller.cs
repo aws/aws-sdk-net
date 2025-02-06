@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentType())
             {
                 context.Writer.WritePropertyName("documentType");
-                context.Writer.Write(requestObject.DocumentType);
+                context.Writer.WriteStringValue(requestObject.DocumentType);
             }
 
             if(requestObject.IsSetIncludeAllVersions())
             {
                 context.Writer.WritePropertyName("includeAllVersions");
-                context.Writer.Write(requestObject.IncludeAllVersions.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeAllVersions.Value);
             }
 
             if(requestObject.IsSetIncludeRenditions())
             {
                 context.Writer.WritePropertyName("includeRenditions");
-                context.Writer.Write(requestObject.IncludeRenditions.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeRenditions.Value);
             }
 
             if(requestObject.IsSetIncludeSourceFiles())
             {
                 context.Writer.WritePropertyName("includeSourceFiles");
-                context.Writer.Write(requestObject.IncludeSourceFiles.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeSourceFiles.Value);
             }
 
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WriteStringValue(requestObject.Object);
             }
 
         }

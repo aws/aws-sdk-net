@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableConfiguration Object
     /// </summary>  
-    public class TableConfigurationUnmarshaller : IUnmarshaller<TableConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TableConfiguration, JsonUnmarshallerContext>
+    public class TableConfigurationUnmarshaller : IJsonUnmarshaller<TableConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableConfiguration IUnmarshaller<TableConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TableConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableConfiguration unmarshalledObject = new TableConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FieldOptions", targetDepth))
                 {
                     var unmarshaller = TableFieldOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = TableFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Interactions", targetDepth))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PaginatedReportOptions", targetDepth))
                 {
                     var unmarshaller = TablePaginatedReportOptionsUnmarshaller.Instance;
-                    unmarshalledObject.PaginatedReportOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaginatedReportOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortConfiguration", targetDepth))
                 {
                     var unmarshaller = TableSortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableInlineVisualizations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TableInlineVisualization, TableInlineVisualizationUnmarshaller>(TableInlineVisualizationUnmarshaller.Instance);
-                    unmarshalledObject.TableInlineVisualizations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TableInlineVisualization, TableInlineVisualizationUnmarshaller>(TableInlineVisualizationUnmarshaller.Instance);
+                    unmarshalledObject.TableInlineVisualizations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableOptions", targetDepth))
                 {
                     var unmarshaller = TableOptionsUnmarshaller.Instance;
-                    unmarshalledObject.TableOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalOptions", targetDepth))
                 {
                     var unmarshaller = TotalOptionsUnmarshaller.Instance;
-                    unmarshalledObject.TotalOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

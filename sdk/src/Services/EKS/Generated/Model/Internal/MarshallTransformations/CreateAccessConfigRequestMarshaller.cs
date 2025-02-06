@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationMode())
             {
                 context.Writer.WritePropertyName("authenticationMode");
-                context.Writer.Write(requestObject.AuthenticationMode);
+                context.Writer.WriteStringValue(requestObject.AuthenticationMode);
             }
 
             if(requestObject.IsSetBootstrapClusterCreatorAdminPermissions())
             {
                 context.Writer.WritePropertyName("bootstrapClusterCreatorAdminPermissions");
-                context.Writer.Write(requestObject.BootstrapClusterCreatorAdminPermissions.Value);
+                context.Writer.WriteBooleanValue(requestObject.BootstrapClusterCreatorAdminPermissions.Value);
             }
 
         }

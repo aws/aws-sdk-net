@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailNum())
             {
                 context.Writer.WritePropertyName("AvailNum");
-                context.Writer.Write(requestObject.AvailNum.Value);
+                context.Writer.WriteNumberValue(requestObject.AvailNum.Value);
             }
 
             if(requestObject.IsSetAvailsExpected())
             {
                 context.Writer.WritePropertyName("AvailsExpected");
-                context.Writer.Write(requestObject.AvailsExpected.Value);
+                context.Writer.WriteNumberValue(requestObject.AvailsExpected.Value);
             }
 
             if(requestObject.IsSetSpliceEventId())
             {
                 context.Writer.WritePropertyName("SpliceEventId");
-                context.Writer.Write(requestObject.SpliceEventId.Value);
+                context.Writer.WriteNumberValue(requestObject.SpliceEventId.Value);
             }
 
             if(requestObject.IsSetUniqueProgramId())
             {
                 context.Writer.WritePropertyName("UniqueProgramId");
-                context.Writer.Write(requestObject.UniqueProgramId.Value);
+                context.Writer.WriteNumberValue(requestObject.UniqueProgramId.Value);
             }
 
         }

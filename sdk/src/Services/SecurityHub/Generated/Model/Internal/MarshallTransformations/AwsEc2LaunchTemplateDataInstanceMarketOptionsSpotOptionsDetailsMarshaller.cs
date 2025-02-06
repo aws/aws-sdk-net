@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockDurationMinutes())
             {
                 context.Writer.WritePropertyName("BlockDurationMinutes");
-                context.Writer.Write(requestObject.BlockDurationMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.BlockDurationMinutes.Value);
             }
 
             if(requestObject.IsSetInstanceInterruptionBehavior())
             {
                 context.Writer.WritePropertyName("InstanceInterruptionBehavior");
-                context.Writer.Write(requestObject.InstanceInterruptionBehavior);
+                context.Writer.WriteStringValue(requestObject.InstanceInterruptionBehavior);
             }
 
             if(requestObject.IsSetMaxPrice())
             {
                 context.Writer.WritePropertyName("MaxPrice");
-                context.Writer.Write(requestObject.MaxPrice);
+                context.Writer.WriteStringValue(requestObject.MaxPrice);
             }
 
             if(requestObject.IsSetSpotInstanceType())
             {
                 context.Writer.WritePropertyName("SpotInstanceType");
-                context.Writer.Write(requestObject.SpotInstanceType);
+                context.Writer.WriteStringValue(requestObject.SpotInstanceType);
             }
 
             if(requestObject.IsSetValidUntil())
             {
                 context.Writer.WritePropertyName("ValidUntil");
-                context.Writer.Write(requestObject.ValidUntil);
+                context.Writer.WriteStringValue(requestObject.ValidUntil);
             }
 
         }

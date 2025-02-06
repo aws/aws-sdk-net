@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelimiters())
             {
                 context.Writer.WritePropertyName("delimiters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = X12DelimitersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Delimiters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFunctionalGroupHeaders())
             {
                 context.Writer.WritePropertyName("functionalGroupHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = X12FunctionalGroupHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.FunctionalGroupHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInterchangeControlHeaders())
             {
                 context.Writer.WritePropertyName("interchangeControlHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = X12InterchangeControlHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.InterchangeControlHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidateEdi())
             {
                 context.Writer.WritePropertyName("validateEdi");
-                context.Writer.Write(requestObject.ValidateEdi.Value);
+                context.Writer.WriteBooleanValue(requestObject.ValidateEdi.Value);
             }
 
         }

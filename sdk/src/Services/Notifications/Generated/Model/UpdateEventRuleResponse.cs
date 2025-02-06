@@ -41,7 +41,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) to use to update the EventRule.
+        /// The Amazon Resource Name (ARN) to use to update the <c>EventRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the NotificationConfiguration.
+        /// The ARN of the <c>NotificationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBillInterval())
             {
                 context.Writer.WritePropertyName("billInterval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BillIntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.BillInterval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterExpression())
             {
                 context.Writer.WritePropertyName("filterExpression");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterExpression, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetServiceCode())
             {
                 context.Writer.WritePropertyName("serviceCode");
-                context.Writer.Write(requestObject.ServiceCode);
+                context.Writer.WriteStringValue(requestObject.ServiceCode);
             }
 
             if(requestObject.IsSetUsageAccountId())
             {
                 context.Writer.WritePropertyName("usageAccountId");
-                context.Writer.Write(requestObject.UsageAccountId);
+                context.Writer.WriteStringValue(requestObject.UsageAccountId);
             }
 
             if(requestObject.IsSetUsageType())
             {
                 context.Writer.WritePropertyName("usageType");
-                context.Writer.Write(requestObject.UsageType);
+                context.Writer.WriteStringValue(requestObject.UsageType);
             }
 
         }

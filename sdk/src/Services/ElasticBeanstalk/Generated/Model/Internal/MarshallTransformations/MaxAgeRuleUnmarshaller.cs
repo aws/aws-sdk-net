@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MaxAgeRule Object
     /// </summary>  
-    public class MaxAgeRuleUnmarshaller : IUnmarshaller<MaxAgeRule, XmlUnmarshallerContext>, IUnmarshaller<MaxAgeRule, JsonUnmarshallerContext>
+    public class MaxAgeRuleUnmarshaller : IXmlUnmarshaller<MaxAgeRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MaxAgeRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MaxAgeRuleUnmarshaller _instance = new MaxAgeRuleUnmarshaller();        
 

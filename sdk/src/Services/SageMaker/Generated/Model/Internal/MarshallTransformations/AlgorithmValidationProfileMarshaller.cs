@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProfileName())
             {
                 context.Writer.WritePropertyName("ProfileName");
-                context.Writer.Write(requestObject.ProfileName);
+                context.Writer.WriteStringValue(requestObject.ProfileName);
             }
 
             if(requestObject.IsSetTrainingJobDefinition())
             {
                 context.Writer.WritePropertyName("TrainingJobDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainingJobDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainingJobDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransformJobDefinition())
             {
                 context.Writer.WritePropertyName("TransformJobDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TransformJobDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TransformJobDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

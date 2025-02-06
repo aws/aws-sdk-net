@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAv1Settings())
             {
                 context.Writer.WritePropertyName("av1Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Av1SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Av1Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrameCaptureSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrameCaptureSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrameCaptureSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetH264Settings())
             {
                 context.Writer.WritePropertyName("h264Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = H264SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.H264Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetH265Settings())
             {
                 context.Writer.WritePropertyName("h265Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = H265SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.H265Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMpeg2Settings())
             {
                 context.Writer.WritePropertyName("mpeg2Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mpeg2SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mpeg2Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

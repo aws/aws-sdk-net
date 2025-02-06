@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfDays())
             {
                 context.Writer.WritePropertyName("numberOfDays");
-                context.Writer.Write(requestObject.NumberOfDays.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfDays.Value);
             }
 
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("unlimited");
-                context.Writer.Write(requestObject.Unlimited.Value);
+                context.Writer.WriteBooleanValue(requestObject.Unlimited.Value);
             }
 
         }

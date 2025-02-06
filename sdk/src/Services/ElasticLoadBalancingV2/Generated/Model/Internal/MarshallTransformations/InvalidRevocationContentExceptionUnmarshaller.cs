@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidRevocationContentException operation
     /// </summary>  
-    public class InvalidRevocationContentExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRevocationContentException, XmlUnmarshallerContext>
+    public class InvalidRevocationContentExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidRevocationContentException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

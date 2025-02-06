@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
@@ -47,153 +47,153 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetDomainDetailResponse response = new GetDomainDetailResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AbuseContactEmail", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AbuseContactEmail = unmarshaller.Unmarshall(context);
+                    response.AbuseContactEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AbuseContactPhone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AbuseContactPhone = unmarshaller.Unmarshall(context);
+                    response.AbuseContactPhone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdminContact", targetDepth))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    response.AdminContact = unmarshaller.Unmarshall(context);
+                    response.AdminContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdminPrivacy", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.AdminPrivacy = unmarshaller.Unmarshall(context);
+                    response.AdminPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoRenew", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.AutoRenew = unmarshaller.Unmarshall(context);
+                    response.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BillingContact", targetDepth))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    response.BillingContact = unmarshaller.Unmarshall(context);
+                    response.BillingContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BillingPrivacy", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.BillingPrivacy = unmarshaller.Unmarshall(context);
+                    response.BillingPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationDate = unmarshaller.Unmarshall(context);
+                    response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsSec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DnsSec = unmarshaller.Unmarshall(context);
+                    response.DnsSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnssecKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance);
-                    response.DnssecKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance);
+                    response.DnssecKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
+                    response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ExpirationDate = unmarshaller.Unmarshall(context);
+                    response.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Nameservers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Nameserver, NameserverUnmarshaller>(NameserverUnmarshaller.Instance);
-                    response.Nameservers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Nameserver, NameserverUnmarshaller>(NameserverUnmarshaller.Instance);
+                    response.Nameservers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrantContact", targetDepth))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    response.RegistrantContact = unmarshaller.Unmarshall(context);
+                    response.RegistrantContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrantPrivacy", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.RegistrantPrivacy = unmarshaller.Unmarshall(context);
+                    response.RegistrantPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrarName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RegistrarName = unmarshaller.Unmarshall(context);
+                    response.RegistrarName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrarUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RegistrarUrl = unmarshaller.Unmarshall(context);
+                    response.RegistrarUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistryDomainId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RegistryDomainId = unmarshaller.Unmarshall(context);
+                    response.RegistryDomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Reseller", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Reseller = unmarshaller.Unmarshall(context);
+                    response.Reseller = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.StatusList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.StatusList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TechContact", targetDepth))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
-                    response.TechContact = unmarshaller.Unmarshall(context);
+                    response.TechContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TechPrivacy", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.TechPrivacy = unmarshaller.Unmarshall(context);
+                    response.TechPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdatedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.UpdatedDate = unmarshaller.Unmarshall(context);
+                    response.UpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WhoIsServer", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.WhoIsServer = unmarshaller.Unmarshall(context);
+                    response.WhoIsServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -210,22 +210,24 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
                 {
-                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
                 {
-                    return UnsupportedTLDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return UnsupportedTLDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonRoute53DomainsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

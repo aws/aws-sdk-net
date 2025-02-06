@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceArn())
             {
                 context.Writer.WritePropertyName("SourceArn");
-                context.Writer.Write(requestObject.SourceArn);
+                context.Writer.WriteStringValue(requestObject.SourceArn);
             }
 
             if(requestObject.IsSetSourceUpdateToken())
             {
                 context.Writer.WritePropertyName("SourceUpdateToken");
-                context.Writer.Write(requestObject.SourceUpdateToken);
+                context.Writer.WriteStringValue(requestObject.SourceUpdateToken);
             }
 
         }

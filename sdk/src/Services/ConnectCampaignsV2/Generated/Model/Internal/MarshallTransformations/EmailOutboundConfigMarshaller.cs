@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectSourceEmailAddress())
             {
                 context.Writer.WritePropertyName("connectSourceEmailAddress");
-                context.Writer.Write(requestObject.ConnectSourceEmailAddress);
+                context.Writer.WriteStringValue(requestObject.ConnectSourceEmailAddress);
             }
 
             if(requestObject.IsSetSourceEmailAddressDisplayName())
             {
                 context.Writer.WritePropertyName("sourceEmailAddressDisplayName");
-                context.Writer.Write(requestObject.SourceEmailAddressDisplayName);
+                context.Writer.WriteStringValue(requestObject.SourceEmailAddressDisplayName);
             }
 
             if(requestObject.IsSetWisdomTemplateArn())
             {
                 context.Writer.WritePropertyName("wisdomTemplateArn");
-                context.Writer.Write(requestObject.WisdomTemplateArn);
+                context.Writer.WriteStringValue(requestObject.WisdomTemplateArn);
             }
 
         }

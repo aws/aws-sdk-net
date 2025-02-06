@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumNumTapes())
             {
                 context.Writer.WritePropertyName("MinimumNumTapes");
-                context.Writer.Write(requestObject.MinimumNumTapes.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumNumTapes.Value);
             }
 
             if(requestObject.IsSetPoolId())
             {
                 context.Writer.WritePropertyName("PoolId");
-                context.Writer.Write(requestObject.PoolId);
+                context.Writer.WriteStringValue(requestObject.PoolId);
             }
 
             if(requestObject.IsSetTapeBarcodePrefix())
             {
                 context.Writer.WritePropertyName("TapeBarcodePrefix");
-                context.Writer.Write(requestObject.TapeBarcodePrefix);
+                context.Writer.WriteStringValue(requestObject.TapeBarcodePrefix);
             }
 
             if(requestObject.IsSetTapeSizeInBytes())
             {
                 context.Writer.WritePropertyName("TapeSizeInBytes");
-                context.Writer.Write(requestObject.TapeSizeInBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.TapeSizeInBytes.Value);
             }
 
             if(requestObject.IsSetWorm())
             {
                 context.Writer.WritePropertyName("Worm");
-                context.Writer.Write(requestObject.Worm.Value);
+                context.Writer.WriteBooleanValue(requestObject.Worm.Value);
             }
 
         }

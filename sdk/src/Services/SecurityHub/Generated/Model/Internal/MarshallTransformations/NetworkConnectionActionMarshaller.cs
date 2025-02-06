@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlocked())
             {
                 context.Writer.WritePropertyName("Blocked");
-                context.Writer.Write(requestObject.Blocked.Value);
+                context.Writer.WriteBooleanValue(requestObject.Blocked.Value);
             }
 
             if(requestObject.IsSetConnectionDirection())
             {
                 context.Writer.WritePropertyName("ConnectionDirection");
-                context.Writer.Write(requestObject.ConnectionDirection);
+                context.Writer.WriteStringValue(requestObject.ConnectionDirection);
             }
 
             if(requestObject.IsSetLocalPortDetails())
             {
                 context.Writer.WritePropertyName("LocalPortDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionLocalPortDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LocalPortDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetRemoteIpDetails())
             {
                 context.Writer.WritePropertyName("RemoteIpDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionRemoteIpDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemoteIpDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRemotePortDetails())
             {
                 context.Writer.WritePropertyName("RemotePortDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionRemotePortDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemotePortDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException operation
     /// </summary>  
-    public class IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller : IErrorResponseUnmarshaller<IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException, XmlUnmarshallerContext>
+    public class IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

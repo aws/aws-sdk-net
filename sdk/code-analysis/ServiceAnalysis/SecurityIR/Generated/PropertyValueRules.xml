@@ -429,7 +429,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ThreatActorIp.UserAgent</property>
-    <min>0</min>
+    <min>1</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>

@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerAgentInfo Object
     /// </summary>  
-    public class CustomerAgentInfoUnmarshaller : IUnmarshaller<CustomerAgentInfo, XmlUnmarshallerContext>, IUnmarshaller<CustomerAgentInfo, JsonUnmarshallerContext>
+    public class CustomerAgentInfoUnmarshaller : IJsonUnmarshaller<CustomerAgentInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerAgentInfo IUnmarshaller<CustomerAgentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerAgentInfo Unmarshall(JsonUnmarshallerContext context)
+        public CustomerAgentInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerAgentInfo unmarshalledObject = new CustomerAgentInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blackListedAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BlackListedAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlackListedAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthyAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthyAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthyAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shutdownAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShutdownAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShutdownAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unhealthyAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnhealthyAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnhealthyAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unknownAgents", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnknownAgents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnknownAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

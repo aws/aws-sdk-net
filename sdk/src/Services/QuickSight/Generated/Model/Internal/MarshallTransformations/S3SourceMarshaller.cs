@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceArn())
             {
                 context.Writer.WritePropertyName("DataSourceArn");
-                context.Writer.Write(requestObject.DataSourceArn);
+                context.Writer.WriteStringValue(requestObject.DataSourceArn);
             }
 
             if(requestObject.IsSetInputColumns())
             {
                 context.Writer.WritePropertyName("InputColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputColumnsListValue in requestObject.InputColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUploadSettings())
             {
                 context.Writer.WritePropertyName("UploadSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UploadSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UploadSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

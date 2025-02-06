@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidFileSystemException operation
     /// </summary>  
-    public class InvalidFileSystemExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidFileSystemException, XmlUnmarshallerContext>
+    public class InvalidFileSystemExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidFileSystemException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

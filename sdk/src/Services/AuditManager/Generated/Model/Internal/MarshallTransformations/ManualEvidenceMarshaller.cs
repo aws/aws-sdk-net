@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvidenceFileName())
             {
                 context.Writer.WritePropertyName("evidenceFileName");
-                context.Writer.Write(requestObject.EvidenceFileName);
+                context.Writer.WriteStringValue(requestObject.EvidenceFileName);
             }
 
             if(requestObject.IsSetS3ResourcePath())
             {
                 context.Writer.WritePropertyName("s3ResourcePath");
-                context.Writer.Write(requestObject.S3ResourcePath);
+                context.Writer.WriteStringValue(requestObject.S3ResourcePath);
             }
 
             if(requestObject.IsSetTextResponse())
             {
                 context.Writer.WritePropertyName("textResponse");
-                context.Writer.Write(requestObject.TextResponse);
+                context.Writer.WriteStringValue(requestObject.TextResponse);
             }
 
         }

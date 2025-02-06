@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,98 +49,98 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalConfiguration())
             {
                 context.Writer.WritePropertyName("AdditionalConfiguration");
-                context.Writer.Write(requestObject.AdditionalConfiguration);
+                context.Writer.WriteStringValue(requestObject.AdditionalConfiguration);
             }
 
             if(requestObject.IsSetBytesScannedCutoffPerQuery())
             {
                 context.Writer.WritePropertyName("BytesScannedCutoffPerQuery");
-                context.Writer.Write(requestObject.BytesScannedCutoffPerQuery.Value);
+                context.Writer.WriteNumberValue(requestObject.BytesScannedCutoffPerQuery.Value);
             }
 
             if(requestObject.IsSetCustomerContentEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("CustomerContentEncryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerContentEncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerContentEncryptionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnableMinimumEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EnableMinimumEncryptionConfiguration");
-                context.Writer.Write(requestObject.EnableMinimumEncryptionConfiguration.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMinimumEncryptionConfiguration.Value);
             }
 
             if(requestObject.IsSetEnforceWorkGroupConfiguration())
             {
                 context.Writer.WritePropertyName("EnforceWorkGroupConfiguration");
-                context.Writer.Write(requestObject.EnforceWorkGroupConfiguration.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnforceWorkGroupConfiguration.Value);
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EngineVersionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EngineVersion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
-                context.Writer.Write(requestObject.ExecutionRole);
+                context.Writer.WriteStringValue(requestObject.ExecutionRole);
             }
 
             if(requestObject.IsSetIdentityCenterConfiguration())
             {
                 context.Writer.WritePropertyName("IdentityCenterConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IdentityCenterConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.PublishCloudWatchMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.PublishCloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetQueryResultsS3AccessGrantsConfiguration())
             {
                 context.Writer.WritePropertyName("QueryResultsS3AccessGrantsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QueryResultsS3AccessGrantsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryResultsS3AccessGrantsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequesterPaysEnabled())
             {
                 context.Writer.WritePropertyName("RequesterPaysEnabled");
-                context.Writer.Write(requestObject.RequesterPaysEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequesterPaysEnabled.Value);
             }
 
             if(requestObject.IsSetResultConfiguration())
             {
                 context.Writer.WritePropertyName("ResultConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResultConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResultConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentClassifierName())
             {
                 context.Writer.WritePropertyName("DocumentClassifierName");
-                context.Writer.Write(requestObject.DocumentClassifierName);
+                context.Writer.WriteStringValue(requestObject.DocumentClassifierName);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetSubmitTimeAfter())
             {
                 context.Writer.WritePropertyName("SubmitTimeAfter");
-                context.Writer.Write(requestObject.SubmitTimeAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmitTimeAfter.Value)));
             }
 
             if(requestObject.IsSetSubmitTimeBefore())
             {
                 context.Writer.WritePropertyName("SubmitTimeBefore");
-                context.Writer.Write(requestObject.SubmitTimeBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmitTimeBefore.Value)));
             }
 
         }

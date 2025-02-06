@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.IoTSiteWise.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
@@ -47,8 +48,20 @@ namespace Amazon.IoTSiteWise.Model
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
-            {"Output", payload => new InvocationOutputUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
-            {"Trace", payload => new TraceUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"Output", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new InvocationOutputUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"Trace", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new TraceUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
@@ -56,13 +69,55 @@ namespace Amazon.IoTSiteWise.Model
         protected override IDictionary<string,Func<IEventStreamMessage,IoTSiteWiseEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,IoTSiteWiseEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-            { "AccessDeniedException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new AccessDeniedExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ConflictingOperationException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictingOperationExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "InternalFailureException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "InvalidRequestException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InvalidRequestExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "LimitExceededException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new LimitExceededExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ResourceNotFoundException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ThrottlingException", payload => new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+                    {"AccessDeniedException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new AccessDeniedExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ConflictingOperationException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictingOperationExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"InternalFailureException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"InvalidRequestException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InvalidRequestExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"LimitExceededException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new LimitExceededExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ResourceNotFoundException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ThrottlingException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new IoTSiteWiseEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

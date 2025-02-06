@@ -29,131 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScheduleActionSettings Object
     /// </summary>  
-    public class ScheduleActionSettingsUnmarshaller : IUnmarshaller<ScheduleActionSettings, XmlUnmarshallerContext>, IUnmarshaller<ScheduleActionSettings, JsonUnmarshallerContext>
+    public class ScheduleActionSettingsUnmarshaller : IJsonUnmarshaller<ScheduleActionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScheduleActionSettings IUnmarshaller<ScheduleActionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
+        public ScheduleActionSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScheduleActionSettings unmarshalledObject = new ScheduleActionSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("hlsId3SegmentTaggingSettings", targetDepth))
                 {
                     var unmarshaller = HlsId3SegmentTaggingScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsId3SegmentTaggingSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsId3SegmentTaggingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsTimedMetadataSettings", targetDepth))
                 {
                     var unmarshaller = HlsTimedMetadataScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsTimedMetadataSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsTimedMetadataSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("id3SegmentTaggingSettings", targetDepth))
+                {
+                    var unmarshaller = Id3SegmentTaggingScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Id3SegmentTaggingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputPrepareSettings", targetDepth))
                 {
                     var unmarshaller = InputPrepareScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputPrepareSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputPrepareSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputSwitchSettings", targetDepth))
                 {
                     var unmarshaller = InputSwitchScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputSwitchSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputSwitchSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("motionGraphicsImageActivateSettings", targetDepth))
                 {
                     var unmarshaller = MotionGraphicsActivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MotionGraphicsImageActivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MotionGraphicsImageActivateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("motionGraphicsImageDeactivateSettings", targetDepth))
                 {
                     var unmarshaller = MotionGraphicsDeactivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MotionGraphicsImageDeactivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MotionGraphicsImageDeactivateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pauseStateSettings", targetDepth))
                 {
                     var unmarshaller = PauseStateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PauseStateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PauseStateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35InputSettings", targetDepth))
                 {
                     var unmarshaller = Scte35InputScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte35InputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35InputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35ReturnToNetworkSettings", targetDepth))
                 {
                     var unmarshaller = Scte35ReturnToNetworkScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte35ReturnToNetworkSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35ReturnToNetworkSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35SpliceInsertSettings", targetDepth))
                 {
                     var unmarshaller = Scte35SpliceInsertScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte35SpliceInsertSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35SpliceInsertSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35TimeSignalSettings", targetDepth))
                 {
                     var unmarshaller = Scte35TimeSignalScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte35TimeSignalSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35TimeSignalSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("staticImageActivateSettings", targetDepth))
                 {
                     var unmarshaller = StaticImageActivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StaticImageActivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StaticImageActivateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("staticImageDeactivateSettings", targetDepth))
                 {
                     var unmarshaller = StaticImageDeactivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StaticImageDeactivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StaticImageDeactivateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("staticImageOutputActivateSettings", targetDepth))
                 {
                     var unmarshaller = StaticImageOutputActivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StaticImageOutputActivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StaticImageOutputActivateSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("staticImageOutputDeactivateSettings", targetDepth))
                 {
                     var unmarshaller = StaticImageOutputDeactivateScheduleActionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StaticImageOutputDeactivateSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StaticImageOutputDeactivateSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataSettings", targetDepth))
+                {
+                    var unmarshaller = TimedMetadataScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

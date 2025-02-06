@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The Q Business action that is allowed.
+        /// The Amazon Q Business action that is allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

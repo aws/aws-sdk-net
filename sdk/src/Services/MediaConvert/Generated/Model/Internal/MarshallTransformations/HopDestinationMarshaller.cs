@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetQueue())
             {
                 context.Writer.WritePropertyName("queue");
-                context.Writer.Write(requestObject.Queue);
+                context.Writer.WriteStringValue(requestObject.Queue);
             }
 
             if(requestObject.IsSetWaitMinutes())
             {
                 context.Writer.WritePropertyName("waitMinutes");
-                context.Writer.Write(requestObject.WaitMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.WaitMinutes.Value);
             }
 
         }

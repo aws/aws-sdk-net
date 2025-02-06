@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IntentLevelSlotResolutionTestResultItem Object
     /// </summary>  
-    public class IntentLevelSlotResolutionTestResultItemUnmarshaller : IUnmarshaller<IntentLevelSlotResolutionTestResultItem, XmlUnmarshallerContext>, IUnmarshaller<IntentLevelSlotResolutionTestResultItem, JsonUnmarshallerContext>
+    public class IntentLevelSlotResolutionTestResultItemUnmarshaller : IJsonUnmarshaller<IntentLevelSlotResolutionTestResultItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IntentLevelSlotResolutionTestResultItem IUnmarshaller<IntentLevelSlotResolutionTestResultItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IntentLevelSlotResolutionTestResultItem Unmarshall(JsonUnmarshallerContext context)
+        public IntentLevelSlotResolutionTestResultItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IntentLevelSlotResolutionTestResultItem unmarshalledObject = new IntentLevelSlotResolutionTestResultItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("intentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("multiTurnConversation", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MultiTurnConversation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiTurnConversation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotResolutionResults", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SlotResolutionTestResultItem, SlotResolutionTestResultItemUnmarshaller>(SlotResolutionTestResultItemUnmarshaller.Instance);
-                    unmarshalledObject.SlotResolutionResults = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SlotResolutionTestResultItem, SlotResolutionTestResultItemUnmarshaller>(SlotResolutionTestResultItemUnmarshaller.Instance);
+                    unmarshalledObject.SlotResolutionResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

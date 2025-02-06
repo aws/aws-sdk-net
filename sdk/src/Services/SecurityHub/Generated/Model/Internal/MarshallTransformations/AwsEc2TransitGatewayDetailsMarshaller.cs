@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonSideAsn())
             {
                 context.Writer.WritePropertyName("AmazonSideAsn");
-                context.Writer.Write(requestObject.AmazonSideAsn.Value);
+                context.Writer.WriteNumberValue(requestObject.AmazonSideAsn.Value);
             }
 
             if(requestObject.IsSetAssociationDefaultRouteTableId())
             {
                 context.Writer.WritePropertyName("AssociationDefaultRouteTableId");
-                context.Writer.Write(requestObject.AssociationDefaultRouteTableId);
+                context.Writer.WriteStringValue(requestObject.AssociationDefaultRouteTableId);
             }
 
             if(requestObject.IsSetAutoAcceptSharedAttachments())
             {
                 context.Writer.WritePropertyName("AutoAcceptSharedAttachments");
-                context.Writer.Write(requestObject.AutoAcceptSharedAttachments);
+                context.Writer.WriteStringValue(requestObject.AutoAcceptSharedAttachments);
             }
 
             if(requestObject.IsSetDefaultRouteTableAssociation())
             {
                 context.Writer.WritePropertyName("DefaultRouteTableAssociation");
-                context.Writer.Write(requestObject.DefaultRouteTableAssociation);
+                context.Writer.WriteStringValue(requestObject.DefaultRouteTableAssociation);
             }
 
             if(requestObject.IsSetDefaultRouteTablePropagation())
             {
                 context.Writer.WritePropertyName("DefaultRouteTablePropagation");
-                context.Writer.Write(requestObject.DefaultRouteTablePropagation);
+                context.Writer.WriteStringValue(requestObject.DefaultRouteTablePropagation);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDnsSupport())
             {
                 context.Writer.WritePropertyName("DnsSupport");
-                context.Writer.Write(requestObject.DnsSupport);
+                context.Writer.WriteStringValue(requestObject.DnsSupport);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMulticastSupport())
             {
                 context.Writer.WritePropertyName("MulticastSupport");
-                context.Writer.Write(requestObject.MulticastSupport);
+                context.Writer.WriteStringValue(requestObject.MulticastSupport);
             }
 
             if(requestObject.IsSetPropagationDefaultRouteTableId())
             {
                 context.Writer.WritePropertyName("PropagationDefaultRouteTableId");
-                context.Writer.Write(requestObject.PropagationDefaultRouteTableId);
+                context.Writer.WriteStringValue(requestObject.PropagationDefaultRouteTableId);
             }
 
             if(requestObject.IsSetTransitGatewayCidrBlocks())
             {
                 context.Writer.WritePropertyName("TransitGatewayCidrBlocks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTransitGatewayCidrBlocksListValue in requestObject.TransitGatewayCidrBlocks)
                 {
-                        context.Writer.Write(requestObjectTransitGatewayCidrBlocksListValue);
+                        context.Writer.WriteStringValue(requestObjectTransitGatewayCidrBlocksListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpnEcmpSupport())
             {
                 context.Writer.WritePropertyName("VpnEcmpSupport");
-                context.Writer.Write(requestObject.VpnEcmpSupport);
+                context.Writer.WriteStringValue(requestObject.VpnEcmpSupport);
             }
 
         }

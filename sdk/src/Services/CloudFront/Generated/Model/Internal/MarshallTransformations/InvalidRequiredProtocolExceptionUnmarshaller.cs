@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidRequiredProtocolException operation
     /// </summary>  
-    public class InvalidRequiredProtocolExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRequiredProtocolException, XmlUnmarshallerContext>
+    public class InvalidRequiredProtocolExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidRequiredProtocolException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

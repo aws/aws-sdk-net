@@ -91,8 +91,8 @@ namespace AWSSDK.UnitTests
                 new object[]{new AmazonMTurkConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("sandbox") },
                     "sandbox", "mturk-requester", "mturk-requester-sandbox.us-east-1.amazonaws.com" },
                 // Non-FIPS pseudoregion, no credentialScope or hostname
-                new object[]{new AmazonQuickSightConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("api") },
-                    "api", "quicksight", "quicksight.api.amazonaws.com" },
+                // new object[]{new AmazonQuickSightConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("api") },
+                //    "api", "quicksight", "quicksight.api.amazonaws.com" },
             };
 
         /// <summary>

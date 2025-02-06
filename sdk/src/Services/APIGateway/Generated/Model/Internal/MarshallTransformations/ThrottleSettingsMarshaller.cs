@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBurstLimit())
             {
                 context.Writer.WritePropertyName("burstLimit");
-                context.Writer.Write(requestObject.BurstLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.BurstLimit.Value);
             }
 
             if(requestObject.IsSetRateLimit())
@@ -59,11 +57,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("rateLimit");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.RateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RateLimit.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.RateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.RateLimit.Value);
+                    context.Writer.WriteNumberValue(requestObject.RateLimit.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOcrLanguage())
             {
                 context.Writer.WritePropertyName("ocrLanguage");
-                context.Writer.Write(requestObject.OcrLanguage);
+                context.Writer.WriteStringValue(requestObject.OcrLanguage);
             }
 
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Pid.Value);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTypeException operation
     /// </summary>  
-    public class InvalidTypeExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTypeException, XmlUnmarshallerContext>
+    public class InvalidTypeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTypeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

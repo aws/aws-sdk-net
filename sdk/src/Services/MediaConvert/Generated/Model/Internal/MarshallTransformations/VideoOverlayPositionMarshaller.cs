@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
             if(requestObject.IsSetXPosition())
             {
                 context.Writer.WritePropertyName("xPosition");
-                context.Writer.Write(requestObject.XPosition.Value);
+                context.Writer.WriteNumberValue(requestObject.XPosition.Value);
             }
 
             if(requestObject.IsSetYPosition())
             {
                 context.Writer.WritePropertyName("yPosition");
-                context.Writer.Write(requestObject.YPosition.Value);
+                context.Writer.WriteNumberValue(requestObject.YPosition.Value);
             }
 
         }

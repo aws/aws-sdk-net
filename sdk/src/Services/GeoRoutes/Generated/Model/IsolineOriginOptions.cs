@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options for the property.
+    /// Origin related options.
     /// </summary>
     public partial class IsolineOriginOptions
     {

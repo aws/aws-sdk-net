@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PackageVersionOutputConfig Object
     /// </summary>  
-    public class PackageVersionOutputConfigUnmarshaller : IUnmarshaller<PackageVersionOutputConfig, XmlUnmarshallerContext>, IUnmarshaller<PackageVersionOutputConfig, JsonUnmarshallerContext>
+    public class PackageVersionOutputConfigUnmarshaller : IJsonUnmarshaller<PackageVersionOutputConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PackageVersionOutputConfig IUnmarshaller<PackageVersionOutputConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PackageVersionOutputConfig Unmarshall(JsonUnmarshallerContext context)
+        public PackageVersionOutputConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PackageVersionOutputConfig unmarshalledObject = new PackageVersionOutputConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MarkLatest", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MarkLatest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MarkLatest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PackageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PackageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PackageVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

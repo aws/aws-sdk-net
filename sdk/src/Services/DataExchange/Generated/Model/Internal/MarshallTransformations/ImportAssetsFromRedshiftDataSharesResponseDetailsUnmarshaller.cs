@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImportAssetsFromRedshiftDataSharesResponseDetails Object
     /// </summary>  
-    public class ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller : IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, JsonUnmarshallerContext>
+    public class ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller : IJsonUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImportAssetsFromRedshiftDataSharesResponseDetails IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportAssetsFromRedshiftDataSharesResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ImportAssetsFromRedshiftDataSharesResponseDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImportAssetsFromRedshiftDataSharesResponseDetails unmarshalledObject = new ImportAssetsFromRedshiftDataSharesResponseDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssetSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RedshiftDataShareAssetSourceEntry, RedshiftDataShareAssetSourceEntryUnmarshaller>(RedshiftDataShareAssetSourceEntryUnmarshaller.Instance);
-                    unmarshalledObject.AssetSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RedshiftDataShareAssetSourceEntry, RedshiftDataShareAssetSourceEntryUnmarshaller>(RedshiftDataShareAssetSourceEntryUnmarshaller.Instance);
+                    unmarshalledObject.AssetSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

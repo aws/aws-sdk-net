@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimePointGranularity())
             {
                 context.Writer.WritePropertyName("TimePointGranularity");
-                context.Writer.Write(requestObject.TimePointGranularity);
+                context.Writer.WriteStringValue(requestObject.TimePointGranularity);
             }
 
             if(requestObject.IsSetTimeSeriesGranularity())
             {
                 context.Writer.WritePropertyName("TimeSeriesGranularity");
-                context.Writer.Write(requestObject.TimeSeriesGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeSeriesGranularity);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowInterrupt())
             {
                 context.Writer.WritePropertyName("allowInterrupt");
-                context.Writer.Write(requestObject.AllowInterrupt.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowInterrupt.Value);
             }
 
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("maxRetries");
-                context.Writer.Write(requestObject.MaxRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRetries.Value);
             }
 
             if(requestObject.IsSetMessageGroups())
             {
                 context.Writer.WritePropertyName("messageGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMessageGroupsListValue in requestObject.MessageGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MessageGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectMessageGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMessageSelectionStrategy())
             {
                 context.Writer.WritePropertyName("messageSelectionStrategy");
-                context.Writer.Write(requestObject.MessageSelectionStrategy);
+                context.Writer.WriteStringValue(requestObject.MessageSelectionStrategy);
             }
 
             if(requestObject.IsSetPromptAttemptsSpecification())
             {
                 context.Writer.WritePropertyName("promptAttemptsSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPromptAttemptsSpecificationKvp in requestObject.PromptAttemptsSpecification)
                 {
                     context.Writer.WritePropertyName(requestObjectPromptAttemptsSpecificationKvp.Key);
                     var requestObjectPromptAttemptsSpecificationValue = requestObjectPromptAttemptsSpecificationKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PromptAttemptSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectPromptAttemptsSpecificationValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

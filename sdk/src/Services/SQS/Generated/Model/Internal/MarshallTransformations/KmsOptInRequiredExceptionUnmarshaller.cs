@@ -59,7 +59,10 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public KmsOptInRequiredException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read(ref reader);
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             var errorCode = errorResponse.Code;
             var errorType = errorResponse.Type;
@@ -85,8 +88,11 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            if (context.Stream.Length > 0)
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                }
             }
           
             return unmarshalledObject;

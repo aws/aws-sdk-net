@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarmName())
             {
                 context.Writer.WritePropertyName("alarmName");
-                context.Writer.Write(requestObject.AlarmName);
+                context.Writer.WriteStringValue(requestObject.AlarmName);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetStateReason())
             {
                 context.Writer.WritePropertyName("stateReason");
-                context.Writer.Write(requestObject.StateReason);
+                context.Writer.WriteStringValue(requestObject.StateReason);
             }
 
             if(requestObject.IsSetStateValue())
             {
                 context.Writer.WritePropertyName("stateValue");
-                context.Writer.Write(requestObject.StateValue);
+                context.Writer.WriteStringValue(requestObject.StateValue);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -67,33 +70,38 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionid", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/api/v1/resources/{ResourceId}/customMetadata";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomMetadata())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("CustomMetadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCustomMetadataKvp in publicRequest.CustomMetadata)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomMetadata())
-                    {
-                        context.Writer.WritePropertyName("CustomMetadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestCustomMetadataKvp in publicRequest.CustomMetadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestCustomMetadataKvp.Key);
-                            var publicRequestCustomMetadataValue = publicRequestCustomMetadataKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestCustomMetadataKvp.Key);
+                    var publicRequestCustomMetadataValue = publicRequestCustomMetadataKvp.Value;
 
-                                context.Writer.Write(publicRequestCustomMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestCustomMetadataValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetAuthenticationToken()) 

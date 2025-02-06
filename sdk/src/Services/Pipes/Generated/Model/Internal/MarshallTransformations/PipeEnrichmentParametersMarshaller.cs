@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpParameters())
             {
                 context.Writer.WritePropertyName("HttpParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeEnrichmentHttpParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputTemplate())
             {
                 context.Writer.WritePropertyName("InputTemplate");
-                context.Writer.Write(requestObject.InputTemplate);
+                context.Writer.WriteStringValue(requestObject.InputTemplate);
             }
 
         }

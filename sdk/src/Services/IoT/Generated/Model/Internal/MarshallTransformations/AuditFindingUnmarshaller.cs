@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AuditFinding Object
     /// </summary>  
-    public class AuditFindingUnmarshaller : IUnmarshaller<AuditFinding, XmlUnmarshallerContext>, IUnmarshaller<AuditFinding, JsonUnmarshallerContext>
+    public class AuditFindingUnmarshaller : IJsonUnmarshaller<AuditFinding, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AuditFinding IUnmarshaller<AuditFinding, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuditFinding Unmarshall(JsonUnmarshallerContext context)
+        public AuditFinding Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AuditFinding unmarshalledObject = new AuditFinding();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("checkName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CheckName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CheckName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("findingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FindingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FindingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("findingTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FindingTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FindingTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isSuppressed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsSuppressed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsSuppressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nonCompliantResource", targetDepth))
                 {
                     var unmarshaller = NonCompliantResourceUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantResource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("reasonForNonCompliance", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReasonForNonCompliance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReasonForNonCompliance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("reasonForNonComplianceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReasonForNonComplianceCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReasonForNonComplianceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relatedResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RelatedResource, RelatedResourceUnmarshaller>(RelatedResourceUnmarshaller.Instance);
-                    unmarshalledObject.RelatedResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RelatedResource, RelatedResourceUnmarshaller>(RelatedResourceUnmarshaller.Instance);
+                    unmarshalledObject.RelatedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("severity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

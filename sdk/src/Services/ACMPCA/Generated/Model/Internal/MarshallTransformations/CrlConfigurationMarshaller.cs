@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrlDistributionPointExtensionConfiguration())
             {
                 context.Writer.WritePropertyName("CrlDistributionPointExtensionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CrlDistributionPointExtensionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrlDistributionPointExtensionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomCname())
             {
                 context.Writer.WritePropertyName("CustomCname");
-                context.Writer.Write(requestObject.CustomCname);
+                context.Writer.WriteStringValue(requestObject.CustomCname);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExpirationInDays())
             {
                 context.Writer.WritePropertyName("ExpirationInDays");
-                context.Writer.Write(requestObject.ExpirationInDays.Value);
+                context.Writer.WriteNumberValue(requestObject.ExpirationInDays.Value);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetS3ObjectAcl())
             {
                 context.Writer.WritePropertyName("S3ObjectAcl");
-                context.Writer.Write(requestObject.S3ObjectAcl);
+                context.Writer.WriteStringValue(requestObject.S3ObjectAcl);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayMulticastDeregisteredGroupSources Object
     /// </summary>  
-    public class TransitGatewayMulticastDeregisteredGroupSourcesUnmarshaller : IUnmarshaller<TransitGatewayMulticastDeregisteredGroupSources, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayMulticastDeregisteredGroupSources, JsonUnmarshallerContext>
+    public class TransitGatewayMulticastDeregisteredGroupSourcesUnmarshaller : IXmlUnmarshaller<TransitGatewayMulticastDeregisteredGroupSources, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayMulticastDeregisteredGroupSources Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayMulticastDeregisteredGroupSourcesUnmarshaller _instance = new TransitGatewayMulticastDeregisteredGroupSourcesUnmarshaller();        
 

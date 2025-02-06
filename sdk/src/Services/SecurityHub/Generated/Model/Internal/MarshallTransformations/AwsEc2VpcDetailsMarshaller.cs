@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrBlockAssociationSet())
             {
                 context.Writer.WritePropertyName("CidrBlockAssociationSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrBlockAssociationSetListValue in requestObject.CidrBlockAssociationSet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CidrBlockAssociationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCidrBlockAssociationSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDhcpOptionsId())
             {
                 context.Writer.WritePropertyName("DhcpOptionsId");
-                context.Writer.Write(requestObject.DhcpOptionsId);
+                context.Writer.WriteStringValue(requestObject.DhcpOptionsId);
             }
 
             if(requestObject.IsSetIpv6CidrBlockAssociationSet())
             {
                 context.Writer.WritePropertyName("Ipv6CidrBlockAssociationSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpv6CidrBlockAssociationSetListValue in requestObject.Ipv6CidrBlockAssociationSet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = Ipv6CidrBlockAssociationMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6CidrBlockAssociationSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

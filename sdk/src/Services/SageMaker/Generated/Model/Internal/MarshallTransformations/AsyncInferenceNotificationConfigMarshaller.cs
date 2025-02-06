@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorTopic())
             {
                 context.Writer.WritePropertyName("ErrorTopic");
-                context.Writer.Write(requestObject.ErrorTopic);
+                context.Writer.WriteStringValue(requestObject.ErrorTopic);
             }
 
             if(requestObject.IsSetIncludeInferenceResponseIn())
             {
                 context.Writer.WritePropertyName("IncludeInferenceResponseIn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeInferenceResponseInListValue in requestObject.IncludeInferenceResponseIn)
                 {
-                        context.Writer.Write(requestObjectIncludeInferenceResponseInListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeInferenceResponseInListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSuccessTopic())
             {
                 context.Writer.WritePropertyName("SuccessTopic");
-                context.Writer.Write(requestObject.SuccessTopic);
+                context.Writer.WriteStringValue(requestObject.SuccessTopic);
             }
 
         }

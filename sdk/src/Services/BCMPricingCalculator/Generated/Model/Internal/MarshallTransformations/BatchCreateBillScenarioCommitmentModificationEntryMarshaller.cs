@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommitmentAction())
             {
                 context.Writer.WritePropertyName("commitmentAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BillScenarioCommitmentModificationActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CommitmentAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("group");
-                context.Writer.Write(requestObject.Group);
+                context.Writer.WriteStringValue(requestObject.Group);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetUsageAccountId())
             {
                 context.Writer.WritePropertyName("usageAccountId");
-                context.Writer.Write(requestObject.UsageAccountId);
+                context.Writer.WriteStringValue(requestObject.UsageAccountId);
             }
 
         }

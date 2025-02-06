@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArtifactPath())
             {
                 context.Writer.WritePropertyName("ArtifactPath");
-                context.Writer.Write(requestObject.ArtifactPath);
+                context.Writer.WriteStringValue(requestObject.ArtifactPath);
             }
 
             if(requestObject.IsSetBranch())
             {
                 context.Writer.WritePropertyName("Branch");
-                context.Writer.Write(requestObject.Branch);
+                context.Writer.WriteStringValue(requestObject.Branch);
             }
 
             if(requestObject.IsSetConnectionArn())
             {
                 context.Writer.WritePropertyName("ConnectionArn");
-                context.Writer.Write(requestObject.ConnectionArn);
+                context.Writer.WriteStringValue(requestObject.ConnectionArn);
             }
 
             if(requestObject.IsSetRepository())
             {
                 context.Writer.WritePropertyName("Repository");
-                context.Writer.Write(requestObject.Repository);
+                context.Writer.WriteStringValue(requestObject.Repository);
             }
 
         }

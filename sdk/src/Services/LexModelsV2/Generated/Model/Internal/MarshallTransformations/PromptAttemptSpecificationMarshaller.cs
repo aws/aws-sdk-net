@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedInputTypes())
             {
                 context.Writer.WritePropertyName("allowedInputTypes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AllowedInputTypesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AllowedInputTypes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAllowInterrupt())
             {
                 context.Writer.WritePropertyName("allowInterrupt");
-                context.Writer.Write(requestObject.AllowInterrupt.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowInterrupt.Value);
             }
 
             if(requestObject.IsSetAudioAndDTMFInputSpecification())
             {
                 context.Writer.WritePropertyName("audioAndDTMFInputSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioAndDTMFInputSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioAndDTMFInputSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextInputSpecification())
             {
                 context.Writer.WritePropertyName("textInputSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextInputSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextInputSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

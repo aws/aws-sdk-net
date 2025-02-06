@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyKeyGroupsException operation
     /// </summary>  
-    public class TooManyKeyGroupsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyKeyGroupsException, XmlUnmarshallerContext>
+    public class TooManyKeyGroupsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyKeyGroupsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

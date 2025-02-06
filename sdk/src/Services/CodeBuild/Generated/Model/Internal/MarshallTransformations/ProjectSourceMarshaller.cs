@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuth())
             {
                 context.Writer.WritePropertyName("auth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceAuthMarshaller.Instance;
                 marshaller.Marshall(requestObject.Auth, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBuildspec())
             {
                 context.Writer.WritePropertyName("buildspec");
-                context.Writer.Write(requestObject.Buildspec);
+                context.Writer.WriteStringValue(requestObject.Buildspec);
             }
 
             if(requestObject.IsSetBuildStatusConfig())
             {
                 context.Writer.WritePropertyName("buildStatusConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BuildStatusConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.BuildStatusConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGitCloneDepth())
             {
                 context.Writer.WritePropertyName("gitCloneDepth");
-                context.Writer.Write(requestObject.GitCloneDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.GitCloneDepth.Value);
             }
 
             if(requestObject.IsSetGitSubmodulesConfig())
             {
                 context.Writer.WritePropertyName("gitSubmodulesConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitSubmodulesConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitSubmodulesConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInsecureSsl())
             {
                 context.Writer.WritePropertyName("insecureSsl");
-                context.Writer.Write(requestObject.InsecureSsl.Value);
+                context.Writer.WriteBooleanValue(requestObject.InsecureSsl.Value);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetReportBuildStatus())
             {
                 context.Writer.WritePropertyName("reportBuildStatus");
-                context.Writer.Write(requestObject.ReportBuildStatus.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReportBuildStatus.Value);
             }
 
             if(requestObject.IsSetSourceIdentifier())
             {
                 context.Writer.WritePropertyName("sourceIdentifier");
-                context.Writer.Write(requestObject.SourceIdentifier);
+                context.Writer.WriteStringValue(requestObject.SourceIdentifier);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

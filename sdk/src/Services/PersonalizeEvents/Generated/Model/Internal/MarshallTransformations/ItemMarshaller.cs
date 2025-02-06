@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemId())
             {
                 context.Writer.WritePropertyName("itemId");
-                context.Writer.Write(requestObject.ItemId);
+                context.Writer.WriteStringValue(requestObject.ItemId);
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.Write(requestObject.Properties);
+                context.Writer.WriteStringValue(requestObject.Properties);
             }
 
         }

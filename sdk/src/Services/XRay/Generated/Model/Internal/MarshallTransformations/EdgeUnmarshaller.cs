@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Edge Object
     /// </summary>  
-    public class EdgeUnmarshaller : IUnmarshaller<Edge, XmlUnmarshallerContext>, IUnmarshaller<Edge, JsonUnmarshallerContext>
+    public class EdgeUnmarshaller : IJsonUnmarshaller<Edge, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Edge IUnmarshaller<Edge, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Edge Unmarshall(JsonUnmarshallerContext context)
+        public Edge Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Edge unmarshalledObject = new Edge();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Aliases", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
-                    unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
+                    unmarshalledObject.Aliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EdgeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReceivedEventAgeHistogram", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
-                    unmarshalledObject.ReceivedEventAgeHistogram = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
+                    unmarshalledObject.ReceivedEventAgeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReferenceId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResponseTimeHistogram", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
-                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
+                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SummaryStatistics", targetDepth))
                 {
                     var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.SummaryStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SummaryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

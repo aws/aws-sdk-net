@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -64,74 +67,79 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 throw new AmazonApplicationSignalsException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/slo/{Id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBurnRateConfigurations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("BurnRateConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBurnRateConfigurationsListValue in publicRequest.BurnRateConfigurations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBurnRateConfigurations())
-                    {
-                        context.Writer.WritePropertyName("BurnRateConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBurnRateConfigurationsListValue in publicRequest.BurnRateConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = BurnRateConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBurnRateConfigurationsListValue, context);
+                    var marshaller = BurnRateConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBurnRateConfigurationsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetGoal())
-                    {
-                        context.Writer.WritePropertyName("Goal");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GoalMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Goal, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRequestBasedSliConfig())
-                    {
-                        context.Writer.WritePropertyName("RequestBasedSliConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSliConfig())
-                    {
-                        context.Writer.WritePropertyName("SliConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SliConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetGoal())
+            {
+                context.Writer.WritePropertyName("Goal");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GoalMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Goal, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRequestBasedSliConfig())
+            {
+                context.Writer.WritePropertyName("RequestBasedSliConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSliConfig())
+            {
+                context.Writer.WritePropertyName("SliConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SliConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

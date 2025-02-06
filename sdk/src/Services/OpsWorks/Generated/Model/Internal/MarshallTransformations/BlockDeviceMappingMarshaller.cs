@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("DeviceName");
-                context.Writer.Write(requestObject.DeviceName);
+                context.Writer.WriteStringValue(requestObject.DeviceName);
             }
 
             if(requestObject.IsSetEbs())
             {
                 context.Writer.WritePropertyName("Ebs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EbsBlockDeviceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ebs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoDevice())
             {
                 context.Writer.WritePropertyName("NoDevice");
-                context.Writer.Write(requestObject.NoDevice);
+                context.Writer.WriteStringValue(requestObject.NoDevice);
             }
 
             if(requestObject.IsSetVirtualName())
             {
                 context.Writer.WritePropertyName("VirtualName");
-                context.Writer.Write(requestObject.VirtualName);
+                context.Writer.WriteStringValue(requestObject.VirtualName);
             }
 
         }

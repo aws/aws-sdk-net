@@ -751,8 +751,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LinuxParameters. 
         /// <para>
-        /// Linux-specific modifications that are applied to the container, such as Linux kernel
-        /// capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.
+        /// Linux-specific modifications that are applied to the default Docker container configuration,
+        /// such as Linux kernel capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.
         /// </para>
         ///  <note> 
         /// <para>

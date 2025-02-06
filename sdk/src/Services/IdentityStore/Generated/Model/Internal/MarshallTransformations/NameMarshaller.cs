@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFamilyName())
             {
                 context.Writer.WritePropertyName("FamilyName");
-                context.Writer.Write(requestObject.FamilyName);
+                context.Writer.WriteStringValue(requestObject.FamilyName);
             }
 
             if(requestObject.IsSetFormatted())
             {
                 context.Writer.WritePropertyName("Formatted");
-                context.Writer.Write(requestObject.Formatted);
+                context.Writer.WriteStringValue(requestObject.Formatted);
             }
 
             if(requestObject.IsSetGivenName())
             {
                 context.Writer.WritePropertyName("GivenName");
-                context.Writer.Write(requestObject.GivenName);
+                context.Writer.WriteStringValue(requestObject.GivenName);
             }
 
             if(requestObject.IsSetHonorificPrefix())
             {
                 context.Writer.WritePropertyName("HonorificPrefix");
-                context.Writer.Write(requestObject.HonorificPrefix);
+                context.Writer.WriteStringValue(requestObject.HonorificPrefix);
             }
 
             if(requestObject.IsSetHonorificSuffix())
             {
                 context.Writer.WritePropertyName("HonorificSuffix");
-                context.Writer.Write(requestObject.HonorificSuffix);
+                context.Writer.WriteStringValue(requestObject.HonorificSuffix);
             }
 
             if(requestObject.IsSetMiddleName())
             {
                 context.Writer.WritePropertyName("MiddleName");
-                context.Writer.Write(requestObject.MiddleName);
+                context.Writer.WriteStringValue(requestObject.MiddleName);
             }
 
         }

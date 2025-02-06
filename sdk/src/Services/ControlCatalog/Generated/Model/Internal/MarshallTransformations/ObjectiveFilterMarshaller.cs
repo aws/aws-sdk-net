@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomains())
             {
                 context.Writer.WritePropertyName("Domains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainsListValue in requestObject.Domains)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DomainResourceFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectDomainsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

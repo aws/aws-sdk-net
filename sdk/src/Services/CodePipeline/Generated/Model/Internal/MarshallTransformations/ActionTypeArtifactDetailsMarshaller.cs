@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumCount())
             {
                 context.Writer.WritePropertyName("maximumCount");
-                context.Writer.Write(requestObject.MaximumCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumCount.Value);
             }
 
             if(requestObject.IsSetMinimumCount())
             {
                 context.Writer.WritePropertyName("minimumCount");
-                context.Writer.Write(requestObject.MinimumCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumCount.Value);
             }
 
         }

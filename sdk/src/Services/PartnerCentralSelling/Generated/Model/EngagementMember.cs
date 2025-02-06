@@ -53,7 +53,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  This is the unique identifier for the AWS account associated with the member organization.
+        /// This is the unique identifier for the AWS account associated with the member organization.
         /// It's used for AWS-related operations and identity verification. 
         /// </para>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CompanyName. 
         /// <para>
-        ///  The official name of the member's company or organization. 
+        /// The official name of the member's company or organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]
@@ -92,7 +92,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property WebsiteUrl. 
         /// <para>
-        ///  The URL of the member company's website. This offers a way to find more information
+        /// The URL of the member company's website. This offers a way to find more information
         /// about the member organization and serves as an additional identifier. 
         /// </para>
         /// </summary>

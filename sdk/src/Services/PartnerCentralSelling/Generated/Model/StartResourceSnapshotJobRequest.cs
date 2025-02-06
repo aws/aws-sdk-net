@@ -41,8 +41,18 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the request. 
+        /// Specifies the catalog related to the request. Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS: Starts the request from the production AWS environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Sandbox: Starts the request from a sandbox environment used for testing or development
+        /// purposes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Catalog
@@ -60,7 +70,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobIdentifier. 
         /// <para>
-        ///  The identifier of the resource snapshot job to start. 
+        /// The identifier of the resource snapshot job to start.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FindMatchesMetrics Object
     /// </summary>  
-    public class FindMatchesMetricsUnmarshaller : IUnmarshaller<FindMatchesMetrics, XmlUnmarshallerContext>, IUnmarshaller<FindMatchesMetrics, JsonUnmarshallerContext>
+    public class FindMatchesMetricsUnmarshaller : IJsonUnmarshaller<FindMatchesMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FindMatchesMetrics IUnmarshaller<FindMatchesMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FindMatchesMetrics Unmarshall(JsonUnmarshallerContext context)
+        public FindMatchesMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FindMatchesMetrics unmarshalledObject = new FindMatchesMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AreaUnderPRCurve", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.AreaUnderPRCurve = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AreaUnderPRCurve = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnImportances", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnImportance, ColumnImportanceUnmarshaller>(ColumnImportanceUnmarshaller.Instance);
-                    unmarshalledObject.ColumnImportances = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnImportance, ColumnImportanceUnmarshaller>(ColumnImportanceUnmarshaller.Instance);
+                    unmarshalledObject.ColumnImportances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfusionMatrix", targetDepth))
                 {
                     var unmarshaller = ConfusionMatrixUnmarshaller.Instance;
-                    unmarshalledObject.ConfusionMatrix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfusionMatrix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("F1", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.F1 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.F1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Precision", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Recall", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceLastAccessed Object
     /// </summary>  
-    public class ServiceLastAccessedUnmarshaller : IUnmarshaller<ServiceLastAccessed, XmlUnmarshallerContext>, IUnmarshaller<ServiceLastAccessed, JsonUnmarshallerContext>
+    public class ServiceLastAccessedUnmarshaller : IXmlUnmarshaller<ServiceLastAccessed, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,17 +111,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServiceLastAccessed Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServiceLastAccessedUnmarshaller _instance = new ServiceLastAccessedUnmarshaller();        
 

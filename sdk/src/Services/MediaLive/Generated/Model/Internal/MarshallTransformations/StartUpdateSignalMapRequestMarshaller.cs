@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -64,65 +67,70 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             request.ResourcePath = "/prod/signal-maps/{identifier}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCloudWatchAlarmTemplateGroupIdentifiers())
-                    {
-                        context.Writer.WritePropertyName("cloudWatchAlarmTemplateGroupIdentifiers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue in publicRequest.CloudWatchAlarmTemplateGroupIdentifiers)
-                        {
-                                context.Writer.Write(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDiscoveryEntryPointArn())
-                    {
-                        context.Writer.WritePropertyName("discoveryEntryPointArn");
-                        context.Writer.Write(publicRequest.DiscoveryEntryPointArn);
-                    }
-
-                    if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
-                    {
-                        context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
-                        {
-                                context.Writer.Write(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetForceRediscovery())
-                    {
-                        context.Writer.WritePropertyName("forceRediscovery");
-                        context.Writer.Write(publicRequest.ForceRediscovery.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestCloudWatchAlarmTemplateGroupIdentifiersListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDiscoveryEntryPointArn())
+            {
+                context.Writer.WritePropertyName("discoveryEntryPointArn");
+                context.Writer.WriteStringValue(publicRequest.DiscoveryEntryPointArn);
+            }
+
+            if(publicRequest.IsSetEventBridgeRuleTemplateGroupIdentifiers())
+            {
+                context.Writer.WritePropertyName("eventBridgeRuleTemplateGroupIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue in publicRequest.EventBridgeRuleTemplateGroupIdentifiers)
+                {
+                        context.Writer.WriteStringValue(publicRequestEventBridgeRuleTemplateGroupIdentifiersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetForceRediscovery())
+            {
+                context.Writer.WritePropertyName("forceRediscovery");
+                context.Writer.WriteBooleanValue(publicRequest.ForceRediscovery.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

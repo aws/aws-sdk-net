@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventResourceARN())
             {
                 context.Writer.WritePropertyName("EventResourceARN");
-                context.Writer.Write(requestObject.EventResourceARN);
+                context.Writer.WriteStringValue(requestObject.EventResourceARN);
             }
 
         }

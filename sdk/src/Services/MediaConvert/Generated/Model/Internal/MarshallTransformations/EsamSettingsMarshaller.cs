@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestConfirmConditionNotification())
             {
                 context.Writer.WritePropertyName("manifestConfirmConditionNotification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EsamManifestConfirmConditionNotificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManifestConfirmConditionNotification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResponseSignalPreroll())
             {
                 context.Writer.WritePropertyName("responseSignalPreroll");
-                context.Writer.Write(requestObject.ResponseSignalPreroll.Value);
+                context.Writer.WriteNumberValue(requestObject.ResponseSignalPreroll.Value);
             }
 
             if(requestObject.IsSetSignalProcessingNotification())
             {
                 context.Writer.WritePropertyName("signalProcessingNotification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EsamSignalProcessingNotificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SignalProcessingNotification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

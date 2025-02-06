@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureInterval())
             {
                 context.Writer.WritePropertyName("captureInterval");
-                context.Writer.Write(requestObject.CaptureInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.CaptureInterval.Value);
             }
 
             if(requestObject.IsSetCaptureIntervalUnits())
             {
                 context.Writer.WritePropertyName("captureIntervalUnits");
-                context.Writer.Write(requestObject.CaptureIntervalUnits);
+                context.Writer.WriteStringValue(requestObject.CaptureIntervalUnits);
             }
 
             if(requestObject.IsSetTimecodeBurninSettings())
             {
                 context.Writer.WritePropertyName("timecodeBurninSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimecodeBurninSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimecodeBurninSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

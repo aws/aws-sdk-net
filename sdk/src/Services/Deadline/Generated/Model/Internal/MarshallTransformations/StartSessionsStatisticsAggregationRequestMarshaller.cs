@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -64,76 +67,81 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field FarmId set");
             request.AddPathResource("{farmId}", StringUtils.FromString(publicRequest.FarmId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/sessions-statistics-aggregation";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
-                    }
-
-                    if(publicRequest.IsSetGroupBy())
-                    {
-                        context.Writer.WritePropertyName("groupBy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
-                        {
-                                context.Writer.Write(publicRequestGroupByListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPeriod())
-                    {
-                        context.Writer.WritePropertyName("period");
-                        context.Writer.Write(publicRequest.Period);
-                    }
-
-                    if(publicRequest.IsSetResourceIds())
-                    {
-                        context.Writer.WritePropertyName("resourceIds");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SessionsStatisticsResourcesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResourceIds, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-                    }
-
-                    if(publicRequest.IsSetStatistics())
-                    {
-                        context.Writer.WritePropertyName("statistics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
-                        {
-                                context.Writer.Write(publicRequestStatisticsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTimezone())
-                    {
-                        context.Writer.WritePropertyName("timezone");
-                        context.Writer.Write(publicRequest.Timezone);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             }
+
+            if(publicRequest.IsSetGroupBy())
+            {
+                context.Writer.WritePropertyName("groupBy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                {
+                        context.Writer.WriteStringValue(publicRequestGroupByListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPeriod())
+            {
+                context.Writer.WritePropertyName("period");
+                context.Writer.WriteStringValue(publicRequest.Period);
+            }
+
+            if(publicRequest.IsSetResourceIds())
+            {
+                context.Writer.WritePropertyName("resourceIds");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionsStatisticsResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceIds, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+            }
+
+            if(publicRequest.IsSetStatistics())
+            {
+                context.Writer.WritePropertyName("statistics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStatisticsListValue in publicRequest.Statistics)
+                {
+                        context.Writer.WriteStringValue(publicRequestStatisticsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTimezone())
+            {
+                context.Writer.WritePropertyName("timezone");
+                context.Writer.WriteStringValue(publicRequest.Timezone);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"management.";

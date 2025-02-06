@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Change Object
     /// </summary>  
-    public class ChangeUnmarshaller : IUnmarshaller<Change, XmlUnmarshallerContext>, IUnmarshaller<Change, JsonUnmarshallerContext>
+    public class ChangeUnmarshaller : IXmlUnmarshaller<Change, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Change Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ChangeUnmarshaller _instance = new ChangeUnmarshaller();        
 

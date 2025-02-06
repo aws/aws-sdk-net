@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationId())
             {
                 context.Writer.WritePropertyName("AssociationId");
-                context.Writer.Write(requestObject.AssociationId);
+                context.Writer.WriteStringValue(requestObject.AssociationId);
             }
 
             if(requestObject.IsSetKinesisFirehoseConfig())
             {
                 context.Writer.WritePropertyName("KinesisFirehoseConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisFirehoseConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisFirehoseConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisStreamConfig())
             {
                 context.Writer.WritePropertyName("KinesisStreamConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisStreamConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisStreamConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisVideoStreamConfig())
             {
                 context.Writer.WritePropertyName("KinesisVideoStreamConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisVideoStreamConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisVideoStreamConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("S3Config");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Config, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("StorageType");
-                context.Writer.Write(requestObject.StorageType);
+                context.Writer.WriteStringValue(requestObject.StorageType);
             }
 
         }

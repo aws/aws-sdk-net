@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbortIncompleteMultipartUpload())
             {
                 context.Writer.WritePropertyName("AbortIncompleteMultipartUpload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbortIncompleteMultipartUpload, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpirationDate())
             {
                 context.Writer.WritePropertyName("ExpirationDate");
-                context.Writer.Write(requestObject.ExpirationDate);
+                context.Writer.WriteStringValue(requestObject.ExpirationDate);
             }
 
             if(requestObject.IsSetExpirationInDays())
             {
                 context.Writer.WritePropertyName("ExpirationInDays");
-                context.Writer.Write(requestObject.ExpirationInDays.Value);
+                context.Writer.WriteNumberValue(requestObject.ExpirationInDays.Value);
             }
 
             if(requestObject.IsSetExpiredObjectDeleteMarker())
             {
                 context.Writer.WritePropertyName("ExpiredObjectDeleteMarker");
-                context.Writer.Write(requestObject.ExpiredObjectDeleteMarker.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExpiredObjectDeleteMarker.Value);
             }
 
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Filter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetID())
             {
                 context.Writer.WritePropertyName("ID");
-                context.Writer.Write(requestObject.ID);
+                context.Writer.WriteStringValue(requestObject.ID);
             }
 
             if(requestObject.IsSetNoncurrentVersionExpirationInDays())
             {
                 context.Writer.WritePropertyName("NoncurrentVersionExpirationInDays");
-                context.Writer.Write(requestObject.NoncurrentVersionExpirationInDays.Value);
+                context.Writer.WriteNumberValue(requestObject.NoncurrentVersionExpirationInDays.Value);
             }
 
             if(requestObject.IsSetNoncurrentVersionTransitions())
             {
                 context.Writer.WritePropertyName("NoncurrentVersionTransitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNoncurrentVersionTransitionsListValue in requestObject.NoncurrentVersionTransitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectNoncurrentVersionTransitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTransitions())
             {
                 context.Writer.WritePropertyName("Transitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTransitionsListValue in requestObject.Transitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectTransitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

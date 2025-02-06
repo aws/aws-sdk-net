@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -61,107 +64,112 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/configuration-sets";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationSetName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationSetName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationSetName");
-                        context.Writer.Write(publicRequest.ConfigurationSetName);
-                    }
-
-                    if(publicRequest.IsSetDeliveryOptions())
-                    {
-                        context.Writer.WritePropertyName("DeliveryOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeliveryOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeliveryOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReputationOptions())
-                    {
-                        context.Writer.WritePropertyName("ReputationOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ReputationOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ReputationOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSendingOptions())
-                    {
-                        context.Writer.WritePropertyName("SendingOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SendingOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SendingOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSuppressionOptions())
-                    {
-                        context.Writer.WritePropertyName("SuppressionOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SuppressionOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SuppressionOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTrackingOptions())
-                    {
-                        context.Writer.WritePropertyName("TrackingOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TrackingOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TrackingOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVdmOptions())
-                    {
-                        context.Writer.WritePropertyName("VdmOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VdmOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VdmOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationSetName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationSetName);
             }
+
+            if(publicRequest.IsSetDeliveryOptions())
+            {
+                context.Writer.WritePropertyName("DeliveryOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeliveryOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeliveryOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReputationOptions())
+            {
+                context.Writer.WritePropertyName("ReputationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReputationOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReputationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSendingOptions())
+            {
+                context.Writer.WritePropertyName("SendingOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SendingOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SendingOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSuppressionOptions())
+            {
+                context.Writer.WritePropertyName("SuppressionOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SuppressionOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SuppressionOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrackingOptions())
+            {
+                context.Writer.WritePropertyName("TrackingOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrackingOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TrackingOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVdmOptions())
+            {
+                context.Writer.WritePropertyName("VdmOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VdmOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VdmOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

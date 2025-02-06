@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnauthorizedPartnerIntegrationException operation
     /// </summary>  
-    public class UnauthorizedPartnerIntegrationExceptionUnmarshaller : IErrorResponseUnmarshaller<UnauthorizedPartnerIntegrationException, XmlUnmarshallerContext>
+    public class UnauthorizedPartnerIntegrationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnauthorizedPartnerIntegrationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

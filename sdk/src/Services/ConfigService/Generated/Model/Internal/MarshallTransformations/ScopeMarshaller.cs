@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComplianceResourceId())
             {
                 context.Writer.WritePropertyName("ComplianceResourceId");
-                context.Writer.Write(requestObject.ComplianceResourceId);
+                context.Writer.WriteStringValue(requestObject.ComplianceResourceId);
             }
 
             if(requestObject.IsSetComplianceResourceTypes())
             {
                 context.Writer.WritePropertyName("ComplianceResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComplianceResourceTypesListValue in requestObject.ComplianceResourceTypes)
                 {
-                        context.Writer.Write(requestObjectComplianceResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectComplianceResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("TagKey");
-                context.Writer.Write(requestObject.TagKey);
+                context.Writer.WriteStringValue(requestObject.TagKey);
             }
 
             if(requestObject.IsSetTagValue())
             {
                 context.Writer.WritePropertyName("TagValue");
-                context.Writer.Write(requestObject.TagValue);
+                context.Writer.WriteStringValue(requestObject.TagValue);
             }
 
         }

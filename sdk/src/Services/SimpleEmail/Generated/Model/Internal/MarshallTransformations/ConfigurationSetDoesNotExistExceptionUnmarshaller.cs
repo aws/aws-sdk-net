@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConfigurationSetDoesNotExistException operation
     /// </summary>  
-    public class ConfigurationSetDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<ConfigurationSetDoesNotExistException, XmlUnmarshallerContext>
+    public class ConfigurationSetDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConfigurationSetDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

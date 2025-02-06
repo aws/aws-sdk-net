@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBranches())
             {
                 context.Writer.WritePropertyName("Branches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBranchesListValue in requestObject.Branches)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MultiConditionalBranchMarshaller.Instance;
                     marshaller.Marshall(requestObjectBranchesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDefaultActivity())
             {
                 context.Writer.WritePropertyName("DefaultActivity");
-                context.Writer.Write(requestObject.DefaultActivity);
+                context.Writer.WriteStringValue(requestObject.DefaultActivity);
             }
 
             if(requestObject.IsSetEvaluationWaitTime())
             {
                 context.Writer.WritePropertyName("EvaluationWaitTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaitTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.EvaluationWaitTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

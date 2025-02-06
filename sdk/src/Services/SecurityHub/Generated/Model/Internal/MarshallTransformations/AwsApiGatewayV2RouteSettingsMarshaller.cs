@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("DataTraceEnabled");
-                context.Writer.Write(requestObject.DataTraceEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.DataTraceEnabled.Value);
             }
 
             if(requestObject.IsSetDetailedMetricsEnabled())
             {
                 context.Writer.WritePropertyName("DetailedMetricsEnabled");
-                context.Writer.Write(requestObject.DetailedMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.DetailedMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetLoggingLevel())
             {
                 context.Writer.WritePropertyName("LoggingLevel");
-                context.Writer.Write(requestObject.LoggingLevel);
+                context.Writer.WriteStringValue(requestObject.LoggingLevel);
             }
 
             if(requestObject.IsSetThrottlingBurstLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingBurstLimit");
-                context.Writer.Write(requestObject.ThrottlingBurstLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.ThrottlingBurstLimit.Value);
             }
 
             if(requestObject.IsSetThrottlingRateLimit())
@@ -77,11 +75,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ThrottlingRateLimit");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
+                    context.Writer.WriteNumberValue(requestObject.ThrottlingRateLimit.Value);
                 }
             }
 

@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteConflictException operation
     /// </summary>  
-    public class DeleteConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<DeleteConflictException, XmlUnmarshallerContext>
+    public class DeleteConflictExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DeleteConflictException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

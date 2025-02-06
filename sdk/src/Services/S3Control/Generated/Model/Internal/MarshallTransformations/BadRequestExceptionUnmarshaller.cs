@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BadRequestException operation
     /// </summary>  
-    public class BadRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<BadRequestException, XmlUnmarshallerContext>
+    public class BadRequestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BadRequestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

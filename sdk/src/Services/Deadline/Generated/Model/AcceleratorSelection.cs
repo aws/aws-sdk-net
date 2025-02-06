@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// Values that you can use to select a particular Amazon EC2 instance type.
+    /// Describes a specific GPU accelerator required for an Amazon Elastic Compute Cloud
+    /// worker host.
     /// </summary>
     public partial class AcceleratorSelection
     {
@@ -40,8 +41,34 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the GPU accelerator.
+        /// The name of the chip used by the GPU accelerator.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify <c>l4</c> as the name of the accelerator, you must specify <c>latest</c>
+        /// or <c>grid:r550</c> as the runtime.
+        /// </para>
+        ///  
+        /// <para>
+        /// The available GPU accelerators are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>t4</c> - NVIDIA T4 Tensor Core GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>a10g</c> - NVIDIA A10G Tensor Core GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>l4</c> - NVIDIA L4 Tensor Core GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>l40s</c> - NVIDIA L40S Tensor Core GPU
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AcceleratorName Name
@@ -59,7 +86,33 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The driver version that the GPU accelerator uses. 
+        /// Specifies the runtime driver to use for the GPU accelerator. You must use the same
+        /// runtime for all GPUs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can choose from the following runtimes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>latest</c> - Use the latest runtime available for the chip. If you specify <c>latest</c>
+        /// and a new version of the runtime is released, the new version of the runtime is used.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>grid:r550</c> - <a href="https://docs.nvidia.com/vgpu/17.0/index.html">NVIDIA
+        /// vGPU software 17</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>grid:r535</c> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA
+        /// vGPU software 16</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a runtime, Deadline Cloud uses <c>latest</c> as the default.
+        /// However, if you have multiple accelerators and specify <c>latest</c> for some and
+        /// leave others blank, Deadline Cloud raises an exception.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

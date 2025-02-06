@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCatalogConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("CatalogConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CatalogConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.CatalogConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomArtifactsConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("CustomArtifactsConfigurationUpdate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomArtifactsConfigurationUpdateListValue in requestObject.CustomArtifactsConfigurationUpdate)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomArtifactConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomArtifactsConfigurationUpdateListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeployAsApplicationConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("DeployAsApplicationConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeployAsApplicationConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeployAsApplicationConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonitoringConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("MonitoringConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZeppelinMonitoringConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.MonitoringConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

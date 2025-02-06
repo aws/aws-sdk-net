@@ -30,6 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
+    /// The structure that describes the snapshot information of a table in source database
+    /// endpoint that Firehose reads. 
+    /// 
+    ///  
     /// <para>
     /// Amazon Data Firehose is in preview release and is subject to change.
     /// </para>
@@ -61,7 +65,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  
+        ///  The identifier of the current snapshot of the table in source database endpoint.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -84,7 +89,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RequestedBy. 
         /// <para>
-        ///  
+        ///  The principal that sent the request to take the current snapshot on the table. 
         /// </para>
         ///  
         /// <para>
@@ -107,7 +112,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RequestTimestamp. 
         /// <para>
-        ///  
+        ///  The timestamp when the current snapshot is taken on the table. 
         /// </para>
         ///  
         /// <para>
@@ -130,7 +135,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  
+        ///  The status of the current snapshot of the table. 
         /// </para>
         ///  
         /// <para>
@@ -153,7 +158,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Table. 
         /// <para>
-        ///  
+        ///  The fully qualified name of the table in source database endpoint that Firehose reads.
+        /// 
         /// </para>
         ///  
         /// <para>

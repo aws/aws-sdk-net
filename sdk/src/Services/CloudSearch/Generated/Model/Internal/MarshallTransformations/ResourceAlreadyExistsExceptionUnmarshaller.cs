@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceAlreadyExistsException operation
     /// </summary>  
-    public class ResourceAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceAlreadyExistsException, XmlUnmarshallerContext>
+    public class ResourceAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

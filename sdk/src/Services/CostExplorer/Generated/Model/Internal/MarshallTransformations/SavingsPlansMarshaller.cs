@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceFamily())
             {
                 context.Writer.WritePropertyName("InstanceFamily");
-                context.Writer.Write(requestObject.InstanceFamily);
+                context.Writer.WriteStringValue(requestObject.InstanceFamily);
             }
 
             if(requestObject.IsSetOfferingId())
             {
                 context.Writer.WritePropertyName("OfferingId");
-                context.Writer.Write(requestObject.OfferingId);
+                context.Writer.WriteStringValue(requestObject.OfferingId);
             }
 
             if(requestObject.IsSetPaymentOption())
             {
                 context.Writer.WritePropertyName("PaymentOption");
-                context.Writer.Write(requestObject.PaymentOption);
+                context.Writer.WriteStringValue(requestObject.PaymentOption);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetSavingsPlansCommitment())
@@ -77,24 +75,24 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("SavingsPlansCommitment");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SavingsPlansCommitment.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SavingsPlansCommitment.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SavingsPlansCommitment.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SavingsPlansCommitment.Value);
+                    context.Writer.WriteNumberValue(requestObject.SavingsPlansCommitment.Value);
                 }
             }
 
             if(requestObject.IsSetSavingsPlansType())
             {
                 context.Writer.WritePropertyName("SavingsPlansType");
-                context.Writer.Write(requestObject.SavingsPlansType);
+                context.Writer.WriteStringValue(requestObject.SavingsPlansType);
             }
 
             if(requestObject.IsSetTermInYears())
             {
                 context.Writer.WritePropertyName("TermInYears");
-                context.Writer.Write(requestObject.TermInYears);
+                context.Writer.WriteStringValue(requestObject.TermInYears);
             }
 
         }

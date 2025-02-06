@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("cloudWatchEncryptionEnabled");
-                context.Writer.Write(requestObject.CloudWatchEncryptionEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchEncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetCloudWatchLogGroupName())
             {
                 context.Writer.WritePropertyName("cloudWatchLogGroupName");
-                context.Writer.Write(requestObject.CloudWatchLogGroupName);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogGroupName);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("s3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetS3EncryptionEnabled())
             {
                 context.Writer.WritePropertyName("s3EncryptionEnabled");
-                context.Writer.Write(requestObject.S3EncryptionEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.S3EncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("s3KeyPrefix");
-                context.Writer.Write(requestObject.S3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.S3KeyPrefix);
             }
 
         }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VectorEnrichmentJobDataSourceConfigInput Object
     /// </summary>  
-    public class VectorEnrichmentJobDataSourceConfigInputUnmarshaller : IUnmarshaller<VectorEnrichmentJobDataSourceConfigInput, XmlUnmarshallerContext>, IUnmarshaller<VectorEnrichmentJobDataSourceConfigInput, JsonUnmarshallerContext>
+    public class VectorEnrichmentJobDataSourceConfigInputUnmarshaller : IJsonUnmarshaller<VectorEnrichmentJobDataSourceConfigInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VectorEnrichmentJobDataSourceConfigInput IUnmarshaller<VectorEnrichmentJobDataSourceConfigInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VectorEnrichmentJobDataSourceConfigInput Unmarshall(JsonUnmarshallerContext context)
+        public VectorEnrichmentJobDataSourceConfigInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VectorEnrichmentJobDataSourceConfigInput unmarshalledObject = new VectorEnrichmentJobDataSourceConfigInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3Data", targetDepth))
                 {
                     var unmarshaller = VectorEnrichmentJobS3DataUnmarshaller.Instance;
-                    unmarshalledObject.S3Data = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Data = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

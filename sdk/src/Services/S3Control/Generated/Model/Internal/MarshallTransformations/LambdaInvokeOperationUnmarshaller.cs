@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LambdaInvokeOperation Object
     /// </summary>  
-    public class LambdaInvokeOperationUnmarshaller : IUnmarshaller<LambdaInvokeOperation, XmlUnmarshallerContext>, IUnmarshaller<LambdaInvokeOperation, JsonUnmarshallerContext>
+    public class LambdaInvokeOperationUnmarshaller : IXmlUnmarshaller<LambdaInvokeOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,7 +70,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UserArguments", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         unmarshalledObject.UserArguments = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -82,17 +82,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LambdaInvokeOperation Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static LambdaInvokeOperationUnmarshaller _instance = new LambdaInvokeOperationUnmarshaller();        
 
         /// <summary>

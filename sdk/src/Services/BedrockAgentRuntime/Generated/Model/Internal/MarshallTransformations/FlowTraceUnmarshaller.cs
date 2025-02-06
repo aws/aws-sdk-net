@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FlowTrace Object
     /// </summary>  
-    public class FlowTraceUnmarshaller : IUnmarshaller<FlowTrace, XmlUnmarshallerContext>, IUnmarshaller<FlowTrace, JsonUnmarshallerContext>
+    public class FlowTraceUnmarshaller : IJsonUnmarshaller<FlowTrace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FlowTrace IUnmarshaller<FlowTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FlowTrace Unmarshall(JsonUnmarshallerContext context)
+        public FlowTrace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FlowTrace unmarshalledObject = new FlowTrace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("conditionNodeResultTrace", targetDepth))
                 {
                     var unmarshaller = FlowTraceConditionNodeResultEventUnmarshaller.Instance;
-                    unmarshalledObject.ConditionNodeResultTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConditionNodeResultTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeInputTrace", targetDepth))
                 {
                     var unmarshaller = FlowTraceNodeInputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeInputTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeInputTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeOutputTrace", targetDepth))
                 {
                     var unmarshaller = FlowTraceNodeOutputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeOutputTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeOutputTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetRefreshType())
             {
                 context.Writer.WritePropertyName("RefreshType");
-                context.Writer.Write(requestObject.RefreshType);
+                context.Writer.WriteStringValue(requestObject.RefreshType);
             }
 
             if(requestObject.IsSetScheduleFrequency())
             {
                 context.Writer.WritePropertyName("ScheduleFrequency");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RefreshFrequencyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleFrequency, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleId())
             {
                 context.Writer.WritePropertyName("ScheduleId");
-                context.Writer.Write(requestObject.ScheduleId);
+                context.Writer.WriteStringValue(requestObject.ScheduleId);
             }
 
             if(requestObject.IsSetStartAfterDateTime())
             {
                 context.Writer.WritePropertyName("StartAfterDateTime");
-                context.Writer.Write(requestObject.StartAfterDateTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartAfterDateTime.Value)));
             }
 
         }

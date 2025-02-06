@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkflowExecutionDetail Object
     /// </summary>  
-    public class WorkflowExecutionDetailUnmarshaller : IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext>
+    public class WorkflowExecutionDetailUnmarshaller : IJsonUnmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkflowExecutionDetail IUnmarshaller<WorkflowExecutionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkflowExecutionDetail Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowExecutionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkflowExecutionDetail unmarshalledObject = new WorkflowExecutionDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("executionConfiguration", targetDepth))
                 {
                     var unmarshaller = WorkflowExecutionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionInfo", targetDepth))
                 {
                     var unmarshaller = WorkflowExecutionInfoUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("latestActivityTaskTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LatestActivityTaskTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestActivityTaskTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("latestExecutionContext", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestExecutionContext = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestExecutionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openCounts", targetDepth))
                 {
                     var unmarshaller = WorkflowExecutionOpenCountsUnmarshaller.Instance;
-                    unmarshalledObject.OpenCounts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenCounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MagneticStoreWriteProperties Object
     /// </summary>  
-    public class MagneticStoreWritePropertiesUnmarshaller : IUnmarshaller<MagneticStoreWriteProperties, XmlUnmarshallerContext>, IUnmarshaller<MagneticStoreWriteProperties, JsonUnmarshallerContext>
+    public class MagneticStoreWritePropertiesUnmarshaller : IJsonUnmarshaller<MagneticStoreWriteProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MagneticStoreWriteProperties IUnmarshaller<MagneticStoreWriteProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MagneticStoreWriteProperties Unmarshall(JsonUnmarshallerContext context)
+        public MagneticStoreWriteProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MagneticStoreWriteProperties unmarshalledObject = new MagneticStoreWriteProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EnableMagneticStoreWrites", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMagneticStoreWrites = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableMagneticStoreWrites = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MagneticStoreRejectedDataLocation", targetDepth))
                 {
                     var unmarshaller = MagneticStoreRejectedDataLocationUnmarshaller.Instance;
-                    unmarshalledObject.MagneticStoreRejectedDataLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MagneticStoreRejectedDataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

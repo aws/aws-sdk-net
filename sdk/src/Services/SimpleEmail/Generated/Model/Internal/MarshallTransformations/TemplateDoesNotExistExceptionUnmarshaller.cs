@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TemplateDoesNotExistException operation
     /// </summary>  
-    public class TemplateDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<TemplateDoesNotExistException, XmlUnmarshallerContext>
+    public class TemplateDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TemplateDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

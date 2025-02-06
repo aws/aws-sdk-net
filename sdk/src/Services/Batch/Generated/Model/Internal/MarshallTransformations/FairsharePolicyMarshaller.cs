@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeReservation())
             {
                 context.Writer.WritePropertyName("computeReservation");
-                context.Writer.Write(requestObject.ComputeReservation.Value);
+                context.Writer.WriteNumberValue(requestObject.ComputeReservation.Value);
             }
 
             if(requestObject.IsSetShareDecaySeconds())
             {
                 context.Writer.WritePropertyName("shareDecaySeconds");
-                context.Writer.Write(requestObject.ShareDecaySeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ShareDecaySeconds.Value);
             }
 
             if(requestObject.IsSetShareDistribution())
             {
                 context.Writer.WritePropertyName("shareDistribution");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectShareDistributionListValue in requestObject.ShareDistribution)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ShareAttributesMarshaller.Instance;
                     marshaller.Marshall(requestObjectShareDistributionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

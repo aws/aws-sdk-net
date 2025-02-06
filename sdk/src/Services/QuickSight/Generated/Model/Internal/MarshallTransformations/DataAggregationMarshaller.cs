@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetRowDateGranularity())
             {
                 context.Writer.WritePropertyName("DatasetRowDateGranularity");
-                context.Writer.Write(requestObject.DatasetRowDateGranularity);
+                context.Writer.WriteStringValue(requestObject.DatasetRowDateGranularity);
             }
 
             if(requestObject.IsSetDefaultDateColumnName())
             {
                 context.Writer.WritePropertyName("DefaultDateColumnName");
-                context.Writer.Write(requestObject.DefaultDateColumnName);
+                context.Writer.WriteStringValue(requestObject.DefaultDateColumnName);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -61,49 +64,54 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListChannels";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilterByName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilterByName())
-                    {
-                        context.Writer.WritePropertyName("filterByName");
-                        context.Writer.Write(publicRequest.FilterByName);
-                    }
-
-                    if(publicRequest.IsSetFilterByPlaybackRestrictionPolicyArn())
-                    {
-                        context.Writer.WritePropertyName("filterByPlaybackRestrictionPolicyArn");
-                        context.Writer.Write(publicRequest.FilterByPlaybackRestrictionPolicyArn);
-                    }
-
-                    if(publicRequest.IsSetFilterByRecordingConfigurationArn())
-                    {
-                        context.Writer.WritePropertyName("filterByRecordingConfigurationArn");
-                        context.Writer.Write(publicRequest.FilterByRecordingConfigurationArn);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("filterByName");
+                context.Writer.WriteStringValue(publicRequest.FilterByName);
             }
+
+            if(publicRequest.IsSetFilterByPlaybackRestrictionPolicyArn())
+            {
+                context.Writer.WritePropertyName("filterByPlaybackRestrictionPolicyArn");
+                context.Writer.WriteStringValue(publicRequest.FilterByPlaybackRestrictionPolicyArn);
+            }
+
+            if(publicRequest.IsSetFilterByRecordingConfigurationArn())
+            {
+                context.Writer.WritePropertyName("filterByRecordingConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.FilterByRecordingConfigurationArn);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

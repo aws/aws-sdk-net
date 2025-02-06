@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -67,73 +70,78 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("Action");
-                        context.Writer.Write(publicRequest.Action);
-                    }
-
-                    if(publicRequest.IsSetEventSourceToken())
-                    {
-                        context.Writer.WritePropertyName("EventSourceToken");
-                        context.Writer.Write(publicRequest.EventSourceToken);
-                    }
-
-                    if(publicRequest.IsSetFunctionUrlAuthType())
-                    {
-                        context.Writer.WritePropertyName("FunctionUrlAuthType");
-                        context.Writer.Write(publicRequest.FunctionUrlAuthType);
-                    }
-
-                    if(publicRequest.IsSetPrincipal())
-                    {
-                        context.Writer.WritePropertyName("Principal");
-                        context.Writer.Write(publicRequest.Principal);
-                    }
-
-                    if(publicRequest.IsSetPrincipalOrgID())
-                    {
-                        context.Writer.WritePropertyName("PrincipalOrgID");
-                        context.Writer.Write(publicRequest.PrincipalOrgID);
-                    }
-
-                    if(publicRequest.IsSetRevisionId())
-                    {
-                        context.Writer.WritePropertyName("RevisionId");
-                        context.Writer.Write(publicRequest.RevisionId);
-                    }
-
-                    if(publicRequest.IsSetSourceAccount())
-                    {
-                        context.Writer.WritePropertyName("SourceAccount");
-                        context.Writer.Write(publicRequest.SourceAccount);
-                    }
-
-                    if(publicRequest.IsSetSourceArn())
-                    {
-                        context.Writer.WritePropertyName("SourceArn");
-                        context.Writer.Write(publicRequest.SourceArn);
-                    }
-
-                    if(publicRequest.IsSetStatementId())
-                    {
-                        context.Writer.WritePropertyName("StatementId");
-                        context.Writer.Write(publicRequest.StatementId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteStringValue(publicRequest.Action);
             }
+
+            if(publicRequest.IsSetEventSourceToken())
+            {
+                context.Writer.WritePropertyName("EventSourceToken");
+                context.Writer.WriteStringValue(publicRequest.EventSourceToken);
+            }
+
+            if(publicRequest.IsSetFunctionUrlAuthType())
+            {
+                context.Writer.WritePropertyName("FunctionUrlAuthType");
+                context.Writer.WriteStringValue(publicRequest.FunctionUrlAuthType);
+            }
+
+            if(publicRequest.IsSetPrincipal())
+            {
+                context.Writer.WritePropertyName("Principal");
+                context.Writer.WriteStringValue(publicRequest.Principal);
+            }
+
+            if(publicRequest.IsSetPrincipalOrgID())
+            {
+                context.Writer.WritePropertyName("PrincipalOrgID");
+                context.Writer.WriteStringValue(publicRequest.PrincipalOrgID);
+            }
+
+            if(publicRequest.IsSetRevisionId())
+            {
+                context.Writer.WritePropertyName("RevisionId");
+                context.Writer.WriteStringValue(publicRequest.RevisionId);
+            }
+
+            if(publicRequest.IsSetSourceAccount())
+            {
+                context.Writer.WritePropertyName("SourceAccount");
+                context.Writer.WriteStringValue(publicRequest.SourceAccount);
+            }
+
+            if(publicRequest.IsSetSourceArn())
+            {
+                context.Writer.WritePropertyName("SourceArn");
+                context.Writer.WriteStringValue(publicRequest.SourceArn);
+            }
+
+            if(publicRequest.IsSetStatementId())
+            {
+                context.Writer.WritePropertyName("StatementId");
+                context.Writer.WriteStringValue(publicRequest.StatementId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

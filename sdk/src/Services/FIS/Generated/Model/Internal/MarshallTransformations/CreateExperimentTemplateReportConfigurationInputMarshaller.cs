@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("dataSources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExperimentTemplateReportConfigurationDataSourcesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputs())
             {
                 context.Writer.WritePropertyName("outputs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExperimentTemplateReportConfigurationOutputsInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Outputs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPostExperimentDuration())
             {
                 context.Writer.WritePropertyName("postExperimentDuration");
-                context.Writer.Write(requestObject.PostExperimentDuration);
+                context.Writer.WriteStringValue(requestObject.PostExperimentDuration);
             }
 
             if(requestObject.IsSetPreExperimentDuration())
             {
                 context.Writer.WritePropertyName("preExperimentDuration");
-                context.Writer.Write(requestObject.PreExperimentDuration);
+                context.Writer.WriteStringValue(requestObject.PreExperimentDuration);
             }
 
         }

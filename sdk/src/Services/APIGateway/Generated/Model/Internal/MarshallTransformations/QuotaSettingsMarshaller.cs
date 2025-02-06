@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");
-                context.Writer.Write(requestObject.Limit.Value);
+                context.Writer.WriteNumberValue(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset.Value);
+                context.Writer.WriteNumberValue(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.WriteStringValue(requestObject.Period);
             }
 
         }

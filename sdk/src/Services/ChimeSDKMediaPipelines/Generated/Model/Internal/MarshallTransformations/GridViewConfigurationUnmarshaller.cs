@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GridViewConfiguration Object
     /// </summary>  
-    public class GridViewConfigurationUnmarshaller : IUnmarshaller<GridViewConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GridViewConfiguration, JsonUnmarshallerContext>
+    public class GridViewConfigurationUnmarshaller : IJsonUnmarshaller<GridViewConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GridViewConfiguration IUnmarshaller<GridViewConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GridViewConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public GridViewConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GridViewConfiguration unmarshalledObject = new GridViewConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActiveSpeakerOnlyConfiguration", targetDepth))
                 {
                     var unmarshaller = ActiveSpeakerOnlyConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ActiveSpeakerOnlyConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveSpeakerOnlyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CanvasOrientation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CanvasOrientation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanvasOrientation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContentShareLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentShareLayout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentShareLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HorizontalLayoutConfiguration", targetDepth))
                 {
                     var unmarshaller = HorizontalLayoutConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HorizontalLayoutConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HorizontalLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PresenterOnlyConfiguration", targetDepth))
                 {
                     var unmarshaller = PresenterOnlyConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PresenterOnlyConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PresenterOnlyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VerticalLayoutConfiguration", targetDepth))
                 {
                     var unmarshaller = VerticalLayoutConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VerticalLayoutConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VerticalLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VideoAttribute", targetDepth))
                 {
                     var unmarshaller = VideoAttributeUnmarshaller.Instance;
-                    unmarshalledObject.VideoAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

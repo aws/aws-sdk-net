@@ -34,6 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class IcebergDestinationDescription
     {
+        private bool? _appendOnly;
         private BufferingHints _bufferingHints;
         private CatalogConfiguration _catalogConfiguration;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
@@ -45,6 +46,37 @@ namespace Amazon.KinesisFirehose.Model
         private S3DestinationDescription _s3DestinationDescription;
         private SchemaEvolutionConfiguration _schemaEvolutionConfiguration;
         private TableCreationConfiguration _tableCreationConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AppendOnly. 
+        /// <para>
+        ///  Describes whether all incoming data for this delivery stream will be append only
+        /// (inserts only and not for updates and deletes) for Iceberg delivery. This feature
+        /// is only applicable for Apache Iceberg Tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is false. If you set this value to true, Firehose automatically
+        /// increases the throughput limit of a stream based on the throttling levels of the stream.
+        /// If you set this parameter to true for a stream with updates and deletes, you will
+        /// see out of order delivery.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        public bool? AppendOnly
+        {
+            get { return this._appendOnly; }
+            set { this._appendOnly = value; }
+        }
+
+        // Check to see if AppendOnly property is set
+        internal bool IsSetAppendOnly()
+        {
+            return this._appendOnly.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BufferingHints.
@@ -201,7 +233,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SchemaEvolutionConfiguration. 
         /// <para>
-        ///  
+        /// The description of automatic schema evolution configuration.
         /// </para>
         ///  
         /// <para>
@@ -223,7 +255,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property TableCreationConfiguration. 
         /// <para>
-        ///  
+        ///  The description of table creation configuration. 
         /// </para>
         ///  
         /// <para>

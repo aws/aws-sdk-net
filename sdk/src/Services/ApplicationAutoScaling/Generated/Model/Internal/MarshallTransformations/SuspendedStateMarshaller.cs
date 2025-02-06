@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamicScalingInSuspended())
             {
                 context.Writer.WritePropertyName("DynamicScalingInSuspended");
-                context.Writer.Write(requestObject.DynamicScalingInSuspended.Value);
+                context.Writer.WriteBooleanValue(requestObject.DynamicScalingInSuspended.Value);
             }
 
             if(requestObject.IsSetDynamicScalingOutSuspended())
             {
                 context.Writer.WritePropertyName("DynamicScalingOutSuspended");
-                context.Writer.Write(requestObject.DynamicScalingOutSuspended.Value);
+                context.Writer.WriteBooleanValue(requestObject.DynamicScalingOutSuspended.Value);
             }
 
             if(requestObject.IsSetScheduledScalingSuspended())
             {
                 context.Writer.WritePropertyName("ScheduledScalingSuspended");
-                context.Writer.Write(requestObject.ScheduledScalingSuspended.Value);
+                context.Writer.WriteBooleanValue(requestObject.ScheduledScalingSuspended.Value);
             }
 
         }

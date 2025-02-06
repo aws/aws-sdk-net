@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TargetDestination Object
     /// </summary>  
-    public class TargetDestinationUnmarshaller : IUnmarshaller<TargetDestination, XmlUnmarshallerContext>, IUnmarshaller<TargetDestination, JsonUnmarshallerContext>
+    public class TargetDestinationUnmarshaller : IJsonUnmarshaller<TargetDestination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TargetDestination IUnmarshaller<TargetDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TargetDestination Unmarshall(JsonUnmarshallerContext context)
+        public TargetDestination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TargetDestination unmarshalledObject = new TargetDestination();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TimestreamDestination", targetDepth))
                 {
                     var unmarshaller = TimestreamDestinationUnmarshaller.Instance;
-                    unmarshalledObject.TimestreamDestination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimestreamDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

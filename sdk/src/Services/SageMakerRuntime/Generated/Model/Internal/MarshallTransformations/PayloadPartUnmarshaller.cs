@@ -29,32 +29,22 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PayloadPart Object
     /// </summary>  
-    public class PayloadPartUnmarshaller : IUnmarshaller<PayloadPart, XmlUnmarshallerContext>, IUnmarshaller<PayloadPart, JsonUnmarshallerContext>
+    public class PayloadPartUnmarshaller : IJsonUnmarshaller<PayloadPart, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PayloadPart IUnmarshaller<PayloadPart, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PayloadPart Unmarshall(JsonUnmarshallerContext context)
+        public PayloadPart Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PayloadPart unmarshalledObject = new PayloadPart();
             if (context.IsEmptyResponse)

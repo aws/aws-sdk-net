@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfNotifiedThings())
             {
                 context.Writer.WritePropertyName("numberOfNotifiedThings");
-                context.Writer.Write(requestObject.NumberOfNotifiedThings.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfNotifiedThings.Value);
             }
 
             if(requestObject.IsSetNumberOfSucceededThings())
             {
                 context.Writer.WritePropertyName("numberOfSucceededThings");
-                context.Writer.Write(requestObject.NumberOfSucceededThings.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfSucceededThings.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalMessage())
             {
                 context.Writer.WritePropertyName("additionalMessage");
-                context.Writer.Write(requestObject.AdditionalMessage);
+                context.Writer.WriteStringValue(requestObject.AdditionalMessage);
             }
 
             if(requestObject.IsSetRecipients())
             {
                 context.Writer.WritePropertyName("recipients");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecipientsListValue in requestObject.Recipients)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RecipientDetailMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecipientsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("senderId");
-                context.Writer.Write(requestObject.SenderId);
+                context.Writer.WriteStringValue(requestObject.SenderId);
             }
 
         }

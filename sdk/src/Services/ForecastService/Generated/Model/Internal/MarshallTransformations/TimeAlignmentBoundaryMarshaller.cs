@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("DayOfMonth");
-                context.Writer.Write(requestObject.DayOfMonth.Value);
+                context.Writer.WriteNumberValue(requestObject.DayOfMonth.Value);
             }
 
             if(requestObject.IsSetDayOfWeek())
             {
                 context.Writer.WritePropertyName("DayOfWeek");
-                context.Writer.Write(requestObject.DayOfWeek);
+                context.Writer.WriteStringValue(requestObject.DayOfWeek);
             }
 
             if(requestObject.IsSetHour())
             {
                 context.Writer.WritePropertyName("Hour");
-                context.Writer.Write(requestObject.Hour.Value);
+                context.Writer.WriteNumberValue(requestObject.Hour.Value);
             }
 
             if(requestObject.IsSetMonth())
             {
                 context.Writer.WritePropertyName("Month");
-                context.Writer.Write(requestObject.Month);
+                context.Writer.WriteStringValue(requestObject.Month);
             }
 
         }

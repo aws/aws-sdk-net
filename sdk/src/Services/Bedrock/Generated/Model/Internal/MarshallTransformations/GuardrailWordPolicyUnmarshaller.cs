@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GuardrailWordPolicy Object
     /// </summary>  
-    public class GuardrailWordPolicyUnmarshaller : IUnmarshaller<GuardrailWordPolicy, XmlUnmarshallerContext>, IUnmarshaller<GuardrailWordPolicy, JsonUnmarshallerContext>
+    public class GuardrailWordPolicyUnmarshaller : IJsonUnmarshaller<GuardrailWordPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GuardrailWordPolicy IUnmarshaller<GuardrailWordPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailWordPolicy Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailWordPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GuardrailWordPolicy unmarshalledObject = new GuardrailWordPolicy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("managedWordLists", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GuardrailManagedWords, GuardrailManagedWordsUnmarshaller>(GuardrailManagedWordsUnmarshaller.Instance);
-                    unmarshalledObject.ManagedWordLists = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GuardrailManagedWords, GuardrailManagedWordsUnmarshaller>(GuardrailManagedWordsUnmarshaller.Instance);
+                    unmarshalledObject.ManagedWordLists = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("words", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GuardrailWord, GuardrailWordUnmarshaller>(GuardrailWordUnmarshaller.Instance);
-                    unmarshalledObject.Words = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GuardrailWord, GuardrailWordUnmarshaller>(GuardrailWordUnmarshaller.Instance);
+                    unmarshalledObject.Words = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

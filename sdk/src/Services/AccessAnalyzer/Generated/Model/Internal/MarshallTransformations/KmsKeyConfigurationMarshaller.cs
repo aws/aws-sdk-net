@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrants())
             {
                 context.Writer.WritePropertyName("grants");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGrantsListValue in requestObject.Grants)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KmsGrantConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectGrantsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeyPolicies())
             {
                 context.Writer.WritePropertyName("keyPolicies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectKeyPoliciesKvp in requestObject.KeyPolicies)
                 {
                     context.Writer.WritePropertyName(requestObjectKeyPoliciesKvp.Key);
                     var requestObjectKeyPoliciesValue = requestObjectKeyPoliciesKvp.Value;
 
-                        context.Writer.Write(requestObjectKeyPoliciesValue);
+                        context.Writer.WriteStringValue(requestObjectKeyPoliciesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

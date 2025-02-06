@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedAccountIds())
             {
                 context.Writer.WritePropertyName("allowedAccountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedAccountIdsListValue in requestObject.AllowedAccountIds)
                 {
-                        context.Writer.Write(requestObjectAllowedAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFilterPattern())
             {
                 context.Writer.WritePropertyName("filterPattern");
-                context.Writer.Write(requestObject.FilterPattern);
+                context.Writer.WriteStringValue(requestObject.FilterPattern);
             }
 
         }

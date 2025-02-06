@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for ReplayLimitExceededException operation
     /// </summary>  
-    public class ReplayLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ReplayLimitExceededException, XmlUnmarshallerContext>
+    public class ReplayLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReplayLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

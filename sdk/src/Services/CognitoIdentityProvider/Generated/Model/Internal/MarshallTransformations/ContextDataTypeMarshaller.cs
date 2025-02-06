@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncodedData())
             {
                 context.Writer.WritePropertyName("EncodedData");
-                context.Writer.Write(requestObject.EncodedData);
+                context.Writer.WriteStringValue(requestObject.EncodedData);
             }
 
             if(requestObject.IsSetHttpHeaders())
             {
                 context.Writer.WritePropertyName("HttpHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHttpHeadersListValue in requestObject.HttpHeaders)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HttpHeaderMarshaller.Instance;
                     marshaller.Marshall(requestObjectHttpHeadersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("IpAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetServerPath())
             {
                 context.Writer.WritePropertyName("ServerPath");
-                context.Writer.Write(requestObject.ServerPath);
+                context.Writer.WriteStringValue(requestObject.ServerPath);
             }
 
         }

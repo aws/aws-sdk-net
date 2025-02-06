@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,86 +49,86 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
-                context.Writer.Write(requestObject.ExecutionRole);
+                context.Writer.WriteStringValue(requestObject.ExecutionRole);
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceGroupName())
             {
                 context.Writer.WritePropertyName("InstanceGroupName");
-                context.Writer.Write(requestObject.InstanceGroupName);
+                context.Writer.WriteStringValue(requestObject.InstanceGroupName);
             }
 
             if(requestObject.IsSetInstanceStorageConfigs())
             {
                 context.Writer.WritePropertyName("InstanceStorageConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceStorageConfigsListValue in requestObject.InstanceStorageConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ClusterInstanceStorageConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceStorageConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetLifeCycleConfig())
             {
                 context.Writer.WritePropertyName("LifeCycleConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClusterLifeCycleConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LifeCycleConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOnStartDeepHealthChecks())
             {
                 context.Writer.WritePropertyName("OnStartDeepHealthChecks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOnStartDeepHealthChecksListValue in requestObject.OnStartDeepHealthChecks)
                 {
-                        context.Writer.Write(requestObjectOnStartDeepHealthChecksListValue);
+                        context.Writer.WriteStringValue(requestObjectOnStartDeepHealthChecksListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOverrideVpcConfig())
             {
                 context.Writer.WritePropertyName("OverrideVpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OverrideVpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");
-                context.Writer.Write(requestObject.ThreadsPerCore.Value);
+                context.Writer.WriteNumberValue(requestObject.ThreadsPerCore.Value);
             }
 
             if(requestObject.IsSetTrainingPlanArn())
             {
                 context.Writer.WritePropertyName("TrainingPlanArn");
-                context.Writer.Write(requestObject.TrainingPlanArn);
+                context.Writer.WriteStringValue(requestObject.TrainingPlanArn);
             }
 
         }

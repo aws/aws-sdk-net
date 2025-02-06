@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyAccessControlListsForTopics())
             {
                 context.Writer.WritePropertyName("copyAccessControlListsForTopics");
-                context.Writer.Write(requestObject.CopyAccessControlListsForTopics.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyAccessControlListsForTopics.Value);
             }
 
             if(requestObject.IsSetCopyTopicConfigurations())
             {
                 context.Writer.WritePropertyName("copyTopicConfigurations");
-                context.Writer.Write(requestObject.CopyTopicConfigurations.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTopicConfigurations.Value);
             }
 
             if(requestObject.IsSetDetectAndCopyNewTopics())
             {
                 context.Writer.WritePropertyName("detectAndCopyNewTopics");
-                context.Writer.Write(requestObject.DetectAndCopyNewTopics.Value);
+                context.Writer.WriteBooleanValue(requestObject.DetectAndCopyNewTopics.Value);
             }
 
             if(requestObject.IsSetStartingPosition())
             {
                 context.Writer.WritePropertyName("startingPosition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReplicationStartingPositionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartingPosition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTopicNameConfiguration())
             {
                 context.Writer.WritePropertyName("topicNameConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReplicationTopicNameConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopicNameConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTopicsToExclude())
             {
                 context.Writer.WritePropertyName("topicsToExclude");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTopicsToExcludeListValue in requestObject.TopicsToExclude)
                 {
-                        context.Writer.Write(requestObjectTopicsToExcludeListValue);
+                        context.Writer.WriteStringValue(requestObjectTopicsToExcludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTopicsToReplicate())
             {
                 context.Writer.WritePropertyName("topicsToReplicate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTopicsToReplicateListValue in requestObject.TopicsToReplicate)
                 {
-                        context.Writer.Write(requestObjectTopicsToReplicateListValue);
+                        context.Writer.WriteStringValue(requestObjectTopicsToReplicateListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("componentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetVersions())
             {
                 context.Writer.WritePropertyName("versions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVersionsListValue in requestObject.Versions)
                 {
-                        context.Writer.Write(requestObjectVersionsListValue);
+                        context.Writer.WriteStringValue(requestObjectVersionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

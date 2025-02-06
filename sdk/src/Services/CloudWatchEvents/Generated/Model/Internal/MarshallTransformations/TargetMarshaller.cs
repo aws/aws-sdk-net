@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
@@ -51,152 +49,152 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetBatchParameters())
             {
                 context.Writer.WritePropertyName("BatchParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.BatchParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeadLetterConfig())
             {
                 context.Writer.WritePropertyName("DeadLetterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeadLetterConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeadLetterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEcsParameters())
             {
                 context.Writer.WritePropertyName("EcsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EcsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpParameters())
             {
                 context.Writer.WritePropertyName("HttpParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("Input");
-                context.Writer.Write(requestObject.Input);
+                context.Writer.WriteStringValue(requestObject.Input);
             }
 
             if(requestObject.IsSetInputPath())
             {
                 context.Writer.WritePropertyName("InputPath");
-                context.Writer.Write(requestObject.InputPath);
+                context.Writer.WriteStringValue(requestObject.InputPath);
             }
 
             if(requestObject.IsSetInputTransformer())
             {
                 context.Writer.WritePropertyName("InputTransformer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputTransformerMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputTransformer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisParameters())
             {
                 context.Writer.WritePropertyName("KinesisParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftDataParameters())
             {
                 context.Writer.WritePropertyName("RedshiftDataParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDataParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftDataParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryPolicy())
             {
                 context.Writer.WritePropertyName("RetryPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetryPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetRunCommandParameters())
             {
                 context.Writer.WritePropertyName("RunCommandParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RunCommandParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RunCommandParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSageMakerPipelineParameters())
             {
                 context.Writer.WritePropertyName("SageMakerPipelineParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SageMakerPipelineParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SageMakerPipelineParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqsParameters())
             {
                 context.Writer.WritePropertyName("SqsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

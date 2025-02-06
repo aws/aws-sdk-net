@@ -625,7 +625,7 @@ namespace Amazon.Runtime
             if ((isChunkedUploadWrapperStreamWithLength || isTrailingHeadersWrapperStreamWithLength || isCompressionWrapperStreamWithLength)
                 || (chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null && compressionWrapperStream == null))
             {
-                _request.Content.Headers.ContentLength = contentStream.Length;
+                _request.Content.Headers.ContentLength = contentStream.Length - contentStream.Position;
             }
 
             WriteContentHeaders(contentHeaders);

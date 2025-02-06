@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,101 +49,101 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerConfig())
             {
                 context.Writer.WritePropertyName("ContainerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecommendationJobContainerConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpointConfigurations())
             {
                 context.Writer.WritePropertyName("EndpointConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndpointConfigurationsListValue in requestObject.EndpointConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EndpointInputConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectEndpointConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEndpoints())
             {
                 context.Writer.WritePropertyName("Endpoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndpointsListValue in requestObject.Endpoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EndpointInfoMarshaller.Instance;
                     marshaller.Marshall(requestObjectEndpointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("JobDurationInSeconds");
-                context.Writer.Write(requestObject.JobDurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.JobDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
-                context.Writer.Write(requestObject.ModelName);
+                context.Writer.WriteStringValue(requestObject.ModelName);
             }
 
             if(requestObject.IsSetModelPackageVersionArn())
             {
                 context.Writer.WritePropertyName("ModelPackageVersionArn");
-                context.Writer.Write(requestObject.ModelPackageVersionArn);
+                context.Writer.WriteStringValue(requestObject.ModelPackageVersionArn);
             }
 
             if(requestObject.IsSetResourceLimit())
             {
                 context.Writer.WritePropertyName("ResourceLimit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecommendationJobResourceLimitMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceLimit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrafficPattern())
             {
                 context.Writer.WritePropertyName("TrafficPattern");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrafficPatternMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrafficPattern, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecommendationJobVpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExactResponse())
             {
                 context.Writer.WritePropertyName("exactResponse");
-                context.Writer.Write(requestObject.ExactResponse.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExactResponse.Value);
             }
 
             if(requestObject.IsSetKendraIndex())
             {
                 context.Writer.WritePropertyName("kendraIndex");
-                context.Writer.Write(requestObject.KendraIndex);
+                context.Writer.WriteStringValue(requestObject.KendraIndex);
             }
 
             if(requestObject.IsSetQueryFilterString())
             {
                 context.Writer.WritePropertyName("queryFilterString");
-                context.Writer.Write(requestObject.QueryFilterString);
+                context.Writer.WriteStringValue(requestObject.QueryFilterString);
             }
 
             if(requestObject.IsSetQueryFilterStringEnabled())
             {
                 context.Writer.WritePropertyName("queryFilterStringEnabled");
-                context.Writer.Write(requestObject.QueryFilterStringEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.QueryFilterStringEnabled.Value);
             }
 
         }

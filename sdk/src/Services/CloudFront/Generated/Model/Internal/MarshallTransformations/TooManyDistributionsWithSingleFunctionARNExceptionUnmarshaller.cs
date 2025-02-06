@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyDistributionsWithSingleFunctionARNException operation
     /// </summary>  
-    public class TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyDistributionsWithSingleFunctionARNException, XmlUnmarshallerContext>
+    public class TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyDistributionsWithSingleFunctionARNException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

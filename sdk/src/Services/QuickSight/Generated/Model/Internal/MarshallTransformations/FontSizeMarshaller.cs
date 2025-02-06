@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbsolute())
             {
                 context.Writer.WritePropertyName("Absolute");
-                context.Writer.Write(requestObject.Absolute);
+                context.Writer.WriteStringValue(requestObject.Absolute);
             }
 
             if(requestObject.IsSetRelative())
             {
                 context.Writer.WritePropertyName("Relative");
-                context.Writer.Write(requestObject.Relative);
+                context.Writer.WriteStringValue(requestObject.Relative);
             }
 
         }

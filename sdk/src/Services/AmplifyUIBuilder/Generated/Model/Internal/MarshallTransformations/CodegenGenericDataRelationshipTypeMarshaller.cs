@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatedFields())
             {
                 context.Writer.WritePropertyName("associatedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssociatedFieldsListValue in requestObject.AssociatedFields)
                 {
-                        context.Writer.Write(requestObjectAssociatedFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectAssociatedFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBelongsToFieldOnRelatedModel())
             {
                 context.Writer.WritePropertyName("belongsToFieldOnRelatedModel");
-                context.Writer.Write(requestObject.BelongsToFieldOnRelatedModel);
+                context.Writer.WriteStringValue(requestObject.BelongsToFieldOnRelatedModel);
             }
 
             if(requestObject.IsSetCanUnlinkAssociatedModel())
             {
                 context.Writer.WritePropertyName("canUnlinkAssociatedModel");
-                context.Writer.Write(requestObject.CanUnlinkAssociatedModel.Value);
+                context.Writer.WriteBooleanValue(requestObject.CanUnlinkAssociatedModel.Value);
             }
 
             if(requestObject.IsSetIsHasManyIndex())
             {
                 context.Writer.WritePropertyName("isHasManyIndex");
-                context.Writer.Write(requestObject.IsHasManyIndex.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsHasManyIndex.Value);
             }
 
             if(requestObject.IsSetRelatedJoinFieldName())
             {
                 context.Writer.WritePropertyName("relatedJoinFieldName");
-                context.Writer.Write(requestObject.RelatedJoinFieldName);
+                context.Writer.WriteStringValue(requestObject.RelatedJoinFieldName);
             }
 
             if(requestObject.IsSetRelatedJoinTableName())
             {
                 context.Writer.WritePropertyName("relatedJoinTableName");
-                context.Writer.Write(requestObject.RelatedJoinTableName);
+                context.Writer.WriteStringValue(requestObject.RelatedJoinTableName);
             }
 
             if(requestObject.IsSetRelatedModelFields())
             {
                 context.Writer.WritePropertyName("relatedModelFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelatedModelFieldsListValue in requestObject.RelatedModelFields)
                 {
-                        context.Writer.Write(requestObjectRelatedModelFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectRelatedModelFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRelatedModelName())
             {
                 context.Writer.WritePropertyName("relatedModelName");
-                context.Writer.Write(requestObject.RelatedModelName);
+                context.Writer.WriteStringValue(requestObject.RelatedModelName);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

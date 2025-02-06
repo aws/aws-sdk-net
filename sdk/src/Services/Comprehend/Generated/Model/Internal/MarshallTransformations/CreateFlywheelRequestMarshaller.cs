@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -63,98 +66,103 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActiveModelArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActiveModelArn())
-                    {
-                        context.Writer.WritePropertyName("ActiveModelArn");
-                        context.Writer.Write(publicRequest.ActiveModelArn);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("DataAccessRoleArn");
-                        context.Writer.Write(publicRequest.DataAccessRoleArn);
-                    }
-
-                    if(publicRequest.IsSetDataLakeS3Uri())
-                    {
-                        context.Writer.WritePropertyName("DataLakeS3Uri");
-                        context.Writer.Write(publicRequest.DataLakeS3Uri);
-                    }
-
-                    if(publicRequest.IsSetDataSecurityConfig())
-                    {
-                        context.Writer.WritePropertyName("DataSecurityConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSecurityConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSecurityConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFlywheelName())
-                    {
-                        context.Writer.WritePropertyName("FlywheelName");
-                        context.Writer.Write(publicRequest.FlywheelName);
-                    }
-
-                    if(publicRequest.IsSetModelType())
-                    {
-                        context.Writer.WritePropertyName("ModelType");
-                        context.Writer.Write(publicRequest.ModelType);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskConfig())
-                    {
-                        context.Writer.WritePropertyName("TaskConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TaskConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TaskConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ActiveModelArn");
+                context.Writer.WriteStringValue(publicRequest.ActiveModelArn);
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("DataAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetDataLakeS3Uri())
+            {
+                context.Writer.WritePropertyName("DataLakeS3Uri");
+                context.Writer.WriteStringValue(publicRequest.DataLakeS3Uri);
+            }
+
+            if(publicRequest.IsSetDataSecurityConfig())
+            {
+                context.Writer.WritePropertyName("DataSecurityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSecurityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSecurityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFlywheelName())
+            {
+                context.Writer.WritePropertyName("FlywheelName");
+                context.Writer.WriteStringValue(publicRequest.FlywheelName);
+            }
+
+            if(publicRequest.IsSetModelType())
+            {
+                context.Writer.WritePropertyName("ModelType");
+                context.Writer.WriteStringValue(publicRequest.ModelType);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTaskConfig())
+            {
+                context.Writer.WritePropertyName("TaskConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TaskConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LicenseUsage Object
     /// </summary>  
-    public class LicenseUsageUnmarshaller : IUnmarshaller<LicenseUsage, XmlUnmarshallerContext>, IUnmarshaller<LicenseUsage, JsonUnmarshallerContext>
+    public class LicenseUsageUnmarshaller : IJsonUnmarshaller<LicenseUsage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LicenseUsage IUnmarshaller<LicenseUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LicenseUsage Unmarshall(JsonUnmarshallerContext context)
+        public LicenseUsage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LicenseUsage unmarshalledObject = new LicenseUsage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EntitlementUsages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EntitlementUsage, EntitlementUsageUnmarshaller>(EntitlementUsageUnmarshaller.Instance);
-                    unmarshalledObject.EntitlementUsages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EntitlementUsage, EntitlementUsageUnmarshaller>(EntitlementUsageUnmarshaller.Instance);
+                    unmarshalledObject.EntitlementUsages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

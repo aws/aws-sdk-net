@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationCodeConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ApplicationCodeConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApplicationCodeConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApplicationCodeConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApplicationSnapshotConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ApplicationSnapshotConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApplicationSnapshotConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApplicationSnapshotConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApplicationSystemRollbackConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ApplicationSystemRollbackConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApplicationSystemRollbackConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApplicationSystemRollbackConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnvironmentPropertyUpdates())
             {
                 context.Writer.WritePropertyName("EnvironmentPropertyUpdates");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnvironmentPropertyUpdatesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnvironmentPropertyUpdates, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFlinkApplicationConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("FlinkApplicationConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FlinkApplicationConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlinkApplicationConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqlApplicationConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("SqlApplicationConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqlApplicationConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlApplicationConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfigurationUpdates())
             {
                 context.Writer.WritePropertyName("VpcConfigurationUpdates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpcConfigurationUpdatesListValue in requestObject.VpcConfigurationUpdates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VpcConfigurationUpdateMarshaller.Instance;
                     marshaller.Marshall(requestObjectVpcConfigurationUpdatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetZeppelinApplicationConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ZeppelinApplicationConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZeppelinApplicationConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ZeppelinApplicationConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

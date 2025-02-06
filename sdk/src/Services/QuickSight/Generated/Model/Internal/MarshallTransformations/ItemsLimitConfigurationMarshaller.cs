@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemsLimit())
             {
                 context.Writer.WritePropertyName("ItemsLimit");
-                context.Writer.Write(requestObject.ItemsLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.ItemsLimit.Value);
             }
 
             if(requestObject.IsSetOtherCategories())
             {
                 context.Writer.WritePropertyName("OtherCategories");
-                context.Writer.Write(requestObject.OtherCategories);
+                context.Writer.WriteStringValue(requestObject.OtherCategories);
             }
 
         }

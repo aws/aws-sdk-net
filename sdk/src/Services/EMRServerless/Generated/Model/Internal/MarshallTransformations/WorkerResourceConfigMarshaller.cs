@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.WriteStringValue(requestObject.Cpu);
             }
 
             if(requestObject.IsSetDisk())
             {
                 context.Writer.WritePropertyName("disk");
-                context.Writer.Write(requestObject.Disk);
+                context.Writer.WriteStringValue(requestObject.Disk);
             }
 
             if(requestObject.IsSetDiskType())
             {
                 context.Writer.WritePropertyName("diskType");
-                context.Writer.Write(requestObject.DiskType);
+                context.Writer.WriteStringValue(requestObject.DiskType);
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.WriteStringValue(requestObject.Memory);
             }
 
         }

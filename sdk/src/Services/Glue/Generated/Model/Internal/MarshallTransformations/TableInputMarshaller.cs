@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,118 +49,118 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetLastAccessTime())
             {
                 context.Writer.WritePropertyName("LastAccessTime");
-                context.Writer.Write(requestObject.LastAccessTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastAccessTime.Value)));
             }
 
             if(requestObject.IsSetLastAnalyzedTime())
             {
                 context.Writer.WritePropertyName("LastAnalyzedTime");
-                context.Writer.Write(requestObject.LastAnalyzedTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastAnalyzedTime.Value)));
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOwner())
             {
                 context.Writer.WritePropertyName("Owner");
-                context.Writer.Write(requestObject.Owner);
+                context.Writer.WriteStringValue(requestObject.Owner);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPartitionKeys())
             {
                 context.Writer.WritePropertyName("PartitionKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPartitionKeysListValue in requestObject.PartitionKeys)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectPartitionKeysListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRetention())
             {
                 context.Writer.WritePropertyName("Retention");
-                context.Writer.Write(requestObject.Retention.Value);
+                context.Writer.WriteNumberValue(requestObject.Retention.Value);
             }
 
             if(requestObject.IsSetStorageDescriptor())
             {
                 context.Writer.WritePropertyName("StorageDescriptor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StorageDescriptorMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageDescriptor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableType())
             {
                 context.Writer.WritePropertyName("TableType");
-                context.Writer.Write(requestObject.TableType);
+                context.Writer.WriteStringValue(requestObject.TableType);
             }
 
             if(requestObject.IsSetTargetTable())
             {
                 context.Writer.WritePropertyName("TargetTable");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetTable, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetViewDefinition())
             {
                 context.Writer.WritePropertyName("ViewDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ViewDefinitionInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ViewDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetViewExpandedText())
             {
                 context.Writer.WritePropertyName("ViewExpandedText");
-                context.Writer.Write(requestObject.ViewExpandedText);
+                context.Writer.WriteStringValue(requestObject.ViewExpandedText);
             }
 
             if(requestObject.IsSetViewOriginalText())
             {
                 context.Writer.WritePropertyName("ViewOriginalText");
-                context.Writer.Write(requestObject.ViewOriginalText);
+                context.Writer.WriteStringValue(requestObject.ViewOriginalText);
             }
 
         }

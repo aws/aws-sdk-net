@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountAggregation())
             {
                 context.Writer.WritePropertyName("accountAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AccountAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccountAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAmiAggregation())
             {
                 context.Writer.WritePropertyName("amiAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmiAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmiAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAwsEcrContainerAggregation())
             {
                 context.Writer.WritePropertyName("awsEcrContainerAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcrContainerAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEcrContainerAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEc2InstanceAggregation())
             {
                 context.Writer.WritePropertyName("ec2InstanceAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ec2InstanceAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ec2InstanceAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFindingTypeAggregation())
             {
                 context.Writer.WritePropertyName("findingTypeAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FindingTypeAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FindingTypeAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageLayerAggregation())
             {
                 context.Writer.WritePropertyName("imageLayerAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageLayerAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageLayerAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaFunctionAggregation())
             {
                 context.Writer.WritePropertyName("lambdaFunctionAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaFunctionAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaFunctionAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaLayerAggregation())
             {
                 context.Writer.WritePropertyName("lambdaLayerAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaLayerAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaLayerAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPackageAggregation())
             {
                 context.Writer.WritePropertyName("packageAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PackageAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PackageAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepositoryAggregation())
             {
                 context.Writer.WritePropertyName("repositoryAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RepositoryAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RepositoryAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTitleAggregation())
             {
                 context.Writer.WritePropertyName("titleAggregation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TitleAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TitleAggregation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

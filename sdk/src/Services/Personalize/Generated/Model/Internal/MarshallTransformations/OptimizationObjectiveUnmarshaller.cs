@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OptimizationObjective Object
     /// </summary>  
-    public class OptimizationObjectiveUnmarshaller : IUnmarshaller<OptimizationObjective, XmlUnmarshallerContext>, IUnmarshaller<OptimizationObjective, JsonUnmarshallerContext>
+    public class OptimizationObjectiveUnmarshaller : IJsonUnmarshaller<OptimizationObjective, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OptimizationObjective IUnmarshaller<OptimizationObjective, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationObjective Unmarshall(JsonUnmarshallerContext context)
+        public OptimizationObjective Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OptimizationObjective unmarshalledObject = new OptimizationObjective();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("itemAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("objectiveSensitivity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectiveSensitivity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectiveSensitivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

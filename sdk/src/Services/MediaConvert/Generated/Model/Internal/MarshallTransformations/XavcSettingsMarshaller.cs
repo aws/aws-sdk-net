@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
-                context.Writer.Write(requestObject.AdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.AdaptiveQuantization);
             }
 
             if(requestObject.IsSetEntropyEncoding())
             {
                 context.Writer.WritePropertyName("entropyEncoding");
-                context.Writer.Write(requestObject.EntropyEncoding);
+                context.Writer.WriteStringValue(requestObject.EntropyEncoding);
             }
 
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
-                context.Writer.Write(requestObject.FramerateControl);
+                context.Writer.WriteStringValue(requestObject.FramerateControl);
             }
 
             if(requestObject.IsSetFramerateConversionAlgorithm())
             {
                 context.Writer.WritePropertyName("framerateConversionAlgorithm");
-                context.Writer.Write(requestObject.FramerateConversionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.FramerateConversionAlgorithm);
             }
 
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetSlowPal())
             {
                 context.Writer.WritePropertyName("slowPal");
-                context.Writer.Write(requestObject.SlowPal);
+                context.Writer.WriteStringValue(requestObject.SlowPal);
             }
 
             if(requestObject.IsSetSoftness())
             {
                 context.Writer.WritePropertyName("softness");
-                context.Writer.Write(requestObject.Softness.Value);
+                context.Writer.WriteNumberValue(requestObject.Softness.Value);
             }
 
             if(requestObject.IsSetSpatialAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("spatialAdaptiveQuantization");
-                context.Writer.Write(requestObject.SpatialAdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.SpatialAdaptiveQuantization);
             }
 
             if(requestObject.IsSetTemporalAdaptiveQuantization())
             {
                 context.Writer.WritePropertyName("temporalAdaptiveQuantization");
-                context.Writer.Write(requestObject.TemporalAdaptiveQuantization);
+                context.Writer.WriteStringValue(requestObject.TemporalAdaptiveQuantization);
             }
 
             if(requestObject.IsSetXavc4kIntraCbgProfileSettings())
             {
                 context.Writer.WritePropertyName("xavc4kIntraCbgProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Xavc4kIntraCbgProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Xavc4kIntraCbgProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXavc4kIntraVbrProfileSettings())
             {
                 context.Writer.WritePropertyName("xavc4kIntraVbrProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Xavc4kIntraVbrProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Xavc4kIntraVbrProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXavc4kProfileSettings())
             {
                 context.Writer.WritePropertyName("xavc4kProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Xavc4kProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Xavc4kProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXavcHdIntraCbgProfileSettings())
             {
                 context.Writer.WritePropertyName("xavcHdIntraCbgProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = XavcHdIntraCbgProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XavcHdIntraCbgProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXavcHdProfileSettings())
             {
                 context.Writer.WritePropertyName("xavcHdProfileSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = XavcHdProfileSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XavcHdProfileSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

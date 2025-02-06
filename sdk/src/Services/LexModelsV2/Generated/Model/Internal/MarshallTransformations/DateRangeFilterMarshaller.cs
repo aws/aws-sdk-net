@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDateTime())
             {
                 context.Writer.WritePropertyName("endDateTime");
-                context.Writer.Write(requestObject.EndDateTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDateTime.Value)));
             }
 
             if(requestObject.IsSetStartDateTime())
             {
                 context.Writer.WritePropertyName("startDateTime");
-                context.Writer.Write(requestObject.StartDateTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDateTime.Value)));
             }
 
         }

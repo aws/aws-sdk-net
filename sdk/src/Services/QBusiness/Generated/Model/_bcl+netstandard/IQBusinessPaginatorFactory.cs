@@ -107,6 +107,11 @@ namespace Amazon.QBusiness.Model
         IListRetrieversPaginator ListRetrievers(ListRetrieversRequest request);
 
         /// <summary>
+        /// Paginator for ListSubscriptions operation
+        ///</summary>
+        IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request);
+
+        /// <summary>
         /// Paginator for ListWebExperiences operation
         ///</summary>
         IListWebExperiencesPaginator ListWebExperiences(ListWebExperiencesRequest request);

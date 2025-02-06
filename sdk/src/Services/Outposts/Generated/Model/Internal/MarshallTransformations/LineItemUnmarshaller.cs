@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LineItem Object
     /// </summary>  
-    public class LineItemUnmarshaller : IUnmarshaller<LineItem, XmlUnmarshallerContext>, IUnmarshaller<LineItem, JsonUnmarshallerContext>
+    public class LineItemUnmarshaller : IJsonUnmarshaller<LineItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LineItem IUnmarshaller<LineItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LineItem Unmarshall(JsonUnmarshallerContext context)
+        public LineItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LineItem unmarshalledObject = new LineItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssetInformationList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
-                    unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
+                    unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LineItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreviousLineItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreviousLineItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreviousLineItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreviousOrderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreviousOrderId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreviousOrderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ShipmentInformation", targetDepth))
                 {
                     var unmarshaller = ShipmentInformationUnmarshaller.Instance;
-                    unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

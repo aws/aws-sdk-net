@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Geometry of the connection between different Isoline components.
+    /// Geometry of the connection between different isoline components.
     /// </summary>
     public partial class IsolineConnectionGeometry
     {

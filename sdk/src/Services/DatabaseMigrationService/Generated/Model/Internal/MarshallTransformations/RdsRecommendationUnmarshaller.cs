@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RdsRecommendation Object
     /// </summary>  
-    public class RdsRecommendationUnmarshaller : IUnmarshaller<RdsRecommendation, XmlUnmarshallerContext>, IUnmarshaller<RdsRecommendation, JsonUnmarshallerContext>
+    public class RdsRecommendationUnmarshaller : IJsonUnmarshaller<RdsRecommendation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RdsRecommendation IUnmarshaller<RdsRecommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RdsRecommendation Unmarshall(JsonUnmarshallerContext context)
+        public RdsRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RdsRecommendation unmarshalledObject = new RdsRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RequirementsToTarget", targetDepth))
                 {
                     var unmarshaller = RdsRequirementsUnmarshaller.Instance;
-                    unmarshalledObject.RequirementsToTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequirementsToTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetConfiguration", targetDepth))
                 {
                     var unmarshaller = RdsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

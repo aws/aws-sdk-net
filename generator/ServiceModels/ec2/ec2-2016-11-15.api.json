@@ -6770,7 +6770,10 @@
     },
     "AllocationType":{
       "type":"string",
-      "enum":["used"]
+      "enum":[
+        "used",
+        "future"
+      ]
     },
     "AllowedImagesSettingsDisabledState":{
       "type":"string",
@@ -10340,6 +10343,10 @@
         "ClientLoginBannerOptions":{
           "shape":"ClientLoginBannerResponseOptions",
           "locationName":"clientLoginBannerOptions"
+        },
+        "DisconnectOnSessionTimeout":{
+          "shape":"Boolean",
+          "locationName":"disconnectOnSessionTimeout"
         }
       }
     },
@@ -11227,7 +11234,8 @@
         "SelfServicePortal":{"shape":"SelfServicePortal"},
         "ClientConnectOptions":{"shape":"ClientConnectOptions"},
         "SessionTimeoutHours":{"shape":"Integer"},
-        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"}
+        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"},
+        "DisconnectOnSessionTimeout":{"shape":"Boolean"}
       }
     },
     "CreateClientVpnEndpointResult":{
@@ -11501,7 +11509,10 @@
       ],
       "members":{
         "DryRun":{"shape":"Boolean"},
-        "ClientToken":{"shape":"String"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        },
         "SpotOptions":{"shape":"SpotOptionsRequest"},
         "OnDemandOptions":{"shape":"OnDemandOptionsRequest"},
         "ExcessCapacityTerminationPolicy":{"shape":"FleetExcessCapacityTerminationPolicy"},
@@ -30670,7 +30681,15 @@
         "i8g.12xlarge",
         "i8g.16xlarge",
         "i8g.24xlarge",
-        "i8g.metal-24xl"
+        "i8g.metal-24xl",
+        "u7i-6tb.112xlarge",
+        "u7i-8tb.112xlarge",
+        "u7inh-32tb.480xlarge",
+        "p5e.48xlarge",
+        "p5en.48xlarge",
+        "f2.12xlarge",
+        "f2.48xlarge",
+        "trn2.48xlarge"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -34806,7 +34825,8 @@
         "SelfServicePortal":{"shape":"SelfServicePortal"},
         "ClientConnectOptions":{"shape":"ClientConnectOptions"},
         "SessionTimeoutHours":{"shape":"Integer"},
-        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"}
+        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"},
+        "DisconnectOnSessionTimeout":{"shape":"Boolean"}
       }
     },
     "ModifyClientVpnEndpointResult":{

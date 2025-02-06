@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DashboardEntry Object
     /// </summary>  
-    public class DashboardEntryUnmarshaller : IUnmarshaller<DashboardEntry, XmlUnmarshallerContext>, IUnmarshaller<DashboardEntry, JsonUnmarshallerContext>
+    public class DashboardEntryUnmarshaller : IXmlUnmarshaller<DashboardEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DashboardEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DashboardEntryUnmarshaller _instance = new DashboardEntryUnmarshaller();        
 

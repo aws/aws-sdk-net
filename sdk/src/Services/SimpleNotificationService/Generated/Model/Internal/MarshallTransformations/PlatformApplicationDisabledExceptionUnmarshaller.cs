@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for PlatformApplicationDisabledException operation
     /// </summary>  
-    public class PlatformApplicationDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<PlatformApplicationDisabledException, XmlUnmarshallerContext>
+    public class PlatformApplicationDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PlatformApplicationDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

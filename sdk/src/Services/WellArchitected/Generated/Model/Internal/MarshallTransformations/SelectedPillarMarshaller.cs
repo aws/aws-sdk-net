@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPillarId())
             {
                 context.Writer.WritePropertyName("PillarId");
-                context.Writer.Write(requestObject.PillarId);
+                context.Writer.WriteStringValue(requestObject.PillarId);
             }
 
             if(requestObject.IsSetSelectedQuestionIds())
             {
                 context.Writer.WritePropertyName("SelectedQuestionIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedQuestionIdsListValue in requestObject.SelectedQuestionIds)
                 {
-                        context.Writer.Write(requestObjectSelectedQuestionIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSelectedQuestionIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

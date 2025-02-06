@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginAccountID())
             {
                 context.Writer.WritePropertyName("originAccountID");
-                context.Writer.Write(requestObject.OriginAccountID);
+                context.Writer.WriteStringValue(requestObject.OriginAccountID);
             }
 
             if(requestObject.IsSetOriginRegion())
             {
                 context.Writer.WritePropertyName("originRegion");
-                context.Writer.Write(requestObject.OriginRegion);
+                context.Writer.WriteStringValue(requestObject.OriginRegion);
             }
 
             if(requestObject.IsSetSourceNetworkIDs())
             {
                 context.Writer.WritePropertyName("sourceNetworkIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceNetworkIDsListValue in requestObject.SourceNetworkIDs)
                 {
-                        context.Writer.Write(requestObjectSourceNetworkIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceNetworkIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRevokedStatusAction())
             {
                 context.Writer.WritePropertyName("RevokedStatusAction");
-                context.Writer.Write(requestObject.RevokedStatusAction);
+                context.Writer.WriteStringValue(requestObject.RevokedStatusAction);
             }
 
             if(requestObject.IsSetUnknownStatusAction())
             {
                 context.Writer.WritePropertyName("UnknownStatusAction");
-                context.Writer.Write(requestObject.UnknownStatusAction);
+                context.Writer.WriteStringValue(requestObject.UnknownStatusAction);
             }
 
         }

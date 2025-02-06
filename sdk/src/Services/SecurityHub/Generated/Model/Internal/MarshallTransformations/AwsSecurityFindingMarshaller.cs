@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,422 +49,422 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Action, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("AwsAccountId");
-                context.Writer.Write(requestObject.AwsAccountId);
+                context.Writer.WriteStringValue(requestObject.AwsAccountId);
             }
 
             if(requestObject.IsSetAwsAccountName())
             {
                 context.Writer.WritePropertyName("AwsAccountName");
-                context.Writer.Write(requestObject.AwsAccountName);
+                context.Writer.WriteStringValue(requestObject.AwsAccountName);
             }
 
             if(requestObject.IsSetCompanyName())
             {
                 context.Writer.WritePropertyName("CompanyName");
-                context.Writer.Write(requestObject.CompanyName);
+                context.Writer.WriteStringValue(requestObject.CompanyName);
             }
 
             if(requestObject.IsSetCompliance())
             {
                 context.Writer.WritePropertyName("Compliance");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComplianceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Compliance, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfidence())
             {
                 context.Writer.WritePropertyName("Confidence");
-                context.Writer.Write(requestObject.Confidence.Value);
+                context.Writer.WriteNumberValue(requestObject.Confidence.Value);
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WriteStringValue(requestObject.CreatedAt);
             }
 
             if(requestObject.IsSetCriticality())
             {
                 context.Writer.WritePropertyName("Criticality");
-                context.Writer.Write(requestObject.Criticality.Value);
+                context.Writer.WriteNumberValue(requestObject.Criticality.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDetection())
             {
                 context.Writer.WritePropertyName("Detection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DetectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Detection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFindingProviderFields())
             {
                 context.Writer.WritePropertyName("FindingProviderFields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FindingProviderFieldsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FindingProviderFields, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirstObservedAt())
             {
                 context.Writer.WritePropertyName("FirstObservedAt");
-                context.Writer.Write(requestObject.FirstObservedAt);
+                context.Writer.WriteStringValue(requestObject.FirstObservedAt);
             }
 
             if(requestObject.IsSetGeneratorDetails())
             {
                 context.Writer.WritePropertyName("GeneratorDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeneratorDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeneratorDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeneratorId())
             {
                 context.Writer.WritePropertyName("GeneratorId");
-                context.Writer.Write(requestObject.GeneratorId);
+                context.Writer.WriteStringValue(requestObject.GeneratorId);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLastObservedAt())
             {
                 context.Writer.WritePropertyName("LastObservedAt");
-                context.Writer.Write(requestObject.LastObservedAt);
+                context.Writer.WriteStringValue(requestObject.LastObservedAt);
             }
 
             if(requestObject.IsSetMalware())
             {
                 context.Writer.WritePropertyName("Malware");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMalwareListValue in requestObject.Malware)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MalwareMarshaller.Instance;
                     marshaller.Marshall(requestObjectMalwareListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNetwork())
             {
                 context.Writer.WritePropertyName("Network");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkMarshaller.Instance;
                 marshaller.Marshall(requestObject.Network, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkPath())
             {
                 context.Writer.WritePropertyName("NetworkPath");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetworkPathListValue in requestObject.NetworkPath)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NetworkPathComponentMarshaller.Instance;
                     marshaller.Marshall(requestObjectNetworkPathListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNote())
             {
                 context.Writer.WritePropertyName("Note");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Note, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPatchSummary())
             {
                 context.Writer.WritePropertyName("PatchSummary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PatchSummaryMarshaller.Instance;
                 marshaller.Marshall(requestObject.PatchSummary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProcess())
             {
                 context.Writer.WritePropertyName("Process");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Process, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProcessedAt())
             {
                 context.Writer.WritePropertyName("ProcessedAt");
-                context.Writer.Write(requestObject.ProcessedAt);
+                context.Writer.WriteStringValue(requestObject.ProcessedAt);
             }
 
             if(requestObject.IsSetProductArn())
             {
                 context.Writer.WritePropertyName("ProductArn");
-                context.Writer.Write(requestObject.ProductArn);
+                context.Writer.WriteStringValue(requestObject.ProductArn);
             }
 
             if(requestObject.IsSetProductFields())
             {
                 context.Writer.WritePropertyName("ProductFields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectProductFieldsKvp in requestObject.ProductFields)
                 {
                     context.Writer.WritePropertyName(requestObjectProductFieldsKvp.Key);
                     var requestObjectProductFieldsValue = requestObjectProductFieldsKvp.Value;
 
-                        context.Writer.Write(requestObjectProductFieldsValue);
+                        context.Writer.WriteStringValue(requestObjectProductFieldsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProductName())
             {
                 context.Writer.WritePropertyName("ProductName");
-                context.Writer.Write(requestObject.ProductName);
+                context.Writer.WriteStringValue(requestObject.ProductName);
             }
 
             if(requestObject.IsSetRecordState())
             {
                 context.Writer.WritePropertyName("RecordState");
-                context.Writer.Write(requestObject.RecordState);
+                context.Writer.WriteStringValue(requestObject.RecordState);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetRelatedFindings())
             {
                 context.Writer.WritePropertyName("RelatedFindings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelatedFindingsListValue in requestObject.RelatedFindings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RelatedFindingMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelatedFindingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRemediation())
             {
                 context.Writer.WritePropertyName("Remediation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RemediationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Remediation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("Resources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourcesListValue in requestObject.Resources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSample())
             {
                 context.Writer.WritePropertyName("Sample");
-                context.Writer.Write(requestObject.Sample.Value);
+                context.Writer.WriteBooleanValue(requestObject.Sample.Value);
             }
 
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("SchemaVersion");
-                context.Writer.Write(requestObject.SchemaVersion);
+                context.Writer.WriteStringValue(requestObject.SchemaVersion);
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("Severity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SeverityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Severity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceUrl())
             {
                 context.Writer.WritePropertyName("SourceUrl");
-                context.Writer.Write(requestObject.SourceUrl);
+                context.Writer.WriteStringValue(requestObject.SourceUrl);
             }
 
             if(requestObject.IsSetThreatIntelIndicators())
             {
                 context.Writer.WritePropertyName("ThreatIntelIndicators");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectThreatIntelIndicatorsListValue in requestObject.ThreatIntelIndicators)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ThreatIntelIndicatorMarshaller.Instance;
                     marshaller.Marshall(requestObjectThreatIntelIndicatorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThreats())
             {
                 context.Writer.WritePropertyName("Threats");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectThreatsListValue in requestObject.Threats)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ThreatMarshaller.Instance;
                     marshaller.Marshall(requestObjectThreatsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("Types");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTypesListValue in requestObject.Types)
                 {
-                        context.Writer.Write(requestObjectTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("UpdatedAt");
-                context.Writer.Write(requestObject.UpdatedAt);
+                context.Writer.WriteStringValue(requestObject.UpdatedAt);
             }
 
             if(requestObject.IsSetUserDefinedFields())
             {
                 context.Writer.WritePropertyName("UserDefinedFields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectUserDefinedFieldsKvp in requestObject.UserDefinedFields)
                 {
                     context.Writer.WritePropertyName(requestObjectUserDefinedFieldsKvp.Key);
                     var requestObjectUserDefinedFieldsValue = requestObjectUserDefinedFieldsKvp.Value;
 
-                        context.Writer.Write(requestObjectUserDefinedFieldsValue);
+                        context.Writer.WriteStringValue(requestObjectUserDefinedFieldsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVerificationState())
             {
                 context.Writer.WritePropertyName("VerificationState");
-                context.Writer.Write(requestObject.VerificationState);
+                context.Writer.WriteStringValue(requestObject.VerificationState);
             }
 
             if(requestObject.IsSetVulnerabilities())
             {
                 context.Writer.WritePropertyName("Vulnerabilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVulnerabilitiesListValue in requestObject.Vulnerabilities)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VulnerabilityMarshaller.Instance;
                     marshaller.Marshall(requestObjectVulnerabilitiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWorkflow())
             {
                 context.Writer.WritePropertyName("Workflow");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WorkflowMarshaller.Instance;
                 marshaller.Marshall(requestObject.Workflow, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkflowState())
             {
                 context.Writer.WritePropertyName("WorkflowState");
-                context.Writer.Write(requestObject.WorkflowState);
+                context.Writer.WriteStringValue(requestObject.WorkflowState);
             }
 
         }

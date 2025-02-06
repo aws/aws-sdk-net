@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSource1())
             {
                 context.Writer.WritePropertyName("source1");
-                context.Writer.Write(requestObject.Source1);
+                context.Writer.WriteStringValue(requestObject.Source1);
             }
 
             if(requestObject.IsSetSource2())
             {
                 context.Writer.WritePropertyName("source2");
-                context.Writer.Write(requestObject.Source2);
+                context.Writer.WriteStringValue(requestObject.Source2);
             }
 
         }

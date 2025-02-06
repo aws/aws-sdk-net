@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatasetLabelStats Object
     /// </summary>  
-    public class DatasetLabelStatsUnmarshaller : IUnmarshaller<DatasetLabelStats, XmlUnmarshallerContext>, IUnmarshaller<DatasetLabelStats, JsonUnmarshallerContext>
+    public class DatasetLabelStatsUnmarshaller : IJsonUnmarshaller<DatasetLabelStats, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatasetLabelStats IUnmarshaller<DatasetLabelStats, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatasetLabelStats Unmarshall(JsonUnmarshallerContext context)
+        public DatasetLabelStats Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatasetLabelStats unmarshalledObject = new DatasetLabelStats();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BoundingBoxCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBoxCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BoundingBoxCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntryCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EntryCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

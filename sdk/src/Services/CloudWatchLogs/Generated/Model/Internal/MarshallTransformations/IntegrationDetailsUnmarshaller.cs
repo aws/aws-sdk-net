@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IntegrationDetails Object
     /// </summary>  
-    public class IntegrationDetailsUnmarshaller : IUnmarshaller<IntegrationDetails, XmlUnmarshallerContext>, IUnmarshaller<IntegrationDetails, JsonUnmarshallerContext>
+    public class IntegrationDetailsUnmarshaller : IJsonUnmarshaller<IntegrationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IntegrationDetails IUnmarshaller<IntegrationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IntegrationDetails Unmarshall(JsonUnmarshallerContext context)
+        public IntegrationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IntegrationDetails unmarshalledObject = new IntegrationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("openSearchIntegrationDetails", targetDepth))
                 {
                     var unmarshaller = OpenSearchIntegrationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.OpenSearchIntegrationDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenSearchIntegrationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

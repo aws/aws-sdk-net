@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArtifactIdentifier())
             {
                 context.Writer.WritePropertyName("artifactIdentifier");
-                context.Writer.Write(requestObject.ArtifactIdentifier);
+                context.Writer.WriteStringValue(requestObject.ArtifactIdentifier);
             }
 
             if(requestObject.IsSetBucketOwnerAccess())
             {
                 context.Writer.WritePropertyName("bucketOwnerAccess");
-                context.Writer.Write(requestObject.BucketOwnerAccess);
+                context.Writer.WriteStringValue(requestObject.BucketOwnerAccess);
             }
 
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EncryptionDisabled.Value);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNamespaceType())
             {
                 context.Writer.WritePropertyName("namespaceType");
-                context.Writer.Write(requestObject.NamespaceType);
+                context.Writer.WriteStringValue(requestObject.NamespaceType);
             }
 
             if(requestObject.IsSetOverrideArtifactName())
             {
                 context.Writer.WritePropertyName("overrideArtifactName");
-                context.Writer.Write(requestObject.OverrideArtifactName.Value);
+                context.Writer.WriteBooleanValue(requestObject.OverrideArtifactName.Value);
             }
 
             if(requestObject.IsSetPackaging())
             {
                 context.Writer.WritePropertyName("packaging");
-                context.Writer.Write(requestObject.Packaging);
+                context.Writer.WriteStringValue(requestObject.Packaging);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

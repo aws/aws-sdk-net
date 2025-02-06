@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentStatus())
             {
                 context.Writer.WritePropertyName("agentStatus");
-                context.Writer.Write(requestObject.AgentStatus);
+                context.Writer.WriteStringValue(requestObject.AgentStatus);
             }
 
             if(requestObject.IsSetAuditResults())
             {
                 context.Writer.WritePropertyName("auditResults");
-                context.Writer.Write(requestObject.AuditResults);
+                context.Writer.WriteStringValue(requestObject.AuditResults);
             }
 
             if(requestObject.IsSetEgressAddress())
             {
                 context.Writer.WritePropertyName("egressAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EgressAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIngressAddress())
             {
                 context.Writer.WritePropertyName("ingressAddress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangedConnectionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.IngressAddress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

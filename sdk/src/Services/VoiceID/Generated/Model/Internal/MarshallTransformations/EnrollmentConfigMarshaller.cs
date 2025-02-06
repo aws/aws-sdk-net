@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExistingEnrollmentAction())
             {
                 context.Writer.WritePropertyName("ExistingEnrollmentAction");
-                context.Writer.Write(requestObject.ExistingEnrollmentAction);
+                context.Writer.WriteStringValue(requestObject.ExistingEnrollmentAction);
             }
 
             if(requestObject.IsSetFraudDetectionConfig())
             {
                 context.Writer.WritePropertyName("FraudDetectionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnrollmentJobFraudDetectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.FraudDetectionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

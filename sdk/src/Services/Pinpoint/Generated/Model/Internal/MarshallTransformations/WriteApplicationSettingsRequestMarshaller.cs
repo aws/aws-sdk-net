@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCampaignHook())
             {
                 context.Writer.WritePropertyName("CampaignHook");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignHookMarshaller.Instance;
                 marshaller.Marshall(requestObject.CampaignHook, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetEventTaggingEnabled())
             {
                 context.Writer.WritePropertyName("EventTaggingEnabled");
-                context.Writer.Write(requestObject.EventTaggingEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EventTaggingEnabled.Value);
             }
 
             if(requestObject.IsSetJourneyLimits())
             {
                 context.Writer.WritePropertyName("JourneyLimits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApplicationSettingsJourneyLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JourneyLimits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("Limits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Limits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuietTime())
             {
                 context.Writer.WritePropertyName("QuietTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QuietTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuietTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

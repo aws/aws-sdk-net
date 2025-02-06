@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourcePath())
             {
                 context.Writer.WritePropertyName("SourcePath");
-                context.Writer.Write(requestObject.SourcePath);
+                context.Writer.WriteStringValue(requestObject.SourcePath);
             }
 
             if(requestObject.IsSetSourceTable())
             {
                 context.Writer.WritePropertyName("SourceTable");
-                context.Writer.Write(requestObject.SourceTable);
+                context.Writer.WriteStringValue(requestObject.SourceTable);
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("SourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
             if(requestObject.IsSetTargetPath())
             {
                 context.Writer.WritePropertyName("TargetPath");
-                context.Writer.Write(requestObject.TargetPath);
+                context.Writer.WriteStringValue(requestObject.TargetPath);
             }
 
             if(requestObject.IsSetTargetTable())
             {
                 context.Writer.WritePropertyName("TargetTable");
-                context.Writer.Write(requestObject.TargetTable);
+                context.Writer.WriteStringValue(requestObject.TargetTable);
             }
 
             if(requestObject.IsSetTargetType())
             {
                 context.Writer.WritePropertyName("TargetType");
-                context.Writer.Write(requestObject.TargetType);
+                context.Writer.WriteStringValue(requestObject.TargetType);
             }
 
         }

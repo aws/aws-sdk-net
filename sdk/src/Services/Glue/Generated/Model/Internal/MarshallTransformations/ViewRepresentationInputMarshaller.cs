@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialect())
             {
                 context.Writer.WritePropertyName("Dialect");
-                context.Writer.Write(requestObject.Dialect);
+                context.Writer.WriteStringValue(requestObject.Dialect);
             }
 
             if(requestObject.IsSetDialectVersion())
             {
                 context.Writer.WritePropertyName("DialectVersion");
-                context.Writer.Write(requestObject.DialectVersion);
+                context.Writer.WriteStringValue(requestObject.DialectVersion);
             }
 
             if(requestObject.IsSetValidationConnection())
             {
                 context.Writer.WritePropertyName("ValidationConnection");
-                context.Writer.Write(requestObject.ValidationConnection);
+                context.Writer.WriteStringValue(requestObject.ValidationConnection);
             }
 
             if(requestObject.IsSetViewExpandedText())
             {
                 context.Writer.WritePropertyName("ViewExpandedText");
-                context.Writer.Write(requestObject.ViewExpandedText);
+                context.Writer.WriteStringValue(requestObject.ViewExpandedText);
             }
 
             if(requestObject.IsSetViewOriginalText())
             {
                 context.Writer.WritePropertyName("ViewOriginalText");
-                context.Writer.Write(requestObject.ViewOriginalText);
+                context.Writer.WriteStringValue(requestObject.ViewOriginalText);
             }
 
         }

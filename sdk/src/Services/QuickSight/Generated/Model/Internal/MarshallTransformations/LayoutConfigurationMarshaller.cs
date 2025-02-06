@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFreeFormLayout())
             {
                 context.Writer.WritePropertyName("FreeFormLayout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FreeFormLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FreeFormLayout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGridLayout())
             {
                 context.Writer.WritePropertyName("GridLayout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GridLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GridLayout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSectionBasedLayout())
             {
                 context.Writer.WritePropertyName("SectionBasedLayout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SectionBasedLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SectionBasedLayout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("emailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("firstName");
-                context.Writer.Write(requestObject.FirstName);
+                context.Writer.WriteStringValue(requestObject.FirstName);
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("lastName");
-                context.Writer.Write(requestObject.LastName);
+                context.Writer.WriteStringValue(requestObject.LastName);
             }
 
         }

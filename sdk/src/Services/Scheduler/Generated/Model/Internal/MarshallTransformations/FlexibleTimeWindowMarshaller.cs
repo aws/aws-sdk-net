@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumWindowInMinutes())
             {
                 context.Writer.WritePropertyName("MaximumWindowInMinutes");
-                context.Writer.Write(requestObject.MaximumWindowInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumWindowInMinutes.Value);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
         }

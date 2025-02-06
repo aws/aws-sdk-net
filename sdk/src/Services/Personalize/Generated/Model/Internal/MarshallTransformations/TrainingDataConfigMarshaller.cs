@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,20 +49,20 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludedDatasetColumns())
             {
                 context.Writer.WritePropertyName("excludedDatasetColumns");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExcludedDatasetColumnsKvp in requestObject.ExcludedDatasetColumns)
                 {
                     context.Writer.WritePropertyName(requestObjectExcludedDatasetColumnsKvp.Key);
                     var requestObjectExcludedDatasetColumnsValue = requestObjectExcludedDatasetColumnsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectExcludedDatasetColumnsValueListValue in requestObjectExcludedDatasetColumnsValue)
                     {
-                            context.Writer.Write(requestObjectExcludedDatasetColumnsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectExcludedDatasetColumnsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

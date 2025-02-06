@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepCount())
             {
                 context.Writer.WritePropertyName("StepCount");
-                context.Writer.Write(requestObject.StepCount.Value);
+                context.Writer.WriteNumberValue(requestObject.StepCount.Value);
             }
 
             if(requestObject.IsSetStepSize())
@@ -59,11 +57,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StepSize");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StepSize.Value);
+                    context.Writer.WriteNumberValue(requestObject.StepSize.Value);
                 }
             }
 

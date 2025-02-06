@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidOptionGroupStateException operation
     /// </summary>  
-    public class InvalidOptionGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidOptionGroupStateException, XmlUnmarshallerContext>
+    public class InvalidOptionGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidOptionGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

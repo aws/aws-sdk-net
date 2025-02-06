@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");
-                context.Writer.Write(requestObject.Catalog);
+                context.Writer.WriteStringValue(requestObject.Catalog);
             }
 
             if(requestObject.IsSetDataSourceArn())
             {
                 context.Writer.WritePropertyName("DataSourceArn");
-                context.Writer.Write(requestObject.DataSourceArn);
+                context.Writer.WriteStringValue(requestObject.DataSourceArn);
             }
 
             if(requestObject.IsSetInputColumns())
             {
                 context.Writer.WritePropertyName("InputColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputColumnsListValue in requestObject.InputColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("Schema");
-                context.Writer.Write(requestObject.Schema);
+                context.Writer.WriteStringValue(requestObject.Schema);
             }
 
         }

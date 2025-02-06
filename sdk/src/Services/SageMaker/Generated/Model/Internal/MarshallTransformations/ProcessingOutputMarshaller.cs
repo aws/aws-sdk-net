@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppManaged())
             {
                 context.Writer.WritePropertyName("AppManaged");
-                context.Writer.Write(requestObject.AppManaged.Value);
+                context.Writer.WriteBooleanValue(requestObject.AppManaged.Value);
             }
 
             if(requestObject.IsSetFeatureStoreOutput())
             {
                 context.Writer.WritePropertyName("FeatureStoreOutput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingFeatureStoreOutputMarshaller.Instance;
                 marshaller.Marshall(requestObject.FeatureStoreOutput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputName())
             {
                 context.Writer.WritePropertyName("OutputName");
-                context.Writer.Write(requestObject.OutputName);
+                context.Writer.WriteStringValue(requestObject.OutputName);
             }
 
             if(requestObject.IsSetS3Output())
             {
                 context.Writer.WritePropertyName("S3Output");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingS3OutputMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Output, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

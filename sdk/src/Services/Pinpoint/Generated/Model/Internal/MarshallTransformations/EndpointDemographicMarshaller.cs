@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppVersion())
             {
                 context.Writer.WritePropertyName("AppVersion");
-                context.Writer.Write(requestObject.AppVersion);
+                context.Writer.WriteStringValue(requestObject.AppVersion);
             }
 
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("Locale");
-                context.Writer.Write(requestObject.Locale);
+                context.Writer.WriteStringValue(requestObject.Locale);
             }
 
             if(requestObject.IsSetMake())
             {
                 context.Writer.WritePropertyName("Make");
-                context.Writer.Write(requestObject.Make);
+                context.Writer.WriteStringValue(requestObject.Make);
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("Model");
-                context.Writer.Write(requestObject.Model);
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetModelVersion())
             {
                 context.Writer.WritePropertyName("ModelVersion");
-                context.Writer.Write(requestObject.ModelVersion);
+                context.Writer.WriteStringValue(requestObject.ModelVersion);
             }
 
             if(requestObject.IsSetPlatform())
             {
                 context.Writer.WritePropertyName("Platform");
-                context.Writer.Write(requestObject.Platform);
+                context.Writer.WriteStringValue(requestObject.Platform);
             }
 
             if(requestObject.IsSetPlatformVersion())
             {
                 context.Writer.WritePropertyName("PlatformVersion");
-                context.Writer.Write(requestObject.PlatformVersion);
+                context.Writer.WriteStringValue(requestObject.PlatformVersion);
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

@@ -84,8 +84,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameId. 
         /// <para>
-        /// The identifier for the domain name resource. Supported only for private custom domain
-        /// names.
+        /// The identifier for the domain name resource. Required for private custom domain names.
         /// </para>
         /// </summary>
         public string DomainNameId

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBuiltInPatternId())
             {
                 context.Writer.WritePropertyName("builtInPatternId");
-                context.Writer.Write(requestObject.BuiltInPatternId);
+                context.Writer.WriteStringValue(requestObject.BuiltInPatternId);
             }
 
             if(requestObject.IsSetConfidenceLevel())
             {
                 context.Writer.WritePropertyName("confidenceLevel");
-                context.Writer.Write(requestObject.ConfidenceLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.ConfidenceLevel.Value);
             }
 
             if(requestObject.IsSetCustomPattern())
             {
                 context.Writer.WritePropertyName("customPattern");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomPatternMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomPattern, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnforcedUrls())
             {
                 context.Writer.WritePropertyName("enforcedUrls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnforcedUrlsListValue in requestObject.EnforcedUrls)
                 {
-                        context.Writer.Write(requestObjectEnforcedUrlsListValue);
+                        context.Writer.WriteStringValue(requestObjectEnforcedUrlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExemptUrls())
             {
                 context.Writer.WritePropertyName("exemptUrls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExemptUrlsListValue in requestObject.ExemptUrls)
                 {
-                        context.Writer.Write(requestObjectExemptUrlsListValue);
+                        context.Writer.WriteStringValue(requestObjectExemptUrlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRedactionPlaceHolder())
             {
                 context.Writer.WritePropertyName("redactionPlaceHolder");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedactionPlaceHolderMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedactionPlaceHolder, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

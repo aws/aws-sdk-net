@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateListenerException operation
     /// </summary>  
-    public class DuplicateListenerExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateListenerException, XmlUnmarshallerContext>
+    public class DuplicateListenerExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateListenerException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

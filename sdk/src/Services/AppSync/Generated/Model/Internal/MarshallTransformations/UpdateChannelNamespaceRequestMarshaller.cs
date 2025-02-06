@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -67,57 +70,62 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v2/apis/{apiId}/channelNamespaces/{name}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCodeHandlers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCodeHandlers())
-                    {
-                        context.Writer.WritePropertyName("codeHandlers");
-                        context.Writer.Write(publicRequest.CodeHandlers);
-                    }
-
-                    if(publicRequest.IsSetPublishAuthModes())
-                    {
-                        context.Writer.WritePropertyName("publishAuthModes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPublishAuthModesListValue in publicRequest.PublishAuthModes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AuthModeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPublishAuthModesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubscribeAuthModes())
-                    {
-                        context.Writer.WritePropertyName("subscribeAuthModes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubscribeAuthModesListValue in publicRequest.SubscribeAuthModes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AuthModeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSubscribeAuthModesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("codeHandlers");
+                context.Writer.WriteStringValue(publicRequest.CodeHandlers);
             }
+
+            if(publicRequest.IsSetPublishAuthModes())
+            {
+                context.Writer.WritePropertyName("publishAuthModes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPublishAuthModesListValue in publicRequest.PublishAuthModes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AuthModeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPublishAuthModesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubscribeAuthModes())
+            {
+                context.Writer.WritePropertyName("subscribeAuthModes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubscribeAuthModesListValue in publicRequest.SubscribeAuthModes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AuthModeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSubscribeAuthModesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

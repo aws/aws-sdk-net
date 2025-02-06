@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MsSmoothGroupSettings Object
     /// </summary>  
-    public class MsSmoothGroupSettingsUnmarshaller : IUnmarshaller<MsSmoothGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<MsSmoothGroupSettings, JsonUnmarshallerContext>
+    public class MsSmoothGroupSettingsUnmarshaller : IJsonUnmarshaller<MsSmoothGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MsSmoothGroupSettings IUnmarshaller<MsSmoothGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MsSmoothGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public MsSmoothGroupSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MsSmoothGroupSettings unmarshalledObject = new MsSmoothGroupSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MsSmoothAdditionalManifest, MsSmoothAdditionalManifestUnmarshaller>(MsSmoothAdditionalManifestUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MsSmoothAdditionalManifest, MsSmoothAdditionalManifestUnmarshaller>(MsSmoothAdditionalManifestUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioDeduplication", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioDeduplication = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioDeduplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationSettings", targetDepth))
                 {
                     var unmarshaller = DestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryption", targetDepth))
                 {
                     var unmarshaller = MsSmoothEncryptionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fragmentLength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fragmentLengthControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FragmentLengthControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FragmentLengthControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestEncoding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestEncoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

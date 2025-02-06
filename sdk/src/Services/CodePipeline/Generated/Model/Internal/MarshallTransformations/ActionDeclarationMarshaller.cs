@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,116 +49,116 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionTypeId())
             {
                 context.Writer.WritePropertyName("actionTypeId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionTypeIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActionTypeId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCommands())
             {
                 context.Writer.WritePropertyName("commands");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandsListValue in requestObject.Commands)
                 {
-                        context.Writer.Write(requestObjectCommandsListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConfigurationKvp in requestObject.Configuration)
                 {
                     context.Writer.WritePropertyName(requestObjectConfigurationKvp.Key);
                     var requestObjectConfigurationValue = requestObjectConfigurationKvp.Value;
 
-                        context.Writer.Write(requestObjectConfigurationValue);
+                        context.Writer.WriteStringValue(requestObjectConfigurationValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputArtifacts())
             {
                 context.Writer.WritePropertyName("inputArtifacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputArtifactsListValue in requestObject.InputArtifacts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputArtifactMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputArtifactsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetOutputArtifacts())
             {
                 context.Writer.WritePropertyName("outputArtifacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputArtifactsListValue in requestObject.OutputArtifacts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OutputArtifactMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputArtifactsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputVariables())
             {
                 context.Writer.WritePropertyName("outputVariables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputVariablesListValue in requestObject.OutputVariables)
                 {
-                        context.Writer.Write(requestObjectOutputVariablesListValue);
+                        context.Writer.WriteStringValue(requestObjectOutputVariablesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetRunOrder())
             {
                 context.Writer.WritePropertyName("runOrder");
-                context.Writer.Write(requestObject.RunOrder.Value);
+                context.Writer.WriteNumberValue(requestObject.RunOrder.Value);
             }
 
             if(requestObject.IsSetTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("timeoutInMinutes");
-                context.Writer.Write(requestObject.TimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInMinutes.Value);
             }
 
         }

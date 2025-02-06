@@ -31,7 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParametersByPath operation.
-    /// Retrieve information about one or more parameters in a specific hierarchy. 
+    /// Retrieve information about one or more parameters under a specified level in a hierarchy.
+    /// 
     /// 
     ///  
     /// <para>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnGroupSchemaList())
             {
                 context.Writer.WritePropertyName("ColumnGroupSchemaList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnGroupSchemaListListValue in requestObject.ColumnGroupSchemaList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnGroupSchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnGroupSchemaListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSetSchema())
             {
                 context.Writer.WritePropertyName("DataSetSchema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSetSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSetSchema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlaceholder())
             {
                 context.Writer.WritePropertyName("Placeholder");
-                context.Writer.Write(requestObject.Placeholder);
+                context.Writer.WriteStringValue(requestObject.Placeholder);
             }
 
         }

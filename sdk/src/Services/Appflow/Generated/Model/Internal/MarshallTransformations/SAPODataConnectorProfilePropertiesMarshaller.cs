@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationHostUrl())
             {
                 context.Writer.WritePropertyName("applicationHostUrl");
-                context.Writer.Write(requestObject.ApplicationHostUrl);
+                context.Writer.WriteStringValue(requestObject.ApplicationHostUrl);
             }
 
             if(requestObject.IsSetApplicationServicePath())
             {
                 context.Writer.WritePropertyName("applicationServicePath");
-                context.Writer.Write(requestObject.ApplicationServicePath);
+                context.Writer.WriteStringValue(requestObject.ApplicationServicePath);
             }
 
             if(requestObject.IsSetClientNumber())
             {
                 context.Writer.WritePropertyName("clientNumber");
-                context.Writer.Write(requestObject.ClientNumber);
+                context.Writer.WriteStringValue(requestObject.ClientNumber);
             }
 
             if(requestObject.IsSetDisableSSO())
             {
                 context.Writer.WritePropertyName("disableSSO");
-                context.Writer.Write(requestObject.DisableSSO.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableSSO.Value);
             }
 
             if(requestObject.IsSetLogonLanguage())
             {
                 context.Writer.WritePropertyName("logonLanguage");
-                context.Writer.Write(requestObject.LogonLanguage);
+                context.Writer.WriteStringValue(requestObject.LogonLanguage);
             }
 
             if(requestObject.IsSetOAuthProperties())
             {
                 context.Writer.WritePropertyName("oAuthProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuthPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuthProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPortNumber())
             {
                 context.Writer.WritePropertyName("portNumber");
-                context.Writer.Write(requestObject.PortNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.PortNumber.Value);
             }
 
             if(requestObject.IsSetPrivateLinkServiceName())
             {
                 context.Writer.WritePropertyName("privateLinkServiceName");
-                context.Writer.Write(requestObject.PrivateLinkServiceName);
+                context.Writer.WriteStringValue(requestObject.PrivateLinkServiceName);
             }
 
         }

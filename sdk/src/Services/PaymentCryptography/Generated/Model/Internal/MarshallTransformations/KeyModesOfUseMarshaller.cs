@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");
-                context.Writer.Write(requestObject.Decrypt.Value);
+                context.Writer.WriteBooleanValue(requestObject.Decrypt.Value);
             }
 
             if(requestObject.IsSetDeriveKey())
             {
                 context.Writer.WritePropertyName("DeriveKey");
-                context.Writer.Write(requestObject.DeriveKey.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeriveKey.Value);
             }
 
             if(requestObject.IsSetEncrypt())
             {
                 context.Writer.WritePropertyName("Encrypt");
-                context.Writer.Write(requestObject.Encrypt.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypt.Value);
             }
 
             if(requestObject.IsSetGenerate())
             {
                 context.Writer.WritePropertyName("Generate");
-                context.Writer.Write(requestObject.Generate.Value);
+                context.Writer.WriteBooleanValue(requestObject.Generate.Value);
             }
 
             if(requestObject.IsSetNoRestrictions())
             {
                 context.Writer.WritePropertyName("NoRestrictions");
-                context.Writer.Write(requestObject.NoRestrictions.Value);
+                context.Writer.WriteBooleanValue(requestObject.NoRestrictions.Value);
             }
 
             if(requestObject.IsSetSign())
             {
                 context.Writer.WritePropertyName("Sign");
-                context.Writer.Write(requestObject.Sign.Value);
+                context.Writer.WriteBooleanValue(requestObject.Sign.Value);
             }
 
             if(requestObject.IsSetUnwrap())
             {
                 context.Writer.WritePropertyName("Unwrap");
-                context.Writer.Write(requestObject.Unwrap.Value);
+                context.Writer.WriteBooleanValue(requestObject.Unwrap.Value);
             }
 
             if(requestObject.IsSetVerify())
             {
                 context.Writer.WritePropertyName("Verify");
-                context.Writer.Write(requestObject.Verify.Value);
+                context.Writer.WriteBooleanValue(requestObject.Verify.Value);
             }
 
             if(requestObject.IsSetWrap())
             {
                 context.Writer.WritePropertyName("Wrap");
-                context.Writer.Write(requestObject.Wrap.Value);
+                context.Writer.WriteBooleanValue(requestObject.Wrap.Value);
             }
 
         }

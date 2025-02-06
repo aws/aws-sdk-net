@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfluencePageToIndexFieldMapping Object
     /// </summary>  
-    public class ConfluencePageToIndexFieldMappingUnmarshaller : IUnmarshaller<ConfluencePageToIndexFieldMapping, XmlUnmarshallerContext>, IUnmarshaller<ConfluencePageToIndexFieldMapping, JsonUnmarshallerContext>
+    public class ConfluencePageToIndexFieldMappingUnmarshaller : IJsonUnmarshaller<ConfluencePageToIndexFieldMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfluencePageToIndexFieldMapping IUnmarshaller<ConfluencePageToIndexFieldMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfluencePageToIndexFieldMapping Unmarshall(JsonUnmarshallerContext context)
+        public ConfluencePageToIndexFieldMapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfluencePageToIndexFieldMapping unmarshalledObject = new ConfluencePageToIndexFieldMapping();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataSourceFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceFieldName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSourceFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DateFieldFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DateFieldFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateFieldFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexFieldName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

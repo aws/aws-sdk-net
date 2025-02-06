@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessToken())
             {
                 context.Writer.WritePropertyName("accessToken");
-                context.Writer.Write(requestObject.AccessToken);
+                context.Writer.WriteStringValue(requestObject.AccessToken);
             }
 
             if(requestObject.IsSetJwtToken())
             {
                 context.Writer.WritePropertyName("jwtToken");
-                context.Writer.Write(requestObject.JwtToken);
+                context.Writer.WriteStringValue(requestObject.JwtToken);
             }
 
             if(requestObject.IsSetRefreshToken())
             {
                 context.Writer.WritePropertyName("refreshToken");
-                context.Writer.Write(requestObject.RefreshToken);
+                context.Writer.WriteStringValue(requestObject.RefreshToken);
             }
 
             if(requestObject.IsSetUserManagedClientApplicationClientSecret())
             {
                 context.Writer.WritePropertyName("userManagedClientApplicationClientSecret");
-                context.Writer.Write(requestObject.UserManagedClientApplicationClientSecret);
+                context.Writer.WriteStringValue(requestObject.UserManagedClientApplicationClientSecret);
             }
 
         }

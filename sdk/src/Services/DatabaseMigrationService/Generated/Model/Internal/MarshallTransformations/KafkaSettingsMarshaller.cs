@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,127 +49,127 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBroker())
             {
                 context.Writer.WritePropertyName("Broker");
-                context.Writer.Write(requestObject.Broker);
+                context.Writer.WriteStringValue(requestObject.Broker);
             }
 
             if(requestObject.IsSetIncludeControlDetails())
             {
                 context.Writer.WritePropertyName("IncludeControlDetails");
-                context.Writer.Write(requestObject.IncludeControlDetails.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeControlDetails.Value);
             }
 
             if(requestObject.IsSetIncludeNullAndEmpty())
             {
                 context.Writer.WritePropertyName("IncludeNullAndEmpty");
-                context.Writer.Write(requestObject.IncludeNullAndEmpty.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeNullAndEmpty.Value);
             }
 
             if(requestObject.IsSetIncludePartitionValue())
             {
                 context.Writer.WritePropertyName("IncludePartitionValue");
-                context.Writer.Write(requestObject.IncludePartitionValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludePartitionValue.Value);
             }
 
             if(requestObject.IsSetIncludeTableAlterOperations())
             {
                 context.Writer.WritePropertyName("IncludeTableAlterOperations");
-                context.Writer.Write(requestObject.IncludeTableAlterOperations.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeTableAlterOperations.Value);
             }
 
             if(requestObject.IsSetIncludeTransactionDetails())
             {
                 context.Writer.WritePropertyName("IncludeTransactionDetails");
-                context.Writer.Write(requestObject.IncludeTransactionDetails.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeTransactionDetails.Value);
             }
 
             if(requestObject.IsSetMessageFormat())
             {
                 context.Writer.WritePropertyName("MessageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WriteStringValue(requestObject.MessageFormat);
             }
 
             if(requestObject.IsSetMessageMaxBytes())
             {
                 context.Writer.WritePropertyName("MessageMaxBytes");
-                context.Writer.Write(requestObject.MessageMaxBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.MessageMaxBytes.Value);
             }
 
             if(requestObject.IsSetNoHexPrefix())
             {
                 context.Writer.WritePropertyName("NoHexPrefix");
-                context.Writer.Write(requestObject.NoHexPrefix.Value);
+                context.Writer.WriteBooleanValue(requestObject.NoHexPrefix.Value);
             }
 
             if(requestObject.IsSetPartitionIncludeSchemaTable())
             {
                 context.Writer.WritePropertyName("PartitionIncludeSchemaTable");
-                context.Writer.Write(requestObject.PartitionIncludeSchemaTable.Value);
+                context.Writer.WriteBooleanValue(requestObject.PartitionIncludeSchemaTable.Value);
             }
 
             if(requestObject.IsSetSaslMechanism())
             {
                 context.Writer.WritePropertyName("SaslMechanism");
-                context.Writer.Write(requestObject.SaslMechanism);
+                context.Writer.WriteStringValue(requestObject.SaslMechanism);
             }
 
             if(requestObject.IsSetSaslPassword())
             {
                 context.Writer.WritePropertyName("SaslPassword");
-                context.Writer.Write(requestObject.SaslPassword);
+                context.Writer.WriteStringValue(requestObject.SaslPassword);
             }
 
             if(requestObject.IsSetSaslUsername())
             {
                 context.Writer.WritePropertyName("SaslUsername");
-                context.Writer.Write(requestObject.SaslUsername);
+                context.Writer.WriteStringValue(requestObject.SaslUsername);
             }
 
             if(requestObject.IsSetSecurityProtocol())
             {
                 context.Writer.WritePropertyName("SecurityProtocol");
-                context.Writer.Write(requestObject.SecurityProtocol);
+                context.Writer.WriteStringValue(requestObject.SecurityProtocol);
             }
 
             if(requestObject.IsSetSslCaCertificateArn())
             {
                 context.Writer.WritePropertyName("SslCaCertificateArn");
-                context.Writer.Write(requestObject.SslCaCertificateArn);
+                context.Writer.WriteStringValue(requestObject.SslCaCertificateArn);
             }
 
             if(requestObject.IsSetSslClientCertificateArn())
             {
                 context.Writer.WritePropertyName("SslClientCertificateArn");
-                context.Writer.Write(requestObject.SslClientCertificateArn);
+                context.Writer.WriteStringValue(requestObject.SslClientCertificateArn);
             }
 
             if(requestObject.IsSetSslClientKeyArn())
             {
                 context.Writer.WritePropertyName("SslClientKeyArn");
-                context.Writer.Write(requestObject.SslClientKeyArn);
+                context.Writer.WriteStringValue(requestObject.SslClientKeyArn);
             }
 
             if(requestObject.IsSetSslClientKeyPassword())
             {
                 context.Writer.WritePropertyName("SslClientKeyPassword");
-                context.Writer.Write(requestObject.SslClientKeyPassword);
+                context.Writer.WriteStringValue(requestObject.SslClientKeyPassword);
             }
 
             if(requestObject.IsSetSslEndpointIdentificationAlgorithm())
             {
                 context.Writer.WritePropertyName("SslEndpointIdentificationAlgorithm");
-                context.Writer.Write(requestObject.SslEndpointIdentificationAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SslEndpointIdentificationAlgorithm);
             }
 
             if(requestObject.IsSetTopic())
             {
                 context.Writer.WritePropertyName("Topic");
-                context.Writer.Write(requestObject.Topic);
+                context.Writer.WriteStringValue(requestObject.Topic);
             }
 
             if(requestObject.IsSetUseLargeIntegerValue())
             {
                 context.Writer.WritePropertyName("UseLargeIntegerValue");
-                context.Writer.Write(requestObject.UseLargeIntegerValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseLargeIntegerValue.Value);
             }
 
         }

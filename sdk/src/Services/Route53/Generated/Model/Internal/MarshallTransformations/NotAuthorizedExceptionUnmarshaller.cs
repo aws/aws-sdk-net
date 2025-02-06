@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NotAuthorizedException operation
     /// </summary>  
-    public class NotAuthorizedExceptionUnmarshaller : IErrorResponseUnmarshaller<NotAuthorizedException, XmlUnmarshallerContext>
+    public class NotAuthorizedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NotAuthorizedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

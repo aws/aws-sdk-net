@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetCreateUserLevelPrefix())
             {
                 context.Writer.WritePropertyName("CreateUserLevelPrefix");
-                context.Writer.Write(requestObject.CreateUserLevelPrefix.Value);
+                context.Writer.WriteBooleanValue(requestObject.CreateUserLevelPrefix.Value);
             }
 
             if(requestObject.IsSetEnableS3AccessGrants())
             {
                 context.Writer.WritePropertyName("EnableS3AccessGrants");
-                context.Writer.Write(requestObject.EnableS3AccessGrants.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableS3AccessGrants.Value);
             }
 
         }

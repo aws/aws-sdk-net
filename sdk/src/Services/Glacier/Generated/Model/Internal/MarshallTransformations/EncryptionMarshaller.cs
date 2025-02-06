@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("EncryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetKMSContext())
             {
                 context.Writer.WritePropertyName("KMSContext");
-                context.Writer.Write(requestObject.KMSContext);
+                context.Writer.WriteStringValue(requestObject.KMSContext);
             }
 
             if(requestObject.IsSetKMSKeyId())
             {
                 context.Writer.WritePropertyName("KMSKeyId");
-                context.Writer.Write(requestObject.KMSKeyId);
+                context.Writer.WriteStringValue(requestObject.KMSKeyId);
             }
 
         }

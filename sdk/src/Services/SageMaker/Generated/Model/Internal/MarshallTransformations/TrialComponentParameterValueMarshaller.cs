@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("NumberValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.NumberValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.NumberValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumberValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.NumberValue.Value);
                 }
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("StringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

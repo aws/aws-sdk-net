@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMainNode())
             {
                 context.Writer.WritePropertyName("mainNode");
-                context.Writer.Write(requestObject.MainNode.Value);
+                context.Writer.WriteNumberValue(requestObject.MainNode.Value);
             }
 
             if(requestObject.IsSetNodeRangeProperties())
             {
                 context.Writer.WritePropertyName("nodeRangeProperties");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNodeRangePropertiesListValue in requestObject.NodeRangeProperties)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NodeRangePropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectNodeRangePropertiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNumNodes())
             {
                 context.Writer.WritePropertyName("numNodes");
-                context.Writer.Write(requestObject.NumNodes.Value);
+                context.Writer.WriteNumberValue(requestObject.NumNodes.Value);
             }
 
         }

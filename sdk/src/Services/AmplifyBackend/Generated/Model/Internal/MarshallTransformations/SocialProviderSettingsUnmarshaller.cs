@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SocialProviderSettings Object
     /// </summary>  
-    public class SocialProviderSettingsUnmarshaller : IUnmarshaller<SocialProviderSettings, XmlUnmarshallerContext>, IUnmarshaller<SocialProviderSettings, JsonUnmarshallerContext>
+    public class SocialProviderSettingsUnmarshaller : IJsonUnmarshaller<SocialProviderSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SocialProviderSettings IUnmarshaller<SocialProviderSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SocialProviderSettings Unmarshall(JsonUnmarshallerContext context)
+        public SocialProviderSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SocialProviderSettings unmarshalledObject = new SocialProviderSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Facebook", targetDepth))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.Facebook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Facebook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Google", targetDepth))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.Google = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Google = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoginWithAmazon", targetDepth))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.LoginWithAmazon = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoginWithAmazon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SignInWithApple", targetDepth))
                 {
                     var unmarshaller = BackendAuthAppleProviderConfigUnmarshaller.Instance;
-                    unmarshalledObject.SignInWithApple = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignInWithApple = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

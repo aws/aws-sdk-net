@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThemeConfiguration Object
     /// </summary>  
-    public class ThemeConfigurationUnmarshaller : IUnmarshaller<ThemeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ThemeConfiguration, JsonUnmarshallerContext>
+    public class ThemeConfigurationUnmarshaller : IJsonUnmarshaller<ThemeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThemeConfiguration IUnmarshaller<ThemeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThemeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ThemeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThemeConfiguration unmarshalledObject = new ThemeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataColorPalette", targetDepth))
                 {
                     var unmarshaller = DataColorPaletteUnmarshaller.Instance;
-                    unmarshalledObject.DataColorPalette = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataColorPalette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sheet", targetDepth))
                 {
                     var unmarshaller = SheetStyleUnmarshaller.Instance;
-                    unmarshalledObject.Sheet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sheet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Typography", targetDepth))
                 {
                     var unmarshaller = TypographyUnmarshaller.Instance;
-                    unmarshalledObject.Typography = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Typography = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UIColorPalette", targetDepth))
                 {
                     var unmarshaller = UIColorPaletteUnmarshaller.Instance;
-                    unmarshalledObject.UIColorPalette = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UIColorPalette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

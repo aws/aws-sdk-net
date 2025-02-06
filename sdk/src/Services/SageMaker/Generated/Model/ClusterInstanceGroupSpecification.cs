@@ -182,7 +182,32 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OverrideVpcConfig.
+        /// Gets and sets the property OverrideVpcConfig. 
+        /// <para>
+        /// To configure multi-AZ deployments, customize the VPC configuration at the instance
+        /// group level. You can specify different subnets and security groups across different
+        /// AZs in the instance group specification to override a SageMaker HyperPod cluster's
+        /// default VPC configuration. For more information about deploying a cluster in multiple
+        /// AZs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-multiple-availability-zones">Setting
+        /// up SageMaker HyperPod clusters across multiple AZs</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you configure your VPC with IPv6 support and specify subnets with IPv6 addressing
+        /// enabled in your instance group VPC configuration, the nodes automatically use IPv6
+        /// addressing for network communication.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about adding IPv6 support for your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html">IPv6
+        /// support for your VPC</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For information about creating a new VPC for use with IPv6, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html">Create
+        /// a VPC</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfig OverrideVpcConfig
         {

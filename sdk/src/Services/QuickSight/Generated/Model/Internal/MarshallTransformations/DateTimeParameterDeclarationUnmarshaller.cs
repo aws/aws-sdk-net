@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DateTimeParameterDeclaration Object
     /// </summary>  
-    public class DateTimeParameterDeclarationUnmarshaller : IUnmarshaller<DateTimeParameterDeclaration, XmlUnmarshallerContext>, IUnmarshaller<DateTimeParameterDeclaration, JsonUnmarshallerContext>
+    public class DateTimeParameterDeclarationUnmarshaller : IJsonUnmarshaller<DateTimeParameterDeclaration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DateTimeParameterDeclaration IUnmarshaller<DateTimeParameterDeclaration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DateTimeParameterDeclaration Unmarshall(JsonUnmarshallerContext context)
+        public DateTimeParameterDeclaration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DateTimeParameterDeclaration unmarshalledObject = new DateTimeParameterDeclaration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DefaultValues", targetDepth))
                 {
                     var unmarshaller = DateTimeDefaultValuesUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MappedDataSetParameters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MappedDataSetParameter, MappedDataSetParameterUnmarshaller>(MappedDataSetParameterUnmarshaller.Instance);
-                    unmarshalledObject.MappedDataSetParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MappedDataSetParameter, MappedDataSetParameterUnmarshaller>(MappedDataSetParameterUnmarshaller.Instance);
+                    unmarshalledObject.MappedDataSetParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValueWhenUnset", targetDepth))
                 {
                     var unmarshaller = DateTimeValueWhenUnsetConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ValueWhenUnset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValueWhenUnset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

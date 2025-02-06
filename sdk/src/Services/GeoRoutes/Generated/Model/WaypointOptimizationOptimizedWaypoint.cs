@@ -35,6 +35,7 @@ namespace Amazon.GeoRoutes.Model
     public partial class WaypointOptimizationOptimizedWaypoint
     {
         private string _arrivalTime;
+        private int? _clusterIndex;
         private string _departureTime;
         private string _id;
         private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
@@ -71,6 +72,26 @@ namespace Amazon.GeoRoutes.Model
         internal bool IsSetArrivalTime()
         {
             return this._arrivalTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterIndex. 
+        /// <para>
+        /// Index of the cluster the waypoint is associated with. The index is included in the
+        /// response only if clustering was performed while processing the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? ClusterIndex
+        {
+            get { return this._clusterIndex; }
+            set { this._clusterIndex = value; }
+        }
+
+        // Check to see if ClusterIndex property is set
+        internal bool IsSetClusterIndex()
+        {
+            return this._clusterIndex.HasValue; 
         }
 
         /// <summary>

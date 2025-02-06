@@ -42,7 +42,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the table bucket.
+        /// The Amazon Resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

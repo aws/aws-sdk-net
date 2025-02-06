@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheUsageLimits Object
     /// </summary>  
-    public class CacheUsageLimitsUnmarshaller : IUnmarshaller<CacheUsageLimits, XmlUnmarshallerContext>, IUnmarshaller<CacheUsageLimits, JsonUnmarshallerContext>
+    public class CacheUsageLimitsUnmarshaller : IXmlUnmarshaller<CacheUsageLimits, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CacheUsageLimits Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CacheUsageLimitsUnmarshaller _instance = new CacheUsageLimitsUnmarshaller();        
 

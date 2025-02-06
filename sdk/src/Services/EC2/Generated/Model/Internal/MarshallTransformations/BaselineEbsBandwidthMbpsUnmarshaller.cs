@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BaselineEbsBandwidthMbps Object
     /// </summary>  
-    public class BaselineEbsBandwidthMbpsUnmarshaller : IUnmarshaller<BaselineEbsBandwidthMbps, XmlUnmarshallerContext>, IUnmarshaller<BaselineEbsBandwidthMbps, JsonUnmarshallerContext>
+    public class BaselineEbsBandwidthMbpsUnmarshaller : IXmlUnmarshaller<BaselineEbsBandwidthMbps, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BaselineEbsBandwidthMbps Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BaselineEbsBandwidthMbpsUnmarshaller _instance = new BaselineEbsBandwidthMbpsUnmarshaller();        
 

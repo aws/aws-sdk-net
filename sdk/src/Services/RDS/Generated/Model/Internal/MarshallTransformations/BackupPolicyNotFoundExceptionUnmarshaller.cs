@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BackupPolicyNotFoundException operation
     /// </summary>  
-    public class BackupPolicyNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<BackupPolicyNotFoundException, XmlUnmarshallerContext>
+    public class BackupPolicyNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BackupPolicyNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

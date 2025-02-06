@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsoCountryCode())
             {
                 context.Writer.WritePropertyName("IsoCountryCode");
-                context.Writer.Write(requestObject.IsoCountryCode);
+                context.Writer.WriteStringValue(requestObject.IsoCountryCode);
             }
 
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("SenderId");
-                context.Writer.Write(requestObject.SenderId);
+                context.Writer.WriteStringValue(requestObject.SenderId);
             }
 
         }

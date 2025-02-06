@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeGiB())
             {
                 context.Writer.WritePropertyName("SizeGiB");
-                context.Writer.Write(requestObject.SizeGiB.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeGiB.Value);
             }
 
             if(requestObject.IsSetSizingMode())
             {
                 context.Writer.WritePropertyName("SizingMode");
-                context.Writer.Write(requestObject.SizingMode);
+                context.Writer.WriteStringValue(requestObject.SizingMode);
             }
 
         }

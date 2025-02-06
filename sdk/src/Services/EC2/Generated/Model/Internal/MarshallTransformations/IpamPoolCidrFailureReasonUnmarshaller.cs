@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamPoolCidrFailureReason Object
     /// </summary>  
-    public class IpamPoolCidrFailureReasonUnmarshaller : IUnmarshaller<IpamPoolCidrFailureReason, XmlUnmarshallerContext>, IUnmarshaller<IpamPoolCidrFailureReason, JsonUnmarshallerContext>
+    public class IpamPoolCidrFailureReasonUnmarshaller : IXmlUnmarshaller<IpamPoolCidrFailureReason, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamPoolCidrFailureReason Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamPoolCidrFailureReasonUnmarshaller _instance = new IpamPoolCidrFailureReasonUnmarshaller();        
 

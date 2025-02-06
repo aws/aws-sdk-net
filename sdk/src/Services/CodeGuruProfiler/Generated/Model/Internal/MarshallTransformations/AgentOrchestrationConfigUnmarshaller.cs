@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AgentOrchestrationConfig Object
     /// </summary>  
-    public class AgentOrchestrationConfigUnmarshaller : IUnmarshaller<AgentOrchestrationConfig, XmlUnmarshallerContext>, IUnmarshaller<AgentOrchestrationConfig, JsonUnmarshallerContext>
+    public class AgentOrchestrationConfigUnmarshaller : IJsonUnmarshaller<AgentOrchestrationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AgentOrchestrationConfig IUnmarshaller<AgentOrchestrationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentOrchestrationConfig Unmarshall(JsonUnmarshallerContext context)
+        public AgentOrchestrationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AgentOrchestrationConfig unmarshalledObject = new AgentOrchestrationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("profilingEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ProfilingEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProfilingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

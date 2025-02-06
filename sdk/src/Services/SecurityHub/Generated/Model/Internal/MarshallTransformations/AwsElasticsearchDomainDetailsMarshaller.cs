@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPolicies())
             {
                 context.Writer.WritePropertyName("AccessPolicies");
-                context.Writer.Write(requestObject.AccessPolicies);
+                context.Writer.WriteStringValue(requestObject.AccessPolicies);
             }
 
             if(requestObject.IsSetDomainEndpointOptions())
             {
                 context.Writer.WritePropertyName("DomainEndpointOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainDomainEndpointOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainEndpointOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainId())
             {
                 context.Writer.WritePropertyName("DomainId");
-                context.Writer.Write(requestObject.DomainId);
+                context.Writer.WriteStringValue(requestObject.DomainId);
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetElasticsearchClusterConfig())
             {
                 context.Writer.WritePropertyName("ElasticsearchClusterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainElasticsearchClusterConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ElasticsearchClusterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetElasticsearchVersion())
             {
                 context.Writer.WritePropertyName("ElasticsearchVersion");
-                context.Writer.Write(requestObject.ElasticsearchVersion);
+                context.Writer.WriteStringValue(requestObject.ElasticsearchVersion);
             }
 
             if(requestObject.IsSetEncryptionAtRestOptions())
             {
                 context.Writer.WritePropertyName("EncryptionAtRestOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainEncryptionAtRestOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionAtRestOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("Endpoint");
-                context.Writer.Write(requestObject.Endpoint);
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
             if(requestObject.IsSetEndpoints())
             {
                 context.Writer.WritePropertyName("Endpoints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEndpointsKvp in requestObject.Endpoints)
                 {
                     context.Writer.WritePropertyName(requestObjectEndpointsKvp.Key);
                     var requestObjectEndpointsValue = requestObjectEndpointsKvp.Value;
 
-                        context.Writer.Write(requestObjectEndpointsValue);
+                        context.Writer.WriteStringValue(requestObjectEndpointsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogPublishingOptions())
             {
                 context.Writer.WritePropertyName("LogPublishingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainLogPublishingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogPublishingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNodeToNodeEncryptionOptions())
             {
                 context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainNodeToNodeEncryptionOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NodeToNodeEncryptionOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceSoftwareOptions())
             {
                 context.Writer.WritePropertyName("ServiceSoftwareOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainServiceSoftwareOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceSoftwareOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVPCOptions())
             {
                 context.Writer.WritePropertyName("VPCOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainVPCOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VPCOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationCallBackURL())
             {
                 context.Writer.WritePropertyName("applicationCallBackURL");
-                context.Writer.Write(requestObject.ApplicationCallBackURL);
+                context.Writer.WriteStringValue(requestObject.ApplicationCallBackURL);
             }
 
             if(requestObject.IsSetAttributeMap())
             {
                 context.Writer.WritePropertyName("attributeMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributeMapKvp in requestObject.AttributeMap)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributeMapKvp.Key);
                     var requestObjectAttributeMapValue = requestObjectAttributeMapKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributeMapValue);
+                        context.Writer.WriteStringValue(requestObjectAttributeMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFederationProviderName())
             {
                 context.Writer.WritePropertyName("federationProviderName");
-                context.Writer.Write(requestObject.FederationProviderName);
+                context.Writer.WriteStringValue(requestObject.FederationProviderName);
             }
 
             if(requestObject.IsSetFederationURN())
             {
                 context.Writer.WritePropertyName("federationURN");
-                context.Writer.Write(requestObject.FederationURN);
+                context.Writer.WriteStringValue(requestObject.FederationURN);
             }
 
             if(requestObject.IsSetSamlMetadataDocument())
             {
                 context.Writer.WritePropertyName("samlMetadataDocument");
-                context.Writer.Write(requestObject.SamlMetadataDocument);
+                context.Writer.WriteStringValue(requestObject.SamlMetadataDocument);
             }
 
             if(requestObject.IsSetSamlMetadataURL())
             {
                 context.Writer.WritePropertyName("samlMetadataURL");
-                context.Writer.Write(requestObject.SamlMetadataURL);
+                context.Writer.WriteStringValue(requestObject.SamlMetadataURL);
             }
 
         }

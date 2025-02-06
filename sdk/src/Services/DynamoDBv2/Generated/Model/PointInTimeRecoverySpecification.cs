@@ -35,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class PointInTimeRecoverySpecification
     {
         private bool? _pointInTimeRecoveryEnabled;
+        private int? _recoveryPeriodInDays;
 
         /// <summary>
         /// Gets and sets the property PointInTimeRecoveryEnabled. 
@@ -54,6 +55,28 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetPointInTimeRecoveryEnabled()
         {
             return this._pointInTimeRecoveryEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryPeriodInDays. 
+        /// <para>
+        /// The number of preceding days for which continuous backups are taken and maintained.
+        /// Your table data is only recoverable to any point-in-time from within the configured
+        /// recovery period. This parameter is optional. If no value is provided, the value will
+        /// default to 35.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=35)]
+        public int? RecoveryPeriodInDays
+        {
+            get { return this._recoveryPeriodInDays; }
+            set { this._recoveryPeriodInDays = value; }
+        }
+
+        // Check to see if RecoveryPeriodInDays property is set
+        internal bool IsSetRecoveryPeriodInDays()
+        {
+            return this._recoveryPeriodInDays.HasValue; 
         }
 
     }

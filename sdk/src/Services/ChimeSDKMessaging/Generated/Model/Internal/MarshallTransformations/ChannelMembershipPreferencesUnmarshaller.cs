@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChannelMembershipPreferences Object
     /// </summary>  
-    public class ChannelMembershipPreferencesUnmarshaller : IUnmarshaller<ChannelMembershipPreferences, XmlUnmarshallerContext>, IUnmarshaller<ChannelMembershipPreferences, JsonUnmarshallerContext>
+    public class ChannelMembershipPreferencesUnmarshaller : IJsonUnmarshaller<ChannelMembershipPreferences, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChannelMembershipPreferences IUnmarshaller<ChannelMembershipPreferences, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelMembershipPreferences Unmarshall(JsonUnmarshallerContext context)
+        public ChannelMembershipPreferences Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChannelMembershipPreferences unmarshalledObject = new ChannelMembershipPreferences();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PushNotifications", targetDepth))
                 {
                     var unmarshaller = PushNotificationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.PushNotifications = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PushNotifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyGroupList Object
     /// </summary>  
-    public class KeyGroupListUnmarshaller : IUnmarshaller<KeyGroupList, XmlUnmarshallerContext>, IUnmarshaller<KeyGroupList, JsonUnmarshallerContext>
+    public class KeyGroupListUnmarshaller : IXmlUnmarshaller<KeyGroupList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public KeyGroupList Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static KeyGroupListUnmarshaller _instance = new KeyGroupListUnmarshaller();        
 
         /// <summary>

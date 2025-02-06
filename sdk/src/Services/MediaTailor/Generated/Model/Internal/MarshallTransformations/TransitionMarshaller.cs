@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetRelativePosition())
             {
                 context.Writer.WritePropertyName("RelativePosition");
-                context.Writer.Write(requestObject.RelativePosition);
+                context.Writer.WriteStringValue(requestObject.RelativePosition);
             }
 
             if(requestObject.IsSetRelativeProgram())
             {
                 context.Writer.WritePropertyName("RelativeProgram");
-                context.Writer.Write(requestObject.RelativeProgram);
+                context.Writer.WriteStringValue(requestObject.RelativeProgram);
             }
 
             if(requestObject.IsSetScheduledStartTimeMillis())
             {
                 context.Writer.WritePropertyName("ScheduledStartTimeMillis");
-                context.Writer.Write(requestObject.ScheduledStartTimeMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduledStartTimeMillis.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

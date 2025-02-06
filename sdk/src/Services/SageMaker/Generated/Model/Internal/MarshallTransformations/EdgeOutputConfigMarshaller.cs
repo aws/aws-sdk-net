@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetPresetDeploymentConfig())
             {
                 context.Writer.WritePropertyName("PresetDeploymentConfig");
-                context.Writer.Write(requestObject.PresetDeploymentConfig);
+                context.Writer.WriteStringValue(requestObject.PresetDeploymentConfig);
             }
 
             if(requestObject.IsSetPresetDeploymentType())
             {
                 context.Writer.WritePropertyName("PresetDeploymentType");
-                context.Writer.Write(requestObject.PresetDeploymentType);
+                context.Writer.WriteStringValue(requestObject.PresetDeploymentType);
             }
 
             if(requestObject.IsSetS3OutputLocation())
             {
                 context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.Write(requestObject.S3OutputLocation);
+                context.Writer.WriteStringValue(requestObject.S3OutputLocation);
             }
 
         }

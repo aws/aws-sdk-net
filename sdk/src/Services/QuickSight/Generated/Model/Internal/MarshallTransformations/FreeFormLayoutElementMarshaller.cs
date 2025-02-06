@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundStyle())
             {
                 context.Writer.WritePropertyName("BackgroundStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FreeFormLayoutElementBackgroundStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.BackgroundStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBorderStyle())
             {
                 context.Writer.WritePropertyName("BorderStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FreeFormLayoutElementBorderStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.BorderStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetElementId())
             {
                 context.Writer.WritePropertyName("ElementId");
-                context.Writer.Write(requestObject.ElementId);
+                context.Writer.WriteStringValue(requestObject.ElementId);
             }
 
             if(requestObject.IsSetElementType())
             {
                 context.Writer.WritePropertyName("ElementType");
-                context.Writer.Write(requestObject.ElementType);
+                context.Writer.WriteStringValue(requestObject.ElementType);
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.WriteStringValue(requestObject.Height);
             }
 
             if(requestObject.IsSetLoadingAnimation())
             {
                 context.Writer.WritePropertyName("LoadingAnimation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoadingAnimationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoadingAnimation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRenderingRules())
             {
                 context.Writer.WritePropertyName("RenderingRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRenderingRulesListValue in requestObject.RenderingRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SheetElementRenderingRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRenderingRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelectedBorderStyle())
             {
                 context.Writer.WritePropertyName("SelectedBorderStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FreeFormLayoutElementBorderStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectedBorderStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.WriteStringValue(requestObject.Width);
             }
 
             if(requestObject.IsSetXAxisLocation())
             {
                 context.Writer.WritePropertyName("XAxisLocation");
-                context.Writer.Write(requestObject.XAxisLocation);
+                context.Writer.WriteStringValue(requestObject.XAxisLocation);
             }
 
             if(requestObject.IsSetYAxisLocation())
             {
                 context.Writer.WritePropertyName("YAxisLocation");
-                context.Writer.Write(requestObject.YAxisLocation);
+                context.Writer.WriteStringValue(requestObject.YAxisLocation);
             }
 
         }

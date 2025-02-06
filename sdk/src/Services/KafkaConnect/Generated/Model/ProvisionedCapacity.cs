@@ -63,7 +63,7 @@ namespace Amazon.KafkaConnect.Model
         /// The number of workers that are allocated to the connector.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true)]
         public int? WorkerCount
         {
             get { return this._workerCount; }

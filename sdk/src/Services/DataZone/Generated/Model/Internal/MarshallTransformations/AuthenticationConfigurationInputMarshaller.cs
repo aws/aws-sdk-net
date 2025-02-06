@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("authenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetBasicAuthenticationCredentials())
             {
                 context.Writer.WritePropertyName("basicAuthenticationCredentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BasicAuthenticationCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BasicAuthenticationCredentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomAuthenticationCredentials())
             {
                 context.Writer.WritePropertyName("customAuthenticationCredentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCustomAuthenticationCredentialsKvp in requestObject.CustomAuthenticationCredentials)
                 {
                     context.Writer.WritePropertyName(requestObjectCustomAuthenticationCredentialsKvp.Key);
                     var requestObjectCustomAuthenticationCredentialsValue = requestObjectCustomAuthenticationCredentialsKvp.Value;
 
-                        context.Writer.Write(requestObjectCustomAuthenticationCredentialsValue);
+                        context.Writer.WriteStringValue(requestObjectCustomAuthenticationCredentialsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetOAuth2Properties())
             {
                 context.Writer.WritePropertyName("oAuth2Properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2PropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2Properties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("secretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

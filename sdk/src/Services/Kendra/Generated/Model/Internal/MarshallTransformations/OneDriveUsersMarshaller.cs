@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOneDriveUserList())
             {
                 context.Writer.WritePropertyName("OneDriveUserList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOneDriveUserListListValue in requestObject.OneDriveUserList)
                 {
-                        context.Writer.Write(requestObjectOneDriveUserListListValue);
+                        context.Writer.WriteStringValue(requestObjectOneDriveUserListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOneDriveUserS3Path())
             {
                 context.Writer.WritePropertyName("OneDriveUserS3Path");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3PathMarshaller.Instance;
                 marshaller.Marshall(requestObject.OneDriveUserS3Path, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

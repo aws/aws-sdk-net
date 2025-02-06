@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCircle())
             {
                 context.Writer.WritePropertyName("Circle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CircleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Circle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeobuf())
             {
                 context.Writer.WritePropertyName("Geobuf");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Geobuf));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Geobuf));
             }
 
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolygonListValue in requestObject.Polygon)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectPolygonListValueListValue in requestObjectPolygonListValue)
                     {
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectPolygonListValueListValueListValue in requestObjectPolygonListValueListValue)
                         {
-                                context.Writer.Write(requestObjectPolygonListValueListValueListValue);
+                                context.Writer.WriteNumberValue(requestObjectPolygonListValueListValueListValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

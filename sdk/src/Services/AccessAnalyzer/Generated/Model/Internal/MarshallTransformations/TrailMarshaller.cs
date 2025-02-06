@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllRegions())
             {
                 context.Writer.WritePropertyName("allRegions");
-                context.Writer.Write(requestObject.AllRegions.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllRegions.Value);
             }
 
             if(requestObject.IsSetCloudTrailArn())
             {
                 context.Writer.WritePropertyName("cloudTrailArn");
-                context.Writer.Write(requestObject.CloudTrailArn);
+                context.Writer.WriteStringValue(requestObject.CloudTrailArn);
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

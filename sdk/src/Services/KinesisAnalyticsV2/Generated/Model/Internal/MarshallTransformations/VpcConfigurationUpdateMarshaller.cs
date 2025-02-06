@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecurityGroupIdUpdates())
             {
                 context.Writer.WritePropertyName("SecurityGroupIdUpdates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdUpdatesListValue in requestObject.SecurityGroupIdUpdates)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdUpdatesListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdUpdatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIdUpdates())
             {
                 context.Writer.WritePropertyName("SubnetIdUpdates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdUpdatesListValue in requestObject.SubnetIdUpdates)
                 {
-                        context.Writer.Write(requestObjectSubnetIdUpdatesListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdUpdatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcConfigurationId())
             {
                 context.Writer.WritePropertyName("VpcConfigurationId");
-                context.Writer.Write(requestObject.VpcConfigurationId);
+                context.Writer.WriteStringValue(requestObject.VpcConfigurationId);
             }
 
         }

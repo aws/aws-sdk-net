@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -47,111 +47,111 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribePortalResponse response = new DescribePortalResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("alarms", targetDepth))
                 {
                     var unmarshaller = AlarmsUnmarshaller.Instance;
-                    response.Alarms = unmarshaller.Unmarshall(context);
+                    response.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notificationSenderEmail", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NotificationSenderEmail = unmarshaller.Unmarshall(context);
+                    response.NotificationSenderEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalArn = unmarshaller.Unmarshall(context);
+                    response.PortalArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalAuthMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalAuthMode = unmarshaller.Unmarshall(context);
+                    response.PortalAuthMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalClientId = unmarshaller.Unmarshall(context);
+                    response.PortalClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalContactEmail", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalContactEmail = unmarshaller.Unmarshall(context);
+                    response.PortalContactEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalCreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.PortalCreationDate = unmarshaller.Unmarshall(context);
+                    response.PortalCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalDescription = unmarshaller.Unmarshall(context);
+                    response.PortalDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalId = unmarshaller.Unmarshall(context);
+                    response.PortalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalLastUpdateDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.PortalLastUpdateDate = unmarshaller.Unmarshall(context);
+                    response.PortalLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalLogoImageLocation", targetDepth))
                 {
                     var unmarshaller = ImageLocationUnmarshaller.Instance;
-                    response.PortalLogoImageLocation = unmarshaller.Unmarshall(context);
+                    response.PortalLogoImageLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalName = unmarshaller.Unmarshall(context);
+                    response.PortalName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalStartUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalStartUrl = unmarshaller.Unmarshall(context);
+                    response.PortalStartUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalStatus", targetDepth))
                 {
                     var unmarshaller = PortalStatusUnmarshaller.Instance;
-                    response.PortalStatus = unmarshaller.Unmarshall(context);
+                    response.PortalStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortalType = unmarshaller.Unmarshall(context);
+                    response.PortalType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portalTypeConfiguration", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, PortalTypeEntry, StringUnmarshaller, PortalTypeEntryUnmarshaller>(StringUnmarshaller.Instance, PortalTypeEntryUnmarshaller.Instance);
-                    response.PortalTypeConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, PortalTypeEntry, StringUnmarshaller, PortalTypeEntryUnmarshaller>(StringUnmarshaller.Instance, PortalTypeEntryUnmarshaller.Instance);
+                    response.PortalTypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -168,30 +168,32 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

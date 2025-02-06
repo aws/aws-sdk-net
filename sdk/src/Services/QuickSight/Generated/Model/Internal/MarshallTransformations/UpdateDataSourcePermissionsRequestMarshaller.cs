@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -67,51 +70,56 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DataSourceId set");
             request.AddPathResource("{DataSourceId}", StringUtils.FromString(publicRequest.DataSourceId));
             request.ResourcePath = "/accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGrantPermissions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("GrantPermissions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGrantPermissions())
-                    {
-                        context.Writer.WritePropertyName("GrantPermissions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ResourcePermissionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
+                    var marshaller = ResourcePermissionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRevokePermissions())
-                    {
-                        context.Writer.WritePropertyName("RevokePermissions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourcePermissionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetRevokePermissions())
+            {
+                context.Writer.WritePropertyName("RevokePermissions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourcePermissionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

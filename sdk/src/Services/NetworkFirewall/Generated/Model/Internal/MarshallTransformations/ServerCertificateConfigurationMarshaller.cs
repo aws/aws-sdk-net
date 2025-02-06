@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityArn())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityArn");
-                context.Writer.Write(requestObject.CertificateAuthorityArn);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityArn);
             }
 
             if(requestObject.IsSetCheckCertificateRevocationStatus())
             {
                 context.Writer.WritePropertyName("CheckCertificateRevocationStatus");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CheckCertificateRevocationStatusActionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CheckCertificateRevocationStatus, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScopes())
             {
                 context.Writer.WritePropertyName("Scopes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectScopesListValue in requestObject.Scopes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServerCertificateScopeMarshaller.Instance;
                     marshaller.Marshall(requestObjectScopesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetServerCertificates())
             {
                 context.Writer.WritePropertyName("ServerCertificates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServerCertificatesListValue in requestObject.ServerCertificates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServerCertificateMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerCertificatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

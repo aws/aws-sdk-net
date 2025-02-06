@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");
-                context.Writer.Write(requestObject.Frequency);
+                context.Writer.WriteStringValue(requestObject.Frequency);
             }
 
             if(requestObject.IsSetMonitorArnList())
             {
                 context.Writer.WritePropertyName("MonitorArnList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMonitorArnListListValue in requestObject.MonitorArnList)
                 {
-                        context.Writer.Write(requestObjectMonitorArnListListValue);
+                        context.Writer.WriteStringValue(requestObjectMonitorArnListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubscribers())
             {
                 context.Writer.WritePropertyName("Subscribers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubscribersListValue in requestObject.Subscribers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SubscriberMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubscribersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubscriptionArn())
             {
                 context.Writer.WritePropertyName("SubscriptionArn");
-                context.Writer.Write(requestObject.SubscriptionArn);
+                context.Writer.WriteStringValue(requestObject.SubscriptionArn);
             }
 
             if(requestObject.IsSetSubscriptionName())
             {
                 context.Writer.WritePropertyName("SubscriptionName");
-                context.Writer.Write(requestObject.SubscriptionName);
+                context.Writer.WriteStringValue(requestObject.SubscriptionName);
             }
 
             if(requestObject.IsSetThreshold())
@@ -104,23 +102,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Threshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.Threshold.Value);
                 }
             }
 
             if(requestObject.IsSetThresholdExpression())
             {
                 context.Writer.WritePropertyName("ThresholdExpression");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThresholdExpression, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

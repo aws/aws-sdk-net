@@ -56,7 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
-        /// Specifies using Kerberos authentication with Microsoft SQL Server.
+        /// Specifies the authentication method to be used with Microsoft SQL Server.
         /// </para>
         /// </summary>
         public SqlServerAuthenticationMethod AuthenticationMethod

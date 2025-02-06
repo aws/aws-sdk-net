@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetFieldDelimiter())
             {
                 context.Writer.WritePropertyName("fieldDelimiter");
-                context.Writer.Write(requestObject.FieldDelimiter);
+                context.Writer.WriteStringValue(requestObject.FieldDelimiter);
             }
 
             if(requestObject.IsSetKeyPrefix())
             {
                 context.Writer.WritePropertyName("keyPrefix");
-                context.Writer.Write(requestObject.KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.KeyPrefix);
             }
 
             if(requestObject.IsSetKeyValueDelimiter())
             {
                 context.Writer.WritePropertyName("keyValueDelimiter");
-                context.Writer.Write(requestObject.KeyValueDelimiter);
+                context.Writer.WriteStringValue(requestObject.KeyValueDelimiter);
             }
 
             if(requestObject.IsSetNonMatchValue())
             {
                 context.Writer.WritePropertyName("nonMatchValue");
-                context.Writer.Write(requestObject.NonMatchValue);
+                context.Writer.WriteStringValue(requestObject.NonMatchValue);
             }
 
             if(requestObject.IsSetOverwriteIfExists())
             {
                 context.Writer.WritePropertyName("overwriteIfExists");
-                context.Writer.Write(requestObject.OverwriteIfExists.Value);
+                context.Writer.WriteBooleanValue(requestObject.OverwriteIfExists.Value);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
         }

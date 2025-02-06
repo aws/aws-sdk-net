@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrainingPlanOffering Object
     /// </summary>  
-    public class TrainingPlanOfferingUnmarshaller : IUnmarshaller<TrainingPlanOffering, XmlUnmarshallerContext>, IUnmarshaller<TrainingPlanOffering, JsonUnmarshallerContext>
+    public class TrainingPlanOfferingUnmarshaller : IJsonUnmarshaller<TrainingPlanOffering, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrainingPlanOffering IUnmarshaller<TrainingPlanOffering, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrainingPlanOffering Unmarshall(JsonUnmarshallerContext context)
+        public TrainingPlanOffering Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrainingPlanOffering unmarshalledObject = new TrainingPlanOffering();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CurrencyCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DurationHours", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DurationHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DurationMinutes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DurationMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestedEndTimeBefore", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RequestedEndTimeBefore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestedEndTimeBefore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestedStartTimeAfter", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RequestedStartTimeAfter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestedStartTimeAfter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReservedCapacityOfferings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReservedCapacityOffering, ReservedCapacityOfferingUnmarshaller>(ReservedCapacityOfferingUnmarshaller.Instance);
-                    unmarshalledObject.ReservedCapacityOfferings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ReservedCapacityOffering, ReservedCapacityOfferingUnmarshaller>(ReservedCapacityOfferingUnmarshaller.Instance);
+                    unmarshalledObject.ReservedCapacityOfferings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TargetResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TargetResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingPlanOfferingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingPlanOfferingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingPlanOfferingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpfrontFee", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpfrontFee = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpfrontFee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

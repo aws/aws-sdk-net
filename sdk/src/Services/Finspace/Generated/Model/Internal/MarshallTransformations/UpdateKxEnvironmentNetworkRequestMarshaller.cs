@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -64,57 +67,62 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/network";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCustomDNSConfiguration())
-                    {
-                        context.Writer.WritePropertyName("customDNSConfiguration");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCustomDNSConfigurationListValue in publicRequest.CustomDNSConfiguration)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CustomDNSServerMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCustomDNSConfigurationListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTransitGatewayConfiguration())
-                    {
-                        context.Writer.WritePropertyName("transitGatewayConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TransitGatewayConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TransitGatewayConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCustomDNSConfiguration())
+            {
+                context.Writer.WritePropertyName("customDNSConfiguration");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCustomDNSConfigurationListValue in publicRequest.CustomDNSConfiguration)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CustomDNSServerMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCustomDNSConfigurationListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTransitGatewayConfiguration())
+            {
+                context.Writer.WritePropertyName("transitGatewayConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TransitGatewayConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TransitGatewayConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
@@ -47,207 +47,207 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeBrokerResponse response = new DescribeBrokerResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionsRequired", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ActionRequired, ActionRequiredUnmarshaller>(ActionRequiredUnmarshaller.Instance);
-                    response.ActionsRequired = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ActionRequired, ActionRequiredUnmarshaller>(ActionRequiredUnmarshaller.Instance);
+                    response.ActionsRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("authenticationStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    response.AuthenticationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    response.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BrokerArn = unmarshaller.Unmarshall(context);
+                    response.BrokerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BrokerId = unmarshaller.Unmarshall(context);
+                    response.BrokerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerInstances", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BrokerInstance, BrokerInstanceUnmarshaller>(BrokerInstanceUnmarshaller.Instance);
-                    response.BrokerInstances = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BrokerInstance, BrokerInstanceUnmarshaller>(BrokerInstanceUnmarshaller.Instance);
+                    response.BrokerInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BrokerName = unmarshaller.Unmarshall(context);
+                    response.BrokerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("brokerState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BrokerState = unmarshaller.Unmarshall(context);
+                    response.BrokerState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("configurations", targetDepth))
                 {
                     var unmarshaller = ConfigurationsUnmarshaller.Instance;
-                    response.Configurations = unmarshaller.Unmarshall(context);
+                    response.Configurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.Created = unmarshaller.Unmarshall(context);
+                    response.Created = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataReplicationMetadata", targetDepth))
                 {
                     var unmarshaller = DataReplicationMetadataOutputUnmarshaller.Instance;
-                    response.DataReplicationMetadata = unmarshaller.Unmarshall(context);
+                    response.DataReplicationMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataReplicationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DataReplicationMode = unmarshaller.Unmarshall(context);
+                    response.DataReplicationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeploymentMode = unmarshaller.Unmarshall(context);
+                    response.DeploymentMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryptionOptions", targetDepth))
                 {
                     var unmarshaller = EncryptionOptionsUnmarshaller.Instance;
-                    response.EncryptionOptions = unmarshaller.Unmarshall(context);
+                    response.EncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("engineType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EngineType = unmarshaller.Unmarshall(context);
+                    response.EngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("engineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EngineVersion = unmarshaller.Unmarshall(context);
+                    response.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hostInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HostInstanceType = unmarshaller.Unmarshall(context);
+                    response.HostInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ldapServerMetadata", targetDepth))
                 {
                     var unmarshaller = LdapServerMetadataOutputUnmarshaller.Instance;
-                    response.LdapServerMetadata = unmarshaller.Unmarshall(context);
+                    response.LdapServerMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logs", targetDepth))
                 {
                     var unmarshaller = LogsSummaryUnmarshaller.Instance;
-                    response.Logs = unmarshaller.Unmarshall(context);
+                    response.Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maintenanceWindowStartTime", targetDepth))
                 {
                     var unmarshaller = WeeklyStartTimeUnmarshaller.Instance;
-                    response.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
+                    response.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingAuthenticationStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PendingAuthenticationStrategy = unmarshaller.Unmarshall(context);
+                    response.PendingAuthenticationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingDataReplicationMetadata", targetDepth))
                 {
                     var unmarshaller = DataReplicationMetadataOutputUnmarshaller.Instance;
-                    response.PendingDataReplicationMetadata = unmarshaller.Unmarshall(context);
+                    response.PendingDataReplicationMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingDataReplicationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PendingDataReplicationMode = unmarshaller.Unmarshall(context);
+                    response.PendingDataReplicationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingEngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PendingEngineVersion = unmarshaller.Unmarshall(context);
+                    response.PendingEngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingHostInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PendingHostInstanceType = unmarshaller.Unmarshall(context);
+                    response.PendingHostInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingLdapServerMetadata", targetDepth))
                 {
                     var unmarshaller = LdapServerMetadataOutputUnmarshaller.Instance;
-                    response.PendingLdapServerMetadata = unmarshaller.Unmarshall(context);
+                    response.PendingLdapServerMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingSecurityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.PendingSecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.PendingSecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                    response.PubliclyAccessible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("securityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("storageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StorageType = unmarshaller.Unmarshall(context);
+                    response.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("subnetIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SubnetIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SubnetIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("users", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UserSummary, UserSummaryUnmarshaller>(UserSummaryUnmarshaller.Instance);
-                    response.Users = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UserSummary, UserSummaryUnmarshaller>(UserSummaryUnmarshaller.Instance);
+                    response.Users = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -264,30 +264,32 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
-                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
                 {
-                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonMQException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

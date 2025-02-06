@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,127 +49,127 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddIdleTimeBetweenReads())
             {
                 context.Writer.WritePropertyName("AddIdleTimeBetweenReads");
-                context.Writer.Write(requestObject.AddIdleTimeBetweenReads.Value);
+                context.Writer.WriteBooleanValue(requestObject.AddIdleTimeBetweenReads.Value);
             }
 
             if(requestObject.IsSetAddRecordTimestamp())
             {
                 context.Writer.WritePropertyName("AddRecordTimestamp");
-                context.Writer.Write(requestObject.AddRecordTimestamp);
+                context.Writer.WriteStringValue(requestObject.AddRecordTimestamp);
             }
 
             if(requestObject.IsSetAvoidEmptyBatches())
             {
                 context.Writer.WritePropertyName("AvoidEmptyBatches");
-                context.Writer.Write(requestObject.AvoidEmptyBatches.Value);
+                context.Writer.WriteBooleanValue(requestObject.AvoidEmptyBatches.Value);
             }
 
             if(requestObject.IsSetClassification())
             {
                 context.Writer.WritePropertyName("Classification");
-                context.Writer.Write(requestObject.Classification);
+                context.Writer.WriteStringValue(requestObject.Classification);
             }
 
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
-                context.Writer.Write(requestObject.Delimiter);
+                context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
             if(requestObject.IsSetDescribeShardInterval())
             {
                 context.Writer.WritePropertyName("DescribeShardInterval");
-                context.Writer.Write(requestObject.DescribeShardInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.DescribeShardInterval.Value);
             }
 
             if(requestObject.IsSetEmitConsumerLagMetrics())
             {
                 context.Writer.WritePropertyName("EmitConsumerLagMetrics");
-                context.Writer.Write(requestObject.EmitConsumerLagMetrics);
+                context.Writer.WriteStringValue(requestObject.EmitConsumerLagMetrics);
             }
 
             if(requestObject.IsSetEndpointUrl())
             {
                 context.Writer.WritePropertyName("EndpointUrl");
-                context.Writer.Write(requestObject.EndpointUrl);
+                context.Writer.WriteStringValue(requestObject.EndpointUrl);
             }
 
             if(requestObject.IsSetIdleTimeBetweenReadsInMs())
             {
                 context.Writer.WritePropertyName("IdleTimeBetweenReadsInMs");
-                context.Writer.Write(requestObject.IdleTimeBetweenReadsInMs.Value);
+                context.Writer.WriteNumberValue(requestObject.IdleTimeBetweenReadsInMs.Value);
             }
 
             if(requestObject.IsSetMaxFetchRecordsPerShard())
             {
                 context.Writer.WritePropertyName("MaxFetchRecordsPerShard");
-                context.Writer.Write(requestObject.MaxFetchRecordsPerShard.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFetchRecordsPerShard.Value);
             }
 
             if(requestObject.IsSetMaxFetchTimeInMs())
             {
                 context.Writer.WritePropertyName("MaxFetchTimeInMs");
-                context.Writer.Write(requestObject.MaxFetchTimeInMs.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFetchTimeInMs.Value);
             }
 
             if(requestObject.IsSetMaxRecordPerRead())
             {
                 context.Writer.WritePropertyName("MaxRecordPerRead");
-                context.Writer.Write(requestObject.MaxRecordPerRead.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRecordPerRead.Value);
             }
 
             if(requestObject.IsSetMaxRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("MaxRetryIntervalMs");
-                context.Writer.Write(requestObject.MaxRetryIntervalMs.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("NumRetries");
-                context.Writer.Write(requestObject.NumRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("RetryIntervalMs");
-                context.Writer.Write(requestObject.RetryIntervalMs.Value);
+                context.Writer.WriteNumberValue(requestObject.RetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetRoleSessionName())
             {
                 context.Writer.WritePropertyName("RoleSessionName");
-                context.Writer.Write(requestObject.RoleSessionName);
+                context.Writer.WriteStringValue(requestObject.RoleSessionName);
             }
 
             if(requestObject.IsSetStartingPosition())
             {
                 context.Writer.WritePropertyName("StartingPosition");
-                context.Writer.Write(requestObject.StartingPosition);
+                context.Writer.WriteStringValue(requestObject.StartingPosition);
             }
 
             if(requestObject.IsSetStartingTimestamp())
             {
                 context.Writer.WritePropertyName("StartingTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartingTimestamp));
             }
 
             if(requestObject.IsSetStreamArn())
             {
                 context.Writer.WritePropertyName("StreamArn");
-                context.Writer.Write(requestObject.StreamArn);
+                context.Writer.WriteStringValue(requestObject.StreamArn);
             }
 
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("StreamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WriteStringValue(requestObject.StreamName);
             }
 
         }

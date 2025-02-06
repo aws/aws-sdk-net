@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrs())
             {
                 context.Writer.WritePropertyName("cidrs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrsListValue in requestObject.Cidrs)
                 {
-                        context.Writer.Write(requestObjectCidrsListValue);
+                        context.Writer.WriteStringValue(requestObjectCidrsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("count");
-                context.Writer.Write(requestObject.Count.Value);
+                context.Writer.WriteNumberValue(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetNumber())
@@ -70,45 +68,45 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("number");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Number.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Number.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Number.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Number.Value);
+                    context.Writer.WriteNumberValue(requestObject.Number.Value);
                 }
             }
 
             if(requestObject.IsSetNumbers())
             {
                 context.Writer.WritePropertyName("numbers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNumbersListValue in requestObject.Numbers)
                 {
-                        context.Writer.Write(requestObjectNumbersListValue);
+                        context.Writer.WriteNumberValue(requestObjectNumbersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPorts())
             {
                 context.Writer.WritePropertyName("ports");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPortsListValue in requestObject.Ports)
                 {
-                        context.Writer.Write(requestObjectPortsListValue);
+                        context.Writer.WriteNumberValue(requestObjectPortsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStrings())
             {
                 context.Writer.WritePropertyName("strings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringsListValue in requestObject.Strings)
                 {
-                        context.Writer.Write(requestObjectStringsListValue);
+                        context.Writer.WriteStringValue(requestObjectStringsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

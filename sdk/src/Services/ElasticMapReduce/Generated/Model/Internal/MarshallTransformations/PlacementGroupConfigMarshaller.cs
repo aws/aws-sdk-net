@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceRole())
             {
                 context.Writer.WritePropertyName("InstanceRole");
-                context.Writer.Write(requestObject.InstanceRole);
+                context.Writer.WriteStringValue(requestObject.InstanceRole);
             }
 
             if(requestObject.IsSetPlacementStrategy())
             {
                 context.Writer.WritePropertyName("PlacementStrategy");
-                context.Writer.Write(requestObject.PlacementStrategy);
+                context.Writer.WriteStringValue(requestObject.PlacementStrategy);
             }
 
         }

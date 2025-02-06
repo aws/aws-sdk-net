@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteVehicleLegDetails Object
     /// </summary>  
-    public class RouteVehicleLegDetailsUnmarshaller : IUnmarshaller<RouteVehicleLegDetails, XmlUnmarshallerContext>, IUnmarshaller<RouteVehicleLegDetails, JsonUnmarshallerContext>
+    public class RouteVehicleLegDetailsUnmarshaller : IJsonUnmarshaller<RouteVehicleLegDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteVehicleLegDetails IUnmarshaller<RouteVehicleLegDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteVehicleLegDetails Unmarshall(JsonUnmarshallerContext context)
+        public RouteVehicleLegDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteVehicleLegDetails unmarshalledObject = new RouteVehicleLegDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arrival", targetDepth))
                 {
                     var unmarshaller = RouteVehicleArrivalUnmarshaller.Instance;
-                    unmarshalledObject.Arrival = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arrival = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Departure", targetDepth))
                 {
                     var unmarshaller = RouteVehicleDepartureUnmarshaller.Instance;
-                    unmarshalledObject.Departure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Departure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Incidents", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteVehicleIncident, RouteVehicleIncidentUnmarshaller>(RouteVehicleIncidentUnmarshaller.Instance);
-                    unmarshalledObject.Incidents = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteVehicleIncident, RouteVehicleIncidentUnmarshaller>(RouteVehicleIncidentUnmarshaller.Instance);
+                    unmarshalledObject.Incidents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Notices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteVehicleNotice, RouteVehicleNoticeUnmarshaller>(RouteVehicleNoticeUnmarshaller.Instance);
-                    unmarshalledObject.Notices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteVehicleNotice, RouteVehicleNoticeUnmarshaller>(RouteVehicleNoticeUnmarshaller.Instance);
+                    unmarshalledObject.Notices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PassThroughWaypoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RoutePassThroughWaypoint, RoutePassThroughWaypointUnmarshaller>(RoutePassThroughWaypointUnmarshaller.Instance);
-                    unmarshalledObject.PassThroughWaypoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RoutePassThroughWaypoint, RoutePassThroughWaypointUnmarshaller>(RoutePassThroughWaypointUnmarshaller.Instance);
+                    unmarshalledObject.PassThroughWaypoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Spans", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteVehicleSpan, RouteVehicleSpanUnmarshaller>(RouteVehicleSpanUnmarshaller.Instance);
-                    unmarshalledObject.Spans = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteVehicleSpan, RouteVehicleSpanUnmarshaller>(RouteVehicleSpanUnmarshaller.Instance);
+                    unmarshalledObject.Spans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Summary", targetDepth))
                 {
                     var unmarshaller = RouteVehicleSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tolls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteToll, RouteTollUnmarshaller>(RouteTollUnmarshaller.Instance);
-                    unmarshalledObject.Tolls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteToll, RouteTollUnmarshaller>(RouteTollUnmarshaller.Instance);
+                    unmarshalledObject.Tolls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TollSystems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteTollSystem, RouteTollSystemUnmarshaller>(RouteTollSystemUnmarshaller.Instance);
-                    unmarshalledObject.TollSystems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteTollSystem, RouteTollSystemUnmarshaller>(RouteTollSystemUnmarshaller.Instance);
+                    unmarshalledObject.TollSystems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TravelSteps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteVehicleTravelStep, RouteVehicleTravelStepUnmarshaller>(RouteVehicleTravelStepUnmarshaller.Instance);
-                    unmarshalledObject.TravelSteps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteVehicleTravelStep, RouteVehicleTravelStepUnmarshaller>(RouteVehicleTravelStepUnmarshaller.Instance);
+                    unmarshalledObject.TravelSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TruckRoadTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TruckRoadTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TruckRoadTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Zones", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RouteZone, RouteZoneUnmarshaller>(RouteZoneUnmarshaller.Instance);
-                    unmarshalledObject.Zones = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RouteZone, RouteZoneUnmarshaller>(RouteZoneUnmarshaller.Instance);
+                    unmarshalledObject.Zones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

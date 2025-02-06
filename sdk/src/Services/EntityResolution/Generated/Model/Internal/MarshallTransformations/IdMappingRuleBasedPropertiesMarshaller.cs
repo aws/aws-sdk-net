@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeMatchingModel())
             {
                 context.Writer.WritePropertyName("attributeMatchingModel");
-                context.Writer.Write(requestObject.AttributeMatchingModel);
+                context.Writer.WriteStringValue(requestObject.AttributeMatchingModel);
             }
 
             if(requestObject.IsSetRecordMatchingModel())
             {
                 context.Writer.WritePropertyName("recordMatchingModel");
-                context.Writer.Write(requestObject.RecordMatchingModel);
+                context.Writer.WriteStringValue(requestObject.RecordMatchingModel);
             }
 
             if(requestObject.IsSetRuleDefinitionType())
             {
                 context.Writer.WritePropertyName("ruleDefinitionType");
-                context.Writer.Write(requestObject.RuleDefinitionType);
+                context.Writer.WriteStringValue(requestObject.RuleDefinitionType);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

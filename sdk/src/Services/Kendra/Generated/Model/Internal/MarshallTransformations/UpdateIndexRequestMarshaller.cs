@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -63,103 +66,108 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapacityUnits())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCapacityUnits())
-                    {
-                        context.Writer.WritePropertyName("CapacityUnits");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CapacityUnits");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CapacityUnitsConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CapacityUnits, context);
+                var marshaller = CapacityUnitsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacityUnits, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDocumentMetadataConfigurationUpdates())
-                    {
-                        context.Writer.WritePropertyName("DocumentMetadataConfigurationUpdates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDocumentMetadataConfigurationUpdatesListValue in publicRequest.DocumentMetadataConfigurationUpdates)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DocumentMetadataConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDocumentMetadataConfigurationUpdatesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetId())
-                    {
-                        context.Writer.WritePropertyName("Id");
-                        context.Writer.Write(publicRequest.Id);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetUserContextPolicy())
-                    {
-                        context.Writer.WritePropertyName("UserContextPolicy");
-                        context.Writer.Write(publicRequest.UserContextPolicy);
-                    }
-
-                    if(publicRequest.IsSetUserGroupResolutionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("UserGroupResolutionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserGroupResolutionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.UserGroupResolutionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUserTokenConfigurations())
-                    {
-                        context.Writer.WritePropertyName("UserTokenConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserTokenConfigurationsListValue in publicRequest.UserTokenConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UserTokenConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserTokenConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDocumentMetadataConfigurationUpdates())
+            {
+                context.Writer.WritePropertyName("DocumentMetadataConfigurationUpdates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDocumentMetadataConfigurationUpdatesListValue in publicRequest.DocumentMetadataConfigurationUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DocumentMetadataConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDocumentMetadataConfigurationUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.WriteStringValue(publicRequest.Id);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetUserContextPolicy())
+            {
+                context.Writer.WritePropertyName("UserContextPolicy");
+                context.Writer.WriteStringValue(publicRequest.UserContextPolicy);
+            }
+
+            if(publicRequest.IsSetUserGroupResolutionConfiguration())
+            {
+                context.Writer.WritePropertyName("UserGroupResolutionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserGroupResolutionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserGroupResolutionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUserTokenConfigurations())
+            {
+                context.Writer.WritePropertyName("UserTokenConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserTokenConfigurationsListValue in publicRequest.UserTokenConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UserTokenConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserTokenConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -67,51 +70,56 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 throw new AmazonQBusinessException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/applications/{applicationId}/users/{userId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetUserAliasesToDelete())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("userAliasesToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserAliasesToDeleteListValue in publicRequest.UserAliasesToDelete)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetUserAliasesToDelete())
-                    {
-                        context.Writer.WritePropertyName("userAliasesToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserAliasesToDeleteListValue in publicRequest.UserAliasesToDelete)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = UserAliasMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserAliasesToDeleteListValue, context);
+                    var marshaller = UserAliasMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserAliasesToDeleteListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserAliasesToUpdate())
-                    {
-                        context.Writer.WritePropertyName("userAliasesToUpdate");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUserAliasesToUpdateListValue in publicRequest.UserAliasesToUpdate)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UserAliasMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUserAliasesToUpdateListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetUserAliasesToUpdate())
+            {
+                context.Writer.WritePropertyName("userAliasesToUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUserAliasesToUpdateListValue in publicRequest.UserAliasesToUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UserAliasMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUserAliasesToUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

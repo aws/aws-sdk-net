@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ModelClientConfig Object
     /// </summary>  
-    public class ModelClientConfigUnmarshaller : IUnmarshaller<ModelClientConfig, XmlUnmarshallerContext>, IUnmarshaller<ModelClientConfig, JsonUnmarshallerContext>
+    public class ModelClientConfigUnmarshaller : IJsonUnmarshaller<ModelClientConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ModelClientConfig IUnmarshaller<ModelClientConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ModelClientConfig Unmarshall(JsonUnmarshallerContext context)
+        public ModelClientConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ModelClientConfig unmarshalledObject = new ModelClientConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("InvocationsMaxRetries", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InvocationsMaxRetries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationsMaxRetries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvocationsTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InvocationsTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationsTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

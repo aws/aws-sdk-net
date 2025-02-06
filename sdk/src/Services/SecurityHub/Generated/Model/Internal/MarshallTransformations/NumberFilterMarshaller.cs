@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Eq");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Eq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Eq.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Eq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Eq.Value);
+                    context.Writer.WriteNumberValue(requestObject.Eq.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Gt");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Gt.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gt.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Gt.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Gt.Value);
+                    context.Writer.WriteNumberValue(requestObject.Gt.Value);
                 }
             }
 
@@ -79,11 +77,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Gte");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Gte.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gte.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Gte.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Gte.Value);
+                    context.Writer.WriteNumberValue(requestObject.Gte.Value);
                 }
             }
 
@@ -92,11 +90,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Lt");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Lt.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lt.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Lt.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lt.Value);
+                    context.Writer.WriteNumberValue(requestObject.Lt.Value);
                 }
             }
 
@@ -105,11 +103,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Lte");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Lte.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lte.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Lte.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lte.Value);
+                    context.Writer.WriteNumberValue(requestObject.Lte.Value);
                 }
             }
 

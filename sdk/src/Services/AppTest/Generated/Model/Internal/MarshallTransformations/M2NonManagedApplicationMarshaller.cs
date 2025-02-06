@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetListenerPort())
             {
                 context.Writer.WritePropertyName("listenerPort");
-                context.Writer.Write(requestObject.ListenerPort);
+                context.Writer.WriteStringValue(requestObject.ListenerPort);
             }
 
             if(requestObject.IsSetRuntime())
             {
                 context.Writer.WritePropertyName("runtime");
-                context.Writer.Write(requestObject.Runtime);
+                context.Writer.WriteStringValue(requestObject.Runtime);
             }
 
             if(requestObject.IsSetVpcEndpointServiceName())
             {
                 context.Writer.WritePropertyName("vpcEndpointServiceName");
-                context.Writer.Write(requestObject.VpcEndpointServiceName);
+                context.Writer.WriteStringValue(requestObject.VpcEndpointServiceName);
             }
 
             if(requestObject.IsSetWebAppName())
             {
                 context.Writer.WritePropertyName("webAppName");
-                context.Writer.Write(requestObject.WebAppName);
+                context.Writer.WriteStringValue(requestObject.WebAppName);
             }
 
         }

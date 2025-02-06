@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetGroupIdentifier())
             {
                 context.Writer.WritePropertyName("targetGroupIdentifier");
-                context.Writer.Write(requestObject.TargetGroupIdentifier);
+                context.Writer.WriteStringValue(requestObject.TargetGroupIdentifier);
             }
 
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("weight");
-                context.Writer.Write(requestObject.Weight.Value);
+                context.Writer.WriteNumberValue(requestObject.Weight.Value);
             }
 
         }

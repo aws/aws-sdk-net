@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetadataXML())
             {
                 context.Writer.WritePropertyName("metadataXML");
-                context.Writer.Write(requestObject.MetadataXML);
+                context.Writer.WriteStringValue(requestObject.MetadataXML);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetUserGroupAttribute())
             {
                 context.Writer.WritePropertyName("userGroupAttribute");
-                context.Writer.Write(requestObject.UserGroupAttribute);
+                context.Writer.WriteStringValue(requestObject.UserGroupAttribute);
             }
 
             if(requestObject.IsSetUserIdAttribute())
             {
                 context.Writer.WritePropertyName("userIdAttribute");
-                context.Writer.Write(requestObject.UserIdAttribute);
+                context.Writer.WriteStringValue(requestObject.UserIdAttribute);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HttpEndpointRequestConfiguration Object
     /// </summary>  
-    public class HttpEndpointRequestConfigurationUnmarshaller : IUnmarshaller<HttpEndpointRequestConfiguration, XmlUnmarshallerContext>, IUnmarshaller<HttpEndpointRequestConfiguration, JsonUnmarshallerContext>
+    public class HttpEndpointRequestConfigurationUnmarshaller : IJsonUnmarshaller<HttpEndpointRequestConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HttpEndpointRequestConfiguration IUnmarshaller<HttpEndpointRequestConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HttpEndpointRequestConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public HttpEndpointRequestConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HttpEndpointRequestConfiguration unmarshalledObject = new HttpEndpointRequestConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CommonAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HttpEndpointCommonAttribute, HttpEndpointCommonAttributeUnmarshaller>(HttpEndpointCommonAttributeUnmarshaller.Instance);
-                    unmarshalledObject.CommonAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HttpEndpointCommonAttribute, HttpEndpointCommonAttributeUnmarshaller>(HttpEndpointCommonAttributeUnmarshaller.Instance);
+                    unmarshalledObject.CommonAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContentEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentEncoding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentEncoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

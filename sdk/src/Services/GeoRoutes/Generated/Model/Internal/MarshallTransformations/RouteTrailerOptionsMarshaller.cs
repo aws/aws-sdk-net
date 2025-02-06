@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAxleCount())
             {
                 context.Writer.WritePropertyName("AxleCount");
-                context.Writer.Write(requestObject.AxleCount.Value);
+                context.Writer.WriteNumberValue(requestObject.AxleCount.Value);
             }
 
             if(requestObject.IsSetTrailerCount())
             {
                 context.Writer.WritePropertyName("TrailerCount");
-                context.Writer.Write(requestObject.TrailerCount.Value);
+                context.Writer.WriteNumberValue(requestObject.TrailerCount.Value);
             }
 
         }

@@ -36,11 +36,13 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Related to:</b> <a>ContainerAttribute</a> 
+    ///  <b>Related to:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerAttribute.html">ContainerAttribute</a>
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Use with: </b> <a>GetComputeAccess</a> 
+    ///  <b>Use with: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">GetComputeAccess</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerIdentifier

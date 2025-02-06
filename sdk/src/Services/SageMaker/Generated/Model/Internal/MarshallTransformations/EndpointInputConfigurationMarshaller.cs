@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentParameterRanges())
             {
                 context.Writer.WritePropertyName("EnvironmentParameterRanges");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnvironmentParameterRangesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnvironmentParameterRanges, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInferenceSpecificationName())
             {
                 context.Writer.WritePropertyName("InferenceSpecificationName");
-                context.Writer.Write(requestObject.InferenceSpecificationName);
+                context.Writer.WriteStringValue(requestObject.InferenceSpecificationName);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetServerlessConfig())
             {
                 context.Writer.WritePropertyName("ServerlessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantServerlessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServerlessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

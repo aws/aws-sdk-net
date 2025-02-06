@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAxisLineVisibility())
             {
                 context.Writer.WritePropertyName("AxisLineVisibility");
-                context.Writer.Write(requestObject.AxisLineVisibility);
+                context.Writer.WriteStringValue(requestObject.AxisLineVisibility);
             }
 
             if(requestObject.IsSetAxisOffset())
             {
                 context.Writer.WritePropertyName("AxisOffset");
-                context.Writer.Write(requestObject.AxisOffset);
+                context.Writer.WriteStringValue(requestObject.AxisOffset);
             }
 
             if(requestObject.IsSetDataOptions())
             {
                 context.Writer.WritePropertyName("DataOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AxisDataOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGridLineVisibility())
             {
                 context.Writer.WritePropertyName("GridLineVisibility");
-                context.Writer.Write(requestObject.GridLineVisibility);
+                context.Writer.WriteStringValue(requestObject.GridLineVisibility);
             }
 
             if(requestObject.IsSetScrollbarOptions())
             {
                 context.Writer.WritePropertyName("ScrollbarOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScrollBarOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScrollbarOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTickLabelOptions())
             {
                 context.Writer.WritePropertyName("TickLabelOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AxisTickLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TickLabelOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

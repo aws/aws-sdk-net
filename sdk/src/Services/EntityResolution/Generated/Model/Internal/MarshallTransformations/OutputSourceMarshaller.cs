@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyNormalization())
             {
                 context.Writer.WritePropertyName("applyNormalization");
-                context.Writer.Write(requestObject.ApplyNormalization.Value);
+                context.Writer.WriteBooleanValue(requestObject.ApplyNormalization.Value);
             }
 
             if(requestObject.IsSetKMSArn())
             {
                 context.Writer.WritePropertyName("KMSArn");
-                context.Writer.Write(requestObject.KMSArn);
+                context.Writer.WriteStringValue(requestObject.KMSArn);
             }
 
             if(requestObject.IsSetOutput())
             {
                 context.Writer.WritePropertyName("output");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputListValue in requestObject.Output)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OutputAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputS3Path())
             {
                 context.Writer.WritePropertyName("outputS3Path");
-                context.Writer.Write(requestObject.OutputS3Path);
+                context.Writer.WriteStringValue(requestObject.OutputS3Path);
             }
 
         }

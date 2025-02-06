@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDbPathsListValue in requestObject.DbPaths)
                 {
-                        context.Writer.Write(requestObjectDbPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectDbPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOnDemand())
             {
                 context.Writer.WritePropertyName("onDemand");
-                context.Writer.Write(requestObject.OnDemand.Value);
+                context.Writer.WriteBooleanValue(requestObject.OnDemand.Value);
             }
 
             if(requestObject.IsSetVolumeName())
             {
                 context.Writer.WritePropertyName("volumeName");
-                context.Writer.Write(requestObject.VolumeName);
+                context.Writer.WriteStringValue(requestObject.VolumeName);
             }
 
         }

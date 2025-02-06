@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,64 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("Destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                                context.Writer.Write(publicRequestDestinationsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEndEventTime())
-                    {
-                        context.Writer.WritePropertyName("EndEventTime");
-                        context.Writer.Write(publicRequest.EndEventTime.Value);
-                    }
-
-                    if(publicRequest.IsSetImportId())
-                    {
-                        context.Writer.WritePropertyName("ImportId");
-                        context.Writer.Write(publicRequest.ImportId);
-                    }
-
-                    if(publicRequest.IsSetImportSource())
-                    {
-                        context.Writer.WritePropertyName("ImportSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImportSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ImportSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartEventTime())
-                    {
-                        context.Writer.WritePropertyName("StartEventTime");
-                        context.Writer.Write(publicRequest.StartEventTime.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDestinationsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetEndEventTime())
+            {
+                context.Writer.WritePropertyName("EndEventTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndEventTime.Value)));
+            }
+
+            if(publicRequest.IsSetImportId())
+            {
+                context.Writer.WritePropertyName("ImportId");
+                context.Writer.WriteStringValue(publicRequest.ImportId);
+            }
+
+            if(publicRequest.IsSetImportSource())
+            {
+                context.Writer.WritePropertyName("ImportSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImportSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ImportSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartEventTime())
+            {
+                context.Writer.WritePropertyName("StartEventTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartEventTime.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

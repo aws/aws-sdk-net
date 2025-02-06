@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             if(requestObject.IsSetKmsEncryptionContext())
             {
                 context.Writer.WritePropertyName("kmsEncryptionContext");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectKmsEncryptionContextKvp in requestObject.KmsEncryptionContext)
                 {
                     context.Writer.WritePropertyName(requestObjectKmsEncryptionContextKvp.Key);
                     var requestObjectKmsEncryptionContextValue = requestObjectKmsEncryptionContextKvp.Value;
 
-                        context.Writer.Write(requestObjectKmsEncryptionContextValue);
+                        context.Writer.WriteStringValue(requestObjectKmsEncryptionContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
         }

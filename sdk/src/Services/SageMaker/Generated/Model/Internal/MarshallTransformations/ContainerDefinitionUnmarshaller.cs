@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContainerDefinition Object
     /// </summary>  
-    public class ContainerDefinitionUnmarshaller : IUnmarshaller<ContainerDefinition, XmlUnmarshallerContext>, IUnmarshaller<ContainerDefinition, JsonUnmarshallerContext>
+    public class ContainerDefinitionUnmarshaller : IJsonUnmarshaller<ContainerDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ContainerDefinition IUnmarshaller<ContainerDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerDefinition Unmarshall(JsonUnmarshallerContext context)
+        public ContainerDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ContainerDefinition unmarshalledObject = new ContainerDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalModelDataSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContainerHostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerHostname = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerHostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Environment", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImageConfig", targetDepth))
                 {
                     var unmarshaller = ImageConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InferenceSpecificationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferenceSpecificationName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferenceSpecificationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDataSource", targetDepth))
                 {
                     var unmarshaller = ModelDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelDataUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MultiModelConfig", targetDepth))
                 {
                     var unmarshaller = MultiModelConfigUnmarshaller.Instance;
-                    unmarshalledObject.MultiModelConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,8 @@ namespace Amazon.Notifications.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-    /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+    /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonNotificationsRequest

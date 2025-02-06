@@ -40,12 +40,14 @@ namespace Amazon.Notifications
     /// <summary>
     /// <para>Implementation for accessing Notifications</para>
     ///
-    /// The <i>AWS User Notifications API Reference</i> provides descriptions, API request
-    /// parameters, and the JSON response for each of the User Notification API actions.
+    /// The <i>Amazon Web Services User Notifications API Reference</i> provides descriptions,
+    /// API request parameters, and the JSON response for each of the User Notification API
+    /// actions.
     /// 
     ///  
     /// <para>
-    /// User Notification control APIs are currently available in US East (Virginia) - <c>us-east-1</c>.
+    /// User Notification control plane APIs are currently available in US East (Virginia)
+    /// - <c>us-east-1</c>.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +60,7 @@ namespace Amazon.Notifications
     ///  
     /// <para>
     /// The User Notifications console can only be used in US East (Virginia). Your data however,
-    /// is stored in each Region chosen as a <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html&gt;">notification
+    /// is stored in each Region chosen as a <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
     /// hub</a> in addition to US East (Virginia).
     /// </para>
     /// </summary>
@@ -290,8 +292,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-        /// with a particular NotificationConfiguration. Supported Channels include AWS Chatbot,
-        /// the AWS Console Mobile Application, and emails (notifications-contacts).
+        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
+        /// the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateChannel service method.</param>
         /// 
@@ -330,8 +332,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-        /// with a particular NotificationConfiguration. Supported Channels include AWS Chatbot,
-        /// the AWS Console Mobile Application, and emails (notifications-contacts).
+        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
+        /// the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -372,12 +374,188 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  AssociateManagedNotificationAccountContact
+
+
+        /// <summary>
+        /// Associates an Account Contact with a particular <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAccountContact service method.</param>
+        /// 
+        /// <returns>The response from the AssociateManagedNotificationAccountContact service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAccountContact">REST API Reference for AssociateManagedNotificationAccountContact Operation</seealso>
+        public virtual AssociateManagedNotificationAccountContactResponse AssociateManagedNotificationAccountContact(AssociateManagedNotificationAccountContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateManagedNotificationAccountContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateManagedNotificationAccountContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an Account Contact with a particular <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAccountContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateManagedNotificationAccountContact service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAccountContact">REST API Reference for AssociateManagedNotificationAccountContact Operation</seealso>
+        public virtual Task<AssociateManagedNotificationAccountContactResponse> AssociateManagedNotificationAccountContactAsync(AssociateManagedNotificationAccountContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateManagedNotificationAccountContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateManagedNotificationAccountContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateManagedNotificationAdditionalChannel
+
+
+        /// <summary>
+        /// Associates an additional Channel with a particular <c>ManagedNotificationConfiguration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAdditionalChannel service method.</param>
+        /// 
+        /// <returns>The response from the AssociateManagedNotificationAdditionalChannel service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
+        public virtual AssociateManagedNotificationAdditionalChannelResponse AssociateManagedNotificationAdditionalChannel(AssociateManagedNotificationAdditionalChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateManagedNotificationAdditionalChannelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an additional Channel with a particular <c>ManagedNotificationConfiguration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAdditionalChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateManagedNotificationAdditionalChannel service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
+        public virtual Task<AssociateManagedNotificationAdditionalChannelResponse> AssociateManagedNotificationAdditionalChannelAsync(AssociateManagedNotificationAdditionalChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateManagedNotificationAdditionalChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEventRule
 
 
         /// <summary>
-        /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">EventRule</a>
-        /// that is associated with a specified Notification Configuration.
+        /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">
+        /// <c>EventRule</c> </a> that is associated with a specified <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventRule service method.</param>
         /// 
@@ -415,8 +593,8 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">EventRule</a>
-        /// that is associated with a specified Notification Configuration.
+        /// Creates an <a href="https://docs.aws.amazon.com/notifications/latest/userguide/glossary.html">
+        /// <c>EventRule</c> </a> that is associated with a specified <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventRule service method.</param>
         /// <param name="cancellationToken">
@@ -461,7 +639,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Creates a new NotificationConfiguration.
+        /// Creates a new <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationConfiguration service method.</param>
         /// 
@@ -496,7 +674,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Creates a new NotificationConfiguration.
+        /// Creates a new <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -538,7 +716,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deletes an EventRule.
+        /// Deletes an <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventRule service method.</param>
         /// 
@@ -573,7 +751,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deletes an EventRule.
+        /// Deletes an <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventRule service method.</param>
         /// <param name="cancellationToken">
@@ -615,7 +793,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deletes a NotificationConfiguration.
+        /// Deletes a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationConfiguration service method.</param>
         /// 
@@ -650,7 +828,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deletes a NotificationConfiguration.
+        /// Deletes a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNotificationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -692,13 +870,14 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deregisters a NotificationHub in the specified Region.
+        /// Deregisters a <c>NotificationConfiguration</c> in the specified Region.
         /// 
         ///  <note> 
         /// <para>
-        /// You can't deregister the last NotificationHub in the account. NotificationEvents stored
-        /// in the deregistered NotificationHub are no longer be visible. Recreating a new NotificationHub
-        /// in the same Region restores access to those NotificationEvents.
+        /// You can't deregister the last <c>NotificationHub</c> in the account. <c>NotificationEvents</c>
+        /// stored in the deregistered <c>NotificationConfiguration</c> are no longer be visible.
+        /// Recreating a new <c>NotificationConfiguration</c> in the same Region restores access
+        /// to those <c>NotificationEvents</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -735,13 +914,14 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deregisters a NotificationHub in the specified Region.
+        /// Deregisters a <c>NotificationConfiguration</c> in the specified Region.
         /// 
         ///  <note> 
         /// <para>
-        /// You can't deregister the last NotificationHub in the account. NotificationEvents stored
-        /// in the deregistered NotificationHub are no longer be visible. Recreating a new NotificationHub
-        /// in the same Region restores access to those NotificationEvents.
+        /// You can't deregister the last <c>NotificationHub</c> in the account. <c>NotificationEvents</c>
+        /// stored in the deregistered <c>NotificationConfiguration</c> are no longer be visible.
+        /// Recreating a new <c>NotificationConfiguration</c> in the same Region restores access
+        /// to those <c>NotificationEvents</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -781,12 +961,95 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  DisableNotificationsAccessForOrganization
+
+
+        /// <summary>
+        /// Disables service trust between User Notifications and Amazon Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableNotificationsAccessForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the DisableNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisableNotificationsAccessForOrganization">REST API Reference for DisableNotificationsAccessForOrganization Operation</seealso>
+        public virtual DisableNotificationsAccessForOrganizationResponse DisableNotificationsAccessForOrganization(DisableNotificationsAccessForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableNotificationsAccessForOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables service trust between User Notifications and Amazon Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableNotificationsAccessForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisableNotificationsAccessForOrganization">REST API Reference for DisableNotificationsAccessForOrganization Operation</seealso>
+        public virtual Task<DisableNotificationsAccessForOrganizationResponse> DisableNotificationsAccessForOrganizationAsync(DisableNotificationsAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateChannel
 
 
         /// <summary>
-        /// Disassociates a Channel from a specified NotificationConfiguration. Supported Channels
-        /// include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts).
+        /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
+        /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateChannel service method.</param>
         /// 
@@ -818,8 +1081,8 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Disassociates a Channel from a specified NotificationConfiguration. Supported Channels
-        /// include AWS Chatbot, the AWS Console Mobile Application, and emails (notifications-contacts).
+        /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
+        /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -854,11 +1117,252 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  DisassociateManagedNotificationAccountContact
+
+
+        /// <summary>
+        /// Disassociates an Account Contact with a particular <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAccountContact service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateManagedNotificationAccountContact service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAccountContact">REST API Reference for DisassociateManagedNotificationAccountContact Operation</seealso>
+        public virtual DisassociateManagedNotificationAccountContactResponse DisassociateManagedNotificationAccountContact(DisassociateManagedNotificationAccountContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateManagedNotificationAccountContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateManagedNotificationAccountContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates an Account Contact with a particular <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAccountContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateManagedNotificationAccountContact service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAccountContact">REST API Reference for DisassociateManagedNotificationAccountContact Operation</seealso>
+        public virtual Task<DisassociateManagedNotificationAccountContactResponse> DisassociateManagedNotificationAccountContactAsync(DisassociateManagedNotificationAccountContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateManagedNotificationAccountContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateManagedNotificationAccountContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateManagedNotificationAdditionalChannel
+
+
+        /// <summary>
+        /// Disassociates an additional Channel from a particular <c>ManagedNotificationConfiguration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAdditionalChannel service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateManagedNotificationAdditionalChannel service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
+        public virtual DisassociateManagedNotificationAdditionalChannelResponse DisassociateManagedNotificationAdditionalChannel(DisassociateManagedNotificationAdditionalChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateManagedNotificationAdditionalChannelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates an additional Channel from a particular <c>ManagedNotificationConfiguration</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAdditionalChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateManagedNotificationAdditionalChannel service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
+        public virtual Task<DisassociateManagedNotificationAdditionalChannelResponse> DisassociateManagedNotificationAdditionalChannelAsync(DisassociateManagedNotificationAdditionalChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateManagedNotificationAdditionalChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableNotificationsAccessForOrganization
+
+
+        /// <summary>
+        /// Enables service trust between User Notifications and Amazon Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableNotificationsAccessForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the EnableNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EnableNotificationsAccessForOrganization">REST API Reference for EnableNotificationsAccessForOrganization Operation</seealso>
+        public virtual EnableNotificationsAccessForOrganizationResponse EnableNotificationsAccessForOrganization(EnableNotificationsAccessForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableNotificationsAccessForOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables service trust between User Notifications and Amazon Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableNotificationsAccessForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EnableNotificationsAccessForOrganization">REST API Reference for EnableNotificationsAccessForOrganization Operation</seealso>
+        public virtual Task<EnableNotificationsAccessForOrganizationResponse> EnableNotificationsAccessForOrganizationAsync(EnableNotificationsAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEventRule
 
 
         /// <summary>
-        /// Returns a specified EventRule.
+        /// Returns a specified <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventRule service method.</param>
         /// 
@@ -890,7 +1394,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a specified EventRule.
+        /// Returns a specified <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventRule service method.</param>
         /// <param name="cancellationToken">
@@ -925,11 +1429,224 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  GetManagedNotificationChildEvent
+
+
+        /// <summary>
+        /// Returns the child event of a specific given <c>ManagedNotificationEvent</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationChildEvent service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationChildEvent service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationChildEvent">REST API Reference for GetManagedNotificationChildEvent Operation</seealso>
+        public virtual GetManagedNotificationChildEventResponse GetManagedNotificationChildEvent(GetManagedNotificationChildEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationChildEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationChildEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedNotificationChildEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the child event of a specific given <c>ManagedNotificationEvent</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationChildEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationChildEvent service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationChildEvent">REST API Reference for GetManagedNotificationChildEvent Operation</seealso>
+        public virtual Task<GetManagedNotificationChildEventResponse> GetManagedNotificationChildEventAsync(GetManagedNotificationChildEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationChildEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationChildEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetManagedNotificationChildEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetManagedNotificationConfiguration
+
+
+        /// <summary>
+        /// Returns a specified <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationConfiguration service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationConfiguration">REST API Reference for GetManagedNotificationConfiguration Operation</seealso>
+        public virtual GetManagedNotificationConfigurationResponse GetManagedNotificationConfiguration(GetManagedNotificationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedNotificationConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a specified <c>ManagedNotificationConfiguration</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationConfiguration service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationConfiguration">REST API Reference for GetManagedNotificationConfiguration Operation</seealso>
+        public virtual Task<GetManagedNotificationConfigurationResponse> GetManagedNotificationConfigurationAsync(GetManagedNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetManagedNotificationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetManagedNotificationEvent
+
+
+        /// <summary>
+        /// Returns a specified <c>ManagedNotificationEvent</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationEvent service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationEvent service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationEvent">REST API Reference for GetManagedNotificationEvent Operation</seealso>
+        public virtual GetManagedNotificationEventResponse GetManagedNotificationEvent(GetManagedNotificationEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedNotificationEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a specified <c>ManagedNotificationEvent</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedNotificationEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedNotificationEvent service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationEvent">REST API Reference for GetManagedNotificationEvent Operation</seealso>
+        public virtual Task<GetManagedNotificationEventResponse> GetManagedNotificationEventAsync(GetManagedNotificationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedNotificationEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedNotificationEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetManagedNotificationEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetNotificationConfiguration
 
 
         /// <summary>
-        /// Returns a specified NotificationConfiguration.
+        /// Returns a specified <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNotificationConfiguration service method.</param>
         /// 
@@ -961,7 +1678,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a specified NotificationConfiguration.
+        /// Returns a specified <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNotificationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1000,17 +1717,17 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a specified NotificationEvent.
+        /// Returns a specified <c>NotificationEvent</c>.
         /// 
         ///  <important> 
         /// <para>
         /// User Notifications stores notifications in the individual Regions you register as
-        /// notification hubs and the Region of the source event rule. GetNotificationEvent only
-        /// returns notifications stored in the same Region in which the action is called. User
-        /// Notifications doesn't backfill notifications to new Regions selected as notification
+        /// notification hubs and the Region of the source event rule. <c>GetNotificationEvent</c>
+        /// only returns notifications stored in the same Region in which the action is called.
+        /// User Notifications doesn't backfill notifications to new Regions selected as notification
         /// hubs. For this reason, we recommend that you make calls in your oldest registered
         /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-        /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+        /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1044,17 +1761,17 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a specified NotificationEvent.
+        /// Returns a specified <c>NotificationEvent</c>.
         /// 
         ///  <important> 
         /// <para>
         /// User Notifications stores notifications in the individual Regions you register as
-        /// notification hubs and the Region of the source event rule. GetNotificationEvent only
-        /// returns notifications stored in the same Region in which the action is called. User
-        /// Notifications doesn't backfill notifications to new Regions selected as notification
+        /// notification hubs and the Region of the source event rule. <c>GetNotificationEvent</c>
+        /// only returns notifications stored in the same Region in which the action is called.
+        /// User Notifications doesn't backfill notifications to new Regions selected as notification
         /// hubs. For this reason, we recommend that you make calls in your oldest registered
         /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-        /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+        /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1091,11 +1808,78 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  GetNotificationsAccessForOrganization
+
+
+        /// <summary>
+        /// Returns the AccessStatus of Service Trust Enablement for User Notifications and Amazon
+        /// Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotificationsAccessForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the GetNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationsAccessForOrganization">REST API Reference for GetNotificationsAccessForOrganization Operation</seealso>
+        public virtual GetNotificationsAccessForOrganizationResponse GetNotificationsAccessForOrganization(GetNotificationsAccessForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetNotificationsAccessForOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the AccessStatus of Service Trust Enablement for User Notifications and Amazon
+        /// Web Services Organizations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotificationsAccessForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotificationsAccessForOrganization service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationsAccessForOrganization">REST API Reference for GetNotificationsAccessForOrganization Operation</seealso>
+        public virtual Task<GetNotificationsAccessForOrganizationResponse> GetNotificationsAccessForOrganizationAsync(GetNotificationsAccessForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNotificationsAccessForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNotificationsAccessForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListChannels
 
 
         /// <summary>
-        /// Returns a list of Channels for a NotificationConfiguration.
+        /// Returns a list of Channels for a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -1127,7 +1911,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of Channels for a NotificationConfiguration.
+        /// Returns a list of Channels for a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -1166,7 +1950,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of EventRules according to specified filters, in reverse chronological
+        /// Returns a list of <c>EventRules</c> according to specified filters, in reverse chronological
         /// order (newest first).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventRules service method.</param>
@@ -1199,7 +1983,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of EventRules according to specified filters, in reverse chronological
+        /// Returns a list of <c>EventRules</c> according to specified filters, in reverse chronological
         /// order (newest first).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventRules service method.</param>
@@ -1235,12 +2019,288 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  ListManagedNotificationChannelAssociations
+
+
+        /// <summary>
+        /// Returns a list of Account contacts and Channels associated with a <c>ManagedNotificationConfiguration</c>,
+        /// in paginated format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationChannelAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationChannelAssociations service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChannelAssociations">REST API Reference for ListManagedNotificationChannelAssociations Operation</seealso>
+        public virtual ListManagedNotificationChannelAssociationsResponse ListManagedNotificationChannelAssociations(ListManagedNotificationChannelAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationChannelAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationChannelAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedNotificationChannelAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Account contacts and Channels associated with a <c>ManagedNotificationConfiguration</c>,
+        /// in paginated format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationChannelAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationChannelAssociations service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChannelAssociations">REST API Reference for ListManagedNotificationChannelAssociations Operation</seealso>
+        public virtual Task<ListManagedNotificationChannelAssociationsResponse> ListManagedNotificationChannelAssociationsAsync(ListManagedNotificationChannelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationChannelAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationChannelAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListManagedNotificationChannelAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListManagedNotificationChildEvents
+
+
+        /// <summary>
+        /// Returns a list of <c>ManagedNotificationChildEvents</c> for a specified aggregate
+        /// <c>ManagedNotificationEvent</c>, ordered by creation time in reverse chronological
+        /// order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationChildEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationChildEvents service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChildEvents">REST API Reference for ListManagedNotificationChildEvents Operation</seealso>
+        public virtual ListManagedNotificationChildEventsResponse ListManagedNotificationChildEvents(ListManagedNotificationChildEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationChildEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationChildEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedNotificationChildEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of <c>ManagedNotificationChildEvents</c> for a specified aggregate
+        /// <c>ManagedNotificationEvent</c>, ordered by creation time in reverse chronological
+        /// order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationChildEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationChildEvents service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChildEvents">REST API Reference for ListManagedNotificationChildEvents Operation</seealso>
+        public virtual Task<ListManagedNotificationChildEventsResponse> ListManagedNotificationChildEventsAsync(ListManagedNotificationChildEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationChildEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationChildEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListManagedNotificationChildEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListManagedNotificationConfigurations
+
+
+        /// <summary>
+        /// Returns a list of Managed Notification Configurations according to specified filters,
+        /// ordered by creation time in reverse chronological order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationConfigurations service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationConfigurations">REST API Reference for ListManagedNotificationConfigurations Operation</seealso>
+        public virtual ListManagedNotificationConfigurationsResponse ListManagedNotificationConfigurations(ListManagedNotificationConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedNotificationConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Managed Notification Configurations according to specified filters,
+        /// ordered by creation time in reverse chronological order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationConfigurations service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationConfigurations">REST API Reference for ListManagedNotificationConfigurations Operation</seealso>
+        public virtual Task<ListManagedNotificationConfigurationsResponse> ListManagedNotificationConfigurationsAsync(ListManagedNotificationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListManagedNotificationConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListManagedNotificationEvents
+
+
+        /// <summary>
+        /// Returns a list of Managed Notification Events according to specified filters, ordered
+        /// by creation time in reverse chronological order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationEvents service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationEvents">REST API Reference for ListManagedNotificationEvents Operation</seealso>
+        public virtual ListManagedNotificationEventsResponse ListManagedNotificationEvents(ListManagedNotificationEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListManagedNotificationEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Managed Notification Events according to specified filters, ordered
+        /// by creation time in reverse chronological order (newest first).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedNotificationEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedNotificationEvents service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationEvents">REST API Reference for ListManagedNotificationEvents Operation</seealso>
+        public virtual Task<ListManagedNotificationEventsResponse> ListManagedNotificationEventsAsync(ListManagedNotificationEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListManagedNotificationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListManagedNotificationEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListManagedNotificationEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNotificationConfigurations
 
 
         /// <summary>
-        /// Returns a list of abbreviated NotificationConfigurations according to specified filters,
-        /// in reverse chronological order (newest first).
+        /// Returns a list of abbreviated <c>NotificationConfigurations</c> according to specified
+        /// filters, in reverse chronological order (newest first).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationConfigurations service method.</param>
         /// 
@@ -1269,8 +2329,8 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of abbreviated NotificationConfigurations according to specified filters,
-        /// in reverse chronological order (newest first).
+        /// Returns a list of abbreviated <c>NotificationConfigurations</c> according to specified
+        /// filters, in reverse chronological order (newest first).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -1306,8 +2366,8 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of NotificationEvents according to specified filters, in reverse chronological
-        /// order (newest first).
+        /// Returns a list of <c>NotificationEvents</c> according to specified filters, in reverse
+        /// chronological order (newest first).
         /// 
         ///  <important> 
         /// <para>
@@ -1317,7 +2377,7 @@ namespace Amazon.Notifications
         /// User Notifications doesn't backfill notifications to new Regions selected as notification
         /// hubs. For this reason, we recommend that you make calls in your oldest registered
         /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-        /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+        /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1348,8 +2408,8 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of NotificationEvents according to specified filters, in reverse chronological
-        /// order (newest first).
+        /// Returns a list of <c>NotificationEvents</c> according to specified filters, in reverse
+        /// chronological order (newest first).
         /// 
         ///  <important> 
         /// <para>
@@ -1359,7 +2419,7 @@ namespace Amazon.Notifications
         /// User Notifications doesn't backfill notifications to new Regions selected as notification
         /// hubs. For this reason, we recommend that you make calls in your oldest registered
         /// notification hub. For more information, see <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">Notification
-        /// hubs</a> in the <i>AWS User Notifications User Guide</i>.
+        /// hubs</a> in the <i>Amazon Web Services User Notifications User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1397,7 +2457,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of NotificationHubs.
+        /// Returns a list of <c>NotificationHubs</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationHubs service method.</param>
         /// 
@@ -1426,7 +2486,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Returns a list of NotificationHubs.
+        /// Returns a list of <c>NotificationHubs</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationHubs service method.</param>
         /// <param name="cancellationToken">
@@ -1467,11 +2527,12 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is only supported for NotificationConfigurations.
+        /// This is only supported for <c>NotificationConfigurations</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1510,11 +2571,12 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is only supported for NotificationConfigurations.
+        /// This is only supported for <c>NotificationConfigurations</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1555,12 +2617,12 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Registers a NotificationHub in the specified Region.
+        /// Registers a <c>NotificationConfiguration</c> in the specified Region.
         /// 
         ///  
         /// <para>
-        /// There is a maximum of one NotificationHub per Region. You can have a maximum of 3
-        /// NotificationHubs at a time.
+        /// There is a maximum of one <c>NotificationConfiguration</c> per Region. You can have
+        /// a maximum of 3 <c>NotificationHub</c> resources at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterNotificationHub service method.</param>
@@ -1596,12 +2658,12 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Registers a NotificationHub in the specified Region.
+        /// Registers a <c>NotificationConfiguration</c> in the specified Region.
         /// 
         ///  
         /// <para>
-        /// There is a maximum of one NotificationHub per Region. You can have a maximum of 3
-        /// NotificationHubs at a time.
+        /// There is a maximum of one <c>NotificationConfiguration</c> per Region. You can have
+        /// a maximum of 3 <c>NotificationHub</c> resources at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterNotificationHub service method.</param>
@@ -1649,11 +2711,12 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is only supported for NotificationConfigurations.
+        /// This is only supported for <c>NotificationConfigurations</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1692,11 +2755,12 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is only supported for NotificationConfigurations.
+        /// This is only supported for <c>NotificationConfigurations</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1742,7 +2806,8 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1780,7 +2845,8 @@ namespace Amazon.Notifications
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging
-        /// your AWS resources</a> in the <i>Tagging AWS Resources User Guide</i>.
+        /// your Amazon Web Services resources</a> in the <i>Tagging Amazon Web Services Resources
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1820,7 +2886,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Updates an existing EventRule.
+        /// Updates an existing <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventRule service method.</param>
         /// 
@@ -1855,7 +2921,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Updates an existing EventRule.
+        /// Updates an existing <c>EventRule</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventRule service method.</param>
         /// <param name="cancellationToken">
@@ -1897,7 +2963,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Updates a NotificationConfiguration.
+        /// Updates a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationConfiguration service method.</param>
         /// 
@@ -1932,7 +2998,7 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Updates a NotificationConfiguration.
+        /// Updates a <c>NotificationConfiguration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationConfiguration service method.</param>
         /// <param name="cancellationToken">

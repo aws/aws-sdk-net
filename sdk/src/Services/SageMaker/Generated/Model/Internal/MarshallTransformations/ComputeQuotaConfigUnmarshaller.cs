@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComputeQuotaConfig Object
     /// </summary>  
-    public class ComputeQuotaConfigUnmarshaller : IUnmarshaller<ComputeQuotaConfig, XmlUnmarshallerContext>, IUnmarshaller<ComputeQuotaConfig, JsonUnmarshallerContext>
+    public class ComputeQuotaConfigUnmarshaller : IJsonUnmarshaller<ComputeQuotaConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComputeQuotaConfig IUnmarshaller<ComputeQuotaConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeQuotaConfig Unmarshall(JsonUnmarshallerContext context)
+        public ComputeQuotaConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComputeQuotaConfig unmarshalledObject = new ComputeQuotaConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComputeQuotaResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ComputeQuotaResourceConfig, ComputeQuotaResourceConfigUnmarshaller>(ComputeQuotaResourceConfigUnmarshaller.Instance);
-                    unmarshalledObject.ComputeQuotaResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ComputeQuotaResourceConfig, ComputeQuotaResourceConfigUnmarshaller>(ComputeQuotaResourceConfigUnmarshaller.Instance);
+                    unmarshalledObject.ComputeQuotaResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreemptTeamTasks", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreemptTeamTasks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreemptTeamTasks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceSharingConfig", targetDepth))
                 {
                     var unmarshaller = ResourceSharingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ResourceSharingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceSharingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

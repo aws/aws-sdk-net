@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OrganizationNotFoundException operation
     /// </summary>  
-    public class OrganizationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<OrganizationNotFoundException, XmlUnmarshallerContext>
+    public class OrganizationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OrganizationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

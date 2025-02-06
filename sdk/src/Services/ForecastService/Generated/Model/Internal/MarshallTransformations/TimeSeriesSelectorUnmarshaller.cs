@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeSeriesSelector Object
     /// </summary>  
-    public class TimeSeriesSelectorUnmarshaller : IUnmarshaller<TimeSeriesSelector, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesSelector, JsonUnmarshallerContext>
+    public class TimeSeriesSelectorUnmarshaller : IJsonUnmarshaller<TimeSeriesSelector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeSeriesSelector IUnmarshaller<TimeSeriesSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeSeriesSelector Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesSelector Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeSeriesSelector unmarshalledObject = new TimeSeriesSelector();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TimeSeriesIdentifiers", targetDepth))
                 {
                     var unmarshaller = TimeSeriesIdentifiersUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesIdentifiers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -81,7 +81,6 @@ namespace Amazon.S3.Internal
             typeof(GetBucketWebsiteRequest),
             typeof(GetCORSConfigurationRequest),
             typeof(GetLifecycleConfigurationRequest),
-            typeof(GetObjectRequest),
             typeof(GetObjectAclRequest),
             typeof(GetObjectAttributesRequest),
             typeof(GetObjectLegalHoldRequest),
@@ -89,7 +88,6 @@ namespace Amazon.S3.Internal
             typeof(GetObjectMetadataRequest),
             typeof(GetObjectRetentionRequest),
             typeof(GetObjectTaggingRequest),
-            typeof(GetObjectTorrentRequest),
             typeof(GetPublicAccessBlockRequest),
             typeof(HeadBucketRequest),
             typeof(InitiateMultipartUploadRequest),
@@ -123,6 +121,7 @@ namespace Amazon.S3.Internal
             typeof(PutBucketWebsiteRequest),
             typeof(PutCORSConfigurationRequest),
             typeof(PutLifecycleConfigurationRequest),
+            typeof(PutObjectRequest),
             typeof(PutObjectAclRequest),
             typeof(PutObjectLegalHoldRequest),
             typeof(PutObjectLockConfigurationRequest),
@@ -131,6 +130,8 @@ namespace Amazon.S3.Internal
             typeof(PutPublicAccessBlockRequest),
             typeof(RestoreObjectRequest),
             typeof(SelectObjectContentRequest),
+            typeof(UploadPartRequest),
+            typeof(WriteGetObjectResponseRequest),
         };
     }
 }

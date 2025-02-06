@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,20 +49,20 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpoints())
             {
                 context.Writer.WritePropertyName("Endpoints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEndpointsKvp in requestObject.Endpoints)
                 {
                     context.Writer.WritePropertyName(requestObjectEndpointsKvp.Key);
                     var requestObjectEndpointsValue = requestObjectEndpointsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectEndpointsValueListValue in requestObjectEndpointsValue)
                     {
-                            context.Writer.Write(requestObjectEndpointsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectEndpointsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

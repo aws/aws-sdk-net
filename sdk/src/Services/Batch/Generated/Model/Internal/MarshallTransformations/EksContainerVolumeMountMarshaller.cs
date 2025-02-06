@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMountPath())
             {
                 context.Writer.WritePropertyName("mountPath");
-                context.Writer.Write(requestObject.MountPath);
+                context.Writer.WriteStringValue(requestObject.MountPath);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetSubPath())
             {
                 context.Writer.WritePropertyName("subPath");
-                context.Writer.Write(requestObject.SubPath);
+                context.Writer.WriteStringValue(requestObject.SubPath);
             }
 
         }

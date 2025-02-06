@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceWarmupPeriod())
             {
                 context.Writer.WritePropertyName("instanceWarmupPeriod");
-                context.Writer.Write(requestObject.InstanceWarmupPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceWarmupPeriod.Value);
             }
 
             if(requestObject.IsSetMaximumScalingStepSize())
             {
                 context.Writer.WritePropertyName("maximumScalingStepSize");
-                context.Writer.Write(requestObject.MaximumScalingStepSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumScalingStepSize.Value);
             }
 
             if(requestObject.IsSetMinimumScalingStepSize())
             {
                 context.Writer.WritePropertyName("minimumScalingStepSize");
-                context.Writer.Write(requestObject.MinimumScalingStepSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumScalingStepSize.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTargetCapacity())
             {
                 context.Writer.WritePropertyName("targetCapacity");
-                context.Writer.Write(requestObject.TargetCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetCapacity.Value);
             }
 
         }

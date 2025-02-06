@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for EmptyBatchRequestException operation
     /// </summary>  
-    public class EmptyBatchRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<EmptyBatchRequestException, XmlUnmarshallerContext>
+    public class EmptyBatchRequestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EmptyBatchRequestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

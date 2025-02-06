@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PillarDifference Object
     /// </summary>  
-    public class PillarDifferenceUnmarshaller : IUnmarshaller<PillarDifference, XmlUnmarshallerContext>, IUnmarshaller<PillarDifference, JsonUnmarshallerContext>
+    public class PillarDifferenceUnmarshaller : IJsonUnmarshaller<PillarDifference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PillarDifference IUnmarshaller<PillarDifference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PillarDifference Unmarshall(JsonUnmarshallerContext context)
+        public PillarDifference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PillarDifference unmarshalledObject = new PillarDifference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DifferenceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DifferenceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DifferenceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PillarId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PillarId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PillarName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PillarName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PillarName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuestionDifferences", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<QuestionDifference, QuestionDifferenceUnmarshaller>(QuestionDifferenceUnmarshaller.Instance);
-                    unmarshalledObject.QuestionDifferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<QuestionDifference, QuestionDifferenceUnmarshaller>(QuestionDifferenceUnmarshaller.Instance);
+                    unmarshalledObject.QuestionDifferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

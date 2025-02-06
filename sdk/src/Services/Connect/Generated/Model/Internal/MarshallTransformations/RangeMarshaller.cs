@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaxProficiencyLevel");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MaxProficiencyLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxProficiencyLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MaxProficiencyLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxProficiencyLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxProficiencyLevel.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinProficiencyLevel");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinProficiencyLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinProficiencyLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinProficiencyLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinProficiencyLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinProficiencyLevel.Value);
                 }
             }
 

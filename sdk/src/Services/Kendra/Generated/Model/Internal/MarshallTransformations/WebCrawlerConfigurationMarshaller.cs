@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthenticationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrawlDepth())
             {
                 context.Writer.WritePropertyName("CrawlDepth");
-                context.Writer.Write(requestObject.CrawlDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.CrawlDepth.Value);
             }
 
             if(requestObject.IsSetMaxContentSizePerPageInMegaBytes())
@@ -70,68 +68,68 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaxContentSizePerPageInMegaBytes");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxContentSizePerPageInMegaBytes.Value);
                 }
             }
 
             if(requestObject.IsSetMaxLinksPerPage())
             {
                 context.Writer.WritePropertyName("MaxLinksPerPage");
-                context.Writer.Write(requestObject.MaxLinksPerPage.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLinksPerPage.Value);
             }
 
             if(requestObject.IsSetMaxUrlsPerMinuteCrawlRate())
             {
                 context.Writer.WritePropertyName("MaxUrlsPerMinuteCrawlRate");
-                context.Writer.Write(requestObject.MaxUrlsPerMinuteCrawlRate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxUrlsPerMinuteCrawlRate.Value);
             }
 
             if(requestObject.IsSetProxyConfiguration())
             {
                 context.Writer.WritePropertyName("ProxyConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProxyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProxyConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUrlExclusionPatterns())
             {
                 context.Writer.WritePropertyName("UrlExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUrlExclusionPatternsListValue in requestObject.UrlExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectUrlExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectUrlExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUrlInclusionPatterns())
             {
                 context.Writer.WritePropertyName("UrlInclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUrlInclusionPatternsListValue in requestObject.UrlInclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectUrlInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectUrlInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUrls())
             {
                 context.Writer.WritePropertyName("Urls");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UrlsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Urls, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

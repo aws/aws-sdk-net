@@ -82,16 +82,39 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("AssertionEncryptionMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AssertionEncryptionMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PrivateKeyList/member", targetDepth))
+                    {
+                        var unmarshaller = SAMLPrivateKeyUnmarshaller.Instance;
+                        if (response.PrivateKeyList == null)
+                        {
+                            response.PrivateKeyList = new List<SAMLPrivateKey>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.PrivateKeyList.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SAMLMetadataDocument", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.SAMLMetadataDocument = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SAMLProviderUUID", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SAMLProviderUUID = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Tags/member", targetDepth))
@@ -127,7 +150,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

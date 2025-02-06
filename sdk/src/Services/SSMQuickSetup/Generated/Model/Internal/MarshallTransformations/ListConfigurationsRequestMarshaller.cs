@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listConfigurations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationDefinitionId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationDefinitionId())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationDefinitionId");
-                        context.Writer.Write(publicRequest.ConfigurationDefinitionId);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("Filters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetManagerArn())
-                    {
-                        context.Writer.WritePropertyName("ManagerArn");
-                        context.Writer.Write(publicRequest.ManagerArn);
-                    }
-
-                    if(publicRequest.IsSetMaxItems())
-                    {
-                        context.Writer.WritePropertyName("MaxItems");
-                        context.Writer.Write(publicRequest.MaxItems.Value);
-                    }
-
-                    if(publicRequest.IsSetStartingToken())
-                    {
-                        context.Writer.WritePropertyName("StartingToken");
-                        context.Writer.Write(publicRequest.StartingToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationDefinitionId");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationDefinitionId);
             }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManagerArn())
+            {
+                context.Writer.WritePropertyName("ManagerArn");
+                context.Writer.WriteStringValue(publicRequest.ManagerArn);
+            }
+
+            if(publicRequest.IsSetMaxItems())
+            {
+                context.Writer.WritePropertyName("MaxItems");
+                context.Writer.WriteNumberValue(publicRequest.MaxItems.Value);
+            }
+
+            if(publicRequest.IsSetStartingToken())
+            {
+                context.Writer.WritePropertyName("StartingToken");
+                context.Writer.WriteStringValue(publicRequest.StartingToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyStreamingDistributionsException operation
     /// </summary>  
-    public class TooManyStreamingDistributionsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyStreamingDistributionsException, XmlUnmarshallerContext>
+    public class TooManyStreamingDistributionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyStreamingDistributionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

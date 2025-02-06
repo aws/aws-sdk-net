@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvocationLogSource())
             {
                 context.Writer.WritePropertyName("invocationLogSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InvocationLogSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.InvocationLogSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequestMetadataFilters())
             {
                 context.Writer.WritePropertyName("requestMetadataFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RequestMetadataFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestMetadataFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUsePromptResponse())
             {
                 context.Writer.WritePropertyName("usePromptResponse");
-                context.Writer.Write(requestObject.UsePromptResponse.Value);
+                context.Writer.WriteBooleanValue(requestObject.UsePromptResponse.Value);
             }
 
         }

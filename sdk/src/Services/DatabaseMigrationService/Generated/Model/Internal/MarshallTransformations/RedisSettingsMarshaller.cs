@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthPassword())
             {
                 context.Writer.WritePropertyName("AuthPassword");
-                context.Writer.Write(requestObject.AuthPassword);
+                context.Writer.WriteStringValue(requestObject.AuthPassword);
             }
 
             if(requestObject.IsSetAuthType())
             {
                 context.Writer.WritePropertyName("AuthType");
-                context.Writer.Write(requestObject.AuthType);
+                context.Writer.WriteStringValue(requestObject.AuthType);
             }
 
             if(requestObject.IsSetAuthUserName())
             {
                 context.Writer.WritePropertyName("AuthUserName");
-                context.Writer.Write(requestObject.AuthUserName);
+                context.Writer.WriteStringValue(requestObject.AuthUserName);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetSslCaCertificateArn())
             {
                 context.Writer.WritePropertyName("SslCaCertificateArn");
-                context.Writer.Write(requestObject.SslCaCertificateArn);
+                context.Writer.WriteStringValue(requestObject.SslCaCertificateArn);
             }
 
             if(requestObject.IsSetSslSecurityProtocol())
             {
                 context.Writer.WritePropertyName("SslSecurityProtocol");
-                context.Writer.Write(requestObject.SslSecurityProtocol);
+                context.Writer.WriteStringValue(requestObject.SslSecurityProtocol);
             }
 
         }

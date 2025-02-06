@@ -59,6 +59,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAddPrivateKey())
+                {
+                    request.Parameters.Add("AddPrivateKey", StringUtils.FromString(publicRequest.AddPrivateKey));
+                }
+                if(publicRequest.IsSetAssertionEncryptionMode())
+                {
+                    request.Parameters.Add("AssertionEncryptionMode", StringUtils.FromString(publicRequest.AssertionEncryptionMode));
+                }
+                if(publicRequest.IsSetRemovePrivateKey())
+                {
+                    request.Parameters.Add("RemovePrivateKey", StringUtils.FromString(publicRequest.RemovePrivateKey));
+                }
                 if(publicRequest.IsSetSAMLMetadataDocument())
                 {
                     request.Parameters.Add("SAMLMetadataDocument", StringUtils.FromString(publicRequest.SAMLMetadataDocument));

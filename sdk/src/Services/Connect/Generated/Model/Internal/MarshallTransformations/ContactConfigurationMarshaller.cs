@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContactId())
             {
                 context.Writer.WritePropertyName("ContactId");
-                context.Writer.Write(requestObject.ContactId);
+                context.Writer.WriteStringValue(requestObject.ContactId);
             }
 
             if(requestObject.IsSetIncludeRawMessage())
             {
                 context.Writer.WritePropertyName("IncludeRawMessage");
-                context.Writer.Write(requestObject.IncludeRawMessage.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeRawMessage.Value);
             }
 
             if(requestObject.IsSetParticipantRole())
             {
                 context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.Write(requestObject.ParticipantRole);
+                context.Writer.WriteStringValue(requestObject.ParticipantRole);
             }
 
         }

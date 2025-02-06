@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("FirstExecutionFrom");
-                context.Writer.Write(requestObject.FirstExecutionFrom);
+                context.Writer.WriteStringValue(requestObject.FirstExecutionFrom);
             }
 
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("Object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WriteStringValue(requestObject.Object);
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SlackWorkspace Object
     /// </summary>  
-    public class SlackWorkspaceUnmarshaller : IUnmarshaller<SlackWorkspace, XmlUnmarshallerContext>, IUnmarshaller<SlackWorkspace, JsonUnmarshallerContext>
+    public class SlackWorkspaceUnmarshaller : IJsonUnmarshaller<SlackWorkspace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SlackWorkspace IUnmarshaller<SlackWorkspace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlackWorkspace Unmarshall(JsonUnmarshallerContext context)
+        public SlackWorkspace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SlackWorkspace unmarshalledObject = new SlackWorkspace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SlackTeamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlackTeamId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlackTeamId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SlackTeamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlackTeamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlackTeamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StateReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

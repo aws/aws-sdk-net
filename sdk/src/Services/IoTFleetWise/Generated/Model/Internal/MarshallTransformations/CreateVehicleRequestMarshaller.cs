@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -63,89 +66,94 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssociationBehavior())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssociationBehavior())
-                    {
-                        context.Writer.WritePropertyName("associationBehavior");
-                        context.Writer.Write(publicRequest.AssociationBehavior);
-                    }
-
-                    if(publicRequest.IsSetAttributes())
-                    {
-                        context.Writer.WritePropertyName("attributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                                context.Writer.Write(publicRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDecoderManifestArn())
-                    {
-                        context.Writer.WritePropertyName("decoderManifestArn");
-                        context.Writer.Write(publicRequest.DecoderManifestArn);
-                    }
-
-                    if(publicRequest.IsSetModelManifestArn())
-                    {
-                        context.Writer.WritePropertyName("modelManifestArn");
-                        context.Writer.Write(publicRequest.ModelManifestArn);
-                    }
-
-                    if(publicRequest.IsSetStateTemplates())
-                    {
-                        context.Writer.WritePropertyName("stateTemplates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStateTemplatesListValue in publicRequest.StateTemplates)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = StateTemplateAssociationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestStateTemplatesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVehicleName())
-                    {
-                        context.Writer.WritePropertyName("vehicleName");
-                        context.Writer.Write(publicRequest.VehicleName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("associationBehavior");
+                context.Writer.WriteStringValue(publicRequest.AssociationBehavior);
             }
+
+            if(publicRequest.IsSetAttributes())
+            {
+                context.Writer.WritePropertyName("attributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                    var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDecoderManifestArn())
+            {
+                context.Writer.WritePropertyName("decoderManifestArn");
+                context.Writer.WriteStringValue(publicRequest.DecoderManifestArn);
+            }
+
+            if(publicRequest.IsSetModelManifestArn())
+            {
+                context.Writer.WritePropertyName("modelManifestArn");
+                context.Writer.WriteStringValue(publicRequest.ModelManifestArn);
+            }
+
+            if(publicRequest.IsSetStateTemplates())
+            {
+                context.Writer.WritePropertyName("stateTemplates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStateTemplatesListValue in publicRequest.StateTemplates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StateTemplateAssociationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestStateTemplatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVehicleName())
+            {
+                context.Writer.WritePropertyName("vehicleName");
+                context.Writer.WriteStringValue(publicRequest.VehicleName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

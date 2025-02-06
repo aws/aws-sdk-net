@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceNotSupportedException operation
     /// </summary>  
-    public class ServiceNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceNotSupportedException, XmlUnmarshallerContext>
+    public class ServiceNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

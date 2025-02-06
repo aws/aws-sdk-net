@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAWSKMSKeyARN())
             {
                 context.Writer.WritePropertyName("AWSKMSKeyARN");
-                context.Writer.Write(requestObject.AWSKMSKeyARN);
+                context.Writer.WriteStringValue(requestObject.AWSKMSKeyARN);
             }
 
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetDestinationDataSharing())
             {
                 context.Writer.WritePropertyName("DestinationDataSharing");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceDataSyncDestinationDataSharingMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationDataSharing, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetSyncFormat())
             {
                 context.Writer.WritePropertyName("SyncFormat");
-                context.Writer.Write(requestObject.SyncFormat);
+                context.Writer.WriteStringValue(requestObject.SyncFormat);
             }
 
         }

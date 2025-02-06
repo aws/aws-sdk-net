@@ -60,8 +60,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementId. 
         /// <para>
-        ///  The unique identifier for the engagement within the AWS Partner Central system. This
-        /// ID is used for direct references to the engagement within the service. 
+        /// The unique identifier of the Engagement.
         /// </para>
         /// </summary>
         public string EngagementId
@@ -98,8 +97,21 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Represents the current status of the resource snapshot job. 
+        /// The current status of the snapshot job.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  STOPPED: The job is not currently running. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  RUNNING: The job is actively executing. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceSnapshotJobStatus Status
         {

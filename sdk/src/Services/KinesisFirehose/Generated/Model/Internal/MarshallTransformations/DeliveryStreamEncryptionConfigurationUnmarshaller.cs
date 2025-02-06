@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeliveryStreamEncryptionConfiguration Object
     /// </summary>  
-    public class DeliveryStreamEncryptionConfigurationUnmarshaller : IUnmarshaller<DeliveryStreamEncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DeliveryStreamEncryptionConfiguration, JsonUnmarshallerContext>
+    public class DeliveryStreamEncryptionConfigurationUnmarshaller : IJsonUnmarshaller<DeliveryStreamEncryptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeliveryStreamEncryptionConfiguration IUnmarshaller<DeliveryStreamEncryptionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeliveryStreamEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DeliveryStreamEncryptionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeliveryStreamEncryptionConfiguration unmarshalledObject = new DeliveryStreamEncryptionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FailureDescription", targetDepth))
                 {
                     var unmarshaller = FailureDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -47,9 +47,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  The <c>CreateEngagementRequest$Catalog</c> parameter specifies the catalog related
+        /// The <c>CreateEngagementRequest$Catalog</c> parameter specifies the catalog related
         /// to the engagement. Accepted values are <c>AWS</c> and <c>Sandbox</c>, which determine
-        /// the environment in which the engagement is managed. 
+        /// the environment in which the engagement is managed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,9 +68,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The <c>CreateEngagementRequest$ClientToken</c> parameter specifies a unique, case-sensitive
+        /// The <c>CreateEngagementRequest$ClientToken</c> parameter specifies a unique, case-sensitive
         /// identifier to ensure that the request is handled exactly once. The value must not
-        /// exceed sixty-four alphanumeric characters. 
+        /// exceed sixty-four alphanumeric characters.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -88,7 +88,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Contexts. 
         /// <para>
-        ///  The <c>Contexts</c> field is a required array of objects, with a maximum of 5 contexts
+        /// The <c>Contexts</c> field is a required array of objects, with a maximum of 5 contexts
         /// allowed, specifying detailed information about customer projects associated with the
         /// Engagement. Each context object contains a <c>Type</c> field indicating the context
         /// type, which must be <c>CustomerProject</c> in this version, and a <c>Payload</c> field
@@ -100,7 +100,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// offering insights into the specific project associated with the customer. This structure
         /// allows comprehensive context to be included within the Engagement, facilitating effective
         /// collaboration between parties by providing relevant customer and project information.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -119,7 +118,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Provides a description of the <c>Engagement</c>. 
+        /// Provides a description of the <c>Engagement</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=255)]
@@ -138,7 +137,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        ///  Specifies the title of the <c>Engagement</c>. 
+        /// Specifies the title of the <c>Engagement</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]

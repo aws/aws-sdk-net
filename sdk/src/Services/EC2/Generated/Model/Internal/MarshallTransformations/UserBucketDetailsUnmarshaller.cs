@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UserBucketDetails Object
     /// </summary>  
-    public class UserBucketDetailsUnmarshaller : IUnmarshaller<UserBucketDetails, XmlUnmarshallerContext>, IUnmarshaller<UserBucketDetails, JsonUnmarshallerContext>
+    public class UserBucketDetailsUnmarshaller : IXmlUnmarshaller<UserBucketDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public UserBucketDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static UserBucketDetailsUnmarshaller _instance = new UserBucketDetailsUnmarshaller();        
 

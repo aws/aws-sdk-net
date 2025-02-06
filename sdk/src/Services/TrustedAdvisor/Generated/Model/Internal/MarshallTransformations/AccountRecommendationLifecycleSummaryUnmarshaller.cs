@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AccountRecommendationLifecycleSummary Object
     /// </summary>  
-    public class AccountRecommendationLifecycleSummaryUnmarshaller : IUnmarshaller<AccountRecommendationLifecycleSummary, XmlUnmarshallerContext>, IUnmarshaller<AccountRecommendationLifecycleSummary, JsonUnmarshallerContext>
+    public class AccountRecommendationLifecycleSummaryUnmarshaller : IJsonUnmarshaller<AccountRecommendationLifecycleSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AccountRecommendationLifecycleSummary IUnmarshaller<AccountRecommendationLifecycleSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccountRecommendationLifecycleSummary Unmarshall(JsonUnmarshallerContext context)
+        public AccountRecommendationLifecycleSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AccountRecommendationLifecycleSummary unmarshalledObject = new AccountRecommendationLifecycleSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("accountRecommendationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountRecommendationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountRecommendationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lifecycleStage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LifecycleStage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LifecycleStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updatedOnBehalfOf", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedOnBehalfOf = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdatedOnBehalfOf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updatedOnBehalfOfJobTitle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedOnBehalfOfJobTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdatedOnBehalfOfJobTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdateReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateReasonCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdateReasonCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateReasonCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheSubnetGroupInUseException operation
     /// </summary>  
-    public class CacheSubnetGroupInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<CacheSubnetGroupInUseException, XmlUnmarshallerContext>
+    public class CacheSubnetGroupInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CacheSubnetGroupInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

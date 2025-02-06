@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArrayValue())
             {
                 context.Writer.WritePropertyName("arrayValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArrayValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArrayValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBlobValue())
             {
                 context.Writer.WritePropertyName("blobValue");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.BlobValue));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BlobValue));
             }
 
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
@@ -76,30 +74,30 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("doubleValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetIsNull())
             {
                 context.Writer.WritePropertyName("isNull");
-                context.Writer.Write(requestObject.IsNull.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsNull.Value);
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue.Value);
+                context.Writer.WriteNumberValue(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

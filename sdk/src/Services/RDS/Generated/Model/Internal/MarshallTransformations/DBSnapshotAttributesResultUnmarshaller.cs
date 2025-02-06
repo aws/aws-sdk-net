@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSnapshotAttributesResult Object
     /// </summary>  
-    public class DBSnapshotAttributesResultUnmarshaller : IUnmarshaller<DBSnapshotAttributesResult, XmlUnmarshallerContext>, IUnmarshaller<DBSnapshotAttributesResult, JsonUnmarshallerContext>
+    public class DBSnapshotAttributesResultUnmarshaller : IXmlUnmarshaller<DBSnapshotAttributesResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBSnapshotAttributesResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBSnapshotAttributesResultUnmarshaller _instance = new DBSnapshotAttributesResultUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLocationRegistrationExcludeS3Locations())
             {
                 context.Writer.WritePropertyName("locationRegistrationExcludeS3Locations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLocationRegistrationExcludeS3LocationsListValue in requestObject.LocationRegistrationExcludeS3Locations)
                 {
-                        context.Writer.Write(requestObjectLocationRegistrationExcludeS3LocationsListValue);
+                        context.Writer.WriteStringValue(requestObjectLocationRegistrationExcludeS3LocationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLocationRegistrationRole())
             {
                 context.Writer.WritePropertyName("locationRegistrationRole");
-                context.Writer.Write(requestObject.LocationRegistrationRole);
+                context.Writer.WriteStringValue(requestObject.LocationRegistrationRole);
             }
 
         }

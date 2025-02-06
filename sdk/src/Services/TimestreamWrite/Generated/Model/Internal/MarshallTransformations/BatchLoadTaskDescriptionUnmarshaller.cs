@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchLoadTaskDescription Object
     /// </summary>  
-    public class BatchLoadTaskDescriptionUnmarshaller : IUnmarshaller<BatchLoadTaskDescription, XmlUnmarshallerContext>, IUnmarshaller<BatchLoadTaskDescription, JsonUnmarshallerContext>
+    public class BatchLoadTaskDescriptionUnmarshaller : IJsonUnmarshaller<BatchLoadTaskDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchLoadTaskDescription IUnmarshaller<BatchLoadTaskDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchLoadTaskDescription Unmarshall(JsonUnmarshallerContext context)
+        public BatchLoadTaskDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchLoadTaskDescription unmarshalledObject = new BatchLoadTaskDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataModelConfiguration", targetDepth))
                 {
                     var unmarshaller = DataModelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataModelConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSourceConfiguration", targetDepth))
                 {
                     var unmarshaller = DataSourceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgressReport", targetDepth))
                 {
                     var unmarshaller = BatchLoadProgressReportUnmarshaller.Instance;
-                    unmarshalledObject.ProgressReport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordVersion", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReportConfiguration", targetDepth))
                 {
                     var unmarshaller = ReportConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ReportConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReportConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResumableUntil", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ResumableUntil = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResumableUntil = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetDatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetDatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetDatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetTableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetTableName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetTableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TaskStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

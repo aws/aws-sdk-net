@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConflictingDomainExistsException operation
     /// </summary>  
-    public class ConflictingDomainExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictingDomainExistsException, XmlUnmarshallerContext>
+    public class ConflictingDomainExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConflictingDomainExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

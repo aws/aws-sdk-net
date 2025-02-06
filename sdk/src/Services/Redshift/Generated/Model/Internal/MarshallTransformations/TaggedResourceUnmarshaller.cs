@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TaggedResource Object
     /// </summary>  
-    public class TaggedResourceUnmarshaller : IUnmarshaller<TaggedResource, XmlUnmarshallerContext>, IUnmarshaller<TaggedResource, JsonUnmarshallerContext>
+    public class TaggedResourceUnmarshaller : IXmlUnmarshaller<TaggedResource, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TaggedResource Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TaggedResourceUnmarshaller _instance = new TaggedResourceUnmarshaller();        
 

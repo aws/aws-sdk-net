@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketArn())
             {
                 context.Writer.WritePropertyName("BucketArn");
-                context.Writer.Write(requestObject.BucketArn);
+                context.Writer.WriteStringValue(requestObject.BucketArn);
             }
 
             if(requestObject.IsSetKeyRange())
             {
                 context.Writer.WritePropertyName("KeyRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetOnDeviceServices())
             {
                 context.Writer.WritePropertyName("TargetOnDeviceServices");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetOnDeviceServicesListValue in requestObject.TargetOnDeviceServices)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetOnDeviceServiceMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetOnDeviceServicesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

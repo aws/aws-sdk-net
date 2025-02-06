@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyHealthChecksException operation
     /// </summary>  
-    public class TooManyHealthChecksExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyHealthChecksException, XmlUnmarshallerContext>
+    public class TooManyHealthChecksExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyHealthChecksException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

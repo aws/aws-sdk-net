@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SubDomain Object
     /// </summary>  
-    public class SubDomainUnmarshaller : IUnmarshaller<SubDomain, XmlUnmarshallerContext>, IUnmarshaller<SubDomain, JsonUnmarshallerContext>
+    public class SubDomainUnmarshaller : IJsonUnmarshaller<SubDomain, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SubDomain IUnmarshaller<SubDomain, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubDomain Unmarshall(JsonUnmarshallerContext context)
+        public SubDomain Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SubDomain unmarshalledObject = new SubDomain();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dnsRecord", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsRecord = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsRecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("subDomainSetting", targetDepth))
                 {
                     var unmarshaller = SubDomainSettingUnmarshaller.Instance;
-                    unmarshalledObject.SubDomainSetting = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubDomainSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("verified", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Verified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Verified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

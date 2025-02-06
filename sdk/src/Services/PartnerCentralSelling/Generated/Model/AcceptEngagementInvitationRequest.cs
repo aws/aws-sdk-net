@@ -43,9 +43,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  The <c>CatalogType</c> parameter specifies the catalog associated with the engagement
+        /// The <c>CatalogType</c> parameter specifies the catalog associated with the engagement
         /// invitation. Accepted values are <c>AWS</c> and <c>Sandbox</c>, which determine the
-        /// environment in which the engagement invitation is managed. 
+        /// environment in which the engagement invitation is managed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

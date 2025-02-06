@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppImageConfigName())
             {
                 context.Writer.WritePropertyName("AppImageConfigName");
-                context.Writer.Write(requestObject.AppImageConfigName);
+                context.Writer.WriteStringValue(requestObject.AppImageConfigName);
             }
 
             if(requestObject.IsSetImageName())
             {
                 context.Writer.WritePropertyName("ImageName");
-                context.Writer.Write(requestObject.ImageName);
+                context.Writer.WriteStringValue(requestObject.ImageName);
             }
 
             if(requestObject.IsSetImageVersionNumber())
             {
                 context.Writer.WritePropertyName("ImageVersionNumber");
-                context.Writer.Write(requestObject.ImageVersionNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.ImageVersionNumber.Value);
             }
 
         }

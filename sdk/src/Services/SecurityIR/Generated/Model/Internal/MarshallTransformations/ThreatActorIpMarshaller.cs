@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("ipAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetUserAgent())
             {
                 context.Writer.WritePropertyName("userAgent");
-                context.Writer.Write(requestObject.UserAgent);
+                context.Writer.WriteStringValue(requestObject.UserAgent);
             }
 
         }

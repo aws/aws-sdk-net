@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetComponentPath())
             {
                 context.Writer.WritePropertyName("componentPath");
-                context.Writer.Write(requestObject.ComponentPath);
+                context.Writer.WriteStringValue(requestObject.ComponentPath);
             }
 
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("entityId");
-                context.Writer.Write(requestObject.EntityId);
+                context.Writer.WriteStringValue(requestObject.EntityId);
             }
 
             if(requestObject.IsSetExternalIdProperty())
             {
                 context.Writer.WritePropertyName("externalIdProperty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExternalIdPropertyKvp in requestObject.ExternalIdProperty)
                 {
                     context.Writer.WritePropertyName(requestObjectExternalIdPropertyKvp.Key);
                     var requestObjectExternalIdPropertyValue = requestObjectExternalIdPropertyKvp.Value;
 
-                        context.Writer.Write(requestObjectExternalIdPropertyValue);
+                        context.Writer.WriteStringValue(requestObjectExternalIdPropertyValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPropertyName())
             {
                 context.Writer.WritePropertyName("propertyName");
-                context.Writer.Write(requestObject.PropertyName);
+                context.Writer.WriteStringValue(requestObject.PropertyName);
             }
 
         }

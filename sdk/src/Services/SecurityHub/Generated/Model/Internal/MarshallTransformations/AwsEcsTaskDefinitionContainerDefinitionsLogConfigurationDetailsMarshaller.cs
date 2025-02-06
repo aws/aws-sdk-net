@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogDriver())
             {
                 context.Writer.WritePropertyName("LogDriver");
-                context.Writer.Write(requestObject.LogDriver);
+                context.Writer.WriteStringValue(requestObject.LogDriver);
             }
 
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectOptionsKvp in requestObject.Options)
                 {
                     context.Writer.WritePropertyName(requestObjectOptionsKvp.Key);
                     var requestObjectOptionsValue = requestObjectOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretOptions())
             {
                 context.Writer.WritePropertyName("SecretOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecretOptionsListValue in requestObject.SecretOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecretOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchJobName())
             {
                 context.Writer.WritePropertyName("batchJobName");
-                context.Writer.Write(requestObject.BatchJobName);
+                context.Writer.WriteStringValue(requestObject.BatchJobName);
             }
 
             if(requestObject.IsSetBatchJobParameters())
             {
                 context.Writer.WritePropertyName("batchJobParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBatchJobParametersKvp in requestObject.BatchJobParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectBatchJobParametersKvp.Key);
                     var requestObjectBatchJobParametersValue = requestObjectBatchJobParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectBatchJobParametersValue);
+                        context.Writer.WriteStringValue(requestObjectBatchJobParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportDataSetNames())
             {
                 context.Writer.WritePropertyName("exportDataSetNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExportDataSetNamesListValue in requestObject.ExportDataSetNames)
                 {
-                        context.Writer.Write(requestObjectExportDataSetNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectExportDataSetNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

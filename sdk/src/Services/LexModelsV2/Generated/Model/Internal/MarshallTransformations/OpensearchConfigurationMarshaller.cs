@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainEndpoint())
             {
                 context.Writer.WritePropertyName("domainEndpoint");
-                context.Writer.Write(requestObject.DomainEndpoint);
+                context.Writer.WriteStringValue(requestObject.DomainEndpoint);
             }
 
             if(requestObject.IsSetExactResponse())
             {
                 context.Writer.WritePropertyName("exactResponse");
-                context.Writer.Write(requestObject.ExactResponse.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExactResponse.Value);
             }
 
             if(requestObject.IsSetExactResponseFields())
             {
                 context.Writer.WritePropertyName("exactResponseFields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExactResponseFieldsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExactResponseFields, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeFields())
             {
                 context.Writer.WritePropertyName("includeFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeFieldsListValue in requestObject.IncludeFields)
                 {
-                        context.Writer.Write(requestObjectIncludeFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("indexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WriteStringValue(requestObject.IndexName);
             }
 
         }

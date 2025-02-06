@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalModelRequestFields())
             {
                 context.Writer.WritePropertyName("additionalModelRequestFields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalModelRequestFieldsKvp in requestObject.AdditionalModelRequestFields)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalModelRequestFieldsKvp.Key);
@@ -59,40 +57,40 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
                     Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectAdditionalModelRequestFieldsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGuardrailConfiguration())
             {
                 context.Writer.WritePropertyName("guardrailConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GuardrailConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GuardrailConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKbInferenceConfig())
             {
                 context.Writer.WritePropertyName("kbInferenceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KbInferenceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KbInferenceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPromptTemplate())
             {
                 context.Writer.WritePropertyName("promptTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptTemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.PromptTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

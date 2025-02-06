@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEc2())
             {
                 context.Writer.WritePropertyName("ec2");
-                context.Writer.Write(requestObject.Ec2.Value);
+                context.Writer.WriteBooleanValue(requestObject.Ec2.Value);
             }
 
             if(requestObject.IsSetEcr())
             {
                 context.Writer.WritePropertyName("ecr");
-                context.Writer.Write(requestObject.Ecr.Value);
+                context.Writer.WriteBooleanValue(requestObject.Ecr.Value);
             }
 
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");
-                context.Writer.Write(requestObject.Lambda.Value);
+                context.Writer.WriteBooleanValue(requestObject.Lambda.Value);
             }
 
             if(requestObject.IsSetLambdaCode())
             {
                 context.Writer.WritePropertyName("lambdaCode");
-                context.Writer.Write(requestObject.LambdaCode.Value);
+                context.Writer.WriteBooleanValue(requestObject.LambdaCode.Value);
             }
 
         }

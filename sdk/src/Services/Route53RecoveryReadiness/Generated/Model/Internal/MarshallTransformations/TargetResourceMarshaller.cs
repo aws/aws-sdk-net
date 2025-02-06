@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNLBResource())
             {
                 context.Writer.WritePropertyName("nLBResource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NLBResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.NLBResource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetR53Resource())
             {
                 context.Writer.WritePropertyName("r53Resource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = R53ResourceRecordMarshaller.Instance;
                 marshaller.Marshall(requestObject.R53Resource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

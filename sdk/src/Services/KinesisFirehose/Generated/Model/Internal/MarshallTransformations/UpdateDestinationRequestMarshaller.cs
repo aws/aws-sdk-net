@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -63,147 +66,152 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAmazonOpenSearchServerlessDestinationUpdate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAmazonOpenSearchServerlessDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("AmazonOpenSearchServerlessDestinationUpdate");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AmazonOpenSearchServerlessDestinationUpdate");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AmazonOpenSearchServerlessDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AmazonOpenSearchServerlessDestinationUpdate, context);
+                var marshaller = AmazonOpenSearchServerlessDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AmazonOpenSearchServerlessDestinationUpdate, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAmazonopensearchserviceDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("AmazonopensearchserviceDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AmazonopensearchserviceDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AmazonopensearchserviceDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCurrentDeliveryStreamVersionId())
-                    {
-                        context.Writer.WritePropertyName("CurrentDeliveryStreamVersionId");
-                        context.Writer.Write(publicRequest.CurrentDeliveryStreamVersionId);
-                    }
-
-                    if(publicRequest.IsSetDeliveryStreamName())
-                    {
-                        context.Writer.WritePropertyName("DeliveryStreamName");
-                        context.Writer.Write(publicRequest.DeliveryStreamName);
-                    }
-
-                    if(publicRequest.IsSetDestinationId())
-                    {
-                        context.Writer.WritePropertyName("DestinationId");
-                        context.Writer.Write(publicRequest.DestinationId);
-                    }
-
-                    if(publicRequest.IsSetElasticsearchDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("ElasticsearchDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ElasticsearchDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ElasticsearchDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExtendedS3DestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("ExtendedS3DestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExtendedS3DestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExtendedS3DestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHttpEndpointDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("HttpEndpointDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HttpEndpointDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HttpEndpointDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIcebergDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("IcebergDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = IcebergDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IcebergDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRedshiftDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("RedshiftDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RedshiftDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RedshiftDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetS3DestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("S3DestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3DestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3DestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSnowflakeDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("SnowflakeDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SnowflakeDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SnowflakeDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSplunkDestinationUpdate())
-                    {
-                        context.Writer.WritePropertyName("SplunkDestinationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SplunkDestinationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SplunkDestinationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAmazonopensearchserviceDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("AmazonopensearchserviceDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmazonopensearchserviceDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AmazonopensearchserviceDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCurrentDeliveryStreamVersionId())
+            {
+                context.Writer.WritePropertyName("CurrentDeliveryStreamVersionId");
+                context.Writer.WriteStringValue(publicRequest.CurrentDeliveryStreamVersionId);
+            }
+
+            if(publicRequest.IsSetDeliveryStreamName())
+            {
+                context.Writer.WritePropertyName("DeliveryStreamName");
+                context.Writer.WriteStringValue(publicRequest.DeliveryStreamName);
+            }
+
+            if(publicRequest.IsSetDestinationId())
+            {
+                context.Writer.WritePropertyName("DestinationId");
+                context.Writer.WriteStringValue(publicRequest.DestinationId);
+            }
+
+            if(publicRequest.IsSetElasticsearchDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("ElasticsearchDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ElasticsearchDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ElasticsearchDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExtendedS3DestinationUpdate())
+            {
+                context.Writer.WritePropertyName("ExtendedS3DestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExtendedS3DestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExtendedS3DestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHttpEndpointDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("HttpEndpointDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HttpEndpointDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HttpEndpointDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIcebergDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("IcebergDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IcebergDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IcebergDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRedshiftDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("RedshiftDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RedshiftDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RedshiftDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetS3DestinationUpdate())
+            {
+                context.Writer.WritePropertyName("S3DestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3DestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3DestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSnowflakeDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("SnowflakeDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SnowflakeDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SnowflakeDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSplunkDestinationUpdate())
+            {
+                context.Writer.WritePropertyName("SplunkDestinationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SplunkDestinationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SplunkDestinationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

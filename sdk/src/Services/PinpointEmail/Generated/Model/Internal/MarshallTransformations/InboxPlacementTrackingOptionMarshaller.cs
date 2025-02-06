@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobal())
             {
                 context.Writer.WritePropertyName("Global");
-                context.Writer.Write(requestObject.Global.Value);
+                context.Writer.WriteBooleanValue(requestObject.Global.Value);
             }
 
             if(requestObject.IsSetTrackedIsps())
             {
                 context.Writer.WritePropertyName("TrackedIsps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTrackedIspsListValue in requestObject.TrackedIsps)
                 {
-                        context.Writer.Write(requestObjectTrackedIspsListValue);
+                        context.Writer.WriteStringValue(requestObjectTrackedIspsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

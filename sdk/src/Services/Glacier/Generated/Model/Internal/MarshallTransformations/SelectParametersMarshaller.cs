@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetExpressionType())
             {
                 context.Writer.WritePropertyName("ExpressionType");
-                context.Writer.Write(requestObject.ExpressionType);
+                context.Writer.WriteStringValue(requestObject.ExpressionType);
             }
 
             if(requestObject.IsSetInputSerialization())
             {
                 context.Writer.WritePropertyName("InputSerialization");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputSerializationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputSerialization, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputSerialization())
             {
                 context.Writer.WritePropertyName("OutputSerialization");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputSerializationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputSerialization, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

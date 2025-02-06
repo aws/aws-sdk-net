@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FleetAdvisorSchemaObjectResponse Object
     /// </summary>  
-    public class FleetAdvisorSchemaObjectResponseUnmarshaller : IUnmarshaller<FleetAdvisorSchemaObjectResponse, XmlUnmarshallerContext>, IUnmarshaller<FleetAdvisorSchemaObjectResponse, JsonUnmarshallerContext>
+    public class FleetAdvisorSchemaObjectResponseUnmarshaller : IJsonUnmarshaller<FleetAdvisorSchemaObjectResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FleetAdvisorSchemaObjectResponse IUnmarshaller<FleetAdvisorSchemaObjectResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FleetAdvisorSchemaObjectResponse Unmarshall(JsonUnmarshallerContext context)
+        public FleetAdvisorSchemaObjectResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FleetAdvisorSchemaObjectResponse unmarshalledObject = new FleetAdvisorSchemaObjectResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CodeLineCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CodeLineCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeLineCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CodeSize", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfObjects", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfObjects = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfObjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ObjectType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SchemaId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SchemaId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

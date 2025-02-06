@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -61,53 +64,58 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/orders";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetLineItems())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("LineItems");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLineItemsListValue in publicRequest.LineItems)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetLineItems())
-                    {
-                        context.Writer.WritePropertyName("LineItems");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLineItemsListValue in publicRequest.LineItems)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = LineItemRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLineItemsListValue, context);
+                    var marshaller = LineItemRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLineItemsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutpostIdentifier())
-                    {
-                        context.Writer.WritePropertyName("OutpostIdentifier");
-                        context.Writer.Write(publicRequest.OutpostIdentifier);
-                    }
-
-                    if(publicRequest.IsSetPaymentOption())
-                    {
-                        context.Writer.WritePropertyName("PaymentOption");
-                        context.Writer.Write(publicRequest.PaymentOption);
-                    }
-
-                    if(publicRequest.IsSetPaymentTerm())
-                    {
-                        context.Writer.WritePropertyName("PaymentTerm");
-                        context.Writer.Write(publicRequest.PaymentTerm);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetOutpostIdentifier())
+            {
+                context.Writer.WritePropertyName("OutpostIdentifier");
+                context.Writer.WriteStringValue(publicRequest.OutpostIdentifier);
+            }
+
+            if(publicRequest.IsSetPaymentOption())
+            {
+                context.Writer.WritePropertyName("PaymentOption");
+                context.Writer.WriteStringValue(publicRequest.PaymentOption);
+            }
+
+            if(publicRequest.IsSetPaymentTerm())
+            {
+                context.Writer.WritePropertyName("PaymentTerm");
+                context.Writer.WriteStringValue(publicRequest.PaymentTerm);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

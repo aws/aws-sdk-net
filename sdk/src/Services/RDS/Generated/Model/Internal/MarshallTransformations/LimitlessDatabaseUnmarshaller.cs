@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LimitlessDatabase Object
     /// </summary>  
-    public class LimitlessDatabaseUnmarshaller : IUnmarshaller<LimitlessDatabase, XmlUnmarshallerContext>, IUnmarshaller<LimitlessDatabase, JsonUnmarshallerContext>
+    public class LimitlessDatabaseUnmarshaller : IXmlUnmarshaller<LimitlessDatabase, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LimitlessDatabase Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LimitlessDatabaseUnmarshaller _instance = new LimitlessDatabaseUnmarshaller();        
 

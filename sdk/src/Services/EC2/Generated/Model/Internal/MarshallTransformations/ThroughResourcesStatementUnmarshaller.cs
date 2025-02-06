@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ThroughResourcesStatement Object
     /// </summary>  
-    public class ThroughResourcesStatementUnmarshaller : IUnmarshaller<ThroughResourcesStatement, XmlUnmarshallerContext>, IUnmarshaller<ThroughResourcesStatement, JsonUnmarshallerContext>
+    public class ThroughResourcesStatementUnmarshaller : IXmlUnmarshaller<ThroughResourcesStatement, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ThroughResourcesStatement Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ThroughResourcesStatementUnmarshaller _instance = new ThroughResourcesStatementUnmarshaller();        
 

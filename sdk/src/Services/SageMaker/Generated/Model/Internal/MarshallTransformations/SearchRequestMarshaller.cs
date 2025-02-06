@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,82 +66,87 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCrossAccountFilterOption())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCrossAccountFilterOption())
-                    {
-                        context.Writer.WritePropertyName("CrossAccountFilterOption");
-                        context.Writer.Write(publicRequest.CrossAccountFilterOption);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetResource())
-                    {
-                        context.Writer.WritePropertyName("Resource");
-                        context.Writer.Write(publicRequest.Resource);
-                    }
-
-                    if(publicRequest.IsSetSearchExpression())
-                    {
-                        context.Writer.WritePropertyName("SearchExpression");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SearchExpressionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SearchExpression, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("SortBy");
-                        context.Writer.Write(publicRequest.SortBy);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("SortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    if(publicRequest.IsSetVisibilityConditions())
-                    {
-                        context.Writer.WritePropertyName("VisibilityConditions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestVisibilityConditionsListValue in publicRequest.VisibilityConditions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = VisibilityConditionsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestVisibilityConditionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CrossAccountFilterOption");
+                context.Writer.WriteStringValue(publicRequest.CrossAccountFilterOption);
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetResource())
+            {
+                context.Writer.WritePropertyName("Resource");
+                context.Writer.WriteStringValue(publicRequest.Resource);
+            }
+
+            if(publicRequest.IsSetSearchExpression())
+            {
+                context.Writer.WritePropertyName("SearchExpression");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SearchExpressionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SearchExpression, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("SortBy");
+                context.Writer.WriteStringValue(publicRequest.SortBy);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("SortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            if(publicRequest.IsSetVisibilityConditions())
+            {
+                context.Writer.WritePropertyName("VisibilityConditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVisibilityConditionsListValue in publicRequest.VisibilityConditions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VisibilityConditionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVisibilityConditionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

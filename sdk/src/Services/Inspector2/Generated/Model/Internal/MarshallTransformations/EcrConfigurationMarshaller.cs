@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPullDateRescanDuration())
             {
                 context.Writer.WritePropertyName("pullDateRescanDuration");
-                context.Writer.Write(requestObject.PullDateRescanDuration);
+                context.Writer.WriteStringValue(requestObject.PullDateRescanDuration);
             }
 
             if(requestObject.IsSetRescanDuration())
             {
                 context.Writer.WritePropertyName("rescanDuration");
-                context.Writer.Write(requestObject.RescanDuration);
+                context.Writer.WriteStringValue(requestObject.RescanDuration);
             }
 
         }

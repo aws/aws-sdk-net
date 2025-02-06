@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrganizationalUnits())
             {
                 context.Writer.WritePropertyName("OrganizationalUnits");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrganizationalUnitsListValue in requestObject.OrganizationalUnits)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ResourceDataSyncOrganizationalUnitMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrganizationalUnitsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOrganizationSourceType())
             {
                 context.Writer.WritePropertyName("OrganizationSourceType");
-                context.Writer.Write(requestObject.OrganizationSourceType);
+                context.Writer.WriteStringValue(requestObject.OrganizationSourceType);
             }
 
         }

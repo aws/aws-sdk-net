@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetTableLocation())
             {
                 context.Writer.WritePropertyName("TableLocation");
-                context.Writer.Write(requestObject.TableLocation);
+                context.Writer.WriteStringValue(requestObject.TableLocation);
             }
 
             if(requestObject.IsSetUpsertKeys())
             {
                 context.Writer.WritePropertyName("UpsertKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUpsertKeysListValue in requestObject.UpsertKeys)
                 {
-                        context.Writer.Write(requestObjectUpsertKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectUpsertKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

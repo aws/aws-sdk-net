@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsKmsEncryptionContext())
             {
                 context.Writer.WritePropertyName("AwsKmsEncryptionContext");
-                context.Writer.Write(requestObject.AwsKmsEncryptionContext);
+                context.Writer.WriteStringValue(requestObject.AwsKmsEncryptionContext);
             }
 
             if(requestObject.IsSetAwsKmsKeyId())
             {
                 context.Writer.WritePropertyName("AwsKmsKeyId");
-                context.Writer.Write(requestObject.AwsKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.AwsKmsKeyId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioHlsRenditionSelection())
             {
                 context.Writer.WritePropertyName("audioHlsRenditionSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioHlsRenditionSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioHlsRenditionSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioLanguageSelection())
             {
                 context.Writer.WritePropertyName("audioLanguageSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioLanguageSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioLanguageSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioPidSelection())
             {
                 context.Writer.WritePropertyName("audioPidSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioPidSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioPidSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioTrackSelection())
             {
                 context.Writer.WritePropertyName("audioTrackSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioTrackSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioTrackSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

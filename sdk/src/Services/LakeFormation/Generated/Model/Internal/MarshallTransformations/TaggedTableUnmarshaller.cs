@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaggedTable Object
     /// </summary>  
-    public class TaggedTableUnmarshaller : IUnmarshaller<TaggedTable, XmlUnmarshallerContext>, IUnmarshaller<TaggedTable, JsonUnmarshallerContext>
+    public class TaggedTableUnmarshaller : IJsonUnmarshaller<TaggedTable, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaggedTable IUnmarshaller<TaggedTable, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaggedTable Unmarshall(JsonUnmarshallerContext context)
+        public TaggedTable Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaggedTable unmarshalledObject = new TaggedTable();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LFTagOnDatabase", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
-                    unmarshalledObject.LFTagOnDatabase = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
+                    unmarshalledObject.LFTagOnDatabase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LFTagsOnColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnLFTag, ColumnLFTagUnmarshaller>(ColumnLFTagUnmarshaller.Instance);
-                    unmarshalledObject.LFTagsOnColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnLFTag, ColumnLFTagUnmarshaller>(ColumnLFTagUnmarshaller.Instance);
+                    unmarshalledObject.LFTagsOnColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LFTagsOnTable", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
-                    unmarshalledObject.LFTagsOnTable = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
+                    unmarshalledObject.LFTagsOnTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = TableResourceUnmarshaller.Instance;
-                    unmarshalledObject.Table = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

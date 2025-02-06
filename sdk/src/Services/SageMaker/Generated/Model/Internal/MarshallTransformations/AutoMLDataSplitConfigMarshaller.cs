@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ValidationFraction");
                 if(StringUtils.IsSpecialFloatValue(requestObject.ValidationFraction.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ValidationFraction.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.ValidationFraction.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ValidationFraction.Value);
+                    context.Writer.WriteNumberValue(requestObject.ValidationFraction.Value);
                 }
             }
 

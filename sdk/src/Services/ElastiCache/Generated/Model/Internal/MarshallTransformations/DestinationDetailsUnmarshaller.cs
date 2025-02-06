@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DestinationDetails Object
     /// </summary>  
-    public class DestinationDetailsUnmarshaller : IUnmarshaller<DestinationDetails, XmlUnmarshallerContext>, IUnmarshaller<DestinationDetails, JsonUnmarshallerContext>
+    public class DestinationDetailsUnmarshaller : IXmlUnmarshaller<DestinationDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DestinationDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DestinationDetailsUnmarshaller _instance = new DestinationDetailsUnmarshaller();        
 

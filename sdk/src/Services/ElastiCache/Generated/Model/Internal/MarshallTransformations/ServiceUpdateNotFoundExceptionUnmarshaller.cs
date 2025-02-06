@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceUpdateNotFoundException operation
     /// </summary>  
-    public class ServiceUpdateNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceUpdateNotFoundException, XmlUnmarshallerContext>
+    public class ServiceUpdateNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceUpdateNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

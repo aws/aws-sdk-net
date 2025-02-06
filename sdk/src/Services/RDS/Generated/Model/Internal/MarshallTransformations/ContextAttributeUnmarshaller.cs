@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContextAttribute Object
     /// </summary>  
-    public class ContextAttributeUnmarshaller : IUnmarshaller<ContextAttribute, XmlUnmarshallerContext>, IUnmarshaller<ContextAttribute, JsonUnmarshallerContext>
+    public class ContextAttributeUnmarshaller : IXmlUnmarshaller<ContextAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ContextAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ContextAttributeUnmarshaller _instance = new ContextAttributeUnmarshaller();        
 

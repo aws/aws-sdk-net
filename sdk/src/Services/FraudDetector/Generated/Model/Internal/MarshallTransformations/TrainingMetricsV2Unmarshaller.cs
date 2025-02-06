@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrainingMetricsV2 Object
     /// </summary>  
-    public class TrainingMetricsV2Unmarshaller : IUnmarshaller<TrainingMetricsV2, XmlUnmarshallerContext>, IUnmarshaller<TrainingMetricsV2, JsonUnmarshallerContext>
+    public class TrainingMetricsV2Unmarshaller : IJsonUnmarshaller<TrainingMetricsV2, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrainingMetricsV2 IUnmarshaller<TrainingMetricsV2, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrainingMetricsV2 Unmarshall(JsonUnmarshallerContext context)
+        public TrainingMetricsV2 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrainingMetricsV2 unmarshalledObject = new TrainingMetricsV2();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ati", targetDepth))
                 {
                     var unmarshaller = ATITrainingMetricsValueUnmarshaller.Instance;
-                    unmarshalledObject.Ati = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ati = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ofi", targetDepth))
                 {
                     var unmarshaller = OFITrainingMetricsValueUnmarshaller.Instance;
-                    unmarshalledObject.Ofi = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ofi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tfi", targetDepth))
                 {
                     var unmarshaller = TFITrainingMetricsValueUnmarshaller.Instance;
-                    unmarshalledObject.Tfi = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tfi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

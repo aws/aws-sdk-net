@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlIssue())
             {
                 context.Writer.WritePropertyName("CrawlIssue");
-                context.Writer.Write(requestObject.CrawlIssue.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlIssue.Value);
             }
 
             if(requestObject.IsSetCrawlIssueComment())
             {
                 context.Writer.WritePropertyName("CrawlIssueComment");
-                context.Writer.Write(requestObject.CrawlIssueComment.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlIssueComment.Value);
             }
 
             if(requestObject.IsSetCrawlIssueCommentAttachment())
             {
                 context.Writer.WritePropertyName("CrawlIssueCommentAttachment");
-                context.Writer.Write(requestObject.CrawlIssueCommentAttachment.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlIssueCommentAttachment.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequest())
             {
                 context.Writer.WritePropertyName("CrawlPullRequest");
-                context.Writer.Write(requestObject.CrawlPullRequest.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlPullRequest.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequestComment())
             {
                 context.Writer.WritePropertyName("CrawlPullRequestComment");
-                context.Writer.Write(requestObject.CrawlPullRequestComment.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlPullRequestComment.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequestCommentAttachment())
             {
                 context.Writer.WritePropertyName("CrawlPullRequestCommentAttachment");
-                context.Writer.Write(requestObject.CrawlPullRequestCommentAttachment.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlPullRequestCommentAttachment.Value);
             }
 
             if(requestObject.IsSetCrawlRepositoryDocuments())
             {
                 context.Writer.WritePropertyName("CrawlRepositoryDocuments");
-                context.Writer.Write(requestObject.CrawlRepositoryDocuments.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlRepositoryDocuments.Value);
             }
 
         }

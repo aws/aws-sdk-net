@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTaxDocumentAccessToken())
             {
                 context.Writer.WritePropertyName("taxDocumentAccessToken");
-                context.Writer.Write(requestObject.TaxDocumentAccessToken);
+                context.Writer.WriteStringValue(requestObject.TaxDocumentAccessToken);
             }
 
             if(requestObject.IsSetTaxDocumentName())
             {
                 context.Writer.WritePropertyName("taxDocumentName");
-                context.Writer.Write(requestObject.TaxDocumentName);
+                context.Writer.WriteStringValue(requestObject.TaxDocumentName);
             }
 
         }

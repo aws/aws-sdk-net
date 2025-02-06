@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -67,53 +70,58 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 throw new AmazonEntityResolutionException("Request object does not have required field StatementId set");
             request.AddPathResource("{statementId}", StringUtils.FromString(publicRequest.StatementId));
             request.ResourcePath = "/policies/{arn}/{statementId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("action");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionListValue in publicRequest.Action)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("action");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionListValue in publicRequest.Action)
-                        {
-                                context.Writer.Write(publicRequestActionListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCondition())
-                    {
-                        context.Writer.WritePropertyName("condition");
-                        context.Writer.Write(publicRequest.Condition);
-                    }
-
-                    if(publicRequest.IsSetEffect())
-                    {
-                        context.Writer.WritePropertyName("effect");
-                        context.Writer.Write(publicRequest.Effect);
-                    }
-
-                    if(publicRequest.IsSetPrincipal())
-                    {
-                        context.Writer.WritePropertyName("principal");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
-                        {
-                                context.Writer.Write(publicRequestPrincipalListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestActionListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCondition())
+            {
+                context.Writer.WritePropertyName("condition");
+                context.Writer.WriteStringValue(publicRequest.Condition);
+            }
+
+            if(publicRequest.IsSetEffect())
+            {
+                context.Writer.WritePropertyName("effect");
+                context.Writer.WriteStringValue(publicRequest.Effect);
+            }
+
+            if(publicRequest.IsSetPrincipal())
+            {
+                context.Writer.WritePropertyName("principal");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                {
+                        context.Writer.WriteStringValue(publicRequestPrincipalListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

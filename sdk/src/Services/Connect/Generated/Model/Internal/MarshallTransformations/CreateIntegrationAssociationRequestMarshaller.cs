@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -64,63 +67,68 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/instance/{InstanceId}/integration-associations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIntegrationArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIntegrationArn())
-                    {
-                        context.Writer.WritePropertyName("IntegrationArn");
-                        context.Writer.Write(publicRequest.IntegrationArn);
-                    }
-
-                    if(publicRequest.IsSetIntegrationType())
-                    {
-                        context.Writer.WritePropertyName("IntegrationType");
-                        context.Writer.Write(publicRequest.IntegrationType);
-                    }
-
-                    if(publicRequest.IsSetSourceApplicationName())
-                    {
-                        context.Writer.WritePropertyName("SourceApplicationName");
-                        context.Writer.Write(publicRequest.SourceApplicationName);
-                    }
-
-                    if(publicRequest.IsSetSourceApplicationUrl())
-                    {
-                        context.Writer.WritePropertyName("SourceApplicationUrl");
-                        context.Writer.Write(publicRequest.SourceApplicationUrl);
-                    }
-
-                    if(publicRequest.IsSetSourceType())
-                    {
-                        context.Writer.WritePropertyName("SourceType");
-                        context.Writer.Write(publicRequest.SourceType);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("IntegrationArn");
+                context.Writer.WriteStringValue(publicRequest.IntegrationArn);
             }
+
+            if(publicRequest.IsSetIntegrationType())
+            {
+                context.Writer.WritePropertyName("IntegrationType");
+                context.Writer.WriteStringValue(publicRequest.IntegrationType);
+            }
+
+            if(publicRequest.IsSetSourceApplicationName())
+            {
+                context.Writer.WritePropertyName("SourceApplicationName");
+                context.Writer.WriteStringValue(publicRequest.SourceApplicationName);
+            }
+
+            if(publicRequest.IsSetSourceApplicationUrl())
+            {
+                context.Writer.WritePropertyName("SourceApplicationUrl");
+                context.Writer.WriteStringValue(publicRequest.SourceApplicationUrl);
+            }
+
+            if(publicRequest.IsSetSourceType())
+            {
+                context.Writer.WritePropertyName("SourceType");
+                context.Writer.WriteStringValue(publicRequest.SourceType);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

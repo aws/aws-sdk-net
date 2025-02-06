@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImplementedBy())
             {
                 context.Writer.WritePropertyName("implementedBy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataConnectorMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImplementedBy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequiredProperties())
             {
                 context.Writer.WritePropertyName("requiredProperties");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRequiredPropertiesListValue in requestObject.RequiredProperties)
                 {
-                        context.Writer.Write(requestObjectRequiredPropertiesListValue);
+                        context.Writer.WriteStringValue(requestObjectRequiredPropertiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("scope");
-                context.Writer.Write(requestObject.Scope);
+                context.Writer.WriteStringValue(requestObject.Scope);
             }
 
         }

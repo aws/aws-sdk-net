@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,98 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalogID())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalogID())
-                    {
-                        context.Writer.WritePropertyName("CatalogID");
-                        context.Writer.Write(publicRequest.CatalogID);
-                    }
-
-                    if(publicRequest.IsSetColumnNameList())
-                    {
-                        context.Writer.WritePropertyName("ColumnNameList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestColumnNameListListValue in publicRequest.ColumnNameList)
-                        {
-                                context.Writer.Write(publicRequestColumnNameListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDatabaseName())
-                    {
-                        context.Writer.WritePropertyName("DatabaseName");
-                        context.Writer.Write(publicRequest.DatabaseName);
-                    }
-
-                    if(publicRequest.IsSetRole())
-                    {
-                        context.Writer.WritePropertyName("Role");
-                        context.Writer.Write(publicRequest.Role);
-                    }
-
-                    if(publicRequest.IsSetSampleSize())
-                    {
-                        context.Writer.WritePropertyName("SampleSize");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.SampleSize.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("Schedule");
-                        context.Writer.Write(publicRequest.Schedule);
-                    }
-
-                    if(publicRequest.IsSetSecurityConfiguration())
-                    {
-                        context.Writer.WritePropertyName("SecurityConfiguration");
-                        context.Writer.Write(publicRequest.SecurityConfiguration);
-                    }
-
-                    if(publicRequest.IsSetTableName())
-                    {
-                        context.Writer.WritePropertyName("TableName");
-                        context.Writer.Write(publicRequest.TableName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CatalogID");
+                context.Writer.WriteStringValue(publicRequest.CatalogID);
             }
+
+            if(publicRequest.IsSetColumnNameList())
+            {
+                context.Writer.WritePropertyName("ColumnNameList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestColumnNameListListValue in publicRequest.ColumnNameList)
+                {
+                        context.Writer.WriteStringValue(publicRequestColumnNameListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDatabaseName())
+            {
+                context.Writer.WritePropertyName("DatabaseName");
+                context.Writer.WriteStringValue(publicRequest.DatabaseName);
+            }
+
+            if(publicRequest.IsSetRole())
+            {
+                context.Writer.WritePropertyName("Role");
+                context.Writer.WriteStringValue(publicRequest.Role);
+            }
+
+            if(publicRequest.IsSetSampleSize())
+            {
+                context.Writer.WritePropertyName("SampleSize");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.SampleSize.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.SampleSize.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.SampleSize.Value);
+                }
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("Schedule");
+                context.Writer.WriteStringValue(publicRequest.Schedule);
+            }
+
+            if(publicRequest.IsSetSecurityConfiguration())
+            {
+                context.Writer.WritePropertyName("SecurityConfiguration");
+                context.Writer.WriteStringValue(publicRequest.SecurityConfiguration);
+            }
+
+            if(publicRequest.IsSetTableName())
+            {
+                context.Writer.WritePropertyName("TableName");
+                context.Writer.WriteStringValue(publicRequest.TableName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

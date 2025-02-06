@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDevicePickupSnsTopicARN())
             {
                 context.Writer.WritePropertyName("DevicePickupSnsTopicARN");
-                context.Writer.Write(requestObject.DevicePickupSnsTopicARN);
+                context.Writer.WriteStringValue(requestObject.DevicePickupSnsTopicARN);
             }
 
             if(requestObject.IsSetJobStatesToNotify())
             {
                 context.Writer.WritePropertyName("JobStatesToNotify");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJobStatesToNotifyListValue in requestObject.JobStatesToNotify)
                 {
-                        context.Writer.Write(requestObjectJobStatesToNotifyListValue);
+                        context.Writer.WriteStringValue(requestObjectJobStatesToNotifyListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotifyAll())
             {
                 context.Writer.WritePropertyName("NotifyAll");
-                context.Writer.Write(requestObject.NotifyAll.Value);
+                context.Writer.WriteBooleanValue(requestObject.NotifyAll.Value);
             }
 
             if(requestObject.IsSetSnsTopicARN())
             {
                 context.Writer.WritePropertyName("SnsTopicARN");
-                context.Writer.Write(requestObject.SnsTopicARN);
+                context.Writer.WriteStringValue(requestObject.SnsTopicARN);
             }
 
         }

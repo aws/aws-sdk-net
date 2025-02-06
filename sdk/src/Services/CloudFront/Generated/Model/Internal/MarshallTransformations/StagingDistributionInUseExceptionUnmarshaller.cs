@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StagingDistributionInUseException operation
     /// </summary>  
-    public class StagingDistributionInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<StagingDistributionInUseException, XmlUnmarshallerContext>
+    public class StagingDistributionInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StagingDistributionInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

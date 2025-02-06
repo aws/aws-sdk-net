@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInsecureSkipVerification())
             {
                 context.Writer.WritePropertyName("insecureSkipVerification");
-                context.Writer.Write(requestObject.InsecureSkipVerification.Value);
+                context.Writer.WriteBooleanValue(requestObject.InsecureSkipVerification.Value);
             }
 
         }

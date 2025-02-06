@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppBoundaryKey())
             {
                 context.Writer.WritePropertyName("AppBoundaryKey");
-                context.Writer.Write(requestObject.AppBoundaryKey);
+                context.Writer.WriteStringValue(requestObject.AppBoundaryKey);
             }
 
             if(requestObject.IsSetTagValues())
             {
                 context.Writer.WritePropertyName("TagValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagValuesListValue in requestObject.TagValues)
                 {
-                        context.Writer.Write(requestObjectTagValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectTagValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

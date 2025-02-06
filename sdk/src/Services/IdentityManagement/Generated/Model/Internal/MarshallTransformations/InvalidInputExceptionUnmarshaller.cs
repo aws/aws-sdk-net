@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidInputException operation
     /// </summary>  
-    public class InvalidInputExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidInputException, XmlUnmarshallerContext>
+    public class InvalidInputExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidInputException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

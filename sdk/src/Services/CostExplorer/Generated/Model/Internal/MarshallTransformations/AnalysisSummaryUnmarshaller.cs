@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnalysisSummary Object
     /// </summary>  
-    public class AnalysisSummaryUnmarshaller : IUnmarshaller<AnalysisSummary, XmlUnmarshallerContext>, IUnmarshaller<AnalysisSummary, JsonUnmarshallerContext>
+    public class AnalysisSummaryUnmarshaller : IJsonUnmarshaller<AnalysisSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnalysisSummary IUnmarshaller<AnalysisSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalysisSummary Unmarshall(JsonUnmarshallerContext context)
+        public AnalysisSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnalysisSummary unmarshalledObject = new AnalysisSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnalysisCompletionTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisCompletionTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisCompletionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnalysisId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnalysisStartedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisStartedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisStartedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AnalysisStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CommitmentPurchaseAnalysisConfiguration", targetDepth))
                 {
                     var unmarshaller = CommitmentPurchaseAnalysisConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CommitmentPurchaseAnalysisConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CommitmentPurchaseAnalysisConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedCompletionTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedCompletionTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedCompletionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

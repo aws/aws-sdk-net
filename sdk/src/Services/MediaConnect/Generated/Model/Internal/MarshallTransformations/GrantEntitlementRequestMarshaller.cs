@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTransferSubscriberFeePercent())
             {
                 context.Writer.WritePropertyName("dataTransferSubscriberFeePercent");
-                context.Writer.Write(requestObject.DataTransferSubscriberFeePercent.Value);
+                context.Writer.WriteNumberValue(requestObject.DataTransferSubscriberFeePercent.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntitlementStatus())
             {
                 context.Writer.WritePropertyName("entitlementStatus");
-                context.Writer.Write(requestObject.EntitlementStatus);
+                context.Writer.WriteStringValue(requestObject.EntitlementStatus);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSubscribers())
             {
                 context.Writer.WritePropertyName("subscribers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubscribersListValue in requestObject.Subscribers)
                 {
-                        context.Writer.Write(requestObjectSubscribersListValue);
+                        context.Writer.WriteStringValue(requestObjectSubscribersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,143 +49,143 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("Aggregation");
-                context.Writer.Write(requestObject.Aggregation);
+                context.Writer.WriteStringValue(requestObject.Aggregation);
             }
 
             if(requestObject.IsSetAllowedAggregations())
             {
                 context.Writer.WritePropertyName("AllowedAggregations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedAggregationsListValue in requestObject.AllowedAggregations)
                 {
-                        context.Writer.Write(requestObjectAllowedAggregationsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedAggregationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCalculatedFieldDescription())
             {
                 context.Writer.WritePropertyName("CalculatedFieldDescription");
-                context.Writer.Write(requestObject.CalculatedFieldDescription);
+                context.Writer.WriteStringValue(requestObject.CalculatedFieldDescription);
             }
 
             if(requestObject.IsSetCalculatedFieldName())
             {
                 context.Writer.WritePropertyName("CalculatedFieldName");
-                context.Writer.Write(requestObject.CalculatedFieldName);
+                context.Writer.WriteStringValue(requestObject.CalculatedFieldName);
             }
 
             if(requestObject.IsSetCalculatedFieldSynonyms())
             {
                 context.Writer.WritePropertyName("CalculatedFieldSynonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCalculatedFieldSynonymsListValue in requestObject.CalculatedFieldSynonyms)
                 {
-                        context.Writer.Write(requestObjectCalculatedFieldSynonymsListValue);
+                        context.Writer.WriteStringValue(requestObjectCalculatedFieldSynonymsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCellValueSynonyms())
             {
                 context.Writer.WritePropertyName("CellValueSynonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCellValueSynonymsListValue in requestObject.CellValueSynonyms)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CellValueSynonymMarshaller.Instance;
                     marshaller.Marshall(requestObjectCellValueSynonymsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColumnDataRole())
             {
                 context.Writer.WritePropertyName("ColumnDataRole");
-                context.Writer.Write(requestObject.ColumnDataRole);
+                context.Writer.WriteStringValue(requestObject.ColumnDataRole);
             }
 
             if(requestObject.IsSetComparativeOrder())
             {
                 context.Writer.WritePropertyName("ComparativeOrder");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComparativeOrderMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComparativeOrder, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultFormatting())
             {
                 context.Writer.WritePropertyName("DefaultFormatting");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultFormattingMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultFormatting, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisableIndexing())
             {
                 context.Writer.WritePropertyName("DisableIndexing");
-                context.Writer.Write(requestObject.DisableIndexing.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableIndexing.Value);
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetIsIncludedInTopic())
             {
                 context.Writer.WritePropertyName("IsIncludedInTopic");
-                context.Writer.Write(requestObject.IsIncludedInTopic.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsIncludedInTopic.Value);
             }
 
             if(requestObject.IsSetNeverAggregateInFilter())
             {
                 context.Writer.WritePropertyName("NeverAggregateInFilter");
-                context.Writer.Write(requestObject.NeverAggregateInFilter.Value);
+                context.Writer.WriteBooleanValue(requestObject.NeverAggregateInFilter.Value);
             }
 
             if(requestObject.IsSetNonAdditive())
             {
                 context.Writer.WritePropertyName("NonAdditive");
-                context.Writer.Write(requestObject.NonAdditive.Value);
+                context.Writer.WriteBooleanValue(requestObject.NonAdditive.Value);
             }
 
             if(requestObject.IsSetNotAllowedAggregations())
             {
                 context.Writer.WritePropertyName("NotAllowedAggregations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotAllowedAggregationsListValue in requestObject.NotAllowedAggregations)
                 {
-                        context.Writer.Write(requestObjectNotAllowedAggregationsListValue);
+                        context.Writer.WriteStringValue(requestObjectNotAllowedAggregationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSemanticType())
             {
                 context.Writer.WritePropertyName("SemanticType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SemanticTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.SemanticType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeGranularity())
             {
                 context.Writer.WritePropertyName("TimeGranularity");
-                context.Writer.Write(requestObject.TimeGranularity);
+                context.Writer.WriteStringValue(requestObject.TimeGranularity);
             }
 
         }

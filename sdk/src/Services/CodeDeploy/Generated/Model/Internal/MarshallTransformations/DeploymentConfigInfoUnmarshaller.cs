@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentConfigInfo Object
     /// </summary>  
-    public class DeploymentConfigInfoUnmarshaller : IUnmarshaller<DeploymentConfigInfo, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfigInfo, JsonUnmarshallerContext>
+    public class DeploymentConfigInfoUnmarshaller : IJsonUnmarshaller<DeploymentConfigInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentConfigInfo IUnmarshaller<DeploymentConfigInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentConfigInfo Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentConfigInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentConfigInfo unmarshalledObject = new DeploymentConfigInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("computePlatform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentConfigId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentConfigName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minimumHealthyHosts", targetDepth))
                 {
                     var unmarshaller = MinimumHealthyHostsUnmarshaller.Instance;
-                    unmarshalledObject.MinimumHealthyHosts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumHealthyHosts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trafficRoutingConfig", targetDepth))
                 {
                     var unmarshaller = TrafficRoutingConfigUnmarshaller.Instance;
-                    unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrafficRoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("zonalConfig", targetDepth))
                 {
                     var unmarshaller = ZonalConfigUnmarshaller.Instance;
-                    unmarshalledObject.ZonalConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZonalConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

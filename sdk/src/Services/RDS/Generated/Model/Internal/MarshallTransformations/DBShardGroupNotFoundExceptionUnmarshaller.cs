@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBShardGroupNotFoundException operation
     /// </summary>  
-    public class DBShardGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBShardGroupNotFoundException, XmlUnmarshallerContext>
+    public class DBShardGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBShardGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

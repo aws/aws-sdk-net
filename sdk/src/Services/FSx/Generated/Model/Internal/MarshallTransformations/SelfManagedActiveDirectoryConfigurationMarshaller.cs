@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDnsIps())
             {
                 context.Writer.WritePropertyName("DnsIps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsIpsListValue in requestObject.DnsIps)
                 {
-                        context.Writer.Write(requestObjectDnsIpsListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsIpsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetFileSystemAdministratorsGroup())
             {
                 context.Writer.WritePropertyName("FileSystemAdministratorsGroup");
-                context.Writer.Write(requestObject.FileSystemAdministratorsGroup);
+                context.Writer.WriteStringValue(requestObject.FileSystemAdministratorsGroup);
             }
 
             if(requestObject.IsSetOrganizationalUnitDistinguishedName())
             {
                 context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
-                context.Writer.Write(requestObject.OrganizationalUnitDistinguishedName);
+                context.Writer.WriteStringValue(requestObject.OrganizationalUnitDistinguishedName);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");
-                context.Writer.Write(requestObject.UserName);
+                context.Writer.WriteStringValue(requestObject.UserName);
             }
 
         }

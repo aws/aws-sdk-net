@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCookiesAllowList())
             {
                 context.Writer.WritePropertyName("cookiesAllowList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCookiesAllowListListValue in requestObject.CookiesAllowList)
                 {
-                        context.Writer.Write(requestObjectCookiesAllowListListValue);
+                        context.Writer.WriteStringValue(requestObjectCookiesAllowListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOption())
             {
                 context.Writer.WritePropertyName("option");
-                context.Writer.Write(requestObject.Option);
+                context.Writer.WriteStringValue(requestObject.Option);
             }
 
         }

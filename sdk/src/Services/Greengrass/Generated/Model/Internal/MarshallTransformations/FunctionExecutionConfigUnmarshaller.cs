@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FunctionExecutionConfig Object
     /// </summary>  
-    public class FunctionExecutionConfigUnmarshaller : IUnmarshaller<FunctionExecutionConfig, XmlUnmarshallerContext>, IUnmarshaller<FunctionExecutionConfig, JsonUnmarshallerContext>
+    public class FunctionExecutionConfigUnmarshaller : IJsonUnmarshaller<FunctionExecutionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FunctionExecutionConfig IUnmarshaller<FunctionExecutionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionExecutionConfig Unmarshall(JsonUnmarshallerContext context)
+        public FunctionExecutionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FunctionExecutionConfig unmarshalledObject = new FunctionExecutionConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IsolationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IsolationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsolationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RunAs", targetDepth))
                 {
                     var unmarshaller = FunctionRunAsConfigUnmarshaller.Instance;
-                    unmarshalledObject.RunAs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunAs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

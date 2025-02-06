@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTypeMapping())
             {
                 context.Writer.WritePropertyName("DataTypeMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDataTypeMappingKvp in requestObject.DataTypeMapping)
                 {
                     context.Writer.WritePropertyName(requestObjectDataTypeMappingKvp.Key);
                     var requestObjectDataTypeMappingValue = requestObjectDataTypeMappingKvp.Value;
 
-                        context.Writer.Write(requestObjectDataTypeMappingValue);
+                        context.Writer.WriteStringValue(requestObjectDataTypeMappingValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterPredicate())
             {
                 context.Writer.WritePropertyName("FilterPredicate");
-                context.Writer.Write(requestObject.FilterPredicate);
+                context.Writer.WriteStringValue(requestObject.FilterPredicate);
             }
 
             if(requestObject.IsSetJobBookmarkKeys())
             {
                 context.Writer.WritePropertyName("JobBookmarkKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJobBookmarkKeysListValue in requestObject.JobBookmarkKeys)
                 {
-                        context.Writer.Write(requestObjectJobBookmarkKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectJobBookmarkKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJobBookmarkKeysSortOrder())
             {
                 context.Writer.WritePropertyName("JobBookmarkKeysSortOrder");
-                context.Writer.Write(requestObject.JobBookmarkKeysSortOrder);
+                context.Writer.WriteStringValue(requestObject.JobBookmarkKeysSortOrder);
             }
 
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
-                context.Writer.Write(requestObject.LowerBound.Value);
+                context.Writer.WriteNumberValue(requestObject.LowerBound.Value);
             }
 
             if(requestObject.IsSetNumPartitions())
             {
                 context.Writer.WritePropertyName("NumPartitions");
-                context.Writer.Write(requestObject.NumPartitions.Value);
+                context.Writer.WriteNumberValue(requestObject.NumPartitions.Value);
             }
 
             if(requestObject.IsSetPartitionColumn())
             {
                 context.Writer.WritePropertyName("PartitionColumn");
-                context.Writer.Write(requestObject.PartitionColumn);
+                context.Writer.WriteStringValue(requestObject.PartitionColumn);
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
-                context.Writer.Write(requestObject.UpperBound.Value);
+                context.Writer.WriteNumberValue(requestObject.UpperBound.Value);
             }
 
         }

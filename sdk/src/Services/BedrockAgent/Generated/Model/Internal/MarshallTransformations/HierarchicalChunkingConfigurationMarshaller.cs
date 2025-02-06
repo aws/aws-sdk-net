@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevelConfigurations())
             {
                 context.Writer.WritePropertyName("levelConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLevelConfigurationsListValue in requestObject.LevelConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HierarchicalChunkingLevelConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectLevelConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOverlapTokens())
             {
                 context.Writer.WritePropertyName("overlapTokens");
-                context.Writer.Write(requestObject.OverlapTokens.Value);
+                context.Writer.WriteNumberValue(requestObject.OverlapTokens.Value);
             }
 
         }

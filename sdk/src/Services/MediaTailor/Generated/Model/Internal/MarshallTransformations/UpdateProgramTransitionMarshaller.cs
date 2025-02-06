@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetScheduledStartTimeMillis())
             {
                 context.Writer.WritePropertyName("ScheduledStartTimeMillis");
-                context.Writer.Write(requestObject.ScheduledStartTimeMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduledStartTimeMillis.Value);
             }
 
         }

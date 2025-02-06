@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EncryptionMethod Object
     /// </summary>  
-    public class EncryptionMethodUnmarshaller : IUnmarshaller<EncryptionMethod, XmlUnmarshallerContext>, IUnmarshaller<EncryptionMethod, JsonUnmarshallerContext>
+    public class EncryptionMethodUnmarshaller : IJsonUnmarshaller<EncryptionMethod, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EncryptionMethod IUnmarshaller<EncryptionMethod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EncryptionMethod Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionMethod Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EncryptionMethod unmarshalledObject = new EncryptionMethod();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CmafEncryptionMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CmafEncryptionMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CmafEncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TsEncryptionMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TsEncryptionMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TsEncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

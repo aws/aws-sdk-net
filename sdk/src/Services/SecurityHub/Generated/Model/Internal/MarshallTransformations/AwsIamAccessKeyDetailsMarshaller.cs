@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessKeyId())
             {
                 context.Writer.WritePropertyName("AccessKeyId");
-                context.Writer.Write(requestObject.AccessKeyId);
+                context.Writer.WriteStringValue(requestObject.AccessKeyId);
             }
 
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WriteStringValue(requestObject.CreatedAt);
             }
 
             if(requestObject.IsSetPrincipalId())
             {
                 context.Writer.WritePropertyName("PrincipalId");
-                context.Writer.Write(requestObject.PrincipalId);
+                context.Writer.WriteStringValue(requestObject.PrincipalId);
             }
 
             if(requestObject.IsSetPrincipalName())
             {
                 context.Writer.WritePropertyName("PrincipalName");
-                context.Writer.Write(requestObject.PrincipalName);
+                context.Writer.WriteStringValue(requestObject.PrincipalName);
             }
 
             if(requestObject.IsSetPrincipalType())
             {
                 context.Writer.WritePropertyName("PrincipalType");
-                context.Writer.Write(requestObject.PrincipalType);
+                context.Writer.WriteStringValue(requestObject.PrincipalType);
             }
 
             if(requestObject.IsSetSessionContext())
             {
                 context.Writer.WritePropertyName("SessionContext");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsIamAccessKeySessionContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.SessionContext, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");
-                context.Writer.Write(requestObject.UserName);
+                context.Writer.WriteStringValue(requestObject.UserName);
             }
 
         }

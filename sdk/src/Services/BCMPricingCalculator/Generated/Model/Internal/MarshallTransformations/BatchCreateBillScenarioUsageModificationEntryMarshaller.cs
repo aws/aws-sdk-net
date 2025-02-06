@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmounts())
             {
                 context.Writer.WritePropertyName("amounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAmountsListValue in requestObject.Amounts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UsageAmountMarshaller.Instance;
                     marshaller.Marshall(requestObjectAmountsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("availabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("group");
-                context.Writer.Write(requestObject.Group);
+                context.Writer.WriteStringValue(requestObject.Group);
             }
 
             if(requestObject.IsSetHistoricalUsage())
             {
                 context.Writer.WritePropertyName("historicalUsage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HistoricalUsageEntityMarshaller.Instance;
                 marshaller.Marshall(requestObject.HistoricalUsage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetServiceCode())
             {
                 context.Writer.WritePropertyName("serviceCode");
-                context.Writer.Write(requestObject.ServiceCode);
+                context.Writer.WriteStringValue(requestObject.ServiceCode);
             }
 
             if(requestObject.IsSetUsageAccountId())
             {
                 context.Writer.WritePropertyName("usageAccountId");
-                context.Writer.Write(requestObject.UsageAccountId);
+                context.Writer.WriteStringValue(requestObject.UsageAccountId);
             }
 
             if(requestObject.IsSetUsageType())
             {
                 context.Writer.WritePropertyName("usageType");
-                context.Writer.Write(requestObject.UsageType);
+                context.Writer.WriteStringValue(requestObject.UsageType);
             }
 
         }

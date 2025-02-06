@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PivotTableOptions Object
     /// </summary>  
-    public class PivotTableOptionsUnmarshaller : IUnmarshaller<PivotTableOptions, XmlUnmarshallerContext>, IUnmarshaller<PivotTableOptions, JsonUnmarshallerContext>
+    public class PivotTableOptionsUnmarshaller : IJsonUnmarshaller<PivotTableOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PivotTableOptions IUnmarshaller<PivotTableOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PivotTableOptions Unmarshall(JsonUnmarshallerContext context)
+        public PivotTableOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PivotTableOptions unmarshalledObject = new PivotTableOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CellStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CollapsedRowDimensionsVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollapsedRowDimensionsVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollapsedRowDimensionsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnHeaderStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.ColumnHeaderStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnHeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnNamesVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColumnNamesVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnNamesVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultCellWidth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultCellWidth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultCellWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricPlacement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricPlacement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowAlternateColorOptions", targetDepth))
                 {
                     var unmarshaller = RowAlternateColorOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowFieldNamesStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.RowFieldNamesStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowFieldNamesStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowHeaderStyle", targetDepth))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
-                    unmarshalledObject.RowHeaderStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowHeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowsLabelOptions", targetDepth))
                 {
                     var unmarshaller = PivotTableRowsLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RowsLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowsLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowsLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RowsLayout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowsLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SingleMetricVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SingleMetricVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SingleMetricVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ToggleButtonsVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToggleButtonsVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToggleButtonsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

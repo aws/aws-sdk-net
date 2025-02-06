@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EnableFastSnapshotRestoreSuccessItem Object
     /// </summary>  
-    public class EnableFastSnapshotRestoreSuccessItemUnmarshaller : IUnmarshaller<EnableFastSnapshotRestoreSuccessItem, XmlUnmarshallerContext>, IUnmarshaller<EnableFastSnapshotRestoreSuccessItem, JsonUnmarshallerContext>
+    public class EnableFastSnapshotRestoreSuccessItemUnmarshaller : IXmlUnmarshaller<EnableFastSnapshotRestoreSuccessItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -130,17 +130,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EnableFastSnapshotRestoreSuccessItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EnableFastSnapshotRestoreSuccessItemUnmarshaller _instance = new EnableFastSnapshotRestoreSuccessItemUnmarshaller();        
 

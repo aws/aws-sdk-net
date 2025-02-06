@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsWafv2WebAclActionDetails Object
     /// </summary>  
-    public class AwsWafv2WebAclActionDetailsUnmarshaller : IUnmarshaller<AwsWafv2WebAclActionDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsWafv2WebAclActionDetails, JsonUnmarshallerContext>
+    public class AwsWafv2WebAclActionDetailsUnmarshaller : IJsonUnmarshaller<AwsWafv2WebAclActionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsWafv2WebAclActionDetails IUnmarshaller<AwsWafv2WebAclActionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsWafv2WebAclActionDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsWafv2WebAclActionDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsWafv2WebAclActionDetails unmarshalledObject = new AwsWafv2WebAclActionDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Allow", targetDepth))
                 {
                     var unmarshaller = AwsWafv2ActionAllowDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Allow = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Allow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Block", targetDepth))
                 {
                     var unmarshaller = AwsWafv2ActionBlockDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Block = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Block = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

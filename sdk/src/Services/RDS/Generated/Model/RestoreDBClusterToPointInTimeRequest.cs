@@ -402,7 +402,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, and <c>slowquery</c>.
+        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, <c>instance</c>, and
+        /// <c>slowquery</c>.
         /// </para>
         ///  
         /// <para>
@@ -410,7 +411,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible value is <c>postgresql</c>.
+        /// Possible value are <c>instance</c> and <c>postgresql</c>.
         /// </para>
         ///  
         /// <para>
@@ -551,6 +552,8 @@ namespace Amazon.RDS.Model
         /// v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless
         /// v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original
         /// cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster.
+        /// To create a full copy that is an Aurora Serverless v1 cluster, specify the engine
+        /// mode <c>serverless</c>.
         /// </para>
         ///  
         /// <para>

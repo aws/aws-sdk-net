@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3OutputConfigurations())
             {
                 context.Writer.WritePropertyName("S3OutputConfigurations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3OutputConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OutputConfigurations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Prefix())
             {
                 context.Writer.WritePropertyName("S3Prefix");
-                context.Writer.Write(requestObject.S3Prefix);
+                context.Writer.WriteStringValue(requestObject.S3Prefix);
             }
 
             if(requestObject.IsSetS3Region())
             {
                 context.Writer.WritePropertyName("S3Region");
-                context.Writer.Write(requestObject.S3Region);
+                context.Writer.WriteStringValue(requestObject.S3Region);
             }
 
         }

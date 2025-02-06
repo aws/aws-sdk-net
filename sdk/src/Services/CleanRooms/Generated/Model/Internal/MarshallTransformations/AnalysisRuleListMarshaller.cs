@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAnalyses())
             {
                 context.Writer.WritePropertyName("additionalAnalyses");
-                context.Writer.Write(requestObject.AdditionalAnalyses);
+                context.Writer.WriteStringValue(requestObject.AdditionalAnalyses);
             }
 
             if(requestObject.IsSetAllowedJoinOperators())
             {
                 context.Writer.WritePropertyName("allowedJoinOperators");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedJoinOperatorsListValue in requestObject.AllowedJoinOperators)
                 {
-                        context.Writer.Write(requestObjectAllowedJoinOperatorsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedJoinOperatorsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJoinColumns())
             {
                 context.Writer.WritePropertyName("joinColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJoinColumnsListValue in requestObject.JoinColumns)
                 {
-                        context.Writer.Write(requestObjectJoinColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectJoinColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetListColumns())
             {
                 context.Writer.WritePropertyName("listColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListColumnsListValue in requestObject.ListColumns)
                 {
-                        context.Writer.Write(requestObjectListColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectListColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

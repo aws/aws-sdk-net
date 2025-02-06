@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,57 +66,62 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDagEdges())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DagEdges");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDagEdgesListValue in publicRequest.DagEdges)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDagEdges())
-                    {
-                        context.Writer.WritePropertyName("DagEdges");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDagEdgesListValue in publicRequest.DagEdges)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = CodeGenEdgeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDagEdgesListValue, context);
+                    var marshaller = CodeGenEdgeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDagEdgesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDagNodes())
-                    {
-                        context.Writer.WritePropertyName("DagNodes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDagNodesListValue in publicRequest.DagNodes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CodeGenNodeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDagNodesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("Language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDagNodes())
+            {
+                context.Writer.WritePropertyName("DagNodes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDagNodesListValue in publicRequest.DagNodes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CodeGenNodeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDagNodesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("Language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VisualReferenceOutput Object
     /// </summary>  
-    public class VisualReferenceOutputUnmarshaller : IUnmarshaller<VisualReferenceOutput, XmlUnmarshallerContext>, IUnmarshaller<VisualReferenceOutput, JsonUnmarshallerContext>
+    public class VisualReferenceOutputUnmarshaller : IJsonUnmarshaller<VisualReferenceOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VisualReferenceOutput IUnmarshaller<VisualReferenceOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VisualReferenceOutput Unmarshall(JsonUnmarshallerContext context)
+        public VisualReferenceOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VisualReferenceOutput unmarshalledObject = new VisualReferenceOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaseCanaryRunId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseCanaryRunId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseCanaryRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaseScreenshots", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BaseScreenshot, BaseScreenshotUnmarshaller>(BaseScreenshotUnmarshaller.Instance);
-                    unmarshalledObject.BaseScreenshots = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BaseScreenshot, BaseScreenshotUnmarshaller>(BaseScreenshotUnmarshaller.Instance);
+                    unmarshalledObject.BaseScreenshots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

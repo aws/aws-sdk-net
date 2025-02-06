@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstructions())
             {
                 context.Writer.WritePropertyName("Instructions");
-                context.Writer.Write(requestObject.Instructions);
+                context.Writer.WriteStringValue(requestObject.Instructions);
             }
 
             if(requestObject.IsSetNotApplicableEnabled())
             {
                 context.Writer.WritePropertyName("NotApplicableEnabled");
-                context.Writer.Write(requestObject.NotApplicableEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.NotApplicableEnabled.Value);
             }
 
             if(requestObject.IsSetQuestionType())
             {
                 context.Writer.WritePropertyName("QuestionType");
-                context.Writer.Write(requestObject.QuestionType);
+                context.Writer.WriteStringValue(requestObject.QuestionType);
             }
 
             if(requestObject.IsSetQuestionTypeProperties())
             {
                 context.Writer.WritePropertyName("QuestionTypeProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationFormQuestionTypePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuestionTypeProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
-                context.Writer.Write(requestObject.RefId);
+                context.Writer.WriteStringValue(requestObject.RefId);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetWeight())
@@ -94,11 +92,11 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Weight");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Weight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Weight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Weight.Value);
+                    context.Writer.WriteNumberValue(requestObject.Weight.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionName())
             {
                 context.Writer.WritePropertyName("actionName");
-                context.Writer.Write(requestObject.ActionName);
+                context.Writer.WriteStringValue(requestObject.ActionName);
             }
 
             if(requestObject.IsSetScheduleActionSettings())
             {
                 context.Writer.WritePropertyName("scheduleActionSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleActionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleActionSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleActionStartSettings())
             {
                 context.Writer.WritePropertyName("scheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleActionStartSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleActionStartSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

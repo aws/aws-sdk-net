@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,91 +49,91 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveServicesCount())
             {
                 context.Writer.WritePropertyName("ActiveServicesCount");
-                context.Writer.Write(requestObject.ActiveServicesCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ActiveServicesCount.Value);
             }
 
             if(requestObject.IsSetCapacityProviders())
             {
                 context.Writer.WritePropertyName("CapacityProviders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCapacityProvidersListValue in requestObject.CapacityProviders)
                 {
-                        context.Writer.Write(requestObjectCapacityProvidersListValue);
+                        context.Writer.WriteStringValue(requestObjectCapacityProvidersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetClusterArn())
             {
                 context.Writer.WritePropertyName("ClusterArn");
-                context.Writer.Write(requestObject.ClusterArn);
+                context.Writer.WriteStringValue(requestObject.ClusterArn);
             }
 
             if(requestObject.IsSetClusterName())
             {
                 context.Writer.WritePropertyName("ClusterName");
-                context.Writer.Write(requestObject.ClusterName);
+                context.Writer.WriteStringValue(requestObject.ClusterName);
             }
 
             if(requestObject.IsSetClusterSettings())
             {
                 context.Writer.WritePropertyName("ClusterSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClusterSettingsListValue in requestObject.ClusterSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsClusterClusterSettingsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectClusterSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsClusterConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultCapacityProviderStrategy())
             {
                 context.Writer.WritePropertyName("DefaultCapacityProviderStrategy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefaultCapacityProviderStrategyListValue in requestObject.DefaultCapacityProviderStrategy)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsClusterDefaultCapacityProviderStrategyDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectDefaultCapacityProviderStrategyListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegisteredContainerInstancesCount())
             {
                 context.Writer.WritePropertyName("RegisteredContainerInstancesCount");
-                context.Writer.Write(requestObject.RegisteredContainerInstancesCount.Value);
+                context.Writer.WriteNumberValue(requestObject.RegisteredContainerInstancesCount.Value);
             }
 
             if(requestObject.IsSetRunningTasksCount())
             {
                 context.Writer.WritePropertyName("RunningTasksCount");
-                context.Writer.Write(requestObject.RunningTasksCount.Value);
+                context.Writer.WriteNumberValue(requestObject.RunningTasksCount.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

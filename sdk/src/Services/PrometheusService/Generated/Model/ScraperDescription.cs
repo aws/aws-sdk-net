@@ -41,6 +41,7 @@ namespace Amazon.PrometheusService.Model
         private Destination _destination;
         private DateTime? _lastModifiedAt;
         private string _roleArn;
+        private RoleConfiguration _roleConfiguration;
         private ScrapeConfiguration _scrapeConfiguration;
         private string _scraperId;
         private Source _source;
@@ -165,6 +166,21 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleConfiguration.
+        /// </summary>
+        public RoleConfiguration RoleConfiguration
+        {
+            get { return this._roleConfiguration; }
+            set { this._roleConfiguration = value; }
+        }
+
+        // Check to see if RoleConfiguration property is set
+        internal bool IsSetRoleConfiguration()
+        {
+            return this._roleConfiguration != null;
         }
 
         /// <summary>

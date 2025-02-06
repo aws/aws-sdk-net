@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TriggerProperties Object
     /// </summary>  
-    public class TriggerPropertiesUnmarshaller : IUnmarshaller<TriggerProperties, XmlUnmarshallerContext>, IUnmarshaller<TriggerProperties, JsonUnmarshallerContext>
+    public class TriggerPropertiesUnmarshaller : IJsonUnmarshaller<TriggerProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TriggerProperties IUnmarshaller<TriggerProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TriggerProperties Unmarshall(JsonUnmarshallerContext context)
+        public TriggerProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TriggerProperties unmarshalledObject = new TriggerProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Scheduled", targetDepth))
                 {
                     var unmarshaller = ScheduledTriggerPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Scheduled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scheduled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

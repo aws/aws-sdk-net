@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomizedCapacityMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedCapacityMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingCustomizedMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomizedCapacityMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomizedLoadMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedLoadMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingCustomizedMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomizedLoadMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomizedScalingMetricSpecification())
             {
                 context.Writer.WritePropertyName("CustomizedScalingMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingCustomizedMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomizedScalingMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPredefinedLoadMetricSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedLoadMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingPredefinedLoadMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredefinedLoadMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPredefinedMetricPairSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedMetricPairSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingPredefinedMetricPairSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredefinedMetricPairSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPredefinedScalingMetricSpecification())
             {
                 context.Writer.WritePropertyName("PredefinedScalingMetricSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveScalingPredefinedScalingMetricSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredefinedScalingMetricSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetValue())
@@ -119,11 +117,11 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("TargetValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetValue.Value);
                 }
             }
 

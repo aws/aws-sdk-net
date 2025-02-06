@@ -29,197 +29,187 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AmazonRedshiftNodeData Object
     /// </summary>  
-    public class AmazonRedshiftNodeDataUnmarshaller : IUnmarshaller<AmazonRedshiftNodeData, XmlUnmarshallerContext>, IUnmarshaller<AmazonRedshiftNodeData, JsonUnmarshallerContext>
+    public class AmazonRedshiftNodeDataUnmarshaller : IJsonUnmarshaller<AmazonRedshiftNodeData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AmazonRedshiftNodeData IUnmarshaller<AmazonRedshiftNodeData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AmazonRedshiftNodeData Unmarshall(JsonUnmarshallerContext context)
+        public AmazonRedshiftNodeData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AmazonRedshiftNodeData unmarshalledObject = new AmazonRedshiftNodeData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdvancedOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AmazonRedshiftAdvancedOption, AmazonRedshiftAdvancedOptionUnmarshaller>(AmazonRedshiftAdvancedOptionUnmarshaller.Instance);
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AmazonRedshiftAdvancedOption, AmazonRedshiftAdvancedOptionUnmarshaller>(AmazonRedshiftAdvancedOptionUnmarshaller.Instance);
+                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogDatabase", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.CatalogDatabase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogDatabase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogRedshiftSchema", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogRedshiftSchema = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogRedshiftSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogRedshiftTable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogRedshiftTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogRedshiftTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogTable", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.CatalogTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Connection", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.Connection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Connection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CrawlerConnection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerConnection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerConnection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IamRole", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MergeAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergeAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MergeClause", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergeClause = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeClause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MergeWhenMatched", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergeWhenMatched = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeWhenMatched = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MergeWhenNotMatched", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergeWhenNotMatched = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeWhenNotMatched = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PostAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PreAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SampleQuery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SampleQuery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SampleQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Schema", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.Schema = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Schema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectedColumns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Option, OptionUnmarshaller>(OptionUnmarshaller.Instance);
-                    unmarshalledObject.SelectedColumns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Option, OptionUnmarshaller>(OptionUnmarshaller.Instance);
+                    unmarshalledObject.SelectedColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StagingTable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StagingTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StagingTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = OptionUnmarshaller.Instance;
-                    unmarshalledObject.Table = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TablePrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TablePrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TablePrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableSchema", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Option, OptionUnmarshaller>(OptionUnmarshaller.Instance);
-                    unmarshalledObject.TableSchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Option, OptionUnmarshaller>(OptionUnmarshaller.Instance);
+                    unmarshalledObject.TableSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TempDir", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TempDir = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TempDir = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Upsert", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Upsert = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Upsert = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

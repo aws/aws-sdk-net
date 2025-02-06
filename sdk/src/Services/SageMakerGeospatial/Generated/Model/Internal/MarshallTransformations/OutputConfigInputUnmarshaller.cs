@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OutputConfigInput Object
     /// </summary>  
-    public class OutputConfigInputUnmarshaller : IUnmarshaller<OutputConfigInput, XmlUnmarshallerContext>, IUnmarshaller<OutputConfigInput, JsonUnmarshallerContext>
+    public class OutputConfigInputUnmarshaller : IJsonUnmarshaller<OutputConfigInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OutputConfigInput IUnmarshaller<OutputConfigInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputConfigInput Unmarshall(JsonUnmarshallerContext context)
+        public OutputConfigInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OutputConfigInput unmarshalledObject = new OutputConfigInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3Data", targetDepth))
                 {
                     var unmarshaller = ExportS3DataInputUnmarshaller.Instance;
-                    unmarshalledObject.S3Data = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Data = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

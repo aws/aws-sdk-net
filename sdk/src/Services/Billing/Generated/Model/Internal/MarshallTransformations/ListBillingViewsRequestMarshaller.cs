@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
@@ -63,70 +66,75 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActiveTimeRange())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActiveTimeRange())
-                    {
-                        context.Writer.WritePropertyName("activeTimeRange");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("activeTimeRange");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ActiveTimeRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ActiveTimeRange, context);
+                var marshaller = ActiveTimeRangeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ActiveTimeRange, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetArns())
-                    {
-                        context.Writer.WritePropertyName("arns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestArnsListValue in publicRequest.Arns)
-                        {
-                                context.Writer.Write(publicRequestArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBillingViewTypes())
-                    {
-                        context.Writer.WritePropertyName("billingViewTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBillingViewTypesListValue in publicRequest.BillingViewTypes)
-                        {
-                                context.Writer.Write(publicRequestBillingViewTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetOwnerAccountId())
-                    {
-                        context.Writer.WritePropertyName("ownerAccountId");
-                        context.Writer.Write(publicRequest.OwnerAccountId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetArns())
+            {
+                context.Writer.WritePropertyName("arns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestArnsListValue in publicRequest.Arns)
+                {
+                        context.Writer.WriteStringValue(publicRequestArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetBillingViewTypes())
+            {
+                context.Writer.WritePropertyName("billingViewTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBillingViewTypesListValue in publicRequest.BillingViewTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestBillingViewTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("ownerAccountId");
+                context.Writer.WriteStringValue(publicRequest.OwnerAccountId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

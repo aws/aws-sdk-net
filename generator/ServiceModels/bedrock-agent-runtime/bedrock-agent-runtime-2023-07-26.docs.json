@@ -5,14 +5,14 @@
     "DeleteAgentMemory": "<p>Deletes memory from the specified memory identifier.</p>",
     "GenerateQuery": "<p>Generates an SQL query from a natural language query. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html\">Generate a query for structured data</a> in the Amazon Bedrock User Guide.</p>",
     "GetAgentMemory": "<p>Gets the sessions stored in the memory of the agent.</p>",
-    "InvokeAgent": "<note> <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeAgent</code>.</p> </note> <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p> <ul> <li> <p>To continue the same conversation with an agent, use the same <code>sessionId</code> value in the request.</p> </li> <li> <p>To activate trace enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow the agent's reasoning process that led it to the information it processed, the actions it took, and the final result it yielded. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events\">Trace enablement</a>.</p> </li> <li> <p>To stream agent responses, make sure that only orchestration prompt is enabled. Agent streaming is not supported for the following steps: </p> <ul> <li> <p> <code>Pre-processing</code> </p> </li> <li> <p> <code>Post-processing</code> </p> </li> <li> <p>Agent with 1 Knowledge base and <code>User Input</code> not enabled</p> </li> </ul> </li> <li> <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p> </li> </ul> <p>The response is returned in the <code>bytes</code> field of the <code>chunk</code> object.</p> <ul> <li> <p>The <code>attribution</code> object contains citations for parts of the response.</p> </li> <li> <p>If you set <code>enableTrace</code> to <code>true</code> in the request, you can trace the agent's steps and reasoning process that led it to the response.</p> </li> <li> <p>If the action predicted was configured to return control, the response returns parameters for the action, elicited from the user, in the <code>returnControl</code> field.</p> </li> <li> <p>Errors are also surfaced in the response.</p> </li> </ul>",
+    "InvokeAgent": "<note> </note> <p>Sends a prompt for the agent to process and respond to. Note the following fields for the request:</p> <ul> <li> <p>To continue the same conversation with an agent, use the same <code>sessionId</code> value in the request.</p> </li> <li> <p>To activate trace enablement, turn <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow the agent's reasoning process that led it to the information it processed, the actions it took, and the final result it yielded. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events\">Trace enablement</a>.</p> </li> <li> <p>To stream agent responses, make sure that only orchestration prompt is enabled. Agent streaming is not supported for the following steps: </p> <ul> <li> <p> <code>Pre-processing</code> </p> </li> <li> <p> <code>Post-processing</code> </p> </li> <li> <p>Agent with 1 Knowledge base and <code>User Input</code> not enabled</p> </li> </ul> </li> <li> <p>End a conversation by setting <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the <code>sessionState</code> object, you can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group.</p> </li> </ul> <p>The response contains both <b>chunk</b> and <b>trace</b> attributes.</p> <p>The final response is returned in the <code>bytes</code> field of the <code>chunk</code> object. The <code>InvokeAgent</code> returns one chunk for the entire interaction.</p> <ul> <li> <p>The <code>attribution</code> object contains citations for parts of the response.</p> </li> <li> <p>If you set <code>enableTrace</code> to <code>true</code> in the request, you can trace the agent's steps and reasoning process that led it to the response.</p> </li> <li> <p>If the action predicted was configured to return control, the response returns parameters for the action, elicited from the user, in the <code>returnControl</code> field.</p> </li> <li> <p>Errors are also surfaced in the response.</p> </li> </ul>",
     "InvokeFlow": "<p>Invokes an alias of a flow to run the inputs that you specify and return the output of each node as a stream. If there's an error, the error is returned. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html\">Test a flow in Amazon Bedrock</a> in the <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html\">Amazon Bedrock User Guide</a>.</p> <note> <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeFlow</code>.</p> </note>",
-    "InvokeInlineAgent": "<p> Invokes an inline Amazon Bedrock agent using the configurations you provide with the request. </p> <ul> <li> <p>Specify the following fields for security purposes.</p> <ul> <li> <p>(Optional) <code>customerEncryptionKeyArn</code> – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeInlineAgent</code> request begins a new session.</p> </li> </ul> </li> <li> <p>To override the default prompt behavior for agent orchestration and to use advanced prompts, include a <code>promptOverrideConfiguration</code> object. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html\">Advanced prompts</a>.</p> </li> <li> <p>The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.</p> </li> </ul> <note> <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeInlineAgent</code>.</p> </note>",
+    "InvokeInlineAgent": "<p> Invokes an inline Amazon Bedrock agent using the configurations you provide with the request. </p> <ul> <li> <p>Specify the following fields for security purposes.</p> <ul> <li> <p>(Optional) <code>customerEncryptionKeyArn</code> – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent <code>InvokeInlineAgent</code> request begins a new session.</p> </li> </ul> </li> <li> <p>To override the default prompt behavior for agent orchestration and to use advanced prompts, include a <code>promptOverrideConfiguration</code> object. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html\">Advanced prompts</a>.</p> </li> <li> <p>The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.</p> </li> </ul> <note> </note>",
     "OptimizePrompt": "<p>Optimizes a prompt for the task that you specify. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html\">Optimize a prompt</a> in the <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html\">Amazon Bedrock User Guide</a>.</p>",
     "Rerank": "<p>Reranks the relevance of sources based on queries. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html\">Improve the relevance of query responses with a reranker model</a>.</p>",
     "Retrieve": "<p>Queries a knowledge base and retrieves information from it.</p>",
     "RetrieveAndGenerate": "<p>Queries a knowledge base and generates responses based on the retrieved results and using the specified foundation model or <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html\">inference profile</a>. The response only cites sources that are relevant to the query.</p>",
-    "RetrieveAndGenerateStream": "<p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p> <note> <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p> </note>"
+    "RetrieveAndGenerateStream": "<p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p> <note> <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p> </note> <p>This operation requires permission for the <code> bedrock:RetrieveAndGenerate</code> action.</p>"
   },
   "shapes": {
     "APISchema": {
@@ -491,6 +491,7 @@
       "base": null,
       "refs": {
         "FlowInputContent$document": "<p>The input to send to the prompt flow input node.</p>",
+        "FlowMultiTurnInputContent$document": "<p>The requested additional input to send back to the multi-turn flow node.</p>",
         "FlowOutputContent$document": "<p>The content in the output.</p>",
         "FlowTraceNodeInputContent$document": "<p>The content of the node input.</p>",
         "FlowTraceNodeOutputContent$document": "<p>The content of the node output.</p>",
@@ -671,6 +672,13 @@
         "FlowCompletionEvent$completionReason": "<p>The reason that the flow completed.</p>"
       }
     },
+    "FlowExecutionId": {
+      "base": null,
+      "refs": {
+        "InvokeFlowRequest$executionId": "<p>The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you. </p>",
+        "InvokeFlowResponse$executionId": "<p>The unique identifier for the current flow execution.</p>"
+      }
+    },
     "FlowIdentifier": {
       "base": null,
       "refs": {
@@ -693,6 +701,18 @@
       "base": null,
       "refs": {
         "InvokeFlowRequest$inputs": "<p>A list of objects, each containing information about an input into the flow.</p>"
+      }
+    },
+    "FlowMultiTurnInputContent": {
+      "base": "<p>The content structure containing input information for multi-turn flow interactions.</p>",
+      "refs": {
+        "FlowMultiTurnInputRequestEvent$content": "<p>The content payload containing the input request details for the multi-turn interaction.</p>"
+      }
+    },
+    "FlowMultiTurnInputRequestEvent": {
+      "base": "<p>Response object from the flow multi-turn node requesting additional information.</p>",
+      "refs": {
+        "FlowResponseStream$flowMultiTurnInputRequestEvent": "<p>The event stream containing the multi-turn input request information from the flow.</p>"
       }
     },
     "FlowOutputContent": {
@@ -876,7 +896,8 @@
     "GeneratedResponsePart": {
       "base": "<p>Contains metadata about a part of the generated response that is accompanied by a citation.</p> <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax\">InvokeAgent response</a> – in the <code>generatedResponsePart</code> field</p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax\">RetrieveAndGenerate response</a> – in the <code>generatedResponsePart</code> field</p> </li> </ul>",
       "refs": {
-        "Citation$generatedResponsePart": "<p>Contains the generated response and metadata </p>"
+        "Citation$generatedResponsePart": "<p>Contains the generated response and metadata </p>",
+        "CitationEvent$generatedResponsePart": "<p>The generated response to the citation event.</p>"
       }
     },
     "GenerationConfiguration": {
@@ -1601,6 +1622,7 @@
     "NodeInputName": {
       "base": null,
       "refs": {
+        "FlowInput$nodeInputName": "<p>The name of the input from the flow input node.</p>",
         "FlowTraceNodeInputField$nodeInputName": "<p>The name of the node input.</p>"
       }
     },
@@ -1608,6 +1630,7 @@
       "base": null,
       "refs": {
         "FlowInput$nodeName": "<p>The name of the flow input node that begins the prompt flow.</p>",
+        "FlowMultiTurnInputRequestEvent$nodeName": "<p>The name of the node in the flow that is requesting the input.</p>",
         "FlowOutputEvent$nodeName": "<p>The name of the flow output node that the output is from.</p>",
         "FlowTraceConditionNodeResultEvent$nodeName": "<p>The name of the condition node.</p>",
         "FlowTraceNodeInputEvent$nodeName": "<p>The name of the node that received the input.</p>",
@@ -1624,6 +1647,7 @@
     "NodeType": {
       "base": null,
       "refs": {
+        "FlowMultiTurnInputRequestEvent$nodeType": "<p>The type of the node in the flow that is requesting the input.</p>",
         "FlowOutputEvent$nodeType": "<p>The type of the node that the output is from.</p>"
       }
     },
@@ -2364,6 +2388,7 @@
       "base": null,
       "refs": {
         "Citation$retrievedReferences": "<p>Contains metadata about the sources cited for the generated response.</p>",
+        "CitationEvent$retrievedReferences": "<p>The retrieved references of the citation event.</p>",
         "KnowledgeBaseLookupOutput$retrievedReferences": "<p>Contains metadata about the sources cited for the generated response.</p>"
       }
     },
@@ -2521,7 +2546,8 @@
     "StreamingConfigurations": {
       "base": "<p> Configurations for streaming.</p>",
       "refs": {
-        "InvokeAgentRequest$streamingConfigurations": "<p> Specifies the configurations for streaming. </p> <note> <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p> </note>"
+        "InvokeAgentRequest$streamingConfigurations": "<p> Specifies the configurations for streaming. </p> <note> <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p> </note>",
+        "InvokeInlineAgentRequest$streamingConfigurations": "<p> Specifies the configurations for streaming. </p> <note> <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p> </note>"
       }
     },
     "StreamingConfigurationsApplyGuardrailIntervalInteger": {
@@ -2576,6 +2602,7 @@
         "InlineAgentReturnControlPayload$invocationId": "<p>The identifier of the action group invocation. </p>",
         "InlineSessionState$invocationId": "<p> The identifier of the invocation of an action. This value must match the <code>invocationId</code> returned in the <code>InvokeInlineAgent</code> response for the action whose results are provided in the <code>returnControlInvocationResults</code> field. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html\">Return control to the agent developer</a>. </p>",
         "InputFile$name": "<p>The name of the source file.</p>",
+        "InternalServerException$reason": "<p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>",
         "OutputFile$name": "<p>The name of the file containing response from code interpreter.</p>",
         "Parameter$name": "<p>The name of the parameter.</p>",
         "Parameter$type": "<p>The type of the parameter.</p>",

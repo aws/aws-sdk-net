@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSecurityGroupException operation
     /// </summary>  
-    public class InvalidSecurityGroupExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSecurityGroupException, XmlUnmarshallerContext>
+    public class InvalidSecurityGroupExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSecurityGroupException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

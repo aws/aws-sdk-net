@@ -32,7 +32,15 @@ namespace Amazon.S3Tables.Model
     /// <summary>
     /// Container for the parameters to the PutTableBucketPolicy operation.
     /// Creates a new maintenance configuration or replaces an existing table bucket policy
-    /// for a table bucket.
+    /// for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
+    /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:PutTableBucketPolicy</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class PutTableBucketPolicyRequest : AmazonS3TablesRequest
     {
@@ -42,7 +50,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// The name of the resource policy.
+        /// The <c>JSON</c> that defines the policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20480)]
@@ -61,7 +69,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property TableBucketARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the table bucket.
+        /// The Amazon Resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

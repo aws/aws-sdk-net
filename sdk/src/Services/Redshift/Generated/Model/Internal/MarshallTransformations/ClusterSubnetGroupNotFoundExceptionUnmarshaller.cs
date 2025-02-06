@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSubnetGroupNotFoundException operation
     /// </summary>  
-    public class ClusterSubnetGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterSubnetGroupNotFoundException, XmlUnmarshallerContext>
+    public class ClusterSubnetGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterSubnetGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

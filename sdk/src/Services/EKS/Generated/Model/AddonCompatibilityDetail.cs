@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Contains compatibility information for an Amazon EKS add-on.
+    /// The summary information about the Amazon EKS add-on compatibility for the next Kubernetes
+    /// version for an insight check in the <c>UPGRADE_READINESS</c> category.
     /// </summary>
     public partial class AddonCompatibilityDetail
     {
@@ -40,7 +41,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CompatibleVersions. 
         /// <para>
-        /// A list of compatible add-on versions.
+        /// The list of compatible Amazon EKS add-on versions for the next Kubernetes version.
         /// </para>
         /// </summary>
         public List<string> CompatibleVersions

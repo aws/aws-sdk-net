@@ -298,6 +298,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.ContactFlowVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.FlowContentSha256</property>
     <min>1</min>
     <max>64</max>
@@ -869,6 +873,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactFlowModuleRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowVersionRequest.ContactFlowVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowVersionRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>

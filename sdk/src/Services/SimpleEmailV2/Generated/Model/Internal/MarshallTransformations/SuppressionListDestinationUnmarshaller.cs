@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SuppressionListDestination Object
     /// </summary>  
-    public class SuppressionListDestinationUnmarshaller : IUnmarshaller<SuppressionListDestination, XmlUnmarshallerContext>, IUnmarshaller<SuppressionListDestination, JsonUnmarshallerContext>
+    public class SuppressionListDestinationUnmarshaller : IJsonUnmarshaller<SuppressionListDestination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SuppressionListDestination IUnmarshaller<SuppressionListDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuppressionListDestination Unmarshall(JsonUnmarshallerContext context)
+        public SuppressionListDestination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SuppressionListDestination unmarshalledObject = new SuppressionListDestination();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SuppressionListImportAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SuppressionListImportAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuppressionListImportAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

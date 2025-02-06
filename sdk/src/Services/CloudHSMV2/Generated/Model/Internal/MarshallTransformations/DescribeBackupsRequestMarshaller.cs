@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
@@ -63,62 +66,67 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilters())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFiltersKvp in publicRequest.Filters)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilters())
+                    context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                    var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
                     {
-                        context.Writer.WritePropertyName("Filters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
-                            {
-                                    context.Writer.Write(publicRequestFiltersValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteStringValue(publicRequestFiltersValueListValue);
                     }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetShared())
-                    {
-                        context.Writer.WritePropertyName("Shared");
-                        context.Writer.Write(publicRequest.Shared.Value);
-                    }
-
-                    if(publicRequest.IsSetSortAscending())
-                    {
-                        context.Writer.WritePropertyName("SortAscending");
-                        context.Writer.Write(publicRequest.SortAscending.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndArray();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetShared())
+            {
+                context.Writer.WritePropertyName("Shared");
+                context.Writer.WriteBooleanValue(publicRequest.Shared.Value);
+            }
+
+            if(publicRequest.IsSetSortAscending())
+            {
+                context.Writer.WritePropertyName("SortAscending");
+                context.Writer.WriteBooleanValue(publicRequest.SortAscending.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

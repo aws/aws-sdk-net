@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolyline())
             {
                 context.Writer.WritePropertyName("Polyline");
-                context.Writer.Write(requestObject.Polyline);
+                context.Writer.WriteStringValue(requestObject.Polyline);
             }
 
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius.Value);
+                context.Writer.WriteNumberValue(requestObject.Radius.Value);
             }
 
         }

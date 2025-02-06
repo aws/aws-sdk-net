@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumRGBTolerance())
             {
                 context.Writer.WritePropertyName("maximumRGBTolerance");
-                context.Writer.Write(requestObject.MaximumRGBTolerance.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumRGBTolerance.Value);
             }
 
             if(requestObject.IsSetMaximumYUV())
             {
                 context.Writer.WritePropertyName("maximumYUV");
-                context.Writer.Write(requestObject.MaximumYUV.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumYUV.Value);
             }
 
             if(requestObject.IsSetMinimumRGBTolerance())
             {
                 context.Writer.WritePropertyName("minimumRGBTolerance");
-                context.Writer.Write(requestObject.MinimumRGBTolerance.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumRGBTolerance.Value);
             }
 
             if(requestObject.IsSetMinimumYUV())
             {
                 context.Writer.WritePropertyName("minimumYUV");
-                context.Writer.Write(requestObject.MinimumYUV.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumYUV.Value);
             }
 
         }

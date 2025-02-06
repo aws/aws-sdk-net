@@ -886,6 +886,10 @@ namespace Amazon.Redshift.Model
         /// If <c>true</c>, the cluster can be accessed from a public network. Only clusters in
         /// VPCs can be set to be publicly available.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
         /// </summary>
         public bool? PubliclyAccessible
         {

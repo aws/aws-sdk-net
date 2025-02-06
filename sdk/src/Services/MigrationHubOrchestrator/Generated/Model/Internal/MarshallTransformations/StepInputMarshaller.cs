@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
-                context.Writer.Write(requestObject.IntegerValue.Value);
+                context.Writer.WriteNumberValue(requestObject.IntegerValue.Value);
             }
 
             if(requestObject.IsSetListOfStringsValue())
             {
                 context.Writer.WritePropertyName("listOfStringsValue");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfStringsValueListValue in requestObject.ListOfStringsValue)
                 {
-                        context.Writer.Write(requestObjectListOfStringsValueListValue);
+                        context.Writer.WriteStringValue(requestObjectListOfStringsValueListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMapOfStringValue())
             {
                 context.Writer.WritePropertyName("mapOfStringValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapOfStringValueKvp in requestObject.MapOfStringValue)
                 {
                     context.Writer.WritePropertyName(requestObjectMapOfStringValueKvp.Key);
                     var requestObjectMapOfStringValueValue = requestObjectMapOfStringValueKvp.Value;
 
-                        context.Writer.Write(requestObjectMapOfStringValueValue);
+                        context.Writer.WriteStringValue(requestObjectMapOfStringValueValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

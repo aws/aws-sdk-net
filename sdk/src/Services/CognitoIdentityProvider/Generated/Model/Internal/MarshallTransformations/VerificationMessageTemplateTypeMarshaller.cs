@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultEmailOption())
             {
                 context.Writer.WritePropertyName("DefaultEmailOption");
-                context.Writer.Write(requestObject.DefaultEmailOption);
+                context.Writer.WriteStringValue(requestObject.DefaultEmailOption);
             }
 
             if(requestObject.IsSetEmailMessage())
             {
                 context.Writer.WritePropertyName("EmailMessage");
-                context.Writer.Write(requestObject.EmailMessage);
+                context.Writer.WriteStringValue(requestObject.EmailMessage);
             }
 
             if(requestObject.IsSetEmailMessageByLink())
             {
                 context.Writer.WritePropertyName("EmailMessageByLink");
-                context.Writer.Write(requestObject.EmailMessageByLink);
+                context.Writer.WriteStringValue(requestObject.EmailMessageByLink);
             }
 
             if(requestObject.IsSetEmailSubject())
             {
                 context.Writer.WritePropertyName("EmailSubject");
-                context.Writer.Write(requestObject.EmailSubject);
+                context.Writer.WriteStringValue(requestObject.EmailSubject);
             }
 
             if(requestObject.IsSetEmailSubjectByLink())
             {
                 context.Writer.WritePropertyName("EmailSubjectByLink");
-                context.Writer.Write(requestObject.EmailSubjectByLink);
+                context.Writer.WriteStringValue(requestObject.EmailSubjectByLink);
             }
 
             if(requestObject.IsSetSmsMessage())
             {
                 context.Writer.WritePropertyName("SmsMessage");
-                context.Writer.Write(requestObject.SmsMessage);
+                context.Writer.WriteStringValue(requestObject.SmsMessage);
             }
 
         }

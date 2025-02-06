@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientCertificateTlsAuth())
             {
                 context.Writer.WritePropertyName("ClientCertificateTlsAuth");
-                context.Writer.Write(requestObject.ClientCertificateTlsAuth);
+                context.Writer.WriteStringValue(requestObject.ClientCertificateTlsAuth);
             }
 
             if(requestObject.IsSetSaslScram512Auth())
             {
                 context.Writer.WritePropertyName("SaslScram512Auth");
-                context.Writer.Write(requestObject.SaslScram512Auth);
+                context.Writer.WriteStringValue(requestObject.SaslScram512Auth);
             }
 
         }

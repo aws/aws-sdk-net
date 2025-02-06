@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketARN())
             {
                 context.Writer.WritePropertyName("BucketARN");
-                context.Writer.Write(requestObject.BucketARN);
+                context.Writer.WriteStringValue(requestObject.BucketARN);
             }
 
             if(requestObject.IsSetFileKey())
             {
                 context.Writer.WritePropertyName("FileKey");
-                context.Writer.Write(requestObject.FileKey);
+                context.Writer.WriteStringValue(requestObject.FileKey);
             }
 
             if(requestObject.IsSetReferenceRoleARN())
             {
                 context.Writer.WritePropertyName("ReferenceRoleARN");
-                context.Writer.Write(requestObject.ReferenceRoleARN);
+                context.Writer.WriteStringValue(requestObject.ReferenceRoleARN);
             }
 
         }

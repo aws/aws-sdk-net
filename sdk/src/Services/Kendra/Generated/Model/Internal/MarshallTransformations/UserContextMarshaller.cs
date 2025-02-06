@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceGroups())
             {
                 context.Writer.WritePropertyName("DataSourceGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSourceGroupsListValue in requestObject.DataSourceGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataSourceGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroups())
             {
                 context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupsListValue in requestObject.Groups)
                 {
-                        context.Writer.Write(requestObjectGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToken())
             {
                 context.Writer.WritePropertyName("Token");
-                context.Writer.Write(requestObject.Token);
+                context.Writer.WriteStringValue(requestObject.Token);
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
         }

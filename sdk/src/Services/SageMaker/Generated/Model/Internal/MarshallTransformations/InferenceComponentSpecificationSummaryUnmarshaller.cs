@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InferenceComponentSpecificationSummary Object
     /// </summary>  
-    public class InferenceComponentSpecificationSummaryUnmarshaller : IUnmarshaller<InferenceComponentSpecificationSummary, XmlUnmarshallerContext>, IUnmarshaller<InferenceComponentSpecificationSummary, JsonUnmarshallerContext>
+    public class InferenceComponentSpecificationSummaryUnmarshaller : IJsonUnmarshaller<InferenceComponentSpecificationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InferenceComponentSpecificationSummary IUnmarshaller<InferenceComponentSpecificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceComponentSpecificationSummary Unmarshall(JsonUnmarshallerContext context)
+        public InferenceComponentSpecificationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InferenceComponentSpecificationSummary unmarshalledObject = new InferenceComponentSpecificationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaseInferenceComponentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseInferenceComponentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseInferenceComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ComputeResourceRequirements", targetDepth))
                 {
                     var unmarshaller = InferenceComponentComputeResourceRequirementsUnmarshaller.Instance;
-                    unmarshalledObject.ComputeResourceRequirements = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputeResourceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Container", targetDepth))
                 {
                     var unmarshaller = InferenceComponentContainerSpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartupParameters", targetDepth))
                 {
                     var unmarshaller = InferenceComponentStartupParametersUnmarshaller.Instance;
-                    unmarshalledObject.StartupParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartupParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

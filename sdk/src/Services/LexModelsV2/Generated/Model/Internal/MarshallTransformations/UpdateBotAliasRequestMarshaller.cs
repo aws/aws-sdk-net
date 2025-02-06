@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -67,78 +70,83 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/botaliases/{botAliasId}/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBotAliasLocaleSettings())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("botAliasLocaleSettings");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestBotAliasLocaleSettingsKvp in publicRequest.BotAliasLocaleSettings)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBotAliasLocaleSettings())
-                    {
-                        context.Writer.WritePropertyName("botAliasLocaleSettings");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestBotAliasLocaleSettingsKvp in publicRequest.BotAliasLocaleSettings)
-                        {
-                            context.Writer.WritePropertyName(publicRequestBotAliasLocaleSettingsKvp.Key);
-                            var publicRequestBotAliasLocaleSettingsValue = publicRequestBotAliasLocaleSettingsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestBotAliasLocaleSettingsKvp.Key);
+                    var publicRequestBotAliasLocaleSettingsValue = publicRequestBotAliasLocaleSettingsKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = BotAliasLocaleSettingsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBotAliasLocaleSettingsValue, context);
+                    var marshaller = BotAliasLocaleSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBotAliasLocaleSettingsValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBotAliasName())
-                    {
-                        context.Writer.WritePropertyName("botAliasName");
-                        context.Writer.Write(publicRequest.BotAliasName);
-                    }
-
-                    if(publicRequest.IsSetBotVersion())
-                    {
-                        context.Writer.WritePropertyName("botVersion");
-                        context.Writer.Write(publicRequest.BotVersion);
-                    }
-
-                    if(publicRequest.IsSetConversationLogSettings())
-                    {
-                        context.Writer.WritePropertyName("conversationLogSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConversationLogSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConversationLogSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetSentimentAnalysisSettings())
-                    {
-                        context.Writer.WritePropertyName("sentimentAnalysisSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SentimentAnalysisSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SentimentAnalysisSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBotAliasName())
+            {
+                context.Writer.WritePropertyName("botAliasName");
+                context.Writer.WriteStringValue(publicRequest.BotAliasName);
+            }
+
+            if(publicRequest.IsSetBotVersion())
+            {
+                context.Writer.WritePropertyName("botVersion");
+                context.Writer.WriteStringValue(publicRequest.BotVersion);
+            }
+
+            if(publicRequest.IsSetConversationLogSettings())
+            {
+                context.Writer.WritePropertyName("conversationLogSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConversationLogSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConversationLogSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetSentimentAnalysisSettings())
+            {
+                context.Writer.WritePropertyName("sentimentAnalysisSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SentimentAnalysisSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SentimentAnalysisSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

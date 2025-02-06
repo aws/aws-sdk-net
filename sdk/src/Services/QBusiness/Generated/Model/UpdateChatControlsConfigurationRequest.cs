@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateChatControlsConfiguration operation.
-    /// Updates an set of chat controls configured for an existing Amazon Q Business application.
+    /// Updates a set of chat controls configured for an existing Amazon Q Business application.
     /// </summary>
     public partial class UpdateChatControlsConfigurationRequest : AmazonQBusinessRequest
     {
@@ -39,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private BlockedPhrasesConfigurationUpdate _blockedPhrasesConfigurationUpdate;
         private string _clientToken;
         private CreatorModeConfiguration _creatorModeConfiguration;
+        private OrchestrationConfiguration _orchestrationConfiguration;
         private ResponseScope _responseScope;
         private List<TopicConfiguration> _topicConfigurationsToCreateOrUpdate = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
         private List<TopicConfiguration> _topicConfigurationsToDelete = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
@@ -116,6 +117,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatorModeConfiguration()
         {
             return this._creatorModeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationConfiguration. 
+        /// <para>
+        ///  The chat response orchestration settings for your application.
+        /// </para>
+        /// </summary>
+        public OrchestrationConfiguration OrchestrationConfiguration
+        {
+            get { return this._orchestrationConfiguration; }
+            set { this._orchestrationConfiguration = value; }
+        }
+
+        // Check to see if OrchestrationConfiguration property is set
+        internal bool IsSetOrchestrationConfiguration()
+        {
+            return this._orchestrationConfiguration != null;
         }
 
         /// <summary>

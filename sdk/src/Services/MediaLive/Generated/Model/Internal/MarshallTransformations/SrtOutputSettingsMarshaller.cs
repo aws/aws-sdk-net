@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufferMsec())
             {
                 context.Writer.WritePropertyName("bufferMsec");
-                context.Writer.Write(requestObject.BufferMsec.Value);
+                context.Writer.WriteNumberValue(requestObject.BufferMsec.Value);
             }
 
             if(requestObject.IsSetContainerSettings())
             {
                 context.Writer.WritePropertyName("containerSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UdpContainerSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetLatency())
             {
                 context.Writer.WritePropertyName("latency");
-                context.Writer.Write(requestObject.Latency.Value);
+                context.Writer.WriteNumberValue(requestObject.Latency.Value);
             }
 
         }

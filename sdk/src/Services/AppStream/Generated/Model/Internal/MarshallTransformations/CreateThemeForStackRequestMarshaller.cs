@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,80 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFaviconS3Location())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFaviconS3Location())
-                    {
-                        context.Writer.WritePropertyName("FaviconS3Location");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("FaviconS3Location");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FaviconS3Location, context);
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FaviconS3Location, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFooterLinks())
-                    {
-                        context.Writer.WritePropertyName("FooterLinks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ThemeFooterLinkMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFooterLinksListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOrganizationLogoS3Location())
-                    {
-                        context.Writer.WritePropertyName("OrganizationLogoS3Location");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStackName())
-                    {
-                        context.Writer.WritePropertyName("StackName");
-                        context.Writer.Write(publicRequest.StackName);
-                    }
-
-                    if(publicRequest.IsSetThemeStyling())
-                    {
-                        context.Writer.WritePropertyName("ThemeStyling");
-                        context.Writer.Write(publicRequest.ThemeStyling);
-                    }
-
-                    if(publicRequest.IsSetTitleText())
-                    {
-                        context.Writer.WritePropertyName("TitleText");
-                        context.Writer.Write(publicRequest.TitleText);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetFooterLinks())
+            {
+                context.Writer.WritePropertyName("FooterLinks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ThemeFooterLinkMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFooterLinksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOrganizationLogoS3Location())
+            {
+                context.Writer.WritePropertyName("OrganizationLogoS3Location");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStackName())
+            {
+                context.Writer.WritePropertyName("StackName");
+                context.Writer.WriteStringValue(publicRequest.StackName);
+            }
+
+            if(publicRequest.IsSetThemeStyling())
+            {
+                context.Writer.WritePropertyName("ThemeStyling");
+                context.Writer.WriteStringValue(publicRequest.ThemeStyling);
+            }
+
+            if(publicRequest.IsSetTitleText())
+            {
+                context.Writer.WritePropertyName("TitleText");
+                context.Writer.WriteStringValue(publicRequest.TitleText);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

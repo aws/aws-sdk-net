@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyCertificatesException operation
     /// </summary>  
-    public class TooManyCertificatesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyCertificatesException, XmlUnmarshallerContext>
+    public class TooManyCertificatesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyCertificatesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

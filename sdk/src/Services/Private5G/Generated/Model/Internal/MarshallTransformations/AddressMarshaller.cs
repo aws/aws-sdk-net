@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("city");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetCompany())
             {
                 context.Writer.WritePropertyName("company");
-                context.Writer.Write(requestObject.Company);
+                context.Writer.WriteStringValue(requestObject.Company);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("emailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("phoneNumber");
-                context.Writer.Write(requestObject.PhoneNumber);
+                context.Writer.WriteStringValue(requestObject.PhoneNumber);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("postalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetStateOrProvince())
             {
                 context.Writer.WritePropertyName("stateOrProvince");
-                context.Writer.Write(requestObject.StateOrProvince);
+                context.Writer.WriteStringValue(requestObject.StateOrProvince);
             }
 
             if(requestObject.IsSetStreet1())
             {
                 context.Writer.WritePropertyName("street1");
-                context.Writer.Write(requestObject.Street1);
+                context.Writer.WriteStringValue(requestObject.Street1);
             }
 
             if(requestObject.IsSetStreet2())
             {
                 context.Writer.WritePropertyName("street2");
-                context.Writer.Write(requestObject.Street2);
+                context.Writer.WriteStringValue(requestObject.Street2);
             }
 
             if(requestObject.IsSetStreet3())
             {
                 context.Writer.WritePropertyName("street3");
-                context.Writer.Write(requestObject.Street3);
+                context.Writer.WriteStringValue(requestObject.Street3);
             }
 
         }

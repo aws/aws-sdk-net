@@ -42,16 +42,26 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionStartCondition. 
         /// <para>
-        /// The condition configures when the pipeline should trigger a new image build. When
-        /// the <c>pipelineExecutionStartCondition</c> is set to <c>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</c>,
-        /// and you use semantic version filters on the base image or components in your image
-        /// recipe, EC2 Image Builder will build a new image only when there are new versions
-        /// of the image or components in your recipe that match the semantic version filter.
-        /// When it is set to <c>EXPRESSION_MATCH_ONLY</c>, it will build a new image every time
-        /// the CRON expression matches the current time. For semantic version syntax, see <a
-        /// href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
-        /// in the <i> EC2 Image Builder API Reference</i>.
+        /// The start condition configures when the pipeline should trigger a new image build,
+        /// as follows. If no value is set Image Builder defaults to <c>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</c>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</c> (default) – When you use
+        /// semantic version filters on the base image or components in your image recipe, EC2
+        /// Image Builder builds a new image only when there are new versions of the base image
+        /// or components in your recipe that match the filter.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For semantic version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>EXPRESSION_MATCH_ONLY</c> – This condition builds a new image every time the CRON
+        /// expression matches the current time.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PipelineExecutionStartCondition PipelineExecutionStartCondition
         {

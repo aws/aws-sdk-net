@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyBlockHeaders())
             {
                 context.Writer.WritePropertyName("KeyBlockHeaders");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyBlockHeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyBlockHeaders, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWrappingKeyIdentifier())
             {
                 context.Writer.WritePropertyName("WrappingKeyIdentifier");
-                context.Writer.Write(requestObject.WrappingKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.WrappingKeyIdentifier);
             }
 
         }

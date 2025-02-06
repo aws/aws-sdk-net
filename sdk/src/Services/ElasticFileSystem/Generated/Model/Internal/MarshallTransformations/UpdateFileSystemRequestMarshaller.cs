@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
@@ -64,38 +67,43 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
             request.AddPathResource("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             request.ResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetProvisionedThroughputInMibps())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value))
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetProvisionedThroughputInMibps())
-                    {
-                        context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetThroughputMode())
-                    {
-                        context.Writer.WritePropertyName("ThroughputMode");
-                        context.Writer.Write(publicRequest.ThroughputMode);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value));
                 }
-
-                request.Content = memoryStream.ToArray();
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.ProvisionedThroughputInMibps.Value);
+                }
             }
+
+            if(publicRequest.IsSetThroughputMode())
+            {
+                context.Writer.WritePropertyName("ThroughputMode");
+                context.Writer.WriteStringValue(publicRequest.ThroughputMode);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

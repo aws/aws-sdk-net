@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComputeQuotaTarget Object
     /// </summary>  
-    public class ComputeQuotaTargetUnmarshaller : IUnmarshaller<ComputeQuotaTarget, XmlUnmarshallerContext>, IUnmarshaller<ComputeQuotaTarget, JsonUnmarshallerContext>
+    public class ComputeQuotaTargetUnmarshaller : IJsonUnmarshaller<ComputeQuotaTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComputeQuotaTarget IUnmarshaller<ComputeQuotaTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeQuotaTarget Unmarshall(JsonUnmarshallerContext context)
+        public ComputeQuotaTarget Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComputeQuotaTarget unmarshalledObject = new ComputeQuotaTarget();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FairShareWeight", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FairShareWeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FairShareWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TeamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TeamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TeamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

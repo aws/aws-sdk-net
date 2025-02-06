@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDeliveryOptionsException operation
     /// </summary>  
-    public class InvalidDeliveryOptionsExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDeliveryOptionsException, XmlUnmarshallerContext>
+    public class InvalidDeliveryOptionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDeliveryOptionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -317,7 +317,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+        /// Specify the <c>logGroupName</c> parameter to cause log events ingested into that log
         /// group to be encrypted with that key. Only the log events ingested after the key is
         /// associated are encrypted with that key.
         /// </para>
@@ -414,7 +414,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+        /// Specify the <c>logGroupName</c> parameter to cause log events ingested into that log
         /// group to be encrypted with that key. Only the log events ingested after the key is
         /// associated are encrypted with that key.
         /// </para>
@@ -796,6 +796,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <note> 
         /// <para>
+        /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
+        /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+        /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
+        /// processing of log data with subscriptions</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
         /// You can sort the exported log field data by using Linux utilities.
         /// </para>
@@ -864,6 +871,13 @@ namespace Amazon.CloudWatchLogs
         /// the Amazon S3 key prefix for all exported objects.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
+        /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+        /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
+        /// processing of log data with subscriptions</a>.
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
         /// You can sort the exported log field data by using Linux utilities.
@@ -1561,7 +1575,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes s <i>delivery</i>. A delivery is a connection between a logical <i>delivery
+        /// Deletes a <i>delivery</i>. A delivery is a connection between a logical <i>delivery
         /// source</i> and a logical <i>delivery destination</i>. Deleting a delivery only deletes
         /// the connection between the delivery source and delivery destination. It does not delete
         /// the delivery destination or the delivery source.
@@ -1599,7 +1613,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes s <i>delivery</i>. A delivery is a connection between a logical <i>delivery
+        /// Deletes a <i>delivery</i>. A delivery is a connection between a logical <i>delivery
         /// source</i> and a logical <i>delivery destination</i>. Deleting a delivery only deletes
         /// the connection between the delivery source and delivery destination. It does not delete
         /// the delivery destination or the delivery source.
@@ -2780,6 +2794,33 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns a list of all CloudWatch Logs account policies in the account.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must be signed on with the correct permissions depending
+        /// on the type of policy that you are retrieving information for.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To see data protection policies, you must have the <c>logs:GetDataProtectionPolicy</c>
+        /// and <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+        /// and <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see transformer policies, you must have the <c>logs:GetTransformer</c> and <c>logs:DescribeAccountPolicies</c>
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c> and
+        /// <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPolicies service method.</param>
         /// 
@@ -2809,6 +2850,33 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Returns a list of all CloudWatch Logs account policies in the account.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must be signed on with the correct permissions depending
+        /// on the type of policy that you are retrieving information for.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To see data protection policies, you must have the <c>logs:GetDataProtectionPolicy</c>
+        /// and <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see subscription filter policies, you must have the <c>logs:DescrubeSubscriptionFilters</c>
+        /// and <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see transformer policies, you must have the <c>logs:GetTransformer</c> and <c>logs:DescribeAccountPolicies</c>
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To see field index policies, you must have the <c>logs:DescribeIndexPolicies</c> and
+        /// <c>logs:DescribeAccountPolicies</c> permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -3598,7 +3666,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// This operation has a limit of five transactions per second, after which transactions
+        /// This operation has a limit of 25 transactions per second, after which transactions
         /// are throttled.
         /// </para>
         ///  
@@ -3644,7 +3712,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// This operation has a limit of five transactions per second, after which transactions
+        /// This operation has a limit of 25 transactions per second, after which transactions
         /// are throttled.
         /// </para>
         ///  
@@ -5650,6 +5718,31 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// To use this operation, you must be signed on with the correct permissions depending
+        /// on the type of policy that you are creating.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create a data protection policy, you must have the <c>logs:PutDataProtectionPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a subscription filter policy, you must have the <c>logs:PutSubscriptionFilter</c>
+        /// and <c>logs:PutccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a transformer policy, you must have the <c>logs:PutTransformer</c> and <c>logs:PutAccountPolicy</c>
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
+        /// permissions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Data protection policy</b> 
         /// </para>
         ///  
@@ -5895,6 +5988,31 @@ namespace Amazon.CloudWatchLogs
         /// index policy that applies to all log groups or a subset of log groups in the account.
         /// 
         ///  
+        /// <para>
+        /// To use this operation, you must be signed on with the correct permissions depending
+        /// on the type of policy that you are creating.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create a data protection policy, you must have the <c>logs:PutDataProtectionPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a subscription filter policy, you must have the <c>logs:PutSubscriptionFilter</c>
+        /// and <c>logs:PutccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a transformer policy, you must have the <c>logs:PutTransformer</c> and <c>logs:PutAccountPolicy</c>
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a field index policy, you must have the <c>logs:PutIndexPolicy</c> and <c>logs:PutAccountPolicy</c>
+        /// permissions.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>Data protection policy</b> 
         /// </para>
@@ -6304,8 +6422,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
-        /// a logical object that represents the actual delivery destination. 
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i> in the same
+        /// account of the actual delivery destination. The delivery destination that you create
+        /// is a logical object that represents the actual delivery destination. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6389,8 +6508,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
-        /// a logical object that represents the actual delivery destination. 
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i> in the same
+        /// account of the actual delivery destination. The delivery destination that you create
+        /// is a logical object that represents the actual delivery destination. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7451,10 +7571,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Using regular expressions to create metric filters is supported. For these filters,
-        /// there is a quota of two regular expression patterns within a single filter pattern.
-        /// There is also a quota of five regular expression patterns per log group. For more
-        /// information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Using regular expressions in filter patterns is supported. For these filters, there
+        /// is a quota of two regular expression patterns within a single filter pattern. There
+        /// is also a quota of five regular expression patterns per log group. For more information
+        /// about using regular expressions in filter patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
         /// Filter pattern syntax for metric filters, subscription filters, filter log events,
         /// and Live Tail</a>.
         /// </para>
@@ -7527,10 +7647,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Using regular expressions to create metric filters is supported. For these filters,
-        /// there is a quota of two regular expression patterns within a single filter pattern.
-        /// There is also a quota of five regular expression patterns per log group. For more
-        /// information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Using regular expressions in filter patterns is supported. For these filters, there
+        /// is a quota of two regular expression patterns within a single filter pattern. There
+        /// is also a quota of five regular expression patterns per log group. For more information
+        /// about using regular expressions in filter patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
         /// Filter pattern syntax for metric filters, subscription filters, filter log events,
         /// and Live Tail</a>.
         /// </para>
@@ -7920,11 +8040,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Using regular expressions to create subscription filters is supported. For these filters,
-        /// there is a quotas of quota of two regular expression patterns within a single filter
-        /// pattern. There is also a quota of five regular expression patterns per log group.
-        /// For more information about using regular expressions in subscription filters, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Using regular expressions in filter patterns is supported. For these filters, there
+        /// is a quotas of quota of two regular expression patterns within a single filter pattern.
+        /// There is also a quota of five regular expression patterns per log group. For more
+        /// information about using regular expressions in filter patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
         /// Filter pattern syntax for metric filters, subscription filters, filter log events,
         /// and Live Tail</a>.
         /// </para>
@@ -8006,11 +8125,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Using regular expressions to create subscription filters is supported. For these filters,
-        /// there is a quotas of quota of two regular expression patterns within a single filter
-        /// pattern. There is also a quota of five regular expression patterns per log group.
-        /// For more information about using regular expressions in subscription filters, see
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Using regular expressions in filter patterns is supported. For these filters, there
+        /// is a quotas of quota of two regular expression patterns within a single filter pattern.
+        /// There is also a quota of five regular expression patterns per log group. For more
+        /// information about using regular expressions in filter patterns, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
         /// Filter pattern syntax for metric filters, subscription filters, filter log events,
         /// and Live Tail</a>.
         /// </para>

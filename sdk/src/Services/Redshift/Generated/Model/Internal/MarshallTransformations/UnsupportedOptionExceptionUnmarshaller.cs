@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnsupportedOptionException operation
     /// </summary>  
-    public class UnsupportedOptionExceptionUnmarshaller : IErrorResponseUnmarshaller<UnsupportedOptionException, XmlUnmarshallerContext>
+    public class UnsupportedOptionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnsupportedOptionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

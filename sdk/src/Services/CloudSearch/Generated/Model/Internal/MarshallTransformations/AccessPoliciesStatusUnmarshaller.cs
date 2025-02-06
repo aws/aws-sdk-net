@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessPoliciesStatus Object
     /// </summary>  
-    public class AccessPoliciesStatusUnmarshaller : IUnmarshaller<AccessPoliciesStatus, XmlUnmarshallerContext>, IUnmarshaller<AccessPoliciesStatus, JsonUnmarshallerContext>
+    public class AccessPoliciesStatusUnmarshaller : IXmlUnmarshaller<AccessPoliciesStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AccessPoliciesStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AccessPoliciesStatusUnmarshaller _instance = new AccessPoliciesStatusUnmarshaller();        
 

@@ -68,6 +68,7 @@ namespace Amazon.TranscribeService.Model
         private string _categoryName;
         private InputType _inputType;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
@@ -150,6 +151,31 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetRules()
         {
             return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more custom tags, each in the form of a key:value pair, to a new call
+        /// analytics category at the time you start this new job.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+        /// resources</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

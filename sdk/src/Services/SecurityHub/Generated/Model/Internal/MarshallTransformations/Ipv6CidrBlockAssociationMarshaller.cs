@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationId())
             {
                 context.Writer.WritePropertyName("AssociationId");
-                context.Writer.Write(requestObject.AssociationId);
+                context.Writer.WriteStringValue(requestObject.AssociationId);
             }
 
             if(requestObject.IsSetCidrBlockState())
             {
                 context.Writer.WritePropertyName("CidrBlockState");
-                context.Writer.Write(requestObject.CidrBlockState);
+                context.Writer.WriteStringValue(requestObject.CidrBlockState);
             }
 
             if(requestObject.IsSetIpv6CidrBlock())
             {
                 context.Writer.WritePropertyName("Ipv6CidrBlock");
-                context.Writer.Write(requestObject.Ipv6CidrBlock);
+                context.Writer.WriteStringValue(requestObject.Ipv6CidrBlock);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentIdentifier())
             {
                 context.Writer.WritePropertyName("agentIdentifier");
-                context.Writer.Write(requestObject.AgentIdentifier);
+                context.Writer.WriteStringValue(requestObject.AgentIdentifier);
             }
 
         }

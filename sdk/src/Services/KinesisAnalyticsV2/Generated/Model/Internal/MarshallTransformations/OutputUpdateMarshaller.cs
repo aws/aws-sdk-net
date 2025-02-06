@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationSchemaUpdate())
             {
                 context.Writer.WritePropertyName("DestinationSchemaUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationSchemaUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisFirehoseOutputUpdate())
             {
                 context.Writer.WritePropertyName("KinesisFirehoseOutputUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisFirehoseOutputUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisFirehoseOutputUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisStreamsOutputUpdate())
             {
                 context.Writer.WritePropertyName("KinesisStreamsOutputUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisStreamsOutputUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisStreamsOutputUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaOutputUpdate())
             {
                 context.Writer.WritePropertyName("LambdaOutputUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaOutputUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaOutputUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNameUpdate())
             {
                 context.Writer.WritePropertyName("NameUpdate");
-                context.Writer.Write(requestObject.NameUpdate);
+                context.Writer.WriteStringValue(requestObject.NameUpdate);
             }
 
             if(requestObject.IsSetOutputId())
             {
                 context.Writer.WritePropertyName("OutputId");
-                context.Writer.Write(requestObject.OutputId);
+                context.Writer.WriteStringValue(requestObject.OutputId);
             }
 
         }

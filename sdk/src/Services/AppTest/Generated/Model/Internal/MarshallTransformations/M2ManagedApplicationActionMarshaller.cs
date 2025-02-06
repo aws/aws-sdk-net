@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("actionType");
-                context.Writer.Write(requestObject.ActionType);
+                context.Writer.WriteStringValue(requestObject.ActionType);
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = M2ManagedActionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Properties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResource())
             {
                 context.Writer.WritePropertyName("resource");
-                context.Writer.Write(requestObject.Resource);
+                context.Writer.WriteStringValue(requestObject.Resource);
             }
 
         }

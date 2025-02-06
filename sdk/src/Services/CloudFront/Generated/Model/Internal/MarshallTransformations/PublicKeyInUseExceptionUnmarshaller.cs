@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicKeyInUseException operation
     /// </summary>  
-    public class PublicKeyInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<PublicKeyInUseException, XmlUnmarshallerContext>
+    public class PublicKeyInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PublicKeyInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

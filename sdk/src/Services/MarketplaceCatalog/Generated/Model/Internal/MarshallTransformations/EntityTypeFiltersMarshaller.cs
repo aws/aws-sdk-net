@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmiProductFilters())
             {
                 context.Writer.WritePropertyName("AmiProductFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmiProductFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmiProductFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerProductFilters())
             {
                 context.Writer.WritePropertyName("ContainerProductFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerProductFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataProductFilters())
             {
                 context.Writer.WritePropertyName("DataProductFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataProductFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataProductFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOfferFilters())
             {
                 context.Writer.WritePropertyName("OfferFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.OfferFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResaleAuthorizationFilters())
             {
                 context.Writer.WritePropertyName("ResaleAuthorizationFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResaleAuthorizationFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResaleAuthorizationFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSaaSProductFilters())
             {
                 context.Writer.WritePropertyName("SaaSProductFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SaaSProductFiltersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SaaSProductFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

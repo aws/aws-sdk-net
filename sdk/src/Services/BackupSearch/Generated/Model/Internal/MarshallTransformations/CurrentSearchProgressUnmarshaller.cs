@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CurrentSearchProgress Object
     /// </summary>  
-    public class CurrentSearchProgressUnmarshaller : IUnmarshaller<CurrentSearchProgress, XmlUnmarshallerContext>, IUnmarshaller<CurrentSearchProgress, JsonUnmarshallerContext>
+    public class CurrentSearchProgressUnmarshaller : IJsonUnmarshaller<CurrentSearchProgress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CurrentSearchProgress IUnmarshaller<CurrentSearchProgress, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CurrentSearchProgress Unmarshall(JsonUnmarshallerContext context)
+        public CurrentSearchProgress Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CurrentSearchProgress unmarshalledObject = new CurrentSearchProgress();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ItemsMatchedCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ItemsMatchedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemsMatchedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ItemsScannedCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ItemsScannedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemsScannedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecoveryPointsScannedCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryPointsScannedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecoveryPointsScannedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

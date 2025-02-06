@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateUserNameException operation
     /// </summary>  
-    public class DuplicateUserNameExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateUserNameException, XmlUnmarshallerContext>
+    public class DuplicateUserNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateUserNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EventNotificationItemConfigurations Object
     /// </summary>  
-    public class EventNotificationItemConfigurationsUnmarshaller : IUnmarshaller<EventNotificationItemConfigurations, XmlUnmarshallerContext>, IUnmarshaller<EventNotificationItemConfigurations, JsonUnmarshallerContext>
+    public class EventNotificationItemConfigurationsUnmarshaller : IJsonUnmarshaller<EventNotificationItemConfigurations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EventNotificationItemConfigurations IUnmarshaller<EventNotificationItemConfigurations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EventNotificationItemConfigurations Unmarshall(JsonUnmarshallerContext context)
+        public EventNotificationItemConfigurations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EventNotificationItemConfigurations unmarshalledObject = new EventNotificationItemConfigurations();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConnectionStatus", targetDepth))
                 {
                     var unmarshaller = ConnectionStatusEventConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceRegistrationState", targetDepth))
                 {
                     var unmarshaller = DeviceRegistrationStateEventConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DeviceRegistrationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceRegistrationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Join", targetDepth))
                 {
                     var unmarshaller = JoinEventConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Join = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Join = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageDeliveryStatus", targetDepth))
                 {
                     var unmarshaller = MessageDeliveryStatusEventConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MessageDeliveryStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageDeliveryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Proximity", targetDepth))
                 {
                     var unmarshaller = ProximityEventConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Proximity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Proximity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

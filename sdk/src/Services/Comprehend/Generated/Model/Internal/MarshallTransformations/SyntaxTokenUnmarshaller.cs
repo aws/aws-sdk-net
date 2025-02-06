@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SyntaxToken Object
     /// </summary>  
-    public class SyntaxTokenUnmarshaller : IUnmarshaller<SyntaxToken, XmlUnmarshallerContext>, IUnmarshaller<SyntaxToken, JsonUnmarshallerContext>
+    public class SyntaxTokenUnmarshaller : IJsonUnmarshaller<SyntaxToken, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SyntaxToken IUnmarshaller<SyntaxToken, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SyntaxToken Unmarshall(JsonUnmarshallerContext context)
+        public SyntaxToken Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SyntaxToken unmarshalledObject = new SyntaxToken();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BeginOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PartOfSpeech", targetDepth))
                 {
                     var unmarshaller = PartOfSpeechTagUnmarshaller.Instance;
-                    unmarshalledObject.PartOfSpeech = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PartOfSpeech = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TokenId", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TokenId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TokenId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

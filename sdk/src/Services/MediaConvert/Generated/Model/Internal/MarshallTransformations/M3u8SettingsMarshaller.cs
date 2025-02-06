@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,132 +49,132 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDuration())
             {
                 context.Writer.WritePropertyName("audioDuration");
-                context.Writer.Write(requestObject.AudioDuration);
+                context.Writer.WriteStringValue(requestObject.AudioDuration);
             }
 
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioPids())
             {
                 context.Writer.WritePropertyName("audioPids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioPidsListValue in requestObject.AudioPids)
                 {
-                        context.Writer.Write(requestObjectAudioPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectAudioPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataPTSControl())
             {
                 context.Writer.WritePropertyName("dataPTSControl");
-                context.Writer.Write(requestObject.DataPTSControl);
+                context.Writer.WriteStringValue(requestObject.DataPTSControl);
             }
 
             if(requestObject.IsSetMaxPcrInterval())
             {
                 context.Writer.WritePropertyName("maxPcrInterval");
-                context.Writer.Write(requestObject.MaxPcrInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPcrInterval.Value);
             }
 
             if(requestObject.IsSetNielsenId3())
             {
                 context.Writer.WritePropertyName("nielsenId3");
-                context.Writer.Write(requestObject.NielsenId3);
+                context.Writer.WriteStringValue(requestObject.NielsenId3);
             }
 
             if(requestObject.IsSetPatInterval())
             {
                 context.Writer.WritePropertyName("patInterval");
-                context.Writer.Write(requestObject.PatInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.PatInterval.Value);
             }
 
             if(requestObject.IsSetPcrControl())
             {
                 context.Writer.WritePropertyName("pcrControl");
-                context.Writer.Write(requestObject.PcrControl);
+                context.Writer.WriteStringValue(requestObject.PcrControl);
             }
 
             if(requestObject.IsSetPcrPid())
             {
                 context.Writer.WritePropertyName("pcrPid");
-                context.Writer.Write(requestObject.PcrPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PcrPid.Value);
             }
 
             if(requestObject.IsSetPmtInterval())
             {
                 context.Writer.WritePropertyName("pmtInterval");
-                context.Writer.Write(requestObject.PmtInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.PmtInterval.Value);
             }
 
             if(requestObject.IsSetPmtPid())
             {
                 context.Writer.WritePropertyName("pmtPid");
-                context.Writer.Write(requestObject.PmtPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PmtPid.Value);
             }
 
             if(requestObject.IsSetPrivateMetadataPid())
             {
                 context.Writer.WritePropertyName("privateMetadataPid");
-                context.Writer.Write(requestObject.PrivateMetadataPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PrivateMetadataPid.Value);
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetPtsOffset())
             {
                 context.Writer.WritePropertyName("ptsOffset");
-                context.Writer.Write(requestObject.PtsOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.PtsOffset.Value);
             }
 
             if(requestObject.IsSetPtsOffsetMode())
             {
                 context.Writer.WritePropertyName("ptsOffsetMode");
-                context.Writer.Write(requestObject.PtsOffsetMode);
+                context.Writer.WriteStringValue(requestObject.PtsOffsetMode);
             }
 
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetScte35Source())
             {
                 context.Writer.WritePropertyName("scte35Source");
-                context.Writer.Write(requestObject.Scte35Source);
+                context.Writer.WriteStringValue(requestObject.Scte35Source);
             }
 
             if(requestObject.IsSetTimedMetadata())
             {
                 context.Writer.WritePropertyName("timedMetadata");
-                context.Writer.Write(requestObject.TimedMetadata);
+                context.Writer.WriteStringValue(requestObject.TimedMetadata);
             }
 
             if(requestObject.IsSetTimedMetadataPid())
             {
                 context.Writer.WritePropertyName("timedMetadataPid");
-                context.Writer.Write(requestObject.TimedMetadataPid.Value);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataPid.Value);
             }
 
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId.Value);
+                context.Writer.WriteNumberValue(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetVideoPid())
             {
                 context.Writer.WritePropertyName("videoPid");
-                context.Writer.Write(requestObject.VideoPid.Value);
+                context.Writer.WriteNumberValue(requestObject.VideoPid.Value);
             }
 
         }

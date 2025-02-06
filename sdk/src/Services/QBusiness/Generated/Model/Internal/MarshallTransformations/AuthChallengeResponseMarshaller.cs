@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,15 +49,15 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResponseMap())
             {
                 context.Writer.WritePropertyName("responseMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectResponseMapKvp in requestObject.ResponseMap)
                 {
                     context.Writer.WritePropertyName(requestObjectResponseMapKvp.Key);
                     var requestObjectResponseMapValue = requestObjectResponseMapKvp.Value;
 
-                        context.Writer.Write(requestObjectResponseMapValue);
+                        context.Writer.WriteStringValue(requestObjectResponseMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

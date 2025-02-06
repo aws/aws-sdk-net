@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("MaximumLength");
-                context.Writer.Write(requestObject.MaximumLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumLength.Value);
             }
 
             if(requestObject.IsSetPermission())
             {
                 context.Writer.WritePropertyName("Permission");
-                context.Writer.Write(requestObject.Permission);
+                context.Writer.WriteStringValue(requestObject.Permission);
             }
 
         }

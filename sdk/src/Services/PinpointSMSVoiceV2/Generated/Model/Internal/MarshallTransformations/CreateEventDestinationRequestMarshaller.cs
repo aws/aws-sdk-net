@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
@@ -63,86 +66,91 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCloudWatchLogsDestination())
-                    {
-                        context.Writer.WritePropertyName("CloudWatchLogsDestination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CloudWatchLogsDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CloudWatchLogsDestination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetConfigurationSetName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationSetName");
-                        context.Writer.Write(publicRequest.ConfigurationSetName);
-                    }
-
-                    if(publicRequest.IsSetEventDestinationName())
-                    {
-                        context.Writer.WritePropertyName("EventDestinationName");
-                        context.Writer.Write(publicRequest.EventDestinationName);
-                    }
-
-                    if(publicRequest.IsSetKinesisFirehoseDestination())
-                    {
-                        context.Writer.WritePropertyName("KinesisFirehoseDestination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KinesisFirehoseDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.KinesisFirehoseDestination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMatchingEventTypes())
-                    {
-                        context.Writer.WritePropertyName("MatchingEventTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMatchingEventTypesListValue in publicRequest.MatchingEventTypes)
-                        {
-                                context.Writer.Write(publicRequestMatchingEventTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSnsDestination())
-                    {
-                        context.Writer.WritePropertyName("SnsDestination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SnsDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SnsDestination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCloudWatchLogsDestination())
+            {
+                context.Writer.WritePropertyName("CloudWatchLogsDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CloudWatchLogsDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CloudWatchLogsDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetConfigurationSetName())
+            {
+                context.Writer.WritePropertyName("ConfigurationSetName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationSetName);
+            }
+
+            if(publicRequest.IsSetEventDestinationName())
+            {
+                context.Writer.WritePropertyName("EventDestinationName");
+                context.Writer.WriteStringValue(publicRequest.EventDestinationName);
+            }
+
+            if(publicRequest.IsSetKinesisFirehoseDestination())
+            {
+                context.Writer.WritePropertyName("KinesisFirehoseDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KinesisFirehoseDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KinesisFirehoseDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMatchingEventTypes())
+            {
+                context.Writer.WritePropertyName("MatchingEventTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMatchingEventTypesListValue in publicRequest.MatchingEventTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestMatchingEventTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSnsDestination())
+            {
+                context.Writer.WritePropertyName("SnsDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SnsDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SnsDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

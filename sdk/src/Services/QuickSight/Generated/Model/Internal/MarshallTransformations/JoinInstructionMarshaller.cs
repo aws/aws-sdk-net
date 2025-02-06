@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLeftJoinKeyProperties())
             {
                 context.Writer.WritePropertyName("LeftJoinKeyProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JoinKeyPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.LeftJoinKeyProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLeftOperand())
             {
                 context.Writer.WritePropertyName("LeftOperand");
-                context.Writer.Write(requestObject.LeftOperand);
+                context.Writer.WriteStringValue(requestObject.LeftOperand);
             }
 
             if(requestObject.IsSetOnClause())
             {
                 context.Writer.WritePropertyName("OnClause");
-                context.Writer.Write(requestObject.OnClause);
+                context.Writer.WriteStringValue(requestObject.OnClause);
             }
 
             if(requestObject.IsSetRightJoinKeyProperties())
             {
                 context.Writer.WritePropertyName("RightJoinKeyProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JoinKeyPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RightJoinKeyProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRightOperand())
             {
                 context.Writer.WritePropertyName("RightOperand");
-                context.Writer.Write(requestObject.RightOperand);
+                context.Writer.WriteStringValue(requestObject.RightOperand);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

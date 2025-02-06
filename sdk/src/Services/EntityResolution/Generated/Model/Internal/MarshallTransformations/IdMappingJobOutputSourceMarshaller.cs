@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKMSArn())
             {
                 context.Writer.WritePropertyName("KMSArn");
-                context.Writer.Write(requestObject.KMSArn);
+                context.Writer.WriteStringValue(requestObject.KMSArn);
             }
 
             if(requestObject.IsSetOutputS3Path())
             {
                 context.Writer.WritePropertyName("outputS3Path");
-                context.Writer.Write(requestObject.OutputS3Path);
+                context.Writer.WriteStringValue(requestObject.OutputS3Path);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

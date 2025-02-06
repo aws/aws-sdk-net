@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Node Object
     /// </summary>  
-    public class NodeUnmarshaller : IUnmarshaller<Node, XmlUnmarshallerContext>, IUnmarshaller<Node, JsonUnmarshallerContext>
+    public class NodeUnmarshaller : IJsonUnmarshaller<Node, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Node IUnmarshaller<Node, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Node Unmarshall(JsonUnmarshallerContext context)
+        public Node Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Node unmarshalledObject = new Node();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CrawlerDetails", targetDepth))
                 {
                     var unmarshaller = CrawlerNodeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CrawlerDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlerDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobDetails", targetDepth))
                 {
                     var unmarshaller = JobNodeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TriggerDetails", targetDepth))
                 {
                     var unmarshaller = TriggerNodeDetailsUnmarshaller.Instance;
-                    unmarshalledObject.TriggerDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TriggerDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UniqueId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UniqueId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UniqueId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

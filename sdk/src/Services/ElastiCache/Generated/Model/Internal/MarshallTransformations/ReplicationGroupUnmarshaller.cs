@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationGroup Object
     /// </summary>  
-    public class ReplicationGroupUnmarshaller : IUnmarshaller<ReplicationGroup, XmlUnmarshallerContext>, IUnmarshaller<ReplicationGroup, JsonUnmarshallerContext>
+    public class ReplicationGroupUnmarshaller : IXmlUnmarshaller<ReplicationGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -281,17 +281,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReplicationGroupUnmarshaller _instance = new ReplicationGroupUnmarshaller();        
 

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConditionalSplitActivity Object
     /// </summary>  
-    public class ConditionalSplitActivityUnmarshaller : IUnmarshaller<ConditionalSplitActivity, XmlUnmarshallerContext>, IUnmarshaller<ConditionalSplitActivity, JsonUnmarshallerContext>
+    public class ConditionalSplitActivityUnmarshaller : IJsonUnmarshaller<ConditionalSplitActivity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConditionalSplitActivity IUnmarshaller<ConditionalSplitActivity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConditionalSplitActivity Unmarshall(JsonUnmarshallerContext context)
+        public ConditionalSplitActivity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConditionalSplitActivity unmarshalledObject = new ConditionalSplitActivity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionUnmarshaller.Instance;
-                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationWaitTime", targetDepth))
                 {
                     var unmarshaller = WaitTimeUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationWaitTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationWaitTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FalseActivity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FalseActivity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FalseActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrueActivity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrueActivity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrueActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

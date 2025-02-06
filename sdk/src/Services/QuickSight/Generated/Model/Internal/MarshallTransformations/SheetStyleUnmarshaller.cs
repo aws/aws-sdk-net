@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SheetStyle Object
     /// </summary>  
-    public class SheetStyleUnmarshaller : IUnmarshaller<SheetStyle, XmlUnmarshallerContext>, IUnmarshaller<SheetStyle, JsonUnmarshallerContext>
+    public class SheetStyleUnmarshaller : IJsonUnmarshaller<SheetStyle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SheetStyle IUnmarshaller<SheetStyle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SheetStyle Unmarshall(JsonUnmarshallerContext context)
+        public SheetStyle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SheetStyle unmarshalledObject = new SheetStyle();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Tile", targetDepth))
                 {
                     var unmarshaller = TileStyleUnmarshaller.Instance;
-                    unmarshalledObject.Tile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TileLayout", targetDepth))
                 {
                     var unmarshaller = TileLayoutStyleUnmarshaller.Instance;
-                    unmarshalledObject.TileLayout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TileLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

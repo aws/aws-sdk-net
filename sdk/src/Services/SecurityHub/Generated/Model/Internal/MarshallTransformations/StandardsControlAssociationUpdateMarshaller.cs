@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationStatus())
             {
                 context.Writer.WritePropertyName("AssociationStatus");
-                context.Writer.Write(requestObject.AssociationStatus);
+                context.Writer.WriteStringValue(requestObject.AssociationStatus);
             }
 
             if(requestObject.IsSetSecurityControlId())
             {
                 context.Writer.WritePropertyName("SecurityControlId");
-                context.Writer.Write(requestObject.SecurityControlId);
+                context.Writer.WriteStringValue(requestObject.SecurityControlId);
             }
 
             if(requestObject.IsSetStandardsArn())
             {
                 context.Writer.WritePropertyName("StandardsArn");
-                context.Writer.Write(requestObject.StandardsArn);
+                context.Writer.WriteStringValue(requestObject.StandardsArn);
             }
 
             if(requestObject.IsSetUpdatedReason())
             {
                 context.Writer.WritePropertyName("UpdatedReason");
-                context.Writer.Write(requestObject.UpdatedReason);
+                context.Writer.WriteStringValue(requestObject.UpdatedReason);
             }
 
         }

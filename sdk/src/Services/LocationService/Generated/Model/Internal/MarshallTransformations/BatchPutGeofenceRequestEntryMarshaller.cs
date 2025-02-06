@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeofenceId())
             {
                 context.Writer.WritePropertyName("GeofenceId");
-                context.Writer.Write(requestObject.GeofenceId);
+                context.Writer.WriteStringValue(requestObject.GeofenceId);
             }
 
             if(requestObject.IsSetGeofenceProperties())
             {
                 context.Writer.WritePropertyName("GeofenceProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectGeofencePropertiesKvp in requestObject.GeofenceProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectGeofencePropertiesKvp.Key);
                     var requestObjectGeofencePropertiesValue = requestObjectGeofencePropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectGeofencePropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectGeofencePropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeometry())
             {
                 context.Writer.WritePropertyName("Geometry");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeofenceGeometryMarshaller.Instance;
                 marshaller.Marshall(requestObject.Geometry, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OutputDetail Object
     /// </summary>  
-    public class OutputDetailUnmarshaller : IUnmarshaller<OutputDetail, XmlUnmarshallerContext>, IUnmarshaller<OutputDetail, JsonUnmarshallerContext>
+    public class OutputDetailUnmarshaller : IJsonUnmarshaller<OutputDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OutputDetail IUnmarshaller<OutputDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputDetail Unmarshall(JsonUnmarshallerContext context)
+        public OutputDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OutputDetail unmarshalledObject = new OutputDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("durationInMs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DurationInMs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationInMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoDetails", targetDepth))
                 {
                     var unmarshaller = VideoDetailUnmarshaller.Instance;
-                    unmarshalledObject.VideoDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncodingType())
             {
                 context.Writer.WritePropertyName("EncodingType");
-                context.Writer.Write(requestObject.EncodingType);
+                context.Writer.WriteStringValue(requestObject.EncodingType);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FunctionConfigurationEnvironmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Environment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecArgs())
             {
                 context.Writer.WritePropertyName("ExecArgs");
-                context.Writer.Write(requestObject.ExecArgs);
+                context.Writer.WriteStringValue(requestObject.ExecArgs);
             }
 
             if(requestObject.IsSetExecutable())
             {
                 context.Writer.WritePropertyName("Executable");
-                context.Writer.Write(requestObject.Executable);
+                context.Writer.WriteStringValue(requestObject.Executable);
             }
 
             if(requestObject.IsSetFunctionRuntimeOverride())
             {
                 context.Writer.WritePropertyName("FunctionRuntimeOverride");
-                context.Writer.Write(requestObject.FunctionRuntimeOverride);
+                context.Writer.WriteStringValue(requestObject.FunctionRuntimeOverride);
             }
 
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
-                context.Writer.Write(requestObject.MemorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.MemorySize.Value);
             }
 
             if(requestObject.IsSetPinned())
             {
                 context.Writer.WritePropertyName("Pinned");
-                context.Writer.Write(requestObject.Pinned.Value);
+                context.Writer.WriteBooleanValue(requestObject.Pinned.Value);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
         }

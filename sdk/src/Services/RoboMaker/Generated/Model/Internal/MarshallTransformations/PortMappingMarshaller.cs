@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationPort())
             {
                 context.Writer.WritePropertyName("applicationPort");
-                context.Writer.Write(requestObject.ApplicationPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ApplicationPort.Value);
             }
 
             if(requestObject.IsSetEnableOnPublicIp())
             {
                 context.Writer.WritePropertyName("enableOnPublicIp");
-                context.Writer.Write(requestObject.EnableOnPublicIp.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableOnPublicIp.Value);
             }
 
             if(requestObject.IsSetJobPort())
             {
                 context.Writer.WritePropertyName("jobPort");
-                context.Writer.Write(requestObject.JobPort.Value);
+                context.Writer.WriteNumberValue(requestObject.JobPort.Value);
             }
 
         }

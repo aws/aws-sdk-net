@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceRefreshInProgressException operation
     /// </summary>  
-    public class InstanceRefreshInProgressExceptionUnmarshaller : IErrorResponseUnmarshaller<InstanceRefreshInProgressException, XmlUnmarshallerContext>
+    public class InstanceRefreshInProgressExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InstanceRefreshInProgressException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

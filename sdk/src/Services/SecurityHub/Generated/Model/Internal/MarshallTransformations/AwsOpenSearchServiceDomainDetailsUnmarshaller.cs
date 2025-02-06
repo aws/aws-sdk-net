@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsOpenSearchServiceDomainDetails Object
     /// </summary>  
-    public class AwsOpenSearchServiceDomainDetailsUnmarshaller : IUnmarshaller<AwsOpenSearchServiceDomainDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsOpenSearchServiceDomainDetails, JsonUnmarshallerContext>
+    public class AwsOpenSearchServiceDomainDetailsUnmarshaller : IJsonUnmarshaller<AwsOpenSearchServiceDomainDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsOpenSearchServiceDomainDetails IUnmarshaller<AwsOpenSearchServiceDomainDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsOpenSearchServiceDomainDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsOpenSearchServiceDomainDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsOpenSearchServiceDomainDetails unmarshalledObject = new AwsOpenSearchServiceDomainDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessPolicies", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdvancedSecurityOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClusterConfig", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainClusterConfigDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ClusterConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainEndpoints", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DomainEndpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DomainEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainLogPublishingOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcOptions", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainVpcOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.VpcOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

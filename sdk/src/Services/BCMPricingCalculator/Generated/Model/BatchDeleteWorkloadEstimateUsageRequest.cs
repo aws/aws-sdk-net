@@ -34,7 +34,15 @@ namespace Amazon.BCMPricingCalculator.Model
     /// Delete usage that you have created in a Workload estimate. You can only delete usage
     /// that you had added and cannot model deletion (or removal) of a existing usage. If
     /// you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html">
-    /// BatchUpdateWorkloadEstimateUsage</a>.
+    /// BatchUpdateWorkloadEstimateUsage</a>. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchDeleteWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+    /// To authorize this operation for Amazon Web Services principals, include the permission
+    /// <c>bcm-pricing-calculator:DeleteWorkloadEstimateUsage</c> in your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchDeleteWorkloadEstimateUsageRequest : AmazonBCMPricingCalculatorRequest
     {

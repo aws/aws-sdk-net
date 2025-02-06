@@ -32,7 +32,15 @@ namespace Amazon.BCMPricingCalculator.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdateWorkloadEstimateUsage operation.
     /// Update a newly added or existing usage lines. You can update the usage amounts and
-    /// usage group based on a usage ID and a Workload estimate ID.
+    /// usage group based on a usage ID and a Workload estimate ID. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <c>BatchUpdateWorkloadEstimateUsage</c> operation doesn't have its own IAM permission.
+    /// To authorize this operation for Amazon Web Services principals, include the permission
+    /// <c>bcm-pricing-calculator:UpdateWorkloadEstimateUsage</c> in your policies.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchUpdateWorkloadEstimateUsageRequest : AmazonBCMPricingCalculatorRequest
     {

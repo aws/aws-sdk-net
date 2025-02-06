@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the ListFleetDeployments operation.
     /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
-    /// 
+    /// Use the pagination parameters to retrieve results as a set of sequential pages. 
     /// 
     ///  
     /// <para>
@@ -47,16 +47,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Get a list of all deployments for a fleet. Specify the container fleet ID or ARN value.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To get a list of all Realtime Servers fleets with a specific configuration script,
-    /// provide the script ID. 
-    /// </para>
     ///  </li> </ul> 
-    /// <para>
-    /// Use the pagination parameters to retrieve results as a set of sequential pages. 
-    /// </para>
-    ///  
     /// <para>
     ///  <b>Results</b> 
     /// </para>
@@ -67,7 +58,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Fleet IDs are returned in no particular order.
+    /// Deployments are returned starting with the latest.
     /// </para>
     ///  </note>
     /// </summary>

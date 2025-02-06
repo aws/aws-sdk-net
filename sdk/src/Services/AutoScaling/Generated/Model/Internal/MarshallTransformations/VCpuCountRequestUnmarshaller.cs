@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VCpuCountRequest Object
     /// </summary>  
-    public class VCpuCountRequestUnmarshaller : IUnmarshaller<VCpuCountRequest, XmlUnmarshallerContext>, IUnmarshaller<VCpuCountRequest, JsonUnmarshallerContext>
+    public class VCpuCountRequestUnmarshaller : IXmlUnmarshaller<VCpuCountRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VCpuCountRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VCpuCountRequestUnmarshaller _instance = new VCpuCountRequestUnmarshaller();        
 

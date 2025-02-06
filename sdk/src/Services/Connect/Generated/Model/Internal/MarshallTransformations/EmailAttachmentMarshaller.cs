@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("FileName");
-                context.Writer.Write(requestObject.FileName);
+                context.Writer.WriteStringValue(requestObject.FileName);
             }
 
             if(requestObject.IsSetS3Url())
             {
                 context.Writer.WritePropertyName("S3Url");
-                context.Writer.Write(requestObject.S3Url);
+                context.Writer.WriteStringValue(requestObject.S3Url);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFeaturizations())
             {
                 context.Writer.WritePropertyName("Featurizations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeaturizationsListValue in requestObject.Featurizations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FeaturizationMarshaller.Instance;
                     marshaller.Marshall(requestObjectFeaturizationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetForecastDimensions())
             {
                 context.Writer.WritePropertyName("ForecastDimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectForecastDimensionsListValue in requestObject.ForecastDimensions)
                 {
-                        context.Writer.Write(requestObjectForecastDimensionsListValue);
+                        context.Writer.WriteStringValue(requestObjectForecastDimensionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetForecastFrequency())
             {
                 context.Writer.WritePropertyName("ForecastFrequency");
-                context.Writer.Write(requestObject.ForecastFrequency);
+                context.Writer.WriteStringValue(requestObject.ForecastFrequency);
             }
 
         }

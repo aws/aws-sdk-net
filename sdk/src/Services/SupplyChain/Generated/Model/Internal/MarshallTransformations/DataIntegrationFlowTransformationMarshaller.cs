@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSqlTransformation())
             {
                 context.Writer.WritePropertyName("sqlTransformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataIntegrationFlowSQLTransformationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlTransformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransformationType())
             {
                 context.Writer.WritePropertyName("transformationType");
-                context.Writer.Write(requestObject.TransformationType);
+                context.Writer.WriteStringValue(requestObject.TransformationType);
             }
 
         }

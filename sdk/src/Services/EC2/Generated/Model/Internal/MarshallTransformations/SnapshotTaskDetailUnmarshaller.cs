@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotTaskDetail Object
     /// </summary>  
-    public class SnapshotTaskDetailUnmarshaller : IUnmarshaller<SnapshotTaskDetail, XmlUnmarshallerContext>, IUnmarshaller<SnapshotTaskDetail, JsonUnmarshallerContext>
+    public class SnapshotTaskDetailUnmarshaller : IXmlUnmarshaller<SnapshotTaskDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -130,17 +130,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SnapshotTaskDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SnapshotTaskDetailUnmarshaller _instance = new SnapshotTaskDetailUnmarshaller();        
 

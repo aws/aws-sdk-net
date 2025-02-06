@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorSpacePassthroughSettings())
             {
                 context.Writer.WritePropertyName("colorSpacePassthroughSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColorSpacePassthroughSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorSpacePassthroughSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDolbyVision81Settings())
             {
                 context.Writer.WritePropertyName("dolbyVision81Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DolbyVision81SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DolbyVision81Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHdr10Settings())
             {
                 context.Writer.WritePropertyName("hdr10Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Hdr10SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hdr10Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRec601Settings())
             {
                 context.Writer.WritePropertyName("rec601Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Rec601SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Rec601Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRec709Settings())
             {
                 context.Writer.WritePropertyName("rec709Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Rec709SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Rec709Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

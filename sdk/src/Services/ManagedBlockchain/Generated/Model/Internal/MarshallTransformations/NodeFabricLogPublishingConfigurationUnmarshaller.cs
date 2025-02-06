@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NodeFabricLogPublishingConfiguration Object
     /// </summary>  
-    public class NodeFabricLogPublishingConfigurationUnmarshaller : IUnmarshaller<NodeFabricLogPublishingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NodeFabricLogPublishingConfiguration, JsonUnmarshallerContext>
+    public class NodeFabricLogPublishingConfigurationUnmarshaller : IJsonUnmarshaller<NodeFabricLogPublishingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NodeFabricLogPublishingConfiguration IUnmarshaller<NodeFabricLogPublishingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeFabricLogPublishingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public NodeFabricLogPublishingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NodeFabricLogPublishingConfiguration unmarshalledObject = new NodeFabricLogPublishingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChaincodeLogs", targetDepth))
                 {
                     var unmarshaller = LogConfigurationsUnmarshaller.Instance;
-                    unmarshalledObject.ChaincodeLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChaincodeLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeerLogs", targetDepth))
                 {
                     var unmarshaller = LogConfigurationsUnmarshaller.Instance;
-                    unmarshalledObject.PeerLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeerLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

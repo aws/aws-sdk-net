@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("AwsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetComplianceType())
             {
                 context.Writer.WritePropertyName("ComplianceType");
-                context.Writer.Write(requestObject.ComplianceType);
+                context.Writer.WriteStringValue(requestObject.ComplianceType);
             }
 
             if(requestObject.IsSetConfigRuleName())
             {
                 context.Writer.WritePropertyName("ConfigRuleName");
-                context.Writer.Write(requestObject.ConfigRuleName);
+                context.Writer.WriteStringValue(requestObject.ConfigRuleName);
             }
 
         }

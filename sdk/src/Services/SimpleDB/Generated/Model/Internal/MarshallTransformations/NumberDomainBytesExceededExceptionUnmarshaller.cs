@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NumberDomainBytesExceededException operation
     /// </summary>  
-    public class NumberDomainBytesExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<NumberDomainBytesExceededException, XmlUnmarshallerContext>
+    public class NumberDomainBytesExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NumberDomainBytesExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

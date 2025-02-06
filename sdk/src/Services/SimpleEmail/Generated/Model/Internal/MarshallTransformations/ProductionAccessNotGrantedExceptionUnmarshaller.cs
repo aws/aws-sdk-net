@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProductionAccessNotGrantedException operation
     /// </summary>  
-    public class ProductionAccessNotGrantedExceptionUnmarshaller : IErrorResponseUnmarshaller<ProductionAccessNotGrantedException, XmlUnmarshallerContext>
+    public class ProductionAccessNotGrantedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ProductionAccessNotGrantedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

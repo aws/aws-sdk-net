@@ -40,8 +40,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Except. 
         /// <para>
-        /// Exceptions to the provided avoidance geometry, to be included while calculating the
-        /// route.
+        /// Exceptions to the provided avoidance geometry, to be included while calculating an
+        /// isoline.
         /// </para>
         /// </summary>
         public List<IsolineAvoidanceAreaGeometry> Except

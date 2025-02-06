@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
@@ -64,158 +67,163 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v2/apis/{apiId}/integrations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConnectionId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConnectionId())
-                    {
-                        context.Writer.WritePropertyName("connectionId");
-                        context.Writer.Write(publicRequest.ConnectionId);
-                    }
-
-                    if(publicRequest.IsSetConnectionType())
-                    {
-                        context.Writer.WritePropertyName("connectionType");
-                        context.Writer.Write(publicRequest.ConnectionType);
-                    }
-
-                    if(publicRequest.IsSetContentHandlingStrategy())
-                    {
-                        context.Writer.WritePropertyName("contentHandlingStrategy");
-                        context.Writer.Write(publicRequest.ContentHandlingStrategy);
-                    }
-
-                    if(publicRequest.IsSetCredentialsArn())
-                    {
-                        context.Writer.WritePropertyName("credentialsArn");
-                        context.Writer.Write(publicRequest.CredentialsArn);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetIntegrationMethod())
-                    {
-                        context.Writer.WritePropertyName("integrationMethod");
-                        context.Writer.Write(publicRequest.IntegrationMethod);
-                    }
-
-                    if(publicRequest.IsSetIntegrationSubtype())
-                    {
-                        context.Writer.WritePropertyName("integrationSubtype");
-                        context.Writer.Write(publicRequest.IntegrationSubtype);
-                    }
-
-                    if(publicRequest.IsSetIntegrationType())
-                    {
-                        context.Writer.WritePropertyName("integrationType");
-                        context.Writer.Write(publicRequest.IntegrationType);
-                    }
-
-                    if(publicRequest.IsSetIntegrationUri())
-                    {
-                        context.Writer.WritePropertyName("integrationUri");
-                        context.Writer.Write(publicRequest.IntegrationUri);
-                    }
-
-                    if(publicRequest.IsSetPassthroughBehavior())
-                    {
-                        context.Writer.WritePropertyName("passthroughBehavior");
-                        context.Writer.Write(publicRequest.PassthroughBehavior);
-                    }
-
-                    if(publicRequest.IsSetPayloadFormatVersion())
-                    {
-                        context.Writer.WritePropertyName("payloadFormatVersion");
-                        context.Writer.Write(publicRequest.PayloadFormatVersion);
-                    }
-
-                    if(publicRequest.IsSetRequestParameters())
-                    {
-                        context.Writer.WritePropertyName("requestParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
-                            var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestRequestParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRequestTemplates())
-                    {
-                        context.Writer.WritePropertyName("requestTemplates");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRequestTemplatesKvp in publicRequest.RequestTemplates)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRequestTemplatesKvp.Key);
-                            var publicRequestRequestTemplatesValue = publicRequestRequestTemplatesKvp.Value;
-
-                                context.Writer.Write(publicRequestRequestTemplatesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResponseParameters())
-                    {
-                        context.Writer.WritePropertyName("responseParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
-                            var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-                            foreach (var publicRequestResponseParametersValueKvp in publicRequestResponseParametersValue)
-                            {
-                                context.Writer.WritePropertyName(publicRequestResponseParametersValueKvp.Key);
-                                var publicRequestResponseParametersValueValue = publicRequestResponseParametersValueKvp.Value;
-
-                                    context.Writer.Write(publicRequestResponseParametersValueValue);
-                            }
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTemplateSelectionExpression())
-                    {
-                        context.Writer.WritePropertyName("templateSelectionExpression");
-                        context.Writer.Write(publicRequest.TemplateSelectionExpression);
-                    }
-
-                    if(publicRequest.IsSetTimeoutInMillis())
-                    {
-                        context.Writer.WritePropertyName("timeoutInMillis");
-                        context.Writer.Write(publicRequest.TimeoutInMillis.Value);
-                    }
-
-                    if(publicRequest.IsSetTlsConfig())
-                    {
-                        context.Writer.WritePropertyName("tlsConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TlsConfigInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TlsConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("connectionId");
+                context.Writer.WriteStringValue(publicRequest.ConnectionId);
             }
+
+            if(publicRequest.IsSetConnectionType())
+            {
+                context.Writer.WritePropertyName("connectionType");
+                context.Writer.WriteStringValue(publicRequest.ConnectionType);
+            }
+
+            if(publicRequest.IsSetContentHandlingStrategy())
+            {
+                context.Writer.WritePropertyName("contentHandlingStrategy");
+                context.Writer.WriteStringValue(publicRequest.ContentHandlingStrategy);
+            }
+
+            if(publicRequest.IsSetCredentialsArn())
+            {
+                context.Writer.WritePropertyName("credentialsArn");
+                context.Writer.WriteStringValue(publicRequest.CredentialsArn);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetIntegrationMethod())
+            {
+                context.Writer.WritePropertyName("integrationMethod");
+                context.Writer.WriteStringValue(publicRequest.IntegrationMethod);
+            }
+
+            if(publicRequest.IsSetIntegrationSubtype())
+            {
+                context.Writer.WritePropertyName("integrationSubtype");
+                context.Writer.WriteStringValue(publicRequest.IntegrationSubtype);
+            }
+
+            if(publicRequest.IsSetIntegrationType())
+            {
+                context.Writer.WritePropertyName("integrationType");
+                context.Writer.WriteStringValue(publicRequest.IntegrationType);
+            }
+
+            if(publicRequest.IsSetIntegrationUri())
+            {
+                context.Writer.WritePropertyName("integrationUri");
+                context.Writer.WriteStringValue(publicRequest.IntegrationUri);
+            }
+
+            if(publicRequest.IsSetPassthroughBehavior())
+            {
+                context.Writer.WritePropertyName("passthroughBehavior");
+                context.Writer.WriteStringValue(publicRequest.PassthroughBehavior);
+            }
+
+            if(publicRequest.IsSetPayloadFormatVersion())
+            {
+                context.Writer.WritePropertyName("payloadFormatVersion");
+                context.Writer.WriteStringValue(publicRequest.PayloadFormatVersion);
+            }
+
+            if(publicRequest.IsSetRequestParameters())
+            {
+                context.Writer.WritePropertyName("requestParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRequestParametersKvp in publicRequest.RequestParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestRequestParametersKvp.Key);
+                    var publicRequestRequestParametersValue = publicRequestRequestParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRequestParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRequestTemplates())
+            {
+                context.Writer.WritePropertyName("requestTemplates");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRequestTemplatesKvp in publicRequest.RequestTemplates)
+                {
+                    context.Writer.WritePropertyName(publicRequestRequestTemplatesKvp.Key);
+                    var publicRequestRequestTemplatesValue = publicRequestRequestTemplatesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRequestTemplatesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResponseParameters())
+            {
+                context.Writer.WritePropertyName("responseParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                    var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestResponseParametersValueKvp in publicRequestResponseParametersValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestResponseParametersValueKvp.Key);
+                        var publicRequestResponseParametersValueValue = publicRequestResponseParametersValueKvp.Value;
+
+                            context.Writer.WriteStringValue(publicRequestResponseParametersValueValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTemplateSelectionExpression())
+            {
+                context.Writer.WritePropertyName("templateSelectionExpression");
+                context.Writer.WriteStringValue(publicRequest.TemplateSelectionExpression);
+            }
+
+            if(publicRequest.IsSetTimeoutInMillis())
+            {
+                context.Writer.WritePropertyName("timeoutInMillis");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInMillis.Value);
+            }
+
+            if(publicRequest.IsSetTlsConfig())
+            {
+                context.Writer.WritePropertyName("tlsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TlsConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

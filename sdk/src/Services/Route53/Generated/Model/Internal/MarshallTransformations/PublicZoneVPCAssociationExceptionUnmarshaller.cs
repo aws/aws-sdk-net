@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicZoneVPCAssociationException operation
     /// </summary>  
-    public class PublicZoneVPCAssociationExceptionUnmarshaller : IErrorResponseUnmarshaller<PublicZoneVPCAssociationException, XmlUnmarshallerContext>
+    public class PublicZoneVPCAssociationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PublicZoneVPCAssociationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

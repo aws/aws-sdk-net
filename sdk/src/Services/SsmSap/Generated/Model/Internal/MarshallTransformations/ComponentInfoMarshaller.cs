@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("ComponentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetEc2InstanceId())
             {
                 context.Writer.WritePropertyName("Ec2InstanceId");
-                context.Writer.Write(requestObject.Ec2InstanceId);
+                context.Writer.WriteStringValue(requestObject.Ec2InstanceId);
             }
 
             if(requestObject.IsSetSid())
             {
                 context.Writer.WritePropertyName("Sid");
-                context.Writer.Write(requestObject.Sid);
+                context.Writer.WriteStringValue(requestObject.Sid);
             }
 
         }

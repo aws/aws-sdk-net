@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlags())
             {
                 context.Writer.WritePropertyName("Flags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFlagsListValue in requestObject.Flags)
                 {
-                        context.Writer.Write(requestObjectFlagsListValue);
+                        context.Writer.WriteStringValue(requestObjectFlagsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMasks())
             {
                 context.Writer.WritePropertyName("Masks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMasksListValue in requestObject.Masks)
                 {
-                        context.Writer.Write(requestObjectMasksListValue);
+                        context.Writer.WriteStringValue(requestObjectMasksListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

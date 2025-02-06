@@ -1504,7 +1504,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// &gt;Associates a set of proficiencies with a user.
+        /// Associates a set of proficiencies with a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
         /// 
@@ -1536,7 +1536,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// &gt;Associates a set of proficiencies with a user.
+        /// Associates a set of proficiencies with a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
         /// <param name="cancellationToken">
@@ -2593,11 +2593,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Publishes a new version of the flow provided. Versions are immutable and monotonically
-        /// increasing. If a version of the same flow content already exists, no new version is
-        /// created and instead the existing version number is returned. If the <c>FlowContentSha256</c>
-        /// provided is different from the <c>FlowContentSha256</c> of the <c>$LATEST</c> published
-        /// flow content, then an error is returned. This API only supports creating versions
-        /// for flows of type <c>Campaign</c>.
+        /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+        /// only supports creating versions for flows of type <c>Campaign</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
         /// 
@@ -2636,11 +2634,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Publishes a new version of the flow provided. Versions are immutable and monotonically
-        /// increasing. If a version of the same flow content already exists, no new version is
-        /// created and instead the existing version number is returned. If the <c>FlowContentSha256</c>
-        /// provided is different from the <c>FlowContentSha256</c> of the <c>$LATEST</c> published
-        /// flow content, then an error is returned. This API only supports creating versions
-        /// for flows of type <c>Campaign</c>.
+        /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+        /// only supports creating versions for flows of type <c>Campaign</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
         /// <param name="cancellationToken">
@@ -5302,6 +5298,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowVersion
+
+
+        /// <summary>
+        /// Deletes the particular version specified in flow version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual DeleteContactFlowVersionResponse DeleteContactFlowVersion(DeleteContactFlowVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the particular version specified in flow version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        public virtual Task<DeleteContactFlowVersionResponse> DeleteContactFlowVersionAsync(DeleteContactFlowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactFlowVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEmailAddress
 
 
@@ -6007,8 +6080,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-        /// website.
+        /// Deletes a queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -6043,8 +6115,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-        /// website.
+        /// Deletes a queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -7444,6 +7515,11 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
+        /// flow version.
+        /// </para>
+        ///  
+        /// <para>
         /// In the response, <b>Status</b> indicates the flow status as either <c>SAVED</c> or
         /// <c>PUBLISHED</c>. The <c>PUBLISHED</c> status will initiate validation on the content.
         /// <c>SAVED</c> does not initiate validation of the content. <c>SAVED</c> | <c>PUBLISHED</c>
@@ -7496,6 +7572,11 @@ namespace Amazon.Connect
         /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
         /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
         /// published.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
+        /// flow version.
         /// </para>
         ///  
         /// <para>

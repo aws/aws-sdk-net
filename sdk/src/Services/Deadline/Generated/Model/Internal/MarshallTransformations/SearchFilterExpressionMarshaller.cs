@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeFilter())
             {
                 context.Writer.WritePropertyName("dateTimeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateTimeFilterExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateTimeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGroupFilter())
             {
                 context.Writer.WritePropertyName("groupFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SearchGroupedFilterExpressionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterFilter())
             {
                 context.Writer.WritePropertyName("parameterFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParameterFilterExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParameterFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSearchTermFilter())
             {
                 context.Writer.WritePropertyName("searchTermFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SearchTermFilterExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.SearchTermFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringFilter())
             {
                 context.Writer.WritePropertyName("stringFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -64,47 +67,52 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 throw new AmazonPaymentCryptographyDataException("Request object does not have required field KeyIdentifier set");
             request.AddPathResource("{KeyIdentifier}", StringUtils.FromString(publicRequest.KeyIdentifier));
             request.ResourcePath = "/keys/{KeyIdentifier}/decrypt";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCipherText())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCipherText())
-                    {
-                        context.Writer.WritePropertyName("CipherText");
-                        context.Writer.Write(publicRequest.CipherText);
-                    }
-
-                    if(publicRequest.IsSetDecryptionAttributes())
-                    {
-                        context.Writer.WritePropertyName("DecryptionAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionDecryptionAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DecryptionAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetWrappedKey())
-                    {
-                        context.Writer.WritePropertyName("WrappedKey");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WrappedKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.WrappedKey, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CipherText");
+                context.Writer.WriteStringValue(publicRequest.CipherText);
             }
+
+            if(publicRequest.IsSetDecryptionAttributes())
+            {
+                context.Writer.WritePropertyName("DecryptionAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionDecryptionAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DecryptionAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWrappedKey())
+            {
+                context.Writer.WritePropertyName("WrappedKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WrappedKeyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WrappedKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

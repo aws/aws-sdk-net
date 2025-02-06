@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppIntegrationArn())
             {
                 context.Writer.WritePropertyName("appIntegrationArn");
-                context.Writer.Write(requestObject.AppIntegrationArn);
+                context.Writer.WriteStringValue(requestObject.AppIntegrationArn);
             }
 
             if(requestObject.IsSetObjectFields())
             {
                 context.Writer.WritePropertyName("objectFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectObjectFieldsListValue in requestObject.ObjectFields)
                 {
-                        context.Writer.Write(requestObjectObjectFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectObjectFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

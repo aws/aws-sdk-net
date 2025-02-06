@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NotifyConfigurationType Object
     /// </summary>  
-    public class NotifyConfigurationTypeUnmarshaller : IUnmarshaller<NotifyConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<NotifyConfigurationType, JsonUnmarshallerContext>
+    public class NotifyConfigurationTypeUnmarshaller : IJsonUnmarshaller<NotifyConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NotifyConfigurationType IUnmarshaller<NotifyConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NotifyConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public NotifyConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NotifyConfigurationType unmarshalledObject = new NotifyConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlockEmail", targetDepth))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
-                    unmarshalledObject.BlockEmail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("From", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.From = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.From = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MfaEmail", targetDepth))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
-                    unmarshalledObject.MfaEmail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MfaEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NoActionEmail", targetDepth))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
-                    unmarshalledObject.NoActionEmail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoActionEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplyTo", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplyTo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReplyTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

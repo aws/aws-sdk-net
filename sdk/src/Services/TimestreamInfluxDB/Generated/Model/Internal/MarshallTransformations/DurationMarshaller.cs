@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationType())
             {
                 context.Writer.WritePropertyName("durationType");
-                context.Writer.Write(requestObject.DurationType);
+                context.Writer.WriteStringValue(requestObject.DurationType);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value.Value);
+                context.Writer.WriteNumberValue(requestObject.Value.Value);
             }
 
         }

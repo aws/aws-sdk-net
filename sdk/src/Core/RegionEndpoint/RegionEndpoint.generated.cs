@@ -88,6 +88,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast5 = GetRegionEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The Asia Pacific (Thailand) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast7 = GetRegionEndpoint("ap-southeast-7", "Asia Pacific (Thailand)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The Canada (Central) endpoint.
         /// </summary>
         public static readonly RegionEndpoint CACentral1 = GetRegionEndpoint("ca-central-1", "Canada (Central)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
@@ -151,6 +156,11 @@ namespace Amazon
         /// The Middle East (Bahrain) endpoint.
         /// </summary>
         public static readonly RegionEndpoint MESouth1 = GetRegionEndpoint("me-south-1", "Middle East (Bahrain)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The Mexico (Central) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint MXCentral1 = GetRegionEndpoint("mx-central-1", "Mexico (Central)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The South America (Sao Paulo) endpoint.

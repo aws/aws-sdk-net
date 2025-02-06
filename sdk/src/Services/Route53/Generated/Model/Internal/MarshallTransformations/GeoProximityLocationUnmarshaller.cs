@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeoProximityLocation Object
     /// </summary>  
-    public class GeoProximityLocationUnmarshaller : IUnmarshaller<GeoProximityLocation, XmlUnmarshallerContext>, IUnmarshaller<GeoProximityLocation, JsonUnmarshallerContext>
+    public class GeoProximityLocationUnmarshaller : IXmlUnmarshaller<GeoProximityLocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GeoProximityLocation Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static GeoProximityLocationUnmarshaller _instance = new GeoProximityLocationUnmarshaller();        
 
         /// <summary>

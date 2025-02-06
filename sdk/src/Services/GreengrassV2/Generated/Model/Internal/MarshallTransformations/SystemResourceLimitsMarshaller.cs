@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("cpus");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Cpus.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpus.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Cpus.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Cpus.Value);
+                    context.Writer.WriteNumberValue(requestObject.Cpus.Value);
                 }
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory.Value);
+                context.Writer.WriteNumberValue(requestObject.Memory.Value);
             }
 
         }

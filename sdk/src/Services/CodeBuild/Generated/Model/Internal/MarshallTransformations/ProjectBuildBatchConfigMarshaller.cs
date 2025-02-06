@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchReportMode())
             {
                 context.Writer.WritePropertyName("batchReportMode");
-                context.Writer.Write(requestObject.BatchReportMode);
+                context.Writer.WriteStringValue(requestObject.BatchReportMode);
             }
 
             if(requestObject.IsSetCombineArtifacts())
             {
                 context.Writer.WritePropertyName("combineArtifacts");
-                context.Writer.Write(requestObject.CombineArtifacts.Value);
+                context.Writer.WriteBooleanValue(requestObject.CombineArtifacts.Value);
             }
 
             if(requestObject.IsSetRestrictions())
             {
                 context.Writer.WritePropertyName("restrictions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchRestrictionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Restrictions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("serviceRole");
-                context.Writer.Write(requestObject.ServiceRole);
+                context.Writer.WriteStringValue(requestObject.ServiceRole);
             }
 
             if(requestObject.IsSetTimeoutInMins())
             {
                 context.Writer.WritePropertyName("timeoutInMins");
-                context.Writer.Write(requestObject.TimeoutInMins.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInMins.Value);
             }
 
         }

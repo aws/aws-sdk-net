@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -63,98 +66,103 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataSource())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataSource())
-                    {
-                        context.Writer.WritePropertyName("DataSource");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DataSource");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSource, context);
+                var marshaller = DataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSource, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableVisualization())
-                    {
-                        context.Writer.WritePropertyName("EnableVisualization");
-                        context.Writer.Write(publicRequest.EnableVisualization.Value);
-                    }
-
-                    if(publicRequest.IsSetEndDateTime())
-                    {
-                        context.Writer.WritePropertyName("EndDateTime");
-                        context.Writer.Write(publicRequest.EndDateTime);
-                    }
-
-                    if(publicRequest.IsSetExplainabilityConfig())
-                    {
-                        context.Writer.WritePropertyName("ExplainabilityConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExplainabilityConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExplainabilityConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExplainabilityName())
-                    {
-                        context.Writer.WritePropertyName("ExplainabilityName");
-                        context.Writer.Write(publicRequest.ExplainabilityName);
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("ResourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetSchema())
-                    {
-                        context.Writer.WritePropertyName("Schema");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchemaMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Schema, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartDateTime())
-                    {
-                        context.Writer.WritePropertyName("StartDateTime");
-                        context.Writer.Write(publicRequest.StartDateTime);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEnableVisualization())
+            {
+                context.Writer.WritePropertyName("EnableVisualization");
+                context.Writer.WriteBooleanValue(publicRequest.EnableVisualization.Value);
+            }
+
+            if(publicRequest.IsSetEndDateTime())
+            {
+                context.Writer.WritePropertyName("EndDateTime");
+                context.Writer.WriteStringValue(publicRequest.EndDateTime);
+            }
+
+            if(publicRequest.IsSetExplainabilityConfig())
+            {
+                context.Writer.WritePropertyName("ExplainabilityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExplainabilityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExplainabilityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExplainabilityName())
+            {
+                context.Writer.WritePropertyName("ExplainabilityName");
+                context.Writer.WriteStringValue(publicRequest.ExplainabilityName);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("ResourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("Schema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchemaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartDateTime())
+            {
+                context.Writer.WritePropertyName("StartDateTime");
+                context.Writer.WriteStringValue(publicRequest.StartDateTime);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

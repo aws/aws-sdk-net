@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveAfterInclusive())
             {
                 context.Writer.WritePropertyName("activeAfterInclusive");
-                context.Writer.Write(requestObject.ActiveAfterInclusive.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ActiveAfterInclusive.Value)));
             }
 
             if(requestObject.IsSetActiveBeforeInclusive())
             {
                 context.Writer.WritePropertyName("activeBeforeInclusive");
-                context.Writer.Write(requestObject.ActiveBeforeInclusive.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ActiveBeforeInclusive.Value)));
             }
 
         }

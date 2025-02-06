@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -64,121 +67,126 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/trained-model-inference-jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfiguredModelAlgorithmAssociationArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfiguredModelAlgorithmAssociationArn())
-                    {
-                        context.Writer.WritePropertyName("configuredModelAlgorithmAssociationArn");
-                        context.Writer.Write(publicRequest.ConfiguredModelAlgorithmAssociationArn);
-                    }
-
-                    if(publicRequest.IsSetContainerExecutionParameters())
-                    {
-                        context.Writer.WritePropertyName("containerExecutionParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceContainerExecutionParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ContainerExecutionParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataSource())
-                    {
-                        context.Writer.WritePropertyName("dataSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelInferenceDataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEnvironment())
-                    {
-                        context.Writer.WritePropertyName("environment");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
-                        {
-                            context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
-                            var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
-
-                                context.Writer.Write(publicRequestEnvironmentValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyArn())
-                    {
-                        context.Writer.WritePropertyName("kmsKeyArn");
-                        context.Writer.Write(publicRequest.KmsKeyArn);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOutputConfiguration())
-                    {
-                        context.Writer.WritePropertyName("outputConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceOutputConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceConfig())
-                    {
-                        context.Writer.WritePropertyName("resourceConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceResourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTrainedModelArn())
-                    {
-                        context.Writer.WritePropertyName("trainedModelArn");
-                        context.Writer.Write(publicRequest.TrainedModelArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("configuredModelAlgorithmAssociationArn");
+                context.Writer.WriteStringValue(publicRequest.ConfiguredModelAlgorithmAssociationArn);
             }
+
+            if(publicRequest.IsSetContainerExecutionParameters())
+            {
+                context.Writer.WritePropertyName("containerExecutionParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceContainerExecutionParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContainerExecutionParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataSource())
+            {
+                context.Writer.WritePropertyName("dataSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelInferenceDataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("environment");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                {
+                    context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
+                    var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestEnvironmentValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOutputConfiguration())
+            {
+                context.Writer.WritePropertyName("outputConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceConfig())
+            {
+                context.Writer.WritePropertyName("resourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceResourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrainedModelArn())
+            {
+                context.Writer.WritePropertyName("trainedModelArn");
+                context.Writer.WriteStringValue(publicRequest.TrainedModelArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

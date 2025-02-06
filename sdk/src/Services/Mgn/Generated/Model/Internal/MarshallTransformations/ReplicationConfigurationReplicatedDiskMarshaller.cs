@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("deviceName");
-                context.Writer.Write(requestObject.DeviceName);
+                context.Writer.WriteStringValue(requestObject.DeviceName);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetIsBootDisk())
             {
                 context.Writer.WritePropertyName("isBootDisk");
-                context.Writer.Write(requestObject.IsBootDisk.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsBootDisk.Value);
             }
 
             if(requestObject.IsSetStagingDiskType())
             {
                 context.Writer.WritePropertyName("stagingDiskType");
-                context.Writer.Write(requestObject.StagingDiskType);
+                context.Writer.WriteStringValue(requestObject.StagingDiskType);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput.Value);
+                context.Writer.WriteNumberValue(requestObject.Throughput.Value);
             }
 
         }

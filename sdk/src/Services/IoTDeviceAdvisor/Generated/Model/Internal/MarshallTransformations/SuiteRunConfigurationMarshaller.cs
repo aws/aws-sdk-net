@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParallelRun())
             {
                 context.Writer.WritePropertyName("parallelRun");
-                context.Writer.Write(requestObject.ParallelRun.Value);
+                context.Writer.WriteBooleanValue(requestObject.ParallelRun.Value);
             }
 
             if(requestObject.IsSetPrimaryDevice())
             {
                 context.Writer.WritePropertyName("primaryDevice");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeviceUnderTestMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryDevice, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedTestList())
             {
                 context.Writer.WritePropertyName("selectedTestList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedTestListListValue in requestObject.SelectedTestList)
                 {
-                        context.Writer.Write(requestObjectSelectedTestListListValue);
+                        context.Writer.WriteStringValue(requestObjectSelectedTestListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,36 +67,41 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field CertificateProviderName set");
             request.AddPathResource("{certificateProviderName}", StringUtils.FromString(publicRequest.CertificateProviderName));
             request.ResourcePath = "/certificate-providers/{certificateProviderName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountDefaultForOperations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("accountDefaultForOperations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccountDefaultForOperationsListValue in publicRequest.AccountDefaultForOperations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountDefaultForOperations())
-                    {
-                        context.Writer.WritePropertyName("accountDefaultForOperations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccountDefaultForOperationsListValue in publicRequest.AccountDefaultForOperations)
-                        {
-                                context.Writer.Write(publicRequestAccountDefaultForOperationsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLambdaFunctionArn())
-                    {
-                        context.Writer.WritePropertyName("lambdaFunctionArn");
-                        context.Writer.Write(publicRequest.LambdaFunctionArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAccountDefaultForOperationsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetLambdaFunctionArn())
+            {
+                context.Writer.WritePropertyName("lambdaFunctionArn");
+                context.Writer.WriteStringValue(publicRequest.LambdaFunctionArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

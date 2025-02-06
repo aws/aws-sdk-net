@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetDatabaseManagementPreference())
             {
                 context.Writer.WritePropertyName("databaseManagementPreference");
-                context.Writer.Write(requestObject.DatabaseManagementPreference);
+                context.Writer.WriteStringValue(requestObject.DatabaseManagementPreference);
             }
 
             if(requestObject.IsSetDatabaseMigrationPreference())
             {
                 context.Writer.WritePropertyName("databaseMigrationPreference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabaseMigrationPreferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseMigrationPreference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 {
@@ -63,86 +66,91 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGroupBy())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("GroupBy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGroupBy())
-                    {
-                        context.Writer.WritePropertyName("GroupBy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
-                        {
-                                context.Writer.Write(publicRequestGroupByListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetPaginationToken())
-                    {
-                        context.Writer.WritePropertyName("PaginationToken");
-                        context.Writer.Write(publicRequest.PaginationToken);
-                    }
-
-                    if(publicRequest.IsSetRegionFilters())
-                    {
-                        context.Writer.WritePropertyName("RegionFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRegionFiltersListValue in publicRequest.RegionFilters)
-                        {
-                                context.Writer.Write(publicRequestRegionFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceTypeFilters())
-                    {
-                        context.Writer.WritePropertyName("ResourceTypeFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
-                        {
-                                context.Writer.Write(publicRequestResourceTypeFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagKeyFilters())
-                    {
-                        context.Writer.WritePropertyName("TagKeyFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagKeyFiltersListValue in publicRequest.TagKeyFilters)
-                        {
-                                context.Writer.Write(publicRequestTagKeyFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetIdFilters())
-                    {
-                        context.Writer.WritePropertyName("TargetIdFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetIdFiltersListValue in publicRequest.TargetIdFilters)
-                        {
-                                context.Writer.Write(publicRequestTargetIdFiltersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestGroupByListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetPaginationToken())
+            {
+                context.Writer.WritePropertyName("PaginationToken");
+                context.Writer.WriteStringValue(publicRequest.PaginationToken);
+            }
+
+            if(publicRequest.IsSetRegionFilters())
+            {
+                context.Writer.WritePropertyName("RegionFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRegionFiltersListValue in publicRequest.RegionFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestRegionFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceTypeFilters())
+            {
+                context.Writer.WritePropertyName("ResourceTypeFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTypeFiltersListValue in publicRequest.ResourceTypeFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceTypeFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagKeyFilters())
+            {
+                context.Writer.WritePropertyName("TagKeyFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagKeyFiltersListValue in publicRequest.TagKeyFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestTagKeyFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetIdFilters())
+            {
+                context.Writer.WritePropertyName("TargetIdFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetIdFiltersListValue in publicRequest.TargetIdFilters)
+                {
+                        context.Writer.WriteStringValue(publicRequestTargetIdFiltersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

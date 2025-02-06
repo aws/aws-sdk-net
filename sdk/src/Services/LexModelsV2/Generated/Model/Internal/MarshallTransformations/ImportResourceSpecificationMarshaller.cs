@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotImportSpecification())
             {
                 context.Writer.WritePropertyName("botImportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BotImportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BotImportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBotLocaleImportSpecification())
             {
                 context.Writer.WritePropertyName("botLocaleImportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BotLocaleImportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BotLocaleImportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomVocabularyImportSpecification())
             {
                 context.Writer.WritePropertyName("customVocabularyImportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomVocabularyImportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomVocabularyImportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTestSetImportResourceSpecification())
             {
                 context.Writer.WritePropertyName("testSetImportResourceSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TestSetImportResourceSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TestSetImportResourceSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

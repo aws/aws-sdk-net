@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RetrievalResultLocation Object
     /// </summary>  
-    public class RetrievalResultLocationUnmarshaller : IUnmarshaller<RetrievalResultLocation, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultLocation, JsonUnmarshallerContext>
+    public class RetrievalResultLocationUnmarshaller : IJsonUnmarshaller<RetrievalResultLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RetrievalResultLocation IUnmarshaller<RetrievalResultLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrievalResultLocation Unmarshall(JsonUnmarshallerContext context)
+        public RetrievalResultLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RetrievalResultLocation unmarshalledObject = new RetrievalResultLocation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("confluenceLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultConfluenceLocationUnmarshaller.Instance;
-                    unmarshalledObject.ConfluenceLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfluenceLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customDocumentLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultCustomDocumentLocationUnmarshaller.Instance;
-                    unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kendraDocumentLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultKendraDocumentLocationUnmarshaller.Instance;
-                    unmarshalledObject.KendraDocumentLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KendraDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = RetrievalResultS3LocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("salesforceLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultSalesforceLocationUnmarshaller.Instance;
-                    unmarshalledObject.SalesforceLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SalesforceLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sharePointLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultSharePointLocationUnmarshaller.Instance;
-                    unmarshalledObject.SharePointLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SharePointLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sqlLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultSqlLocationUnmarshaller.Instance;
-                    unmarshalledObject.SqlLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SqlLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("webLocation", targetDepth))
                 {
                     var unmarshaller = RetrievalResultWebLocationUnmarshaller.Instance;
-                    unmarshalledObject.WebLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

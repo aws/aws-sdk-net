@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,125 +49,125 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlBotMessage())
             {
                 context.Writer.WritePropertyName("CrawlBotMessage");
-                context.Writer.Write(requestObject.CrawlBotMessage.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlBotMessage.Value);
             }
 
             if(requestObject.IsSetExcludeArchived())
             {
                 context.Writer.WritePropertyName("ExcludeArchived");
-                context.Writer.Write(requestObject.ExcludeArchived.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeArchived.Value);
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldMappingsListValue in requestObject.FieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLookBackPeriod())
             {
                 context.Writer.WritePropertyName("LookBackPeriod");
-                context.Writer.Write(requestObject.LookBackPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.LookBackPeriod.Value);
             }
 
             if(requestObject.IsSetPrivateChannelFilter())
             {
                 context.Writer.WritePropertyName("PrivateChannelFilter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrivateChannelFilterListValue in requestObject.PrivateChannelFilter)
                 {
-                        context.Writer.Write(requestObjectPrivateChannelFilterListValue);
+                        context.Writer.WriteStringValue(requestObjectPrivateChannelFilterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPublicChannelFilter())
             {
                 context.Writer.WritePropertyName("PublicChannelFilter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPublicChannelFilterListValue in requestObject.PublicChannelFilter)
                 {
-                        context.Writer.Write(requestObjectPublicChannelFilterListValue);
+                        context.Writer.WriteStringValue(requestObjectPublicChannelFilterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetSinceCrawlDate())
             {
                 context.Writer.WritePropertyName("SinceCrawlDate");
-                context.Writer.Write(requestObject.SinceCrawlDate);
+                context.Writer.WriteStringValue(requestObject.SinceCrawlDate);
             }
 
             if(requestObject.IsSetSlackEntityList())
             {
                 context.Writer.WritePropertyName("SlackEntityList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSlackEntityListListValue in requestObject.SlackEntityList)
                 {
-                        context.Writer.Write(requestObjectSlackEntityListListValue);
+                        context.Writer.WriteStringValue(requestObjectSlackEntityListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTeamId())
             {
                 context.Writer.WritePropertyName("TeamId");
-                context.Writer.Write(requestObject.TeamId);
+                context.Writer.WriteStringValue(requestObject.TeamId);
             }
 
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

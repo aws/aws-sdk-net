@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ApplicationResourceLifecycleConfig Object
     /// </summary>  
-    public class ApplicationResourceLifecycleConfigUnmarshaller : IUnmarshaller<ApplicationResourceLifecycleConfig, XmlUnmarshallerContext>, IUnmarshaller<ApplicationResourceLifecycleConfig, JsonUnmarshallerContext>
+    public class ApplicationResourceLifecycleConfigUnmarshaller : IXmlUnmarshaller<ApplicationResourceLifecycleConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ApplicationResourceLifecycleConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ApplicationResourceLifecycleConfigUnmarshaller _instance = new ApplicationResourceLifecycleConfigUnmarshaller();        
 

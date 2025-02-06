@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputS3BucketName())
             {
                 context.Writer.WritePropertyName("OutputS3BucketName");
-                context.Writer.Write(requestObject.OutputS3BucketName);
+                context.Writer.WriteStringValue(requestObject.OutputS3BucketName);
             }
 
             if(requestObject.IsSetOutputS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("OutputS3KeyPrefix");
-                context.Writer.Write(requestObject.OutputS3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.OutputS3KeyPrefix);
             }
 
             if(requestObject.IsSetOutputS3Region())
             {
                 context.Writer.WritePropertyName("OutputS3Region");
-                context.Writer.Write(requestObject.OutputS3Region);
+                context.Writer.WriteStringValue(requestObject.OutputS3Region);
             }
 
         }

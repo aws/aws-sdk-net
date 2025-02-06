@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("availabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetHostId())
             {
                 context.Writer.WritePropertyName("hostId");
-                context.Writer.Write(requestObject.HostId);
+                context.Writer.WriteStringValue(requestObject.HostId);
             }
 
             if(requestObject.IsSetHostResourceGroupArn())
             {
                 context.Writer.WritePropertyName("hostResourceGroupArn");
-                context.Writer.Write(requestObject.HostResourceGroupArn);
+                context.Writer.WriteStringValue(requestObject.HostResourceGroupArn);
             }
 
             if(requestObject.IsSetTenancy())
             {
                 context.Writer.WritePropertyName("tenancy");
-                context.Writer.Write(requestObject.Tenancy);
+                context.Writer.WriteStringValue(requestObject.Tenancy);
             }
 
         }

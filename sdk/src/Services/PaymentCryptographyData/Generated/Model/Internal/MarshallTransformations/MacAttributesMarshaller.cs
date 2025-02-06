@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.WriteStringValue(requestObject.Algorithm);
             }
 
             if(requestObject.IsSetDukptCmac())
             {
                 context.Writer.WritePropertyName("DukptCmac");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MacAlgorithmDukptMarshaller.Instance;
                 marshaller.Marshall(requestObject.DukptCmac, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDukptIso9797Algorithm1())
             {
                 context.Writer.WritePropertyName("DukptIso9797Algorithm1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MacAlgorithmDukptMarshaller.Instance;
                 marshaller.Marshall(requestObject.DukptIso9797Algorithm1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDukptIso9797Algorithm3())
             {
                 context.Writer.WritePropertyName("DukptIso9797Algorithm3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MacAlgorithmDukptMarshaller.Instance;
                 marshaller.Marshall(requestObject.DukptIso9797Algorithm3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmvMac())
             {
                 context.Writer.WritePropertyName("EmvMac");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MacAlgorithmEmvMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmvMac, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

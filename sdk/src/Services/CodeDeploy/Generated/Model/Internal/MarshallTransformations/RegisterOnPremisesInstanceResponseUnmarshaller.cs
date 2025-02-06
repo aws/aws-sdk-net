@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -48,7 +48,6 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         {
             RegisterOnPremisesInstanceResponse response = new RegisterOnPremisesInstanceResponse();
 
-
             return response;
         }
 
@@ -61,54 +60,56 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IamArnRequiredException"))
                 {
-                    return IamArnRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IamArnRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IamSessionArnAlreadyRegisteredException"))
                 {
-                    return IamSessionArnAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IamSessionArnAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IamUserArnAlreadyRegisteredException"))
                 {
-                    return IamUserArnAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IamUserArnAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IamUserArnRequiredException"))
                 {
-                    return IamUserArnRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return IamUserArnRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNameAlreadyRegisteredException"))
                 {
-                    return InstanceNameAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InstanceNameAlreadyRegisteredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNameRequiredException"))
                 {
-                    return InstanceNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InstanceNameRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIamSessionArnException"))
                 {
-                    return InvalidIamSessionArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidIamSessionArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIamUserArnException"))
                 {
-                    return InvalidIamUserArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidIamUserArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInstanceNameException"))
                 {
-                    return InvalidInstanceNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidInstanceNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MultipleIamArnsProvidedException"))
                 {
-                    return MultipleIamArnsProvidedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return MultipleIamArnsProvidedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCodeDeployException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

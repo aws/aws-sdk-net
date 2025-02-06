@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HoursOfOperationTimeSlice Object
     /// </summary>  
-    public class HoursOfOperationTimeSliceUnmarshaller : IUnmarshaller<HoursOfOperationTimeSlice, XmlUnmarshallerContext>, IUnmarshaller<HoursOfOperationTimeSlice, JsonUnmarshallerContext>
+    public class HoursOfOperationTimeSliceUnmarshaller : IJsonUnmarshaller<HoursOfOperationTimeSlice, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HoursOfOperationTimeSlice IUnmarshaller<HoursOfOperationTimeSlice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HoursOfOperationTimeSlice Unmarshall(JsonUnmarshallerContext context)
+        public HoursOfOperationTimeSlice Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HoursOfOperationTimeSlice unmarshalledObject = new HoursOfOperationTimeSlice();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Hours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Hours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Minutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Minutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Minutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCloudWatchDestinationException operation
     /// </summary>  
-    public class InvalidCloudWatchDestinationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCloudWatchDestinationException, XmlUnmarshallerContext>
+    public class InvalidCloudWatchDestinationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCloudWatchDestinationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

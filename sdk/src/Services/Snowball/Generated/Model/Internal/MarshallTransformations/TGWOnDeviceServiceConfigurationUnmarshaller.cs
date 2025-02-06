@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TGWOnDeviceServiceConfiguration Object
     /// </summary>  
-    public class TGWOnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<TGWOnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TGWOnDeviceServiceConfiguration, JsonUnmarshallerContext>
+    public class TGWOnDeviceServiceConfigurationUnmarshaller : IJsonUnmarshaller<TGWOnDeviceServiceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TGWOnDeviceServiceConfiguration IUnmarshaller<TGWOnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TGWOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TGWOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TGWOnDeviceServiceConfiguration unmarshalledObject = new TGWOnDeviceServiceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("StorageLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StorageUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageUnit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

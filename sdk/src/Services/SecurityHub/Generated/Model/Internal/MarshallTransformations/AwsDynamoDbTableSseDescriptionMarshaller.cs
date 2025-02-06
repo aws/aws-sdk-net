@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInaccessibleEncryptionDateTime())
             {
                 context.Writer.WritePropertyName("InaccessibleEncryptionDateTime");
-                context.Writer.Write(requestObject.InaccessibleEncryptionDateTime);
+                context.Writer.WriteStringValue(requestObject.InaccessibleEncryptionDateTime);
             }
 
             if(requestObject.IsSetKmsMasterKeyArn())
             {
                 context.Writer.WritePropertyName("KmsMasterKeyArn");
-                context.Writer.Write(requestObject.KmsMasterKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsMasterKeyArn);
             }
 
             if(requestObject.IsSetSseType())
             {
                 context.Writer.WritePropertyName("SseType");
-                context.Writer.Write(requestObject.SseType);
+                context.Writer.WriteStringValue(requestObject.SseType);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

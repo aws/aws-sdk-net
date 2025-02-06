@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPasswordArn())
             {
                 context.Writer.WritePropertyName("passwordArn");
-                context.Writer.Write(requestObject.PasswordArn);
+                context.Writer.WriteStringValue(requestObject.PasswordArn);
             }
 
             if(requestObject.IsSetUser())
             {
                 context.Writer.WritePropertyName("user");
-                context.Writer.Write(requestObject.User);
+                context.Writer.WriteStringValue(requestObject.User);
             }
 
         }

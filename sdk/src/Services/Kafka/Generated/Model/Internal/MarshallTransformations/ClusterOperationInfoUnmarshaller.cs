@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClusterOperationInfo Object
     /// </summary>  
-    public class ClusterOperationInfoUnmarshaller : IUnmarshaller<ClusterOperationInfo, XmlUnmarshallerContext>, IUnmarshaller<ClusterOperationInfo, JsonUnmarshallerContext>
+    public class ClusterOperationInfoUnmarshaller : IJsonUnmarshaller<ClusterOperationInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClusterOperationInfo IUnmarshaller<ClusterOperationInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOperationInfo Unmarshall(JsonUnmarshallerContext context)
+        public ClusterOperationInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClusterOperationInfo unmarshalledObject = new ClusterOperationInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("clientRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientRequestId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errorInfo", targetDepth))
                 {
                     var unmarshaller = ErrorInfoUnmarshaller.Instance;
-                    unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operationState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operationSteps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ClusterOperationStep, ClusterOperationStepUnmarshaller>(ClusterOperationStepUnmarshaller.Instance);
-                    unmarshalledObject.OperationSteps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ClusterOperationStep, ClusterOperationStepUnmarshaller>(ClusterOperationStepUnmarshaller.Instance);
+                    unmarshalledObject.OperationSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceClusterInfo", targetDepth))
                 {
                     var unmarshaller = MutableClusterInfoUnmarshaller.Instance;
-                    unmarshalledObject.SourceClusterInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceClusterInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetClusterInfo", targetDepth))
                 {
                     var unmarshaller = MutableClusterInfoUnmarshaller.Instance;
-                    unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcConnectionInfo", targetDepth))
                 {
                     var unmarshaller = VpcConnectionInfoUnmarshaller.Instance;
-                    unmarshalledObject.VpcConnectionInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcConnectionInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

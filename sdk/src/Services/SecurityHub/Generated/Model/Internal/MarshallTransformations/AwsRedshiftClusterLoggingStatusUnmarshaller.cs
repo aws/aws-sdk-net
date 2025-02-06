@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRedshiftClusterLoggingStatus Object
     /// </summary>  
-    public class AwsRedshiftClusterLoggingStatusUnmarshaller : IUnmarshaller<AwsRedshiftClusterLoggingStatus, XmlUnmarshallerContext>, IUnmarshaller<AwsRedshiftClusterLoggingStatus, JsonUnmarshallerContext>
+    public class AwsRedshiftClusterLoggingStatusUnmarshaller : IJsonUnmarshaller<AwsRedshiftClusterLoggingStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRedshiftClusterLoggingStatus IUnmarshaller<AwsRedshiftClusterLoggingStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRedshiftClusterLoggingStatus Unmarshall(JsonUnmarshallerContext context)
+        public AwsRedshiftClusterLoggingStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRedshiftClusterLoggingStatus unmarshalledObject = new AwsRedshiftClusterLoggingStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastFailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastFailureTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastFailureTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastFailureTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulDeliveryTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoggingEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.LoggingEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoggingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3KeyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

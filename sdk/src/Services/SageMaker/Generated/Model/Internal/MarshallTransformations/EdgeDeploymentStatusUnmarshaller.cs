@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EdgeDeploymentStatus Object
     /// </summary>  
-    public class EdgeDeploymentStatusUnmarshaller : IUnmarshaller<EdgeDeploymentStatus, XmlUnmarshallerContext>, IUnmarshaller<EdgeDeploymentStatus, JsonUnmarshallerContext>
+    public class EdgeDeploymentStatusUnmarshaller : IJsonUnmarshaller<EdgeDeploymentStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EdgeDeploymentStatus IUnmarshaller<EdgeDeploymentStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EdgeDeploymentStatus Unmarshall(JsonUnmarshallerContext context)
+        public EdgeDeploymentStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EdgeDeploymentStatus unmarshalledObject = new EdgeDeploymentStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EdgeDeploymentFailedInStage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EdgeDeploymentFailedInStage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeDeploymentFailedInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentPendingInStage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EdgeDeploymentPendingInStage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeDeploymentPendingInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentStageStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EdgeDeploymentStageStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeDeploymentStageStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EdgeDeploymentStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeDeploymentStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentSuccessInStage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EdgeDeploymentSuccessInStage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeDeploymentSuccessInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StageStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StageStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StageStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -67,41 +70,46 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockRuntimeException("Request object does not have required field GuardrailVersion set");
             request.AddPathResource("{guardrailVersion}", StringUtils.FromString(publicRequest.GuardrailVersion));
             request.ResourcePath = "/guardrail/{guardrailIdentifier}/version/{guardrailVersion}/apply";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContent())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("content");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestContentListValue in publicRequest.Content)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContent())
-                    {
-                        context.Writer.WritePropertyName("content");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContentListValue in publicRequest.Content)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = GuardrailContentBlockMarshaller.Instance;
-                            marshaller.Marshall(publicRequestContentListValue, context);
+                    var marshaller = GuardrailContentBlockMarshaller.Instance;
+                    marshaller.Marshall(publicRequestContentListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSource())
-                    {
-                        context.Writer.WritePropertyName("source");
-                        context.Writer.Write(publicRequest.Source);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStringValue(publicRequest.Source);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

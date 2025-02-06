@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TargetTrackingScalingPolicyConfiguration Object
     /// </summary>  
-    public class TargetTrackingScalingPolicyConfigurationUnmarshaller : IUnmarshaller<TargetTrackingScalingPolicyConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TargetTrackingScalingPolicyConfiguration, JsonUnmarshallerContext>
+    public class TargetTrackingScalingPolicyConfigurationUnmarshaller : IJsonUnmarshaller<TargetTrackingScalingPolicyConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TargetTrackingScalingPolicyConfiguration IUnmarshaller<TargetTrackingScalingPolicyConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TargetTrackingScalingPolicyConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TargetTrackingScalingPolicyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TargetTrackingScalingPolicyConfiguration unmarshalledObject = new TargetTrackingScalingPolicyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MetricSpecification", targetDepth))
                 {
                     var unmarshaller = MetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.MetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetValue", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

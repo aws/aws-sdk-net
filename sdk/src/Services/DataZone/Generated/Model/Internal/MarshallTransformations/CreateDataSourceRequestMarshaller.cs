@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -64,127 +67,132 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/data-sources";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetFormsInput())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("assetFormsInput");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAssetFormsInputListValue in publicRequest.AssetFormsInput)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssetFormsInput())
-                    {
-                        context.Writer.WritePropertyName("assetFormsInput");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAssetFormsInputListValue in publicRequest.AssetFormsInput)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = FormInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAssetFormsInputListValue, context);
+                    var marshaller = FormInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAssetFormsInputListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceConfigurationInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetConnectionIdentifier())
-                    {
-                        context.Writer.WritePropertyName("connectionIdentifier");
-                        context.Writer.Write(publicRequest.ConnectionIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEnableSetting())
-                    {
-                        context.Writer.WritePropertyName("enableSetting");
-                        context.Writer.Write(publicRequest.EnableSetting);
-                    }
-
-                    if(publicRequest.IsSetEnvironmentIdentifier())
-                    {
-                        context.Writer.WritePropertyName("environmentIdentifier");
-                        context.Writer.Write(publicRequest.EnvironmentIdentifier);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetProjectIdentifier())
-                    {
-                        context.Writer.WritePropertyName("projectIdentifier");
-                        context.Writer.Write(publicRequest.ProjectIdentifier);
-                    }
-
-                    if(publicRequest.IsSetPublishOnImport())
-                    {
-                        context.Writer.WritePropertyName("publishOnImport");
-                        context.Writer.Write(publicRequest.PublishOnImport.Value);
-                    }
-
-                    if(publicRequest.IsSetRecommendation())
-                    {
-                        context.Writer.WritePropertyName("recommendation");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecommendationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Recommendation, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("schedule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScheduleConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Schedule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetConfiguration())
+            {
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetConnectionIdentifier())
+            {
+                context.Writer.WritePropertyName("connectionIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ConnectionIdentifier);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnableSetting())
+            {
+                context.Writer.WritePropertyName("enableSetting");
+                context.Writer.WriteStringValue(publicRequest.EnableSetting);
+            }
+
+            if(publicRequest.IsSetEnvironmentIdentifier())
+            {
+                context.Writer.WritePropertyName("environmentIdentifier");
+                context.Writer.WriteStringValue(publicRequest.EnvironmentIdentifier);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProjectIdentifier())
+            {
+                context.Writer.WritePropertyName("projectIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ProjectIdentifier);
+            }
+
+            if(publicRequest.IsSetPublishOnImport())
+            {
+                context.Writer.WritePropertyName("publishOnImport");
+                context.Writer.WriteBooleanValue(publicRequest.PublishOnImport.Value);
+            }
+
+            if(publicRequest.IsSetRecommendation())
+            {
+                context.Writer.WritePropertyName("recommendation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecommendationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Recommendation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("schedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScheduleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

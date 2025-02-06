@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthorizationAlreadyExistsException operation
     /// </summary>  
-    public class AuthorizationAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<AuthorizationAlreadyExistsException, XmlUnmarshallerContext>
+    public class AuthorizationAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AuthorizationAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

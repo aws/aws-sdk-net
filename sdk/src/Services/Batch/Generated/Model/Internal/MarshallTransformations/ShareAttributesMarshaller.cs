@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShareIdentifier())
             {
                 context.Writer.WritePropertyName("shareIdentifier");
-                context.Writer.Write(requestObject.ShareIdentifier);
+                context.Writer.WriteStringValue(requestObject.ShareIdentifier);
             }
 
             if(requestObject.IsSetWeightFactor())
@@ -59,11 +57,11 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("weightFactor");
                 if(StringUtils.IsSpecialFloatValue(requestObject.WeightFactor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.WeightFactor.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.WeightFactor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.WeightFactor.Value);
+                    context.Writer.WriteNumberValue(requestObject.WeightFactor.Value);
                 }
             }
 

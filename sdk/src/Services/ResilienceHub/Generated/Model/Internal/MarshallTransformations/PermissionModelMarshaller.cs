@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrossAccountRoleArns())
             {
                 context.Writer.WritePropertyName("crossAccountRoleArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCrossAccountRoleArnsListValue in requestObject.CrossAccountRoleArns)
                 {
-                        context.Writer.Write(requestObjectCrossAccountRoleArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectCrossAccountRoleArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInvokerRoleName())
             {
                 context.Writer.WritePropertyName("invokerRoleName");
-                context.Writer.Write(requestObject.InvokerRoleName);
+                context.Writer.WriteStringValue(requestObject.InvokerRoleName);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

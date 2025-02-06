@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegex())
             {
                 context.Writer.WritePropertyName("regex");
-                context.Writer.Write(requestObject.Regex);
+                context.Writer.WriteStringValue(requestObject.Regex);
             }
 
             if(requestObject.IsSetS3WordsList())
             {
                 context.Writer.WritePropertyName("s3WordsList");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3WordsListMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3WordsList, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

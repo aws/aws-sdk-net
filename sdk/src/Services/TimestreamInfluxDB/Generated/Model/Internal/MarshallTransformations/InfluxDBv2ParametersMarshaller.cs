@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
@@ -51,245 +49,245 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFluxLogEnabled())
             {
                 context.Writer.WritePropertyName("fluxLogEnabled");
-                context.Writer.Write(requestObject.FluxLogEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.FluxLogEnabled.Value);
             }
 
             if(requestObject.IsSetHttpIdleTimeout())
             {
                 context.Writer.WritePropertyName("httpIdleTimeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpIdleTimeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpReadHeaderTimeout())
             {
                 context.Writer.WritePropertyName("httpReadHeaderTimeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpReadHeaderTimeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpReadTimeout())
             {
                 context.Writer.WritePropertyName("httpReadTimeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpReadTimeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpWriteTimeout())
             {
                 context.Writer.WritePropertyName("httpWriteTimeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HttpWriteTimeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInfluxqlMaxSelectBuckets())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectBuckets");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectBuckets.Value);
+                context.Writer.WriteNumberValue(requestObject.InfluxqlMaxSelectBuckets.Value);
             }
 
             if(requestObject.IsSetInfluxqlMaxSelectPoint())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectPoint");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectPoint.Value);
+                context.Writer.WriteNumberValue(requestObject.InfluxqlMaxSelectPoint.Value);
             }
 
             if(requestObject.IsSetInfluxqlMaxSelectSeries())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectSeries");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectSeries.Value);
+                context.Writer.WriteNumberValue(requestObject.InfluxqlMaxSelectSeries.Value);
             }
 
             if(requestObject.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("logLevel");
-                context.Writer.Write(requestObject.LogLevel);
+                context.Writer.WriteStringValue(requestObject.LogLevel);
             }
 
             if(requestObject.IsSetMetricsDisabled())
             {
                 context.Writer.WritePropertyName("metricsDisabled");
-                context.Writer.Write(requestObject.MetricsDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.MetricsDisabled.Value);
             }
 
             if(requestObject.IsSetNoTasks())
             {
                 context.Writer.WritePropertyName("noTasks");
-                context.Writer.Write(requestObject.NoTasks.Value);
+                context.Writer.WriteBooleanValue(requestObject.NoTasks.Value);
             }
 
             if(requestObject.IsSetPprofDisabled())
             {
                 context.Writer.WritePropertyName("pprofDisabled");
-                context.Writer.Write(requestObject.PprofDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.PprofDisabled.Value);
             }
 
             if(requestObject.IsSetQueryConcurrency())
             {
                 context.Writer.WritePropertyName("queryConcurrency");
-                context.Writer.Write(requestObject.QueryConcurrency.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryConcurrency.Value);
             }
 
             if(requestObject.IsSetQueryInitialMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryInitialMemoryBytes");
-                context.Writer.Write(requestObject.QueryInitialMemoryBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryInitialMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryMaxMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryMaxMemoryBytes");
-                context.Writer.Write(requestObject.QueryMaxMemoryBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryMaxMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryMemoryBytes");
-                context.Writer.Write(requestObject.QueryMemoryBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryQueueSize())
             {
                 context.Writer.WritePropertyName("queryQueueSize");
-                context.Writer.Write(requestObject.QueryQueueSize.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryQueueSize.Value);
             }
 
             if(requestObject.IsSetSessionLength())
             {
                 context.Writer.WritePropertyName("sessionLength");
-                context.Writer.Write(requestObject.SessionLength.Value);
+                context.Writer.WriteNumberValue(requestObject.SessionLength.Value);
             }
 
             if(requestObject.IsSetSessionRenewDisabled())
             {
                 context.Writer.WritePropertyName("sessionRenewDisabled");
-                context.Writer.Write(requestObject.SessionRenewDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.SessionRenewDisabled.Value);
             }
 
             if(requestObject.IsSetStorageCacheMaxMemorySize())
             {
                 context.Writer.WritePropertyName("storageCacheMaxMemorySize");
-                context.Writer.Write(requestObject.StorageCacheMaxMemorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageCacheMaxMemorySize.Value);
             }
 
             if(requestObject.IsSetStorageCacheSnapshotMemorySize())
             {
                 context.Writer.WritePropertyName("storageCacheSnapshotMemorySize");
-                context.Writer.Write(requestObject.StorageCacheSnapshotMemorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageCacheSnapshotMemorySize.Value);
             }
 
             if(requestObject.IsSetStorageCacheSnapshotWriteColdDuration())
             {
                 context.Writer.WritePropertyName("storageCacheSnapshotWriteColdDuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageCacheSnapshotWriteColdDuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageCompactFullWriteColdDuration())
             {
                 context.Writer.WritePropertyName("storageCompactFullWriteColdDuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageCompactFullWriteColdDuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageCompactThroughputBurst())
             {
                 context.Writer.WritePropertyName("storageCompactThroughputBurst");
-                context.Writer.Write(requestObject.StorageCompactThroughputBurst.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageCompactThroughputBurst.Value);
             }
 
             if(requestObject.IsSetStorageMaxConcurrentCompactions())
             {
                 context.Writer.WritePropertyName("storageMaxConcurrentCompactions");
-                context.Writer.Write(requestObject.StorageMaxConcurrentCompactions.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageMaxConcurrentCompactions.Value);
             }
 
             if(requestObject.IsSetStorageMaxIndexLogFileSize())
             {
                 context.Writer.WritePropertyName("storageMaxIndexLogFileSize");
-                context.Writer.Write(requestObject.StorageMaxIndexLogFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageMaxIndexLogFileSize.Value);
             }
 
             if(requestObject.IsSetStorageNoValidateFieldSize())
             {
                 context.Writer.WritePropertyName("storageNoValidateFieldSize");
-                context.Writer.Write(requestObject.StorageNoValidateFieldSize.Value);
+                context.Writer.WriteBooleanValue(requestObject.StorageNoValidateFieldSize.Value);
             }
 
             if(requestObject.IsSetStorageRetentionCheckInterval())
             {
                 context.Writer.WritePropertyName("storageRetentionCheckInterval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageRetentionCheckInterval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageSeriesFileMaxConcurrentSnapshotCompactions())
             {
                 context.Writer.WritePropertyName("storageSeriesFileMaxConcurrentSnapshotCompactions");
-                context.Writer.Write(requestObject.StorageSeriesFileMaxConcurrentSnapshotCompactions.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageSeriesFileMaxConcurrentSnapshotCompactions.Value);
             }
 
             if(requestObject.IsSetStorageSeriesIdSetCacheSize())
             {
                 context.Writer.WritePropertyName("storageSeriesIdSetCacheSize");
-                context.Writer.Write(requestObject.StorageSeriesIdSetCacheSize.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageSeriesIdSetCacheSize.Value);
             }
 
             if(requestObject.IsSetStorageWalMaxConcurrentWrites())
             {
                 context.Writer.WritePropertyName("storageWalMaxConcurrentWrites");
-                context.Writer.Write(requestObject.StorageWalMaxConcurrentWrites.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageWalMaxConcurrentWrites.Value);
             }
 
             if(requestObject.IsSetStorageWalMaxWriteDelay())
             {
                 context.Writer.WritePropertyName("storageWalMaxWriteDelay");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageWalMaxWriteDelay, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTracingType())
             {
                 context.Writer.WritePropertyName("tracingType");
-                context.Writer.Write(requestObject.TracingType);
+                context.Writer.WriteStringValue(requestObject.TracingType);
             }
 
             if(requestObject.IsSetUiDisabled())
             {
                 context.Writer.WritePropertyName("uiDisabled");
-                context.Writer.Write(requestObject.UiDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.UiDisabled.Value);
             }
 
         }

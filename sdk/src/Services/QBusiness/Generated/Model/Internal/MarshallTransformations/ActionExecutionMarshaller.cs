@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPayloadKvp in requestObject.Payload)
                 {
                     context.Writer.WritePropertyName(requestObjectPayloadKvp.Key);
                     var requestObjectPayloadValue = requestObjectPayloadKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActionExecutionPayloadFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectPayloadValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPayloadFieldNameSeparator())
             {
                 context.Writer.WritePropertyName("payloadFieldNameSeparator");
-                context.Writer.Write(requestObject.PayloadFieldNameSeparator);
+                context.Writer.WriteStringValue(requestObject.PayloadFieldNameSeparator);
             }
 
             if(requestObject.IsSetPluginId())
             {
                 context.Writer.WritePropertyName("pluginId");
-                context.Writer.Write(requestObject.PluginId);
+                context.Writer.WriteStringValue(requestObject.PluginId);
             }
 
         }

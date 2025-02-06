@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServerCertificateConfig Object
     /// </summary>  
-    public class ServerCertificateConfigUnmarshaller : IUnmarshaller<ServerCertificateConfig, XmlUnmarshallerContext>, IUnmarshaller<ServerCertificateConfig, JsonUnmarshallerContext>
+    public class ServerCertificateConfigUnmarshaller : IJsonUnmarshaller<ServerCertificateConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServerCertificateConfig IUnmarshaller<ServerCertificateConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServerCertificateConfig Unmarshall(JsonUnmarshallerContext context)
+        public ServerCertificateConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServerCertificateConfig unmarshalledObject = new ServerCertificateConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("enableOCSPCheck", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableOCSPCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableOCSPCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ocspAuthorizedResponderArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OcspAuthorizedResponderArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OcspAuthorizedResponderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ocspLambdaArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OcspLambdaArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OcspLambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

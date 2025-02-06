@@ -35,6 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeStorageConfigurationResponse : AmazonWebServiceResponse
     {
         private ConfigurationStatus _configurationStatus;
+        private bool? _disallowIngestNullNaN;
         private DisassociatedDataStorageState _disassociatedDataStorage;
         private DateTime? _lastUpdateDate;
         private MultiLayerStorage _multiLayerStorage;
@@ -57,6 +58,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetConfigurationStatus()
         {
             return this._configurationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisallowIngestNullNaN. 
+        /// <para>
+        /// Describes the configuration for ingesting NULL and NaN data. By default the feature
+        /// is allowed. The feature is disallowed if the value is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? DisallowIngestNullNaN
+        {
+            get { return this._disallowIngestNullNaN; }
+            set { this._disallowIngestNullNaN = value; }
+        }
+
+        // Check to see if DisallowIngestNullNaN property is set
+        internal bool IsSetDisallowIngestNullNaN()
+        {
+            return this._disallowIngestNullNaN.HasValue; 
         }
 
         /// <summary>

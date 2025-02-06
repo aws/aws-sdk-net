@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomProperties())
             {
                 context.Writer.WritePropertyName("customProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCustomPropertiesKvp in requestObject.CustomProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectCustomPropertiesKvp.Key);
                     var requestObjectCustomPropertiesValue = requestObjectCustomPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectCustomPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectCustomPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityName())
             {
                 context.Writer.WritePropertyName("entityName");
-                context.Writer.Write(requestObject.EntityName);
+                context.Writer.WriteStringValue(requestObject.EntityName);
             }
 
             if(requestObject.IsSetErrorHandlingConfig())
             {
                 context.Writer.WritePropertyName("errorHandlingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ErrorHandlingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ErrorHandlingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdFieldNames())
             {
                 context.Writer.WritePropertyName("idFieldNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIdFieldNamesListValue in requestObject.IdFieldNames)
                 {
-                        context.Writer.Write(requestObjectIdFieldNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectIdFieldNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWriteOperationType())
             {
                 context.Writer.WritePropertyName("writeOperationType");
-                context.Writer.Write(requestObject.WriteOperationType);
+                context.Writer.WriteStringValue(requestObject.WriteOperationType);
             }
 
         }

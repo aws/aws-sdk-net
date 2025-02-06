@@ -100,7 +100,20 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For CloudFront, the valid value is <c>ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Elemental MediaPackage, the valid values are <c>EGRESS_ACCESS_LOGS</c> and <c>INGRESS_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Elemental MediaTailor, the valid values are <c>AD_DECISION_SERVER_LOGS</c>, <c>MANIFEST_SERVICE_LOGS</c>,
+        /// and <c>TRANSCODE_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -108,8 +121,17 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon Q, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon SES mail manager, the valid value is <c>APPLICATION_LOG</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon WorkMail, the valid values are <c>ACCESS_CONTROL_LOGS</c>, <c>AUTHENTICATION_LOGS</c>,
-        /// <c>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</c>, and <c>WORKMAIL_MAILBOX_ACCESS_LOGS</c>.
+        /// <c>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</c>, <c>WORKMAIL_MAILBOX_ACCESS_LOGS</c>, and
+        /// <c>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

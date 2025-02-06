@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionGroupExecutor())
             {
                 context.Writer.WritePropertyName("actionGroupExecutor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActionGroupExecutorMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActionGroupExecutor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetActionGroupName())
             {
                 context.Writer.WritePropertyName("actionGroupName");
-                context.Writer.Write(requestObject.ActionGroupName);
+                context.Writer.WriteStringValue(requestObject.ActionGroupName);
             }
 
             if(requestObject.IsSetApiSchema())
             {
                 context.Writer.WritePropertyName("apiSchema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = APISchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApiSchema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFunctionSchema())
             {
                 context.Writer.WritePropertyName("functionSchema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FunctionSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.FunctionSchema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParentActionGroupSignature())
             {
                 context.Writer.WritePropertyName("parentActionGroupSignature");
-                context.Writer.Write(requestObject.ParentActionGroupSignature);
+                context.Writer.WriteStringValue(requestObject.ParentActionGroupSignature);
             }
 
         }

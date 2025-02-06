@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("Accounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
-                        context.Writer.Write(requestObjectAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFrameworkArns())
             {
                 context.Writer.WritePropertyName("FrameworkArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFrameworkArnsListValue in requestObject.FrameworkArns)
                 {
-                        context.Writer.Write(requestObjectFrameworkArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectFrameworkArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNumberOfFrameworks())
             {
                 context.Writer.WritePropertyName("NumberOfFrameworks");
-                context.Writer.Write(requestObject.NumberOfFrameworks.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfFrameworks.Value);
             }
 
             if(requestObject.IsSetOrganizationUnits())
             {
                 context.Writer.WritePropertyName("OrganizationUnits");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrganizationUnitsListValue in requestObject.OrganizationUnits)
                 {
-                        context.Writer.Write(requestObjectOrganizationUnitsListValue);
+                        context.Writer.WriteStringValue(requestObjectOrganizationUnitsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("Regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReportTemplate())
             {
                 context.Writer.WritePropertyName("ReportTemplate");
-                context.Writer.Write(requestObject.ReportTemplate);
+                context.Writer.WriteStringValue(requestObject.ReportTemplate);
             }
 
         }

@@ -86,6 +86,7 @@ namespace Amazon.S3.Util
             AmzHeaderTaggingCount           = "x-amz-tagging-count",
             AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation",
             AmzHeaderChecksumAlgorithm      = "x-amz-checksum-algorithm",
+            AmzHeaderChecksumType           = "x-amz-checksum-type",
             AmzHeaderSdkChecksumAlgorithm   = "x-amz-sdk-checksum-algorithm",
             AmzHeaderChecksumMode           = "x-amz-checksum-mode",
             AmzHeaderIfMatchInitiatedTime   = "x-amz-if-match-initiated-time",

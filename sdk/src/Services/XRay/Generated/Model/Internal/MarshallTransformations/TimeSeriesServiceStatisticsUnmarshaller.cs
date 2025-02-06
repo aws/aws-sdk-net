@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeSeriesServiceStatistics Object
     /// </summary>  
-    public class TimeSeriesServiceStatisticsUnmarshaller : IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesServiceStatistics, JsonUnmarshallerContext>
+    public class TimeSeriesServiceStatisticsUnmarshaller : IJsonUnmarshaller<TimeSeriesServiceStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeSeriesServiceStatistics IUnmarshaller<TimeSeriesServiceStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeSeriesServiceStatistics Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesServiceStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeSeriesServiceStatistics unmarshalledObject = new TimeSeriesServiceStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EdgeSummaryStatistics", targetDepth))
                 {
                     var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.EdgeSummaryStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeSummaryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResponseTimeHistogram", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
-                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
+                    unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceForecastStatistics", targetDepth))
                 {
                     var unmarshaller = ForecastStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceSummaryStatistics", targetDepth))
                 {
                     var unmarshaller = ServiceStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceSummaryStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceSummaryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,114 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataMigrationName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataMigrationName())
-                    {
-                        context.Writer.WritePropertyName("DataMigrationName");
-                        context.Writer.Write(publicRequest.DataMigrationName);
-                    }
-
-                    if(publicRequest.IsSetDataMigrationType())
-                    {
-                        context.Writer.WritePropertyName("DataMigrationType");
-                        context.Writer.Write(publicRequest.DataMigrationType);
-                    }
-
-                    if(publicRequest.IsSetEnableCloudwatchLogs())
-                    {
-                        context.Writer.WritePropertyName("EnableCloudwatchLogs");
-                        context.Writer.Write(publicRequest.EnableCloudwatchLogs.Value);
-                    }
-
-                    if(publicRequest.IsSetMigrationProjectIdentifier())
-                    {
-                        context.Writer.WritePropertyName("MigrationProjectIdentifier");
-                        context.Writer.Write(publicRequest.MigrationProjectIdentifier);
-                    }
-
-                    if(publicRequest.IsSetNumberOfJobs())
-                    {
-                        context.Writer.WritePropertyName("NumberOfJobs");
-                        context.Writer.Write(publicRequest.NumberOfJobs.Value);
-                    }
-
-                    if(publicRequest.IsSetSelectionRules())
-                    {
-                        context.Writer.WritePropertyName("SelectionRules");
-                        context.Writer.Write(publicRequest.SelectionRules);
-                    }
-
-                    if(publicRequest.IsSetServiceAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                        context.Writer.Write(publicRequest.ServiceAccessRoleArn);
-                    }
-
-                    if(publicRequest.IsSetSourceDataSettings())
-                    {
-                        context.Writer.WritePropertyName("SourceDataSettings");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourceDataSettingsListValue in publicRequest.SourceDataSettings)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SourceDataSettingMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourceDataSettingsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DataMigrationName");
+                context.Writer.WriteStringValue(publicRequest.DataMigrationName);
             }
+
+            if(publicRequest.IsSetDataMigrationType())
+            {
+                context.Writer.WritePropertyName("DataMigrationType");
+                context.Writer.WriteStringValue(publicRequest.DataMigrationType);
+            }
+
+            if(publicRequest.IsSetEnableCloudwatchLogs())
+            {
+                context.Writer.WritePropertyName("EnableCloudwatchLogs");
+                context.Writer.WriteBooleanValue(publicRequest.EnableCloudwatchLogs.Value);
+            }
+
+            if(publicRequest.IsSetMigrationProjectIdentifier())
+            {
+                context.Writer.WritePropertyName("MigrationProjectIdentifier");
+                context.Writer.WriteStringValue(publicRequest.MigrationProjectIdentifier);
+            }
+
+            if(publicRequest.IsSetNumberOfJobs())
+            {
+                context.Writer.WritePropertyName("NumberOfJobs");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfJobs.Value);
+            }
+
+            if(publicRequest.IsSetSelectionRules())
+            {
+                context.Writer.WritePropertyName("SelectionRules");
+                context.Writer.WriteStringValue(publicRequest.SelectionRules);
+            }
+
+            if(publicRequest.IsSetServiceAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetSourceDataSettings())
+            {
+                context.Writer.WritePropertyName("SourceDataSettings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourceDataSettingsListValue in publicRequest.SourceDataSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SourceDataSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourceDataSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetDataSettings())
+            {
+                context.Writer.WritePropertyName("TargetDataSettings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetDataSettingsListValue in publicRequest.TargetDataSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TargetDataSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetDataSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

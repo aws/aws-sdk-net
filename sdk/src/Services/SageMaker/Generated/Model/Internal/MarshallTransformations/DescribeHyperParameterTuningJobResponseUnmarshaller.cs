@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -47,117 +47,117 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeHyperParameterTuningJobResponse response = new DescribeHyperParameterTuningJobResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Autotune", targetDepth))
                 {
                     var unmarshaller = AutotuneUnmarshaller.Instance;
-                    response.Autotune = unmarshaller.Unmarshall(context);
+                    response.Autotune = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BestTrainingJob", targetDepth))
                 {
                     var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;
-                    response.BestTrainingJob = unmarshaller.Unmarshall(context);
+                    response.BestTrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConsumedResources", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobConsumedResourcesUnmarshaller.Instance;
-                    response.ConsumedResources = unmarshaller.Unmarshall(context);
+                    response.ConsumedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.HyperParameterTuningEndTime = unmarshaller.Unmarshall(context);
+                    response.HyperParameterTuningEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HyperParameterTuningJobArn = unmarshaller.Unmarshall(context);
+                    response.HyperParameterTuningJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningJobConfig", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobConfigUnmarshaller.Instance;
-                    response.HyperParameterTuningJobConfig = unmarshaller.Unmarshall(context);
+                    response.HyperParameterTuningJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HyperParameterTuningJobName = unmarshaller.Unmarshall(context);
+                    response.HyperParameterTuningJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningJobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HyperParameterTuningJobStatus = unmarshaller.Unmarshall(context);
+                    response.HyperParameterTuningJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ObjectiveStatusCounters", targetDepth))
                 {
                     var unmarshaller = ObjectiveStatusCountersUnmarshaller.Instance;
-                    response.ObjectiveStatusCounters = unmarshaller.Unmarshall(context);
+                    response.ObjectiveStatusCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OverallBestTrainingJob", targetDepth))
                 {
                     var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;
-                    response.OverallBestTrainingJob = unmarshaller.Unmarshall(context);
+                    response.OverallBestTrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJobDefinition", targetDepth))
                 {
                     var unmarshaller = HyperParameterTrainingJobDefinitionUnmarshaller.Instance;
-                    response.TrainingJobDefinition = unmarshaller.Unmarshall(context);
+                    response.TrainingJobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJobDefinitions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HyperParameterTrainingJobDefinition, HyperParameterTrainingJobDefinitionUnmarshaller>(HyperParameterTrainingJobDefinitionUnmarshaller.Instance);
-                    response.TrainingJobDefinitions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HyperParameterTrainingJobDefinition, HyperParameterTrainingJobDefinitionUnmarshaller>(HyperParameterTrainingJobDefinitionUnmarshaller.Instance);
+                    response.TrainingJobDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJobStatusCounters", targetDepth))
                 {
                     var unmarshaller = TrainingJobStatusCountersUnmarshaller.Instance;
-                    response.TrainingJobStatusCounters = unmarshaller.Unmarshall(context);
+                    response.TrainingJobStatusCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TuningJobCompletionDetails", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobCompletionDetailsUnmarshaller.Instance;
-                    response.TuningJobCompletionDetails = unmarshaller.Unmarshall(context);
+                    response.TuningJobCompletionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarmStartConfig", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobWarmStartConfigUnmarshaller.Instance;
-                    response.WarmStartConfig = unmarshaller.Unmarshall(context);
+                    response.WarmStartConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -174,18 +174,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

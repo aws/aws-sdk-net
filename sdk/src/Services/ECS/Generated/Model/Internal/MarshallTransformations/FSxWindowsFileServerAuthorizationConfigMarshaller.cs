@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredentialsParameter())
             {
                 context.Writer.WritePropertyName("credentialsParameter");
-                context.Writer.Write(requestObject.CredentialsParameter);
+                context.Writer.WriteStringValue(requestObject.CredentialsParameter);
             }
 
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("domain");
-                context.Writer.Write(requestObject.Domain);
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
         }

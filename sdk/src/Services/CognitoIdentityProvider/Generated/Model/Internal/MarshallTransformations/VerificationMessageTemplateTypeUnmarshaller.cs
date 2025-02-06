@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VerificationMessageTemplateType Object
     /// </summary>  
-    public class VerificationMessageTemplateTypeUnmarshaller : IUnmarshaller<VerificationMessageTemplateType, XmlUnmarshallerContext>, IUnmarshaller<VerificationMessageTemplateType, JsonUnmarshallerContext>
+    public class VerificationMessageTemplateTypeUnmarshaller : IJsonUnmarshaller<VerificationMessageTemplateType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VerificationMessageTemplateType IUnmarshaller<VerificationMessageTemplateType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VerificationMessageTemplateType Unmarshall(JsonUnmarshallerContext context)
+        public VerificationMessageTemplateType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VerificationMessageTemplateType unmarshalledObject = new VerificationMessageTemplateType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DefaultEmailOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultEmailOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultEmailOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmailMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmailMessageByLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailMessageByLink = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailMessageByLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmailSubject", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailSubject = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailSubject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmailSubjectByLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailSubjectByLink = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailSubjectByLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SmsMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SmsMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SmsMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

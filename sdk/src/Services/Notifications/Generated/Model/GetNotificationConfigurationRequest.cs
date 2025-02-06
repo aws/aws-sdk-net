@@ -31,7 +31,7 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNotificationConfiguration operation.
-    /// Returns a specified NotificationConfiguration.
+    /// Returns a specified <c>NotificationConfiguration</c>.
     /// </summary>
     public partial class GetNotificationConfigurationRequest : AmazonNotificationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the NotificationConfiguration to return.
+        /// The Amazon Resource Name (ARN) of the <c>NotificationConfiguration</c> to return.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

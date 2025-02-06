@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FreeFormLayoutElement Object
     /// </summary>  
-    public class FreeFormLayoutElementUnmarshaller : IUnmarshaller<FreeFormLayoutElement, XmlUnmarshallerContext>, IUnmarshaller<FreeFormLayoutElement, JsonUnmarshallerContext>
+    public class FreeFormLayoutElementUnmarshaller : IJsonUnmarshaller<FreeFormLayoutElement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FreeFormLayoutElement IUnmarshaller<FreeFormLayoutElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FreeFormLayoutElement Unmarshall(JsonUnmarshallerContext context)
+        public FreeFormLayoutElement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FreeFormLayoutElement unmarshalledObject = new FreeFormLayoutElement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BackgroundStyle", targetDepth))
                 {
                     var unmarshaller = FreeFormLayoutElementBackgroundStyleUnmarshaller.Instance;
-                    unmarshalledObject.BackgroundStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackgroundStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BorderStyle", targetDepth))
                 {
                     var unmarshaller = FreeFormLayoutElementBorderStyleUnmarshaller.Instance;
-                    unmarshalledObject.BorderStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BorderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElementId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ElementId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ElementType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Height", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoadingAnimation", targetDepth))
                 {
                     var unmarshaller = LoadingAnimationUnmarshaller.Instance;
-                    unmarshalledObject.LoadingAnimation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoadingAnimation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RenderingRules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SheetElementRenderingRule, SheetElementRenderingRuleUnmarshaller>(SheetElementRenderingRuleUnmarshaller.Instance);
-                    unmarshalledObject.RenderingRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SheetElementRenderingRule, SheetElementRenderingRuleUnmarshaller>(SheetElementRenderingRuleUnmarshaller.Instance);
+                    unmarshalledObject.RenderingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectedBorderStyle", targetDepth))
                 {
                     var unmarshaller = FreeFormLayoutElementBorderStyleUnmarshaller.Instance;
-                    unmarshalledObject.SelectedBorderStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectedBorderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Visibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Width", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("XAxisLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XAxisLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XAxisLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("YAxisLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.YAxisLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.YAxisLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

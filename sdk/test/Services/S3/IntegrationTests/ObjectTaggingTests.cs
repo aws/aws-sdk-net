@@ -327,7 +327,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void MutlipartObjectTaggingTest()
+        public void MultipartObjectTaggingTest()
         {
 
             transferClient.Upload(new TransferUtilityUploadRequest

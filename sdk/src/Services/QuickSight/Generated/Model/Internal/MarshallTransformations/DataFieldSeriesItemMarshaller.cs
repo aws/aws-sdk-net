@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAxisBinding())
             {
                 context.Writer.WritePropertyName("AxisBinding");
-                context.Writer.Write(requestObject.AxisBinding);
+                context.Writer.WriteStringValue(requestObject.AxisBinding);
             }
 
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
+                context.Writer.WriteStringValue(requestObject.FieldId);
             }
 
             if(requestObject.IsSetFieldValue())
             {
                 context.Writer.WritePropertyName("FieldValue");
-                context.Writer.Write(requestObject.FieldValue);
+                context.Writer.WriteStringValue(requestObject.FieldValue);
             }
 
             if(requestObject.IsSetSettings())
             {
                 context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LineChartSeriesSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

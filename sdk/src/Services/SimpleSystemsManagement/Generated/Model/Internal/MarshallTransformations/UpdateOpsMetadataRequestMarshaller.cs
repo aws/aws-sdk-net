@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetKeysToDelete())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("KeysToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestKeysToDeleteListValue in publicRequest.KeysToDelete)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetKeysToDelete())
-                    {
-                        context.Writer.WritePropertyName("KeysToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestKeysToDeleteListValue in publicRequest.KeysToDelete)
-                        {
-                                context.Writer.Write(publicRequestKeysToDeleteListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMetadataToUpdate())
-                    {
-                        context.Writer.WritePropertyName("MetadataToUpdate");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestMetadataToUpdateKvp in publicRequest.MetadataToUpdate)
-                        {
-                            context.Writer.WritePropertyName(publicRequestMetadataToUpdateKvp.Key);
-                            var publicRequestMetadataToUpdateValue = publicRequestMetadataToUpdateKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MetadataValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMetadataToUpdateValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOpsMetadataArn())
-                    {
-                        context.Writer.WritePropertyName("OpsMetadataArn");
-                        context.Writer.Write(publicRequest.OpsMetadataArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestKeysToDeleteListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetMetadataToUpdate())
+            {
+                context.Writer.WritePropertyName("MetadataToUpdate");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMetadataToUpdateKvp in publicRequest.MetadataToUpdate)
+                {
+                    context.Writer.WritePropertyName(publicRequestMetadataToUpdateKvp.Key);
+                    var publicRequestMetadataToUpdateValue = publicRequestMetadataToUpdateKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetadataValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetadataToUpdateValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOpsMetadataArn())
+            {
+                context.Writer.WritePropertyName("OpsMetadataArn");
+                context.Writer.WriteStringValue(publicRequest.OpsMetadataArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

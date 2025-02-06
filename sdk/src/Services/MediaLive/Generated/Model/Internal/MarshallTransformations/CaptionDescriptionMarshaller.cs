@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessibility())
             {
                 context.Writer.WritePropertyName("accessibility");
-                context.Writer.Write(requestObject.Accessibility);
+                context.Writer.WriteStringValue(requestObject.Accessibility);
             }
 
             if(requestObject.IsSetCaptionDashRoles())
             {
                 context.Writer.WritePropertyName("captionDashRoles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionDashRolesListValue in requestObject.CaptionDashRoles)
                 {
-                        context.Writer.Write(requestObjectCaptionDashRolesListValue);
+                        context.Writer.WriteStringValue(requestObjectCaptionDashRolesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");
-                context.Writer.Write(requestObject.CaptionSelectorName);
+                context.Writer.WriteStringValue(requestObject.CaptionSelectorName);
             }
 
             if(requestObject.IsSetDestinationSettings())
             {
                 context.Writer.WritePropertyName("destinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptionDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbDashAccessibility())
             {
                 context.Writer.WritePropertyName("dvbDashAccessibility");
-                context.Writer.Write(requestObject.DvbDashAccessibility);
+                context.Writer.WriteStringValue(requestObject.DvbDashAccessibility);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageDescription())
             {
                 context.Writer.WritePropertyName("languageDescription");
-                context.Writer.Write(requestObject.LanguageDescription);
+                context.Writer.WriteStringValue(requestObject.LanguageDescription);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

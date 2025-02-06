@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProbabilisticRuleValue Object
     /// </summary>  
-    public class ProbabilisticRuleValueUnmarshaller : IUnmarshaller<ProbabilisticRuleValue, XmlUnmarshallerContext>, IUnmarshaller<ProbabilisticRuleValue, JsonUnmarshallerContext>
+    public class ProbabilisticRuleValueUnmarshaller : IJsonUnmarshaller<ProbabilisticRuleValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProbabilisticRuleValue IUnmarshaller<ProbabilisticRuleValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProbabilisticRuleValue Unmarshall(JsonUnmarshallerContext context)
+        public ProbabilisticRuleValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProbabilisticRuleValue unmarshalledObject = new ProbabilisticRuleValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActualSamplingPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ActualSamplingPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualSamplingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DesiredSamplingPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DesiredSamplingPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredSamplingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

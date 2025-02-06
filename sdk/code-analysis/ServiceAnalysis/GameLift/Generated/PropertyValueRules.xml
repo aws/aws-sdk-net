@@ -57,8 +57,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateContainerFleetRequest.FleetRoleArn</property>
     <min>1</min>
-    <max>512</max>
-    <pattern>[a-zA-Z0-9:/-]+</pattern>
+    <max>256</max>
+    <pattern>^arn:.*:role\/[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateContainerFleetRequest.GameServerContainerGroupDefinitionName</property>
@@ -1598,6 +1598,12 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.TerminateGameSessionRequest.GameSessionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -2067,8 +2073,8 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.ContainerFleet.FleetRoleArn</property>
     <min>1</min>
-    <max>512</max>
-    <pattern>[a-zA-Z0-9:/-]+</pattern>
+    <max>256</max>
+    <pattern>^arn:.*:role\/[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ContainerFleet.GameServerContainerGroupDefinitionArn</property>

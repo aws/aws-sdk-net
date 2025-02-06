@@ -1861,6 +1861,10 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly RecommendationType BIMI = new RecommendationType("BIMI");
         /// <summary>
+        /// Constant COMPLAINT for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType COMPLAINT = new RecommendationType("COMPLAINT");
+        /// <summary>
         /// Constant DKIM for RecommendationType
         /// </summary>
         public static readonly RecommendationType DKIM = new RecommendationType("DKIM");

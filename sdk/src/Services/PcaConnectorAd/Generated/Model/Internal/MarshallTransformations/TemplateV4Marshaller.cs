@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateValidity())
             {
                 context.Writer.WritePropertyName("CertificateValidity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CertificateValidityMarshaller.Instance;
                 marshaller.Marshall(requestObject.CertificateValidity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnrollmentFlags())
             {
                 context.Writer.WritePropertyName("EnrollmentFlags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnrollmentFlagsV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.EnrollmentFlags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExtensions())
             {
                 context.Writer.WritePropertyName("Extensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExtensionsV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.Extensions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeneralFlags())
             {
                 context.Writer.WritePropertyName("GeneralFlags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeneralFlagsV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.GeneralFlags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHashAlgorithm())
             {
                 context.Writer.WritePropertyName("HashAlgorithm");
-                context.Writer.Write(requestObject.HashAlgorithm);
+                context.Writer.WriteStringValue(requestObject.HashAlgorithm);
             }
 
             if(requestObject.IsSetPrivateKeyAttributes())
             {
                 context.Writer.WritePropertyName("PrivateKeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrivateKeyAttributesV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.PrivateKeyAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrivateKeyFlags())
             {
                 context.Writer.WritePropertyName("PrivateKeyFlags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrivateKeyFlagsV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.PrivateKeyFlags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubjectNameFlags())
             {
                 context.Writer.WritePropertyName("SubjectNameFlags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SubjectNameFlagsV4Marshaller.Instance;
                 marshaller.Marshall(requestObject.SubjectNameFlags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSupersededTemplates())
             {
                 context.Writer.WritePropertyName("SupersededTemplates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupersededTemplatesListValue in requestObject.SupersededTemplates)
                 {
-                        context.Writer.Write(requestObjectSupersededTemplatesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupersededTemplatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContextKvp in requestObject.Context)
                 {
                     context.Writer.WritePropertyName(requestObjectContextKvp.Key);
                     var requestObjectContextValue = requestObjectContextKvp.Value;
 
-                        context.Writer.Write(requestObjectContextValue);
+                        context.Writer.WriteStringValue(requestObjectContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DirectMessageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("TemplateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTraceId())
             {
                 context.Writer.WritePropertyName("TraceId");
-                context.Writer.Write(requestObject.TraceId);
+                context.Writer.WriteStringValue(requestObject.TraceId);
             }
 
             if(requestObject.IsSetUsers())
             {
                 context.Writer.WritePropertyName("Users");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectUsersKvp in requestObject.Users)
                 {
                     context.Writer.WritePropertyName(requestObjectUsersKvp.Key);
                     var requestObjectUsersValue = requestObjectUsersKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EndpointSendConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectUsersValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

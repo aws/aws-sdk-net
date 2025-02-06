@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SourceClusterNotSupportedException operation
     /// </summary>  
-    public class SourceClusterNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<SourceClusterNotSupportedException, XmlUnmarshallerContext>
+    public class SourceClusterNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SourceClusterNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArrayValues())
             {
                 context.Writer.WritePropertyName("arrayValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArrayValuesListValue in requestObject.ArrayValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ArrayValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectArrayValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBooleanValues())
             {
                 context.Writer.WritePropertyName("booleanValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBooleanValuesListValue in requestObject.BooleanValues)
                 {
-                        context.Writer.Write(requestObjectBooleanValuesListValue);
+                        context.Writer.WriteBooleanValue(requestObjectBooleanValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDoubleValues())
             {
                 context.Writer.WritePropertyName("doubleValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDoubleValuesListValue in requestObject.DoubleValues)
                 {
-                        context.Writer.Write(requestObjectDoubleValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectDoubleValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLongValues())
             {
                 context.Writer.WritePropertyName("longValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLongValuesListValue in requestObject.LongValues)
                 {
-                        context.Writer.Write(requestObjectLongValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectLongValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStringValues())
             {
                 context.Writer.WritePropertyName("stringValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringValuesListValue in requestObject.StringValues)
                 {
-                        context.Writer.Write(requestObjectStringValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectStringValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

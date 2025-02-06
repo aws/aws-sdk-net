@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonQSettings())
             {
                 context.Writer.WritePropertyName("AmazonQSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonQSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonQSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDockerSettings())
             {
                 context.Writer.WritePropertyName("DockerSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DockerSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DockerSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRoleIdentityConfig())
             {
                 context.Writer.WritePropertyName("ExecutionRoleIdentityConfig");
-                context.Writer.Write(requestObject.ExecutionRoleIdentityConfig);
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleIdentityConfig);
             }
 
             if(requestObject.IsSetRStudioServerProDomainSettings())
             {
                 context.Writer.WritePropertyName("RStudioServerProDomainSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RStudioServerProDomainSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RStudioServerProDomainSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

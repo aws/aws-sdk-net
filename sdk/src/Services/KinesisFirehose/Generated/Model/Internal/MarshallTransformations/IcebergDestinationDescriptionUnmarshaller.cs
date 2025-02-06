@@ -29,107 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IcebergDestinationDescription Object
     /// </summary>  
-    public class IcebergDestinationDescriptionUnmarshaller : IUnmarshaller<IcebergDestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<IcebergDestinationDescription, JsonUnmarshallerContext>
+    public class IcebergDestinationDescriptionUnmarshaller : IJsonUnmarshaller<IcebergDestinationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IcebergDestinationDescription IUnmarshaller<IcebergDestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IcebergDestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public IcebergDestinationDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IcebergDestinationDescription unmarshalledObject = new IcebergDestinationDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AppendOnly", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.AppendOnly = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BufferingHints", targetDepth))
                 {
                     var unmarshaller = BufferingHintsUnmarshaller.Instance;
-                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogConfiguration", targetDepth))
                 {
                     var unmarshaller = CatalogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CatalogConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationTableConfigurationList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DestinationTableConfiguration, DestinationTableConfigurationUnmarshaller>(DestinationTableConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.DestinationTableConfigurationList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DestinationTableConfiguration, DestinationTableConfigurationUnmarshaller>(DestinationTableConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.DestinationTableConfigurationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProcessingConfiguration", targetDepth))
                 {
                     var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetryOptions", targetDepth))
                 {
                     var unmarshaller = RetryOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3BackupMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DestinationDescription", targetDepth))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SchemaEvolutionConfiguration", targetDepth))
                 {
                     var unmarshaller = SchemaEvolutionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SchemaEvolutionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SchemaEvolutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TableCreationConfiguration", targetDepth))
                 {
                     var unmarshaller = TableCreationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TableCreationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TableCreationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

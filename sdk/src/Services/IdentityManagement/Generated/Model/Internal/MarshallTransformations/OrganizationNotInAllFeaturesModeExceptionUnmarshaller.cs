@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OrganizationNotInAllFeaturesModeException operation
     /// </summary>  
-    public class OrganizationNotInAllFeaturesModeExceptionUnmarshaller : IErrorResponseUnmarshaller<OrganizationNotInAllFeaturesModeException, XmlUnmarshallerContext>
+    public class OrganizationNotInAllFeaturesModeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OrganizationNotInAllFeaturesModeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CustomerProject. 
         /// <para>
-        ///  Contains detailed information about a customer project when the context type is "CustomerProject".
+        /// Contains detailed information about a customer project when the context type is "CustomerProject".
         /// This field is present only when the Type in EngagementContextDetails is set to "CustomerProject".
         /// 
         /// </para>

@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LambdaAction Object
     /// </summary>  
-    public class LambdaActionUnmarshaller : IUnmarshaller<LambdaAction, XmlUnmarshallerContext>, IUnmarshaller<LambdaAction, JsonUnmarshallerContext>
+    public class LambdaActionUnmarshaller : IXmlUnmarshaller<LambdaAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LambdaAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LambdaActionUnmarshaller _instance = new LambdaActionUnmarshaller();        
 

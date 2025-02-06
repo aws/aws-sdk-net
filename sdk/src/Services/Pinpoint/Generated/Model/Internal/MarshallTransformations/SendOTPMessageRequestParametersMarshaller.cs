@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedAttempts())
             {
                 context.Writer.WritePropertyName("AllowedAttempts");
-                context.Writer.Write(requestObject.AllowedAttempts.Value);
+                context.Writer.WriteNumberValue(requestObject.AllowedAttempts.Value);
             }
 
             if(requestObject.IsSetBrandName())
             {
                 context.Writer.WritePropertyName("BrandName");
-                context.Writer.Write(requestObject.BrandName);
+                context.Writer.WriteStringValue(requestObject.BrandName);
             }
 
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("Channel");
-                context.Writer.Write(requestObject.Channel);
+                context.Writer.WriteStringValue(requestObject.Channel);
             }
 
             if(requestObject.IsSetCodeLength())
             {
                 context.Writer.WritePropertyName("CodeLength");
-                context.Writer.Write(requestObject.CodeLength.Value);
+                context.Writer.WriteNumberValue(requestObject.CodeLength.Value);
             }
 
             if(requestObject.IsSetDestinationIdentity())
             {
                 context.Writer.WritePropertyName("DestinationIdentity");
-                context.Writer.Write(requestObject.DestinationIdentity);
+                context.Writer.WriteStringValue(requestObject.DestinationIdentity);
             }
 
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
-                context.Writer.Write(requestObject.EntityId);
+                context.Writer.WriteStringValue(requestObject.EntityId);
             }
 
             if(requestObject.IsSetLanguage())
             {
                 context.Writer.WritePropertyName("Language");
-                context.Writer.Write(requestObject.Language);
+                context.Writer.WriteStringValue(requestObject.Language);
             }
 
             if(requestObject.IsSetOriginationIdentity())
             {
                 context.Writer.WritePropertyName("OriginationIdentity");
-                context.Writer.Write(requestObject.OriginationIdentity);
+                context.Writer.WriteStringValue(requestObject.OriginationIdentity);
             }
 
             if(requestObject.IsSetReferenceId())
             {
                 context.Writer.WritePropertyName("ReferenceId");
-                context.Writer.Write(requestObject.ReferenceId);
+                context.Writer.WriteStringValue(requestObject.ReferenceId);
             }
 
             if(requestObject.IsSetTemplateId())
             {
                 context.Writer.WritePropertyName("TemplateId");
-                context.Writer.Write(requestObject.TemplateId);
+                context.Writer.WriteStringValue(requestObject.TemplateId);
             }
 
             if(requestObject.IsSetValidityPeriod())
             {
                 context.Writer.WritePropertyName("ValidityPeriod");
-                context.Writer.Write(requestObject.ValidityPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.ValidityPeriod.Value);
             }
 
         }

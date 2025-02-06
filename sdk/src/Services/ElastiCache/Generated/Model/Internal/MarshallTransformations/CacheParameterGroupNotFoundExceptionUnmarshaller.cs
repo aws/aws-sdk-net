@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheParameterGroupNotFoundException operation
     /// </summary>  
-    public class CacheParameterGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CacheParameterGroupNotFoundException, XmlUnmarshallerContext>
+    public class CacheParameterGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CacheParameterGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

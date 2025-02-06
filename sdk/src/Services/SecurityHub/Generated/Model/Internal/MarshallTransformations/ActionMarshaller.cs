@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("ActionType");
-                context.Writer.Write(requestObject.ActionType);
+                context.Writer.WriteStringValue(requestObject.ActionType);
             }
 
             if(requestObject.IsSetAwsApiCallAction())
             {
                 context.Writer.WritePropertyName("AwsApiCallAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiCallActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsApiCallAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDnsRequestAction())
             {
                 context.Writer.WritePropertyName("DnsRequestAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DnsRequestActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DnsRequestAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkConnectionAction())
             {
                 context.Writer.WritePropertyName("NetworkConnectionAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkConnectionActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkConnectionAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPortProbeAction())
             {
                 context.Writer.WritePropertyName("PortProbeAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PortProbeActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PortProbeAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

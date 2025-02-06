@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TemplateMetadata Object
     /// </summary>  
-    public class TemplateMetadataUnmarshaller : IUnmarshaller<TemplateMetadata, XmlUnmarshallerContext>, IUnmarshaller<TemplateMetadata, JsonUnmarshallerContext>
+    public class TemplateMetadataUnmarshaller : IXmlUnmarshaller<TemplateMetadata, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TemplateMetadata Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TemplateMetadataUnmarshaller _instance = new TemplateMetadataUnmarshaller();        
 

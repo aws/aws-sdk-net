@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerConnectorInfo Object
     /// </summary>  
-    public class CustomerConnectorInfoUnmarshaller : IUnmarshaller<CustomerConnectorInfo, XmlUnmarshallerContext>, IUnmarshaller<CustomerConnectorInfo, JsonUnmarshallerContext>
+    public class CustomerConnectorInfoUnmarshaller : IJsonUnmarshaller<CustomerConnectorInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerConnectorInfo IUnmarshaller<CustomerConnectorInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerConnectorInfo Unmarshall(JsonUnmarshallerContext context)
+        public CustomerConnectorInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerConnectorInfo unmarshalledObject = new CustomerConnectorInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blackListedConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BlackListedConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlackListedConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthyConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthyConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthyConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shutdownConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShutdownConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShutdownConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unhealthyConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnhealthyConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnhealthyConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unknownConnectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnknownConnectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnknownConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

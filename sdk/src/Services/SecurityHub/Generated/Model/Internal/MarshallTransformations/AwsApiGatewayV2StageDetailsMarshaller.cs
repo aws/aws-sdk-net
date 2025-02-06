@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,102 +49,102 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessLogSettings())
             {
                 context.Writer.WritePropertyName("AccessLogSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayAccessLogSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessLogSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApiGatewayManaged())
             {
                 context.Writer.WritePropertyName("ApiGatewayManaged");
-                context.Writer.Write(requestObject.ApiGatewayManaged.Value);
+                context.Writer.WriteBooleanValue(requestObject.ApiGatewayManaged.Value);
             }
 
             if(requestObject.IsSetAutoDeploy())
             {
                 context.Writer.WritePropertyName("AutoDeploy");
-                context.Writer.Write(requestObject.AutoDeploy.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoDeploy.Value);
             }
 
             if(requestObject.IsSetClientCertificateId())
             {
                 context.Writer.WritePropertyName("ClientCertificateId");
-                context.Writer.Write(requestObject.ClientCertificateId);
+                context.Writer.WriteStringValue(requestObject.ClientCertificateId);
             }
 
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");
-                context.Writer.Write(requestObject.CreatedDate);
+                context.Writer.WriteStringValue(requestObject.CreatedDate);
             }
 
             if(requestObject.IsSetDefaultRouteSettings())
             {
                 context.Writer.WritePropertyName("DefaultRouteSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayV2RouteSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultRouteSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("DeploymentId");
-                context.Writer.Write(requestObject.DeploymentId);
+                context.Writer.WriteStringValue(requestObject.DeploymentId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetLastDeploymentStatusMessage())
             {
                 context.Writer.WritePropertyName("LastDeploymentStatusMessage");
-                context.Writer.Write(requestObject.LastDeploymentStatusMessage);
+                context.Writer.WriteStringValue(requestObject.LastDeploymentStatusMessage);
             }
 
             if(requestObject.IsSetLastUpdatedDate())
             {
                 context.Writer.WritePropertyName("LastUpdatedDate");
-                context.Writer.Write(requestObject.LastUpdatedDate);
+                context.Writer.WriteStringValue(requestObject.LastUpdatedDate);
             }
 
             if(requestObject.IsSetRouteSettings())
             {
                 context.Writer.WritePropertyName("RouteSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayV2RouteSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RouteSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStageName())
             {
                 context.Writer.WritePropertyName("StageName");
-                context.Writer.Write(requestObject.StageName);
+                context.Writer.WriteStringValue(requestObject.StageName);
             }
 
             if(requestObject.IsSetStageVariables())
             {
                 context.Writer.WritePropertyName("StageVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectStageVariablesKvp in requestObject.StageVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectStageVariablesKvp.Key);
                     var requestObjectStageVariablesValue = requestObjectStageVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectStageVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectStageVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

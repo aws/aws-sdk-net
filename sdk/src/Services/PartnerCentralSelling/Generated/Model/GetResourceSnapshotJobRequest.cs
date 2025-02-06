@@ -41,7 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog related to the request. Valid values are: 
+        /// Specifies the catalog related to the request. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ResourceSnapshotJobIdentifier. 
         /// <para>
-        ///  The unique identifier of the resource snapshot job to be retrieved. This identifier
+        /// The unique identifier of the resource snapshot job to be retrieved. This identifier
         /// is crucial for pinpointing the specific job you want to query. 
         /// </para>
         /// </summary>

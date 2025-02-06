@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,155 +49,155 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGetLinkAttributes())
             {
                 context.Writer.WritePropertyName("GetLinkAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchGetLinkAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.GetLinkAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGetObjectAttributes())
             {
                 context.Writer.WritePropertyName("GetObjectAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchGetObjectAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.GetObjectAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGetObjectInformation())
             {
                 context.Writer.WritePropertyName("GetObjectInformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchGetObjectInformationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GetObjectInformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListAttachedIndices())
             {
                 context.Writer.WritePropertyName("ListAttachedIndices");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListAttachedIndicesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListAttachedIndices, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListIncomingTypedLinks())
             {
                 context.Writer.WritePropertyName("ListIncomingTypedLinks");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListIncomingTypedLinksMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListIncomingTypedLinks, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListIndex())
             {
                 context.Writer.WritePropertyName("ListIndex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListIndexMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListIndex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListObjectAttributes())
             {
                 context.Writer.WritePropertyName("ListObjectAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListObjectAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListObjectAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListObjectChildren())
             {
                 context.Writer.WritePropertyName("ListObjectChildren");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListObjectChildrenMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListObjectChildren, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListObjectParentPaths())
             {
                 context.Writer.WritePropertyName("ListObjectParentPaths");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListObjectParentPathsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListObjectParentPaths, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListObjectParents())
             {
                 context.Writer.WritePropertyName("ListObjectParents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListObjectParentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListObjectParents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListObjectPolicies())
             {
                 context.Writer.WritePropertyName("ListObjectPolicies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListObjectPoliciesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListObjectPolicies, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListOutgoingTypedLinks())
             {
                 context.Writer.WritePropertyName("ListOutgoingTypedLinks");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListOutgoingTypedLinksMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListOutgoingTypedLinks, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetListPolicyAttachments())
             {
                 context.Writer.WritePropertyName("ListPolicyAttachments");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchListPolicyAttachmentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListPolicyAttachments, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLookupPolicy())
             {
                 context.Writer.WritePropertyName("LookupPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchLookupPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.LookupPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

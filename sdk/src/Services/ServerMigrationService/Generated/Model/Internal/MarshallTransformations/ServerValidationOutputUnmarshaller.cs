@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServerValidationOutput Object
     /// </summary>  
-    public class ServerValidationOutputUnmarshaller : IUnmarshaller<ServerValidationOutput, XmlUnmarshallerContext>, IUnmarshaller<ServerValidationOutput, JsonUnmarshallerContext>
+    public class ServerValidationOutputUnmarshaller : IJsonUnmarshaller<ServerValidationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServerValidationOutput IUnmarshaller<ServerValidationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServerValidationOutput Unmarshall(JsonUnmarshallerContext context)
+        public ServerValidationOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServerValidationOutput unmarshalledObject = new ServerValidationOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("server", targetDepth))
                 {
                     var unmarshaller = ServerUnmarshaller.Instance;
-                    unmarshalledObject.Server = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Server = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

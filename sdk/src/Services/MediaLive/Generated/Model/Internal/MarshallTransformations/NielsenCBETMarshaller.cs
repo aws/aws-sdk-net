@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCbetCheckDigitString())
             {
                 context.Writer.WritePropertyName("cbetCheckDigitString");
-                context.Writer.Write(requestObject.CbetCheckDigitString);
+                context.Writer.WriteStringValue(requestObject.CbetCheckDigitString);
             }
 
             if(requestObject.IsSetCbetStepaside())
             {
                 context.Writer.WritePropertyName("cbetStepaside");
-                context.Writer.Write(requestObject.CbetStepaside);
+                context.Writer.WriteStringValue(requestObject.CbetStepaside);
             }
 
             if(requestObject.IsSetCsid())
             {
                 context.Writer.WritePropertyName("csid");
-                context.Writer.Write(requestObject.Csid);
+                context.Writer.WriteStringValue(requestObject.Csid);
             }
 
         }

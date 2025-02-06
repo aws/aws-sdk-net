@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationEndpoint())
             {
                 context.Writer.WritePropertyName("AuthorizationEndpoint");
-                context.Writer.Write(requestObject.AuthorizationEndpoint);
+                context.Writer.WriteStringValue(requestObject.AuthorizationEndpoint);
             }
 
             if(requestObject.IsSetClientParameters())
             {
                 context.Writer.WritePropertyName("ClientParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateConnectionOAuthClientRequestParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHttpMethod())
             {
                 context.Writer.WritePropertyName("HttpMethod");
-                context.Writer.Write(requestObject.HttpMethod);
+                context.Writer.WriteStringValue(requestObject.HttpMethod);
             }
 
             if(requestObject.IsSetOAuthHttpParameters())
             {
                 context.Writer.WritePropertyName("OAuthHttpParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionHttpParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuthHttpParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

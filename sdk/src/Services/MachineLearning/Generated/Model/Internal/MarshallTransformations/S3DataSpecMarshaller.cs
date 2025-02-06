@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataLocationS3())
             {
                 context.Writer.WritePropertyName("DataLocationS3");
-                context.Writer.Write(requestObject.DataLocationS3);
+                context.Writer.WriteStringValue(requestObject.DataLocationS3);
             }
 
             if(requestObject.IsSetDataRearrangement())
             {
                 context.Writer.WritePropertyName("DataRearrangement");
-                context.Writer.Write(requestObject.DataRearrangement);
+                context.Writer.WriteStringValue(requestObject.DataRearrangement);
             }
 
             if(requestObject.IsSetDataSchema())
             {
                 context.Writer.WritePropertyName("DataSchema");
-                context.Writer.Write(requestObject.DataSchema);
+                context.Writer.WriteStringValue(requestObject.DataSchema);
             }
 
             if(requestObject.IsSetDataSchemaLocationS3())
             {
                 context.Writer.WritePropertyName("DataSchemaLocationS3");
-                context.Writer.Write(requestObject.DataSchemaLocationS3);
+                context.Writer.WriteStringValue(requestObject.DataSchemaLocationS3);
             }
 
         }

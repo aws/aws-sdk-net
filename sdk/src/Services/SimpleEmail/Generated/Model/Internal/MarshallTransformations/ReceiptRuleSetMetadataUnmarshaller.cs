@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReceiptRuleSetMetadata Object
     /// </summary>  
-    public class ReceiptRuleSetMetadataUnmarshaller : IUnmarshaller<ReceiptRuleSetMetadata, XmlUnmarshallerContext>, IUnmarshaller<ReceiptRuleSetMetadata, JsonUnmarshallerContext>
+    public class ReceiptRuleSetMetadataUnmarshaller : IXmlUnmarshaller<ReceiptRuleSetMetadata, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReceiptRuleSetMetadata Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReceiptRuleSetMetadataUnmarshaller _instance = new ReceiptRuleSetMetadataUnmarshaller();        
 

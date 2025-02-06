@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RevisionInfo Object
     /// </summary>  
-    public class RevisionInfoUnmarshaller : IUnmarshaller<RevisionInfo, XmlUnmarshallerContext>, IUnmarshaller<RevisionInfo, JsonUnmarshallerContext>
+    public class RevisionInfoUnmarshaller : IJsonUnmarshaller<RevisionInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RevisionInfo IUnmarshaller<RevisionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RevisionInfo Unmarshall(JsonUnmarshallerContext context)
+        public RevisionInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RevisionInfo unmarshalledObject = new RevisionInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("genericRevisionInfo", targetDepth))
                 {
                     var unmarshaller = GenericRevisionInfoUnmarshaller.Instance;
-                    unmarshalledObject.GenericRevisionInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GenericRevisionInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("revisionLocation", targetDepth))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;
-                    unmarshalledObject.RevisionLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -53,42 +51,42 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("factor");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Factor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Factor.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Factor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Factor.Value);
+                    context.Writer.WriteNumberValue(requestObject.Factor.Value);
                 }
             }
 
             if(requestObject.IsSetIsBigEndian())
             {
                 context.Writer.WritePropertyName("isBigEndian");
-                context.Writer.Write(requestObject.IsBigEndian.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsBigEndian.Value);
             }
 
             if(requestObject.IsSetIsSigned())
             {
                 context.Writer.WritePropertyName("isSigned");
-                context.Writer.Write(requestObject.IsSigned.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsSigned.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
-                context.Writer.Write(requestObject.Length.Value);
+                context.Writer.WriteNumberValue(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("messageId");
-                context.Writer.Write(requestObject.MessageId.Value);
+                context.Writer.WriteNumberValue(requestObject.MessageId.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOffset())
@@ -96,18 +94,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("offset");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset.Value);
+                    context.Writer.WriteNumberValue(requestObject.Offset.Value);
                 }
             }
 
             if(requestObject.IsSetStartBit())
             {
                 context.Writer.WritePropertyName("startBit");
-                context.Writer.Write(requestObject.StartBit.Value);
+                context.Writer.WriteNumberValue(requestObject.StartBit.Value);
             }
 
         }

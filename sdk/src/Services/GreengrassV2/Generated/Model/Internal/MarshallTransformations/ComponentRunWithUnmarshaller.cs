@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComponentRunWith Object
     /// </summary>  
-    public class ComponentRunWithUnmarshaller : IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>, IUnmarshaller<ComponentRunWith, JsonUnmarshallerContext>
+    public class ComponentRunWithUnmarshaller : IJsonUnmarshaller<ComponentRunWith, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComponentRunWith IUnmarshaller<ComponentRunWith, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComponentRunWith Unmarshall(JsonUnmarshallerContext context)
+        public ComponentRunWith Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComponentRunWith unmarshalledObject = new ComponentRunWith();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("posixUser", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("systemResourceLimits", targetDepth))
                 {
                     var unmarshaller = SystemResourceLimitsUnmarshaller.Instance;
-                    unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("windowsUser", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WindowsUser = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WindowsUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConflictResolution())
             {
                 context.Writer.WritePropertyName("ConflictResolution");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConflictResolutionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConflictResolution, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConsolidation())
             {
                 context.Writer.WritePropertyName("Consolidation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConsolidationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Consolidation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetMinAllowedConfidenceScoreForMerging())
@@ -81,11 +79,11 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinAllowedConfidenceScoreForMerging.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinAllowedConfidenceScoreForMerging.Value);
                 }
             }
 

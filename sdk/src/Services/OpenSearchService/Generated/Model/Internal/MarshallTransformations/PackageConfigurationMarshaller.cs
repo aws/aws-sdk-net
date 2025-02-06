@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationRequirement())
             {
                 context.Writer.WritePropertyName("ConfigurationRequirement");
-                context.Writer.Write(requestObject.ConfigurationRequirement);
+                context.Writer.WriteStringValue(requestObject.ConfigurationRequirement);
             }
 
             if(requestObject.IsSetLicenseFilepath())
             {
                 context.Writer.WritePropertyName("LicenseFilepath");
-                context.Writer.Write(requestObject.LicenseFilepath);
+                context.Writer.WriteStringValue(requestObject.LicenseFilepath);
             }
 
             if(requestObject.IsSetLicenseRequirement())
             {
                 context.Writer.WritePropertyName("LicenseRequirement");
-                context.Writer.Write(requestObject.LicenseRequirement);
+                context.Writer.WriteStringValue(requestObject.LicenseRequirement);
             }
 
             if(requestObject.IsSetRequiresRestartForConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("RequiresRestartForConfigurationUpdate");
-                context.Writer.Write(requestObject.RequiresRestartForConfigurationUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequiresRestartForConfigurationUpdate.Value);
             }
 
         }

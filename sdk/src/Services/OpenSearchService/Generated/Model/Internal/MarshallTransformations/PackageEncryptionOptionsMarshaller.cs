@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("EncryptionEnabled");
-                context.Writer.Write(requestObject.EncryptionEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetKmsKeyIdentifier())
             {
                 context.Writer.WritePropertyName("KmsKeyIdentifier");
-                context.Writer.Write(requestObject.KmsKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.KmsKeyIdentifier);
             }
 
         }
