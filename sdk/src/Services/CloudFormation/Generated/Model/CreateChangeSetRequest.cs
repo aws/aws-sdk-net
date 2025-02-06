@@ -141,6 +141,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html">
+        /// AWS::IAM::ManagedPolicy</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">
         /// AWS::IAM::Policy</a> 
         /// </para>
@@ -161,7 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
         /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
@@ -177,7 +182,7 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.
         /// </para>
@@ -475,7 +480,7 @@ namespace Amazon.CloudFormation.Model
         /// If the list of resource types doesn't include a resource type that you're updating,
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. IAM uses this parameter for condition keys in IAM policies for CloudFormation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
         /// access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <note> 
@@ -613,11 +618,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// The location of the file that contains the revised template. The URL must point to
-        /// a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
-        /// Manager document. CloudFormation generates the change set by comparing this template
-        /// with the stack that you specified. The location for an Amazon S3 bucket must start
-        /// with <c>https://</c>.
+        /// The URL of the file that contains the revised template. The URL must point to a template
+        /// (max size: 1 MB) that's located in an Amazon S3 bucket or a Systems Manager document.
+        /// CloudFormation generates the change set by comparing this template with the stack
+        /// that you specified. The location for an Amazon S3 bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

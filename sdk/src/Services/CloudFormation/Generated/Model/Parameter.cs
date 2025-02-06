@@ -82,8 +82,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Read-only. The value that corresponds to a Systems Manager parameter key. This field
         /// is returned only for Systems Manager parameter types in the template. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use
-        /// CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify
+        /// existing resources at runtime with CloudFormation-supplied parameter types</a> in
+        /// the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string ResolvedValue

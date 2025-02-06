@@ -232,7 +232,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For hooks, <c>MyCompany::Testing::MyTestHook</c>.
+        /// For Hooks, <c>MyCompany::Testing::MyTestHook</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

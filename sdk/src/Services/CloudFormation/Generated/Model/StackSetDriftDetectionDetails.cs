@@ -44,8 +44,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-    /// unmanaged changes in stack sets</a> in the <i>CloudFormation User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+    /// drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StackSetDriftDetectionDetails

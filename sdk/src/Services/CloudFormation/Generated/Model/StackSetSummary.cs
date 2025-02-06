@@ -171,14 +171,14 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// With <c>self-managed</c> permissions, you must create the administrator and execution
         /// roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
-        /// Self-Managed Stack Set Permissions</a>.
+        /// self-managed permissions</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
         /// required to deploy to accounts managed by Organizations. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
-        /// Service-Managed Stack Set Permissions</a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
+        /// trusted access for stack sets with Organizations</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

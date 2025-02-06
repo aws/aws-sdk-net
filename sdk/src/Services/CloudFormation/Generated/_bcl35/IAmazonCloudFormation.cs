@@ -615,6 +615,47 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateStackRefactor
+
+
+        /// <summary>
+        /// Creates a refactor across multiple stacks, with the list of stacks and resources that
+        /// are affected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the CreateStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
+        CreateStackRefactorResponse CreateStackRefactor(CreateStackRefactorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStackRefactor operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStackRefactor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
+        IAsyncResult BeginCreateStackRefactor(CreateStackRefactorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStackRefactor.</param>
+        /// 
+        /// <returns>Returns a  CreateStackRefactorResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
+        CreateStackRefactorResponse EndCreateStackRefactor(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateStackSet
 
 
@@ -1595,6 +1636,49 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeStackRefactor
+
+
+        /// <summary>
+        /// Describes the stack refactor status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackRefactorNotFoundException">
+        /// The specified stack refactor can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
+        DescribeStackRefactorResponse DescribeStackRefactor(DescribeStackRefactorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackRefactor operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackRefactor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
+        IAsyncResult BeginDescribeStackRefactor(DescribeStackRefactorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackRefactor.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackRefactorResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
+        DescribeStackRefactorResponse EndDescribeStackRefactor(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeStackResource
 
 
@@ -2166,8 +2250,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Detect drift on a stack set. When CloudFormation performs drift detection on a stack
         /// set, it performs drift detection on the stack associated with each stack instance
-        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
-        /// CloudFormation performs drift detection on a stack set</a>.
+        /// in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing
+        /// drift detection on CloudFormation StackSets</a>.
         /// 
         ///  
         /// <para>
@@ -2198,12 +2282,6 @@ namespace Amazon.CloudFormation
         /// instance, including its drift status and last drift time checked.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// For more information about performing a drift detection operation on a stack set,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-        /// unmanaged changes in stack sets</a>.
-        /// </para>
-        ///  
         /// <para>
         /// You can only run a single drift detection operation on a given stack set at one time.
         /// </para>
@@ -2369,6 +2447,46 @@ namespace Amazon.CloudFormation
         /// <returns>Returns a  ExecuteChangeSetResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
         ExecuteChangeSetResponse EndExecuteChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExecuteStackRefactor
+
+
+        /// <summary>
+        /// Executes the stack refactor operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStackRefactor service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteStackRefactor service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
+        ExecuteStackRefactorResponse ExecuteStackRefactor(ExecuteStackRefactorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStackRefactor operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteStackRefactor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
+        IAsyncResult BeginExecuteStackRefactor(ExecuteStackRefactorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteStackRefactor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteStackRefactor.</param>
+        /// 
+        /// <returns>Returns a  ExecuteStackRefactorResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
+        ExecuteStackRefactorResponse EndExecuteStackRefactor(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3106,6 +3224,87 @@ namespace Amazon.CloudFormation
         /// <returns>Returns a  ListStackInstancesResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
         ListStackInstancesResponse EndListStackInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStackRefactorActions
+
+
+        /// <summary>
+        /// Lists the stack refactor actions that will be taken after calling the <a>ExecuteStackRefactor</a>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactorActions service method.</param>
+        /// 
+        /// <returns>The response from the ListStackRefactorActions service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
+        ListStackRefactorActionsResponse ListStackRefactorActions(ListStackRefactorActionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackRefactorActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactorActions operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackRefactorActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
+        IAsyncResult BeginListStackRefactorActions(ListStackRefactorActionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackRefactorActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackRefactorActions.</param>
+        /// 
+        /// <returns>Returns a  ListStackRefactorActionsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
+        ListStackRefactorActionsResponse EndListStackRefactorActions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStackRefactors
+
+
+        /// <summary>
+        /// Lists all account stack refactor operations and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactors service method.</param>
+        /// 
+        /// <returns>The response from the ListStackRefactors service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
+        ListStackRefactorsResponse ListStackRefactors(ListStackRefactorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackRefactors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackRefactors operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackRefactors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
+        IAsyncResult BeginListStackRefactors(ListStackRefactorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackRefactors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackRefactors.</param>
+        /// 
+        /// <returns>Returns a  ListStackRefactorsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
+        ListStackRefactorsResponse EndListStackRefactors(IAsyncResult asyncResult);
 
         #endregion
         

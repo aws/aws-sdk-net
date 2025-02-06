@@ -42,8 +42,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookInvocationCount. 
         /// <para>
-        /// Is either <c>null</c>, if no hooks invoke for the resource, or contains the number
-        /// of hooks that will invoke for the resource.
+        /// Is either <c>null</c>, if no Hooks invoke for the resource, or contains the number
+        /// of Hooks that will invoke for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
