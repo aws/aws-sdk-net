@@ -1,3 +1,13 @@
+### 4.0.0.0-preview.6 (2025-02-06 21:43 UTC)
+* DynamoDBv2 (4.0.0.0)
+	* Add NativeAOT support for the DataModel namespace also known as the Object Persistence high level library.
+* Core 4.0.0.0
+	* Adjustments to fix failing DateTimes asserts in tests due to local/UTC inconsistencies.
+	* Backport the .NET trimming attributes like DynamicallyAccessedMembersAttribute into ThirdParty.RuntimeBackports namespace for Target Frameworks before .NET 8. This simplifies the SDK's codebase by removing compilation conditional checks when using the attributes.
+	* Disable signing the payload when the operation is modeled as having an `UnsignedPayload` set to true.
+	* Updates serialization for JSON-based services to use `System.Text.Json` instead of `LitJson` for improved performance and smaller memory allocations.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.5 (2025-01-03 14:07 UTC)
 * DynamoDBv2 (4.0.0.0)
 	* Switch Document.FromJson and ToJson to use System.Text.Json instead of LitJson. This supports additional precision for decimal values.
