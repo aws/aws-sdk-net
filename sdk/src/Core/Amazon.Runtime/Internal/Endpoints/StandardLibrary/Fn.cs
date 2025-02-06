@@ -370,6 +370,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             JsonDocument doc = null;
             try
             {
+                doc = JsonDocument.Parse(json);
                 var element = doc.RootElement;
                 using var stream = new MemoryStream();
                 using var writer = new Utf8JsonWriter(stream);
