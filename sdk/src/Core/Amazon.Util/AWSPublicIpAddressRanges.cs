@@ -157,13 +157,14 @@ namespace Amazon.Util
 
         private static AWSPublicIpAddressRanges Parse(string fileContent)
         {
+            JsonDocument doc = null;
             try
             {
                 var instance = new AWSPublicIpAddressRanges();
-
-                var json = JsonDocument.Parse(fileContent).RootElement;
-
+                doc = JsonDocument.Parse(fileContent);
+                JsonElement json = doc.RootElement;
                 DateTime? creationDateTime = null;
+
                 try
                 {
                     var createdAt =  json.GetProperty(createDateKey).GetString();
@@ -195,6 +196,10 @@ namespace Amazon.Util
             catch (Exception e)
             {
                 throw new InvalidDataException("IP address ranges content in unexpected/invalid format.", e);
+            }
+            finally
+            {
+                doc?.Dispose();
             }
         }
 

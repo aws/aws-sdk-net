@@ -367,13 +367,14 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string InterpolateJson(string json, Dictionary<string, object> refs)
         {
+            JsonDocument doc = null;
             try
             {
-                var document = JsonDocument.Parse(json).RootElement;
+                var element = doc.RootElement;
                 using var stream = new MemoryStream();
                 using var writer = new Utf8JsonWriter(stream);
 
-                InterpolateJson(document, refs, writer);
+                InterpolateJson(element, refs, writer);
                 writer.Flush();
 
                 return Encoding.UTF8.GetString(stream.ToArray());
@@ -381,6 +382,10 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             catch (JsonException)
             {
                 return "";
+            }
+            finally
+            {
+                doc?.Dispose();
             }
         }
 

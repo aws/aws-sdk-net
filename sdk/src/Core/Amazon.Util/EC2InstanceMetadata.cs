@@ -307,16 +307,22 @@ namespace Amazon.Util
                 var identityDocument = IdentityDocument;
                 if (!string.IsNullOrEmpty(identityDocument))
                 {
+                    JsonDocument doc = null;
                     try
                     {
-                        var jsonDocument = JsonDocument.Parse(identityDocument.ToString()).RootElement;
-                        if (jsonDocument.TryGetProperty("region", out JsonElement value))
+                        doc = JsonDocument.Parse(identityDocument.ToString());
+                        JsonElement rootElement = doc.RootElement;
+                        if (rootElement.TryGetProperty("region", out JsonElement value))
                             return RegionEndpoint.GetBySystemName(value.GetString());
                     }
                     catch (Exception e)
                     {
                         var logger = Logger.GetLogger(typeof(EC2InstanceMetadata));
                         logger.Error(e, "Error attempting to read region from instance metadata identity document");
+                    }
+                    finally
+                    {
+                        doc?.Dispose();
                     }
                 }
 

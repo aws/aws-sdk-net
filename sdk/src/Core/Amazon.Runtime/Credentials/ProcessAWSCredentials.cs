@@ -158,9 +158,11 @@ namespace Amazon.Runtime
             // The system will attempt to find the executable within folders specified by the PATH environment variable.
             if (processInfo.ExitCode == 0)
             {
+                JsonDocument doc = null;
                 try
                 {
-                    JsonElement data = JsonDocument.Parse(processInfo.StandardOutput, _options).RootElement;
+                    doc = JsonDocument.Parse(processInfo.StandardOutput, _options);
+                    JsonElement data = doc.RootElement;
                     if ((data.EnumerateObject().Select(x => x.NameEquals(_versionString)) == null) || !(data.TryGetProperty(_versionString, out _)))
                     {
                         throw new ProcessAWSCredentialException("Missing required parameter - Version in JSON Payload");
@@ -198,6 +200,10 @@ namespace Amazon.Runtime
                 catch(JsonException je)
                 {
                     throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", je);
+                }
+                finally
+                {
+                    doc?.Dispose();
                 }
             }
             var processException = new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture, "Command returned non-zero exit value {0} with the error - {1}", processInfo.ExitCode, processInfo.StandardError));

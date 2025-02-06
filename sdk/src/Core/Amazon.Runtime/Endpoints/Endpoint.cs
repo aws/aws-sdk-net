@@ -45,13 +45,16 @@ namespace Amazon.Runtime.Endpoints
 
             if (!string.IsNullOrEmpty(attributesJson))
             {
-                var attributes = JsonDocument.Parse(attributesJson).RootElement;
+                JsonDocument doc = JsonDocument.Parse(attributesJson);
+                var attributes = doc.RootElement;
                 Attributes = PropertyBag.FromJsonElement(attributes);
+                doc?.Dispose();
             }
 
             if (!string.IsNullOrEmpty(headersJson))
             {
-                var headers = JsonDocument.Parse(headersJson).RootElement;
+                JsonDocument doc = JsonDocument.Parse(headersJson);
+                var headers = doc.RootElement;
                 Headers = new Dictionary<string, IList<string>>();
                 foreach (JsonProperty key in headers.EnumerateObject())
                 {
@@ -65,6 +68,7 @@ namespace Amazon.Runtime.Endpoints
                     }
                     Headers.Add(key.Name, headerValues);
                 }
+                doc?.Dispose();
             }
         }
 
