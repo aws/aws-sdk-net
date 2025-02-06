@@ -1,3 +1,17 @@
+### 3.7.977.0 (2025-02-06 19:17 UTC)
+* CloudFormation (3.7.402.0)
+	* We added 5 new stack refactoring APIs: CreateStackRefactor, ExecuteStackRefactor, ListStackRefactors, DescribeStackRefactor, ListStackRefactorActions.
+* ConnectCases (3.7.401.0)
+	* This release adds the ability to conditionally require fields on a template. Check public documentation for more information.
+* CostOptimizationHub (3.7.403.0)
+	* This release enables AWS Cost Optimization Hub to show cost optimization recommendations for Amazon Auto Scaling Groups, including those with single and mixed instance types.
+* S3 (3.7.414.0)
+	* Updated list of the valid AWS Region values for the LocationConstraint parameter for general purpose buckets.
+* Core 3.7.401.10
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.976.1 (2025-02-05 19:15 UTC)
 * RDS (3.7.410.27)
 	* Documentation updates to clarify the description for the parameter AllocatedStorage for the DB cluster data type, the description for the parameter DeleteAutomatedBackups for the DeleteDBCluster API operation, and removing an outdated note for the CreateDBParameterGroup API operation.
