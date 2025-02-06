@@ -305,7 +305,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property SageMakerSavingsPlans. 
         /// <para>
-        /// The SageMaker Savings Plans recommendation details.
+        /// The SageMaker AI Savings Plans recommendation details.
         /// </para>
         /// </summary>
         public SageMakerSavingsPlans SageMakerSavingsPlans

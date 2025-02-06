@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
-    /// The instance configuration used for recommendations.
+    /// The configuration for the EC2 Auto Scaling group with mixed instance types.
     /// </summary>
-    public partial class InstanceConfiguration
+    public partial class MixedInstanceConfiguration
     {
         private string _type;
 

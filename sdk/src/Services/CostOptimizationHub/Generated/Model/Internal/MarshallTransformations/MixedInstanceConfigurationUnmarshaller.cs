@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Ec2AutoScalingGroupConfiguration Object
+    /// Response Unmarshaller for MixedInstanceConfiguration Object
     /// </summary>  
-    public class Ec2AutoScalingGroupConfigurationUnmarshaller : IUnmarshaller<Ec2AutoScalingGroupConfiguration, XmlUnmarshallerContext>, IUnmarshaller<Ec2AutoScalingGroupConfiguration, JsonUnmarshallerContext>
+    public class MixedInstanceConfigurationUnmarshaller : IUnmarshaller<MixedInstanceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MixedInstanceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Ec2AutoScalingGroupConfiguration IUnmarshaller<Ec2AutoScalingGroupConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MixedInstanceConfiguration IUnmarshaller<MixedInstanceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Ec2AutoScalingGroupConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MixedInstanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Ec2AutoScalingGroupConfiguration unmarshalledObject = new Ec2AutoScalingGroupConfiguration();
+            MixedInstanceConfiguration unmarshalledObject = new MixedInstanceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,24 +66,6 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allocationStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instance", targetDepth))
-                {
-                    var unmarshaller = InstanceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Instance = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mixedInstances", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MixedInstanceConfiguration, MixedInstanceConfigurationUnmarshaller>(MixedInstanceConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.MixedInstances = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -95,12 +77,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static Ec2AutoScalingGroupConfigurationUnmarshaller _instance = new Ec2AutoScalingGroupConfigurationUnmarshaller();        
+        private static MixedInstanceConfigurationUnmarshaller _instance = new MixedInstanceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static Ec2AutoScalingGroupConfigurationUnmarshaller Instance
+        public static MixedInstanceConfigurationUnmarshaller Instance
         {
             get
             {
