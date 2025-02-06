@@ -34,7 +34,7 @@ namespace Amazon.ConnectCases.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <c>Summary</c> system field accepts 1500 characters while all other fields accept
+    /// The <c>Summary</c> system field accepts 3000 characters while all other fields accept
     /// 500 characters.
     /// </para>
     ///  </note>

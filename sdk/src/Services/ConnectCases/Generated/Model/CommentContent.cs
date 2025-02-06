@@ -43,7 +43,7 @@ namespace Amazon.ConnectCases.Model
         /// Text in the body of a <c>Comment</c> on a case.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3000)]
+        [AWSProperty(Required=true, Min=1, Max=15000)]
         public string Body
         {
             get { return this._body; }

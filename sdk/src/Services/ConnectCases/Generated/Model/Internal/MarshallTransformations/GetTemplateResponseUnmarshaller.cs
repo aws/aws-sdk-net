@@ -94,6 +94,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     response.RequiredFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TemplateRule, TemplateRuleUnmarshaller>(TemplateRuleUnmarshaller.Instance);
+                    response.Rules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
