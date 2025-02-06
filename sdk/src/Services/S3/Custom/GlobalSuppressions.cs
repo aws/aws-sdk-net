@@ -38,8 +38,6 @@ using System.Diagnostics.CodeAnalysis;
 
 // Array properties/fields
 [module: SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Scope = "member", Target = "Amazon.S3.Util.S3PostUploadError.#elements")]
-// Suppressions for exceptions in setters
-[module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.EC2.Import.ImportCleanup.#DeleteImageArtifacts(Amazon.EC2.IAmazonEC2,Amazon.S3.IAmazonS3,System.String,System.Boolean,Amazon.EC2.Import.CleanupProgressCallback)")]
 // Passing base types
 [module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.S3.Model.S3AccessControlList.#RemoveGrant(Amazon.S3.Model.S3Grantee,Amazon.S3.S3Permission)")]
 [module: SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Scope = "member", Target = "Amazon.S3.Model.S3BucketLoggingConfig.#RemoveGrant(Amazon.S3.Model.S3Grantee,Amazon.S3.S3Permission)")]
@@ -102,11 +100,8 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.S3Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
 // Override methods on comparable types
 [module: SuppressMessage("Microsoft.Design", "CA1036:OverrideMethodsOnComparableTypes", Scope = "type", Target = "Amazon.S3.Model.PartETag")]
-// Suppressions for various *url* params being strings.
-[module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImportCleanup.#DeleteImageArtifacts(Amazon.S3.IAmazonS3,System.String,Amazon.EC2.Import.CleanupProgressCallback)", MessageId = "1#")]
 // Passing Uri instead of string (in these cases, the uri overload is called by the string overload)
 [module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.S3.Internal.AmazonS3RedirectHandler.#FinalizeForRedirect(Amazon.Runtime.IExecutionContext,System.String)")]
-[module: SuppressMessage("Microsoft.Usage", "CA2234:PassSystemUriObjectsInsteadOfStrings", Scope = "member", Target = "Amazon.EC2.Import.ImportCleanup.#DeleteImageArtifacts(Amazon.S3.IAmazonS3,System.String,Amazon.EC2.Import.CleanupProgressCallback)")]
 // Explicit interface implementations
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.BeginDelete(System.String,System.String,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.AsyncCallback,System.Object)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.BeginDownloadToFilePath(System.String,System.String,System.String,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.AsyncCallback,System.Object)")]

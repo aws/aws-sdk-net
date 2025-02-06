@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "EC2",
+            "type": "patch",
+            "changeLogMessages": [
+                "[Breaking Change] Removed EC2: DiskImageImporter, ImportCleanup, EC2Metadata, and S3UploadPolicy classes which are obsolete."
+            ]
+        },
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Removed GlobalSuppressions for removed EC2 classes."
+            ]
+        }
+    ]
+}
