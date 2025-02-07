@@ -16,14 +16,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Xml;
+using Amazon.Auth.AccessControlPolicy.Internal;
 using Amazon.Util;
 using Amazon.Util.Internal;
-using ThirdParty.Json.LitJson;
-
-#if NET8_0_OR_GREATER
-using System.Text.Json;
-#endif
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -123,8 +120,11 @@ namespace Amazon.Runtime.Credentials.Internal
                 [JsonPropertyNames.Region] = token.Region,
                 [JsonPropertyNames.StartUrl] = token.StartUrl
             };
-
+#if NET8_0_OR_GREATER
             return JsonSerializerHelper.Serialize<Dictionary<string, string>>(jsonData, new DictionaryStringStringJsonSerializerContexts(new JsonSerializerOptions { WriteIndented = true }));
+#else
+            return JsonSerializerHelper.Serialize<Dictionary<string, string>>(jsonData, new DictionaryStringStringJsonSerializerContexts(new Amazon.Util.Internal.JsonSerializerOptions { WriteIndented = true }));
+#endif
         }
 
         /// <summary>
@@ -134,12 +134,13 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <param name="throwIfTokenInvalid">if set, throws exception of type AmazonClientException when the json doesn't have AccessToken and ExpiresAt properties.</param>
         public static SsoToken FromJson(string json, bool throwIfTokenInvalid)
         {
-            var jsonData = JsonMapper.ToObject(json);
+            JsonDocument doc =  JsonDocument.Parse(json);
+            var jsonData = doc.RootElement;
 
             var token = new SsoToken();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.AccessToken))
-                token.AccessToken = jsonData[JsonPropertyNames.AccessToken].ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.AccessToken, out JsonElement accessTokenElement))
+                token.AccessToken = accessTokenElement.GetString();
             else
             {
                 if (throwIfTokenInvalid)
@@ -151,8 +152,8 @@ namespace Amazon.Runtime.Credentials.Internal
                     return null;
                 }
             }
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ExpiresAt))
-                token.ExpiresAt = XmlConvert.ToDateTime(jsonData[JsonPropertyNames.ExpiresAt].ToString(), XmlDateTimeSerializationMode.Utc);
+            if (jsonData.TryGetProperty(JsonPropertyNames.ExpiresAt, out JsonElement expiresAtElement))
+                token.ExpiresAt = XmlConvert.ToDateTime(expiresAtElement.GetString(), XmlDateTimeSerializationMode.Utc);
             else
             {
                 if (throwIfTokenInvalid)
@@ -164,24 +165,25 @@ namespace Amazon.Runtime.Credentials.Internal
                     return null;
                 }
             }
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.RefreshToken))
-                token.RefreshToken = jsonData[JsonPropertyNames.RefreshToken]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.RefreshToken,out JsonElement refreshTokenElement))
+                token.RefreshToken = refreshTokenElement.GetString();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ClientId))
-                token.ClientId = jsonData[JsonPropertyNames.ClientId]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.ClientId, out JsonElement clientIdElement))
+                token.ClientId = clientIdElement.GetString();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ClientSecret))
-                token.ClientSecret = jsonData[JsonPropertyNames.ClientSecret]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.ClientSecret, out JsonElement clientSecretElement))
+                token.ClientSecret = clientSecretElement.GetString();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.RegistrationExpiresAt))
-                token.RegistrationExpiresAt = jsonData[JsonPropertyNames.RegistrationExpiresAt]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.RegistrationExpiresAt, out JsonElement registrationExpiresAtElement))
+                token.RegistrationExpiresAt = registrationExpiresAtElement.GetString();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.Region))
-                token.Region = jsonData[JsonPropertyNames.Region]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.Region, out JsonElement regionElement))
+                token.Region = regionElement.GetString();
 
-            if (jsonData.PropertyNames.Contains(JsonPropertyNames.StartUrl))
-                token.StartUrl = jsonData[JsonPropertyNames.StartUrl]?.ToString();
+            if (jsonData.TryGetProperty(JsonPropertyNames.StartUrl, out JsonElement startUrlElement))
+                token.StartUrl = startUrlElement.GetString();
 
+            doc?.Dispose();
             return token;
         }
 

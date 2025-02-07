@@ -33,8 +33,7 @@ namespace Amazon.Util.Internal
 #else
         public static T Deserialize<T>(string json, JsonSerializerContext typeInfo)
         {
-            string sanitizedJson = SanitizeJson(json);
-            return JsonSerializer.Deserialize<T>(sanitizedJson, options);
+            return JsonSerializer.Deserialize<T>(json, options);
         }
 
         public static string Serialize<T>(object obj, JsonSerializerContext typeInfo)
@@ -47,12 +46,6 @@ namespace Amazon.Util.Internal
             return JsonSerializer.Serialize(obj, jsonSerializerOptions);
         }
 #endif
-        public static string SanitizeJson(string rawJson)
-        {
-            // Add a comma after numbers or strings if they're not followed by a closing brace/bracket or comma.
-            rawJson = regex.Replace(rawJson, "$1,$2");
-            return rawJson;
-        }
     }
 
     [JsonSerializable(typeof(IAMInstanceProfileMetadata))]

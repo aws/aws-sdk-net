@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Endpoints
@@ -44,27 +45,30 @@ namespace Amazon.Runtime.Endpoints
 
             if (!string.IsNullOrEmpty(attributesJson))
             {
-                var attributes = JsonMapper.ToObject(attributesJson);
-                Attributes = PropertyBag.FromJsonData(attributes);
+                JsonDocument doc = JsonDocument.Parse(attributesJson);
+                var attributes = doc.RootElement;
+                Attributes = PropertyBag.FromJsonElement(attributes);
+                doc?.Dispose();
             }
 
             if (!string.IsNullOrEmpty(headersJson))
             {
-                var headers = JsonMapper.ToObject(headersJson);
+                JsonDocument doc = JsonDocument.Parse(headersJson);
+                var headers = doc.RootElement;
                 Headers = new Dictionary<string, IList<string>>();
-                foreach (var key in headers.PropertyNames)
+                foreach (JsonProperty key in headers.EnumerateObject())
                 {
                     var headerValues = new List<string>();
-                    var values = headers[key];
-                    if (values != null && values.IsArray)
+                    if (headers.TryGetProperty(key.Name, out JsonElement value) && value.ValueKind == JsonValueKind.Array)
                     {
-                        foreach (JsonData value in values)
+                        foreach (JsonElement item in value.EnumerateArray())
                         {
-                            headerValues.Add((string)value);
+                            headerValues.Add(item.GetString());
                         }
                     }
-                    Headers.Add(key, headerValues);
+                    Headers.Add(key.Name, headerValues);
                 }
+                doc?.Dispose();
             }
         }
 

@@ -24,7 +24,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Threading;
-using ThirdParty.Json.LitJson;
 
 
 namespace Amazon.Runtime.Internal.Settings

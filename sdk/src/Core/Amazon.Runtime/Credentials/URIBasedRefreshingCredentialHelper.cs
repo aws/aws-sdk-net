@@ -20,8 +20,8 @@ using System.Globalization;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
-using ThirdParty.Json.LitJson;
 using ThirdParty.RuntimeBackports;
+using System.Text.Json;
 
 namespace Amazon.Runtime
 {
@@ -70,7 +70,7 @@ namespace Amazon.Runtime
         protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)
         {
             string json = GetContents(uri, proxy, headers);
-            return JsonMapper.ToObject<T>(json);
+            return JsonSerializer.Deserialize<T>(json);
         }
 
         protected static T GetObjectFromResponse<T, TC>(Uri uri, IWebProxy proxy, Dictionary<string, string> headers)

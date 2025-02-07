@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Refactor core to remove litJson references and use system text json instead."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

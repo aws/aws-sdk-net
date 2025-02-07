@@ -101,6 +101,11 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(fileContents.Trim(), File.ReadAllText(Path.Combine(DirectoryPath, filename)).Trim());
         }
 
+        public void AssertFileContentsIgnoreWhitespace(string filename, string fileContents)
+        {
+            Assert.AreEqual(fileContents.Replace(" ", ""), File.ReadAllText(Path.Combine(DirectoryPath, filename)).Replace(" ",""));
+        }
+
         public void AssertObjectCount(int expectedCount)
         {
             AssertObjectCount(MainFilename, expectedCount);
@@ -117,8 +122,8 @@ namespace AWSSDK.UnitTests
 
         public int GetObjectCount(string filename)
         {
-            JsonDocument rootJsonData = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename)));
-            return rootJsonData.RootElement.EnumerateObject().Count();
+            JsonElement rootJsonElement = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename))).RootElement;
+            return rootJsonElement.EnumerateObject().Count();
         }
 
         public void AssertJsonProperty(string displayName, string propertyName, string propertyValue)
@@ -128,7 +133,7 @@ namespace AWSSDK.UnitTests
 
         public void AssertJsonProperty(string filename, string displayName, string propertyName, string propertyValue)
         {
-            JsonDocument rootJsonData = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename)));
+            JsonElement rootJsonData = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename))).RootElement;
             var profileJsonData = GetObjectJsonData(displayName, rootJsonData);
 
             Assert.IsTrue(profileJsonData.ValueKind == JsonValueKind.Object);
@@ -142,9 +147,9 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        public JsonElement GetObjectJsonData(string displayName, JsonDocument rootJsonData)
+        public JsonElement GetObjectJsonData(string displayName, JsonElement rootJsonData)
         {
-            foreach (var property in rootJsonData.RootElement.EnumerateObject())
+            foreach (var property in rootJsonData.EnumerateObject())
             {
                 Assert.IsTrue(property.Value.ValueKind == JsonValueKind.Object);
                 if (string.Equals(property.Name,displayName, StringComparison.OrdinalIgnoreCase) ||

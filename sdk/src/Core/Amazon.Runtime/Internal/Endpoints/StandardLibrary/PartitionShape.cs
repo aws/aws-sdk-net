@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 using System.Collections.Generic;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 {
@@ -24,7 +24,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
     {
         public string id { get; set; }
         public string regionRegex { get; set; }
-        public Dictionary<string, JsonData> regions { get; set; }
+        public Dictionary<string, JsonElement> regions { get; set; }
         public PartitionAttributesShape outputs { get; set; }
     }
 }

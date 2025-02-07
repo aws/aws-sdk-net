@@ -226,6 +226,7 @@ namespace AWSSDK.UnitTests.Runtime
                 expiresAt = "3000-12-25T21:30:00Z",
                 startUrl
             };
+            var result2 = JsonSerializer.Serialize(cachedSsoToken);
 
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
