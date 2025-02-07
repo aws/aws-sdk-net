@@ -36,6 +36,7 @@ namespace Amazon.PI.Model
     {
         private Dictionary<string, string> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _displayName;
+        private Dictionary<string, string> _filter = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _metric;
         private double? _value;
 
@@ -74,6 +75,24 @@ namespace Amazon.PI.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The filter for the Performance Insights metric.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

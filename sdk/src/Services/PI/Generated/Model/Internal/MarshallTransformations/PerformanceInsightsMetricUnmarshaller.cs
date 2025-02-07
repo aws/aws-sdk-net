@@ -78,6 +78,12 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Filter", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Metric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
