@@ -347,7 +347,13 @@ namespace Amazon.Runtime.Internal.Util
             // S3 does not support).
 
             // TODO: Similar to "SetRequestChecksum", this method should be removed in V4.
-            if (!string.IsNullOrEmpty(checksumAlgorithm))
+            if (fallbackToMD5)
+            {
+                // Reported in https://github.com/aws/aws-sdk-net/issues/3641
+                // Some operations will fail if the Content-MD5 header is not set, so we need to set it to maintain backwards compatibility.
+                SetChecksumData(request);
+            }
+            else if (!string.IsNullOrEmpty(checksumAlgorithm))
             {
                 SetChecksumData(request, checksumAlgorithm, fallbackToMD5, isRequestChecksumRequired: true);
             }
