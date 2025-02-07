@@ -32,7 +32,7 @@ namespace Amazon.BCMDataExports
     public partial class AmazonBCMDataExportsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Data Exports", "3.7.400.90");
+            InternalSDKUtils.BuildUserAgentString("BCM Data Exports", "3.7.400.91");
 
         private string _userAgent = UserAgentString;
         ///<summary>

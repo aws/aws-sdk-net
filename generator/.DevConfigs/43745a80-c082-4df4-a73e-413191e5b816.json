@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Update data integrity component to handle older versions of the `AWSSDK.S3` package when operations require a `Content-MD5` header"
-        ]
-    }
-}

@@ -1,3 +1,19 @@
+### 3.7.978.0 (2025-02-07 19:19 UTC)
+* ECR (3.7.409.0)
+	* Adds support to handle the new basic scanning daily quota.
+* EKS (3.7.410.0)
+	* Introduce versionStatus field to take place of status field in EKS DescribeClusterVersions API
+* MediaConvert (3.7.408.0)
+	* This release adds support for Animated GIF output, forced chroma sample positioning metadata, and Extensible Wave Container format
+* PI (3.7.401.0)
+	* Adds documentation for dimension groups and dimensions to analyze locks for Database Insights.
+* TranscribeService (3.7.402.0)
+	* This release adds support for the Clinical Note Template Customization feature for the AWS HealthScribe APIs within Amazon Transcribe.
+* Core 3.7.401.11
+	* Update data integrity component to handle older versions of the `AWSSDK.S3` package when operations require a `Content-MD5` header
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.977.0 (2025-02-06 19:17 UTC)
 * CloudFormation (3.7.402.0)
 	* We added 5 new stack refactoring APIs: CreateStackRefactor, ExecuteStackRefactor, ListStackRefactors, DescribeStackRefactor, ListStackRefactorActions.
