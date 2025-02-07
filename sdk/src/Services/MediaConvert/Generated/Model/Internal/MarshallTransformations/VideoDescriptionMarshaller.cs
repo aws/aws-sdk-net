@@ -60,6 +60,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AntiAlias);
             }
 
+            if(requestObject.IsSetChromaPositionMode())
+            {
+                context.Writer.WritePropertyName("chromaPositionMode");
+                context.Writer.Write(requestObject.ChromaPositionMode);
+            }
+
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");

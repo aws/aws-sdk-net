@@ -75,9 +75,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. The service defaults to using RIFF for WAV outputs.
-        /// If your output audio is likely to exceed 4 GB in file size, or if you otherwise need
-        /// the extended support of the RF64 format, set your output WAV file format to RF64.
+        /// Gets and sets the property Format. Specify the file format for your wave audio output.
+        /// To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely
+        /// to exceed 4GB in file size, or if you otherwise need the extended support of the RF64
+        /// format: Choose RF64. If your player only supports the extensible wave format: Choose
+        /// Extensible.
         /// </summary>
         public WavFormat Format
         {
