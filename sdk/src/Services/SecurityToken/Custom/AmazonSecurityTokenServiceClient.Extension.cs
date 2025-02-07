@@ -212,5 +212,61 @@ namespace Amazon.SecurityToken
                 throw exception;
             }
         }
+        
+#if AWS_ASYNC_API
+        /// <summary>
+        /// <see cref="ICoreAmazonSTS"/>
+        /// </summary>
+        /// <param name="roleArn"></param>
+        /// <param name="roleSessionName"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        async Task<AssumeRoleImmutableCredentials> ICoreAmazonSTS.CredentialsFromAssumeRoleAuthenticationAsync(string roleArn,
+            string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            try
+            {
+                var request = new AssumeRoleRequest
+                {
+                    RoleArn = roleArn,
+                    RoleSessionName = roleSessionName
+                };
+                if (options != null)
+                {
+                    request.ExternalId = options.ExternalId;
+                    request.SerialNumber = options.MfaSerialNumber;
+                    request.TokenCode = options.MfaTokenCode;
+                    request.Policy = options.Policy;
+                    request.SourceIdentity = options.SourceIdentity;
+
+                    if (options.DurationSeconds.HasValue)
+                    {
+                        request.DurationSeconds = options.DurationSeconds.Value;
+                    }
+
+                    if (options.Tags != null && options.Tags.Count > 0)
+                    {
+                        request.Tags = options.Tags.Select(kv => new Tag() { Key = kv.Key, Value = kv.Value }).ToList();
+                    }
+
+                    if (options.TransitiveTagKeys != null && options.TransitiveTagKeys.Count > 0)
+                    {
+                        request.TransitiveTagKeys = options.TransitiveTagKeys;
+                    }
+                }
+
+                var response = await AssumeRoleAsync(request).ConfigureAwait(false);
+                return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
+                    response.Credentials.SessionToken, response.Credentials.Expiration);
+            }
+            catch (Exception e)
+            {
+                var msg = "Error calling AssumeRole for role " + roleArn;
+                var exception = new AmazonClientException(msg, e);
+                Logger.GetLogger(typeof(AmazonSecurityTokenServiceClient)).Error(exception, exception.Message);
+                throw exception;
+            }
+        }
+#endif
     }
 }
