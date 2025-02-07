@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Refactor tests and services from LitJSON to System Text Json"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
