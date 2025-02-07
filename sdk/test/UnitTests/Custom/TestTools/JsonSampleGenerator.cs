@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ServiceClientGenerator;
-using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Documents;
 using Amazon.Runtime.Documents.Internal.Transform;

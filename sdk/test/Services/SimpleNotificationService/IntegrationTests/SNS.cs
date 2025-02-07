@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using Amazon.Auth.AccessControlPolicy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
@@ -324,21 +325,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 string bodyJson = GetBodyJson(message);
 
-                var json = ThirdParty.Json.LitJson.JsonMapper.ToObject(bodyJson);
-                var messageText = json["Message"];
-                var messageSubject = json["Subject"];
+                var json = JsonDocument.Parse(bodyJson);
+                var messageText = json.RootElement.GetProperty("Message");
+                var messageSubject = json.RootElement.GetProperty("Subject");
                 Assert.AreEqual(publishRequest.Message, messageText.ToString());
                 Assert.AreEqual(publishRequest.Subject, messageSubject.ToString());
-                var messageAttributes = json["MessageAttributes"];
-                Assert.AreEqual(publishRequest.MessageAttributes.Count, messageAttributes.Count);
+                var messageAttributes = json.RootElement.GetProperty("MessageAttributes");
+                Assert.AreEqual(publishRequest.MessageAttributes.Count, messageAttributes.EnumerateObject().Count());
+
                 foreach (var ma in publishRequest.MessageAttributes)
                 {
                     var name = ma.Key;
                     var value = ma.Value;
-                    Assert.IsTrue(messageAttributes.PropertyNames.Contains(name, StringComparer.Ordinal));
-                    var jsonAttribute = messageAttributes[name];
-                    var jsonType = jsonAttribute["Type"].ToString();
-                    var jsonValue = jsonAttribute["Value"].ToString();
+                    Assert.IsTrue(messageAttributes.EnumerateObject().Any(x => x.Name == name));
+                    var jsonAttribute = messageAttributes.GetProperty(name);
+                    var jsonType = jsonAttribute.GetProperty("Type").ToString();
+                    var jsonValue = jsonAttribute.GetProperty("Value").ToString();
                     Assert.IsNotNull(jsonType);
                     Assert.IsNotNull(jsonValue);
                     Assert.AreEqual(value.DataType, jsonType);

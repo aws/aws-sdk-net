@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace AWSSDK.UnitTests
 {
@@ -117,8 +117,8 @@ namespace AWSSDK.UnitTests
 
         public int GetObjectCount(string filename)
         {
-            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, filename))));
-            return rootJsonData.PropertyNames.Count();
+            JsonDocument rootJsonData = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename)));
+            return rootJsonData.RootElement.EnumerateObject().Count();
         }
 
         public void AssertJsonProperty(string displayName, string propertyName, string propertyValue)
@@ -128,30 +128,29 @@ namespace AWSSDK.UnitTests
 
         public void AssertJsonProperty(string filename, string displayName, string propertyName, string propertyValue)
         {
-            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, filename))));
+            JsonDocument rootJsonData = JsonDocument.Parse(File.ReadAllText(Path.Combine(DirectoryPath, filename)));
             var profileJsonData = GetObjectJsonData(displayName, rootJsonData);
 
-            Assert.IsTrue(profileJsonData.IsObject);
-            foreach (string profilePropertyName in profileJsonData.PropertyNames)
+            Assert.IsTrue(profileJsonData.ValueKind == JsonValueKind.Object);
+            foreach (var profilePropertyName in profileJsonData.EnumerateObject())
             {
-                if (string.Equals(propertyName, profilePropertyName, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(propertyName, profilePropertyName.Name, StringComparison.OrdinalIgnoreCase))
                 {
-                    Assert.AreEqual(propertyValue, profileJsonData[profilePropertyName].ToString());
+                    Assert.AreEqual(propertyValue, profileJsonData.GetProperty(profilePropertyName.Name).GetString());
                     break;
                 }
             }
         }
 
-        public JsonData GetObjectJsonData(string displayName, JsonData rootJsonData)
+        public JsonElement GetObjectJsonData(string displayName, JsonDocument rootJsonData)
         {
-            foreach (string propertyName in rootJsonData.PropertyNames)
+            foreach (var property in rootJsonData.RootElement.EnumerateObject())
             {
-                JsonData profileJsonData = rootJsonData[propertyName];
-                Assert.IsTrue(profileJsonData.IsObject);
-                if (string.Equals(propertyName, displayName, StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(profileJsonData[DisplayNameField].ToString(), displayName, StringComparison.OrdinalIgnoreCase))
+                Assert.IsTrue(property.Value.ValueKind == JsonValueKind.Object);
+                if (string.Equals(property.Name,displayName, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(property.Value.GetProperty(DisplayNameField).GetString(), displayName, StringComparison.OrdinalIgnoreCase))
                 {
-                    return profileJsonData;
+                    return property.Value;
                 }
             }
             throw new Exception("Profile " + displayName + " not found.");

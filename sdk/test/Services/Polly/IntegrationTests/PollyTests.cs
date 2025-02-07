@@ -23,8 +23,9 @@ using System.Net;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using ThirdParty.Json.LitJson;
 using System.Text;
+using System.Text.Json;
+using System.Linq;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 {
@@ -53,7 +54,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
                 Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
                 using (var streamReader = new StreamReader(response.AudioStream))
                 {
-                    AssertSpeechMarks(JsonMapper.ToObject(streamReader));
+                    string text = streamReader.ReadToEnd(); // read the stream to the end to make sure it's valid JSON
+                    AssertSpeechMarks(text);
                 }
             }
         }
@@ -70,7 +72,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
         public void PresignedUrlWithSpeechMarks()
         {
             var data = AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetSpeechMarkRequest()));
-            AssertSpeechMarks(JsonMapper.ToObject(Encoding.UTF8.GetString(data)));
+            /*{\"time\":0,\"type\":\"sentence\",\"start\":0,\"end\":5,\"value\":\"Hello\"}\n{\"time\":6,\"type\":\"word\",\"start\":0,\"end\":5,\"value\":\"Hello\"}\n"*/
+            AssertSpeechMarks(Encoding.UTF8.GetString(data));
         }
 
         [TestMethod]
@@ -95,14 +98,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
             AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
         }
 
-        private static void AssertSpeechMarks(JsonData speechMarksJsonData)
+        private static void AssertSpeechMarks(string speechMarksString)
         {
-            var names = new HashSet<string>(speechMarksJsonData.PropertyNames);
-            Assert.IsTrue(names.Contains("time"));
-            Assert.IsTrue(names.Contains("type"));
-            Assert.IsTrue(names.Contains("start"));
-            Assert.IsTrue(names.Contains("end"));
-            Assert.IsTrue(names.Contains("value"));
+            string[] speechMarksJsonObjects = speechMarksString.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string speechMarksJsonObject in speechMarksJsonObjects)
+            {
+                var jsonDoc = JsonDocument.Parse(speechMarksJsonObject);
+                IEnumerable<string> propertyNames = jsonDoc.RootElement.EnumerateObject().Select(x => x.Name);
+                Assert.IsTrue(propertyNames.Contains("time"));
+                Assert.IsTrue(propertyNames.Contains("type"));
+                Assert.IsTrue(propertyNames.Contains("start"));
+                Assert.IsTrue(propertyNames.Contains("end"));
+                Assert.IsTrue(propertyNames.Contains("value"));
+            }
         }
 
         private static byte[] AssertPreSignedUrl(string url)

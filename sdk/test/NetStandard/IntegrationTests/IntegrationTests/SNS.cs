@@ -7,8 +7,7 @@ using Amazon.Auth.AccessControlPolicy;
 
 using System.Threading;
 using System.Threading.Tasks;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
@@ -276,11 +275,30 @@ namespace Amazon.DNXCore.IntegrationTests
             var bodyJson = GetBodyJson(messages[0]);
 
             // modify message to have invalid SignatureVersion
-            var jsonData = JsonMapper.ToObject(bodyJson);
-            jsonData["SignatureVersion"] = "3";
+            var jsonData = JsonDocument.Parse(bodyJson);
+            using var memoryStream = new MemoryStream();
+            using (var writer = new Utf8JsonWriter(memoryStream))
+            {
+                writer.WriteStartObject();
+                foreach (var property in jsonData.RootElement.EnumerateObject())
+                {
+                    if (property.Name == "SignatureVersion")
+                    {
+                        writer.WriteString("SignatureVersion", "3");
+                    }
+                    else
+                    {
+                        property.WriteTo(writer);
+                    }
+                }
 
-            var ex = Assert.Throws<AmazonClientException>(() => Amazon.SimpleNotificationService.Util.Message.ParseMessage(jsonData.ToJson()));
-            Assert.Equal("SignatureVersion is not a valid value", ex.Message);
+                writer.WriteEndObject();
+                writer.Flush();
+                string updatedJson = Encoding.UTF8.GetString(memoryStream.ToArray());
+
+                var ex = Assert.Throws<AmazonClientException>(() => Amazon.SimpleNotificationService.Util.Message.ParseMessage(updatedJson));
+                Assert.Equal("SignatureVersion is not a valid value", ex.Message);
+            }
         }
 
         [Fact]
@@ -298,21 +316,21 @@ namespace Amazon.DNXCore.IntegrationTests
 
             string bodyJson = GetBodyJson(message);
 
-            var json = ThirdParty.Json.LitJson.JsonMapper.ToObject(bodyJson);
-            var messageText = json["Message"];
-            var messageSubject = json["Subject"];
+            var json = JsonDocument.Parse(bodyJson);
+            var messageText = json.RootElement.GetProperty("Message");
+            var messageSubject = json.RootElement.GetProperty("Subject");
             Assert.Equal(publishRequest.Message, messageText.ToString());
             Assert.Equal(publishRequest.Subject, messageSubject.ToString());
-            var messageAttributes = json["MessageAttributes"];
-            Assert.Equal(publishRequest.MessageAttributes.Count, messageAttributes.Count);
+            var messageAttributes = json.RootElement.GetProperty("MessageAttributes");
+            Assert.Equal(publishRequest.MessageAttributes.Count, messageAttributes.EnumerateObject().Count());
             foreach (var ma in publishRequest.MessageAttributes)
             {
                 var name = ma.Key;
                 var value = ma.Value;
-                Assert.Contains(name, messageAttributes.PropertyNames, StringComparer.Ordinal);
-                var jsonAttribute = messageAttributes[name];
-                var jsonType = jsonAttribute["Type"].ToString();
-                var jsonValue = jsonAttribute["Value"].ToString();
+                Assert.Contains(name, messageAttributes.EnumerateObject().Select(x => x.Name), StringComparer.Ordinal);
+                var jsonAttribute = messageAttributes.GetProperty(name);
+                var jsonType = jsonAttribute.GetProperty("Type").ToString();
+                var jsonValue = jsonAttribute.GetProperty("Value").ToString();
                 Assert.NotNull(jsonType);
                 Assert.NotNull(jsonValue);
                 Assert.Equal(value.DataType, jsonType);

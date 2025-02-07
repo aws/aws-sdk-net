@@ -21,7 +21,7 @@ using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
-using Json.LitJson;
+using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -60,10 +60,9 @@ namespace AWSSDK.UnitTests.Runtime
                 accessToken = "cachedToken",
                 expiresAt = "3000-12-25T21:30:00Z",
             };
-
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var ssoTokenManager = new SSOTokenManager(
                 mockSSOOIDCClient.Object,
@@ -112,7 +111,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var ssoTokenManager = new SSOTokenManager(
                 mockSSOOIDCClient.Object,
@@ -151,7 +150,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             await mockFileSystem.WriteAllTextAsync(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var ssoTokenManager = new MoqSSOTokenManager(
                 mockSSOOIDCClient.Object,
@@ -185,7 +184,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var ssoTokenManager = new MoqSSOTokenManager(
                 mockSSOOIDCClient.Object,
@@ -230,13 +229,13 @@ namespace AWSSDK.UnitTests.Runtime
 
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var unrelatedCacheFile = Guid.NewGuid().ToString() + ".json";
 
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, unrelatedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             Assert.AreEqual(mockFileSystem.Files.Count, 2);
 
@@ -288,13 +287,13 @@ namespace AWSSDK.UnitTests.Runtime
 
             await mockFileSystem.WriteAllTextAsync(
                 Path.Combine(testCacheFolder, expectedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             var unrelatedCacheFile = Guid.NewGuid().ToString() + ".json";
 
             await mockFileSystem.WriteAllTextAsync(
                 Path.Combine(testCacheFolder, unrelatedCacheFile),
-                JsonMapper.ToJson(cachedSsoToken));
+                JsonSerializer.Serialize(cachedSsoToken));
 
             Assert.AreEqual(mockFileSystem.Files.Count, 2);
 

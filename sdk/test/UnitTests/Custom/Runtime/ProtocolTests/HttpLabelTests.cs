@@ -22,7 +22,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
 using System.IO;
 using System.Net;
 using static AWSSDK.UnitTests.HttpHandlerTests;

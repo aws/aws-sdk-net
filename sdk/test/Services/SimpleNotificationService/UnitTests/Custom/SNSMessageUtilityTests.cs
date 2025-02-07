@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.UnitTests
             var expectedCase = 
 "{" +
 "  \"TopicArn\" : \"" + value + "\"," +
-"  \"SigningCertURL\" : \"https://sns.us-east-1.amazonaws.com/SimpleNotificationService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\"" +
+"  \"SigningCertURL\" : \"https://sns.us-east-1.amazonaws.com/SimpleNotificationService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\"," +
 "  \"SignatureVersion\" : \"1\"" +
 "}";
 
