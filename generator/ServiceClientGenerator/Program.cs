@@ -86,8 +86,6 @@ namespace ServiceClientGenerator
                     GeneratorDriver.GenerateDefaultConfigurationModeEnum(generationManifest, options);
                     GeneratorDriver.GenerateEndpoints(options);
                     GeneratorDriver.GenerateS3Enumerations(options);
-
-                    GeneratorDriver.RemoveLegacyFiles(options.SdkRootFolder);
                 }
                 else
                 {
