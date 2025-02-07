@@ -34,8 +34,8 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// Each summary is simplified by removing these fields compared to the full <c> <a>PodIdentityAssociation</a>
-    /// </c>:
+    /// Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html">
+    /// <c>PodIdentityAssociation</c> </a>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

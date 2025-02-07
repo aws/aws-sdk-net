@@ -2152,9 +2152,9 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When the status of the update is <c>Succeeded</c>, the update is complete. If an update
-        /// fails, the status is <c>Failed</c>, and an error detail explains the reason for the
-        /// failure.
+        /// When the status of the update is <c>Successful</c>, the update is complete. If an
+        /// update fails, the status is <c>Failed</c>, and an error detail explains the reason
+        /// for the failure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
@@ -2969,8 +2969,8 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
-        /// </c> to add it to the Amazon EKS control plane.
+        /// Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html">
+        /// <c>RegisterClusterRequest</c> </a> to add it to the Amazon EKS control plane.
         /// </para>
         ///  
         /// <para>
@@ -3349,8 +3349,8 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your cluster update with the <a>DescribeUpdate</a>
-        /// API operation.
+        /// can use to track the status of your cluster update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation.
         /// 
         ///  
         /// <para>
@@ -3480,9 +3480,9 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS managed node group configuration. Your node group continues
         /// to function during the update. The response output includes an update ID that you
-        /// can use to track the status of your node group update with the <a>DescribeUpdate</a>
-        /// API operation. You can update the Kubernetes labels and taints for a node group and
-        /// the scaling and version update configuration.
+        /// can use to track the status of your node group update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a> API operation. You can update the Kubernetes labels and
+        /// taints for a node group and the scaling and version update configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupConfig service method.</param>
         /// <param name="cancellationToken">

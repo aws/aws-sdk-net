@@ -80,6 +80,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
+            
+            if (publicRequest.IsSetVersionStatus())
+                request.Parameters.Add("versionStatus", StringUtils.FromString(publicRequest.VersionStatus));
             request.ResourcePath = "/cluster-versions";
             request.UseQueryString = true;
 

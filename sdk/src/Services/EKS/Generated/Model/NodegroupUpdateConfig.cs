@@ -87,8 +87,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The configuration for the behavior to follow during a node group version update of
         /// this managed node group. You choose between two possible strategies for replacing
-        /// nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a>
-        /// action.
+        /// nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html">
+        /// <c>UpdateNodegroupVersion</c> </a> action.
         /// </para>
         ///  
         /// <para>

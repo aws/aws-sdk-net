@@ -42,6 +42,7 @@ namespace Amazon.EKS.Model
         private int? _maxResults;
         private string _nextToken;
         private ClusterVersionStatus _status;
+        private VersionStatus _versionStatus;
 
         /// <summary>
         /// Gets and sets the property ClusterType. 
@@ -153,11 +154,17 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Status. <important> 
+        /// <para>
+        /// This field is deprecated. Use <c>versionStatus</c> instead, as that field matches
+        /// for input and output of this action.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Filter versions by their current status.
         /// </para>
         /// </summary>
+        [Obsolete("status has been replaced by versionStatus")]
         public ClusterVersionStatus Status
         {
             get { return this._status; }
@@ -168,6 +175,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionStatus. 
+        /// <para>
+        /// Filter versions by their current status.
+        /// </para>
+        /// </summary>
+        public VersionStatus VersionStatus
+        {
+            get { return this._versionStatus; }
+            set { this._versionStatus = value; }
+        }
+
+        // Check to see if VersionStatus property is set
+        internal bool IsSetVersionStatus()
+        {
+            return this._versionStatus != null;
         }
 
     }
