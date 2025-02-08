@@ -1,7 +1,8 @@
 {
     "core": {
       "changeLogMessages": [
-        "Refactor core to remove litJson references and use system text json instead."
+        "Refactor core to remove litJson references and use system text json instead.",
+        "Refactor tests and services to use System.Text.JSON instead of LitJSON"
       ],
       "type": "patch",
       "updateMinimum": true

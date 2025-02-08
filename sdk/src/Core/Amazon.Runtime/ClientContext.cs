@@ -156,7 +156,6 @@ namespace Amazon.Runtime.Internal
                 _clientContext.Add(CUSTOM_KEY, _custom);
                 _clientContext.Add(SERVICES_KEY, _services);
                 return JsonSerializer.Serialize(_clientContext);
-                //return JsonMapper.ToJson(_clientContext); 
             
             }
         }
