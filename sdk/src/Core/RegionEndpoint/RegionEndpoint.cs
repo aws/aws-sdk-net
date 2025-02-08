@@ -283,10 +283,7 @@ namespace Amazon
                                  .Replace("{region}", regionName)
                                  .Replace("{dnsSuffix}", PartitionDnsSuffix).Replace("..", ".");
 
-            var signatureVersionOverride = 
-                (serviceName == "s3" && _sigV2SupportedRegions.Contains(SystemName)) ? "2" : null;
-
-            return new RegionEndpoint.Endpoint(hostname, null, signatureVersionOverride, PartitionDnsSuffix, deprecated: false);
+            return new RegionEndpoint.Endpoint(hostname, null, PartitionDnsSuffix, deprecated: false);
         }
 
         public override string ToString()
@@ -300,11 +297,10 @@ namespace Amazon
         [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
         public class Endpoint
         {
-            internal Endpoint(string hostname, string authregion, string signatureVersionOverride, string dnsSuffix, bool deprecated)
+            internal Endpoint(string hostname, string authregion, string dnsSuffix, bool deprecated)
             {
                 this.Hostname = hostname;
                 this.AuthRegion = authregion;
-                this.SignatureVersionOverride = signatureVersionOverride;
                 this.Deprecated = deprecated;
                 this.DnsSuffix = dnsSuffix;
             }
@@ -339,16 +335,6 @@ namespace Amazon
             public override string ToString()
             {
                 return this.Hostname;
-            }
-
-            /// <summary>
-            /// This property is only set for S3 endpoints.  For all other services this property returns null.
-            /// For S3 endpoints, if the endpoint supports signature version 2 this property will be "2", otherwise it will be "4".
-            /// </summary>
-            public string SignatureVersionOverride
-            {
-                get;
-                private set;
             }
 
             /// <summary>

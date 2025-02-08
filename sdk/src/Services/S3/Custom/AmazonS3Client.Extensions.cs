@@ -47,6 +47,23 @@ namespace Amazon.S3
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
         /// <summary>
+        /// A hardcoded list for regions that support SigV2 for S3 endpoints to preserve legacy behavior. 
+        /// New regions shouldn't support SigV2 as it is a deprecated signature version. This is a copy
+        /// of the same private member in RegionEndpoint.
+        /// </summary>
+        private static readonly HashSet<string> _sigV2SupportedRegions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "ap-northeast-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-west-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-1",
+            "us-west-2",
+        };
+
+        /// <summary>
         /// Specialize the initialize of the client.
         /// </summary>
         protected override void Initialize()
@@ -80,12 +97,10 @@ namespace Amazon.S3
         /// </remarks>
         /// <param name="request">The GetPreSignedUrlRequest that defines the
         /// parameters of the operation.</param>
-        /// <param name="useSigV2Fallback">determines if signing will fall back to SigV2 if the
-        /// signing region is us-east-1</param>
         /// <returns>A string that is the signed http request.</returns>
         /// <exception cref="T:System.ArgumentException" />
         /// <exception cref="T:System.ArgumentNullException" />
-        internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request, bool useSigV2Fallback = true)
+        internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
             if (Credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -96,7 +111,7 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
                 throw new InvalidOperationException("The Expires specified is null!");
             Arn arn = null;
-            var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn, useSigV2Fallback);
+            var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn);
             var immutableCredentials = Credentials.GetCredentials();
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
@@ -142,13 +157,11 @@ namespace Amazon.S3
         /// </remarks>
         /// <param name="request">The GetPreSignedUrlRequest that defines the
         /// parameters of the operation.</param>
-        /// <param name="useSigV2Fallback">determines if signing will fall back to SigV2 if the
-        /// signing region is us-east-1</param>
         /// <returns>A string that is the signed http request.</returns>
         /// <exception cref="T:System.ArgumentException" />
         /// <exception cref="T:System.ArgumentNullException" />
         [SuppressMessage("AWSSDKRules", "CR1004")]
-        internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request, bool useSigV2Fallback = true)
+        internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
             if (Credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -159,7 +172,7 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
                 throw new InvalidOperationException("The Expires specified is null!");
             Arn arn = null;
-            var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn, useSigV2Fallback);
+            var signatureVersionToUse = DetermineSignatureVersionToUse(request, ref arn);
             var immutableCredentials = await Credentials.GetCredentialsAsync().ConfigureAwait(false);
             var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, signatureVersionToUse);
 
@@ -284,9 +297,9 @@ namespace Amazon.S3
 
 
         [SuppressMessage("AWSSDKRules", "CR1004")]
-        private SignatureVersion DetermineSignatureVersionToUse(GetPreSignedUrlRequest request, ref Arn arn, bool useSigV2Fallback)
+        private SignatureVersion DetermineSignatureVersionToUse(GetPreSignedUrlRequest request, ref Arn arn)
         {
-            var signatureVersionToUse = AWSConfigsS3.UseSignatureVersion4 ? SignatureVersion.SigV4 : SignatureVersion.SigV2;
+            var signatureVersionToUse = SignatureVersion.SigV4;
 
             string accessPoint;
             if (Arn.TryParse(request.BucketName, out arn) &&
@@ -305,29 +318,16 @@ namespace Amazon.S3
                 if (signatureVersionToUse == SignatureVersion.SigV4 && string.IsNullOrEmpty(region))
                     throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
-#pragma warning disable CS0612,CS0618
-                RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
-                var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3", Config.ToGetEndpointForServiceOptions()).SignatureVersionOverride;
-                if (s3SignatureVersionOverride == "4" || s3SignatureVersionOverride == null)
-                {
-                    signatureVersionToUse = SignatureVersion.SigV4;
-                }
-#pragma warning restore CS0612,CS0618
-
-                var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
-                if (endpoint?.SystemName == RegionEndpoint.USEast1.SystemName && fallbackToSigV2)
-                {
-                    signatureVersionToUse = SignatureVersion.SigV2;
-                }
-
-                // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
-                // But only if the region we're signing for allows SigV2.
                 if (signatureVersionToUse == SignatureVersion.SigV4)
                 {
+                    RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
                     var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, signatureVersionToUse);
 
+                    // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
+                    // But only if the region we're signing for allows SigV2. This is the only case where SigV2 is
+                    // allowed for a presigned URL.
                     if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
-                        s3SignatureVersionOverride == "2")
+                        _sigV2SupportedRegions.Contains(endpoint?.SystemName))
                     {
                         signatureVersionToUse = SignatureVersion.SigV2;
                     }
@@ -344,22 +344,11 @@ namespace Amazon.S3
             //we pass in SigV4 because we want to see what the seconds until Expiration was when signature version was SigV4, since it doesn't matter for SigV2.
             var secondsUntilExpiration = GetSecondsUntilExpiration(config, request, SignatureVersion.SigV4);
 
-            //If DetermineSignatureVersionToUse forced SigV2 due to a long expiration, we need to throw an exception because S3Express needs to use SigV4
+            //If DetermineSignatureVersionToUse forced SigV2 due to a long expiration, we need to throw an exception because S3Express needs to use SigV4.
             if (signatureVersion == SignatureVersion.SigV2 && secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
                 throw new AmazonS3Exception("S3 Express only works with SIGV4 which does not allow expiration greater than 7 days. Please create a presignedUrl that" +
                     "is shorter than 7 days.");
-            }
-            //us-east-1 holds no special value as the regional endpoint for S3Express. If we're in a S3Express request,
-            //and the user did not explicitly set UseSignatureVersion4 to false, then convert back to sigV4
-            if (signatureVersion == SignatureVersion.SigV2 && !AWSConfigsS3.UseSignatureVersion4)
-            {
-                irequest.Parameters.Remove("Expires");
-                irequest.Parameters.Remove("AWSAccessKeyId");
-                var expires = GetSecondsUntilExpiration(config, irequest.OriginalRequest as GetPreSignedUrlRequest, SignatureVersion.SigV4);
-                irequest.Parameters.Add(HeaderKeys.XAmzExpires, expires.ToString(CultureInfo.InvariantCulture));
-                if (!String.IsNullOrEmpty(immutableCredentials.Token))
-                    irequest.Parameters.Remove(HeaderKeys.XAmzSecurityTokenHeader);
             }
             
             //for SigV4 x-amz-security-token casing is different and since we will replace this header with the S3Express Session Token we must remove it.
@@ -396,7 +385,7 @@ namespace Amazon.S3
                     signingResult.Authorization = "&" + signingResult4.ForQueryParameters;
                     signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
-                default: // SigV2
+                default: // SigV2 when the presigned URL is created with an expiration greater than 7 days.
                     Amazon.S3.Internal.S3Signer.SignRequest(iRequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                     signingResult.Authorization = iRequest.Headers[HeaderKeys.AuthorizationHeader];
                     signingResult.Authorization = signingResult.Authorization.Substring(signingResult.Authorization.IndexOf(":", StringComparison.Ordinal) + 1);
@@ -425,11 +414,13 @@ namespace Amazon.S3
             }
             return signingResult;
         }
+
         private class SigningResult
         {
             public string Authorization { get; set; }
             public string Result { get; set; }
         }
+
         private static long GetSecondsUntilExpiration(IClientConfig config, GetPreSignedUrlRequest request, SignatureVersion signatureVersion)
         {
             DateTime baselineTime;
@@ -445,6 +436,7 @@ namespace Amazon.S3
             }
             return Convert.ToInt64((request.Expires.GetValueOrDefault().ToUniversalTime() - baselineTime).TotalSeconds);
         }
+
         internal static void CleanupRequest(AmazonWebServiceRequest request)
         {
             var putObjectRequest = request as PutObjectRequest;

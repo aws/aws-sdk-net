@@ -179,10 +179,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private void TestPreSignedUrlPut(PresignedUrlTestParameters testParams)
         {
             var client = new AmazonS3Client(testParams.Region);
-            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
             try
             {
-                AWSConfigsS3.UseSignatureVersion4 = true;
                 if (testParams.IsS3Express)
                 {
                     testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
@@ -206,7 +204,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             finally
             {
-                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                 if (testParams.BucketName != null)
                     DeleteBucket(client, testParams.BucketName);
             }
@@ -292,10 +289,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private void TestPreSignedUrl(PresignedUrlTestParameters testParams)
         {
             var client = new AmazonS3Client(testParams.Region);
-            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
             try
             {
-                AWSConfigsS3.UseSignatureVersion4 = true;
                 if (testParams.IsS3Express)
                 {
                     testParams.BucketName = CreateBucketAndObject(client, true, RegionCodePairs[testParams.Region]);
@@ -308,7 +303,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             finally
             {
-                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                 if (testParams.BucketName != null)
                     DeleteBucket(client, testParams.BucketName);
             }
@@ -319,11 +313,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 AWSCredentials credentials = sts.GetSessionToken().Credentials;
                 var client = new AmazonS3Client(credentials, testParams.Region);
-                var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
-                AWSConfigsS3.UseSignatureVersion4 = true;
                 try
                 {
-                    AWSConfigsS3.UseSignatureVersion4 = true;
                     if (testParams.IsS3Express)
                     {
                         testParams.BucketName = CreateBucketAndObject(client, true, RegionCodePairs[testParams.Region]);
@@ -336,7 +327,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
                 finally
                 {
-                    AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                     if (testParams.BucketName != null)
                         DeleteBucket(client, testParams.BucketName);
                 }
@@ -345,15 +335,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private void TestSignedUrlParameters(RegionEndpoint region, DateTime expires) {
             var client = new AmazonS3Client(region);
-            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
             string bucketName = null;
             try {
-                AWSConfigsS3.UseSignatureVersion4 = true;
                 bucketName = CreateBucketAndObject(client);
                 AssertSignedUrlParameters(client, bucketName, expires, true);
             }
             finally {
-                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
                 if (bucketName != null)
                     DeleteBucket(client, bucketName);
             }

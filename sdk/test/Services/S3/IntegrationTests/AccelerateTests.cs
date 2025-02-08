@@ -109,7 +109,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var sigV4Client = new AmazonS3Client( new AmazonS3Config
             {
                 UseAccelerateEndpoint = true,
-                SignatureVersion = "4",
                 RegionEndpoint = TestRegionEndpoint
             }))
             {

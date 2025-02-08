@@ -50,30 +50,6 @@ namespace Amazon.S3.Util
         /// </summary>
         /// <param name="policy">JSON string representing the policy to sign</param>
         /// <param name="credentials">Credentials to sign the policy with</param>
-        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials)
-        {
-            ImmutableCredentials iCreds = credentials.GetCredentials();
-            var policyBytes = iCreds.UseToken
-                ? addTokenToPolicy(policy, iCreds.Token)
-                : Encoding.UTF8.GetBytes(policy.Trim());
-            var base64Policy = Convert.ToBase64String(policyBytes);
-            string signature = CryptoUtilFactory.CryptoInstance.HMACSign(Encoding.UTF8.GetBytes(base64Policy), iCreds.SecretKey, SigningAlgorithm.HmacSHA1);
-            return new S3PostUploadSignedPolicy
-            {
-                Policy = base64Policy,
-                Signature = signature,
-                AccessKeyId = iCreds.AccessKey,
-                SecurityToken = iCreds.Token,
-                SignatureVersion = "2"
-            };
-        }
-
-        /// <summary>
-        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
-        /// </summary>
-        /// <param name="policy">JSON string representing the policy to sign</param>
-        /// <param name="credentials">Credentials to sign the policy with</param>
         /// <param name="region">Service region endpoint.</param>
         /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
         public static S3PostUploadSignedPolicy GetSignedPolicyV4(string policy, AWSCredentials credentials, RegionEndpoint region)

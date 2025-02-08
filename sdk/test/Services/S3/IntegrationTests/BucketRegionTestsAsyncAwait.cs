@@ -16,27 +16,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         [TestMethod]
         [TestCategory("S3")]
-        public async Task HappyCaseSigV2()
-        {
-            // make sure we're not using the cache with SigV2 requests
-            using (var runner = new BucketRegionTestRunner(false))
-            {
-                if (runner.TestBucketIsReady)
-                {
-                    await runner.USEast1Client.PutObjectAsync(runner.PutObjectRequest);
-                    RegionEndpoint cachedRegion;
-                    Assert.IsFalse(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out cachedRegion));
-                    Assert.AreEqual(null, cachedRegion);
-                }
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public async Task HappyCaseSigV4()
         {
             // make sure the cache works when it gets the region from the response body
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -53,7 +36,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task HappyCaseGetObjectMetedata()
         {
             // make sure the cache works when it gets the region from a HEAD bucket request
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -73,7 +56,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task BucketRecreatedInDifferentRegion()
         {
             // make sure the cache gets refreshed when it should
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
