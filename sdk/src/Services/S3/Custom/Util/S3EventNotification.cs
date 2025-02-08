@@ -1,11 +1,8 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.Json;
 using Amazon.Runtime;
-
-using ThirdParty.Json.LitJson;
-
 
 namespace Amazon.S3.Util
 {
@@ -28,12 +25,13 @@ namespace Amazon.S3.Util
         {
             try
             {
-                var data = JsonMapper.ToObject(json);
+                using var data = JsonDocument.Parse(json);
+
                 var s3Event = new S3EventNotification { Records = new List<S3EventNotificationRecord>() };
 
-                if (data["Records"] != null)
+                if (data.RootElement.TryGetProperty("Records", out var recordsElement) && recordsElement.ValueKind == JsonValueKind.Array)
                 {
-                    foreach (JsonData jsonRecord in data["Records"])
+                    foreach (var jsonRecord in recordsElement.EnumerateArray())
                     {
                         var record = new S3EventNotificationRecord();
 
@@ -41,68 +39,65 @@ namespace Amazon.S3.Util
                         record.EventSource = GetValueAsString(jsonRecord, "eventSource");
                         record.AwsRegion = GetValueAsString(jsonRecord, "awsRegion");
 
-                        if (jsonRecord["eventTime"] != null)
-                            record.EventTime = DateTime.Parse((string)jsonRecord["eventTime"], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
-                        if (jsonRecord["eventName"] != null)
+                        if (jsonRecord.TryGetProperty("eventTime", out var eventTimeElement) && eventTimeElement.ValueKind == JsonValueKind.String)
                         {
-                            var eventName = (string)jsonRecord["eventName"];
+                            record.EventTime = DateTime.Parse(eventTimeElement.GetString(), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
+                        }
+                        if (jsonRecord.TryGetProperty("eventName", out var eventNameElement) && eventNameElement.ValueKind == JsonValueKind.String)
+                        {
+                            string eventName = eventNameElement.GetString();
                             if (!eventName.StartsWith("s3:", StringComparison.OrdinalIgnoreCase))
+                            {
                                 eventName = "s3:" + eventName;
-
+                            }
                             record.EventName = EventType.FindValue(eventName);
                         }
 
-                        if (jsonRecord["userIdentity"] != null)
+                        if (jsonRecord.TryGetProperty("userIdentity", out var jsonUserIdentity))
                         {
-                            var jsonUserIdentity = jsonRecord["userIdentity"];
                             record.UserIdentity = new UserIdentityEntity();
                             record.UserIdentity.PrincipalId = GetValueAsString(jsonUserIdentity, "principalId");
                         }
 
-                        if (jsonRecord["requestParameters"] != null)
+                        if (jsonRecord.TryGetProperty("requestParameters", out var jsonRequestParameters))
                         {
-                            var jsonRequestParameters = jsonRecord["requestParameters"];
                             record.RequestParameters = new RequestParametersEntity();
                             record.RequestParameters.SourceIPAddress = GetValueAsString(jsonRequestParameters, "sourceIPAddress");
                         }
 
-                        if (jsonRecord["responseElements"] != null)
+                        if (jsonRecord.TryGetProperty("responseElements", out var jsonResponseElements))
                         {
-                            var jsonResponseElements = jsonRecord["responseElements"];
                             record.ResponseElements = new ResponseElementsEntity();
 
                             record.ResponseElements.XAmzRequestId = GetValueAsString(jsonResponseElements, "x-amz-request-id");
                             record.ResponseElements.XAmzId2 = GetValueAsString(jsonResponseElements, "x-amz-id-2");
                         }
 
-                        if (jsonRecord["s3"] != null)
+                        if (jsonRecord.TryGetProperty("s3", out var jsonS3))
                         {
-                            var jsonS3 = jsonRecord["s3"];
                             record.S3 = new S3Entity();
 
                             record.S3.S3SchemaVersion = GetValueAsString(jsonS3, "s3SchemaVersion");
                             record.S3.ConfigurationId = GetValueAsString(jsonS3, "configurationId");
 
-                            if (jsonS3["bucket"] != null)
+                            
+                            if (jsonS3.TryGetProperty("bucket", out var jsonBucket))
                             {
-                                var jsonBucket = jsonS3["bucket"];
                                 record.S3.Bucket = new S3BucketEntity();
 
                                 record.S3.Bucket.Name = GetValueAsString(jsonBucket, "name");
                                 record.S3.Bucket.Arn = GetValueAsString(jsonBucket, "arn");
 
 
-                                if (jsonBucket["ownerIdentity"] != null)
+                                if (jsonBucket.TryGetProperty("ownerIdentity", out var jsonOwnerIdentity))
                                 {
-                                    var jsonOwnerIdentity = jsonBucket["ownerIdentity"];
                                     record.S3.Bucket.OwnerIdentity = new UserIdentityEntity();
                                     record.S3.Bucket.OwnerIdentity.PrincipalId = GetValueAsString(jsonOwnerIdentity, "principalId");
                                 }
                             }
 
-                            if (jsonS3["object"] != null)
+                            if (jsonS3.TryGetProperty("object", out var jsonObject))
                             {
-                                var jsonObject = jsonS3["object"];
                                 record.S3.Object = new S3ObjectEntity();
 
                                 record.S3.Object.Key = GetValueAsString(jsonObject, "key");
@@ -113,15 +108,12 @@ namespace Amazon.S3.Util
                             }
                         }
 
-                        if(jsonRecord["glacierEventData"] != null)
+                        if (jsonRecord.TryGetProperty("glacierEventData", out var jsonGlacier))
                         {
-                            var jsonGlacier = jsonRecord["glacierEventData"];
                             record.GlacierEventData = new S3GlacierEventDataEntity();
 
-                            if(jsonGlacier["restoreEventData"] != null)
+                            if(jsonGlacier.TryGetProperty("restoreEventData", out var jsonRestore))
                             {
-                                var jsonRestore = jsonGlacier["restoreEventData"];
-
                                 record.GlacierEventData.RestoreEventData = new S3RestoreEventDataEntity();
 
                                 record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime = GetValueAsDateTime(jsonRestore, "lifecycleRestorationExpiryTime").GetValueOrDefault();
@@ -347,14 +339,14 @@ namespace Amazon.S3.Util
         }
 
 
-        private static string GetValueAsString(JsonData data, string key)
+        private static string GetValueAsString(JsonElement data, string key)
         {
-            if (data[key] != null)
-                return (string)data[key];
+            if (data.TryGetProperty(key, out var property) && property.ValueKind == JsonValueKind.String)
+                return property.GetString();
             return null;
         }
 
-        private static DateTime? GetValueAsDateTime(JsonData data, string key)
+        private static DateTime? GetValueAsDateTime(JsonElement data, string key)
         {
             var str = GetValueAsString(data, key);
             if (string.IsNullOrEmpty(str))
@@ -363,16 +355,12 @@ namespace Amazon.S3.Util
             return DateTime.Parse(str, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
         }
 
-        private static long GetValueAsLong(JsonData data, string key)
+        private static long GetValueAsLong(JsonElement data, string key)
         {
-            if (data[key] != null)
+            if (data.TryGetProperty(key, out var property) &&
+                property.ValueKind == JsonValueKind.Number && property.TryGetInt64(out long result))
             {
-                if (data[key].IsInt)
-                    return (int)data[key];
-                else if (data[key].IsUInt)
-                    return (uint)data[key];
-                else
-                    return (long)data[key];
+                return result;
             }
             return 0;
         }

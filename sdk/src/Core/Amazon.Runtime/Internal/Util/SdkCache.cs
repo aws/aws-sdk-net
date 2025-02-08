@@ -21,8 +21,8 @@ using System.Linq;
 using System.Text;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
 using System.Threading;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Util
 {

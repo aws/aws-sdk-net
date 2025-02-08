@@ -20,7 +20,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using ThirdParty.Json.LitJson;
+using System.Text;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Settings
 {
@@ -48,20 +49,24 @@ namespace Amazon.Runtime.Internal.Settings
 
         internal void Persist(StreamWriter writer)
         {
-            JsonWriter jsonWriter = new JsonWriter();
-            jsonWriter.PrettyPrint = true;
-
-            jsonWriter.WriteObjectStart();
-            foreach (var key in this._values.Keys)
+            var options = new JsonWriterOptions();
+            options.Indented = true;
+            using (var stream = new MemoryStream())
+            using (var jsonWriter = new Utf8JsonWriter(stream, options))
             {
-                ObjectSettings os = this[key];
-                jsonWriter.WritePropertyName(key);
-                os.WriteToJson(jsonWriter);
+                jsonWriter.WriteStartObject();
+                foreach (var key in this._values.Keys)
+                {
+                    ObjectSettings os = this[key];
+                    jsonWriter.WritePropertyName(key);
+                    os.WriteToJson(jsonWriter);
+                }
+                jsonWriter.WriteEndObject();
+                jsonWriter.Flush();
+                
+                string content = Encoding.UTF8.GetString(stream.ToArray());
+                writer.Write(content);
             }
-            jsonWriter.WriteObjectEnd();
-
-            string content = jsonWriter.ToString();
-            writer.Write(content);
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -178,9 +183,9 @@ namespace Amazon.Runtime.Internal.Settings
                 }
             }
 
-            internal void WriteToJson(JsonWriter writer)
+            internal void WriteToJson(Utf8JsonWriter writer)
             {
-                writer.WriteObjectStart();
+                writer.WriteStartObject();
                 foreach (var kvp in this._values)
                 {
                     string value = kvp.Value as string;
@@ -192,9 +197,9 @@ namespace Amazon.Runtime.Internal.Settings
                     if (PersistenceManager.IsEncrypted(kvp.Key) || PersistenceManager.IsEncrypted(this._uniqueKey))
                         value = UserCrypto.Encrypt(value);
 
-                    writer.Write(value);
+                    writer.WriteStringValue(value);
                 }
-                writer.WriteObjectEnd();
+                writer.WriteEndObject();
             }
         }
     }

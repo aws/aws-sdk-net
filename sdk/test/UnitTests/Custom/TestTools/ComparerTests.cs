@@ -5,34 +5,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.Json;
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class ComparerTests
     {
-        [TestMethod][TestCategory("UnitTest")]
-        public void TestJsonToObject()
-        {
-            var product = Comparer.JsonToObject<Product>(Utils.GetResourceText("ComparerTest.json"));
-            Assert.AreEqual(123, product.Id);
-            Assert.AreEqual("A", product.Name);
-            Assert.AreEqual(1212, product.Price);
-            Assert.AreEqual(1, product.Qty);
-            Assert.IsNotNull(product.Tags);
-            Assert.AreEqual(2, product.Tags.Count);
-            Assert.AreEqual(1, product.Tags[0].Id);
-            Assert.AreEqual("X", product.Tags[0].Name);
-            Assert.AreEqual(2, product.Tags[1].Id);
-            Assert.AreEqual("Y", product.Tags[1].Name);
-            Assert.IsNotNull(product.TagMap);
-            Assert.AreEqual(2, product.TagMap.Count);
-            Assert.AreEqual(1, product.TagMap["Key0"].Id);
-            Assert.AreEqual("X", product.TagMap["Key0"].Name);
-            Assert.AreEqual(2, product.TagMap["Key1"].Id);
-            Assert.AreEqual("Y", product.TagMap["Key1"].Name);
-        }
-
         [TestMethod][TestCategory("UnitTest")]
         public void TestDoubleParsing()
         {

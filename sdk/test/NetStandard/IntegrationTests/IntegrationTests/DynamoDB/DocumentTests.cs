@@ -8,7 +8,6 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
-using ThirdParty.Json.LitJson;
 using System.Xml;
 
 using Xunit;

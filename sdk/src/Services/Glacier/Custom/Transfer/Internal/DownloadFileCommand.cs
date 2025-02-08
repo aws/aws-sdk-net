@@ -15,26 +15,15 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading;
-
-using Amazon.Glacier.Model;
-using Amazon.Glacier.Transfer.Internal;
-
+using Amazon.Util.Internal;
 using Amazon.Runtime.Internal;
-
 using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-
 using Amazon.SQS;
 using Amazon.SQS.Model;
-using Amazon.SQS.Util;
 
-using Amazon.Util;
-
-using ThirdParty.Json.LitJson;
+#if NET8_0_OR_GREATER
+using System.Text.Json.Serialization;
+#endif
 
 namespace Amazon.Glacier.Transfer.Internal
 {
@@ -114,8 +103,8 @@ namespace Amazon.Glacier.Transfer.Internal
             else
                 json = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(message.Body));
 
-            Dictionary<string, string> outerLayer = JsonMapper.ToObject<Dictionary<string, string>>(json);
-            Dictionary<string, object> fields = JsonMapper.ToObject<Dictionary<string, object>>(outerLayer["Message"]);
+            Dictionary<string, string> outerLayer = JsonSerializerHelper.Deserialize<Dictionary<string, string>>(json, GlacierDictionarySerializerContexts.Default);
+            Dictionary<string, object> fields = JsonSerializerHelper.Deserialize<Dictionary<string, object>>(outerLayer["Message"], GlacierDictionarySerializerContexts.Default);
 
             string jobId = fields["JobId"] as string;
 
@@ -170,5 +159,11 @@ namespace Amazon.Glacier.Transfer.Internal
         }
 
 #endregion
+    }
+
+    [JsonSerializable(typeof(Dictionary<string, string>))]
+    [JsonSerializable(typeof(Dictionary<string, object>))]
+    internal partial class GlacierDictionarySerializerContexts : JsonSerializerContext
+    {
     }
 }

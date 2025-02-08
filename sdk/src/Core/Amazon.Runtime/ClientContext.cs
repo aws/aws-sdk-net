@@ -16,14 +16,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
-using ThirdParty.Json.LitJson;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using Amazon.Util.Internal.PlatformServices;
 using Amazon.Runtime;
 using System.Diagnostics.CodeAnalysis;
 using ThirdParty.RuntimeBackports;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal
 {
@@ -156,8 +155,7 @@ namespace Amazon.Runtime.Internal
                 _clientContext.Add(ENV_KEY, _env);
                 _clientContext.Add(CUSTOM_KEY, _custom);
                 _clientContext.Add(SERVICES_KEY, _services);
-
-                return JsonMapper.ToJson(_clientContext); 
+                return JsonSerializer.Serialize(_clientContext);
             
             }
         }

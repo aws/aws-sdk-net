@@ -20,10 +20,11 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.IO;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal
 {
@@ -130,85 +131,88 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         private static bool CreateUDPMessage(MonitoringAPICallAttempt monitoringAPICallAttempt, out string response)
         {
-            JsonWriter jw = new JsonWriter();
-
-            jw.WriteObjectStart();
-
-            jw = CreateUDPMessage(monitoringAPICallAttempt, jw);
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AccessKey))
+            using (var memoryStream = new MemoryStream())
+            using (Utf8JsonWriter jw = new Utf8JsonWriter(memoryStream))
             {
-                jw.WritePropertyName("AccessKey");
-                jw.Write(monitoringAPICallAttempt.AccessKey);
+                jw.WriteStartObject();
+
+                CreateUDPMessage(monitoringAPICallAttempt, jw);
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AccessKey))
+                {
+                    jw.WritePropertyName("AccessKey");
+                    jw.WriteStringValue(monitoringAPICallAttempt.AccessKey);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AWSException))
+                {
+                    jw.WritePropertyName("AWSException");
+                    jw.WriteStringValue(monitoringAPICallAttempt.AWSException);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.Fqdn))
+                {
+                    jw.WritePropertyName("Fqdn");
+                    jw.WriteStringValue(monitoringAPICallAttempt.Fqdn);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SdkException))
+                {
+                    jw.WritePropertyName("SdkException");
+                    jw.WriteStringValue(monitoringAPICallAttempt.SdkException);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AWSExceptionMessage))
+                {
+                    jw.WritePropertyName("AWSExceptionMessage");
+                    jw.WriteStringValue(monitoringAPICallAttempt.AWSExceptionMessage);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SdkExceptionMessage))
+                {
+                    jw.WritePropertyName("SdkExceptionMessage");
+                    jw.WriteStringValue(monitoringAPICallAttempt.SdkExceptionMessage);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SessionToken))
+                {
+                    jw.WritePropertyName("SessionToken");
+                    jw.WriteStringValue(monitoringAPICallAttempt.SessionToken);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmzId2))
+                {
+                    jw.WritePropertyName("XAmzId2");
+                    jw.WriteStringValue(monitoringAPICallAttempt.XAmzId2);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmznRequestId))
+                {
+                    jw.WritePropertyName("XAmznRequestId");
+                    jw.WriteStringValue(monitoringAPICallAttempt.XAmznRequestId);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmzRequestId))
+                {
+                    jw.WritePropertyName("XAmzRequestId");
+                    jw.WriteStringValue(monitoringAPICallAttempt.XAmzRequestId);
+                }
+
+                if (monitoringAPICallAttempt.HttpStatusCode != null)
+                {
+                    jw.WritePropertyName("HttpStatusCode");
+                    jw.WriteNumberValue((int)monitoringAPICallAttempt.HttpStatusCode);
+                }
+
+                jw.WritePropertyName("AttemptLatency");
+                jw.WriteNumberValue(monitoringAPICallAttempt.AttemptLatency);
+
+                jw.WriteEndObject();
+                jw.Flush();
+                response = Encoding.UTF8.GetString(memoryStream.ToArray());
+
+                return ASCIIEncoding.Unicode.GetByteCount(response) <= (8 * 1024);
             }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AWSException))
-            {
-                jw.WritePropertyName("AWSException");
-                jw.Write(monitoringAPICallAttempt.AWSException);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.Fqdn))
-            {
-                jw.WritePropertyName("Fqdn");
-                jw.Write(monitoringAPICallAttempt.Fqdn);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SdkException))
-            {
-                jw.WritePropertyName("SdkException");
-                jw.Write(monitoringAPICallAttempt.SdkException);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.AWSExceptionMessage))
-            {
-                jw.WritePropertyName("AWSExceptionMessage");
-                jw.Write(monitoringAPICallAttempt.AWSExceptionMessage);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SdkExceptionMessage))
-            {
-                jw.WritePropertyName("SdkExceptionMessage");
-                jw.Write(monitoringAPICallAttempt.SdkExceptionMessage);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SessionToken))
-            {
-                jw.WritePropertyName("SessionToken");
-                jw.Write(monitoringAPICallAttempt.SessionToken);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmzId2))
-            {
-                jw.WritePropertyName("XAmzId2");
-                jw.Write(monitoringAPICallAttempt.XAmzId2);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmznRequestId))
-            {
-                jw.WritePropertyName("XAmznRequestId");
-                jw.Write(monitoringAPICallAttempt.XAmznRequestId);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.XAmzRequestId))
-            {
-                jw.WritePropertyName("XAmzRequestId");
-                jw.Write(monitoringAPICallAttempt.XAmzRequestId);
-            }
-
-            if (monitoringAPICallAttempt.HttpStatusCode != null)
-            {
-                jw.WritePropertyName("HttpStatusCode");
-                jw.Write((int)monitoringAPICallAttempt.HttpStatusCode);
-            }
-
-            jw.WritePropertyName("AttemptLatency");
-            jw.Write(monitoringAPICallAttempt.AttemptLatency);
-
-            jw.WriteObjectEnd();
-            response = jw.ToString();
-            
-            return ASCIIEncoding.Unicode.GetByteCount(response) <= (8 * 1024);
         }
 
         /// <summary>
@@ -216,113 +220,114 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         private static bool CreateUDPMessage(MonitoringAPICallEvent monitoringAPICallEvent, out string response)
         {
-            JsonWriter jw = new JsonWriter();
-
-            jw.WriteObjectStart();
-
-            jw = CreateUDPMessage(monitoringAPICallEvent, jw);
-
-            jw.WritePropertyName("Latency");
-            jw.Write(monitoringAPICallEvent.Latency);
-
-            jw.WritePropertyName("AttemptCount");
-            jw.Write(monitoringAPICallEvent.AttemptCount);
-
-            jw.WritePropertyName("MaxRetriesExceeded");
-            int maxRetriesValue = 0;
-            if (monitoringAPICallEvent.IsLastExceptionRetryable)
+            using (var memoryStream = new MemoryStream())
+            using (Utf8JsonWriter jw = new Utf8JsonWriter(memoryStream))
             {
-                maxRetriesValue = 1;
+                jw.WriteStartObject();
+
+                CreateUDPMessage(monitoringAPICallEvent, jw);
+
+                jw.WritePropertyName("Latency");
+                jw.WriteNumberValue(monitoringAPICallEvent.Latency);
+
+                jw.WritePropertyName("AttemptCount");
+                jw.WriteNumberValue(monitoringAPICallEvent.AttemptCount);
+
+                jw.WritePropertyName("MaxRetriesExceeded");
+                int maxRetriesValue = 0;
+                if (monitoringAPICallEvent.IsLastExceptionRetryable)
+                {
+                    maxRetriesValue = 1;
+                }
+                jw.WriteNumberValue(maxRetriesValue);
+
+                if (monitoringAPICallEvent.FinalHttpStatusCode != null)
+                {
+                    jw.WritePropertyName("FinalHttpStatusCode");
+                    jw.WriteNumberValue((int)monitoringAPICallEvent.FinalHttpStatusCode);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSException))
+                {
+                    jw.WritePropertyName("FinalAWSException");
+                    jw.WriteStringValue(monitoringAPICallEvent.FinalAWSException);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkException))
+                {
+                    jw.WritePropertyName("FinalSdkException");
+                    jw.WriteStringValue(monitoringAPICallEvent.FinalSdkException);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSExceptionMessage))
+                {
+                    jw.WritePropertyName("FinalAWSExceptionMessage");
+                    jw.WriteStringValue(monitoringAPICallEvent.FinalAWSExceptionMessage);
+                }
+
+                if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkExceptionMessage))
+                {
+                    jw.WritePropertyName("FinalSdkExceptionMessage");
+                    jw.WriteStringValue(monitoringAPICallEvent.FinalSdkExceptionMessage);
+                }
+
+                jw.WriteEndObject();
+                jw.Flush();
+                response = Encoding.UTF8.GetString(memoryStream.ToArray());
+
+                return ASCIIEncoding.Unicode.GetByteCount(response) <= (8 * 1024);
             }
-            jw.Write(maxRetriesValue);
-
-            if (monitoringAPICallEvent.FinalHttpStatusCode != null)
-            {
-                jw.WritePropertyName("FinalHttpStatusCode");
-                jw.Write((int)monitoringAPICallEvent.FinalHttpStatusCode);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSException))
-            {
-                jw.WritePropertyName("FinalAWSException");
-                jw.Write(monitoringAPICallEvent.FinalAWSException);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkException))
-            {
-                jw.WritePropertyName("FinalSdkException");
-                jw.Write(monitoringAPICallEvent.FinalSdkException);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalAWSExceptionMessage))
-            {
-                jw.WritePropertyName("FinalAWSExceptionMessage");
-                jw.Write(monitoringAPICallEvent.FinalAWSExceptionMessage);
-            }
-
-            if (!string.IsNullOrEmpty(monitoringAPICallEvent.FinalSdkExceptionMessage))
-            {
-                jw.WritePropertyName("FinalSdkExceptionMessage");
-                jw.Write(monitoringAPICallEvent.FinalSdkExceptionMessage);
-            }
-
-            jw.WriteObjectEnd();
-            response = jw.ToString();
-
-            return ASCIIEncoding.Unicode.GetByteCount(response) <= (8 * 1024);
         }
 
         /// <summary>
         /// Method to serialize MonitoringAPICall CSM event to json.
         /// </summary>
-        private static JsonWriter CreateUDPMessage(MonitoringAPICall monitoringAPICall, JsonWriter jw)
+        private static void CreateUDPMessage(MonitoringAPICall monitoringAPICall, Utf8JsonWriter jw)
         {
             string response = string.Empty;
 
             if (!string.IsNullOrEmpty(monitoringAPICall.Api))
             {
                 jw.WritePropertyName("Api");
-                jw.Write(monitoringAPICall.Api);
+                jw.WriteStringValue(monitoringAPICall.Api);
             }
 
             if (!string.IsNullOrEmpty(monitoringAPICall.Service))
             {
                 jw.WritePropertyName("Service");
-                jw.Write(monitoringAPICall.Service);
+                jw.WriteStringValue(monitoringAPICall.Service);
             }
 
             if (!string.IsNullOrEmpty(monitoringAPICall.ClientId))
             {
                 jw.WritePropertyName("ClientId");
-                jw.Write(monitoringAPICall.ClientId);
+                jw.WriteStringValue(monitoringAPICall.ClientId);
             }
 
             jw.WritePropertyName("Version");
-            jw.Write(monitoringAPICall.Version);
+            jw.WriteNumberValue(monitoringAPICall.Version);
 
 
             if (!string.IsNullOrEmpty(monitoringAPICall.Type))
             {
                 jw.WritePropertyName("Type");
-                jw.Write(monitoringAPICall.Type);
+                jw.WriteStringValue(monitoringAPICall.Type);
             }
 
             jw.WritePropertyName("Timestamp");
-            jw.Write(monitoringAPICall.Timestamp);
+            jw.WriteNumberValue(monitoringAPICall.Timestamp);
 
             if (!string.IsNullOrEmpty(monitoringAPICall.Region))
             {
                 jw.WritePropertyName("Region");
-                jw.Write(monitoringAPICall.Region);
+                jw.WriteStringValue(monitoringAPICall.Region);
             }
 
             if (!string.IsNullOrEmpty(monitoringAPICall.UserAgent))
             {
                 jw.WritePropertyName("UserAgent");
-                jw.Write(monitoringAPICall.UserAgent);
+                jw.WriteStringValue(monitoringAPICall.UserAgent);
             }
-
-            return jw;
         }
     }
 }

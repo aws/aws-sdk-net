@@ -14,7 +14,8 @@
  */
 using System;
 using System.Collections.Generic;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
+using System.Xml.Linq;
 
 namespace Amazon.Runtime.Endpoints
 {
@@ -48,73 +49,54 @@ namespace Amazon.Runtime.Endpoints
         }
 
         /// <summary>
-        /// Creates PropertyBag based object tree from JsonData
+        /// Creates PropertyBag based object tree from JsonElement.
         /// </summary>
-        internal static PropertyBag FromJsonData(JsonData jsonData)
+        internal static PropertyBag FromJsonElement(JsonElement jsonData)
         {
             var result = new PropertyBag();
-            foreach (string name in jsonData.PropertyNames)
+            foreach (JsonProperty property in jsonData.EnumerateObject())
             {
-                var node = jsonData[name];
-                result[name] = NodeToValue(node);
+                result[property.Name] = ElementToValue(property.Value);
             }
+
             return result;
         }
 
         /// <summary>
-        /// Return a value from a JsonData node
+        /// Return a value from a JsonElement node.
         /// Node value can be simple/final i.e. String, Int etc.
         /// or it can be complex i.e. Object, Array
-        /// Translates Object json node to PropertyBag
-        /// Translates Array json node to List
+        /// Translates Object json element to PropertyBag.
+        /// Translates Array json element to List.
         /// </summary>
-        private static object NodeToValue(JsonData node)
+        private static object ElementToValue(JsonElement element)
         {
-            if (node.IsString)
+            return element.ValueKind switch
             {
-                return (string)node;
-            }
-            if (node.IsBoolean)
+                JsonValueKind.String => element.GetString(),
+                JsonValueKind.Number => element.TryGetInt32(out var intValue) ? intValue :
+                                        element.TryGetInt64(out var longValue) ? longValue :
+                                        element.TryGetUInt32(out var uintValue) ? uintValue :
+                                        element.TryGetUInt64(out var ulongValue) ? ulongValue :
+                                        element.GetDouble(),
+                JsonValueKind.True => true,
+                JsonValueKind.False => false,
+                JsonValueKind.Object => FromJsonElement(element),
+                JsonValueKind.Array => ParseJsonArray(element),
+                _ => throw new ArgumentException("Unsupported JSON value type."),
+            };
+        }
+        /// <summary>
+        /// Converts a JsonElement array into a list of objects.
+        /// </summary>
+        private static List<object> ParseJsonArray(JsonElement element)
+        {
+            var list = new List<object>();
+            foreach (var item in element.EnumerateArray())
             {
-                return (bool)node;
+                list.Add(ElementToValue(item));
             }
-            if (node.IsInt)
-            {
-                return (int)node;
-            }
-            if (node.IsLong)
-            {
-                return (long)node;
-            }
-            if (node.IsDouble)
-            {
-                return (double)node;
-            }
-            if (node.IsUInt)
-            {
-                return (uint)node;
-            }
-            if (node.IsULong)
-            {
-                return (ulong)node;
-            }
-            if (node.IsObject)
-            {
-                return FromJsonData(node);
-            }
-            if (node.IsArray)
-            {
-                var list = new List<object>();
-                foreach (JsonData item in node)
-                {
-                    list.Add(NodeToValue(item));
-                }
-                return list;
-            }
-            // we should never get here as we covered all JsonData possible types,
-            // but we still need to satisfy compiler with
-            // "all code paths must return a value"
-            throw new ArgumentException("Unsupported node type.");
+            return list;
         }
     }
 }

@@ -24,7 +24,7 @@ IF "%credentialType%" == "Exit" (
 )
 ECHO {
 IF NOT [%2%] == [] (
-    ECHO "Version":%2%
+    ECHO "Version":%2%,
 )
 IF "%credentialType%"=="Basic" (
     ECHO "AccessKeyId": "AccessKey",

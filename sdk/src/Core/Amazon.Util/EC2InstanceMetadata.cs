@@ -21,12 +21,12 @@ using System.Net;
 using System.Threading;
 
 using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using System.Text.Json;
 
 namespace Amazon.Util
 {
@@ -307,17 +307,22 @@ namespace Amazon.Util
                 var identityDocument = IdentityDocument;
                 if (!string.IsNullOrEmpty(identityDocument))
                 {
+                    JsonDocument doc = null;
                     try
                     {
-                        var jsonDocument = JsonMapper.ToObject(identityDocument.ToString());
-                        var regionName = jsonDocument["region"];
-                        if (regionName != null)
-                            return RegionEndpoint.GetBySystemName(regionName.ToString());
+                        doc = JsonDocument.Parse(identityDocument.ToString());
+                        JsonElement rootElement = doc.RootElement;
+                        if (rootElement.TryGetProperty("region", out JsonElement value))
+                            return RegionEndpoint.GetBySystemName(value.GetString());
                     }
                     catch (Exception e)
                     {
                         var logger = Logger.GetLogger(typeof(EC2InstanceMetadata));
                         logger.Error(e, "Error attempting to read region from instance metadata identity document");
+                    }
+                    finally
+                    {
+                        doc?.Dispose();
                     }
                 }
 
