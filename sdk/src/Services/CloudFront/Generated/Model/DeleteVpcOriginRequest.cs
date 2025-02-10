@@ -60,7 +60,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The VPC origin to delete, if a match occurs.
+        /// The version identifier of the VPC origin to delete. This is the <c>ETag</c> value
+        /// returned in the response to <a>GetVpcOrigin</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

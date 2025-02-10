@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// An Anycast static IP list.
+    /// An Anycast static IP list. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html">Request
+    /// Anycast static IPs to use for allowlisting</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </summary>
     public partial class AnycastIpList
     {
