@@ -1,3 +1,16 @@
+### 3.7.979.0 (2025-02-10 19:36 UTC)
+* ApiGatewayV2 (3.7.401.0)
+	* Documentation updates for Amazon API Gateway
+* CloudFront (3.7.404.27)
+	* Doc-only update that adds defaults for CloudFront VpcOriginEndpointConfig values.
+* Connect (3.7.417.9)
+	* Updated the CreateContact API documentation to indicate that it only applies to EMAIL contacts.
+* DatabaseMigrationService (3.7.405.0)
+	* New vendors for DMS Data Providers: DB2 LUW and DB2 for z/OS
+* Core 3.7.401.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.978.0 (2025-02-07 19:19 UTC)
 * ECR (3.7.409.0)
 	* Adds support to handle the new basic scanning daily quota.
