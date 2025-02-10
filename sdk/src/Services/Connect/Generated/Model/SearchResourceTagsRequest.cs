@@ -104,7 +104,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// The list of resource types to be used to search tags from. If not provided or if any
-        /// empty list is provided, this API will search from all supported resource types.
+        /// empty list is provided, this API will search from all supported resource types. Note
+        /// that lowercase and - are required.
         /// </para>
         ///  
         /// <para>
@@ -112,35 +113,43 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AGENT
+        /// agent
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ROUTING_PROFILE
+        /// agent-state
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// STANDARD_QUEUE
+        /// routing-profile
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SECURITY_PROFILE
+        /// standard-queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OPERATING_HOURS
+        /// security-profile
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PROMPT
+        /// operating-hours
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CONTACT_FLOW
+        /// prompt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLOW_MODULE
+        /// contact-flow
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// flow- module
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// transfer-destination (also known as quick connect)
         /// </para>
         ///  </li> </ul>
         /// </summary>

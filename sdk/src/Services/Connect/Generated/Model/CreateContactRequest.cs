@@ -31,7 +31,15 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContact operation.
-    /// Creates a new contact.
+    /// <important> 
+    /// <para>
+    /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
+    /// AGENT_REPLY, and FLOW.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Creates a new EMAIL contact. 
+    /// </para>
     /// </summary>
     public partial class CreateContactRequest : AmazonConnectRequest
     {
@@ -78,6 +86,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The channel for the contact
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// CreateContact only supports the EMAIL channel. The following information that states
+        /// other channels are supported is incorrect. We are working to update this topic.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public Channel Channel
@@ -172,8 +186,15 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitiationMethod. 
         /// <para>
-        /// Indicates how the contact was initiated.
+        /// Indicates how the contact was initiated. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY,
+        /// and FLOW. The following information that states other initiation methods are supported
+        /// is incorrect. We are working to update this topic.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContactInitiationMethod InitiationMethod

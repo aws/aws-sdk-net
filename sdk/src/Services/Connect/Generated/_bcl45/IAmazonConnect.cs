@@ -1772,7 +1772,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new contact.
+        /// <important> 
+        /// <para>
+        /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
+        /// AGENT_REPLY, and FLOW.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new EMAIL contact. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
         /// 
@@ -1811,7 +1819,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new contact.
+        /// <important> 
+        /// <para>
+        /// Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND,
+        /// AGENT_REPLY, and FLOW.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a new EMAIL contact. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
         /// <param name="cancellationToken">
@@ -19738,7 +19754,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// When you shift telephony traffic, also shift agents and/or agent sign-ins to ensure
+        /// they can handle the calls in the other Region. If you don't shift the agents, voice
+        /// calls will go to the shifted Region but there won't be any agents available to receive
+        /// the calls.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The <c>SignInConfig</c> distribution is available only on a default <c>TrafficDistributionGroup</c>
         /// (see the <c>IsDefault</c> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
@@ -19782,7 +19805,14 @@ namespace Amazon.Connect
         /// <summary>
         /// Updates the traffic distribution for a given traffic distribution group. 
         /// 
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// When you shift telephony traffic, also shift agents and/or agent sign-ins to ensure
+        /// they can handle the calls in the other Region. If you don't shift the agents, voice
+        /// calls will go to the shifted Region but there won't be any agents available to receive
+        /// the calls.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// The <c>SignInConfig</c> distribution is available only on a default <c>TrafficDistributionGroup</c>
         /// (see the <c>IsDefault</c> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
